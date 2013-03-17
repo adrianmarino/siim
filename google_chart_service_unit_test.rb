@@ -1,6 +1,8 @@
 require 'test/unit'
+require 'qrtools'
 require './google_chart_service'
 require './image_file'
+require './qr_decoder'
 
 class GoogleChartServiceUnitTest < Test::Unit::TestCase
 	# -------------------------------------------------------------------------
@@ -17,6 +19,7 @@ class GoogleChartServiceUnitTest < Test::Unit::TestCase
 
 		# Assert...
 		assert_not_nil image
+		assert_equal text, QRDecoder.decode_from_file(image)
 
 		# Show result...
 		show_result image
@@ -24,6 +27,7 @@ class GoogleChartServiceUnitTest < Test::Unit::TestCase
 
 	def setup
 		@target = GoogleChartService.new
+		File.delete 'qr.png'
 	end
 
 	# -------------------------------------------------------------------------
@@ -32,5 +36,10 @@ class GoogleChartServiceUnitTest < Test::Unit::TestCase
 	private
 	def show_result(an_image)
 		ImageFile.new(an_image).write_on_file_named 'qr.png'
+	end
+
+	def decode_image(a_file_name)
+  	image = QRTools::Image.load filename
+  	QRTools::QRCode.decode image
 	end
 end
