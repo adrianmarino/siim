@@ -36,7 +36,6 @@ require './location'
 require './location_builder'
 require 'test/unit'
 
-
 class GoogleMapsServiceClientTestUnit < Test::Unit::TestCase
 
 	# -------------------------------------------------------------------------
@@ -46,19 +45,22 @@ class GoogleMapsServiceClientTestUnit < Test::Unit::TestCase
 		# Prepare test...
 		travel_mode = 'driving'
 		#travel_mode = 'walking'
-		client = new_client_in_spanish
 		source_location = new_location 'Manuela Pedraza 2529'
 		destiny_location = new_location 'Medrano 951'
 
 		# Perform test...
-		result = client.distante_and_time source_location, destiny_location, travel_mode
+		respose = @target.distante_and_time source_location, destiny_location, travel_mode
 
 		# Asserts...
-		assert_distance 8048, result
-		assert_time 1406, result
+		assert_distance 8048, respose
+		assert_time 1406, respose
 
 		# Show results...
-		show_results travel_mode, source_location, destiny_location, result
+		show_results travel_mode, source_location, destiny_location, respose
+	end
+
+	def setup
+		@target = new_service_in_spanish
 	end
 
 	# -------------------------------------------------------------------------
@@ -73,27 +75,29 @@ class GoogleMapsServiceClientTestUnit < Test::Unit::TestCase
 		assert_equal an_expected_time, distante_time.time # In seconds...		
 	end
 
-	def new_client_in_spanish
+	def new_service_in_spanish
 		language = 'es-AR'
 
 		# Create client...
 		GoogleMapsServiceClient.new language
 	end
 
-	def new_location(address)
-		LoctionBuilder.new.address(address).buenos_aires.argentina.build
+	def new_location(a_address)
+		LoctionBuilder.new.address(a_address).buenos_aires.argentina.build
 	end
 
-	def show_results(a_travel_mode,a_source_location,a_destiny_location,a_result)
+	def show_results(a_travel_mode, a_source_location, a_destiny_location,a_result)
 		puts "\t---------------------"
 		puts "\tShow test information"
 		puts "\t----------------------------------------------------------"
+
 		# Show froms and to...
 		puts "\t- #{a_travel_mode} from #{a_source_location.address} to #{a_destiny_location.address}."
 
 		# Show distante and time...
 		puts "\t- you will arrive in #{a_result.time_text} and distance is #{a_result.distance_text}."
 		puts "\t- Time: #{a_result.time} seconds, Distance: #{a_result.distance} mts."
+
 		puts "\t----------------------------------------------------------"
 	end
 end
