@@ -10,7 +10,7 @@ class GoogleChartServiceUnitTest < Test::Unit::TestCase
 	def test_generate_qr
 		# Prepare...
 		dimension = '100x100'
-		text = 'Hello'
+		text = 'Hello World!'
 		encoding = 'UTF-8'
 
 		# Perform...
