@@ -1,5 +1,0 @@
-#!/bin/bash
-gem install httparty
-gem install qrtools
-
-sudo aptitude install libdecodeqr-dev

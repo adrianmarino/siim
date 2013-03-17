@@ -1,6 +1,7 @@
+require 'zxing'
+
 class QRDecoder
-	def self.decode_from_file(a_file_name)
-  	image = QRTools::Image.load filename
-  	QRTools::QRCode.decode image
+	def self.from_file(a_image_path)
+  		ZXing.decode a_image_path
 	end
 end
