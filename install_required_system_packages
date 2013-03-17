@@ -1,3 +1,9 @@
 #!/bin/bash
-sudo aptitude update
-sudo aptitude install  default-jre
+# For Debian & Ubuntu...
+#sudo aptitude update
+# For Ubuntu...
+#sudo aptitude install default-jre
+
+# For Gentoo...
+# eix-update
+# emerge -a dev-java/sun-jdk

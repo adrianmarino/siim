@@ -1,3 +1,4 @@
 #!/bin/bash
 gem install httparty
-gem install zxing
+#gem install jruby-jars
+#gem install zxing
