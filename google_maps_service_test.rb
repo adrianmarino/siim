@@ -87,17 +87,11 @@ class GoogleMapsServiceClientTestUnit < Test::Unit::TestCase
 	end
 
 	def show_results(a_travel_mode, a_source_location, a_destiny_location,a_result)
-		puts "\t---------------------"
-		puts "\tShow test information"
-		puts "\t----------------------------------------------------------"
-
 		# Show froms and to...
-		puts "\t- #{a_travel_mode} from #{a_source_location.address} to #{a_destiny_location.address}."
+		puts "\n - #{a_travel_mode} from #{a_source_location.address} to #{a_destiny_location.address}."
 
 		# Show distante and time...
-		puts "\t- you will arrive in #{a_result.time_text} and distance is #{a_result.distance_text}."
-		puts "\t- Time: #{a_result.time} seconds, Distance: #{a_result.distance} mts."
-
-		puts "\t----------------------------------------------------------"
+		puts " - you will arrive in #{a_result.time_text} and distance is #{a_result.distance_text}."
+		puts " - Time: #{a_result.time} seconds, Distance: #{a_result.distance} mts."
 	end
 end
