@@ -9,19 +9,19 @@ class GoogleChartServiceUnitTest < Test::Unit::TestCase
 		dimension = '100x100'
 		text = 'Hello World!'
 		encoding = 'UTF-8'
-		@file_name = 'qr.png'
-		FileHelper.delete_if_exist @file_name
+		file_name = 'qr.png'
+		FileHelper.delete_if_exist file_name
 
 		# Perform...
 		image = @target.generate_qr text, dimension, encoding
 		
 		# Assert...
 		assert_not_nil image
-		# assert_equal text, QRDecoder.from_file(@file_name)
+		# assert_equal text, QRDecoder.from_file(file_name)
 
 		# Show Results...
-		puts "Write QR image to #{@file_name}"
-		write_result image, @file_name
+		puts "Write QR image to #{file_name}"
+		write_result image, file_name
 	end
 
 	def setup
