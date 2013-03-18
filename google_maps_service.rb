@@ -20,7 +20,7 @@ class GoogleMapsServiceClient
 	attr_reader :language
 
 	# -------------------------------------------------------------------------
-	# Constructor...
+	# Initialize...
 	# -------------------------------------------------------------------------
 	def	initialize(a_language)
 		@language = a_language

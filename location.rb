@@ -12,7 +12,7 @@ class Location
 	end
 
 	# -------------------------------------------------------------------------
-	# Constructor...
+	# Initialize...
 	# -------------------------------------------------------------------------
 	def initialize(an_address, a_city, a_country)
 		@address = an_address
