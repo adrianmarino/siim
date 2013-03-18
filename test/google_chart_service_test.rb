@@ -9,6 +9,8 @@ class GoogleChartServiceUnitTest < Test::Unit::TestCase
 		dimension = '100x100'
 		text = 'Hello World!'
 		encoding = 'UTF-8'
+		@file_name = 'qr.png'
+		FileHelper.delete_if_exist @file_name
 
 		# Perform...
 		image = @target.generate_qr text, dimension, encoding
@@ -24,8 +26,6 @@ class GoogleChartServiceUnitTest < Test::Unit::TestCase
 
 	def setup
 		@target = GoogleChartService.new
-		@file_name = 'qr.png'
-		FileHelper.delete_if_exist @file_name
 	end
 
 	# -------------------------------------------------------------------------
