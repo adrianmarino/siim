@@ -1,8 +1,4 @@
-require 'test/unit'
-require './google_chart_service'
-require './image_file'
-require './file_helper'
-# require '../qr_decoder'
+require 'test_helper'
 
 class GoogleChartServiceUnitTest < Test::Unit::TestCase
 	# -------------------------------------------------------------------------

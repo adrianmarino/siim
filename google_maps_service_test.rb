@@ -31,9 +31,12 @@
 #		 -------------------------------------------------------
 #
 # -----------------------------------------------------------------------------
-require 'test_helper'
+require './google_maps_service'
+require './location'
+require './location_builder'
+require 'test/unit'
 
-class GoogleMapsServiceClientUnitTest < Test::Unit::TestCase
+class GoogleMapsServiceClientTestUnit < Test::Unit::TestCase
 
 	# -------------------------------------------------------------------------
 	# Test Methods...
