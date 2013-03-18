@@ -31,10 +31,10 @@
 #		 -------------------------------------------------------
 #
 # -----------------------------------------------------------------------------
+require 'test/unit'
 require './google_maps_service'
 require './location'
 require './location_builder'
-require 'test/unit'
 
 class GoogleMapsServiceClientTestUnit < Test::Unit::TestCase
 
