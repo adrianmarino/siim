@@ -1,4 +1,5 @@
 require 'test/unit'
+require './test/test_case'
 require './location'
 require './location_builder'
 require './image_file'

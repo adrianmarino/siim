@@ -49,8 +49,8 @@ class GoogleMapsServiceClientUnitTest < Test::Unit::TestCase
 		respose = @target.distante_and_time source_location, destiny_location, travel_mode
 
 		# Asserts...
-		assert_distance 8048, respose
-		assert_time 1406, respose
+		assert_within_range respose.distance, 8000, 8100
+		assert_within_range respose.time, 1350, 1450
 
 		# Show results...
 		show_results travel_mode, source_location, destiny_location, respose
@@ -69,6 +69,8 @@ class GoogleMapsServiceClientUnitTest < Test::Unit::TestCase
 	end
 
 	def assert_time(an_expected_time, distante_time)
+		
+assert
 		assert_equal an_expected_time, distante_time.time # In seconds...		
 	end
 

@@ -3,11 +3,11 @@ class DistanceTimeResponse
 	# Attributes...
 	# -------------------------------------------------------------------------
 	def distance
-		@json_result['rows'][0]['elements'][0]['distance']['value']
+		@json_result['rows'][0]['elements'][0]['distance']['value'].to_f
 	end
 
 	def time
-		@json_result['rows'][0]['elements'][0]['duration']['value']
+		@json_result['rows'][0]['elements'][0]['duration']['value'].to_f
 	end
 
 	def distance_text
