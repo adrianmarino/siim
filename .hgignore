@@ -1,2 +1,6 @@
 syntax:glob
-qr.png
+models/qr.png
+
+syntax: regexp
+web/mep/tmp
+web/mep/log
