@@ -68,3 +68,15 @@ en:
   date:
       formats:
           default: '%m/%d/%Y'
+
+  activerecord:
+    models:
+      user: "User"
+
+  actions:
+    back:   "Back"
+    show:   "View"
+    edit:   "Edit"
+    delete: "Delete"
+    create: "Create"
+    update: "Update"

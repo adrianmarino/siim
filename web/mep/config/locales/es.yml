@@ -80,3 +80,15 @@ es:
   date:
       formats:
           default: '%d/%m/%Y'
+
+  activerecord:
+    models:
+      user: "Usuario"
+
+  actions:
+    back:   "Atrás"
+    show:   "Ver"
+    edit:   "Editar"
+    delete: "Borrar"
+    create: "Crear"
+    update: "Actualizar"

@@ -1,0 +1,10 @@
+- if eval(variable_name(@entity_name)).errors.any?
+  #error_explanation
+    - errors_number = pluralize(eval(variable_name(@entity_name)).errors.count, "error")
+    - entity_name = t "activerecord.models.#{@entity_name}"
+    %h2= t :save_error, :errors => errors_number, :entity_name => entity_name
+    %ul
+      - eval(variable_name(@entity_name)).errors.messages.each do |a_message|
+        %li
+          = a_message[1].first
+          \.
