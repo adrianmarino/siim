@@ -1,4 +1,5 @@
 Mep::Application.routes.draw do
+  mount Core::Engine, at: "/core"
 
   root :to => "home#index"
 
