@@ -1,0 +1,17 @@
+Helper Scripts
+_______________________________________________________________________________
+
+- db_recreate: Borra la base de datos completa y la vuelve a crear agregandoles
+              los datos de prueba declarados en el archivo db/seeds.rb.
+- db_migrate: Es usado para modificar la base de datos cuando se agregan nuevas
+              entidades o relaciones entre estas.
+- start_server_on_debug: Levanta a aplicación en un servidor local 
+              (http://localhost:3000) en modo debug perminitendo utilisar un 
+	      debuger.
+- update-javascript-translations: Actualiza las traducciones que se usan en el 
+              codigo javascript comando como fuente los archivos que encuentran 
+	      en config/locals.
+- start_app_engine: Levanta el engine de la aplicacion en un interprete. De esta
+              manera se puede ejecutar el codigo de la aplicacion, ya sea para
+	      consultar entidades, probar el comportamiento de objetos, crear
+	      nuevos objetos. Es lo mas similar al workspace de Smalltalk.
