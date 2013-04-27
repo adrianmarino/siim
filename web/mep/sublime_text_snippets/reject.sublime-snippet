@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+reject {|${1:an_item}| 
+	${2}
+}
+]]></content>
+	<tabTrigger>reject</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>Reject</description>
+</snippet>

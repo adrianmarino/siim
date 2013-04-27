@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+assert_respond_to ${1:an_object}, :${2:a_method_name}
+]]></content>
+	<tabTrigger>assert_respond_to</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>Assert Respond To</description>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+detect(ifnone = nil) {|${1:an_item}| 
+	${2}
+}
+]]></content>
+	<tabTrigger>detect</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>Detect</description>
+</snippet>

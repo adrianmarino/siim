@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+push *${1:an_array}
+]]></content>
+	<tabTrigger>push_array</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>Push an Array</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+last
+]]></content>
+	<tabTrigger>last</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>Get last object of collection</description>
+</snippet>

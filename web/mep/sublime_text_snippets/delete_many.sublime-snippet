@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+- ${1:an_other_collection}
+]]></content>
+	<tabTrigger>delete_many</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>Delete many objects on array</description>
+</snippet>

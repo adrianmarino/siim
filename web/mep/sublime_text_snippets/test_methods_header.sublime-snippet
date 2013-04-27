@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+# -------------------------------------------------------------------------
+# Test Methods...
+# -------------------------------------------------------------------------
+]]></content>
+	<tabTrigger>testMethodsHeader</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>Test Methods Header</description>
+</snippet>

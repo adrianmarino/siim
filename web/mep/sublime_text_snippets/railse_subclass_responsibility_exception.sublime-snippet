@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+raise SubclassResponsibilityException
+]]></content>
+	<tabTrigger>raise_subclass_responsibility_exception</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>raise SubclassResponsibilityException</description>
+</snippet>

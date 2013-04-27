@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+require 'test_helper'
+
+class ${1:class_name} < ActiveSupport::TestCase
+
+end
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>rails_test_class</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.ruby</scope>
+	<description>Rails Test Class</description>
+</snippet>

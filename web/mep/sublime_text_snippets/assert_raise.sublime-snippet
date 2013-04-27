@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+assert_raise(${1:an_error}), {  
+ # A code to raise error
+ ${2}
+}
+]]></content>
+	<tabTrigger>assert_raise</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>Assert Raise</description>
+</snippet>

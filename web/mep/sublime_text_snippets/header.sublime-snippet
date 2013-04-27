@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+# -------------------------------------------------------------------------
+# ${1:Description}...
+# -------------------------------------------------------------------------
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>header</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.ruby</scope>
+	<description>Code Header</description>
+</snippet>

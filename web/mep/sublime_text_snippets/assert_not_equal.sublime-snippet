@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+assert_not_equal ${1:an_unexpected}, ${2:an_actual}
+]]></content>
+	<tabTrigger>assert_not_equal</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>Assert Not Equal</description>
+</snippet>

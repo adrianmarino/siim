@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+assert_nil ${1:an_object}
+]]></content>
+	<tabTrigger>assert_nil</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>Assert Nil</description>
+</snippet>

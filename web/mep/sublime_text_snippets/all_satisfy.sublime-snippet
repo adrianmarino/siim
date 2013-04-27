@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+all? {|${1:an_item}| 
+	${2}
+}
+]]></content>
+	<tabTrigger>all_satisfy</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>All Satisfy</description>
+</snippet>

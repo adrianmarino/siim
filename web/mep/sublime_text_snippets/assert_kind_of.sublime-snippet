@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+assert_kind_of ${1:a_class}, ${2:an_object}
+]]></content>
+	<tabTrigger>assert_kind_of</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>Assert Kind Of</description>
+</snippet>

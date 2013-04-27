@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+count ${1:an_object}
+]]></content>
+	<tabTrigger>count</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>Count Occurs of an object</description>
+</snippet>

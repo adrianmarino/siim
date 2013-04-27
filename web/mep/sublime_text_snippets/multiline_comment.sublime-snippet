@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+=begin
+${1}
+=end
+]]></content>
+	<tabTrigger>multiline_comment</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>Multiline Comment</description>
+</snippet>

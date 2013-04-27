@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+assert_not_match ${1:a_pattern}, ${2:a_string}
+]]></content>
+	<tabTrigger>assert_not_match</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>Assert Not Match</description>
+</snippet>

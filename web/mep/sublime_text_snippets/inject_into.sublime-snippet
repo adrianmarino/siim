@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+inject(${1:an_initial_value}) {| ${2:an_initial_value}, ${3:an_item} | 
+	${4}
+}
+]]></content>
+	<tabTrigger>inject</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>Inject</description>
+</snippet>

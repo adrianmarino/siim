@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+index ${1:an_object}
+]]></content>
+	<tabTrigger>index_of</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>Index of an object</description>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+select {|${1:an_item}| 
+	${2}
+}
+]]></content>
+	<tabTrigger>select</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>Select</description>
+</snippet>

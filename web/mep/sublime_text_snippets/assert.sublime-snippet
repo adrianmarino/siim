@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+assert ${1:a_condition}
+]]></content>
+	<tabTrigger>assert</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>Assert</description>
+</snippet>

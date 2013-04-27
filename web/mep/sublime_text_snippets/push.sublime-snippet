@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+push ${1:an_object}
+]]></content>
+	<tabTrigger>push</tabTrigger>
+	<scope>source.ruby</scope>
+	<description>Push</description>
+</snippet>
