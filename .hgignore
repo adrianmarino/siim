@@ -1,6 +1,6 @@
 syntax:glob
 models/qr.png
-web/mep/db/development.sqlite3
+web/mep/db/*.sqlite3
 
 syntax: regexp
 web/mep/tmp
