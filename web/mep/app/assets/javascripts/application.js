@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+//= require bootstrap-datepicker
+//= require dataTables/jquery.dataTables
+//= require dataTables/jquery.dataTables.bootstrap
+//= require i18n
+//= require i18n/translations
+//= require bootstrap-select
+//= require bootstrap-multiselect
+//= require jquery_nested_form
