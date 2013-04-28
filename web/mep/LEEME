@@ -15,3 +15,11 @@ _______________________________________________________________________________
               manera se puede ejecutar el codigo de la aplicacion, ya sea para
 	      consultar entidades, probar el comportamiento de objetos, crear
 	      nuevos objetos. Es lo mas similar al workspace de Smalltalk.
+
+
+Levantar la app con una db fresca(Actualizada!)
+_______________________________________________________________________________
+
+La secuenca de comandos seria:
+1) db_recreate
+2) start_server_on_debug
