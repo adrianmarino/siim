@@ -11,7 +11,7 @@
     .container
       = yield :content
     %hr/
-    .footer &copy; NONOSofT 2013
+    .footer=raw t('app.author')
     / Modal
     #myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
       .modal-header
