@@ -38,6 +38,7 @@ group :development, :test do
 	gem 'mocha', :require => false
 	gem 'capybara'
 	gem 'factory_girl_rails'
+	gem 'selenium-webdriver', '2.32.1'
 end
 
 # User custom nonosoft library...
