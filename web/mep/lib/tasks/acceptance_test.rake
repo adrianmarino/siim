@@ -12,6 +12,9 @@ task :stop_server do
 end
 
 Rake::TestTask.new :acceptance_test => [:start_server] do |a_task|
+  
+  Rake::Task["db:reset"].invoke
+
   a_task.libs << "test"
   a_task.test_files = FileList['test/acceptance/*_test.rb']
   a_task.verbose = false

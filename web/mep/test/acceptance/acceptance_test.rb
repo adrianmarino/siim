@@ -3,7 +3,7 @@ module AcceptanceTest
 	# Public Methods...
 	# -------------------------------------------------------------------------
   def setup
-  	reset
+  	# reset
     @driver = Selenium::WebDriver.for :firefox
     @driver.manage.timeouts.implicit_wait = 60
 
