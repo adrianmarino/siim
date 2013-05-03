@@ -1,0 +1,3 @@
+#!/bin/bash
+cd web/mep
+rake acceptance_test
