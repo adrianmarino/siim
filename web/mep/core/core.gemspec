@@ -7,11 +7,11 @@ require "core/version"
 Gem::Specification.new do |s|
   s.name        = "core"
   s.version     = Core::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Core."
-  s.description = "TODO: Description of Core."
+  s.authors     = ["Adrian Norberto Marino"]
+  s.email       = ["adrianmarino@gmail.com"]
+  s.homepage    = "nonosoft.com.ar"
+  s.summary     = "Reusable components."
+  s.description = "Reusable components."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
