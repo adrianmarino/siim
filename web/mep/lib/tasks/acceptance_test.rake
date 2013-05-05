@@ -1,8 +1,7 @@
 desc "Start Application Server with application on testing environment"
 task :start_server do
 	puts 'Start Application Server...'
-#	system('rails server --daemon --environment=test')
-	system('rails server --daemon')
+  system('rails server --daemon --environment=test')
 end
 
 desc "Stop Application Server"
