@@ -1,0 +1,11 @@
+#!/bin/bash
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+source ~/.rvm/scripts/rvm
+
+rvm use 1.9.3
+
+cd web/mep
+
+rake acceptance_test
