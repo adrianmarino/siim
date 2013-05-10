@@ -36,8 +36,9 @@ gem 'ruby_parser'
 # Test...
 group :development, :test do
 	gem 'mocha', :require => false
-	gem 'capybara'
 	gem 'factory_girl_rails'
+	gem 'headless'
+	gem 'capybara'
 	gem 'selenium-webdriver', '2.32.1'
 end
 
