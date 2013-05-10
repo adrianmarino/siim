@@ -1,11 +1,16 @@
 require "./test/acceptance/acceptance_test_presetation"
 
+# -------------------------------------------------------------------------
+# This module add acceptation test client to interact with the web 
+# application to test.
+# -------------------------------------------------------------------------
 module AcceptanceTest
   include AcceptanceTestPresetation
 
 	# -------------------------------------------------------------------------
 	# Public Methods...
 	# -------------------------------------------------------------------------
+
   def setup
     hide_test_output
     @driver = Selenium::WebDriver.for :firefox

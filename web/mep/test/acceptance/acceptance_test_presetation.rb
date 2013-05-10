@@ -1,10 +1,16 @@
 require 'headless'
 
+# -------------------------------------------------------------------------
+# This module has the responsibility of hide web browser during acceptance 
+# test. Usefull to use in regresion tests on jenkins continum integration
+# server.
+# -------------------------------------------------------------------------
 module AcceptanceTestPresetation
 
 	# -------------------------------------------------------------------------
 	# Public Methods...
 	# -------------------------------------------------------------------------
+
   def hide_test_output
   	if enable_hide
   		puts 'Hide test output...'
