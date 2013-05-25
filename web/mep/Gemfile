@@ -61,3 +61,4 @@ Net.instance_eval {remove_const :POP3Session} if defined?(Net::POP3Session)
 Net.instance_eval {remove_const :APOPSession} if defined?(Net::APOPSession)
 # ------------------------------------------------------------------------------
 
+gem 'rename'
