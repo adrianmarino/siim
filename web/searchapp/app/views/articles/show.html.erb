@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Título:</b>
+  <%= @article.title %>
+</p>
+
+<p>
+  <b>Contenido:</b>
+  <%= @article.content %>
+</p>
+
+<p>
+  <b>Publicado el:</b>
+  <%= @article.published_on %>
+</p>
+
+
+<%= link_to 'Editar', edit_article_path(@article) %> |
+<%= link_to 'Atrás', articles_path %>

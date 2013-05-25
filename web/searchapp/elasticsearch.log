@@ -1,0 +1,96 @@
+# 2013-05-12 02:16:08:949 [article/1] ("articles")
+#
+curl -X POST "http://localhost:9200/articles/article/1" -d '{"content":"Es raro que una persona que haya vivido en el barrio","published_on":"2013-05-12T05:16:08Z","title":"Uno"}'
+
+# 2013-05-12 02:16:08:949 [201]
+
+# 2013-05-12 02:16:09:395 [article/2] ("articles")
+#
+curl -X POST "http://localhost:9200/articles/article/2" -d '{"content":"madrileño de Lavapiés, en los años 50, no recuerde a","published_on":"2013-05-11T05:16:09Z","title":"Dos"}'
+
+# 2013-05-12 02:16:09:395 [201]
+
+# 2013-05-12 02:16:09:776 [article/3] ("articles")
+#
+curl -X POST "http://localhost:9200/articles/article/3" -d '{"content":"Gloria Domínguez Carpio. Era una mujer muy poco agraciada,","published_on":"2013-05-10T05:16:09Z","title":"Tres"}'
+
+# 2013-05-12 02:16:09:776 [201]
+
+# 2013-05-12 02:16:10:066 [article/4] ("articles")
+#
+curl -X POST "http://localhost:9200/articles/article/4" -d '{"content":"solterona y sin ningún pretendiente, se ganaba la vida ","published_on":"2013-05-09T05:16:10Z","title":"Cuatro"}'
+
+# 2013-05-12 02:16:10:066 [201]
+
+# 2013-05-12 02:16:10:357 [article/5] ("articles")
+#
+curl -X POST "http://localhost:9200/articles/article/5" -d '{"content":"fregando suelos, no tenía familiares cercanos ni amigos,","published_on":"2013-05-08T05:16:10Z","title":"Cinco"}'
+
+# 2013-05-12 02:16:10:357 [201]
+
+# 2013-05-12 02:16:10:659 [article/6] ("articles")
+#
+curl -X POST "http://localhost:9200/articles/article/6" -d '{"content":"su casa era una habitación sin ventanas y, en resumen, su ","published_on":"2013-05-07T05:16:10Z","title":"Seis"}'
+
+# 2013-05-12 02:16:10:659 [201]
+
+# 2013-05-12 02:16:10:916 [article/7] ("articles")
+#
+curl -X POST "http://localhost:9200/articles/article/7" -d '{"content":"existencia se limitaba a trabajar y a dormir, pero todos la","published_on":"2013-05-06T05:16:10Z","title":"Siete"}'
+
+# 2013-05-12 02:16:10:916 [201]
+
+# 2013-05-12 02:16:11:195 [article/8] ("articles")
+#
+curl -X POST "http://localhost:9200/articles/article/8" -d '{"content":"envidiaban. Se la veía feliz.","published_on":"2013-05-05T05:16:11Z","title":"Ocho"}'
+
+# 2013-05-12 02:16:11:195 [201]
+
+# 2013-05-12 02:16:11:443 [article/9] ("articles")
+#
+curl -X POST "http://localhost:9200/articles/article/9" -d '{"content":"Algunos de los que rozaron por instantes la vida de Gloria ","published_on":"2013-05-04T05:16:11Z","title":"Nueve"}'
+
+# 2013-05-12 02:16:11:443 [201]
+
+# 2013-05-12 02:16:11:722 [article/10] ("articles")
+#
+curl -X POST "http://localhost:9200/articles/article/10" -d '{"content":"no perdieron la oportunidad de preguntarle —con más indiscreción que sutileza—","published_on":"2013-05-03T05:16:11Z","title":"Diéz"}'
+
+# 2013-05-12 02:16:11:722 [201]
+
+# 2013-05-12 02:16:11:979 [article/11] ("articles")
+#
+curl -X POST "http://localhost:9200/articles/article/11" -d '{"content":"cuál era la razón de su desconcertante estado anímico. Y, palabras textuales de la","published_on":"2013-05-02T05:16:11Z","title":"Once"}'
+
+# 2013-05-12 02:16:11:979 [201]
+
+# 2013-05-12 02:16:12:247 [article/12] ("articles")
+#
+curl -X POST "http://localhost:9200/articles/article/12" -d '{"content":"señora Domínguez: La gente me tomaba por una jovencita loca, por una loca clínica","published_on":"2013-05-01T05:16:12Z","title":"Doce"}'
+
+# 2013-05-12 02:16:12:247 [201]
+
+# 2013-05-12 02:16:12:503 [article/13] ("articles")
+#
+curl -X POST "http://localhost:9200/articles/article/13" -d '{"content":"4","published_on":"2013-04-30T05:16:12Z","title":"4"}'
+
+# 2013-05-12 02:16:12:503 [201]
+
+# 2013-05-12 02:16:12:794 [article/14] ("articles")
+#
+curl -X POST "http://localhost:9200/articles/article/14" -d '{"content":"ear","published_on":"2013-04-29T05:16:12Z","title":"ear"}'
+
+# 2013-05-12 02:16:12:794 [201]
+
+# 2013-05-12 02:16:13:051 [article/15] ("articles")
+#
+curl -X POST "http://localhost:9200/articles/article/15" -d '{"content":"lid","published_on":"2013-04-28T05:16:13Z","title":"lid"}'
+
+# 2013-05-12 02:16:13:051 [201]
+
+# 2013-05-12 02:16:13:330 [article/16] ("articles")
+#
+curl -X POST "http://localhost:9200/articles/article/16" -d '{"content":"see","published_on":"2013-04-27T05:16:13Z","title":"see"}'
+
+# 2013-05-12 02:16:13:330 [201]
+

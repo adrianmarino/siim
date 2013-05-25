@@ -1,7 +1,14 @@
 syntax:glob
 models/qr.png
 web/mep/db/*.sqlite3
+web/searchapp/db/*.sqlite3
 
 syntax: regexp
 web/mep/tmp
 web/mep/log
+web/searchapp/tmp
+web/searchapp/log
+web/elasticsearch/logs
+web/elasticsearch/data
+web/elasticsearch/tmp
+
