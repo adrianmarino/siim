@@ -12,19 +12,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/search
   def search
-    if params[:q].empty?
-      @articles = Article.all 
-    else
-      string_query = lambda do |query|
-         query.string params[:q]
-      end
-      search = Tire.search 'articles' do
-          query &string_query
-          highlight :title, :content, :options => { :tag => '<strong class="highlight">' }
-      end
-      @articles = search.results
-    end
-
+    @articles =  Article.text_search params[:q]
     @search_action = true
     render :action => "index"
   end

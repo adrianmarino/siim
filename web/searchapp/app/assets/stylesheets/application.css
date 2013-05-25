@@ -11,8 +11,6 @@
  *= require_self
  *= require_tree .
  */
-
-
 .rounded-corners {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -21,4 +19,11 @@
   padding: 5px;
   border: solid 1px #ddd;
   background: #f8f8f8;
+}
+
+
+td { 
+	border-right: solid 1px;
+	border-bottom: solid 1px;
+	font-size: 14px;
 }

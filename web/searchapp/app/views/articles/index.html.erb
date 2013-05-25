@@ -26,11 +26,13 @@
         <tr>
           <td><%= article.id %></td>
 
+          <td>
           <% if article.respond_to?(:highlight) and !article.highlight.nil? and !article.highlight.title.nil?  %>
-            <td><%= raw article.highlight.title[0] %></td>
+            <%= raw article.highlight.title[0] %>
           <% else %>
-            <td><%= article.title %></td>
+            <%= article.title %>
           <% end %>
+          </td>
 
           <% if article.respond_to?(:highlight) and !article.highlight.nil? and !article.highlight.content.nil? %>
             <td><%= raw article.highlight.content[0] %></td>
@@ -45,7 +47,7 @@
           <% end %>
 
           <% if !defined?(@search_action) %>
-            <td><%= link_to 'Ver', article %>
+            <td style="width: 9%;"><%= link_to 'Ver', article %>
             <%= link_to 'Editar', edit_article_path(article) %>
             <%= link_to 'Borrar', article, method: :delete, data: { confirm: '¿Esta seguro?' } %></td>
           <% end %>
