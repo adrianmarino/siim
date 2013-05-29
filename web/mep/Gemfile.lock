@@ -138,6 +138,8 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    rename (0.0.6)
+      rails (>= 3.0.0)
     ruby_parser (3.1.1)
       sexp_processor (~> 4.1)
     rubyzip (0.9.9)
@@ -204,6 +206,7 @@ DEPENDENCIES
   mocha
   nested_form
   rails (= 3.2.11)
+  rename
   ruby_parser
   sass-rails (~> 3.2.3)
   selenium-webdriver (= 2.32.1)

@@ -43,7 +43,7 @@ group :development, :test do
 end
 
 # User custom nonosoft library...
-gem 'core', path: "./core"
+gem 'core', path: "core"
 
 # To use debugger...
 gem 'debugger'
