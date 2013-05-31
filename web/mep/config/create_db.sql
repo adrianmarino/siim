@@ -1,0 +1,3 @@
+CREATE DATABASE sim CHARACTER SET utf8;
+CREATE USER 'sim'@'localhost' IDENTIFIED BY '29042902';
+GRANT ALL PRIVILEGES ON sim.* TO 'sim'@'localhost';
