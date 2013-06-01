@@ -2,7 +2,7 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
-Mep::Application.initialize!
+Sim::Application.initialize!
 
 require 'tlsmail'
 Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
