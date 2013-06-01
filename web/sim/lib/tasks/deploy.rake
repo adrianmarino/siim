@@ -2,8 +2,8 @@ desc "Deploy to apache"
 task :redeploy do
 	Rake::Task["db:reset"].invoke
 
-	# apache_path = "/var/www/sim"
-	apache_path = "/home/adrian/var/www/sim"
+	apache_path = "/var/www/sim"
+	#apache_path = "/home/adrian/var/www/sim"
 
 	puts "Remove old version..."
 	system "rm -rf #{apache_path}/*"
