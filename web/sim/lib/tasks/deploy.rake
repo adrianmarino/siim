@@ -14,5 +14,6 @@ task :redeploy do
 	system "sleep 5"
 
 	puts "Restart application on apache..."
+	system "mkdir #{apache_path}/tmp"
 	system "touch #{apache_path}/tmp/restart.txt"
 end
