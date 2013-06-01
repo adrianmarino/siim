@@ -2,7 +2,7 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 es:
   app:
-    name: 'Sistema Integral Medico'
+    name: 'Sistema Integral Médico'
     author: '&copy; BAMBU Solutions 2013'
   data_table:
     paginate:
