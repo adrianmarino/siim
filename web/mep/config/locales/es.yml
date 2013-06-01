@@ -3,7 +3,7 @@
 es:
   app:
     name: 'Sistema Integral Medico'
-    author: '&copy; NONOSofT 2013'
+    author: '&copy; BAMBU Solutions 2013'
   data_table:
     paginate:
       first: "Primera"
