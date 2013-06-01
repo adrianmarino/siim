@@ -5,7 +5,7 @@ task :redeploy do
 	apache_path = "/var/www/sim"
 	#apache_path = "/home/adrian/var/www/sim"
 
-	puts "Remove old version..."
+	puts "Remove old version on apache docs path..."
 	system "rm -rf #{apache_path}/*"
 	system "sleep 5"
 
