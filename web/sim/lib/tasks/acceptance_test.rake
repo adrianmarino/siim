@@ -4,6 +4,7 @@ end
 
 task :reset_test_db do |t, args|
 	Rake::Task['db:reset'].invoke
+	Rake::Task['db:migrate'].invoke
 end
 
 Rake::TestTask.new :acceptance_test => [:reset_test_db, :start_test_server,:setup_display] do |a_task|
