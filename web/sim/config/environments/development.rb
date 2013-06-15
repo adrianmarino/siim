@@ -45,6 +45,6 @@ Sim::Application.configure do
     :user_name            => 'adrianmarino',
     :password             => 'R2D2lv3jg6',
     :authentication       => 'plain',
-    :enable_starttls_auto => true 
+    :enable_starttls_auto => true
   }
 end
