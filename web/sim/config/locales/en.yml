@@ -28,9 +28,6 @@ en:
   confirm: "Are you sure?"
   home: "Home"
   sign_up: "Sign Up"
-  first_name: "Firstname"
-  last_name: "Lastname
-  login: "DNI/Email"
   email: "Email"
   remember_me: "Remember me"
   password: "Password"
