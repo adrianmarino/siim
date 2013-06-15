@@ -1,7 +1,5 @@
 desc "Deploy to apache"
-task :redeploy do
-	Rake::Task["db:reset"].invoke
-
+task :redeploy => [:reset_db] do
 	apache_path = "/var/www/sim"
 	#apache_path = "/home/adrian/var/www/sim"
 
