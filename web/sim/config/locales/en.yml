@@ -4,6 +4,7 @@ en:
   app:
     name: 'Comprehensive Medical Information Service'
     author: '&copy; BAMBU Solutions 2013'
+
   data_table:
     paginate:
       first: "First"
@@ -18,6 +19,7 @@ en:
     search: "Apply filter _INPUT_ to table"
     zeroRecords: "No records to display"
     lengthMenu: "Display _MENU_ records"
+
   save_error: "%{entity_name} can not be saved because there are %{errors}:"
   login_as: "Login as"
   sign_out_question: "Are you sure you want to log out?"
@@ -26,6 +28,9 @@ en:
   confirm: "Are you sure?"
   home: "Home"
   sign_up: "Sign Up"
+  first_name: "Firstname"
+  last_name: "Lastname
+  login: "DNI/Email"
   email: "Email"
   remember_me: "Remember me"
   password: "Password"
@@ -67,13 +72,10 @@ en:
   unhappy: "unhappy?"
   my_info: "My information"
   sign_out: "Sing out"
+
   date:
       formats:
           default: '%m/%d/%Y'
-
-  activerecord:
-    models:
-      user: "User"
 
   actions:
     back:   "Back"
@@ -82,3 +84,25 @@ en:
     delete: "Delete"
     create: "Create"
     update: "Update"
+
+  activerecord:
+    models:
+      user: "User"
+    attributes:
+      user:
+        first_name: "Firstname"
+        last_name: "lLastname"
+        dni: "DNI"
+        email: "Email"
+    errors:
+      models:
+        user:
+          attributes:
+            first_name:
+              blank: "is required"
+            last_name:
+              blank: "is required"
+            dni:
+              blank: "is required"
+            email:
+              blank: "is required"

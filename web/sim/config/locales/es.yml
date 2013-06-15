@@ -4,6 +4,7 @@ es:
   app:
     name: 'Servicio Integral de Informacion Médica'
     author: '&copy; BAMBU Solutions 2013'
+
   data_table:
     paginate:
       first: "Primera"
@@ -18,14 +19,7 @@ es:
     search: "Aplicar el filtro _INPUT_ a la tabla"
     zeroRecords: "No hay filas para mostrar"
     lengthMenu: "Mostrar _MENU_ filas"
-  issue:
-    state:
-      new: "Nueva"
-      in_progress: "En Progreso"
-      stopped: "Parada"
-      resolved: "Resuelta"
-      rejected: "Rechazada"
-      closed: "Cerrada"
+
   save_error: "%{entity_name} no se puede guardar ya que hay %{errors}:"
   login_as: "Logueado como"
   sign_out_question: "¿Realmente desea salir?"
@@ -34,6 +28,10 @@ es:
   confirm: "¿Estas seguro?"
   home: "Inicio"
   sign_up: "Regístrate"
+  first_name: "Nombre"
+  last_name: "Apellido"
+  dni: "DNI"
+  login: "DNI/Correo Electronico"
   email: "Correo Electrónico"
   remember_me: "Recordar"
   password: "Contraseña"
@@ -49,10 +47,12 @@ es:
   sign_in_as_user: "Iniciar sesión como usuario"
   token_authentication_example: "Ejemplo de autenticación Token"
   send_me_reset_password_instructions: "Envíar instrucciones para restablecer mi contraseña"
+
   devise:
       registrations:
           user:
             inactive_signed_up: "Se ha registrado correctamente. Sin embargo, no puedes iniciar sesion debido a que tu cuenta esta %{reason}."
+
   change_your_password: "Cambie su contraseña"
   new_password: "Nueva contraseña"
   confirm_new_password: "Confirmar nueva contraseña"
@@ -79,13 +79,10 @@ es:
   unhappy: "¿Descontento?"
   my_info: "Mi información"
   sign_out: "Salir"
+
   date:
       formats:
           default: '%d/%m/%Y'
-
-  activerecord:
-    models:
-      user: "Usuario"
 
   actions:
     back:   "Atrás"
@@ -94,3 +91,25 @@ es:
     delete: "Borrar"
     create: "Crear"
     update: "Actualizar"
+
+  activerecord:
+    models:
+      user: "Usuario"
+    attributes:
+      user:
+        first_name: "Nombre"
+        last_name: "Apellido"
+        dni: "DNI"
+        email: "Correo electrónico"
+    errors:
+      models:
+        user:
+          attributes:
+            first_name:
+              blank: "es un campo requerido"
+            last_name:
+              blank: "es un campo requerido"
+            dni:
+              blank: "es un campo requerido"
+            email:
+              blank: "es un campo requerido"
