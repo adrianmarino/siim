@@ -9,7 +9,7 @@
           %li#fat-menu.dropdown.open
             %ul.nav.pull-right
               %li.dropdown
-                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button", "id"=>"session_menu"}
                   %i.icon-user.icon-white
                   = t :login_as
                   %b= current_user

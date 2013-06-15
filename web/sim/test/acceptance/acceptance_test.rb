@@ -1,9 +1,9 @@
-require "./test/acceptance/acceptance_test_presetation"
-
 # -------------------------------------------------------------------------
 # This module add acceptation test client to interact with the web 
 # application to test.
 # -------------------------------------------------------------------------
+require "./test/acceptance/test_helper"
+
 module AcceptanceTest
   include AcceptanceTestPresetation
 
@@ -15,8 +15,8 @@ module AcceptanceTest
     hide_test_output
     @driver = Selenium::WebDriver.for :firefox
     @driver.manage.timeouts.implicit_wait = 60
-
     @base_url = "http://localhost:3000"
+    
   end
 
   def teardown
