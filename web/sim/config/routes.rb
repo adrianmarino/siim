@@ -12,7 +12,7 @@ Sim::Application.routes.draw do
     :registration => 'register',
     :sign_up => 'cmon_let_me_in',
     :users => 'users'
-  }
+  }, :controllers => { :sessions => "SiimSession" }
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
