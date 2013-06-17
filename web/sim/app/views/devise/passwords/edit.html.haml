@@ -4,7 +4,7 @@
     = devise_error_messages!
     = f.hidden_field :reset_password_token
     %div
-      = f.label t(:password), t(:new_password)
+      = f.label User.human_attribute_name(:email), t(:new_password)
       = f.password_field :password
     %div
       = f.label t(:password_confirmation), t(:confirm_new_password)

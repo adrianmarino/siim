@@ -109,3 +109,5 @@ en:
               blank: "is required"
             password:
               too_short: "too short"
+            confirmation_token:
+              invalid: "invalid"

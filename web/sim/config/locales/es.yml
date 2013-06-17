@@ -111,3 +111,5 @@ es:
               blank: "es un campo requerido"
             password:
               too_short: "muy corta"
+            confirmation_token:
+              invalid: "invalido"

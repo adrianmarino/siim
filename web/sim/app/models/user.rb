@@ -19,12 +19,12 @@ class User < ActiveRecord::Base
 	# Attributes...
 	# -------------------------------------------------------------------------
 	attr_accessible :login, :first_name, :last_name, :dni, :email, :password, :password_confirmation, :remember_me
-	attr_accessor :login
+	attr_accessor :login, :confirmed_at, :unconfirmed_email
 
 	# -------------------------------------------------------------------------
 	# Authorization Attributes...
 	# -------------------------------------------------------------------------
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   # -------------------------------------------------------------------------
   # Validations...
