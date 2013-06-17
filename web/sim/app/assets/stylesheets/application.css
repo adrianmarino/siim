@@ -28,5 +28,5 @@
 }
 
 #flash_error { font-size: 15px; color: red;}
-#flash_alert { font-size: 15px; color: red;}
+#flash_alert { font-size: 15px; color: blue;}
 #flash_notice { font-size: 15px; color: blue;}

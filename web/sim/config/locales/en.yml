@@ -70,7 +70,7 @@ en:
   password_clarification: "(leave blank if you don't want to change it)"
   current_password_clarification: "(we need your current password to confirm your changes)"
   unhappy: "unhappy?"
-  my_info: "My information"
+  user_settings: "My Settings"
   sign_out: "Sing out"
 
   devise:

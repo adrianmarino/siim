@@ -75,7 +75,7 @@ es:
   password_clarification: "(Dejelo en blanco si no desea cambiarlo)"
   current_password_clarification: "(Su contraseña actual es necesaria para confirmar los cambios)"
   unhappy: "¿Descontento?"
-  my_info: "Mi información"
+  user_settings: "Mis Ajustes"
   sign_out: "Salir"
 
   date:
