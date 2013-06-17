@@ -3,8 +3,7 @@
   = form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
     = devise_error_messages!
     %div
-      = f.label t(:email)
-      %br/
+      = f.label User.human_attribute_name(:email)
       = f.email_field :email
     %div= f.submit t(:resend_confirmation_instructions), :class => "btn"
   = render "devise/shared/links"

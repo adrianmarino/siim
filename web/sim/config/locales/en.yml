@@ -91,9 +91,10 @@ en:
     attributes:
       user:
         first_name: "Firstname"
-        last_name: "lLastname"
+        last_name: "Lastname"
         dni: "DNI"
         email: "Email"
+        password: "Password"
     errors:
       models:
         user:

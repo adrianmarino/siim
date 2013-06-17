@@ -3,7 +3,6 @@
   = devise_error_messages!
   %div
     = f.label t(:email)
-    %br/
     = f.email_field :email
   %div= f.submit t(:resend_unlock_instructions), :class => "btn"
 = render "devise/shared/links"
