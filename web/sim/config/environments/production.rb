@@ -66,15 +66,4 @@ Sim::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   config.action_mailer.default_url_options = { :host => 'sim.bambusolutions.com.ar' }
-
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :domain               => 'gmail.com',
-    :user_name            => 'adrianmarino',
-    :password             => 'R2D2lv3jg6',
-    :authentication       => 'plain',
-    :enable_starttls_auto => true 
-  }
 end

@@ -101,6 +101,7 @@ es:
         last_name: "Apellido"
         dni: "DNI"
         email: "Correo electrónico"
+        password: "Contraseña"
     errors:
       models:
         user:
@@ -113,3 +114,5 @@ es:
               blank: "es un campo requerido"
             email:
               blank: "es un campo requerido"
+            password:
+              too_short: "muy corta"

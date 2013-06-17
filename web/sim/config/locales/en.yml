@@ -106,3 +106,5 @@ en:
               blank: "is required"
             email:
               blank: "is required"
+            password:
+              too_short: "too short"
