@@ -73,6 +73,11 @@ en:
   my_info: "My information"
   sign_out: "Sing out"
 
+  devise:
+    failure:
+      user:
+        not_found_in_database: "Not registered user!"
+
   date:
       formats:
           default: '%m/%d/%Y'

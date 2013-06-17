@@ -44,9 +44,12 @@ es:
   send_me_reset_password_instructions: "Envíar instrucciones para restablecer mi contraseña"
 
   devise:
-      registrations:
-          user:
-            inactive_signed_up: "Se ha registrado correctamente. Sin embargo, no puedes iniciar sesion debido a que tu cuenta esta %{reason}."
+    registrations:
+      user:
+        inactive_signed_up: "Se ha registrado correctamente. Sin embargo, no puedes iniciar sesion debido a que tu cuenta esta %{reason}."
+    failure:
+      user:
+        not_found_in_database: "El usuario no se encuentra registrado!"
 
   change_your_password: "Cambie su contraseña"
   new_password: "Nueva contraseña"
