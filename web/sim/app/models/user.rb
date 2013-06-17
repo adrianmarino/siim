@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 	# Attributes...
 	# -------------------------------------------------------------------------
 	attr_accessible :login, :first_name, :last_name, :dni, :email, :password, :password_confirmation, :remember_me
-	attr_accessor :login, :confirmed_at, :unconfirmed_email
+	attr_accessor :login
 
 	# -------------------------------------------------------------------------
 	# Authorization Attributes...
