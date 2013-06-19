@@ -1,0 +1,730 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Started GET "/login" for 127.0.0.1 at 2013-04-29 22:57:03 -0300
+Processing by Devise::SessionsController#new as HTML
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+  Rendered devise/shared/_links.haml (3.1ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (218.2ms)
+  Rendered application/_menu.html.haml (3.5ms)
+Completed 200 OK in 353ms (Views: 267.5ms | ActiveRecord: 2.5ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-04-29 22:57:04 -0300
+Compiled bootstrap-multiselect.css  (0ms)  (pid 32461)
+Compiled bootstrap-select.css  (0ms)  (pid 32461)
+Compiled twitter-bootstrap-static/bootstrap.css  (41ms)  (pid 32461)
+Compiled twitter-bootstrap-static/fontawesome.css  (11ms)  (pid 32461)
+Compiled bootstrap_and_overrides.css  (124ms)  (pid 32461)
+Compiled home.css  (160ms)  (pid 32461)
+Compiled bootstrap-datepicker.css  (0ms)  (pid 32461)
+Compiled dataTables/jquery.dataTables.bootstrap.css  (29ms)  (pid 32461)
+Compiled application.css  (332ms)  (pid 32461)
+Served asset /application.css - 200 OK (451ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-04-29 22:57:04 -0300
+Compiled jquery.js  (1ms)  (pid 32461)
+Compiled jquery_ujs.js  (0ms)  (pid 32461)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 32461)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 32461)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 32461)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 32461)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 32461)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 32461)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 32461)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 32461)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 32461)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 32461)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 32461)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 32461)
+Compiled twitter/bootstrap/bootstrap-affix.js  (0ms)  (pid 32461)
+Compiled twitter/bootstrap.js  (49ms)  (pid 32461)
+Compiled bootstrap-multiselect.js  (0ms)  (pid 32461)
+Compiled bootstrap-select.js  (0ms)  (pid 32461)
+Compiled bootstrap.js  (376ms)  (pid 32461)
+Compiled home.js  (105ms)  (pid 32461)
+Compiled bootstrap-datepicker/core.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.bg.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.br.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.ca.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.cs.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.da.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.de.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.el.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.es.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.fi.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.fr.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.he.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.hr.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.id.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.is.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.it.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.ja.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.kr.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.lt.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.lv.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.ms.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.nb.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.nl.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.pl.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.pt.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.ro.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.rs-latin.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.rs.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.ru.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.sk.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.sl.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.sv.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.sw.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.th.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.tr.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.uk.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.zh-TW.js  (0ms)  (pid 32461)
+Compiled bootstrap-datepicker/index.js  (78ms)  (pid 32461)
+Compiled dataTables/jquery.dataTables.js  (2ms)  (pid 32461)
+Compiled dataTables/jquery.dataTables.bootstrap.js  (0ms)  (pid 32461)
+Compiled i18n.js  (0ms)  (pid 32461)
+Compiled i18n/translations.js  (159ms)  (pid 32461)
+Compiled jquery_nested_form.js  (0ms)  (pid 32461)
+Compiled application.js  (900ms)  (pid 32461)
+Served asset /application.js - 200 OK (949ms)
+Started POST "/login" for 127.0.0.1 at 2013-04-29 22:57:07 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"adrianmarino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign In"}
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 41ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"adrianmarino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign In"}
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+  Rendered devise/shared/_links.haml (0.4ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (3.2ms)
+  Rendered application/_menu.html.haml (0.2ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2013-04-29 22:57:43 -0300
+Processing by Devise::SessionsController#new as HTML
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+  Rendered devise/shared/_links.haml (0.5ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (3.4ms)
+  Rendered application/_menu.html.haml (0.4ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-04-29 22:57:43 -0300
+Served asset /application.css - 200 OK (0ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-04-29 22:57:43 -0300
+Served asset /application.js - 200 OK (1ms)
+Started POST "/login" for 127.0.0.1 at 2013-04-29 22:57:45 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"adrianmarino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign In"}
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1
+Completed 401 Unauthorized in 1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"adrianmarino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign In"}
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+  Rendered devise/shared/_links.haml (0.5ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (3.5ms)
+  Rendered application/_menu.html.haml (0.5ms)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2013-04-29 23:03:13 -0300
+Processing by Devise::SessionsController#new as HTML
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+  Rendered devise/shared/_links.haml (0.5ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (3.2ms)
+  Rendered application/_menu.html.haml (0.3ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-04-29 23:03:14 -0300
+Served asset /application.css - 200 OK (0ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-04-29 23:03:14 -0300
+Compiled i18n/translations.js  (122ms)  (pid 32461)
+Compiled application.js  (22ms)  (pid 32461)
+Served asset /application.js - 200 OK (259ms)
+Started POST "/login" for 127.0.0.1 at 2013-04-29 23:03:16 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"adrianmarino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign In"}
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"adrianmarino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign In"}
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+  Rendered devise/shared/_links.haml (0.4ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (3.3ms)
+  Rendered application/_menu.html.haml (0.2ms)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2013-04-29 23:04:17 -0300
+Processing by Devise::SessionsController#new as HTML
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+  Rendered devise/shared/_links.haml (0.4ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (39.1ms)
+  Rendered application/_menu.html.haml (0.4ms)
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-04-29 23:04:17 -0300
+Served asset /application.css - 200 OK (0ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-04-29 23:04:17 -0300
+Compiled i18n/translations.js  (121ms)  (pid 32461)
+Compiled application.js  (22ms)  (pid 32461)
+Served asset /application.js - 200 OK (257ms)
+Started POST "/login" for 127.0.0.1 at 2013-04-29 23:04:19 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"adrianmarino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign In"}
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1
+Completed 401 Unauthorized in 1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"adrianmarino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign In"}
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+  Rendered devise/shared/_links.haml (0.5ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (3.3ms)
+  Rendered application/_menu.html.haml (0.2ms)
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2013-04-29 23:05:57 -0300
+Processing by Devise::SessionsController#new as HTML
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+  Rendered devise/shared/_links.haml (0.5ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (3.4ms)
+  Rendered application/_menu.html.haml (0.4ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-04-29 23:05:57 -0300
+Served asset /application.css - 200 OK (0ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-04-29 23:05:57 -0300
+Compiled i18n/translations.js  (122ms)  (pid 32461)
+Compiled application.js  (22ms)  (pid 32461)
+Served asset /application.js - 200 OK (297ms)
+Started POST "/login" for 127.0.0.1 at 2013-04-29 23:05:59 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"adrianmarino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"adrianmarino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+  Rendered devise/shared/_links.haml (0.5ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (3.5ms)
+  Rendered application/_menu.html.haml (0.2ms)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (2.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (287.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (244.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (267.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (267.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (289.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (245.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130426003905')
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.9ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (286.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (244.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (267.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (244.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (267.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (244.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130426003905')
+  [1m[36m (1.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 30 Apr 2013 03:53:18 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "adrianmarino@gmail.com"], ["encrypted_password", "$2a$04$rZ02Q8/uUbtMY.vI9F3YreyX6EMHI0BiPlyAxID8o6Ap03G8NnOLG"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 30 Apr 2013 03:53:18 UTC +00:00]]
+  [1m[36m (304.9ms)[0m  [1mcommit transaction[0m
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (1.6ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 30 Apr 2013 03:53:24 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "adrianmarino@gmail.com"], ["encrypted_password", "$2a$04$rpPa01RVMShWW5y5pGh17uG1ozePBBU7AZAFyUAszZDX/kOQLTwGa"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 30 Apr 2013 03:53:24 UTC +00:00]]
+  [1m[35m (418.5ms)[0m  commit transaction
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.8ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (263.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (244.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (267.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (267.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (289.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (268.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130426003905')
+  [1m[36m (1.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 30 Apr 2013 03:55:22 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "adrianmarino@gmail.com"], ["encrypted_password", "$2a$04$xzYzkYlHLLR08WKAiLIya..c8.mWQKFEbt6qwfmJCdoIzLsOVGflK"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 30 Apr 2013 03:55:22 UTC +00:00]]
+  [1m[36m (270.0ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (2.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (250.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (244.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (267.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (268.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (289.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (266.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130426003905')
+  [1m[36m (1.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 30 Apr 2013 03:56:17 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "adrianmarino@gmail.com"], ["encrypted_password", "$2a$04$zlobcWCHNZDygiscox7Nc.3OdstZQZ0ujEAzP4znrthUM7oYCfXQ2"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 30 Apr 2013 03:56:17 UTC +00:00]]
+  [1m[36m (259.9ms)[0m  [1mcommit transaction[0m
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (1.6ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (2.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (288.7ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (233.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (244.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (267.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (267.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (244.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130426003905')
+  [1m[36m (1.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 30 Apr 2013 03:58:22 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "adrianmarino@gmail.com"], ["encrypted_password", "$2a$04$nKzh3leuvVL1vRc46GNfYOw5f1tn2ziQV9KvD5aM.gAltm/eC0bFm"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 30 Apr 2013 03:58:22 UTC +00:00]]
+  [1m[36m (235.2ms)[0m  [1mcommit transaction[0m
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (1.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.8ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (291.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (244.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (267.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (267.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (289.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (266.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130426003905')
+  [1m[36m (1.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 30 Apr 2013 04:00:57 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "adrianmarino@gmail.com"], ["encrypted_password", "$2a$04$M/EaJk4oWrRuQU2iptYzbui1HlqJTRJe4AN9nfuX476xte8ImsywC"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 30 Apr 2013 04:00:57 UTC +00:00]]
+  [1m[36m (272.1ms)[0m  [1mcommit transaction[0m
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (1.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.8ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (311.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (233.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (278.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (255.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (300.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (244.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130426003905')
+  [1m[36m (1.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 30 Apr 2013 04:06:11 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "adrianmarino@gmail.com"], ["encrypted_password", "$2a$04$L3RPFWiOmwh1YI4J9cCeOeN.TCXwSUpfQbvnaurk.7VQKnWh.l1LC"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 30 Apr 2013 04:06:11 UTC +00:00]]
+  [1m[36m (271.8ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.9ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (303.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (233.5ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (244.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (233.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (278.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (233.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130426003905')
+  [1m[36m (1.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 30 Apr 2013 04:09:02 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "adrianmarino@gmail.com"], ["encrypted_password", "$2a$04$rI6vR/Ii.kDpa9gSn1VWhOqspyK9nMTKPh235Acn6TGX/cDXW/.yS"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 30 Apr 2013 04:09:02 UTC +00:00]]
+  [1m[36m (237.9ms)[0m  [1mcommit transaction[0m
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (1.6ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'mariano@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 30 Apr 2013 04:09:08 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "mariano@gmail.com"], ["encrypted_password", "$2a$04$oWOtfQGqU2RA7Yjq4oFvOutQXt3lFtjGBcmUR9OWBaJuRuGTCiY.y"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 30 Apr 2013 04:09:08 UTC +00:00]]
+  [1m[35m (274.7ms)[0m  commit transaction
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Started GET "/login" for 127.0.0.1 at 2013-04-30 01:14:27 -0300
+Processing by Devise::SessionsController#new as HTML
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+Completed 500 Internal Server Error in 73ms
+Connecting to database specified by database.yml
+Started GET "/" for 127.0.0.1 at 2013-04-30 01:15:34 -0300
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms
+Started GET "/login" for 127.0.0.1 at 2013-04-30 01:15:35 -0300
+Processing by Devise::SessionsController#new as HTML
+* Accept-Language: es,en;q=0.8
+* Locale set to 'es'
+Completed 500 Internal Server Error in 79ms
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (1.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'mariano@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 30 Apr 2013 04:18:44 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "mariano@gmail.com"], ["encrypted_password", "$2a$04$Kdi60fVvDhzuqARrOG2EA.5WrSBAIXoK3HUex92dqq60iJugSsBi."], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 30 Apr 2013 04:18:44 UTC +00:00]]
+  [1m[35m (290.1ms)[0m  commit transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (1.6ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'mariano@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 30 Apr 2013 04:24:57 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "mariano@gmail.com"], ["encrypted_password", "$2a$04$HV2SgTxtApMtwB2sxXt8d.6coNK45vyuF2KddtrZHJo4XQPW92p/y"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 30 Apr 2013 04:24:57 UTC +00:00]]
+  [1m[35m (948.3ms)[0m  commit transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (1.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'mariano@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 30 Apr 2013 04:27:41 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "mariano@gmail.com"], ["encrypted_password", "$2a$04$PQpJQ.u68dizRYwxs.8vWu.IAFq3NvnN79BCJYuHX6NriZQnO28X6"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 30 Apr 2013 04:27:41 UTC +00:00]]
+  [1m[35m (292.5ms)[0m  commit transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (1.6ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'mariano@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 01 May 2013 11:02:00 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "mariano@gmail.com"], ["encrypted_password", "$2a$04$DpH/2qN21mn8HivcrhZS7.z3GRVQP4rcLhsCzar1jXlYL4RHIoD9S"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 01 May 2013 11:02:00 UTC +00:00]]
+  [1m[35m (718.7ms)[0m  commit transaction
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (2.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (275.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (256.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (267.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (268.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (289.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (266.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130426003905')
+  [1m[36m (1.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 01 May 2013 11:26:15 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "adrianmarino@gmail.com"], ["encrypted_password", "$2a$04$Q3Hgdz5NHVJ.nJ89Q6SsO.CAFk7pTaFxeLLx0h6LE/6UonrpQqHZq"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 01 May 2013 11:26:15 UTC +00:00]]
+  [1m[36m (268.0ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.9ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (309.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (511.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (267.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (267.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (289.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (266.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130426003905')
+  [1m[36m (1.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 01 May 2013 11:35:15 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "adrianmarino@gmail.com"], ["encrypted_password", "$2a$04$1s59tAnnf3ZPVVED/5KGmutIAdnHekMOfPaviZIKmH9Adn2cBgDpa"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 01 May 2013 11:35:15 UTC +00:00]]
+  [1m[36m (259.5ms)[0m  [1mcommit transaction[0m
+Started GET "/login" for 127.0.0.1 at 2013-05-01 08:35:22 -0300
+Processing by Devise::SessionsController#new as HTML
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+  Rendered devise/shared/_links.haml (3.0ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (220.8ms)
+  Rendered application/_menu.html.haml (3.7ms)
+Completed 200 OK in 357ms (Views: 270.9ms | ActiveRecord: 2.5ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-05-01 08:35:23 -0300
+Compiled bootstrap-multiselect.css  (0ms)  (pid 9654)
+Compiled bootstrap-select.css  (0ms)  (pid 9654)
+Compiled twitter-bootstrap-static/bootstrap.css  (41ms)  (pid 9654)
+Compiled twitter-bootstrap-static/fontawesome.css  (10ms)  (pid 9654)
+Compiled bootstrap_and_overrides.css  (123ms)  (pid 9654)
+Compiled home.css  (6ms)  (pid 9654)
+Compiled bootstrap-datepicker.css  (0ms)  (pid 9654)
+Compiled dataTables/jquery.dataTables.bootstrap.css  (5ms)  (pid 9654)
+Compiled application.css  (153ms)  (pid 9654)
+Served asset /application.css - 200 OK (274ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-05-01 08:35:23 -0300
+Compiled jquery.js  (1ms)  (pid 9654)
+Compiled jquery_ujs.js  (0ms)  (pid 9654)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 9654)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 9654)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 9654)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 9654)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 9654)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 9654)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 9654)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 9654)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 9654)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 9654)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 9654)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 9654)
+Compiled twitter/bootstrap/bootstrap-affix.js  (0ms)  (pid 9654)
+Compiled twitter/bootstrap.js  (49ms)  (pid 9654)
+Compiled bootstrap-multiselect.js  (0ms)  (pid 9654)
+Compiled bootstrap-select.js  (0ms)  (pid 9654)
+Compiled bootstrap.js  (152ms)  (pid 9654)
+Compiled home.js  (102ms)  (pid 9654)
+Compiled bootstrap-datepicker/core.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.bg.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.br.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.ca.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.cs.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.da.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.de.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.el.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.es.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.fi.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.fr.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.he.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.hr.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.id.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.is.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.it.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.ja.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.kr.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.lt.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.lv.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.ms.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.nb.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.nl.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.pl.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.pt.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.ro.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.rs-latin.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.rs.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.ru.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.sk.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.sl.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.sv.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.sw.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.th.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.tr.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.uk.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/locales/bootstrap-datepicker.zh-TW.js  (0ms)  (pid 9654)
+Compiled bootstrap-datepicker/index.js  (113ms)  (pid 9654)
+Compiled dataTables/jquery.dataTables.js  (2ms)  (pid 9654)
+Compiled dataTables/jquery.dataTables.bootstrap.js  (0ms)  (pid 9654)
+Compiled i18n.js  (0ms)  (pid 9654)
+Error compiling asset application.js:
+ArgumentError: invalid byte sequence in US-ASCII
+  (in /home/adrian/.rvm/gems/ruby-1.9.3-p327@ruby-1.9.3/gems/i18n-js-2.1.2/vendor/assets/javascripts/i18n/translations.js.erb)
+Served asset /application.js - 500 Internal Server Error
+
+
+Started POST "/login" for 127.0.0.1 at 2013-05-01 08:35:25 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"adrianmarino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 41ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"adrianmarino@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+  Rendered devise/shared/_links.haml (0.5ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (3.6ms)
+  Rendered application/_menu.html.haml (0.3ms)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-05-01 08:35:26 -0300
+Error compiling asset application.js:
+ArgumentError: invalid byte sequence in US-ASCII
+  (in /home/adrian/.rvm/gems/ruby-1.9.3-p327@ruby-1.9.3/gems/i18n-js-2.1.2/vendor/assets/javascripts/i18n/translations.js.erb)
+Served asset /application.js - 500 Internal Server Error
+
+
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (2.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (261.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (235.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (255.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (255.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (300.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (255.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130426003905')
+  [1m[36m (1.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 01 May 2013 11:59:44 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "adrianmarino@gmail.com"], ["encrypted_password", "$2a$04$PgoYESqbjIDuePHR04ywf.OqC/BRm10Qb3lqS4beTrpG.NcpY2VAq"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 01 May 2013 11:59:44 UTC +00:00]]
+  [1m[36m (257.6ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.8ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (261.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (244.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (244.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (266.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (267.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (244.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130426003905')
+  [1m[36m (1.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 01 May 2013 12:02:37 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "adrianmarino@gmail.com"], ["encrypted_password", "$2a$04$PmPTKw0LuM56Gx.WOcaFD.oVbugvtLHhGa8weUqKdPyyadTo98pjS"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 01 May 2013 12:02:37 UTC +00:00]]
+  [1m[36m (263.6ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.8ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (253.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (244.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (267.1ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (267.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (289.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (267.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130426003905')
+  [1m[36m (1.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 01 May 2013 12:04:02 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "adrianmarino@gmail.com"], ["encrypted_password", "$2a$04$pQRGSwBgfPo.kVeLQ5T0JOyNPg9EO/qxwVlrDtU3VgCWRAzkIXH9K"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 01 May 2013 12:04:02 UTC +00:00]]
+  [1m[36m (273.1ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (26.8ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (265.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (355.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (256.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (278.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (267.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (255.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130426003905')
+  [1m[36m (1.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 01 May 2013 12:29:03 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "adrianmarino@gmail.com"], ["encrypted_password", "$2a$04$9eY07hEGBMRMTGHgUHffye9qJrvpTdi6Z4/XxTCGlaRtA3ycVJh76"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Wed, 01 May 2013 12:29:03 UTC +00:00]]
+  [1m[36m (261.6ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (27.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (290.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (244.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (267.4ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (266.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (289.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (266.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130426003905')
+  [1m[36m (1.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 01:02:21 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "adrianmarino@gmail.com"], ["encrypted_password", "$2a$04$svOkK0xINhubNIsYtX.KBOP4wnWFUHWdvRm4sZk8iLwEB1Pa9RpHi"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Thu, 02 May 2013 01:02:21 UTC +00:00]]
+  [1m[36m (485.3ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (27.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (263.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (324.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (267.5ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (256.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (300.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (255.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130426003905')
+  [1m[36m (1.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'adrianmarino@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 03 May 2013 03:22:27 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "adrianmarino@gmail.com"], ["encrypted_password", "$2a$04$2ZSIU1rGIl3F/4pHVWP3zuJvEaijsJDt4AgPYLDmuIw.8Ak9q5BMO"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 03 May 2013 03:22:27 UTC +00:00]]
+  [1m[36m (249.6ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.9ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (253.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "dni" varchar(255) DEFAULT '' NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (221.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_dni" ON "users" ("dni")[0m
+  [1m[35m (267.5ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (244.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (277.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (245.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (265.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130426003905')[0m
+  [1m[35m (2.6ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Started GET "/login" for 127.0.0.1 at 2013-06-15 12:55:47 -0300
+Processing by Devise::SessionsController#new as HTML
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+Completed 500 Internal Server Error in 76ms
+Started GET "/login" for 127.0.0.1 at 2013-06-15 12:56:31 -0300
+Processing by Devise::SessionsController#new as HTML
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+Completed 500 Internal Server Error in 2ms
+Started GET "/login" for 127.0.0.1 at 2013-06-15 12:57:49 -0300
+Processing by Devise::SessionsController#new as HTML
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+Completed 500 Internal Server Error in 2ms
+Connecting to database specified by database.yml
+Started GET "/login" for 127.0.0.1 at 2013-06-15 12:58:28 -0300
+Processing by Devise::SessionsController#new as HTML
+* Accept-Language: en-US,en;q=0.5
+* Locale set to 'en'
+Completed 500 Internal Server Error in 100ms
+Started DELETE "/logout" for 127.0.0.1 at 2013-06-15 13:25:14 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Zb+eWGVsgUkAGxgzRMrBnMfhuIaYBWl/79YvYdVJeAo="}
+* Accept-Language: es-ar,es;q=0.8,en-us;q=0.5,en;q=0.3
+* Locale set to 'es'
+Completed 500 Internal Server Error in 37ms
+Started GET "/" for 127.0.0.1 at 2013-06-15 13:25:17 -0300
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 1ms
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2013-06-15 20:21:41', '2013-06-15 20:21:41', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2013-06-15 20:21:41', '2013-06-15 20:21:41', 298486374)
+SQLite3::ConstraintException: column email is not unique: INSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2013-06-15 20:21:41', '2013-06-15 20:21:41', 298486374)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
