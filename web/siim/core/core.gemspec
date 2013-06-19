@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Core::VERSION
   s.authors     = ["Adrian Norberto Marino"]
   s.email       = ["adrianmarino@gmail.com"]
-  s.homepage    = "nonosoft.com.ar"
+  s.homepage    = "http://nonosoft.com.ar"
   s.summary     = "Reusable components."
   s.description = "Reusable components."
 

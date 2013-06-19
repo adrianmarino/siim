@@ -1,4 +1,4 @@
-Sim::Application.routes.draw do
+Siim::Application.routes.draw do
   mount Core::Engine, at: "/core"
 
   root :to => "home#index"
