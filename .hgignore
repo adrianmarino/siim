@@ -1,11 +1,11 @@
 syntax:glob
 models/qr.png
-web/sim/db/*.sqlite3
+web/siim/db/*.sqlite3
 web/searchapp/db/*.sqlite3
 
 syntax: regexp
-web/sim/tmp
-web/sim/log
+web/siim/tmp
+web/siim/log
 web/searchapp/tmp
 web/searchapp/log
 web/elasticsearch/logs
