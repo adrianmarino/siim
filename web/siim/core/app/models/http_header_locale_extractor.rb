@@ -33,10 +33,10 @@ class HTTPHeaderLocaleExtractor
   end
 
   def log_accept_language_http_attribute
-    logger.debug "* Accept-Language: #{@request.env['HTTP_ACCEPT_LANGUAGE']}"
+    logger.debug "<< Accept-Language: #{@request.env['HTTP_ACCEPT_LANGUAGE']} >>"
   end
 
   def log_selected_locale(aLocale)
-    logger.debug "* Locale set to '#{aLocale}'"
+    logger.debug "<< Locale set to '#{aLocale}' >>"
   end
 end

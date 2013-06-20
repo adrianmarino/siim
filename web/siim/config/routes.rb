@@ -12,7 +12,7 @@ Siim::Application.routes.draw do
     :registration => 'register',
     :sign_up => 'cmon_let_me_in',
     :users => 'users'
-  }, :controllers => { :sessions => "siim_session" }
+  }
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
