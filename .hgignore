@@ -1,7 +1,9 @@
 syntax:glob
 models/qr.png
 web/siim/db/*.sqlite3
+web/siim/db/schema.rb
 web/searchapp/db/*.sqlite3
+web/searchapp/db/schema.rb
 
 syntax: regexp
 web/siim/tmp

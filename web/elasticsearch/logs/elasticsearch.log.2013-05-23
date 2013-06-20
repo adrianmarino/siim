@@ -1,0 +1,213 @@
+[2013-05-23 00:24:35,737][INFO ][node                     ] [Cobra] {0.90.0}[4818]: initializing ...
+[2013-05-23 00:24:35,758][INFO ][plugins                  ] [Cobra] loaded [view-plugin, analysis-phonetic, analysis-icu], sites [inquisitor, browser, head]
+[2013-05-23 00:24:37,624][INFO ][node                     ] [Cobra] {0.90.0}[4818]: initialized
+[2013-05-23 00:24:37,624][INFO ][node                     ] [Cobra] {0.90.0}[4818]: starting ...
+[2013-05-23 00:24:37,701][INFO ][transport                ] [Cobra] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.2.201:9300]}
+[2013-05-23 00:24:40,729][INFO ][cluster.service          ] [Cobra] new_master [Cobra][EFaeCR2LSwOaqgSYQKwdtA][inet[/192.168.2.201:9300]], reason: zen-disco-join (elected_as_master)
+[2013-05-23 00:24:40,749][INFO ][discovery                ] [Cobra] elasticsearch/EFaeCR2LSwOaqgSYQKwdtA
+[2013-05-23 00:24:40,763][INFO ][http                     ] [Cobra] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.2.201:9200]}
+[2013-05-23 00:24:40,763][INFO ][node                     ] [Cobra] {0.90.0}[4818]: started
+[2013-05-23 00:24:41,451][INFO ][gateway                  ] [Cobra] recovered [1] indices into cluster_state
+[2013-05-23 00:31:15,285][DEBUG][action.view              ] [Cobra] [articles][2]: failed to execute [org.elasticsearch.action.view.ViewRequest@499a12ee]
+java.lang.NoSuchMethodError: org.elasticsearch.index.get.GetResult.exists()Z
+	at org.elasticsearch.action.view.TransportViewAction.shardOperation(TransportViewAction.java:120)
+	at org.elasticsearch.action.view.TransportViewAction.shardOperation(TransportViewAction.java:57)
+	at org.elasticsearch.action.support.single.shard.TransportShardSingleOperationAction$AsyncSingleAction$1.run(TransportShardSingleOperationAction.java:156)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+[2013-05-23 00:43:18,187][DEBUG][action.search.type       ] [Cobra] [articles][4], node[EFaeCR2LSwOaqgSYQKwdtA], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5fec264c]
+org.elasticsearch.search.SearchParseException: [articles][4]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query" : {"uno": {}},"highlight":{"order" : "score", "pre_tags" : ["<span class='highlight'>"],"post_tags" : ["</span>"],"fields":{"_all": {}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:234)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteQuery(SearchServiceTransportAction.java:141)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryThenFetchAction.java:80)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] No query registered for [uno]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:191)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-23 00:43:18,188][DEBUG][action.search.type       ] [Cobra] [articles][3], node[EFaeCR2LSwOaqgSYQKwdtA], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5fec264c]
+org.elasticsearch.search.SearchParseException: [articles][3]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query" : {"uno": {}},"highlight":{"order" : "score", "pre_tags" : ["<span class='highlight'>"],"post_tags" : ["</span>"],"fields":{"_all": {}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:234)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteQuery(SearchServiceTransportAction.java:141)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryThenFetchAction.java:80)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] No query registered for [uno]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:191)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-23 00:43:18,188][DEBUG][action.search.type       ] [Cobra] [articles][2], node[EFaeCR2LSwOaqgSYQKwdtA], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5fec264c]
+org.elasticsearch.search.SearchParseException: [articles][2]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query" : {"uno": {}},"highlight":{"order" : "score", "pre_tags" : ["<span class='highlight'>"],"post_tags" : ["</span>"],"fields":{"_all": {}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:234)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteQuery(SearchServiceTransportAction.java:141)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryThenFetchAction.java:80)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] No query registered for [uno]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:191)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-23 00:43:18,187][DEBUG][action.search.type       ] [Cobra] [articles][0], node[EFaeCR2LSwOaqgSYQKwdtA], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5fec264c]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query" : {"uno": {}},"highlight":{"order" : "score", "pre_tags" : ["<span class='highlight'>"],"post_tags" : ["</span>"],"fields":{"_all": {}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:234)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteQuery(SearchServiceTransportAction.java:141)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryThenFetchAction.java:80)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] No query registered for [uno]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:191)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-23 00:43:18,187][DEBUG][action.search.type       ] [Cobra] [articles][1], node[EFaeCR2LSwOaqgSYQKwdtA], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5fec264c]
+org.elasticsearch.search.SearchParseException: [articles][1]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query" : {"uno": {}},"highlight":{"order" : "score", "pre_tags" : ["<span class='highlight'>"],"post_tags" : ["</span>"],"fields":{"_all": {}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:234)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteQuery(SearchServiceTransportAction.java:141)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryThenFetchAction.java:80)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] No query registered for [uno]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:191)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-23 20:57:52,609][INFO ][node                     ] [Trick Shot] {0.90.0}[12393]: initializing ...
+[2013-05-23 20:57:52,943][INFO ][plugins                  ] [Trick Shot] loaded [view-plugin, analysis-phonetic, analysis-icu], sites [inquisitor, browser, head]
+[2013-05-23 20:57:58,024][INFO ][node                     ] [Trick Shot] {0.90.0}[12393]: initialized
+[2013-05-23 20:57:58,024][INFO ][node                     ] [Trick Shot] {0.90.0}[12393]: starting ...
+[2013-05-23 20:57:58,392][INFO ][transport                ] [Trick Shot] bound_address {inet[/0.0.0.0:9300]}, publish_address {inet[/192.168.2.201:9300]}
+[2013-05-23 20:58:01,487][INFO ][cluster.service          ] [Trick Shot] new_master [Trick Shot][p_IGav8dQuutKUKxE9PZ8g][inet[/192.168.2.201:9300]], reason: zen-disco-join (elected_as_master)
+[2013-05-23 20:58:01,524][INFO ][discovery                ] [Trick Shot] elasticsearch/p_IGav8dQuutKUKxE9PZ8g
+[2013-05-23 20:58:01,598][INFO ][http                     ] [Trick Shot] bound_address {inet[/0.0.0.0:9200]}, publish_address {inet[/192.168.2.201:9200]}
+[2013-05-23 20:58:01,598][INFO ][node                     ] [Trick Shot] {0.90.0}[12393]: started
+[2013-05-23 20:58:03,152][INFO ][gateway                  ] [Trick Shot] recovered [1] indices into cluster_state
+[2013-05-23 21:02:46,535][DEBUG][action.admin.indices.analyze] [Trick Shot] failed to execute [org.elasticsearch.action.admin.indices.analyze.AnalyzeRequest@6ef82fe7]
+org.elasticsearch.ElasticSearchIllegalArgumentException: failed to find global tokenizer under [snowball]
+	at org.elasticsearch.action.admin.indices.analyze.TransportAnalyzeAction.shardOperation(TransportAnalyzeAction.java:154)
+	at org.elasticsearch.action.admin.indices.analyze.TransportAnalyzeAction.shardOperation(TransportAnalyzeAction.java:57)
+	at org.elasticsearch.action.support.single.custom.TransportSingleCustomOperationAction$AsyncSingleAction$1.run(TransportSingleCustomOperationAction.java:142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+[2013-05-23 22:26:42,324][INFO ][cluster.metadata         ] [Trick Shot] [articles] deleting index
+[2013-05-23 22:26:42,488][INFO ][cluster.metadata         ] [Trick Shot] [articles] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2013-05-23 22:26:43,411][INFO ][cluster.metadata         ] [Trick Shot] [articles] update_mapping [article] (dynamic)
+[2013-05-23 22:29:18,727][DEBUG][action.admin.indices.analyze] [Trick Shot] failed to execute [org.elasticsearch.action.admin.indices.analyze.AnalyzeRequest@438b1699]
+org.elasticsearch.ElasticSearchIllegalArgumentException: failed to find global token filter under [standard]
+	at org.elasticsearch.action.admin.indices.analyze.TransportAnalyzeAction.shardOperation(TransportAnalyzeAction.java:171)
+	at org.elasticsearch.action.admin.indices.analyze.TransportAnalyzeAction.shardOperation(TransportAnalyzeAction.java:57)
+	at org.elasticsearch.action.support.single.custom.TransportSingleCustomOperationAction$AsyncSingleAction$1.run(TransportSingleCustomOperationAction.java:142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+[2013-05-23 22:33:12,337][DEBUG][action.admin.indices.analyze] [Trick Shot] failed to execute [org.elasticsearch.action.admin.indices.analyze.AnalyzeRequest@b7193fc]
+org.elasticsearch.ElasticSearchIllegalArgumentException: failed to find global token filter under [standard]
+	at org.elasticsearch.action.admin.indices.analyze.TransportAnalyzeAction.shardOperation(TransportAnalyzeAction.java:171)
+	at org.elasticsearch.action.admin.indices.analyze.TransportAnalyzeAction.shardOperation(TransportAnalyzeAction.java:57)
+	at org.elasticsearch.action.support.single.custom.TransportSingleCustomOperationAction$AsyncSingleAction$1.run(TransportSingleCustomOperationAction.java:142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+[2013-05-23 22:44:14,410][DEBUG][action.admin.indices.analyze] [Trick Shot] failed to execute [org.elasticsearch.action.admin.indices.analyze.AnalyzeRequest@18e2c931]
+org.elasticsearch.ElasticSearchIllegalArgumentException: failed to find global token filter under [standard]
+	at org.elasticsearch.action.admin.indices.analyze.TransportAnalyzeAction.shardOperation(TransportAnalyzeAction.java:171)
+	at org.elasticsearch.action.admin.indices.analyze.TransportAnalyzeAction.shardOperation(TransportAnalyzeAction.java:57)
+	at org.elasticsearch.action.support.single.custom.TransportSingleCustomOperationAction$AsyncSingleAction$1.run(TransportSingleCustomOperationAction.java:142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+[2013-05-23 22:44:50,208][INFO ][cluster.metadata         ] [Trick Shot] [articles] deleting index
+[2013-05-23 22:44:50,301][INFO ][cluster.metadata         ] [Trick Shot] [articles] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2013-05-23 22:44:51,248][INFO ][cluster.metadata         ] [Trick Shot] [articles] update_mapping [article] (dynamic)
+[2013-05-23 22:53:40,130][INFO ][cluster.metadata         ] [Trick Shot] [articles] deleting index
+[2013-05-23 22:53:53,731][INFO ][cluster.metadata         ] [Trick Shot] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-23 22:53:54,780][INFO ][cluster.metadata         ] [Trick Shot] [articles] deleting index
+[2013-05-23 22:53:54,830][INFO ][cluster.metadata         ] [Trick Shot] [articles] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2013-05-23 22:53:55,965][INFO ][cluster.metadata         ] [Trick Shot] [articles] update_mapping [article] (dynamic)
+[2013-05-23 23:02:42,532][INFO ][node                     ] [Nemesis] {0.90.0}[7055]: initializing ...
+[2013-05-23 23:02:42,855][INFO ][plugins                  ] [Nemesis] loaded [view-plugin, analysis-phonetic, analysis-icu], sites [inquisitor, browser, head]
+[2013-05-23 23:02:47,693][INFO ][node                     ] [Nemesis] {0.90.0}[7055]: initialized
+[2013-05-23 23:02:47,693][INFO ][node                     ] [Nemesis] {0.90.0}[7055]: starting ...
+[2013-05-23 23:02:47,870][INFO ][transport                ] [Nemesis] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.2.201:9300]}
+[2013-05-23 23:02:50,976][INFO ][cluster.service          ] [Nemesis] new_master [Nemesis][-NOu0vkGSuuubpInmakRog][inet[/192.168.2.201:9300]], reason: zen-disco-join (elected_as_master)
+[2013-05-23 23:02:51,012][INFO ][discovery                ] [Nemesis] elasticsearch/-NOu0vkGSuuubpInmakRog
+[2013-05-23 23:02:51,031][INFO ][http                     ] [Nemesis] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.2.201:9200]}
+[2013-05-23 23:02:51,031][INFO ][node                     ] [Nemesis] {0.90.0}[7055]: started
+[2013-05-23 23:02:52,387][INFO ][gateway                  ] [Nemesis] recovered [1] indices into cluster_state
+[2013-05-23 23:10:32,057][INFO ][node                     ] [Nemesis] {0.90.0}[7055]: stopping ...
+[2013-05-23 23:10:32,404][INFO ][node                     ] [Nemesis] {0.90.0}[7055]: stopped
+[2013-05-23 23:10:32,405][INFO ][node                     ] [Nemesis] {0.90.0}[7055]: closing ...
+[2013-05-23 23:10:32,546][INFO ][node                     ] [Nemesis] {0.90.0}[7055]: closed
+[2013-05-23 23:13:34,825][INFO ][node                     ] [Imperial Hydra] {0.90.0}[11175]: initializing ...
+[2013-05-23 23:13:34,846][INFO ][plugins                  ] [Imperial Hydra] loaded [view-plugin, analysis-phonetic, analysis-icu], sites [inquisitor, browser, head]
+[2013-05-23 23:13:36,748][INFO ][node                     ] [Imperial Hydra] {0.90.0}[11175]: initialized
+[2013-05-23 23:13:36,748][INFO ][node                     ] [Imperial Hydra] {0.90.0}[11175]: starting ...
+[2013-05-23 23:13:36,826][INFO ][transport                ] [Imperial Hydra] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.2.201:9300]}
+[2013-05-23 23:13:39,853][INFO ][cluster.service          ] [Imperial Hydra] new_master [Imperial Hydra][bYg2GLbhT-2sLb_tXcQr6Q][inet[/192.168.2.201:9300]], reason: zen-disco-join (elected_as_master)
+[2013-05-23 23:13:39,873][INFO ][discovery                ] [Imperial Hydra] elasticsearch/bYg2GLbhT-2sLb_tXcQr6Q
+[2013-05-23 23:13:39,888][INFO ][http                     ] [Imperial Hydra] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.2.201:9200]}
+[2013-05-23 23:13:39,888][INFO ][node                     ] [Imperial Hydra] {0.90.0}[11175]: started
+[2013-05-23 23:13:40,612][INFO ][gateway                  ] [Imperial Hydra] recovered [1] indices into cluster_state
+[2013-05-23 23:27:17,265][INFO ][cluster.metadata         ] [Imperial Hydra] [articles] deleting index
+[2013-05-23 23:27:17,416][INFO ][cluster.metadata         ] [Imperial Hydra] [articles] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2013-05-23 23:27:18,329][INFO ][cluster.metadata         ] [Imperial Hydra] [articles] update_mapping [article] (dynamic)
+[2013-05-23 23:28:54,092][INFO ][cluster.metadata         ] [Imperial Hydra] [articles] deleting index
+[2013-05-23 23:29:05,366][INFO ][cluster.metadata         ] [Imperial Hydra] [articles] creating index, cause [api], shards [5]/[1], mappings []
+[2013-05-23 23:29:48,338][INFO ][cluster.metadata         ] [Imperial Hydra] [articles] deleting index
+[2013-05-23 23:29:48,412][INFO ][cluster.metadata         ] [Imperial Hydra] [articles] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2013-05-23 23:29:49,317][INFO ][cluster.metadata         ] [Imperial Hydra] [articles] update_mapping [article] (dynamic)

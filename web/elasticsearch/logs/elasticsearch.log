@@ -1,0 +1,2157 @@
+[2013-05-24 00:05:16,291][INFO ][cluster.metadata         ] [Imperial Hydra] [articles] deleting index
+[2013-05-24 00:19:05,518][INFO ][node                     ] [Imperial Hydra] {0.90.0}[11175]: stopping ...
+[2013-05-24 00:19:05,530][INFO ][node                     ] [Imperial Hydra] {0.90.0}[11175]: stopped
+[2013-05-24 00:19:05,530][INFO ][node                     ] [Imperial Hydra] {0.90.0}[11175]: closing ...
+[2013-05-24 00:19:05,536][INFO ][node                     ] [Imperial Hydra] {0.90.0}[11175]: closed
+[2013-05-24 00:19:18,479][INFO ][node                     ] [Book] {0.90.0}[25631]: initializing ...
+[2013-05-24 00:19:18,500][INFO ][plugins                  ] [Book] loaded [view-plugin, analysis-phonetic, analysis-icu], sites [bigdesk, inquisitor, browser, head]
+[2013-05-24 00:19:20,328][INFO ][node                     ] [Book] {0.90.0}[25631]: initialized
+[2013-05-24 00:19:20,328][INFO ][node                     ] [Book] {0.90.0}[25631]: starting ...
+[2013-05-24 00:19:20,410][INFO ][transport                ] [Book] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.2.201:9300]}
+[2013-05-24 00:19:23,434][INFO ][cluster.service          ] [Book] new_master [Book][m0VahC77RqqPlQ2zFnmPsw][inet[/192.168.2.201:9300]], reason: zen-disco-join (elected_as_master)
+[2013-05-24 00:19:23,455][INFO ][discovery                ] [Book] elasticsearch/m0VahC77RqqPlQ2zFnmPsw
+[2013-05-24 00:19:23,472][INFO ][http                     ] [Book] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.2.201:9200]}
+[2013-05-24 00:19:23,472][INFO ][node                     ] [Book] {0.90.0}[25631]: started
+[2013-05-24 00:19:23,645][INFO ][gateway                  ] [Book] recovered [0] indices into cluster_state
+[2013-05-24 00:23:39,407][INFO ][cluster.metadata         ] [Book] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-24 00:26:49,544][INFO ][cluster.metadata         ] [Book] [articles] update_mapping [article] (dynamic)
+[2013-05-24 00:27:43,110][INFO ][cluster.metadata         ] [Book] [articles] deleting index
+[2013-05-24 00:27:43,197][INFO ][cluster.metadata         ] [Book] [articles] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2013-05-24 00:27:44,279][INFO ][cluster.metadata         ] [Book] [articles] update_mapping [article] (dynamic)
+[2013-05-24 00:28:37,338][INFO ][cluster.metadata         ] [Book] [articles] deleting index
+[2013-05-24 00:28:37,419][INFO ][cluster.metadata         ] [Book] [articles] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2013-05-24 00:28:38,276][INFO ][cluster.metadata         ] [Book] [articles] update_mapping [article] (dynamic)
+[2013-05-24 00:31:01,111][INFO ][cluster.metadata         ] [Book] [articles] update_mapping [article] (dynamic)
+[2013-05-24 00:31:31,600][INFO ][cluster.metadata         ] [Book] [articles] deleting index
+[2013-05-24 00:31:40,221][INFO ][cluster.metadata         ] [Book] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-24 00:43:18,923][INFO ][cluster.metadata         ] [Book] [articles] deleting index
+[2013-05-24 00:43:19,044][INFO ][cluster.metadata         ] [Book] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-24 00:46:09,325][DEBUG][action.search.type       ] [Book] [articles][0], node[m0VahC77RqqPlQ2zFnmPsw], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@330e1567]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"query_string":{"query":null}},"size":10}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] query_string must be provided with a [query]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:194)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-24 01:28:39,861][INFO ][cluster.metadata         ] [Book] [articles] deleting index
+[2013-05-24 01:28:39,946][INFO ][cluster.metadata         ] [Book] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-24 01:33:02,692][DEBUG][action.search.type       ] [Book] [articles][0], node[m0VahC77RqqPlQ2zFnmPsw], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@4b7d94f8]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"query_string":{"query":{}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] query_string must be provided with a [query]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:194)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-24 01:33:05,830][DEBUG][action.search.type       ] [Book] [articles][0], node[m0VahC77RqqPlQ2zFnmPsw], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@26f2f761]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"query_string":{"query":{}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] query_string must be provided with a [query]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:194)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-24 01:34:52,435][DEBUG][action.search.type       ] [Book] [articles][0], node[m0VahC77RqqPlQ2zFnmPsw], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@3ef29c65]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"query_string":{"query":{}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] query_string must be provided with a [query]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:194)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-24 01:34:53,308][DEBUG][action.search.type       ] [Book] [articles][0], node[m0VahC77RqqPlQ2zFnmPsw], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@456a5c7c]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"query_string":{"query":{}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] query_string must be provided with a [query]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:194)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-24 01:34:57,339][DEBUG][action.search.type       ] [Book] [articles][0], node[m0VahC77RqqPlQ2zFnmPsw], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@7b4b5d3f]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"query_string":{"query":{}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] query_string must be provided with a [query]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:194)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-24 01:36:35,662][DEBUG][action.search.type       ] [Book] [articles][0], node[m0VahC77RqqPlQ2zFnmPsw], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@27578210]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"query_string":{"query":{}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] query_string must be provided with a [query]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:194)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-24 01:36:36,563][DEBUG][action.search.type       ] [Book] [articles][0], node[m0VahC77RqqPlQ2zFnmPsw], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@35cf630a]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"query_string":{"query":{}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] query_string must be provided with a [query]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:194)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-24 01:36:39,570][DEBUG][action.search.type       ] [Book] [articles][0], node[m0VahC77RqqPlQ2zFnmPsw], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@6f6acce3]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"query_string":{"query":{}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] query_string must be provided with a [query]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:194)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-24 01:37:33,790][DEBUG][action.search.type       ] [Book] [articles][0], node[m0VahC77RqqPlQ2zFnmPsw], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@176fa1a5]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"query_string":{"query":"content: #<Proc:0x007ff96c016338@/home/adrian/Development/proyecto/search_engine/searchapp/app/controllers/articles_controller.rb:18 (lambda)>"}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [content: #<Proc:0x007ff96c016338@/home/adrian/Development/proyecto/search_engine/searchapp/app/controllers/articles_controller.rb:18 (lambda)>]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'content: #<Proc:0x007ff96c016338@/home/adrian/Development/proyecto/search_engine/searchapp/app/controllers/articles_controller.rb:18 (lambda)>': Encountered " ":" ": "" at line 1, column 15.
+Was expecting one of:
+    <EOF> 
+    <AND> ...
+    <OR> ...
+    <NOT> ...
+    "+" ...
+    "-" ...
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    "^" ...
+    <QUOTED> ...
+    <TERM> ...
+    <FUZZY_SLOP> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 17 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered " ":" ": "" at line 1, column 15.
+Was expecting one of:
+    <EOF> 
+    <AND> ...
+    <OR> ...
+    <NOT> ...
+    "+" ...
+    "-" ...
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    "^" ...
+    <QUOTED> ...
+    <TERM> ...
+    <FUZZY_SLOP> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:172)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 18 more
+[2013-05-24 01:37:37,074][DEBUG][action.search.type       ] [Book] [articles][0], node[m0VahC77RqqPlQ2zFnmPsw], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@44e70ff]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"query_string":{"query":"content: #<Proc:0x007ff974154800@/home/adrian/Development/proyecto/search_engine/searchapp/app/controllers/articles_controller.rb:18 (lambda)>"}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [content: #<Proc:0x007ff974154800@/home/adrian/Development/proyecto/search_engine/searchapp/app/controllers/articles_controller.rb:18 (lambda)>]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'content: #<Proc:0x007ff974154800@/home/adrian/Development/proyecto/search_engine/searchapp/app/controllers/articles_controller.rb:18 (lambda)>': Encountered " ":" ": "" at line 1, column 15.
+Was expecting one of:
+    <EOF> 
+    <AND> ...
+    <OR> ...
+    <NOT> ...
+    "+" ...
+    "-" ...
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    "^" ...
+    <QUOTED> ...
+    <TERM> ...
+    <FUZZY_SLOP> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 17 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered " ":" ": "" at line 1, column 15.
+Was expecting one of:
+    <EOF> 
+    <AND> ...
+    <OR> ...
+    <NOT> ...
+    "+" ...
+    "-" ...
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    "^" ...
+    <QUOTED> ...
+    <TERM> ...
+    <FUZZY_SLOP> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:172)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 18 more
+[2013-05-24 01:37:55,626][DEBUG][action.search.type       ] [Book] [articles][0], node[m0VahC77RqqPlQ2zFnmPsw], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@e6f205e]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"query_string":{"query":"content: #<Proc:0x007ff960383a90@/home/adrian/Development/proyecto/search_engine/searchapp/app/controllers/articles_controller.rb:18 (lambda)>"}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [content: #<Proc:0x007ff960383a90@/home/adrian/Development/proyecto/search_engine/searchapp/app/controllers/articles_controller.rb:18 (lambda)>]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'content: #<Proc:0x007ff960383a90@/home/adrian/Development/proyecto/search_engine/searchapp/app/controllers/articles_controller.rb:18 (lambda)>': Encountered " ":" ": "" at line 1, column 15.
+Was expecting one of:
+    <EOF> 
+    <AND> ...
+    <OR> ...
+    <NOT> ...
+    "+" ...
+    "-" ...
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    "^" ...
+    <QUOTED> ...
+    <TERM> ...
+    <FUZZY_SLOP> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 17 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered " ":" ": "" at line 1, column 15.
+Was expecting one of:
+    <EOF> 
+    <AND> ...
+    <OR> ...
+    <NOT> ...
+    "+" ...
+    "-" ...
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    "^" ...
+    <QUOTED> ...
+    <TERM> ...
+    <FUZZY_SLOP> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:172)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 18 more
+[2013-05-24 21:24:39,389][DEBUG][action.search.type       ] [Book] [articles][0], node[m0VahC77RqqPlQ2zFnmPsw], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@6a0bcf47]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"query_string":{"query":{}}},"highlight":{"fields":{"content":{}},"pre_tags":["<strong class=\"highlight\">"],"post_tags":["</strong>"]}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] query_string must be provided with a [query]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:194)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-25 12:57:22,992][INFO ][node                     ] [Rancor] {0.90.0}[5731]: initializing ...
+[2013-05-25 12:57:23,066][INFO ][plugins                  ] [Rancor] loaded [view-plugin, analysis-phonetic, analysis-icu], sites [bigdesk, inquisitor, browser, head]
+[2013-05-25 12:57:28,113][INFO ][node                     ] [Rancor] {0.90.0}[5731]: initialized
+[2013-05-25 12:57:28,113][INFO ][node                     ] [Rancor] {0.90.0}[5731]: starting ...
+[2013-05-25 12:57:28,374][INFO ][transport                ] [Rancor] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.2.201:9300]}
+[2013-05-25 12:57:31,479][INFO ][cluster.service          ] [Rancor] new_master [Rancor][CrFhyj4aRbe1fNFpv3cs5g][inet[/192.168.2.201:9300]], reason: zen-disco-join (elected_as_master)
+[2013-05-25 12:57:31,548][INFO ][discovery                ] [Rancor] elasticsearch/CrFhyj4aRbe1fNFpv3cs5g
+[2013-05-25 12:57:31,606][INFO ][http                     ] [Rancor] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.2.201:9200]}
+[2013-05-25 12:57:31,607][INFO ][node                     ] [Rancor] {0.90.0}[5731]: started
+[2013-05-25 12:57:31,868][INFO ][gateway                  ] [Rancor] recovered [0] indices into cluster_state
+[2013-05-25 12:58:09,219][INFO ][cluster.metadata         ] [Rancor] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-25 15:31:36,926][INFO ][cluster.metadata         ] [Rancor] [articles] deleting index
+[2013-05-25 15:31:37,290][WARN ][cluster.metadata         ] [Rancor] [articles] failed to create
+org.elasticsearch.index.mapper.MapperParsingException: mapping [article]
+	at org.elasticsearch.cluster.metadata.MetaDataCreateIndexService$1.execute(MetaDataCreateIndexService.java:286)
+	at org.elasticsearch.cluster.service.InternalClusterService$2.run(InternalClusterService.java:229)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:95)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.mapper.MapperParsingException: Wrong value for index [partial_name_analizer] for field [content]
+	at org.elasticsearch.index.mapper.core.TypeParsers.parseIndex(TypeParsers.java:187)
+	at org.elasticsearch.index.mapper.core.TypeParsers.parseField(TypeParsers.java:75)
+	at org.elasticsearch.index.mapper.core.StringFieldMapper$TypeParser.parse(StringFieldMapper.java:151)
+	at org.elasticsearch.index.mapper.object.ObjectMapper$TypeParser.parseProperties(ObjectMapper.java:263)
+	at org.elasticsearch.index.mapper.object.ObjectMapper$TypeParser.parse(ObjectMapper.java:219)
+	at org.elasticsearch.index.mapper.DocumentMapperParser.parse(DocumentMapperParser.java:176)
+	at org.elasticsearch.index.mapper.MapperService.parse(MapperService.java:383)
+	at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:193)
+	at org.elasticsearch.cluster.metadata.MetaDataCreateIndexService$1.execute(MetaDataCreateIndexService.java:283)
+	... 5 more
+[2013-05-25 15:31:37,509][INFO ][cluster.metadata         ] [Rancor] [articles] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2013-05-25 15:31:38,515][INFO ][cluster.metadata         ] [Rancor] [articles] update_mapping [article] (dynamic)
+[2013-05-25 15:35:33,418][INFO ][cluster.metadata         ] [Rancor] [articles] deleting index
+[2013-05-25 15:35:33,823][INFO ][cluster.metadata         ] [Rancor] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-25 15:56:02,673][INFO ][cluster.metadata         ] [Rancor] [articles] deleting index
+[2013-05-25 16:00:15,996][WARN ][cluster.metadata         ] [Rancor] [articles] failed to create
+org.elasticsearch.indices.IndexCreationException: [articles] failed to create index
+	at org.elasticsearch.indices.InternalIndicesService.createIndex(InternalIndicesService.java:382)
+	at org.elasticsearch.cluster.metadata.MetaDataCreateIndexService$1.execute(MetaDataCreateIndexService.java:263)
+	at org.elasticsearch.cluster.service.InternalClusterService$2.run(InternalClusterService.java:229)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:95)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: java.lang.IllegalArgumentException: Custom Analyzer [partial_name_analizer] failed to find filter under name [custom_ngrams]
+	at org.elasticsearch.index.analysis.CustomAnalyzerProvider.build(CustomAnalyzerProvider.java:75)
+	at org.elasticsearch.index.analysis.AnalysisService.<init>(AnalysisService.java:222)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at org.elasticsearch.common.inject.DefaultConstructionProxyFactory$1.newInstance(DefaultConstructionProxyFactory.java:54)
+	at org.elasticsearch.common.inject.ConstructorInjector.construct(ConstructorInjector.java:86)
+	at org.elasticsearch.common.inject.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:98)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:45)
+	at org.elasticsearch.common.inject.InjectorImpl.callInContext(InjectorImpl.java:819)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:42)
+	at org.elasticsearch.common.inject.Scopes$1$1.get(Scopes.java:56)
+	at org.elasticsearch.common.inject.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:45)
+	at org.elasticsearch.common.inject.SingleParameterInjector.inject(SingleParameterInjector.java:42)
+	at org.elasticsearch.common.inject.SingleParameterInjector.getAll(SingleParameterInjector.java:66)
+	at org.elasticsearch.common.inject.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at org.elasticsearch.common.inject.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:98)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:45)
+	at org.elasticsearch.common.inject.InjectorImpl.callInContext(InjectorImpl.java:819)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:42)
+	at org.elasticsearch.common.inject.Scopes$1$1.get(Scopes.java:56)
+	at org.elasticsearch.common.inject.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:45)
+	at org.elasticsearch.common.inject.SingleParameterInjector.inject(SingleParameterInjector.java:42)
+	at org.elasticsearch.common.inject.SingleParameterInjector.getAll(SingleParameterInjector.java:66)
+	at org.elasticsearch.common.inject.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at org.elasticsearch.common.inject.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:98)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:45)
+	at org.elasticsearch.common.inject.InjectorImpl.callInContext(InjectorImpl.java:819)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:42)
+	at org.elasticsearch.common.inject.Scopes$1$1.get(Scopes.java:56)
+	at org.elasticsearch.common.inject.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:45)
+	at org.elasticsearch.common.inject.SingleParameterInjector.inject(SingleParameterInjector.java:42)
+	at org.elasticsearch.common.inject.SingleParameterInjector.getAll(SingleParameterInjector.java:66)
+	at org.elasticsearch.common.inject.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at org.elasticsearch.common.inject.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:98)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:45)
+	at org.elasticsearch.common.inject.InjectorImpl.callInContext(InjectorImpl.java:819)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:42)
+	at org.elasticsearch.common.inject.Scopes$1$1.get(Scopes.java:56)
+	at org.elasticsearch.common.inject.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:45)
+	at org.elasticsearch.common.inject.SingleParameterInjector.inject(SingleParameterInjector.java:42)
+	at org.elasticsearch.common.inject.SingleParameterInjector.getAll(SingleParameterInjector.java:66)
+	at org.elasticsearch.common.inject.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at org.elasticsearch.common.inject.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:98)
+	at org.elasticsearch.common.inject.FactoryProxy.get(FactoryProxy.java:52)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:45)
+	at org.elasticsearch.common.inject.InjectorImpl.callInContext(InjectorImpl.java:819)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:42)
+	at org.elasticsearch.common.inject.Scopes$1$1.get(Scopes.java:56)
+	at org.elasticsearch.common.inject.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:45)
+	at org.elasticsearch.common.inject.SingleParameterInjector.inject(SingleParameterInjector.java:42)
+	at org.elasticsearch.common.inject.SingleParameterInjector.getAll(SingleParameterInjector.java:66)
+	at org.elasticsearch.common.inject.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at org.elasticsearch.common.inject.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:98)
+	at org.elasticsearch.common.inject.FactoryProxy.get(FactoryProxy.java:52)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:45)
+	at org.elasticsearch.common.inject.InjectorImpl.callInContext(InjectorImpl.java:819)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:42)
+	at org.elasticsearch.common.inject.Scopes$1$1.get(Scopes.java:56)
+	at org.elasticsearch.common.inject.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:45)
+	at org.elasticsearch.common.inject.InjectorBuilder$1.call(InjectorBuilder.java:200)
+	at org.elasticsearch.common.inject.InjectorBuilder$1.call(InjectorBuilder.java:193)
+	at org.elasticsearch.common.inject.InjectorImpl.callInContext(InjectorImpl.java:812)
+	at org.elasticsearch.common.inject.InjectorBuilder.loadEagerSingletons(InjectorBuilder.java:193)
+	at org.elasticsearch.common.inject.InjectorBuilder.injectDynamically(InjectorBuilder.java:175)
+	at org.elasticsearch.common.inject.InjectorBuilder.build(InjectorBuilder.java:110)
+	at org.elasticsearch.common.inject.InjectorImpl.createChildInjector(InjectorImpl.java:129)
+	at org.elasticsearch.common.inject.ModulesBuilder.createChildInjector(ModulesBuilder.java:66)
+	at org.elasticsearch.indices.InternalIndicesService.createIndex(InternalIndicesService.java:380)
+	... 6 more
+[2013-05-25 16:00:17,586][WARN ][cluster.metadata         ] [Rancor] [articles] failed to create
+org.elasticsearch.indices.IndexCreationException: [articles] failed to create index
+	at org.elasticsearch.indices.InternalIndicesService.createIndex(InternalIndicesService.java:382)
+	at org.elasticsearch.cluster.metadata.MetaDataCreateIndexService$1.execute(MetaDataCreateIndexService.java:263)
+	at org.elasticsearch.cluster.service.InternalClusterService$2.run(InternalClusterService.java:229)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:95)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: java.lang.IllegalArgumentException: Custom Analyzer [partial_name_analizer] failed to find filter under name [custom_ngrams]
+	at org.elasticsearch.index.analysis.CustomAnalyzerProvider.build(CustomAnalyzerProvider.java:75)
+	at org.elasticsearch.index.analysis.AnalysisService.<init>(AnalysisService.java:222)
+	at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at org.elasticsearch.common.inject.DefaultConstructionProxyFactory$1.newInstance(DefaultConstructionProxyFactory.java:54)
+	at org.elasticsearch.common.inject.ConstructorInjector.construct(ConstructorInjector.java:86)
+	at org.elasticsearch.common.inject.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:98)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:45)
+	at org.elasticsearch.common.inject.InjectorImpl.callInContext(InjectorImpl.java:819)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:42)
+	at org.elasticsearch.common.inject.Scopes$1$1.get(Scopes.java:56)
+	at org.elasticsearch.common.inject.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:45)
+	at org.elasticsearch.common.inject.SingleParameterInjector.inject(SingleParameterInjector.java:42)
+	at org.elasticsearch.common.inject.SingleParameterInjector.getAll(SingleParameterInjector.java:66)
+	at org.elasticsearch.common.inject.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at org.elasticsearch.common.inject.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:98)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:45)
+	at org.elasticsearch.common.inject.InjectorImpl.callInContext(InjectorImpl.java:819)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:42)
+	at org.elasticsearch.common.inject.Scopes$1$1.get(Scopes.java:56)
+	at org.elasticsearch.common.inject.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:45)
+	at org.elasticsearch.common.inject.SingleParameterInjector.inject(SingleParameterInjector.java:42)
+	at org.elasticsearch.common.inject.SingleParameterInjector.getAll(SingleParameterInjector.java:66)
+	at org.elasticsearch.common.inject.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at org.elasticsearch.common.inject.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:98)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:45)
+	at org.elasticsearch.common.inject.InjectorImpl.callInContext(InjectorImpl.java:819)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:42)
+	at org.elasticsearch.common.inject.Scopes$1$1.get(Scopes.java:56)
+	at org.elasticsearch.common.inject.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:45)
+	at org.elasticsearch.common.inject.SingleParameterInjector.inject(SingleParameterInjector.java:42)
+	at org.elasticsearch.common.inject.SingleParameterInjector.getAll(SingleParameterInjector.java:66)
+	at org.elasticsearch.common.inject.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at org.elasticsearch.common.inject.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:98)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:45)
+	at org.elasticsearch.common.inject.InjectorImpl.callInContext(InjectorImpl.java:819)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:42)
+	at org.elasticsearch.common.inject.Scopes$1$1.get(Scopes.java:56)
+	at org.elasticsearch.common.inject.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:45)
+	at org.elasticsearch.common.inject.SingleParameterInjector.inject(SingleParameterInjector.java:42)
+	at org.elasticsearch.common.inject.SingleParameterInjector.getAll(SingleParameterInjector.java:66)
+	at org.elasticsearch.common.inject.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at org.elasticsearch.common.inject.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:98)
+	at org.elasticsearch.common.inject.FactoryProxy.get(FactoryProxy.java:52)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:45)
+	at org.elasticsearch.common.inject.InjectorImpl.callInContext(InjectorImpl.java:819)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:42)
+	at org.elasticsearch.common.inject.Scopes$1$1.get(Scopes.java:56)
+	at org.elasticsearch.common.inject.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:45)
+	at org.elasticsearch.common.inject.SingleParameterInjector.inject(SingleParameterInjector.java:42)
+	at org.elasticsearch.common.inject.SingleParameterInjector.getAll(SingleParameterInjector.java:66)
+	at org.elasticsearch.common.inject.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at org.elasticsearch.common.inject.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:98)
+	at org.elasticsearch.common.inject.FactoryProxy.get(FactoryProxy.java:52)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:45)
+	at org.elasticsearch.common.inject.InjectorImpl.callInContext(InjectorImpl.java:819)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:42)
+	at org.elasticsearch.common.inject.Scopes$1$1.get(Scopes.java:56)
+	at org.elasticsearch.common.inject.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:45)
+	at org.elasticsearch.common.inject.InjectorBuilder$1.call(InjectorBuilder.java:200)
+	at org.elasticsearch.common.inject.InjectorBuilder$1.call(InjectorBuilder.java:193)
+	at org.elasticsearch.common.inject.InjectorImpl.callInContext(InjectorImpl.java:812)
+	at org.elasticsearch.common.inject.InjectorBuilder.loadEagerSingletons(InjectorBuilder.java:193)
+	at org.elasticsearch.common.inject.InjectorBuilder.injectDynamically(InjectorBuilder.java:175)
+	at org.elasticsearch.common.inject.InjectorBuilder.build(InjectorBuilder.java:110)
+	at org.elasticsearch.common.inject.InjectorImpl.createChildInjector(InjectorImpl.java:129)
+	at org.elasticsearch.common.inject.ModulesBuilder.createChildInjector(ModulesBuilder.java:66)
+	at org.elasticsearch.indices.InternalIndicesService.createIndex(InternalIndicesService.java:380)
+	... 6 more
+[2013-05-25 16:00:17,734][INFO ][cluster.metadata         ] [Rancor] [articles] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2013-05-25 16:00:18,552][INFO ][cluster.metadata         ] [Rancor] [articles] update_mapping [article] (dynamic)
+[2013-05-25 16:01:50,254][INFO ][cluster.metadata         ] [Rancor] [articles] deleting index
+[2013-05-25 16:01:50,591][INFO ][cluster.metadata         ] [Rancor] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-25 16:01:51,076][INFO ][cluster.metadata         ] [Rancor] [articles] update_mapping [article] (dynamic)
+[2013-05-25 16:03:16,652][INFO ][cluster.metadata         ] [Rancor] [articles] deleting index
+[2013-05-25 16:24:17,053][INFO ][cluster.metadata         ] [Rancor] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-25 16:24:17,393][INFO ][cluster.metadata         ] [Rancor] [articles] update_mapping [article] (dynamic)
+[2013-05-25 16:25:57,494][INFO ][cluster.metadata         ] [Rancor] [articles] deleting index
+[2013-05-25 16:25:57,583][INFO ][cluster.metadata         ] [Rancor] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-25 16:25:57,939][INFO ][cluster.metadata         ] [Rancor] [articles] update_mapping [article] (dynamic)
+[2013-05-25 16:27:42,204][INFO ][cluster.metadata         ] [Rancor] [articles] deleting index
+[2013-05-25 16:27:42,294][INFO ][cluster.metadata         ] [Rancor] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-25 16:27:42,755][INFO ][cluster.metadata         ] [Rancor] [articles] update_mapping [article] (dynamic)
+[2013-05-25 16:28:46,403][INFO ][cluster.metadata         ] [Rancor] [articles] deleting index
+[2013-05-25 16:28:46,492][INFO ][cluster.metadata         ] [Rancor] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-25 16:28:46,931][INFO ][cluster.metadata         ] [Rancor] [articles] update_mapping [article] (dynamic)
+[2013-05-25 16:33:31,983][INFO ][cluster.metadata         ] [Rancor] [articles] deleting index
+[2013-05-25 16:33:32,071][INFO ][cluster.metadata         ] [Rancor] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-25 16:33:32,525][INFO ][cluster.metadata         ] [Rancor] [articles] update_mapping [article] (dynamic)
+[2013-05-25 16:47:28,430][INFO ][cluster.metadata         ] [Rancor] [articles] deleting index
+[2013-05-25 16:47:28,521][INFO ][cluster.metadata         ] [Rancor] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-25 16:47:28,887][INFO ][cluster.metadata         ] [Rancor] [articles] update_mapping [article] (dynamic)
+[2013-05-25 16:57:10,499][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@6769ba97]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"content: ","bost":5}},{"query_string":{"query":"content.parcial: ","bost":1}},{"query_string":{"query":"content.partial_middle: ","bost":1}},{"query_string":{"query":"content.partial_back: ","bost":1}}]}},"highlight":{"fields":{"title":{},"content":{}},"pre_tags":["<strong class=\"highlight\">"],"post_tags":["</strong>"]}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] [query_string] query does not support [bost]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:189)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-25 16:57:11,231][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@3e48dea8]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"content: ","bost":5}},{"query_string":{"query":"content.parcial: ","bost":1}},{"query_string":{"query":"content.partial_middle: ","bost":1}},{"query_string":{"query":"content.partial_back: ","bost":1}}]}},"highlight":{"fields":{"title":{},"content":{}},"pre_tags":["<strong class=\"highlight\">"],"post_tags":["</strong>"]}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] [query_string] query does not support [bost]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:189)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-25 16:57:14,665][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5c1c49d4]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"content: ","bost":5}},{"query_string":{"query":"content.parcial: ","bost":1}},{"query_string":{"query":"content.partial_middle: ","bost":1}},{"query_string":{"query":"content.partial_back: ","bost":1}}]}},"highlight":{"fields":{"title":{},"content":{}},"pre_tags":["<strong class=\"highlight\">"],"post_tags":["</strong>"]}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] [query_string] query does not support [bost]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:189)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-25 16:57:43,558][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@513a3047]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"content:"}},{"query_string":{"query":"content.parcial:"}},{"query_string":{"query":"content.partial_middle:"}},{"query_string":{"query":"content.partial_back:"}}]}},"highlight":{"fields":{"title":{},"content":{}},"pre_tags":["<strong class=\"highlight\">"],"post_tags":["</strong>"]}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [content:]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'content:': Encountered "<EOF>" at line 1, column 8.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 19 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 8.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:276)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:182)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 20 more
+[2013-05-25 16:57:44,115][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@6b438186]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"content:"}},{"query_string":{"query":"content.parcial:"}},{"query_string":{"query":"content.partial_middle:"}},{"query_string":{"query":"content.partial_back:"}}]}},"highlight":{"fields":{"title":{},"content":{}},"pre_tags":["<strong class=\"highlight\">"],"post_tags":["</strong>"]}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [content:]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'content:': Encountered "<EOF>" at line 1, column 8.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 19 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 8.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:276)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:182)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 20 more
+[2013-05-25 16:57:44,382][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@6415d653]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"content:"}},{"query_string":{"query":"content.parcial:"}},{"query_string":{"query":"content.partial_middle:"}},{"query_string":{"query":"content.partial_back:"}}]}},"highlight":{"fields":{"title":{},"content":{}},"pre_tags":["<strong class=\"highlight\">"],"post_tags":["</strong>"]}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [content:]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'content:': Encountered "<EOF>" at line 1, column 8.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 19 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 8.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:276)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:182)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 20 more
+[2013-05-25 16:58:29,540][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@31a34f90]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"content:"}},{"query_string":{"query":"content.parcial:"}},{"query_string":{"query":"content.partial_middle:"}},{"query_string":{"query":"content.partial_back:"}}]}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [content:]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'content:': Encountered "<EOF>" at line 1, column 8.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 19 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 8.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:276)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:182)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 20 more
+[2013-05-25 16:59:49,573][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@12029d31]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"content:"}}]}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [content:]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'content:': Encountered "<EOF>" at line 1, column 8.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 19 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 8.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:276)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:182)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 20 more
+[2013-05-25 16:59:50,058][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@59b3beac]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"content:"}}]}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [content:]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'content:': Encountered "<EOF>" at line 1, column 8.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 19 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 8.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:276)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:182)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 20 more
+[2013-05-25 16:59:50,246][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@152dab50]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"content:"}}]}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [content:]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'content:': Encountered "<EOF>" at line 1, column 8.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 19 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 8.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:276)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:182)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 20 more
+[2013-05-25 17:07:50,811][INFO ][cluster.metadata         ] [Rancor] [articles] deleting index
+[2013-05-25 17:07:50,898][INFO ][cluster.metadata         ] [Rancor] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-25 17:07:51,221][INFO ][cluster.metadata         ] [Rancor] [articles] update_mapping [article] (dynamic)
+[2013-05-25 17:09:48,070][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5e20dc10]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"article.content:anos","boots":5}},{"query_string":{"query":"article.content.parcial:anos","boots":1}},{"query_string":{"query":"article.content.partial_middle:anos","boots":1}},{"query_string":{"query":"article.content.partial_back:anos","boots":1}}]}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] [query_string] query does not support [boots]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:189)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-25 17:09:50,757][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5e30e1c0]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"article.content:anos","boots":5}},{"query_string":{"query":"article.content.parcial:anos","boots":1}},{"query_string":{"query":"article.content.partial_middle:anos","boots":1}},{"query_string":{"query":"article.content.partial_back:anos","boots":1}}]}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] [query_string] query does not support [boots]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:189)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-25 17:14:42,665][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2119e04f]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"article.content.partial_back:","boost":1}}]}},"highlight":{"fields":{"title":{},"content":{}},"pre_tags":["<strong class=\"highlight\">"],"post_tags":["</strong>"]}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [article.content.partial_back:]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'article.content.partial_back:': Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 19 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:276)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:182)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 20 more
+[2013-05-25 17:14:47,680][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@31cc0c56]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"article.content.partial_back:","boost":1}}]}},"highlight":{"fields":{"title":{},"content":{}},"pre_tags":["<strong class=\"highlight\">"],"post_tags":["</strong>"]}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [article.content.partial_back:]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'article.content.partial_back:': Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 19 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:276)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:182)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 20 more
+[2013-05-25 17:17:56,848][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5a6164e]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"article.content.partial_back:","boost":1}}]}},"highlight":{"fields":{"title":{},"content":{}},"pre_tags":["<strong class=\"highlight\">"],"post_tags":["</strong>"]}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [article.content.partial_back:]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'article.content.partial_back:': Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 19 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:276)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:182)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 20 more
+[2013-05-25 17:18:15,809][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5c8d932f]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"article.content.partial_back:","boost":1}}]}},"highlight":{"fields":{"title":{},"content":{}},"pre_tags":["<strong class=\"highlight\">"],"post_tags":["</strong>"]}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [article.content.partial_back:]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'article.content.partial_back:': Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 19 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:276)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:182)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 20 more
+[2013-05-25 17:19:36,735][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@4bfbd4eb]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"article.content.partial_back:","boost":1}}]}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [article.content.partial_back:]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'article.content.partial_back:': Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 19 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:276)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:182)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 20 more
+[2013-05-25 17:19:37,297][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@304c885c]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"article.content.partial_back:","boost":1}}]}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [article.content.partial_back:]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'article.content.partial_back:': Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 19 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:276)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:182)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 20 more
+[2013-05-25 17:19:37,501][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5a25adb1]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"article.content.partial_back:","boost":1}}]}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [article.content.partial_back:]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'article.content.partial_back:': Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 19 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:276)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:182)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 20 more
+[2013-05-25 17:19:37,670][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@1fd05f97]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"article.content.partial_back:","boost":1}}]}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [article.content.partial_back:]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'article.content.partial_back:': Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 19 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:276)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:182)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 20 more
+[2013-05-25 17:20:10,159][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@88821c2]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"text":{"article.content.partial_back:":{"query":{"boost":1}}}}]}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] No text specified for text query
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:158)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-25 17:20:10,971][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@1dfe626f]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"text":{"article.content.partial_back:":{"query":{"boost":1}}}}]}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] No text specified for text query
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:158)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-25 17:20:11,128][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@24960b61]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"text":{"article.content.partial_back:":{"query":{"boost":1}}}}]}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] No text specified for text query
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:158)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-25 17:23:20,330][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5ca5503a]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"article.content.partial_back:","boost":1}}]}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [article.content.partial_back:]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'article.content.partial_back:': Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 19 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:276)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:182)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 20 more
+[2013-05-25 17:26:11,311][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@363d2386]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"article.content.partial_back:"}}]}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [article.content.partial_back:]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'article.content.partial_back:': Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 19 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:276)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:182)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 20 more
+[2013-05-25 17:26:11,901][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@565087b0]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"article.content.partial_back:"}}]}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] Failed to parse query [article.content.partial_back:]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:225)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse 'article.content.partial_back:': Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:126)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:213)
+	... 19 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 29.
+Was expecting one of:
+    <BAREOPER> ...
+    "(" ...
+    "*" ...
+    <QUOTED> ...
+    <TERM> ...
+    <PREFIXTERM> ...
+    <WILDTERM> ...
+    <REGEXPTERM> ...
+    "[" ...
+    "{" ...
+    <NUMBER> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:710)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:592)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:276)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:182)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:121)
+	... 20 more
+[2013-05-25 17:50:09,293][INFO ][cluster.metadata         ] [Rancor] [articles] deleting index
+[2013-05-25 17:50:09,383][INFO ][cluster.metadata         ] [Rancor] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-25 17:50:09,728][INFO ][cluster.metadata         ] [Rancor] [articles] update_mapping [article] (dynamic)
+[2013-05-25 18:25:28,624][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@53ddc692]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"text":{"article.content.partial_back:an":{"query":{"boost":1}}}}]}},"highlight":{"fields":{"content":{},"content.parcial":{},"content.partial_middle":{},"content.partial_back":{}},"pre_tags":["<strong class=\"highlight\">"],"post_tags":["</strong>"]}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] No text specified for text query
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:158)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-25 18:30:07,581][INFO ][cluster.metadata         ] [Rancor] [articles] deleting index
+[2013-05-25 18:30:07,666][INFO ][cluster.metadata         ] [Rancor] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-25 18:32:05,522][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@3e3b9b12]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"article.content:ano","boost":5,"type":"phrase"}}]}},"highlight":{"fields":{"content":{}},"pre_tags":["<strong class=\"highlight\">"],"post_tags":["</strong>"]}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] [query_string] query does not support [type]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:189)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-25 18:32:28,332][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@4db8738f]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"content:ano","boost":5,"type":"phrase"}}]}},"highlight":{"fields":{"content":{}},"pre_tags":["<strong class=\"highlight\">"],"post_tags":["</strong>"]}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] [query_string] query does not support [type]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:189)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-25 18:32:28,906][DEBUG][action.search.type       ] [Rancor] [articles][0], node[CrFhyj4aRbe1fNFpv3cs5g], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@44f0e58b]
+org.elasticsearch.search.SearchParseException: [articles][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"query":{"bool":{"should":[{"query_string":{"query":"content:ano","boost":5,"type":"phrase"}}]}},"highlight":{"fields":{"content":{}},"pre_tags":["<strong class=\"highlight\">"],"post_tags":["</strong>"]}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:573)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:484)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:469)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:462)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:306)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:243)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:75)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:205)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:192)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:178)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: org.elasticsearch.index.query.QueryParsingException: [articles] [query_string] query does not support [type]
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:189)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:105)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:193)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:272)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:250)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:561)
+	... 12 more
+[2013-05-25 18:35:11,835][INFO ][cluster.metadata         ] [Rancor] [articles] deleting index
+[2013-05-25 18:35:11,923][INFO ][cluster.metadata         ] [Rancor] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-25 18:47:19,784][INFO ][cluster.metadata         ] [Rancor] [articles] deleting index
+[2013-05-25 18:47:19,871][INFO ][cluster.metadata         ] [Rancor] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-25 18:49:13,204][INFO ][cluster.metadata         ] [Rancor] [articles] deleting index
+[2013-05-25 18:50:08,262][INFO ][cluster.metadata         ] [Rancor] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-25 18:50:56,886][INFO ][cluster.metadata         ] [Rancor] [articles] deleting index
+[2013-05-25 18:52:10,107][INFO ][cluster.metadata         ] [Rancor] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
+[2013-05-25 18:53:56,199][INFO ][cluster.metadata         ] [Rancor] [articles] deleting index
+[2013-05-25 18:53:56,419][INFO ][cluster.metadata         ] [Rancor] [articles] creating index, cause [api], shards [1]/[1], mappings [article]
