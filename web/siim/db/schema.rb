@@ -14,15 +14,18 @@
 ActiveRecord::Schema.define(:version => 20130629123345) do
 
   create_table "medicals", :force => true do |t|
-    t.string   "cuil"
-    t.string   "dni"
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "email"
-    t.string   "specialization"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.string "cuil",           :default => "", :null => false
+    t.string "dni",            :default => "", :null => false
+    t.string "firstname",      :default => "", :null => false
+    t.string "lastname",       :default => "", :null => false
+    t.string "email"
+    t.string "specialization", :default => "", :null => false
+    t.string "home_phone",     :default => "", :null => false
+    t.string "movile_phone",   :default => "", :null => false
   end
+
+  add_index "medicals", ["cuil"], :name => "index_medicals_on_cuil", :unique => true
+  add_index "medicals", ["dni"], :name => "index_medicals_on_dni", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

@@ -8,5 +8,7 @@ FactoryGirl.define do
     lastname "MyString"
     email "MyString"
     specialization "MyString"
+    home_phone "MyString"
+    movile_phone "MyString"
   end
 end

@@ -109,6 +109,8 @@ es:
         last_name: "Apellido"
         email: "Correo electrónico"
         specialization: "Especiazación"
+        home_phone: "Teléfono Fijo"
+        movile_phone: "Teléfono Movil"
     errors:
       models:
         user:
@@ -136,6 +138,10 @@ es:
             email:
               blank: "es un campo requerido"
             specialization:
+              blank: "es un campo requerido"
+            home_phone:
+              blank: "es un campo requerido"
+            movile_phone:
               blank: "es un campo requerido"
     successful:
       messages:
