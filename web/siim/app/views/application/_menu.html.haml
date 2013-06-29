@@ -5,18 +5,23 @@
         %span.icon-align-justify
       %a.brand{:href => "#"}=t 'app.name'
       - if user_signed_in?
-        %ul.nav.pull-right
-          %li#fat-menu.dropdown.open
-            %ul.nav.pull-right
-              %li.dropdown
-                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button", "id"=>"session_menu"}
-                  %i.icon-user.icon-white
-                  = t :login_as
-                  %b= current_user
-                  %b.caret
-                %ul.dropdown-menu{"aria-labelledby" => "dLabel", :role => "menu"}
-                  %li
-                    = link_to raw("<i class=\"icon-info-sign icon-white\">&nbsp;&nbsp;</i>#{t(:user_settings)}"), edit_user_registration_path, "tabindex" => "-1"
-                  %li.divider
-                  %li
-                    = link_to raw("<i class=\"icon-off icon-white\">&nbsp;&nbsp;</i>#{t(:sign_out)}"),"#myModal", "tabindex" => "-1", "data-toggle" =>"modal"
+        .nav-collapse.collapse
+          %ul.nav{:role => "navigation"}
+            %li
+              = link_to raw("<i class=\"icon-search icon-white\">&nbsp;&nbsp;</i>#{t('menu.medicals')}"), medicals_path, "tabindex" => "-1"
+              
+          %ul.nav.pull-right
+            %li#fat-menu.dropdown.open
+              %ul.nav.pull-right
+                %li.dropdown
+                  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button", "id"=>"session_menu"}
+                    %i.icon-user.icon-white
+                    = t :login_as
+                    %b= current_user
+                    %b.caret
+                  %ul.dropdown-menu{"aria-labelledby" => "dLabel", :role => "menu"}
+                    %li
+                      = link_to raw("<i class=\"icon-info-sign icon-white\">&nbsp;&nbsp;</i>#{t(:user_settings)}"), edit_user_registration_path, "tabindex" => "-1"
+                    %li.divider
+                    %li
+                      = link_to raw("<i class=\"icon-off icon-white\">&nbsp;&nbsp;</i>#{t(:sign_out)}"),"#myModal", "tabindex" => "-1", "data-toggle" =>"modal"

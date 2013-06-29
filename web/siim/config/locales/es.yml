@@ -157,3 +157,5 @@ es:
     submit:
       create: "Crear %{model}"
       update: "Actualizar %{model}"
+  menu:
+    medicals: "Médicos"

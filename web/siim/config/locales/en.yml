@@ -142,3 +142,5 @@ en:
       edit: "Edit Medical"
       show: "Medical Detail"
       list: "Medicals"
+  menu:
+    medicals: "Medicals"
