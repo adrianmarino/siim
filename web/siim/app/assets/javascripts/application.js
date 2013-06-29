@@ -78,28 +78,28 @@ $(document).ready(function() {
     $(".selectpicker").selectpicker();
     $(".multiselect").multiselect({"none": "select something..."});
 
-	$('#list').dataTable({
-	  "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
-	  "sPaginationType": "bootstrap",
-	  "aoColumns": tableColumnSortdDefinicion(),
-	  "oLanguage": {
-		  "oPaginate": {
-			  "sFirst": I18n.t("data_table.paginate.first"),
-			  "sLast": I18n.t("data_table.paginate.last"),
-			  "sNext": I18n.t("data_table.paginate.next"),
-			  "sPrevious": I18n.t("data_table.paginate.previous")
-		  },
-		  "sEmptyTable": I18n.t("data_table.emptyTable"),
-		  "sInfo": I18n.t("data_table.info"),
-		  "sInfoEmpty": I18n.t("data_table.infoEmpty"),
-		  "sInfoFiltered": I18n.t("data_table.infoFiltered"),
-		  "sInfoPostFix": I18n.t("data_table.infoPostFix"),
-		  "sSearch": I18n.t("data_table.search"),
-		  "sZeroRecords": I18n.t("data_table.zeroRecords"),
-		  "sLengthMenu": I18n.t("data_table.lengthMenu")
-	  }
-	});
-	$(".sorting:last").removeClass("sorting");
+    $('#list').dataTable({
+        "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+        "sPaginationType": "bootstrap",
+        "aoColumns": tableColumnSortdDefinicion(),
+        "oLanguage": {
+            "oPaginate": {
+                "sFirst": I18n.t("data_table.paginate.first"),
+                "sLast": I18n.t("data_table.paginate.last"),
+                "sNext": I18n.t("data_table.paginate.next"),
+                "sPrevious": I18n.t("data_table.paginate.previous")
+            },
+            "sEmptyTable": I18n.t("data_table.emptyTable"),
+            "sInfo": I18n.t("data_table.info"),
+            "sInfoEmpty": I18n.t("data_table.infoEmpty"),
+            "sInfoFiltered": I18n.t("data_table.infoFiltered"),
+            "sInfoPostFix": I18n.t("data_table.infoPostFix"),
+            "sSearch": I18n.t("data_table.search"),
+            "sZeroRecords": I18n.t("data_table.zeroRecords"),
+            "sLengthMenu": I18n.t("data_table.lengthMenu")
+        }
+    });
+    $(".sorting:last").removeClass("sorting");
 });
 
 $(document).on('nested:fieldAdded', function(event){
@@ -107,3 +107,4 @@ $(document).on('nested:fieldAdded', function(event){
   var remove_button = field.find('.remove_nested_fields');
   remove_button.addClass('btn');
 });
+

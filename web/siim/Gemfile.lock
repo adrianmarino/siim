@@ -1,3 +1,27 @@
+GIT
+  remote: git://github.com/Nerian/bootstrap-datepicker-rails.git
+  revision: 2780818f4f3fb709e43a05b8c5313a3a82f5fac6
+  specs:
+    bootstrap-datepicker-rails (1.1.1.1)
+      railties (>= 3.0)
+
+GIT
+  remote: git://github.com/rweng/jquery-datatables-rails.git
+  revision: 494f752b8eb8350f33841c822a67d014c869219f
+  specs:
+    jquery-datatables-rails (1.11.2)
+      jquery-rails
+
+GIT
+  remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
+  revision: 9a0a31096ecee572638132d5ed94bc5500f74330
+  specs:
+    twitter-bootstrap-rails (2.2.7)
+      actionpack (>= 3.1)
+      execjs
+      rails (>= 3.1)
+      railties (>= 3.1)
+
 PATH
   remote: ./core
   specs:
@@ -36,8 +60,6 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
-    bootstrap-datepicker-rails (0.6.36)
-      railties (>= 3.0)
     builder (3.0.4)
     cancan (1.6.8)
     capybara (2.0.2)
@@ -94,8 +116,6 @@ GEM
     i18n-js (2.1.2)
       i18n
     journey (1.0.4)
-    jquery-datatables-rails (1.11.2)
-      jquery-rails
     jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -171,10 +191,6 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    twitter-bootstrap-rails (2.2.0)
-      actionpack (>= 3.1)
-      execjs
-      railties (>= 3.1)
     tzinfo (0.3.37)
     uglifier (2.0.1)
       execjs (>= 0.3.0)
@@ -189,7 +205,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-datepicker-rails
+  bootstrap-datepicker-rails!
   cancan
   capybara
   coffee-rails (~> 3.2.1)
@@ -202,7 +218,7 @@ DEPENDENCIES
   headless
   hpricot
   i18n-js
-  jquery-datatables-rails
+  jquery-datatables-rails!
   jquery-rails
   mocha
   mysql (= 2.8.1)
@@ -215,5 +231,5 @@ DEPENDENCIES
   sqlite3
   thin
   tlsmail
-  twitter-bootstrap-rails
+  twitter-bootstrap-rails!
   uglifier (>= 1.0.3)

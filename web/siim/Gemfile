@@ -8,9 +8,9 @@ gem 'mysql', '2.8.1'
 # View...
 gem 'haml-rails'
 gem 'jquery-rails'
-gem 'twitter-bootstrap-rails' #, :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-gem 'bootstrap-datepicker-rails' #,  :require => 'bootstrap-datepicker-rails', :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
-gem 'jquery-datatables-rails'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'bootstrap-datepicker-rails',  :require => 'bootstrap-datepicker-rails', :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 gem 'i18n-js'
 gem 'nested_form'
 
@@ -36,11 +36,11 @@ gem 'ruby_parser'
 
 # Test...
 group :development, :test do
-	gem 'mocha', :require => false
-	gem 'factory_girl_rails'
-	gem 'headless'
-	gem 'capybara'
-	gem 'selenium-webdriver', '2.32.1'
+  gem 'mocha', :require => false
+  gem 'factory_girl_rails'
+  gem 'headless'
+  gem 'capybara'
+  gem 'selenium-webdriver', '2.32.1'
 end
 
 # User custom nonosoft library...
