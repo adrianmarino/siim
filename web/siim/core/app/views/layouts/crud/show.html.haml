@@ -1,0 +1,7 @@
+- content_for :content do
+  %p#notice= notice
+  %table.table.table-hover.table-bordered
+    = yield
+  .btn-toolbar
+  = back_button list_path
+= render :file => 'layouts/application'

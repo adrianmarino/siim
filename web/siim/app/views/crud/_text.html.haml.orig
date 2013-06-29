@@ -1,3 +1,0 @@
-.field
-  = f.label translate_attribute(@entity_name,name)
-  = f.text_field name, "data-provide" =>"typeahead", :class => style_class

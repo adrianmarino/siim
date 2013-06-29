@@ -1,0 +1,25 @@
+- content_for :content do
+  .page-header
+    %h3= t "title.#{@entity_name}.list"
+  - if not @hide_create_action
+    .btn-toolbar
+      = create_button create_path
+  %br/
+  %table#list.table.table-striped.table-bordered{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+    %thead
+      = yield :table_header
+      %th.options= t :options
+    %tbody
+      - eval(variable_name(@plural_entity_name)).each do |entity|
+        %tr
+          = render :partial => "#{@plural_entity_name}/table_row", :locals => { eval(":#{@entity_name}") => entity }
+          %td.options
+            .btn-group
+              - if not @hide_view_action
+                = view_button(entity)
+              - if not @hide_edit_action
+                = edit_button edit_path(entity)
+              - if not @hide_remove_action
+                = remove_button(entity)
+              
+= render :file => 'layouts/application'

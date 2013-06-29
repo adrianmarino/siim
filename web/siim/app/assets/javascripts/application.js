@@ -22,3 +22,88 @@
 //= require bootstrap-select
 //= require bootstrap-multiselect
 //= require jquery_nested_form
+
+
+$(document).on("focus", "[data-behaviour~='datepicker']", function(e){
+    $(this).datepicker({"format": "yyyy-mm-dd", "weekStart": 1, "autoclose": true});
+});
+
+jQuery.extend( jQuery.fn.dataTableExt.oSort, {
+    "date-eu-pre": function ( date ) {
+        var date = date.replace(" ", "");
+
+        if (date.indexOf('.') > 0) {
+            /*date a, format dd.mn.(yyyy) ; (year is optional)*/
+            var eu_date = date.split('.');
+        } else {
+            /*date a, format dd/mn/(yyyy) ; (year is optional)*/
+            var eu_date = date.split('/');
+        }
+
+        /*year (optional)*/
+        if (eu_date[2]) {
+            var year = eu_date[2];
+        } else {
+            var year = 0;
+        }
+
+        /*month*/
+        var month = eu_date[1];
+        if (month.length == 1) {
+            month = 0+month;
+        }
+
+        /*day*/
+        var day = eu_date[0];
+        if (day.length == 1) {
+            day = 0+day;
+        }
+
+        return (year + month + day) * 1;
+    },
+
+    "date-eu-asc": function ( a, b ) {
+        return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+    },
+
+    "date-eu-desc": function ( a, b ) {
+        return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+    }
+} );
+
+$(document).ready(function() {
+    $(".remove_nested_fields").addClass('btn').prepend('<i class="icon-remove icon-white">&nbsp;</i>');
+    $(".add_nested_fields").addClass('btn').prepend('<i class="icon-plus icon-white">&nbsp;</i>');
+
+    $(".selectpicker").selectpicker();
+    $(".multiselect").multiselect({"none": "select something..."});
+
+	$('#list').dataTable({
+	  "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+	  "sPaginationType": "bootstrap",
+	  "aoColumns": tableColumnSortdDefinicion(),
+	  "oLanguage": {
+		  "oPaginate": {
+			  "sFirst": I18n.t("data_table.paginate.first"),
+			  "sLast": I18n.t("data_table.paginate.last"),
+			  "sNext": I18n.t("data_table.paginate.next"),
+			  "sPrevious": I18n.t("data_table.paginate.previous")
+		  },
+		  "sEmptyTable": I18n.t("data_table.emptyTable"),
+		  "sInfo": I18n.t("data_table.info"),
+		  "sInfoEmpty": I18n.t("data_table.infoEmpty"),
+		  "sInfoFiltered": I18n.t("data_table.infoFiltered"),
+		  "sInfoPostFix": I18n.t("data_table.infoPostFix"),
+		  "sSearch": I18n.t("data_table.search"),
+		  "sZeroRecords": I18n.t("data_table.zeroRecords"),
+		  "sLengthMenu": I18n.t("data_table.lengthMenu")
+	  }
+	});
+	$(".sorting:last").removeClass("sorting");
+});
+
+$(document).on('nested:fieldAdded', function(event){
+  var field = event.field; 
+  var remove_button = field.find('.remove_nested_fields');
+  remove_button.addClass('btn');
+});

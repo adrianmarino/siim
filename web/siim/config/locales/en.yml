@@ -116,3 +116,25 @@ en:
               too_short: "too short"
             confirmation_token:
               invalid: "invalid"
+        medical:
+          attributes:
+            first_name:
+              blank: "is required"
+            last_name:
+              blank: "is required"
+            dni:
+              blank: "is required"
+            email:
+              blank: "is required"
+            specialization:
+              blank: "is required"
+    successful:
+      messages:
+        created: "%{model} was creted successfully."
+        updated: "%{model} was updated successfully."
+  title:
+    medical:
+      new: "New Medical"
+      edit: "Edit Medical"
+      show: "Medical Detail"
+      list: "Medicals"

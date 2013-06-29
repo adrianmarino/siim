@@ -6,7 +6,7 @@ module CrudNavigationHelper
   def back_button(a_path)
     crud_button a_path, :back, 'icon-arrow-left'
   end
-  
+
   def create_button(a_path)
     crud_button a_path, :create, 'icon-plus'
   end
@@ -31,15 +31,15 @@ module CrudNavigationHelper
   # Private Methods...
   # -------------------------------------------------------------------------
   private
-  def crud_button(a_path,an_action_name,a_style_name)
-    button a_path, t(action_key(an_action_name)), action_style(a_style_name)
-  end
+    def crud_button(a_path,an_action_name,a_style_name)
+      button a_path, t(action_key(an_action_name)), action_style(a_style_name)
+    end
 
-  def action_key(an_action_name)
-    "actions.#{an_action_name}"
-  end
+    def action_key(an_action_name)
+      "actions.#{an_action_name}"
+    end
 
-  def action_style(a_style_name)
-    "#{a_style_name} icon-white"
-  end
+    def action_style(a_style_name)
+      "#{a_style_name} icon-white"
+    end
 end

@@ -82,6 +82,7 @@ es:
       formats:
           default: '%d/%m/%Y'
 
+  options: "Opciones"
   actions:
     back:   "Atrás"
     show:   "Ver"
@@ -93,6 +94,7 @@ es:
   activerecord:
     models:
       user: "Usuario"
+      medical: "Médico"
     attributes:
       user:
         first_name: "Nombre"
@@ -100,6 +102,13 @@ es:
         dni: "DNI"
         email: "Correo electrónico"
         password: "Contraseña"
+      medical:
+        cuil: "CUIL"
+        dni: "DNI"
+        first_name: "Nombre"
+        last_name: "Apellido"
+        email: "Correo electrónico"
+        specialization: "Especiazación"
     errors:
       models:
         user:
@@ -116,3 +125,29 @@ es:
               too_short: "muy corta"
             confirmation_token:
               invalid: "invalido"
+        medical:
+          attributes:
+            first_name:
+              blank: "es un campo requerido"
+            last_name:
+              blank: "es un campo requerido"
+            dni:
+              blank: "es un campo requerido"
+            email:
+              blank: "es un campo requerido"
+            specialization:
+              blank: "es un campo requerido"
+    successful:
+      messages:
+        created: "%{model} se creo exitosamente."
+        updated: "%{model} se actualizo exitosamente."
+  title:
+    medical:
+      new: "Nuevo Médico"
+      edit: "Editar édico"
+      show: "Detalle de Médico"
+      list: "Médicos"
+  helpers:
+    submit:
+      create: "Crear %{model}"
+      update: "Actualizar %{model}"
