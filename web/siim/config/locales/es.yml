@@ -144,7 +144,7 @@ es:
   title:
     medical:
       new: "Nuevo Médico"
-      edit: "Editar édico"
+      edit: "Editar Médico"
       show: "Detalle de Médico"
       list: "Médicos"
   helpers:
