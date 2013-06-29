@@ -16,7 +16,11 @@
  *= require bootstrap-multiselect
  */
 .options { width: 1%; }
-.footer { margin-top: 0px; padding-left: 10px;  }
+.footer {
+ 	margin-top: 0px; 
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
 .container { margin-top: 60px; }
 .nested-item-button { padding: 9px }
 .label-inline {
@@ -30,3 +34,5 @@
 #flash_error { font-size: 15px; color: red;}
 #flash_alert { font-size: 15px; color: blue;}
 #flash_notice { font-size: 15px; color: blue;}
+
+.separator-bar { margin: 10px 0px; }

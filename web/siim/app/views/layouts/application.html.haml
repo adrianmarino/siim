@@ -10,7 +10,7 @@
     = render 'menu'
     .container
       = yield :content
-    %hr/
+    %hr.separator-bar/
     .footer=raw t('app.author')
     / Modal
     #myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
