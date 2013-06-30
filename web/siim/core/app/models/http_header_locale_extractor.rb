@@ -15,21 +15,21 @@ class HTTPHeaderLocaleExtractor
   # -------------------------------------------------------------------------
   # Constructor...
   # -------------------------------------------------------------------------
-  def initialize(aRequest,aLogger)
+  def initialize(aRequest,aLogger,a_default_locale = 'en')
     @logger = aLogger
     @request = aRequest
+    @default_locale = a_default_locale
   end
 
-  # -------------------------------------------------------------------------
-  # Private Methods...
-  # -------------------------------------------------------------------------
   private
-    Language_header_attribute = 'HTTP_ACCEPT_LANGUAGE'
-    Locale_Regex = /^[a-z]{2}/
+    # -------------------------------------------------------------------------
+    # Private Methods...
+    # -------------------------------------------------------------------------
     attr_accessor :logger, :request
 
     def get_locale_from_accept_language_header
-      @request.env[Language_header_attribute].scan(Locale_Regex).first
+      attribute = @request.env[Language_header_attribute]
+      attribute.nil? or attribute.empty? ? @default_locale : attribute.scan(Locale_Regex).first
     end
 
     def log_accept_language_http_attribute
@@ -39,4 +39,13 @@ class HTTPHeaderLocaleExtractor
     def log_selected_locale(aLocale)
       logger.debug "* Locale set to '#{aLocale}'"
     end
+
+
+    # -------------------------------------------------------------------------
+    # Constants
+    # -------------------------------------------------------------------------
+    Language_header_attribute = 'HTTP_ACCEPT_LANGUAGE'
+
+    Locale_Regex = /^[a-z]{2}/
+
 end
