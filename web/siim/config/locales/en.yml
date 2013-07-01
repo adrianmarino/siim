@@ -93,6 +93,8 @@ en:
   activerecord:
     models:
       user: "User"
+      medical: "Medical"
+      medical_specialization: "Medical Specialization"
     attributes:
       user:
         first_name: "Firstname"
@@ -100,6 +102,17 @@ en:
         dni: "DNI"
         email: "Email"
         password: "Password"
+      medical:
+        cuil: "CUIL"
+        dni: "DNI"
+        firstname: "Firstname"
+        lastname: "Lastname"
+        email: "E-Mail"
+        specialization: "Specialization"
+        home_phone: "Home Phone"
+        movile_phone: "Movile Phone"
+      medical:
+        name: "Name"
     errors:
       models:
         user:
@@ -110,7 +123,7 @@ en:
               blank: "is required"
             dni:
               blank: "is required"
-            email:
+            cuil:
               blank: "is required"
             password:
               too_short: "too short"
@@ -118,20 +131,22 @@ en:
               invalid: "invalid"
         medical:
           attributes:
-            first_name:
-              blank: "is required"
-            last_name:
-              blank: "is required"
-            dni:
-              blank: "is required"
-            email:
-              blank: "is required"
+            firstname:
+              blank: "Must enter a firstname"
+            lastname:
+              blank: "Must enter a lastname"
+            cuil:
+              blank: "Must enter a CUIL"
             specialization:
-              blank: "is required"
+              blank: "Must enter a specialization"
             home_phone:
-              blank: "is required"
+              blank: "Must enter a home phone"
             movile_phone:
-              blank: "is required"
+              blank: "Must enter a movile phone"
+        medical_specialization:
+          attributes:
+            name:
+              blank: "Must enter a specialization"
     successful:
       messages:
         created: "%{model} was creted successfully."
@@ -142,5 +157,11 @@ en:
       edit: "Edit Medical"
       show: "Medical Detail"
       list: "Medicals"
+    medical_specialization:
+      new: "New Medical Specialization"
+      edit: "Edit Medical Specialization"
+      show: "Medical Detail Specialization"
+      list: "Medical Specializations"
   menu:
     medicals: "Medicals"
+    medicals: "Medical Specializations"

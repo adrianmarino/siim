@@ -6,7 +6,6 @@ class CreateMedicals < ActiveRecord::Migration
       t.string :firstname, :null => false, :default => ""
       t.string :lastname, :null => false, :default => ""
       t.string :email
-      t.string :specialization, :null => false, :default => ""
       t.string :home_phone, :null => false, :default => ""
       t.string :movile_phone, :null => false, :default => ""
     end

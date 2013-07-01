@@ -3,8 +3,6 @@ Siim::Application.routes.draw do
 
   root :to => "home#index"
 
-  resources :medicals
-
   devise_for :users, :path => "", :path_names => {
     :sign_in => 'login',
     :sign_out => 'logout',
@@ -15,4 +13,7 @@ Siim::Application.routes.draw do
     :sign_up => 'cmon_let_me_in',
     :users => 'users'
   }
+
+  resources :medicals
+  resources :medical_specializations
 end

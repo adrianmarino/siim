@@ -42,7 +42,6 @@ es:
   sign_in_as_user: "Iniciar sesión como usuario"
   token_authentication_example: "Ejemplo de autenticación Token"
   send_me_reset_password_instructions: "Envíar instrucciones para restablecer mi contraseña"
-
   devise:
     registrations:
       user:
@@ -95,6 +94,7 @@ es:
     models:
       user: "Usuario"
       medical: "Médico"
+      medical_specialization: "Especialización"
     attributes:
       user:
         first_name: "Nombre"
@@ -105,23 +105,25 @@ es:
       medical:
         cuil: "CUIL"
         dni: "DNI"
-        first_name: "Nombre"
-        last_name: "Apellido"
+        firstname: "Nombre"
+        lastname: "Apellido"
         email: "Correo electrónico"
         specialization: "Especiazación"
         home_phone: "Teléfono Fijo"
         movile_phone: "Teléfono Movil"
+      medical_specialization:
+        name: "Nombre"
     errors:
       models:
         user:
           attributes:
             first_name:
-              blank: "es un campo requerido"
+              blank: "El nombre es un campo requerido"
             last_name:
               blank: "es un campo requerido"
             dni:
               blank: "es un campo requerido"
-            email:
+            cuil:
               blank: "es un campo requerido"
             password:
               too_short: "muy corta"
@@ -129,20 +131,22 @@ es:
               invalid: "invalido"
         medical:
           attributes:
-            first_name:
-              blank: "es un campo requerido"
-            last_name:
-              blank: "es un campo requerido"
-            dni:
-              blank: "es un campo requerido"
-            email:
-              blank: "es un campo requerido"
+            firstname:
+              blank: "Debe ingresar un nombre"
+            lastname:
+              blank: "Debe ingresar un apellido"
+            cuil:
+              blank: "Debe ingresar un CUIL"
             specialization:
-              blank: "es un campo requerido"
+              blank: "Debe ingresar una especialización"
             home_phone:
-              blank: "es un campo requerido"
+              blank: "Debe ingresar un teléfono fijo"
             movile_phone:
-              blank: "es un campo requerido"
+              blank: "Debe ingresar un teléfono movil"
+        medical_specialization:
+          attributes:
+            name:
+              blank: "Debe ingresar una especialización"
     successful:
       messages:
         created: "%{model} se creo exitosamente."
@@ -153,6 +157,11 @@ es:
       edit: "Editar Médico"
       show: "Detalle de Médico"
       list: "Médicos"
+    medical_specialization:
+      new: "Nueva Especiazación Médica"
+      edit: "Editar Especiazación Médica"
+      show: "Detalle de Especiazación Médica"
+      list: "Especiazaciones Médicas"
   helpers:
     submit:
       create: "Crear %{model}"

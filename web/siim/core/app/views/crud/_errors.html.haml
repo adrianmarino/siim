@@ -6,5 +6,4 @@
     %ul
       - eval(variable_name(@entity_name)).errors.messages.each do |a_message|
         %li
-          = a_message[1].first
-          \.
+          ="#{a_message[1].first}."

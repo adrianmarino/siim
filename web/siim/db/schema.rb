@@ -11,17 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130629123345) do
+ActiveRecord::Schema.define(:version => 20130701024624) do
+
+  create_table "medical_specializations", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "medicals", :force => true do |t|
-    t.string "cuil",           :default => "", :null => false
-    t.string "dni",            :default => "", :null => false
-    t.string "firstname",      :default => "", :null => false
-    t.string "lastname",       :default => "", :null => false
-    t.string "email"
-    t.string "specialization", :default => "", :null => false
-    t.string "home_phone",     :default => "", :null => false
-    t.string "movile_phone",   :default => "", :null => false
+    t.string  "cuil",                      :default => "", :null => false
+    t.string  "dni",                       :default => "", :null => false
+    t.string  "firstname",                 :default => "", :null => false
+    t.string  "lastname",                  :default => "", :null => false
+    t.string  "email"
+    t.string  "home_phone",                :default => "", :null => false
+    t.string  "movile_phone",              :default => "", :null => false
+    t.integer "medical_specialization_id"
   end
 
   add_index "medicals", ["cuil"], :name => "index_medicals_on_cuil", :unique => true
