@@ -25,7 +25,7 @@ class MedicalsController < CrudController
   # GET /medicals/new.json
   def new
     @medical = Medical.new
-    @medical_specializations = MedicalSpecialization.all
+    @medical_specializations = medical_specializations
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,14 +36,14 @@ class MedicalsController < CrudController
   # GET /medicals/1/edit
   def edit
     @medical = Medical.find(params[:id])
-    @medical_specializations = MedicalSpecialization.all
+    @medical_specializations = medical_specializations
   end
 
   # POST /medicals
   # POST /medicals.json
   def create
     @medical = Medical.new(params[:medical])
-    @medical_specializations = MedicalSpecialization.all
+    @medical_specializations = medical_specializations
 
     respond_to do |format|
       if @medical.save
@@ -60,7 +60,7 @@ class MedicalsController < CrudController
   # PUT /medicals/1.json
   def update
     @medical = Medical.find(params[:id])
-    @medical_specializations = MedicalSpecialization.all
+    @medical_specializations = medical_specializations
 
     respond_to do |format|
       if @medical.update_attributes(params[:medical])
@@ -85,11 +85,20 @@ class MedicalsController < CrudController
     end
   end
 
+
   # -------------------------------------------------------------------------
-  # Constructor...
+  # Private Methods...
   # -------------------------------------------------------------------------
-  def initialize
-    super
-    setup_entity_name 'medical'
-  end
+  private
+    def medical_specializations
+      MedicalSpecialization.all.sort.reverse
+    end
+
+    # -------------------------------------------------------------------------
+    # Constructor...
+    # -------------------------------------------------------------------------
+    def initialize
+      super
+      setup_entity_name 'medical'
+    end
 end
