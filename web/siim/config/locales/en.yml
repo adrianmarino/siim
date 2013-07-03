@@ -164,4 +164,5 @@ en:
       list: "Medical Specializations"
   menu:
     medicals: "Medicals"
-    medicals: "Medical Specializations"
+    administration: "Administration"
+    medical_specializations: "Medical Specializations"

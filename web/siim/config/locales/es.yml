@@ -168,3 +168,6 @@ es:
       update: "Actualizar %{model}"
   menu:
     medicals: "Médicos"
+    administration: "Administración"
+    medical_specializations: "Especializaciones Medicas"
+
