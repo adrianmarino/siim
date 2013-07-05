@@ -1,0 +1,17 @@
+%h1 Listing medical_histories
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @medical_histories.each do |medical_history|
+    %tr
+      %td= link_to 'Show', medical_history
+      %td= link_to 'Edit', edit_medical_history_path(medical_history)
+      %td= link_to 'Destroy', medical_history, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Medical history', new_medical_history_path
