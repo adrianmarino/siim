@@ -2,7 +2,8 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 en:
   app:
-    name: 'Comprehensive Medical Information Service'
+    name: 'SIIM'
+    description: 'Comprehensive Medical Information Service'
     author: '&copy; BAMBU Solutions 2013'
 
   data_table:

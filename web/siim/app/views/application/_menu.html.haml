@@ -3,7 +3,7 @@
     .container-fluid
       %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
         %span.icon-align-justify
-      %a.brand{:href => "#"}=t 'app.name'
+      %a.brand{:href => '/', :title => t('app.description') }=t 'app.name'
       - if user_signed_in?
         .nav-collapse.collapse
           %ul.nav{:role => "navigation"}
