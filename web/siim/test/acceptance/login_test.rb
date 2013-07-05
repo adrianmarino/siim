@@ -11,7 +11,7 @@ class TestLogin < Test::Unit::TestCase
 
   def test_login
     login_as "adrianmarino@gmail.com", "29042902"
-    assert_login_as "Adrian Marino" 
+    assert_login_as "Adrian Marino"
     logout
   end
 

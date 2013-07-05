@@ -1,4 +1,4 @@
- module WebActions
+module WebActions
   def login_as(a_value, a_password)
     @driver.navigate.to(@base_url + "/login")
     @driver.find_element(:id, "user_login").clear
@@ -11,8 +11,8 @@
   end
 
   def logout
-    @driver.find_element(:css, "a.dropdown-toggle").click
-    @driver.find_element(:css, "i.icon-off.icon-white").click
+    @driver.find_element(:id, :session_menu).click
+    @driver.find_element(:id, :sing_out).click
     @driver.find_element(:link, "Yes").click
   end
 end
