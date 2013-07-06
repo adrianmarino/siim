@@ -8,4 +8,5 @@ class Patient < ActiveRecord::Base
   # Associations...
   # -------------------------------------------------------------------------
   belongs_to :medical_history
+  has_many :contacts
 end
