@@ -1,4 +1,4 @@
-class MedicalHistoriesController < ApplicationController
+class MedicalHistoriesController < CrudController
   # GET /medical_histories
   # GET /medical_histories.json
   def index
@@ -79,5 +79,14 @@ class MedicalHistoriesController < ApplicationController
       format.html { redirect_to medical_histories_url }
       format.json { head :no_content }
     end
+  end
+
+  # -------------------------------------------------------------------------
+  # Constructor...
+  # -------------------------------------------------------------------------
+  def initialize
+    super
+    @entity_name = 'medical_history'
+    @plural_entity_name = 'medical_histories'
   end
 end

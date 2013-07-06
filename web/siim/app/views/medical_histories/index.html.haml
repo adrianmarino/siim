@@ -1,0 +1,4 @@
+- content_for :table_header do
+  %th= translate_attribute(@entity_name,:id)
+  :javascript
+    function tableColumnSortdDefinicion() { return [null, null]; }

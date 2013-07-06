@@ -7,6 +7,12 @@ class MedicalHistory < ActiveRecord::Base
   # -------------------------------------------------------------------------
   # Associations...
   # -------------------------------------------------------------------------
-  has_many :allergies, :antecedents, :consutations, :diseases, :medical_exams, :medications, :vaccines
+  has_many :allergies
+  has_many :antecedents
+  has_many :consutations
+  has_many :diseases
+  has_many :medical_exams
+  has_many :medications
+  has_many :vaccines
   has_one :patinent
 end
