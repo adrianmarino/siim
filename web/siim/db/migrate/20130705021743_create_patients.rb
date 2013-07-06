@@ -5,8 +5,8 @@ class CreatePatients < ActiveRecord::Migration
       t.string :firstname
       t.string :lastname
       t.date :birthdate
-      t.number :height
-      t.number :weight
+      t.integer :height
+      t.integer :weight
       t.string :blood_group
       t.string :blood_factor
       t.string :sex

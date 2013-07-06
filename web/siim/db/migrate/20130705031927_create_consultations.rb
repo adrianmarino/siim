@@ -1,6 +1,6 @@
-class CreateConsultaitons < ActiveRecord::Migration
+class CreateConsultations < ActiveRecord::Migration
   def change
-    create_table :consultaitons do |t|
+    create_table :consultations do |t|
       t.date :achievement_date
       t.string :symptomps
       t.string :diagnostic

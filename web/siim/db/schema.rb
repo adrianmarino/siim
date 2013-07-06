@@ -11,7 +11,58 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130701024624) do
+ActiveRecord::Schema.define(:version => 20130706010406) do
+
+  create_table "allergies", :force => true do |t|
+    t.string   "cause"
+    t.string   "observations"
+    t.date     "record_date"
+    t.boolean  "severity"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "antecedents", :force => true do |t|
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "consultations", :force => true do |t|
+    t.date     "achievement_date"
+    t.string   "symptomps"
+    t.string   "diagnostic"
+    t.string   "treatment"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "medical_id"
+  end
+
+  create_table "contacts", :force => true do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "email"
+    t.string   "home_phone"
+    t.string   "movile_phone"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "diseases", :force => true do |t|
+    t.date     "record_date"
+    t.string   "name"
+    t.string   "observations"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "medical_exams", :force => true do |t|
+    t.date     "achievement_date"
+    t.string   "results"
+    t.string   "observations"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "medical_specializations", :force => true do |t|
     t.string   "name"
@@ -32,6 +83,35 @@ ActiveRecord::Schema.define(:version => 20130701024624) do
 
   add_index "medicals", ["cuil"], :name => "index_medicals_on_cuil", :unique => true
   add_index "medicals", ["dni"], :name => "index_medicals_on_dni", :unique => true
+
+  create_table "medications", :force => true do |t|
+    t.date     "begin_date"
+    t.date     "end_date"
+    t.string   "name"
+    t.string   "dose"
+    t.string   "how_often"
+    t.string   "route"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "patients", :force => true do |t|
+    t.string   "dni"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.date     "birthdate"
+    t.integer  "height"
+    t.integer  "weight"
+    t.string   "blood_group"
+    t.string   "blood_factor"
+    t.string   "sex"
+    t.string   "address"
+    t.string   "home_phone"
+    t.string   "movile_phone"
+    t.string   "email"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -59,5 +139,12 @@ ActiveRecord::Schema.define(:version => 20130701024624) do
   add_index "users", ["dni"], :name => "index_users_on_dni", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "vaccines", :force => true do |t|
+    t.string   "name"
+    t.date     "last_application"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
 end
