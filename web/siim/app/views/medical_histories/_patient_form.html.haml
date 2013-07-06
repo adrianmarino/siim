@@ -1,0 +1,15 @@
+.well.well-large
+  = form.fields_for :patient do |f|
+    = nested_text 			f, :dni, :patient
+    = nested_text 			f, :firstname, :patient
+    = nested_text 			f, :lastname, :patient
+    = nested_datepicker f, :birthdate, :patient
+    = nested_text 			f, :blood_factor, :patient
+    = nested_text 			f, :blood_group, :patient
+    = nested_text 			f, :height, :patient
+    = nested_text 			f, :weight, :patient
+    = nested_text 			f, :sex, :patient
+    = nested_text 			f, :address, :patient
+    = nested_text 			f, :email, :patient
+    = nested_text 			f, :home_phone, :patient
+    = nested_text 			f, :movile_phone, :patient
