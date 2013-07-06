@@ -9,6 +9,8 @@
           %ul.nav{:role => "navigation"}
             %li
               = link_to raw("<i class=\"icon-search icon-white\">&nbsp;&nbsp;</i>#{t('menu.medicals')}"), medicals_path, "tabindex" => "-1"
+            %li
+              = link_to raw("<i class=\"icon-search icon-white\">&nbsp;&nbsp;</i>#{t('menu.medical_histories')}"), medical_histories_path, "tabindex" => "-1"
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
                 %i.icon-tasks.icon-white
