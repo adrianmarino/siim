@@ -1,4 +1,7 @@
 Siim::Application.routes.draw do
+  resources :medical_histories
+
+
   mount Core::Engine, at: "/core"
 
   root :to => "home#index"

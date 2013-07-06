@@ -8,7 +8,8 @@ class Medical < ActiveRecord::Base
   # -------------------------------------------------------------------------
   # Associations...
   # -------------------------------------------------------------------------
-  belongs_to :medical_specialization, :consultation
+  belongs_to :medical_specialization
+  has_many :consutations
 
   # -------------------------------------------------------------------------
   # Validations...

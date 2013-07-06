@@ -11,21 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130706010406) do
+ActiveRecord::Schema.define(:version => 20130706014841) do
 
   create_table "allergies", :force => true do |t|
     t.string   "cause"
     t.string   "observations"
     t.date     "record_date"
     t.boolean  "severity"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "medical_history_id"
   end
 
   create_table "antecedents", :force => true do |t|
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "medical_history_id"
   end
 
   create_table "consultations", :force => true do |t|
@@ -33,9 +35,10 @@ ActiveRecord::Schema.define(:version => 20130706010406) do
     t.string   "symptomps"
     t.string   "diagnostic"
     t.string   "treatment"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.integer  "medical_id"
+    t.integer  "medical_history_id"
   end
 
   create_table "contacts", :force => true do |t|
@@ -52,16 +55,23 @@ ActiveRecord::Schema.define(:version => 20130706010406) do
     t.date     "record_date"
     t.string   "name"
     t.string   "observations"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "medical_history_id"
   end
 
   create_table "medical_exams", :force => true do |t|
     t.date     "achievement_date"
     t.string   "results"
     t.string   "observations"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "medical_history_id"
+  end
+
+  create_table "medical_histories", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "medical_specializations", :force => true do |t|
@@ -91,8 +101,9 @@ ActiveRecord::Schema.define(:version => 20130706010406) do
     t.string   "dose"
     t.string   "how_often"
     t.string   "route"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "medical_history_id"
   end
 
   create_table "patients", :force => true do |t|
@@ -109,8 +120,9 @@ ActiveRecord::Schema.define(:version => 20130706010406) do
     t.string   "home_phone"
     t.string   "movile_phone"
     t.string   "email"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "medical_history_id"
   end
 
   create_table "users", :force => true do |t|
@@ -143,8 +155,9 @@ ActiveRecord::Schema.define(:version => 20130706010406) do
   create_table "vaccines", :force => true do |t|
     t.string   "name"
     t.date     "last_application"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "medical_history_id"
   end
 
 end
