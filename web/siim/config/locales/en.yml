@@ -173,6 +173,11 @@ en:
       edit: "Edit Medical Specialization"
       show: "Medical Detail Specialization"
       list: "Medical Specializations"
+    medical_history:
+      new: "New Medical History"
+      edit: "Edit Medical History"
+      show: "Medical Detail History"
+      list: "Medical Histories"
   menu:
     medicals: "Medicals"
     administration: "Administration"

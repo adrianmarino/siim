@@ -72,7 +72,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 } );
 
 $(document).ready(function() {
-    $(".remove_nested_fields").addClass('btn').prepend('<i class="icon-remove icon-white">&nbsp;</i>');
+    $(".remove_nested_fields").addClass('btn');
     $(".add_nested_fields").addClass('btn').prepend('<i class="icon-plus icon-white">&nbsp;</i>');
 
     $(".selectpicker").selectpicker();

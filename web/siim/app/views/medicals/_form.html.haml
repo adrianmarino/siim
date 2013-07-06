@@ -1,10 +1,10 @@
-= form_for(@medical) do |f|
+= form_for @medical do |f|
   = errors
   = text f, :cuil
   = text f, :dni
   = text f, :firstname
   = text f, :lastname
-  = one_assoc_select f, :medical_specialization
+  = select_one f, :medical_specialization
   = text f, :email
   = text f, :home_phone
   = text f, :movile_phone

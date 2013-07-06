@@ -1,4 +1,6 @@
 module CrudFormHelper
+  include Core::ApplicationHelper
+
   # -------------------------------------------------------------------------
   # Public Methods...
   # -------------------------------------------------------------------------
@@ -14,28 +16,45 @@ module CrudFormHelper
   # Simple Fields...
   # -------------------------------------------------------------------------
 
-  def text(a_form, a_field_name, an_entity_name = @entity_name)
-    render args(:text, a_form, a_field_name, an_entity_name)
+  def text(a_form, a_field_name, a_style_class = '')
+    nested_text a_form, a_field_name, @entity_name, a_style_class
   end
 
-  def datepicker(a_form, a_field_name, an_entity_name = @entity_name)
-    render args(:date, a_form, a_field_name, an_entity_name)
+  def nested_text(a_form, a_field_name, an_entity_name = @entity_name, a_style_class = '')
+    render args(:text, a_form, a_field_name, an_entity_name, a_style_class)
+  end
+
+  def big_text(a_form, a_field_name, a_style_class = '')
+    nested_big_text a_form, a_field_name, @entity_name, a_style_class
+  end
+
+  def nested_big_text(a_form, a_field_name, an_entity_name = @entity_name, a_style_class = '')
+    render args(:text_area, a_form, a_field_name, an_entity_name, a_style_class)
+  end
+
+  def datepicker(a_form, a_field_name, a_style_class = '')
+    nested_datepicker a_form, a_field_name, @entity_name, a_style_class
+  end
+
+
+  def nested_datepicker(a_form, a_field_name, an_entity_name = @entity_name, a_style_class = '')
+    render args(:date, a_form, a_field_name, an_entity_name, a_style_class)
   end
 
   # -------------------------------------------------------------------------
   # Association Fields...
   # -------------------------------------------------------------------------
 
-  def one_select(a_form, a_field_name, an_entity_name = @entity_name )
-    render args(:one, a_form, a_field_name, an_entity_name)
+  def select_one(a_form, a_field_name, an_entity_name = @entity_name, a_style_class = '')
+    render args(:one, a_form, a_field_name, an_entity_name, a_style_class)
   end
 
   # -------------------------------------------------------------------------
   # Private Methods...
   # -------------------------------------------------------------------------
   private
-    def args(a_view, a_form, a_field_name, an_entity_name)
-      field_label = translate_attribute an_entity_name, a_field_name
-      {:partial => "crud/#{a_view}", :locals => {:form => a_form, :field_name => a_field_name, :field_label => field_label} }
+    def args(a_view, a_form, a_field_name, an_entity_name, a_style_class)
+      field_label = translate_attribute to_class(an_entity_name), a_field_name
+      {:partial => "crud/#{a_view}", :locals => {:form => a_form, :field_name => a_field_name, :field_label => field_label, :style_class => a_style_class} }
     end
 end

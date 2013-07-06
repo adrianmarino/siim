@@ -3,13 +3,13 @@ class Patient < ActiveRecord::Base
   # Public Methods...
   # -------------------------------------------------------------------------
   def to_s
-    "#{@firstname} #{@lastname}"
+    "#{self.firstname} #{self.lastname}"
   end
 
   # -------------------------------------------------------------------------
   # Attributes...
   # -------------------------------------------------------------------------
-  attr_accessible :address, :birthdate, :blood_factor, :blood_group, :dni, :email, :firstname, :height, :home_phone, :lastname, :movile_phone, :sex, :weight
+  attr_accessible :dni, :firstname, :lastname, :birthdate, :blood_factor, :blood_group, :height, :weight, :sex, :address, :email, :home_phone, :movile_phone
 
   # -------------------------------------------------------------------------
   # Associations...

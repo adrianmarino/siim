@@ -124,6 +124,31 @@ es:
         movile_phone: "Teléfono Movil"
       medical_specialization:
         name: "Nombre"
+      medical_history:
+        patient: "Paciente"
+        allergies: "Alergias"
+        antecedents: "Antecedentes"
+        consutations: "Consultas"
+        diseases: "Enfermedades"
+        medical_exams: "Examenes"
+        medications: "Medicaciones"
+        vaccines: "Vacunas"
+      patient:
+        address: "Dirección"
+        birthdate: "Fecha de Nacimiento"
+        blood_factor: "Factor Sanguineo"
+        blood_group: "Grupo Sanguineo"
+        dni: "DNI"
+        email: "Correo Electrónico"
+        firstname: "Nombre"
+        lastname: "Apellido"
+        height: "Altura"
+        weight: "Peso"
+        home_phone: "Teléfono Fijo"
+        movile_phone: "Télefono Movil"
+        sex: "Sexo"
+      antecedent:
+        description: "Descripcion"
     errors:
       models:
         user:
@@ -173,6 +198,11 @@ es:
       edit: "Editar Especiazación Médica"
       show: "Detalle de Especiazación Médica"
       list: "Especiazaciones Médicas"
+    medical_history:
+      new: "Nueva Historia Médica"
+      edit: "Editar Historia Médica"
+      show: "Detalle de Historia Médica"
+      list: "Historias Médicas" 
   helpers:
     submit:
       create: "Crear %{model}"
@@ -182,3 +212,7 @@ es:
     administration: "Administración"
     medical_specializations: "Especializaciones Medicas"
     medical_histories: "Historias Médicas"
+  form:
+    nested:
+      delete: "Borrar"
+      add: "Agregar"

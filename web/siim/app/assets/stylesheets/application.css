@@ -31,8 +31,22 @@
   display: block
 }
 
-#flash_error { font-size: 15px; color: red;}
-#flash_alert { font-size: 15px; color: blue;}
-#flash_notice { font-size: 15px; color: blue;}
+#flash_error { font-size: 15px; }
+#flash_alert { font-size: 15px; }
+#flash_notice { font-size: 15px; }
 
 .separator-bar { margin: 10px 0px; }
+
+.antecedent_description {
+  height: 80px;
+  width: 99%;
+}
+
+.nested_form_container {
+	padding-bottom: 10px;
+}
+
+.remove_nested_fields {
+/*	float: right; */
+}
+

@@ -25,6 +25,7 @@ class MedicalHistoriesController < CrudController
   # GET /medical_histories/new.json
   def new
     @medical_history = MedicalHistory.new
+    @medical_history.initialize_with_patient
 
     respond_to do |format|
       format.html # new.html.erb

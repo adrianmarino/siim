@@ -1,3 +1,14 @@
-= form_for(@medical_history) do |f|
+= nested_form_for @medical_history do |a_form|
   = errors
-  = submit f
+  %div.tabbable
+    %ul.nav.nav-tabs
+      %li.active
+        %a{'href' => "#panel1", 'data-toggle' => 'tab'}= section :patient
+      %li
+        %a{'href' => "#panel2", 'data-toggle' => 'tab'}= section :antecedent
+    %div.tab-content
+      %div#pane1.tab-panel.active
+        = render :partial => 'patient_form', :locals => {:form => a_form}
+      %div#pane2.tab-panel
+        = render :partial => 'antecedents_form', :locals => {:form => a_form}
+  = submit a_form

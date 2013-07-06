@@ -41,7 +41,7 @@ module Core
       end
 
       def to_class(a_class_name)
-        capitalize_first(a_class_name).split('::').inject(Object) do |mod, class_name|
+        capitalize_first(a_class_name.to_s).split('::').inject(Object) do |mod, class_name|
           mod.const_get(class_name)
         end
       end
