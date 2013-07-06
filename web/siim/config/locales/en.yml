@@ -96,6 +96,16 @@ en:
       user: "User"
       medical: "Medical"
       medical_specialization: "Medical Specialization"
+      allergie: "Allergie"
+      medication: "Medication"
+      vaccine: "vaccine"
+      disease: "Disease"
+      antecedent: "Antecedent"
+      medical_exam: "Medical Exam"
+      consultation: "Consultation"
+      patient: "Patient"
+      contact: "Contact"
+      medical_history: "Medical History"
     attributes:
       user:
         first_name: "Firstname"

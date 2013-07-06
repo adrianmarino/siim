@@ -1,6 +1,1 @@
-%p#notice= notice
-
-
-= link_to 'Edit', edit_medical_history_path(@medical_history)
-\|
-= link_to 'Back', medical_histories_path
+= render :partial => 'crud/show', :locals => {:name => :id, :value => @medical_history.id }

@@ -1,10 +1,3 @@
-= form_for @medical_history do |f|
-  - if @medical_history.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@medical_history.errors.count, "error")} prohibited this medical_history from being saved:"
-      %ul
-        - @medical_history.errors.full_messages.each do |msg|
-          %li= msg
-
-  .actions
-    = f.submit 'Save'
+= form_for(@medical) do |f|
+  = errors
+  = submit f
