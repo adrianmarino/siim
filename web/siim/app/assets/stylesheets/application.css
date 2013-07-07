@@ -57,6 +57,19 @@
   margin-bottom: 10px;
 }
 
+
+.nav-tabs > li > a {
+  font-size: 15px;
+  font-weight: bold;
+  color: #006DCC;
+}
+
+.nav-tabs > li > a:hover {
+  font-size: 15px;
+  font-weight: bold;
+  color: #003B6F;
+}
+
 .form-panel {
   background-color: #D9EDF7;
   border: 1px solid #BCE8F1;
