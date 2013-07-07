@@ -122,6 +122,7 @@ es:
         specialization: "Especiazación"
         home_phone: "Teléfono Fijo"
         movile_phone: "Teléfono Movil"
+        medical_specialization: "Especialización"
       medical_specialization:
         name: "Nombre"
       medical_history:
@@ -194,10 +195,10 @@ es:
       show: "Detalle de Médico"
       list: "Médicos"
     medical_specialization:
-      new: "Nueva Especiazación Médica"
-      edit: "Editar Especiazación Médica"
-      show: "Detalle de Especiazación Médica"
-      list: "Especiazaciones Médicas"
+      new: "Nueva Especialización Médica"
+      edit: "Editar Especialización Médica"
+      show: "Detalle de Especialización Médica"
+      list: "Especializaciones Médicas"
     medical_history:
       new: "Nueva Historia Médica"
       edit: "Editar Historia Médica"

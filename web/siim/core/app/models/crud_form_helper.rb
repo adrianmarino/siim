@@ -54,7 +54,7 @@ module CrudFormHelper
   # -------------------------------------------------------------------------
   private
     def args(a_view, a_form, a_field_name, an_entity_name, a_style_class)
-      field_label = translate_attribute to_class(an_entity_name), a_field_name
+      field_label = translate_attribute an_entity_name, a_field_name
       {:partial => "crud/#{a_view}", :locals => {:form => a_form, :field_name => a_field_name, :field_label => field_label, :style_class => a_style_class} }
     end
 end
