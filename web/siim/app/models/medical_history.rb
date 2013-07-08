@@ -1,5 +1,19 @@
 class MedicalHistory < ActiveRecord::Base
   # -------------------------------------------------------------------------
+  # Public Methods...
+  # -------------------------------------------------------------------------
+  def initialize_with_associations
+    self.patient = Patient.new
+    self.antecedents << Antecedent.new
+    self.consultations << Consultation.new
+    self.diseases << Disease.new
+    self.medical_exams << MedicalExam.new
+    self.medications << Medication.new
+    self.vaccines << Vaccine.new
+    self.allergies << Allergy.new
+  end
+
+  # -------------------------------------------------------------------------
   # Attributes...
   # -------------------------------------------------------------------------
   attr_accessible :id, :allergies, :antecedents, :consultations, :diseases,
@@ -33,18 +47,4 @@ class MedicalHistory < ActiveRecord::Base
   accepts_nested_attributes_for :medications, allow_destroy: true
   accepts_nested_attributes_for :vaccines, allow_destroy: true
   accepts_nested_attributes_for :patient, allow_destroy: true
-
-  # -------------------------------------------------------------------------
-  # Public Methods...
-  # -------------------------------------------------------------------------
-  def initialize_with_associations
-    self.patient = Patient.new
-    self.antecedents << Antecedent.new
-    self.consultations << Consultation.new
-    self.diseases << Disease.new
-    self.medical_exams << MedicalExam.new
-    self.medications << Medication.new
-    self.vaccines << Vaccine.new
-    self.allergies << Allergy.new
-  end
 end

@@ -3,7 +3,7 @@ class Consultation < ActiveRecord::Base
   # Attributes...
   # -------------------------------------------------------------------------
   attr_accessible :achievement_date, :diagnostic, :symptomps, :treatment,
-    :medical, :medical_history, :medical_history_id
+    :medical, :medical_id, :medical_history, :medical_history_id
 
   # -------------------------------------------------------------------------
   # Associations...

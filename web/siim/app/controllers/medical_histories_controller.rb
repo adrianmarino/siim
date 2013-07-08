@@ -26,6 +26,7 @@ class MedicalHistoriesController < CrudController
   def new
     @medical_history = MedicalHistory.new
     @medical_history.initialize_with_associations
+    @medicals = Medical.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,6 +37,7 @@ class MedicalHistoriesController < CrudController
   # GET /medical_histories/1/edit
   def edit
     @medical_history = MedicalHistory.find(params[:id])
+    @medicals = Medical.all
   end
 
   # POST /medical_histories

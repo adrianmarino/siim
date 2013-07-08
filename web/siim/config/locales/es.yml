@@ -154,6 +154,12 @@ es:
         record_date: "Fecha de registro"
         cause: "Causa"
         observations: "Observaciones"
+      consultation:
+        achievement_date: "Fecha de realización"
+        diagnostic: "Diagnóstico"
+        symptomps: "Síntomas"
+        treatment: "Tratamiento"
+        medical: "Médico"
     errors:
       models:
         user:

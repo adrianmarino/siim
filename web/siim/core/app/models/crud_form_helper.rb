@@ -52,7 +52,11 @@ module CrudFormHelper
   # Association Fields...
   # -------------------------------------------------------------------------
 
-  def select_one(a_form, a_field_name, an_entity_name = @entity_name, a_style_class = '')
+  def select_one(a_form, a_field_name, a_style_class = '')
+    nested_select_one(a_form, a_field_name, @entity_name, a_style_class)
+  end
+
+  def nested_select_one(a_form, a_field_name, an_entity_name = @entity_name, a_style_class = '')
     render args(:one, a_form, a_field_name, an_entity_name, a_style_class)
   end
 

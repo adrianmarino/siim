@@ -1,0 +1,12 @@
+%div
+  = form.fields_for :consultations do |f|
+    %div.form-panel.nested-form-panel
+      %div
+        = f.link_to_remove t('form.nested.delete')
+      %div
+        = nested_datepicker f, :achievement_date, :consultation
+        = nested_text f, :diagnostic, :consultation
+        = nested_text f, :symptomps, :consultation
+        = nested_text f, :treatment, :consultation
+        = nested_select_one f, :medical, :consultation
+  = form.link_to_add t('form.nested.add'), :consultations
