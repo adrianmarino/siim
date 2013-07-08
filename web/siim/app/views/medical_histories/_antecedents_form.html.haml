@@ -1,6 +1,8 @@
 %div
   = form.fields_for :antecedents do |f|
-    %div.nested_form_container
-      = nested_big_text f, :description, :antecedent, :antecedent_description
-      = form.link_to_remove t('form.nested.delete')
+    %div.form-panel.antecedent-form-panel
+      %div
+        = f.link_to_remove t('form.nested.delete'), :class => :antecedent_btn_remove
+      %div
+        = nested_big_text f, :description, :antecedent, :antecedent_description
   = form.link_to_add t('form.nested.add'), :antecedents

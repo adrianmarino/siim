@@ -150,6 +150,10 @@ es:
         sex: "Sexo"
       antecedent:
         description: "Descripcion"
+      allergy:
+        record_date: "Fecha de registro"
+        cause: "Causa"
+        observations: "Observaciones"
     errors:
       models:
         user:

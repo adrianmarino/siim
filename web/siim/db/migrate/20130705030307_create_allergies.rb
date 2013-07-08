@@ -4,7 +4,6 @@ class CreateAllergies < ActiveRecord::Migration
       t.string :cause
       t.string :observations
       t.date :record_date
-      t.boolean :severity
 
       t.timestamps
     end

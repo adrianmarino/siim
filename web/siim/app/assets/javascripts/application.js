@@ -23,9 +23,22 @@
 //= require bootstrap-multiselect
 //= require jquery_nested_form
 
+$.fn.datepicker.dates['es'] = {
+  days: ["Domindo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado", "Domingo"],
+  daysShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"],
+  daysMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa", "Do"],
+  months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+  monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+  today: "Hoy"
+};
 
 $(document).on("focus", "[data-behaviour~='datepicker']", function(e){
-    $(this).datepicker({"format": "yyyy-mm-dd", "weekStart": 1, "autoclose": true});
+    $(this).datepicker({
+        "format": "yyyy-mm-dd", 
+        "weekStart": 1, 
+        "autoclose": true,
+        "language": I18n.locale
+    });
 });
 
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
@@ -72,7 +85,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 } );
 
 $(document).ready(function() {
-    $(".remove_nested_fields").addClass('btn');
+    $(".remove_nested_fields").addClass('btn').prepend('<i class="icon-remove icon-white remove_nested_fields_icon">&nbsp;</i>');
     $(".add_nested_fields").addClass('btn').prepend('<i class="icon-plus icon-white">&nbsp;</i>');
 
     $(".selectpicker").selectpicker();
@@ -105,6 +118,6 @@ $(document).ready(function() {
 $(document).on('nested:fieldAdded', function(event){
   var field = event.field; 
   var remove_button = field.find('.remove_nested_fields');
-  remove_button.addClass('btn');
+  remove_button.addClass('btn').prepend('<i class="icon-remove icon-white remove_nested_fields_icon">&nbsp;</i>');
 });
 

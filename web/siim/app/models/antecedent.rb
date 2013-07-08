@@ -2,7 +2,7 @@ class Antecedent < ActiveRecord::Base
   # -------------------------------------------------------------------------
   # Attributes...
   # -------------------------------------------------------------------------
-  attr_accessible :description
+  attr_accessible :description, :medical_history, :medical_history_id
 
   # -------------------------------------------------------------------------
   # Associations...

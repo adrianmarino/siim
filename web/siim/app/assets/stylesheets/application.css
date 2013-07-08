@@ -15,6 +15,7 @@
  *= require bootstrap-select
  *= require bootstrap-multiselect
  */
+
 .options { width: 1%; }
 .footer {
  	margin-top: 0px; 
@@ -42,19 +43,22 @@
   width: 99%;
 }
 
-.nested_form_container {
-	padding-bottom: 10px;
+.antecedent_btn_remove {
+  margin-top: -14px;  
 }
 
 .remove_nested_fields {
-/*	float: right; */
+	float: right;
+}
+
+.remove_nested_fields_icon {
+  padding-bottom: 2px
 }
 
 .form-field {
   float: left;
   margin: 0px;
   margin-right: 20px;
-  margin-bottom: 10px;
 }
 
 
@@ -78,9 +82,33 @@
   margin-bottom: 20px;
   min-height: 20px;
   padding: 19px;
-  padding-bottom: 5px;
+  padding-bottom: 19px;
+}
+
+.nested-form-panel {
+  overflow: auto;
+}
+
+.antecedent-form-panel {
+  overflow: auto;
+  padding-top: 27px;
 }
 
 .medical-history-form-panel {
   overflow: auto;
+}
+
+
+#datepicker .input-date {
+  width: 78px;
+}
+
+#datepicker .icon-th {
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+.allergy-observations {
+  width: 99%;
+  height: 86px;
 }
