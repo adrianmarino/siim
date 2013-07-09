@@ -87,6 +87,7 @@
 
 .nested-form-panel {
   overflow: auto;
+  border: 1px solid #A8B3B9;
 }
 
 .antecedent-form-panel {

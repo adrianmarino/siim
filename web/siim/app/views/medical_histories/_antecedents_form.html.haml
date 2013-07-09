@@ -1,6 +1,6 @@
 %div
   = form.fields_for :antecedents do |f|
-    %div.form-panel.antecedent-form-panel
+    %div.form-panel.nested-form-panel
       %div
         = f.link_to_remove t('form.nested.delete'), :class => :antecedent_btn_remove
       %div
