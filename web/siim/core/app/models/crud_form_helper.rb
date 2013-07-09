@@ -16,11 +16,11 @@ module CrudFormHelper
   # Simple Fields...
   # -------------------------------------------------------------------------
 
-  def check_box(a_form, a_field_name, a_style_class = '')
+  def checkbox(a_form, a_field_name, a_style_class = '')
     nested_text a_form, a_field_name, @entity_name, a_style_class
   end
 
-  def nested_check_box(a_form, a_field_name, an_entity_name = @entity_name, a_style_class = '')
+  def nested_checkbox(a_form, a_field_name, an_entity_name = @entity_name, a_style_class = '')
     render args(:check_box, a_form, a_field_name, an_entity_name, a_style_class)
   end
 
