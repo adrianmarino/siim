@@ -13,6 +13,7 @@ gem 'bootstrap-datepicker-rails' #,  :require => 'bootstrap-datepicker-rails', :
 gem 'jquery-datatables-rails' #, git: 'git://github.com/rweng/jquery-datatables-rails.git'
 gem 'i18n-js'
 gem 'nested_form'
+gem 'bootstrap-select-rails'
 
 # Security...
 gem 'devise'

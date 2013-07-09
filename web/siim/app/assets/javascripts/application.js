@@ -18,9 +18,8 @@
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require i18n
-//= require i18n/translations
 //= require bootstrap-select
-//= require bootstrap-multiselect
+//= require i18n/translations
 //= require jquery_nested_form
 
 $.fn.datepicker.dates['es'] = {
@@ -92,11 +91,12 @@ $(document).ready(function() {
         style: 'btn-info',
         size: 4
     });
+    /*
     $(".multiselect").multiselect({
         "none": "select something...",
         style: 'btn-info',
         size: 4
-    });
+    });*/
 
     $('#list').dataTable({
         "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",

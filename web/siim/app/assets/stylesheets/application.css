@@ -13,7 +13,6 @@
  *= require bootstrap-datepicker
  *= require dataTables/jquery.dataTables.bootstrap
  *= require bootstrap-select
- *= require bootstrap-multiselect
  */
 
 .options { width: 1%; }
