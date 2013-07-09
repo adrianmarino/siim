@@ -6,7 +6,7 @@
       %div
         = nested_datepicker f, :achievement_date, :consultation
         = nested_select_one f, :medical, :consultation
-        = nested_text f, :diagnostic, :consultation
-        = nested_text f, :symptomps, :consultation
-        = nested_text f, :treatment, :consultation
+        = nested_big_text f, :diagnostic, :consultation, :antecedent_description
+        = nested_big_text f, :symptomps, :consultation, :antecedent_description
+        = nested_big_text f, :treatment, :consultation, :antecedent_description
   = form.link_to_add t('form.nested.add'), :consultations

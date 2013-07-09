@@ -24,6 +24,14 @@ module CrudFormHelper
     render args(:check_box, a_form, a_field_name, an_entity_name, a_style_class)
   end
 
+  def mail(a_form, a_field_name, a_style_class = '')
+    nested_mail a_form, a_field_name, @entity_name, a_style_class
+  end
+
+  def nested_mail(a_form, a_field_name, an_entity_name = @entity_name, a_style_class = '')
+    render args(:mail, a_form, a_field_name, an_entity_name, a_style_class)
+  end
+
   def text(a_form, a_field_name, a_style_class = '')
     nested_text a_form, a_field_name, @entity_name, a_style_class
   end

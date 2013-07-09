@@ -93,13 +93,18 @@
   overflow: auto;
 }
 
+#mail_text .icon-envelope {
+  padding-top: 0px;
+  margin-left: 0px;
+}
+
 #datepicker .input-date {
   width: 78px;
 }
 
-#datepicker .icon-th {
-  margin-top: 2px;
-  margin-left: 2px;
+#datepicker .icon-calendar {
+  margin-top: 3px;
+  margin-left: 0px;
 }
 
 .allergy_observations {

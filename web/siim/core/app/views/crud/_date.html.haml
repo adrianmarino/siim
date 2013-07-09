@@ -1,5 +1,5 @@
 = form.label field_label
-%div#datepicker.input-append.date
-  = form.text_field field_name, "data-behaviour"=>"datepicker", "language" => "es", :readonly => :readonly, :class => "input-date #{style_class}"
+%div#datepicker.input-prepend.date
   %spam.add-on
-    %i.icon-th
+    %i.icon-calendar
+  = form.text_field field_name, "data-behaviour"=>"datepicker", "language" => "es", :readonly => :readonly, :class => "input-date #{style_class}"
