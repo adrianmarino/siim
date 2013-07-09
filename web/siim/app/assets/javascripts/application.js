@@ -85,8 +85,8 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 } );
 
 $(document).ready(function() {
-    $(".remove_nested_fields").addClass('btn').prepend('<i class="icon-remove icon-white remove_nested_fields_icon">&nbsp;</i>');
-    $(".add_nested_fields").addClass('btn').prepend('<i class="icon-plus icon-white">&nbsp;</i>');
+    $(".remove_nested_fields").addClass('btn').prepend('<i class="icon-minus-sign icon-white remove_nested_fields_icon"></i>');
+    $(".add_nested_fields").addClass('btn').prepend('<i class=" icon-plus-sign icon-white">&nbsp;</i>');
 
     $(".selectpicker").selectpicker();
     $(".multiselect").multiselect({"none": "select something..."});
@@ -118,6 +118,6 @@ $(document).ready(function() {
 $(document).on('nested:fieldAdded', function(event){
   var field = event.field; 
   var remove_button = field.find('.remove_nested_fields');
-  remove_button.addClass('btn').prepend('<i class="icon-remove icon-white remove_nested_fields_icon">&nbsp;</i>');
+  remove_button.addClass('btn').prepend('<i class="icon-minus-sign icon-white remove_nested_fields_icon">&nbsp;</i>');
 });
 

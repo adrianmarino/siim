@@ -173,11 +173,11 @@ es:
         end_date: "Fecah de finalización"
         name: "Nombre"
         dose: "Dósis"
-        how_often: "Casa cuanto"
+        how_often: "Cada cuanto"
         route: "Vía"
       vaccine:
         last_application: "Fecha de última aplicación"
-        name: "Vacuna"
+        name: "Nombre"
     errors:
       models:
         user:
