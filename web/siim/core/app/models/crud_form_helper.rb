@@ -64,6 +64,14 @@ module CrudFormHelper
     render args(:date, a_form, a_field_name, an_entity_name, a_style_class)
   end
 
+  def select_box(a_form, a_field_name, values, a_style_class = '')
+    nested_select_box(a_form, a_field_name, values, @entity_name, a_style_class)
+  end
+
+  def nested_select_box(a_form, a_field_name, values, an_entity_name = @entity_name, a_style_class = '')
+    render select_args(:select, a_form, a_field_name, values, an_entity_name, a_style_class)
+  end
+
   # -------------------------------------------------------------------------
   # Association Fields...
   # -------------------------------------------------------------------------
@@ -83,5 +91,10 @@ module CrudFormHelper
     def args(a_view, a_form, a_field_name, an_entity_name, a_style_class)
       field_label = translate_attribute an_entity_name, a_field_name
       {:partial => "crud/#{a_view}", :locals => {:form => a_form, :field_name => a_field_name, :field_label => field_label, :style_class => a_style_class} }
+    end
+
+    def select_args(a_view, a_form, a_field_name, values, an_entity_name, a_style_class)
+      field_label = translate_attribute an_entity_name, a_field_name
+      {:partial => "crud/#{a_view}", :locals => {:form => a_form, :field_name => a_field_name, :field_label => field_label, :style_class => a_style_class, :values => values.sort} }
     end
 end

@@ -7,7 +7,7 @@
   .form-field= nested_text       f, :blood_group, :patient
   .form-field= nested_number     f, :height, :patient, :patient_height
   .form-field= nested_number     f, :weight, :patient, :patient_weight
-  .form-field= nested_text       f, :sex, :patient
+  .form-field= nested_select_box f, :sex, [["Masculino","male"], ["Femenino","female"]], :patient
   .form-field= nested_text       f, :address, :patient
   .form-field= nested_mail       f, :email, :patient
   .form-field= nested_text       f, :home_phone, :patient
