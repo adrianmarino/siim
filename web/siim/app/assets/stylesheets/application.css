@@ -44,7 +44,7 @@
 }
 
 .antecedent_btn_remove {
-  margin-top: -14px;  
+  margin-top: -12px;  
 }
 
 .remove_nested_fields {
@@ -109,7 +109,7 @@
   margin-left: 2px;
 }
 
-.allergy-observations {
+.allergy_observations {
   width: 99%;
   height: 86px;
 }
