@@ -13,6 +13,7 @@
  *= require bootstrap-datepicker
  *= require dataTables/jquery.dataTables.bootstrap
  *= require bootstrap-select
+ *= require bootstrap-spinedit
  */
 
 .options { width: 1%; }
@@ -125,4 +126,11 @@
 .medical_exam_observations {
   width: 99%;
   height: 86px;
+}
+
+.patient_height {
+  width: 32px;
+}
+.patient_weight {
+  width: 32px;
 }

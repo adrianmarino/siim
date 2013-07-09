@@ -19,6 +19,7 @@
 //= require dataTables/jquery.dataTables.bootstrap
 //= require i18n
 //= require bootstrap-select
+//= require bootstrap-spinedit
 //= require i18n/translations
 //= require jquery_nested_form
 
@@ -84,6 +85,22 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 } );
 
 $(document).ready(function() {
+    $('.patient_height').spinedit({
+        minimum: 0,
+        maximum: 4,
+        step: 0.01,
+        value: 1.5,
+        numberOfDecimals: 2
+    });
+
+    $('.patient_weight').spinedit({
+        minimum: 0,
+        maximum: 800,
+        step: 1,
+        value: 60,
+        numberOfDecimals: 0
+    });
+
     $(".remove_nested_fields").addClass('btn').prepend('<i class="icon-minus-sign icon-white remove_nested_fields_icon">&nbsp;</i>');
     $(".add_nested_fields").addClass('btn').prepend('<i class=" icon-plus-sign icon-white">&nbsp;</i>');
 
