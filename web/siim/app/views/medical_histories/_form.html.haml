@@ -29,7 +29,11 @@
         %div#consultations-panel.tab-pane.form-panel.medical-history-form-panel
           = render :partial => 'consultations_form', :locals => {:form => a_form}
         %div#diseases-panel.tab-pane.form-panel.medical-history-form-panel
+          = render :partial => 'diseases_form', :locals => {:form => a_form}
         %div#medical_exams-panel.tab-pane.form-panel.medical-history-form-panel
+          = render :partial => 'medical_exams_form', :locals => {:form => a_form}
         %div#medications-panel.tab-pane.form-panel.medical-history-form-panel
+          = render :partial => 'medications_form', :locals => {:form => a_form}
         %div#vaccines-panel.tab-pane.form-panel.medical-history-form-panel
+          = render :partial => 'vaccines_form', :locals => {:form => a_form}
   = submit a_form

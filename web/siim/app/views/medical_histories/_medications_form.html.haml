@@ -1,0 +1,13 @@
+%div
+  = form.fields_for :medications do |f|
+    %div.form-panel.nested-form-panel
+      %div
+        = f.link_to_remove t('form.nested.delete')
+      %div
+        = nested_datepicker f, :begin_date, :medication
+        = nested_datepicker f, :end_date, :medication
+        = nested_text f, :name, :medication
+        = nested_text f, :dose, :medication
+        = nested_text f, :how_often, :medication
+        = nested_text f, :route, :medication
+  = form.link_to_add t('form.nested.add'), :medications

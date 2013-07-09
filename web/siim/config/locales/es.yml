@@ -129,7 +129,7 @@ es:
         patient: "Paciente"
         allergies: "Alergias"
         antecedents: "Antecedentes"
-        consutations: "Consultas"
+        consultations: "Consultas"
         diseases: "Enfermedades"
         medical_exams: "Examenes"
         medications: "Medicaciones"
@@ -160,6 +160,24 @@ es:
         symptomps: "Síntomas"
         treatment: "Tratamiento"
         medical: "Médico"
+      disease:
+        record_date: "Fecha de manifestación"
+        name: "Nombre"
+        observations: "Observaciones"
+      medical_exam:
+        achievement_date: "Fecha de realización"
+        observations: "Observaciones"
+        results: "Resultados"
+      medication:
+        begin_date: "Fecha de comienzo"
+        end_date: "Fecah de finalización"
+        name: "Nombre"
+        dose: "Dósis"
+        how_often: "Casa cuanto"
+        route: "Vía"
+      vaccine:
+        last_application: "Fecha de última aplicación"
+        name: "Vacuna"
     errors:
       models:
         user:
