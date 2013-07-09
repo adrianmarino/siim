@@ -89,14 +89,8 @@ $(document).ready(function() {
 
     $(".selectpicker").selectpicker({
         style: 'btn-info',
-        size: 4
+        size: '18'
     });
-    /*
-    $(".multiselect").multiselect({
-        "none": "select something...",
-        style: 'btn-info',
-        size: 4
-    });*/
 
     $('#list').dataTable({
         "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
