@@ -1,4 +1,4 @@
-class AddMedicalHistoryRefToAllergie < ActiveRecord::Migration
+class AddMedicalHistoryRefToAllergy < ActiveRecord::Migration
   def change
     change_table :allergies do |a_table|
       a_table.references :medical_history
