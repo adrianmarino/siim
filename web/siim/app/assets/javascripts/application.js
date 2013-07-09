@@ -88,8 +88,15 @@ $(document).ready(function() {
     $(".remove_nested_fields").addClass('btn').prepend('<i class="icon-minus-sign icon-white remove_nested_fields_icon">&nbsp;</i>');
     $(".add_nested_fields").addClass('btn').prepend('<i class=" icon-plus-sign icon-white">&nbsp;</i>');
 
-    $(".selectpicker").selectpicker();
-    $(".multiselect").multiselect({"none": "select something..."});
+    $(".selectpicker").selectpicker({
+        style: 'btn-info',
+        size: 4
+    });
+    $(".multiselect").multiselect({
+        "none": "select something...",
+        style: 'btn-info',
+        size: 4
+    });
 
     $('#list').dataTable({
         "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
