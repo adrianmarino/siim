@@ -85,7 +85,7 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 } );
 
 $(document).ready(function() {
-    $(".remove_nested_fields").addClass('btn').prepend('<i class="icon-minus-sign icon-white remove_nested_fields_icon"></i>');
+    $(".remove_nested_fields").addClass('btn').prepend('<i class="icon-minus-sign icon-white remove_nested_fields_icon">&nbsp;</i>');
     $(".add_nested_fields").addClass('btn').prepend('<i class=" icon-plus-sign icon-white">&nbsp;</i>');
 
     $(".selectpicker").selectpicker();

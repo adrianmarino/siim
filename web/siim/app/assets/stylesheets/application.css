@@ -43,8 +43,8 @@
   width: 99%;
 }
 
-.antecedent_btn_remove {
-  margin-top: -14px;  
+.medical_history_btn_remove {
+  margin-top: -20px;  
 }
 
 .remove_nested_fields {
@@ -60,7 +60,6 @@
   margin: 0px;
   margin-right: 20px;
 }
-
 
 .nav-tabs > li > a {
   font-size: 15px;
@@ -88,17 +87,12 @@
 .nested-form-panel {
   overflow: auto;
   border: 1px solid #CCCCCC;
-}
-
-.antecedent-form-panel {
-  overflow: auto;
-  padding-top: 27px;
+  padding-top: 36px;
 }
 
 .medical-history-form-panel {
   overflow: auto;
 }
-
 
 #datepicker .input-date {
   width: 78px;
