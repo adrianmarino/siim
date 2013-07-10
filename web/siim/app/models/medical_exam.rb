@@ -2,7 +2,7 @@ class MedicalExam < ActiveRecord::Base
   # -------------------------------------------------------------------------
   # Attributes...
   # -------------------------------------------------------------------------
-  attr_accessible :achievement_date, :observations, :results,
+  attr_accessible :achievement_date, :name, :results, :observations,
     :medical_history, :medical_history_id
 
   # -------------------------------------------------------------------------

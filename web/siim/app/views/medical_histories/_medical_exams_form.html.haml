@@ -6,6 +6,8 @@
       %div
         = nested_datepicker f, :achievement_date, :medical_exam
       %div
+        = nested_text f, :name, :medical_exam
+      %div
         = nested_big_text f, :results, :medical_exam, :medical_exam_results
       %div
         = nested_big_text f, :observations, :medical_exam, :medical_exam_observations

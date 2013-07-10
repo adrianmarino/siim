@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(:version => 20130706015755) do
 
   create_table "medical_exams", :force => true do |t|
     t.date     "achievement_date"
+    t.string   "name"
     t.string   "results"
     t.string   "observations"
     t.datetime "created_at",         :null => false
