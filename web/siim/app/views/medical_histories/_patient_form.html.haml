@@ -3,8 +3,7 @@
   .form-field= nested_text       f, :firstname, :patient
   .form-field= nested_text       f, :lastname, :patient
   .form-field= nested_datepicker f, :birthdate, :patient
-  .form-field= nested_text       f, :blood_factor, :patient
-  .form-field= nested_text       f, :blood_group, :patient
+  .form-field= nested_select_box f, :blood_type, blood_types, :patient
   .form-field= nested_number     f, :height, :patient, :patient_height
   .form-field= nested_number     f, :weight, :patient, :patient_weight
   .form-field= nested_select_box f, :sex, sex_values, :patient

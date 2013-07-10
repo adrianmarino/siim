@@ -9,9 +9,9 @@ class Patient < ActiveRecord::Base
   # -------------------------------------------------------------------------
   # Attributes...
   # -------------------------------------------------------------------------
-  attr_accessible :dni, :firstname, :lastname, :birthdate, :blood_factor,
-    :blood_group, :height, :weight, :sex, :address, :email, :home_phone,
-    :movile_phone, :medical_history, :medical_history_id
+  attr_accessible :dni, :firstname, :lastname, :birthdate, :blood_type,
+    :height, :weight, :sex, :address, :email, :home_phone, :movile_phone,
+    :medical_history, :medical_history_id
 
   # -------------------------------------------------------------------------
   # Associations...

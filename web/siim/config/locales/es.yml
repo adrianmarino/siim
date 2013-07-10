@@ -137,8 +137,7 @@ es:
       patient:
         address: "Dirección"
         birthdate: "Fecha de Nacimiento"
-        blood_factor: "Factor Sanguineo"
-        blood_group: "Grupo Sanguineo"
+        blood_type: "Tipo de sangre"
         dni: "DNI"
         email: "Correo Electrónico"
         firstname: "Nombre"
@@ -165,6 +164,7 @@ es:
         name: "Nombre"
         observations: "Observaciones"
       medical_exam:
+        name: "Nombre"
         achievement_date: "Fecha de realización"
         observations: "Observaciones"
         results: "Resultados"
@@ -248,3 +248,12 @@ es:
   sex:
     male: "Masculino"
     female: "Femenino"
+  blood_type:
+    o_positive: "O +"
+    o_negative: "O -"
+    a_positive: "A +"
+    a_negative: "A -"
+    b_positive: "B +"
+    b_negative: "B -"
+    ab_positive: "AB +"
+    ab_negative: "AB -"
