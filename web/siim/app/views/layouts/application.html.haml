@@ -11,7 +11,7 @@
     .container
       = yield :content
     %hr.separator-bar/
-    .footer=raw t('app.author')
+    .footer=raw t('app.author') + " / " + t('app.version')
     / Modal
     #myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
       .modal-header
