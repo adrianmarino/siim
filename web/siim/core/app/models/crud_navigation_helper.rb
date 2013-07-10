@@ -4,11 +4,11 @@ module CrudNavigationHelper
   # Public Methods...
   # -------------------------------------------------------------------------
   def back_button(a_path)
-    crud_button a_path, :back, 'icon-arrow-left'
+    crud_button a_path, :back, 'icon-chevron-left'
   end
 
   def create_button(a_path)
-    crud_button a_path, :create, 'icon-plus'
+    crud_button a_path, :create, 'icon-plus-sign'
   end
 
   def edit_button(a_path)

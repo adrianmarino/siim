@@ -1,5 +1,7 @@
-= form_for(@medical_specialization) do |f|
+= form_for @medical_specialization do |f|
   = errors
-  = text f, :name
+  .form-panel
+    .field
+      = text f, :name
   = submit f
 

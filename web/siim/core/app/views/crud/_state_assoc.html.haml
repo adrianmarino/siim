@@ -1,7 +1,0 @@
-.field
-  = f.label translate_attribute(@entity_name,name)
-  - entity = instance_of(@entity_name)
-  - current_state = entity.state
-  - options = [[h(t("#{@entity_name}.state.#{current_state}")), current_state]]
-  - options += entity.transitions.collect {|a_transition_name| [h(t("#{@entity_name}.state.#{a_transition_name}")), a_transition_name] }
-  = f.select(name, options, {}, {:class => 'selectpicker'})

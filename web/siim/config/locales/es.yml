@@ -5,6 +5,7 @@ es:
     name: "SIIM"
     description: 'Servicio Integral de Informacion Médica'
     author: '&copy; BAMBU Solutions 2013'
+    version: 'Versión: 0.3.0'
 
   data_table:
     paginate:
@@ -96,6 +97,16 @@ es:
       user: "Usuario"
       medical: "Médico"
       medical_specialization: "Especialización"
+      allergie: "Alergia"
+      medication: "Medicación"
+      vaccine: "Vacuna"  
+      disease: "Enfermedad"
+      antecedent: "Antecete"
+      medical_exam: "Examen Médico"
+      consultation: "Consuta"
+      patient: "Paciente"
+      contact: "Contacto"
+      medical_history: "Historia Médica"
     attributes:
       user:
         first_name: "Nombre"
@@ -112,7 +123,61 @@ es:
         specialization: "Especiazación"
         home_phone: "Teléfono Fijo"
         movile_phone: "Teléfono Movil"
+        medical_specialization: "Especialización"
       medical_specialization:
+        name: "Nombre"
+      medical_history:
+        patient: "Paciente"
+        allergies: "Alergias"
+        antecedents: "Antecedentes"
+        consultations: "Consultas"
+        diseases: "Enfermedades"
+        medical_exams: "Examenes"
+        medications: "Medicaciones"
+        vaccines: "Vacunas"
+      patient:
+        address: "Dirección"
+        birthdate: "Fecha de Nacimiento"
+        blood_type: "Tipo de sangre"
+        dni: "DNI"
+        email: "Correo Electrónico"
+        firstname: "Nombre"
+        lastname: "Apellido"
+        height: "Altura (Mts)"
+        weight: "Peso (Kg)"
+        home_phone: "Teléfono Fijo"
+        movile_phone: "Télefono Movil"
+        sex: "Sexo"
+      antecedent:
+        description: "Descripcion"
+      allergy:
+        record_date: "Fecha de registro"
+        cause: "Causa"
+        observations: "Observaciones"
+      consultation:
+        achievement_date: "Fecha de realización"
+        diagnostic: "Diagnóstico"
+        symptomps: "Síntomas"
+        treatment: "Tratamiento"
+        medical: "Médico"
+      disease:
+        record_date: "Fecha de manifestación"
+        name: "Nombre"
+        observations: "Observaciones"
+      medical_exam:
+        name: "Nombre"
+        achievement_date: "Fecha de realización"
+        observations: "Observaciones"
+        results: "Resultados"
+      medication:
+        begin_date: "Fecha de comienzo"
+        end_date: "Fecha de finalización"
+        name: "Nombre"
+        dose: "Dósis"
+        how_often: "Cada cuanto"
+        route: "Vía"
+      vaccine:
+        last_application: "Fecha de última aplicación"
         name: "Nombre"
     errors:
       models:
@@ -159,10 +224,15 @@ es:
       show: "Detalle de Médico"
       list: "Médicos"
     medical_specialization:
-      new: "Nueva Especiazación Médica"
-      edit: "Editar Especiazación Médica"
-      show: "Detalle de Especiazación Médica"
-      list: "Especiazaciones Médicas"
+      new: "Nueva Especialización Médica"
+      edit: "Editar Especialización Médica"
+      show: "Detalle de Especialización Médica"
+      list: "Especializaciones Médicas"
+    medical_history:
+      new: "Nueva Historia Médica"
+      edit: "Editar Historia Médica"
+      show: "Detalle de Historia Médica"
+      list: "Historias Médicas" 
   helpers:
     submit:
       create: "Crear %{model}"
@@ -171,4 +241,20 @@ es:
     medicals: "Médicos"
     administration: "Administración"
     medical_specializations: "Especializaciones Medicas"
-
+    medical_histories: "Historias Médicas"
+  form:
+    nested:
+      delete: "Borrar"
+      add: "Agregar"
+  sex:
+    male: "Masculino"
+    female: "Femenino"
+  blood_type:
+    o_positive: "O +"
+    o_negative: "O -"
+    a_positive: "A +"
+    a_negative: "A -"
+    b_positive: "B +"
+    b_negative: "B -"
+    ab_positive: "AB +"
+    ab_negative: "AB -"

@@ -18,14 +18,27 @@
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require i18n
-//= require i18n/translations
 //= require bootstrap-select
-//= require bootstrap-multiselect
+//= require bootstrap-spinedit
+//= require i18n/translations
 //= require jquery_nested_form
 
+$.fn.datepicker.dates['es'] = {
+  days: ["Domindo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado", "Domingo"],
+  daysShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"],
+  daysMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa", "Do"],
+  months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+  monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+  today: "Hoy"
+};
 
 $(document).on("focus", "[data-behaviour~='datepicker']", function(e){
-    $(this).datepicker({"format": "yyyy-mm-dd", "weekStart": 1, "autoclose": true});
+    $(this).datepicker({
+        "format": "yyyy-mm-dd", 
+        "weekStart": 1, 
+        "autoclose": true,
+        "language": I18n.locale
+    });
 });
 
 jQuery.extend( jQuery.fn.dataTableExt.oSort, {
@@ -72,11 +85,29 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 } );
 
 $(document).ready(function() {
-    $(".remove_nested_fields").addClass('btn').prepend('<i class="icon-remove icon-white">&nbsp;</i>');
-    $(".add_nested_fields").addClass('btn').prepend('<i class="icon-plus icon-white">&nbsp;</i>');
+    $('.patient_height').spinedit({
+        minimum: 0,
+        maximum: 4,
+        step: 0.01,
+        value: 1.5,
+        numberOfDecimals: 2
+    });
 
-    $(".selectpicker").selectpicker();
-    $(".multiselect").multiselect({"none": "select something..."});
+    $('.patient_weight').spinedit({
+        minimum: 0,
+        maximum: 800,
+        step: 1,
+        value: 60,
+        numberOfDecimals: 0
+    });
+
+    $(".remove_nested_fields").addClass('btn').prepend('<i class="icon-minus-sign icon-white remove_nested_fields_icon">&nbsp;</i>');
+    $(".add_nested_fields").addClass('btn').prepend('<i class=" icon-plus-sign icon-white">&nbsp;</i>');
+
+    $(".selectpicker").selectpicker({
+        style: 'btn-info',
+        size: '18'
+    });
 
     $('#list').dataTable({
         "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
@@ -105,6 +136,6 @@ $(document).ready(function() {
 $(document).on('nested:fieldAdded', function(event){
   var field = event.field; 
   var remove_button = field.find('.remove_nested_fields');
-  remove_button.addClass('btn');
+  remove_button.addClass('btn').prepend('<i class="icon-minus-sign icon-white remove_nested_fields_icon">&nbsp;</i>');
 });
 

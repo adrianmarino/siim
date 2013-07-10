@@ -1,3 +1,5 @@
-.field
-  = f.label translate_attribute(@entity_name,name)
-  = f.text_field name, "data-behaviour"=>"datepicker", "data-provide" =>"typeahead"
+= form.label field_label
+%div#datepicker.input-prepend.date
+  %spam.add-on
+    %i.icon-calendar
+  = form.text_field field_name, "data-behaviour"=>"datepicker", "language" => "es", :readonly => :readonly, :class => "input-date #{style_class}"

@@ -1,0 +1,3 @@
+= form.label field_label 
+- options = entities = eval(variable_name("#{field_name}s")).collect do |an_entity| [h(an_entity.to_s), an_entity.id] end
+= form.select "#{field_name}_id", options, {}, {:class => 'selectpicker'}
