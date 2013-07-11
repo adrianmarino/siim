@@ -7,11 +7,12 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    = render 'menu'
-    .container
-      = yield :content
-    %hr.separator-bar/
-    .footer=raw t('app.author') + " / " + t('app.version')
+    #wrapper
+      = render 'menu'
+      .container= yield :content      
+      .push
+    %footer
+      %p=raw t('app.author') + " - " + t('app.version')
     / Modal
     #myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
       .modal-header

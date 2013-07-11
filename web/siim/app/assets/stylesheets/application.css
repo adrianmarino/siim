@@ -15,15 +15,49 @@
  *= require bootstrap-select
  *= require bootstrap-spinedit
  */
+ html, body {
+  height: 100%;
+}
+footer {
+  color: #666;
+  background: #111111;
+  height: 18px;
+  padding: 0 0 10px 15px;
+}
+footer a {
+  color: #999;
+}
+footer a:hover {
+  color: #efefef;
+}
+
+#wrapper .container {
+  padding-bottom: 25px;
+}
+
+footer p {
+  margin: 0;
+  padding-top: 5px;
+}
+
+#wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -28px;
+}
+.push {
+  height: 28px;
+}
+/* not required for sticky footer; just pushes hero down a bit */
+#wrapper > .container {
+  padding-top: 45px;
+}
 
 .options { width: 1%; }
-.footer {
- 	margin-top: 0px; 
-	padding-left: 10px;
-	padding-bottom: 10px;
-}
-.container { margin-top: 60px; }
+
 .nested-item-button { padding: 9px }
+
 .label-inline {
   width: auto;
   float: left;
@@ -32,9 +66,11 @@
   display: block
 }
 
-#flash_error { font-size: 15px; }
-#flash_alert { font-size: 15px; }
-#flash_notice { font-size: 15px; }
+#flash_error,
+#flash_alert,
+#flash_notice { 
+  font-size: 15px;
+}
 
 .separator-bar { margin: 10px 0px; }
 
@@ -108,29 +144,15 @@
   margin-left: 0px;
 }
 
-.allergy_observations {
-  width: 99%;
-  height: 86px;
-}
-
-.disease-observations {
-  width: 99%;
-  height: 86px;
-}
-
-.medical_exam_results  {
-  width: 99%;
-  height: 86px;
-} 
-
+.allergy_observations,
+.disease-observations,
+.medical_exam_results,
 .medical_exam_observations {
   width: 99%;
   height: 86px;
 }
 
-.patient_height {
-  width: 32px;
-}
+.patient_height,
 .patient_weight {
   width: 32px;
 }
