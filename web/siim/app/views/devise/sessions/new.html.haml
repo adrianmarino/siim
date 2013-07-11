@@ -1,0 +1,57 @@
+- content_for :content do
+  
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+
+    %table.panelTable
+      %tr
+        %td.panelImage
+          %table.panelTable
+            %tr
+              %td
+                %div
+                  %p= image_tag 'medicalHistory.jpg', :alt => t('app.description')
+
+        %td.panelLogin
+          %table.panelTable
+            %tr
+              %td
+                %div
+                  - if flash[:error] or flash[:notice] or flash[:alert]
+                    = content_tag(:div, flash[:error], :id => :flash_error, :class => "alert alert-error") if flash[:error]
+                    = content_tag(:div, flash[:notice], :id => :flash_notice, :class => "alert alert-success") if flash[:notice]
+                    = content_tag(:div, flash[:alert], :id => :flash_alert, :class => "alert alert-info") if flash[:alert]
+            %tr
+              %td
+                %div.pull-right
+                  %p.label-inline= t(:didnt_signed_up)
+                  = link_to t(:sign_up), new_registration_path(resource_name), :class => "btn"         
+            %tr
+              %td
+                %div  
+                  %h2.margin= t :sign_in         
+            %tr
+              %td  
+                %div
+                  = f.label t(:login), :class => 'textBlue'
+                  = f.text_field :login, :placeholder => t(:example_mail) 
+               
+                %div 
+                  = f.label User.human_attribute_name(:password), :class => 'textBlue'
+                  = f.password_field :password, :placeholder => User.human_attribute_name(:password)
+                
+                %div
+                  - if devise_mapping.rememberable?
+                    = f.label t(:remember_me), :class => 'label-inline'
+                    = f.check_box :remember_me
+            %tr
+              %td
+                %div.margin
+                  = f.submit t(:sign_in), :class => "btn btn-primary label-inline"
+
+                  = link_to t(:forgot_your_password), new_password_path(resource_name), :class => "remenberPass"
+
+            %br
+            %tr
+              %td
+                %div.margin
+                  = link_to t(:didnt_receive_confirmation_instructions), new_confirmation_path(resource_name), :class => "textBlue"

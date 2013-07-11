@@ -1,0 +1,62 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.textBlue{
+margin-top: 10px; 
+color:#0101DF;
+font-family: Arial;
+font-size: 16px;
+}
+
+.formatText{
+font-family: Arial;
+font-size: 16px;
+}
+
+.remenberPass{
+color:#0101DF;
+font-family: Arial;
+font-size: 13px;
+ margin-left: 0.8em;
+}
+
+.margin{
+margin-top: 25px; 
+}
+
+
+.panelTable{
+width: 100%; 
+}
+
+.panelImage{
+width: 60%; 
+}
+
+.panelLogin{
+width: 40%; 
+}
+
+.separationBtn{
+  width: auto;
+  float: left;
+  text-align: right;
+  margin-left: 8em;
+  display: block
+}
+
+
+.spamtext{
+font-family: Arial;
+font-size: 10px;
+ margin-left: 17em;
+}
+
+.upperCase{
+text-transform: uppercase;
+}
+
+
+
+

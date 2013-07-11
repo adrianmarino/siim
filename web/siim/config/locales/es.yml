@@ -1,0 +1,281 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+es:
+  app:
+    name: "SIIM"
+    description: 'Servicio Integral de Informacion Médica'
+    author: '&copy; BAMBU Solutions 2013'
+    version: 'Versión: 0.3.0'
+
+  data_table:
+    paginate:
+      first: "Primera"
+      last: "Ultima"
+      next: "Proxima"
+      previous: "Anterior"
+    emptyTable: "No hay datos disponibles en la tabla"
+    info: "Hay un total de _TOTAL_ filas a mostrar (_START_ a _END_)"
+    infoEmpty: "No hay filas para mostrar"
+    infoFiltered: " - Filtrando desde _MAX_ filas"
+    infoPostFix: ""
+    search: "Aplicar el filtro _INPUT_ a la tabla"
+    zeroRecords: "No hay filas para mostrar"
+    lengthMenu: "Mostrar _MENU_ filas"
+
+  save_error: "%{entity_name} no se puede guardar ya que hay %{errors}:"
+  login_as: "Logueado como"
+  sign_out_question: "¿Realmente desea salir?"
+  no_: "No"
+  yes_: "Si"
+  confirm: "¿Estas seguro de que desea eliminar su cuenta?"
+  home: "Inicio"
+  sign_up: "Regístrate"
+  login: "DNI / Correo Electronico"
+  remember_me: "Recordar"
+  password_confirmation: "Confirmación de la contraseña"
+  sign_in_with: "Conéctate con"
+  sign_in: "Ingresar"
+  cancel: "Cancelar"
+  accept: "Aceptar"
+  forgot_your_password: "¿Olvidaste tu contraseña?"
+  didnt_signed_up: "¿Todavia  no te registraste?"
+  didnt_receive_confirmation_instructions: "¿No recibio instrucciones de confirmación?"
+  didnt_receive_unlock_instructions: "¿No recibio instrucciones de desbloqueo?"
+  sign_up_as_admin: "Regístrate como administrador"
+  sign_in_as_admin: "Iniciar sesión como administrador"
+  sign_up_as_user: "Regístrate como usuario"
+  create_user: "Crear una cuenta"  
+  sign_in_as_user: "Iniciar sesión como usuario"
+  token_authentication_example: "Ejemplo de autenticación Token"
+  send_me_reset_password_instructions: "Envíar instrucciones para restablecer mi contraseña"
+  devise:
+    registrations:
+      user:
+        inactive_signed_up: "Se ha registrado correctamente. Sin embargo, no puedes iniciar sesion debido a que tu cuenta esta %{reason}."
+    failure:
+      user:
+        not_found_in_database: "El usuario no se encuentra registrado!"
+
+  change_your_password: "Cambie su contraseña"
+  new_password: "Nueva contraseña"
+  confirm_new_password: "Confirmar nueva contraseña"
+  cant_character_password: "8 caracteres como mínimo, distingue mayúsculas de minúsculas"
+  change_my_password: "Cambiar mi contraseña"
+  welcome: "Bienvenido"
+  confirm_my_account: "Confirmar mi cuenta"
+  confirm_password_mail_body: "Puede confirmar su cuenta a través del siguiente enlace:"
+  register_account: "Se ha solicitado la apertura de una cuenta en 'SIIM - Sistema Integral de Información Médica' utilizando su dirección de correo. Para completar el proceso de registro haga clic en el siguiente enlace:"
+  hello: "Hola"
+  regards: "Saludos."
+  unlock_my_account: "Desbloquear mi cuenta"
+  example_mail: "alguien@ejemplo.com"  
+  unlock_account_mail_body: "Tu cuenta fue bloqueada debido a una cantidad excesiva de intentos fallidos de ingreso."
+  click_the_link_below_to_unlock_your_account: "Para desbloquear tu cuenta haz click en el siguiente enlace:"
+  someone_has_requested_a_link_to_change_your_password: "Recibimos una solicitación de cambio de contraseña. Para confirmar tu nueva contraseña haz click en el siguiente enlace:"
+  information_additional_mail_link: "En la mayoría de programas de correo electrónico este enlace debería aparecer en azul. Si no funciona, córtelo y péguelo en la ventana de direcciones de su navegador."
+  if_you_didnt_request_this_please_ignore_this_email: "Si usted no solicitó, por favor ignore este mensaje."
+  access_problem_with_site: "Si tiene problemas para ingresar a su cuenta envíenos un mail a esta dirección: siim.bambusolutions@gmail.com"
+  your_password_wont_change_until_you_access_the_link: "Su contraseña no va a cambiar hasta que acceda al enlace anterior y cree uno nuevo."
+  resend_confirmation_instructions: "Solicitar instrucciones de confirmación"
+  message_for_instructions_mail: "Ingrese la cuenta de email registrada y le enviaremos las instrucciones de como cambiar la contraseña"
+  message_resend_confirmation_instructions: "Ingrese la cuenta de email registrada y le mandaremos las instrucciones para finalizar su registro"
+  message_resend_unlock_instructions: "Ingrese la cuenta de email registrada y le mandaremos las instrucciones para desbloquear su cuenta"
+  current_password: "Contraseña actual"
+  update: "Actualizar"
+  edit: "Editar"
+  back: "Atrás"
+  resend_unlock_instructions: "Volver a enviar las instrucciones de desbloqueo"
+  cancel_my_account: "Cancelar mi cuenta"
+  password_clarification: "(Dejelo en blanco si no desea cambiarlo)"
+  current_password_clarification: "(Su contraseña actual es necesaria para confirmar los cambios)"
+  unhappy: "¿Descontento?"
+  user_settings: "Mis Ajustes"
+  sign_out: "Salir"
+
+  date:
+      formats:
+          default: '%d/%m/%Y'
+
+  options: "Opciones"
+  actions:
+    back:   "Atrás"
+    show:   "Ver"
+    edit:   "Editar"
+    delete: "Borrar"
+    create: "Crear"
+    update: "Actualizar"
+
+  activerecord:
+    models:
+      user: "Usuario"
+      medical: "Médico"
+      medical_specialization: "Especialización"
+      allergie: "Alergia"
+      medication: "Medicación"
+      vaccine: "Vacuna"  
+      disease: "Enfermedad"
+      antecedent: "Antecete"
+      medical_exam: "Examen Médico"
+      consultation: "Consuta"
+      patient: "Paciente"
+      contact: "Contacto"
+      medical_history: "Historia Médica"
+    attributes:
+      user:
+        first_name: "Nombre"
+        last_name: "Apellido"
+        dni: "DNI"
+        email: "Correo electrónico"
+        password: "Contraseña"
+      medical:
+        cuil: "CUIL"
+        dni: "DNI"
+        firstname: "Nombre"
+        lastname: "Apellido"
+        email: "Correo electrónico"
+        specialization: "Especiazación"
+        home_phone: "Teléfono Fijo"
+        movile_phone: "Teléfono Movil"
+        medical_specialization: "Especialización"
+      medical_specialization:
+        name: "Nombre"
+      medical_history:
+        patient: "Paciente"
+        allergies: "Alergias"
+        antecedents: "Antecedentes"
+        consultations: "Consultas"
+        diseases: "Enfermedades"
+        medical_exams: "Examenes"
+        medications: "Medicaciones"
+        vaccines: "Vacunas"
+      patient:
+        address: "Dirección"
+        birthdate: "Fecha de Nacimiento"
+        blood_factor: "Factor Sanguineo"
+        blood_type: "Tipo de sangre"
+        dni: "DNI"
+        email: "Correo Electrónico"
+        firstname: "Nombre"
+        lastname: "Apellido"
+        height: "Altura (Mts)"
+        weight: "Peso (Kg)"
+        home_phone: "Teléfono Fijo"
+        movile_phone: "Télefono Movil"
+        sex: "Sexo"
+        contacts: "Contactos"
+      antecedent:
+        description: "Descripcion"
+      allergy:
+        record_date: "Fecha de registro"
+        cause: "Causa"
+        observations: "Observaciones"
+      consultation:
+        achievement_date: "Fecha de realización"
+        diagnostic: "Diagnóstico"
+        symptomps: "Síntomas"
+        treatment: "Tratamiento"
+        medical: "Médico"
+      disease:
+        record_date: "Fecha de manifestación"
+        name: "Nombre"
+        observations: "Observaciones"
+      medical_exam:
+        name: "Nombre"
+        achievement_date: "Fecha de realización"
+        observations: "Observaciones"
+        results: "Resultados"
+      medication:
+        begin_date: "Fecha de comienzo"
+        end_date: "Fecha de finalización"
+        name: "Nombre"
+        dose: "Dósis"
+        how_often: "Cada cuanto"
+        route: "Vía"
+      vaccine:
+        last_application: "Fecha de última aplicación"
+        name: "Nombre"
+      contact:
+        firstname: "Nombre"
+        lastname: "Apellido"
+        email: "Correo Electrónico"
+        home_phone: "Teléfono Fijo"
+        movile_phone: "Teléfono Movil"
+    errors:
+      models:
+        user:
+          attributes:
+            first_name:
+              blank: "El nombre es un campo requerido"
+            last_name:
+              blank: "es un campo requerido"
+            dni:
+              blank: "es un campo requerido"
+            cuil:
+              blank: "es un campo requerido"
+            password:
+              too_short: "muy corta"
+            confirmation_token:
+              invalid: "invalido"
+        medical:
+          attributes:
+            firstname:
+              blank: "Debe ingresar un nombre"
+            lastname:
+              blank: "Debe ingresar un apellido"
+            cuil:
+              blank: "Debe ingresar un CUIL"
+            specialization:
+              blank: "Debe ingresar una especialización"
+            home_phone:
+              blank: "Debe ingresar un teléfono fijo"
+            movile_phone:
+              blank: "Debe ingresar un teléfono movil"
+        medical_specialization:
+          attributes:
+            name:
+              blank: "Debe ingresar una especialización"
+    successful:
+      messages:
+        created: "%{model} se creo exitosamente."
+        updated: "%{model} se actualizo exitosamente."
+  title:
+    medical:
+      new: "Nuevo Médico"
+      edit: "Editar Médico"
+      show: "Detalle de Médico"
+      list: "Médicos"
+    medical_specialization:
+      new: "Nueva Especialización Médica"
+      edit: "Editar Especialización Médica"
+      show: "Detalle de Especialización Médica"
+      list: "Especializaciones Médicas"
+    medical_history:
+      new: "Nueva Historia Médica"
+      edit: "Editar Historia Médica"
+      show: "Detalle de Historia Médica"
+      list: "Historias Médicas" 
+  helpers:
+    submit:
+      create: "Crear %{model}"
+      update: "Actualizar %{model}"
+  menu:
+    medicals: "Médicos"
+    administration: "Administración"
+    medical_specializations: "Especializaciones Medicas"
+    medical_histories: "Historias Médicas"
+  form:
+    nested:
+      delete: "Borrar"
+      add: "Agregar"
+  sex:
+    male: "Masculino"
+    female: "Femenino"
+  blood_type:
+    o_positive: "O +"
+    o_negative: "O -"
+    a_positive: "A +"
+    a_negative: "A -"
+    b_positive: "B +"
+    b_negative: "B -"
+    ab_positive: "AB +"
+    ab_negative: "AB -"

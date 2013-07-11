@@ -1,0 +1,17 @@
+%p
+  = t :welcome
+  = @resource
+  \!
+
+%p= t :register_account
+
+%p= link_to  t(:confirm_my_account), confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
+
+
+%p= t :information_additional_mail_link
+
+%p= t :access_problem_with_site
+
+%p= t :if_you_didnt_request_this_please_ignore_this_email
+
+%p= t :regards

@@ -1,0 +1,31 @@
+- content_for :content do
+  %h2= t :resend_unlock_instructions
+
+  = form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f|
+   
+    %table.panelTable.form-horizontal.margin
+      %tr
+        %td
+          %div
+            = devise_error_messages!
+
+      %tr
+        %td
+          %p.formatText= t :message_resend_unlock_instructions
+
+      %tr
+        %td
+          %div
+            = f.label User.human_attribute_name(:email), :class => "label-inline formatText"
+            = f.email_field :email, :placeholder => t(:example_mail), :class => "span5" 
+      %tr
+        %td
+          %table.margin
+            %tr
+              %td
+                %div= f.submit t(:accept), :class => "btn btn-inverse"
+              %td
+                %div     
+                  = link_to t(:cancel), new_session_path(resource_name), :class => "btn btn-inverse separationBtn"
+
+= render :file => 'layouts/application'

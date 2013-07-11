@@ -1,0 +1,13 @@
+%p
+  = t :hello
+  = @resource.email
+  \!
+%p= t :unlock_account_mail_body
+%p= t :click_the_link_below_to_unlock_your_account
+%p= link_to t(:unlock_my_account), unlock_url(@resource, :unlock_token => @resource.unlock_token)
+
+%p= t :information_additional_mail_link
+
+%p= t :access_problem_with_site
+
+%p= t :regards
