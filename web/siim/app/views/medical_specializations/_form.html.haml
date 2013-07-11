@@ -1,7 +1,9 @@
-= form_for @medical_specialization, :html => { :class => :well } do |f|
+= form_for @medical_specialization, :html => { :class => 'well form-horizontal' } do |f|
   = errors
   .form-panel
     .field
       = text f, :name
-  = submit f
+  .form-actions
+    = submit f
+    = back_button list_path
 

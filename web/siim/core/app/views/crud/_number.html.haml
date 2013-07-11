@@ -1,2 +1,4 @@
-= form.label field_label
-= form.number_field field_name, "data-provide" => "typeahead", :class => style_class
+.control-group
+  = form.label field_label, :class => 'control-label'
+  .controls
+    = form.number_field field_name, "data-provide" => "typeahead", :class => style_class

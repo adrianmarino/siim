@@ -1,5 +1,5 @@
 %div
-  = form.fields_for :contacts, :html => { :class => :well } do |f|
+  = form.fields_for :contacts do |f|
     %div.nested-form-panel
       %div
         = f.link_to_remove t('form.nested.delete')
