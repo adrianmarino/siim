@@ -109,6 +109,10 @@ $(document).ready(function() {
         size: '10'
     });
 
+
+    /*  
+      Tables... 
+    */
     $('#list').dataTable({
         "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
         "sPaginationType": "bootstrap",
@@ -131,6 +135,11 @@ $(document).ready(function() {
         }
     });
     $(".sorting:last").removeClass("sorting");
+    $("[name='list_length']").selectpicker({
+        style: 'btn-info',
+        size: '10',
+        width: '70px'
+    });
 });
 
 $(document).on('nested:fieldAdded', function(event){
