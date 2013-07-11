@@ -148,6 +148,7 @@ es:
         home_phone: "Teléfono Fijo"
         movile_phone: "Télefono Movil"
         sex: "Sexo"
+        contacts: "Contactos"
       antecedent:
         description: "Descripcion"
       allergy:
@@ -179,6 +180,12 @@ es:
       vaccine:
         last_application: "Fecha de última aplicación"
         name: "Nombre"
+      contact:
+        firstname: "Nombre"
+        lastname: "Apellido"
+        email: "Correo Electrónico"
+        home_phone: "Teléfono Fijo"
+        movile_phone: "Teléfono Movil"
     errors:
       models:
         user:
