@@ -7,17 +7,18 @@
     = content_tag(:div, flash[:alert], :id => :flash_alert, :class => "alert alert-info") if flash[:alert]
     %br
 
-  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-    %div
-      = f.label t(:login)
-      = f.text_field :login
-    %div
-      = f.label User.human_attribute_name(:password)
-      = f.password_field :password
-    - if devise_mapping.rememberable?
+  .well
+    = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
       %div
-        = f.label t(:remember_me), :class => 'label-inline'
-        = f.check_box :remember_me
-    %br
-    %div= f.submit t(:sign_in), :class => "btn"
-  = render "devise/shared/links"
+        = f.label t(:login)
+        = f.text_field :login
+      %div
+        = f.label User.human_attribute_name(:password)
+        = f.password_field :password
+      - if devise_mapping.rememberable?
+        %div
+          = f.label t(:remember_me), :class => 'label-inline'
+          = f.check_box :remember_me
+      %br
+      %div= f.submit t(:sign_in), :class => "btn"
+    = render "devise/shared/links"

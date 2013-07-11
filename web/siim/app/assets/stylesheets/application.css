@@ -57,9 +57,8 @@ footer p {
 }
 /* End Sticky footer  */
 
-.options { 
-  width: 1%; 
-}
+
+.options { width: 1%; }
 
 .nested-item-button { padding: 9px }
 
@@ -71,11 +70,7 @@ footer p {
   display: block
 }
 
-#flash_error,
-#flash_alert,
-#flash_notice { 
-  font-size: 15px;
-}
+#flash_error, #flash_alert, #flash_notice { font-size: 15px; }
 
 .separator-bar { margin: 10px 0px; }
 
@@ -85,7 +80,6 @@ footer p {
   color: #006DCC;
 }
 
-
 .nav-tabs > li > a:hover {
   font-size: 15px;
   font-weight: bold;
@@ -93,13 +87,7 @@ footer p {
 }
 
 
-
-.form-field {
-  float: left;
-  margin: 0px;
-  margin-right: 20px;
-}
-.form-panel {
+.nested-form-panel {
   background-color: #D9EDF7;
   border: 1px solid #BCE8F1;
   border-radius: 4px 4px 4px 4px;
@@ -107,19 +95,12 @@ footer p {
   margin-bottom: 20px;
   min-height: 20px;
   padding: 19px;
-  padding-bottom: 19px;
-}
-.nested-form-panel {
+  padding-bottom: 10px;
   overflow: auto;
-  border: 1px solid #CCCCCC;
+}
+.antecedent_form_panel {
   padding-top: 36px;
 }
-
-
-.patient_form_panel {
-  overflow: auto;
-}
-
 .contact_header {
   font-weight: bold;
   font-size: 15px;
@@ -128,12 +109,6 @@ footer p {
   padding-top: 10px;
   padding-bottom: 5px;
   border-bottom: 1px solid #BCE8F1;
-}
-
-.contacts_panel {
-  
-  
-  
 }
 
 .medical-history-form-panel {
@@ -154,9 +129,12 @@ footer p {
 }
 
 
+.remove_nested_fields {
+  float: right;
+}
 
-.medical_history_btn_remove {
-  margin-top: -20px;  
+#antecedents .remove_nested_fields {
+  margin-top: -20px;
 }
 
 .remove_nested_fields {
@@ -166,7 +144,6 @@ footer p {
 .remove_nested_fields_icon {
   padding-bottom: 2px
 }
-
 
 .allergy_observations, .disease-observations, .medical_exam_results, .medical_exam_observations {
   width: 99%;

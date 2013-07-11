@@ -1,12 +1,11 @@
-= form_for @medical do |f|
+= form_for @medical, :html => { :class => :well } do |f|
   = errors
-  .form-panel
-    .field= text f, :cuil
-    .field= text f, :dni
-    .field= text f, :firstname
-    .field= text f, :lastname
-    .field= select_one f, :medical_specialization
-    .field= text f, :email
-    .field= text f, :home_phone
-    .field= text f, :movile_phone
+  .field= text f, :cuil
+  .field= text f, :dni
+  .field= text f, :firstname
+  .field= text f, :lastname
+  .field= select_one f, :medical_specialization
+  .field= text f, :email
+  .field= text f, :home_phone
+  .field= text f, :movile_phone
   = submit f
