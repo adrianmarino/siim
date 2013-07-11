@@ -4,13 +4,6 @@ class MedicalHistory < ActiveRecord::Base
   # -------------------------------------------------------------------------
   def initialize_with_associations
     self.patient = Patient.new
-    self.antecedents << Antecedent.new
-    self.consultations << Consultation.new
-    self.diseases << Disease.new
-    self.medical_exams << MedicalExam.new
-    self.medications << Medication.new
-    self.vaccines << Vaccine.new
-    self.allergies << Allergy.new
   end
 
   # -------------------------------------------------------------------------
