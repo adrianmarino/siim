@@ -15,6 +15,9 @@
  *= require bootstrap-select
  *= require bootstrap-spinedit
  */
+
+
+ /* Begin Sticky footer  */
  html, body {
   height: 100%;
 }
@@ -53,6 +56,8 @@ footer p {
 #wrapper > .container {
   padding-top: 45px;
 }
+/* End Sticky footer  */
+
 
 .options { width: 1%; }
 
@@ -144,15 +149,11 @@ footer p {
   margin-left: 0px;
 }
 
-.allergy_observations,
-.disease-observations,
-.medical_exam_results,
-.medical_exam_observations {
+.allergy_observations, .disease-observations, .medical_exam_results, .medical_exam_observations {
   width: 99%;
   height: 86px;
 }
 
-.patient_height,
-.patient_weight {
+.patient_height, .patient_weight {
   width: 32px;
 }
