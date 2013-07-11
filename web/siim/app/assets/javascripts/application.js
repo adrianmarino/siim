@@ -106,9 +106,13 @@ $(document).ready(function() {
 
     $(".selectpicker").selectpicker({
         style: 'btn-info',
-        size: '18'
+        size: '10'
     });
 
+
+    /*  
+      Tables... 
+    */
     $('#list').dataTable({
         "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
         "sPaginationType": "bootstrap",
@@ -131,11 +135,21 @@ $(document).ready(function() {
         }
     });
     $(".sorting:last").removeClass("sorting");
+    $("[name='list_length']").selectpicker({
+        style: 'btn-info',
+        size: '10',
+        width: '70px'
+    });
 });
 
 $(document).on('nested:fieldAdded', function(event){
   var field = event.field; 
   var remove_button = field.find('.remove_nested_fields');
   remove_button.addClass('btn').prepend('<i class="icon-minus-sign icon-white remove_nested_fields_icon">&nbsp;</i>');
+
+  $("#consultations .selectpicker").selectpicker({
+        style: 'btn-info',
+        size: '10'
+  });
 });
 

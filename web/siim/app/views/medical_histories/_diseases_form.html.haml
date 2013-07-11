@@ -1,8 +1,8 @@
 %div
   = form.fields_for :diseases do |f|
-    %div.form-panel.nested-form-panel
+    %div.nested-form-panel
       %div
-        = f.link_to_remove t('form.nested.delete'), :class => :medical_history_btn_remove
+        = f.link_to_remove t('form.nested.delete')
       %div
         = nested_datepicker f, :record_date, :disease
         = nested_text f, :name, :disease
