@@ -16,7 +16,6 @@
  *= require bootstrap-spinedit
  */
 
-
  /* Begin Sticky footer  */
  html, body {
   height: 100%;
@@ -35,7 +34,7 @@ footer a:hover {
 }
 
 #wrapper .container {
-  padding-bottom: 25px;
+  padding-bottom: 35px;
 }
 
 footer p {
@@ -58,8 +57,9 @@ footer p {
 }
 /* End Sticky footer  */
 
-
-.options { width: 1%; }
+.options { 
+  width: 1%; 
+}
 
 .nested-item-button { padding: 9px }
 
