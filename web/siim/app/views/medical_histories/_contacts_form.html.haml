@@ -1,0 +1,12 @@
+%div
+  = form.fields_for :contacts do |f|
+    %div.form-panel.nested-form-panel
+      %div
+        = f.link_to_remove t('form.nested.delete'), :class => :medical_history_btn_remove
+      %div
+        = nested_text f, :firstname, :contact
+        = nested_text f, :lastname, :contact
+        = nested_mail f, :email, :contact
+        = nested_text f, :home_phone, :contact
+        = nested_text f, :movile_phone, :contact
+  = form.link_to_add t('form.nested.add'), :contacts
