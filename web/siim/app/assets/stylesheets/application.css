@@ -120,13 +120,16 @@ footer p {
 .medical-history-form-panel {
   overflow: auto;
 }
-#mail_text .icon-envelope {
+#mail_field .icon-envelope {
   padding-top: 0px;
   margin-left: 0px;
 }
+#mail_field .mail_text {
+  width: 178px;
+}
 
 #datepicker .input-date {
-  width: 78px;
+  width: 178px;
 }
 
 #datepicker .icon-calendar {
