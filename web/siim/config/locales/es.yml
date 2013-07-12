@@ -35,6 +35,7 @@ es:
   password_confirmation: "Confirmación de la contraseña"
   sign_in_with: "Conéctate con"
   sign_in: "Ingresar"
+  resend_confirmation_instructions: 'Reenviar mail de confirmación'
   forgot_your_password: "¿Olvidaste tu contraseña?"
   didnt_receive_confirmation_instructions: "¿No recibio instrucciones de confirmación?"
   didnt_receive_unlock_instructions: "¿No recibio instrucciones de desbloqueo?"

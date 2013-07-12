@@ -16,6 +16,12 @@
  *= require bootstrap-spinedit
  */
 
+
+.session_top {
+  margin-top: 10px;
+}
+
+
  /* Begin Sticky footer  */
  html, body {
   height: 100%;

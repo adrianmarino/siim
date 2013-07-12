@@ -1,24 +1,23 @@
 - content_for :content do
-  %h2= t :sign_in
+  .session_top
+    - if flash[:error] or flash[:notice] or flash[:alert]
+      = content_tag(:div, flash[:error], :id => :flash_error, :class => "alert alert-error") if flash[:error]
+      = content_tag(:div, flash[:notice], :id => :flash_notice, :class => "alert alert-success") if flash[:notice]
+      = content_tag(:div, flash[:alert], :id => :flash_alert, :class => "alert alert-info") if flash[:alert]
 
-  - if flash[:error] or flash[:notice] or flash[:alert]
-    = content_tag(:div, flash[:error], :id => :flash_error, :class => "alert alert-error") if flash[:error]
-    = content_tag(:div, flash[:notice], :id => :flash_notice, :class => "alert alert-success") if flash[:notice]
-    = content_tag(:div, flash[:alert], :id => :flash_alert, :class => "alert alert-info") if flash[:alert]
-    %br
-
-  .well
-    = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-      %div
-        = f.label t(:login)
-        = f.text_field :login
-      %div
-        = f.label User.human_attribute_name(:password)
-        = f.password_field :password
-      - if devise_mapping.rememberable?
-        %div
-          = f.label t(:remember_me), :class => 'label-inline'
-          = f.check_box :remember_me
-      %br
-      %div= f.submit t(:sign_in), :class => "btn"
-    = render "devise/shared/links"
+    = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => 'well form-horizontal' }) do |f|
+      %fieldset
+        %legend= t :sign_in
+        .control-group
+          = f.label t(:login), :class => 'control-label'
+          .controls= f.text_field :login
+        .control-group
+          = f.label User.human_attribute_name(:password), :class => 'control-label'
+          .controls= f.password_field :password
+        - if devise_mapping.rememberable?
+          .control-group
+            = f.label t(:remember_me), :class => 'control-label'
+            .controls= f.check_box :remember_me
+        .form-actions
+          = f.submit t(:sign_in), :class => "btn btn-primary"
+          = render "devise/shared/links"
