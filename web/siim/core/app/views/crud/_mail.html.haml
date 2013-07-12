@@ -1,7 +1,7 @@
 .control-group
   = form.label field_label, :class => 'control-label'
   .controls
-    %div#mail_text.input-prepend
+    %div#mail_field.input-prepend
       %span.add-on
         %i.icon-envelope
-      = form.text_field field_name, :class => style_class
+      = form.text_field field_name, :class => "mail_text #{style_class}"
