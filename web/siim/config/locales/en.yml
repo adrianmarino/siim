@@ -5,7 +5,7 @@ en:
     name: 'SIIM'
     description: 'Comprehensive Medical Information Service'
     author: '&copy; BAMBU Solutions 2013'
-    version: 'Version 0.4.0'
+    version: 'Version 0.3.3'
 
   data_table:
     paginate:
@@ -39,6 +39,7 @@ en:
   password_confirmation: "Password confirmation"
   sign_in_with: "Sign in with"
   sign_in: "Sign In"
+  resend_confirmation_instructions: 'Resend confirmation instructions'
   forgot_your_password: "Forgot your password?"
   didnt_receive_confirmation_instructions: "didn't receive confirmation instructions?"
   didnt_receive_unlock_instructions: "Didn't receive unlock instructions?"

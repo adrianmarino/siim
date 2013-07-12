@@ -1,4 +1,4 @@
-= form.fields_for :patient, :html => { :class => :well } do |f|
+= form.fields_for :patient do |f|
   = nested_text       f, :dni, :patient
   = nested_text       f, :firstname, :patient
   = nested_text       f, :lastname, :patient

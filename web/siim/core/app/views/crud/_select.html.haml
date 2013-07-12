@@ -1,2 +1,4 @@
-= form.label field_label
-= form.select field_name, values, {}, {:class => 'selectpicker'}
+.control-group
+  = form.label field_label, :class => 'control-label'
+  .controls
+    = form.select field_name, values, {}, {:class => 'selectpicker'}

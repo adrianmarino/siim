@@ -1,8 +1,10 @@
-%h2= t :resend_unlock_instructions
-= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f|
-  = devise_error_messages!
-  %div
-    = f.label t(:email)
-    = f.email_field :email
-  %div= f.submit t(:resend_unlock_instructions), :class => :btn
-= render "devise/shared/links"
+.session_top
+  = form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post, :class => 'well form-horizontal' }) do |f|
+    %fieldset
+      %legend= t :resend_unlock_instructions
+      = devise_error_messages!
+      .control-group= f.label t(:email), :class => 'control-label'
+        .controls= f.email_field :email
+      .form-actions
+        = f.submit t(:resend_unlock_instructions), :class => :btn
+        = render "devise/shared/links"
