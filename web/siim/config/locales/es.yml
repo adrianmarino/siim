@@ -30,7 +30,7 @@ es:
   confirm: "¿Estas seguro?"
   home: "Inicio"
   sign_up: "Regístrate"
-  login: "DNI/Correo Electronico"
+  login: "Correo Electronico"
   remember_me: "Recordar"
   password_confirmation: "Confirmación de la contraseña"
   sign_in_with: "Conéctate con"
@@ -257,7 +257,7 @@ es:
   sex:
     male: "Masculino"
     female: "Femenino"
-  blood_type:
+  bloodtype:
     o_positive: "O +"
     o_negative: "O -"
     a_positive: "A +"
