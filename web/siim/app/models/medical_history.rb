@@ -3,7 +3,9 @@ class MedicalHistory < ActiveRecord::Base
   # Public Methods...
   # -------------------------------------------------------------------------
   def initialize_with_associations
-    self.patient = Patient.new
+    a_patient = Patient.new
+    a_patient.medical_history = self
+    self.patient = a_patient
   end
 
   # -------------------------------------------------------------------------
