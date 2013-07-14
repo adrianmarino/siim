@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
   # Authorization Attributes...
   # -------------------------------------------------------------------------
   devise :database_authenticatable, :registerable, :recoverable,
-    :rememberable, :trackable, :validatable # , :confirmable
+    :rememberable, :trackable, :validatable, :confirmable
 
   # -------------------------------------------------------------------------
   # Validations...
