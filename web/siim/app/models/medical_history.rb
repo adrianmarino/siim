@@ -8,6 +8,23 @@ class MedicalHistory < ActiveRecord::Base
     self.patient = a_patient
   end
 
+  def as_json(options={})
+    super(
+      :only => [:id],
+      :include =>  {
+        :patient => { :only => [:dni, :firstname, :lastname, :birthdate, :blood_type,
+                                :height, :weight, :sex, :address, :email, :home_phone, :movile_phone] 
+                    },
+        :allergies => {:only =>[:cause]},
+        :antecedents => { :only => [:description]},
+        :consultations => {:only=>[:diagnostic]},
+        :diseases => {:only =>[:name]},
+        :medications => {:only => [:name,:dose,:how_often]},
+        :vaccines => {:only => [:last_application, :name]}
+      }
+    )
+  end
+
   # -------------------------------------------------------------------------
   # Attributes...
   # -------------------------------------------------------------------------

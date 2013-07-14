@@ -21,6 +21,11 @@ class MedicalHistoriesController < CrudController
     end
   end
 
+  def search_by_dni
+    @medical_history = MedicalHistory.includes(:patient).where("patients.dni=?",params[:query]).first
+    render json: @medical_history.as_json
+  end
+
   # GET /medical_histories/new
   # GET /medical_histories/new.json
   def new

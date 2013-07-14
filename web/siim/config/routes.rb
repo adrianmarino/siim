@@ -16,5 +16,7 @@ Siim::Application.routes.draw do
 
   resources :medicals
   resources :medical_specializations
-  resources :medical_histories
+  resources :medical_histories do
+    get :search_by_dni, on: :collection
+  end
 end
