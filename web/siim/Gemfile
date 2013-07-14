@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 # Environment...
 gem 'rails', '3.2.11'
-gem 'sqlite3'
 gem 'mysql', '2.8.1'
 
 # View...
@@ -42,13 +41,14 @@ group :development, :test do
   gem 'headless'
   gem 'capybara'
   gem 'selenium-webdriver', '2.32.1'
+  # To use debugger...
+  gem 'debugger'
+  gem 'hirb'
+  gem 'sqlite3'
 end
 
 # User custom nonosoft library...
 gem 'core', path: "core"
-
-# To use debugger...
-gem 'debugger'
 
 # ------------------------
 # Fix tlsmail gem error...
