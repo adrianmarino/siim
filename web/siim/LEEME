@@ -33,7 +33,7 @@ Login
 -------------------------------------------------------------------------------
 Para iniciar sesión en la aplicación se debe ejecutar el siguiente comando. 
 
-curl -X POST 'http://localhost:3000/login.json' -d 'user[login]=un_email_o_dni&user[password]=una_contraseña
+curl -X POST 'http://siim.bambusolutions.com.ar/login.json' -d 'user[login]=un_email_o_dni&user[password]=una_contraseña
 
 Parametros:
 - un_email_o_dni
@@ -44,7 +44,7 @@ consultas al sistema.
 
 Un ejemplo de uso:
 - Comando:
-  curl -X POST 'http://localhost:3000/login.json' -d 'user[login]=adrianmarino@gmail.com&user[password]=29042902
+  curl -X POST 'http://siim.bambusolutions.com.ar/login.json' -d 'user[login]=adrianmarino@gmail.com&user[password]=29042902
 - Respuesta:
   {"response":"ok","auth_token":"3AwsFwHxTqmy9yTcu11G"}
 
@@ -55,7 +55,7 @@ Mediante el DNI del paciente se puede obtener un resumen de su historia
 clinica.
 La consulta se puede realizar de la siguiente manera:
 
-curl -L 'http://localhost:3000/medical_histories/search_by_dni?query=un_dni&auth_token=un_token'
+curl -L 'http://siim.bambusolutions.com.ar/medical_histories/search_by_dni?query=un_dni&auth_token=un_token'
 
 Parametros:
 - un_dni
@@ -118,3 +118,4 @@ Un ejemplo de uso:
 		{"achievement_date":"2012-12-12","name":"Examen 3"}
 	]
 }
+
