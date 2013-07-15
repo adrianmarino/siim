@@ -23,3 +23,32 @@ _______________________________________________________________________________
 La secuenca de comandos seria:
 1) db_recreate
 2) start_server_on_debug
+
+
+Servicio de Consulta de Resumen de historia clinica
+_______________________________________________________________________________
+
+
+Login
+-------------------------------------------------------------------------------
+Para loguarse se debe ejecutar wel siguiente comando para generar un token de
+session:
+
+curl http://localhost:3000/login --data "email=UnEmail&password=unaContraseña"
+
+ESte coamdno debielte el token se session el aul se utulizara para hacer 
+consultas REST a la aplicación 
+
+Por ejemplo:
+
+curl http://localhost:3000/login --data "email=adrianmarino@gmail.com&password=29042902"
+
+
+Consulta de resumen de historia clinica
+-------------------------------------------------------------------------------
+
+Mediante el DNI del paciente se puede obtener un resumen de su historia 
+clinica.
+Mediante el siguiente comando se puede obtener el resumen en formato json:
+
+curl -i -H "Accept: application/json"  http://localhost:3000/medical_histories/search_by_dni?query=UnDNI&auth_token=UnTokenDeSession
