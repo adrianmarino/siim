@@ -3,26 +3,17 @@ module MedicalsHelper
   # Public Methods...
   # -------------------------------------------------------------------------
   def sex_values
-    [ option(:sex, :male) , option(:sex,:female) ]
+    Sex.values.sort.collect {|a_value| new_option(a_value) }
   end
 
   def blood_types
-    [
-      option(:blood_type,:o_positive),
-      option(:blood_type,:o_negative),
-      option(:blood_type,:a_positive),
-      option(:blood_type,:a_negative),
-      option(:blood_type,:b_positive),
-      option(:blood_type,:b_negative),
-      option(:blood_type,:ab_positive),
-      option(:blood_type,:ab_negative)
-    ]
+    BloodType.values.sort.collect {|a_value| new_option(a_value) }
   end
 
   # -------------------------------------------------------------------------
   # Private Methods...
   # -------------------------------------------------------------------------
-  def option(a_field, a_value)
-    [t("#{a_field}.#{a_value}"),a_value]
+  def new_option(a_value)
+    [a_value.translate, a_value.to_s]
   end
 end

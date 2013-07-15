@@ -21,12 +21,17 @@ class MedicalHistoriesController < CrudController
     end
   end
 
+  def search_by_dni
+    @medical_history = MedicalHistory.includes(:patient).where("patients.dni=?",params[:query]).first
+    render json: @medical_history.as_json
+  end
+
   # GET /medical_histories/new
   # GET /medical_histories/new.json
   def new
     @medical_history = MedicalHistory.new
     @medical_history.initialize_with_associations
-    @medicals = Medical.all
+    @medicals = Medical.all.sort
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,7 +42,7 @@ class MedicalHistoriesController < CrudController
   # GET /medical_histories/1/edit
   def edit
     @medical_history = MedicalHistory.find(params[:id])
-    @medicals = Medical.all
+    @medicals = Medical.all.sort
   end
 
   # POST /medical_histories

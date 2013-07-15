@@ -3,7 +3,27 @@ class MedicalHistory < ActiveRecord::Base
   # Public Methods...
   # -------------------------------------------------------------------------
   def initialize_with_associations
-    self.patient = Patient.new
+    a_patient = Patient.new
+    a_patient.medical_history = self
+    self.patient = a_patient
+  end
+
+  def as_json(options={})
+    super(
+      :only => [:id],
+      :include =>  {
+        :patient => { :only => [:dni, :firstname, :lastname, :birthdate, :blood_type,
+                                :height, :weight, :sex, :address, :email, :home_phone, :movile_phone] 
+                    },
+        :allergies => {:only =>[:cause]},
+        :antecedents => { :only => [:description]},
+        :consultations => {:only=>[:diagnostic]},
+        :diseases => {:only =>[:name]},
+        :medications => {:only => [:name,:dose,:how_often]},
+        :vaccines => {:only => [:last_application, :name]},
+        :medical_exams => {:only => [:achievement_date, :name]}
+      }
+    )
   end
 
   # -------------------------------------------------------------------------

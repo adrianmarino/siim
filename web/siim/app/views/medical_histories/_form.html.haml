@@ -6,34 +6,34 @@
         %li.active
           %a{:href => "#patient-panel", 'data-toggle' => 'tab'}= section :patient
         %li
-          %a{:href => "#antecedent-panel", 'data-toggle' => 'tab'}= section :antecedents
-        %li
-          %a{:href => "#allergies-panel", 'data-toggle' => 'tab'}= section :allergies
-        %li
           %a{:href => "#consultations-panel", 'data-toggle' => 'tab'}= section :consultations
         %li
-          %a{:href => "#diseases-panel", 'data-toggle' => 'tab'}= section :diseases
+          %a{:href => "#antecedent-panel", 'data-toggle' => 'tab'}= section :antecedents
         %li
           %a{:href => "#medical_exams-panel", 'data-toggle' => 'tab'}= section :medical_exams
         %li
+          %a{:href => "#diseases-panel", 'data-toggle' => 'tab'}= section :diseases
+        %li
           %a{:href => "#medications-panel", 'data-toggle' => 'tab'}= section :medications
+        %li
+          %a{:href => "#allergies-panel", 'data-toggle' => 'tab'}= section :allergies
         %li
           %a{:href => "#vaccines-panel", 'data-toggle' => 'tab'}= section :vaccines
       %div.tab-content
         %div#patient-panel.tab-pane.active
           = render :partial => 'patient_form', :locals => {:form => a_form}
-        %div#antecedent-panel.tab-pane
-          = render :partial => 'antecedents_form', :locals => {:form => a_form}
-        %div#allergies-panel.tab-pane
-          = render :partial => 'allergies_form', :locals => {:form => a_form}
         %div#consultations-panel.tab-pane
           = render :partial => 'consultations_form', :locals => {:form => a_form}
-        %div#diseases-panel.tab-pane
-          = render :partial => 'diseases_form', :locals => {:form => a_form}
+        %div#antecedent-panel.tab-pane
+          = render :partial => 'antecedents_form', :locals => {:form => a_form}
         %div#medical_exams-panel.tab-pane
           = render :partial => 'medical_exams_form', :locals => {:form => a_form}
+        %div#diseases-panel.tab-pane
+          = render :partial => 'diseases_form', :locals => {:form => a_form}
         %div#medications-panel.tab-pane
           = render :partial => 'medications_form', :locals => {:form => a_form}
+        %div#allergies-panel.tab-pane
+          = render :partial => 'allergies_form', :locals => {:form => a_form}
         %div#vaccines-panel.tab-pane
           = render :partial => 'vaccines_form', :locals => {:form => a_form}
     .form-actions

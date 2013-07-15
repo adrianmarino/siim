@@ -12,9 +12,11 @@ Siim::Application.routes.draw do
     :registration => 'register',
     :sign_up => 'cmon_let_me_in',
     :users => 'users'
-  }
+  }, :controllers => { :sessions => "sessions" }
 
   resources :medicals
   resources :medical_specializations
-  resources :medical_histories
+  resources :medical_histories do
+    get :search_by_dni, on: :collection
+  end
 end

@@ -1,11 +1,19 @@
-class MedicalSpecialization < ActiveRecord::Base
+class Constant
   include Comparable
 
   # -------------------------------------------------------------------------
   # Public Methods...
   # -------------------------------------------------------------------------
   def to_s
-    name
+    @value
+  end
+
+  def to_sym
+    @value.to_sym
+  end
+
+  def translate
+    I18n.t "#{@enum.class_name}.#{@value.downcase}"
   end
 
   def <=>(an_other)
@@ -19,12 +27,10 @@ class MedicalSpecialization < ActiveRecord::Base
   end
 
   # -------------------------------------------------------------------------
-  # Attributes...
+  # Initialize...
   # -------------------------------------------------------------------------
-  attr_accessible :name
-
-  # -------------------------------------------------------------------------
-  # Validations...
-  # -------------------------------------------------------------------------
-  validates :name, :presence => true
+  def initialize(a_enum, a_value)
+    @enum = a_enum
+    @value = a_value
+  end
 end

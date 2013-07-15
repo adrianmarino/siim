@@ -91,7 +91,7 @@ class MedicalsController < CrudController
   # -------------------------------------------------------------------------
   private
     def medical_specializations
-      MedicalSpecialization.all.sort.reverse
+      MedicalSpecialization.all.sort
     end
 
     # -------------------------------------------------------------------------
