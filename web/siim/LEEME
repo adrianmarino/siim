@@ -44,7 +44,7 @@ consultas al sistema.
 
 Un ejemplo de uso:
 - Comando:
-  curl -X POST 'http://siim.bambusolutions.com.ar/login.json' -d 'user[login]=adrianmarino@gmail.com&user[password]=29042902
+  curl -X POST 'http://siim.bambusolutions.com.ar/login.json' -d 'user[login]=adrianmarino@gmail.com&user[password]=29042902'
 - Respuesta:
   {"response":"ok","auth_token":"3AwsFwHxTqmy9yTcu11G"}
 
