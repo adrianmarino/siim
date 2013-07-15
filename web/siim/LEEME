@@ -34,15 +34,14 @@ Login
 Para loguarse se debe ejecutar wel siguiente comando para generar un token de
 session:
 
-curl http://localhost:3000/login --data "email=UnEmail&password=unaContraseña"
+curl -X POST 'http://localhost:3000/login.json' -d 'user[login]=UnEmailODNI&user[password]=UnaContraseña
 
 ESte coamdno debielte el token se session el aul se utulizara para hacer 
 consultas REST a la aplicación 
 
 Por ejemplo:
 
-curl http://localhost:3000/login --data "email=adrianmarino@gmail.com&password=29042902"
-
+curl -X POST 'http://localhost:3000/login.json' -d 'user[login]=adrianmarino@gmail.com&user[password]=29042902
 
 Consulta de resumen de historia clinica
 -------------------------------------------------------------------------------
@@ -51,4 +50,4 @@ Mediante el DNI del paciente se puede obtener un resumen de su historia
 clinica.
 Mediante el siguiente comando se puede obtener el resumen en formato json:
 
-curl -i -H "Accept: application/json"  http://localhost:3000/medical_histories/search_by_dni?query=UnDNI&auth_token=UnTokenDeSession
+curl -L 'http://localhost:3000/medical_histories/search_by_dni?query=UnDNI&auth_token=UnToken'
