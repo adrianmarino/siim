@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -100,18 +102,159 @@ contact_b = Contact.create(
 # -----------------------------------------------------------------------------
 # Patients...
 # -----------------------------------------------------------------------------
-# Patient.create(
-#   dni: "29042902",
-#   firstname: "Manuel",
-#   lastname: "Perez",
-#   birthdate: ,
-#   blood_type: :,
-#   height:,
-#   weight:,
-#   sex:,
-#   address:,
-#   email:,
-#   home_phone:,
-#   movile_phone:,
-#   contacts:
-# )
+patient = Patient.create(
+  dni: "29042902",
+  firstname: "Adrian Norberto",
+  lastname: "Marino",
+  birthdate: "22-09-1981",
+  blood_type: "O_POSITIVE",
+  height: "1.76",
+  weight: "70",
+  sex: "MALE",
+  address: "Pepes 102",
+  email: "adrianmarino@gmail.com",
+  home_phone: "99999999",
+  movile_phone: "88888888",
+  contacts: [contact_a,contact_b]
+)
+
+
+
+# -----------------------------------------------------------------------------
+# Medical History...
+# -----------------------------------------------------------------------------
+medical_history = MedicalHistory.create(patient: patient)
+
+
+
+# -----------------------------------------------------------------------------
+# Allergies...
+# -----------------------------------------------------------------------------
+Allergy.create(
+  cause: 'Causa 1',
+  medical_history: medical_history
+)
+Allergy.create(
+  cause: 'Causa 2',
+  medical_history: medical_history
+)
+Allergy.create(
+  cause: 'Causa 3',
+  medical_history: medical_history
+)
+
+
+
+# -----------------------------------------------------------------------------
+# Consultations...
+# -----------------------------------------------------------------------------
+Consultation.create(
+  achievement_date: '22-08-2013', 
+  diagnostic: 'Diagnostico',
+  symptomps: 'Sintomas',
+  treatment: 'Tratamiento',
+  medical_history: medical_history
+)
+Consultation.create(
+  achievement_date: '23-08-2013', 
+  diagnostic: 'Diagnostico 2',
+  symptomps: 'Sintomas 2',
+  treatment: 'Tratamiento 1',
+  medical_history: medical_history
+)
+
+
+
+# -----------------------------------------------------------------------------
+# Antecedents...
+# -----------------------------------------------------------------------------
+Antecedent.create(
+  description: 'Descripción 1',
+  medical_history: medical_history
+)
+Antecedent.create(
+  description: 'Descripción 2',
+  medical_history: medical_history
+)
+Antecedent.create(
+  description: 'Descripción 3',
+  medical_history: medical_history
+)
+
+
+
+# -------------------------------------------------------------------------
+# Diseases...
+# -------------------------------------------------------------------------
+Disease.create(
+  name: "Reuma",
+  medical_history: medical_history 
+)
+Disease.create(
+  name: "Artrocis",
+  medical_history: medical_history 
+)
+Disease.create(
+  name: "Epatitis",
+  medical_history: medical_history 
+)
+
+
+
+# -------------------------------------------------------------------------
+# Medications...
+# -------------------------------------------------------------------------
+Medication.create(
+  name: "Polper B12 Forte",
+  dose: "1 Comprimido",
+  how_often: "Una vez por día",
+  medical_history: medical_history 
+)
+Medication.create(
+  name: "Aspirina",
+  dose: "1 Comprimido",
+  how_often: "Una vez por semana",
+  medical_history: medical_history 
+)
+Medication.create(
+  name: "Omeprazol",
+  dose: "1 Comprimido",
+  how_often: "Una vez por día",
+  medical_history: medical_history 
+)
+
+
+
+# -------------------------------------------------------------------------
+# Vaccines...
+# -------------------------------------------------------------------------
+Vaccine.create(
+  last_application: "12-12-2012",
+  name: "Vacuna 1",
+  medical_history: medical_history
+)
+Vaccine.create(
+  last_application: "12-12-2002",
+  name: "Vacuna 2",
+  medical_history: medical_history
+)
+
+
+# -------------------------------------------------------------------------
+# Medical exams...
+# -------------------------------------------------------------------------
+MedicalExam.create(
+  achievement_date: "12-12-2012",
+  name: "Examen 1",
+  medical_history: medical_history
+)
+MedicalExam.create(
+  achievement_date: "12-12-2012",
+  name: "Examen 2",
+  medical_history: medical_history
+)
+MedicalExam.create(
+  achievement_date: "12-12-2012",
+  name: "Examen 3",
+  medical_history: medical_history
+)
