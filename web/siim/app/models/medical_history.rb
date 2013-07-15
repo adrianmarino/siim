@@ -20,7 +20,8 @@ class MedicalHistory < ActiveRecord::Base
         :consultations => {:only=>[:diagnostic]},
         :diseases => {:only =>[:name]},
         :medications => {:only => [:name,:dose,:how_often]},
-        :vaccines => {:only => [:last_application, :name]}
+        :vaccines => {:only => [:last_application, :name]},
+        :medical_exams => {:only => [:achievement_date, :name]}
       }
     )
   end
