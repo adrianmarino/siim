@@ -31,23 +31,105 @@ _______________________________________________________________________________
 
 Login
 -------------------------------------------------------------------------------
-Para loguarse se debe ejecutar wel siguiente comando para generar un token de
-session:
+Para iniciar sesión en la aplicación se debe ejecutar el siguiente comando. 
 
-curl -X POST 'http://localhost:3000/login.json' -d 'user[login]=UnEmailODNI&user[password]=UnaContraseña
+curl -X POST 'http://siim.bambusolutions.com.ar/login.json' -d 'user[login]=un_email_o_dni&user[password]=una_contraseña
 
-ESte coamdno debielte el token se session el aul se utulizara para hacer 
-consultas REST a la aplicación 
+Parametros:
+- un_email_o_dni
+- una_contraseña
 
-Por ejemplo:
+Este comando genera un token de sesión que luego es utilizado para realizar 
+consultas al sistema.
 
-curl -X POST 'http://localhost:3000/login.json' -d 'user[login]=adrianmarino@gmail.com&user[password]=29042902
+Un ejemplo de uso:
+- Comando:
+  curl -X POST 'http://siim.bambusolutions.com.ar/login.json' -d 'user[login]=adrianmarino@gmail.com&user[password]=29042902'
+- Respuesta:
+  {"response":"ok","auth_token":"3AwsFwHxTqmy9yTcu11G"}
+
 
 Consulta de resumen de historia clinica
 -------------------------------------------------------------------------------
-
-Mediante el DNI del paciente se puede obtener un resumen de su historia 
+Mediante el DNI del paciente se puede obtener un resumen de su historia
 clinica.
-Mediante el siguiente comando se puede obtener el resumen en formato json:
+La consulta se puede realizar de la siguiente manera:
 
-curl -L 'http://localhost:3000/medical_histories/search_by_dni?query=UnDNI&auth_token=UnToken'
+curl -L 'http://siim.bambusolutions.com.ar/medical_histories/search_by_dni?query=un_dni&auth_token=un_token'
+
+Parametros:
+- un_dni
+- un_token
+
+El resultado de la consulta llega en formato JSON.
+
+Un ejemplo de uso:
+- Comando:
+  curl -L 'http://localhost:3000/medical_histories/search_by_dni?query=29042902&auth_token=3AwsFwHxTqmy9yTcu11G'
+
+- Resultado de la consulta:
+{
+	"id":1,
+	"patient": {
+		"address":"Pepes 102",
+		"birthdate":"1981-09-22",
+		"blood_type":"O_POSITIVE",
+		"dni":"29042902",
+		"email":"adrianmarino@gmail.com",
+		"firstname":"Adrian Norberto",
+		"height":"1,76",
+		"home_phone":"99999999",
+		"lastname":"Marino",
+		"movile_phone":"88888888",
+		"sex":"MALE",
+		"weight":"70.0"
+	},
+	"allergies":[
+		{"cause":"Causa 1"},
+		{"cause":"Causa 2"},
+		{"cause":"Causa 3"}
+	],
+	"antecedents":[
+		{"description":"Descripci\u00f3n 1"},
+		{"description":"Descripci\u00f3n 2"},
+		{"description":"Descripci\u00f3n 3"}
+	],
+	"consultations":[
+		{"diagnostic":"Diagnostico"},
+		{"diagnostic":"Diagnostico 2"}
+	],
+	"diseases":[
+		{"name":"Reuma"},
+		{"name":"Artrocis"},
+		{"name":"Epatitis"}
+	],
+	"medications":[
+		{"dose":"1 Comprimido","how_often":"Una vez por d\u00eda","name":"Polper B12 Forte"},
+		{"dose":"1 Comprimido","how_often":"Una vez por semana","name":"Aspirina"},
+		{"dose":"1 Comprimido","how_often":"Una vez por d\u00eda","name":"Omeprazol"}
+	],
+	"vaccines":[
+		{"last_application":"2012-12-12","name":"Vacuna 1"},
+		{"last_application":"2002-12-12","name":"Vacuna 2"}
+	],
+	"medical_exams":[
+		{"achievement_date":"2012-12-12","name":"Examen 1"},
+		{"achievement_date":"2012-12-12","name":"Examen 2"},
+		{"achievement_date":"2012-12-12","name":"Examen 3"}
+	]
+}
+
+
+Base de datos
+_______________________________________________________________________________
+
+
+Nueva base de datos
+-------------------------------------------------------------------------------
+El motor para produccion es MySQL. 
+Para crear la base de datos es necesario correr las siguientes sentencias:
+
+CREATE DATABASE siim CHARACTER SET utf8;
+CREATE USER 'siim'@'localhost' IDENTIFIED BY 'un_password';
+GRANT ALL PRIVILEGES ON siim.* TO 'siim'@'localhost';
+
