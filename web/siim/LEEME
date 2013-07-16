@@ -119,3 +119,17 @@ Un ejemplo de uso:
 	]
 }
 
+
+Base de datos
+_______________________________________________________________________________
+
+
+Nueva base de datos
+-------------------------------------------------------------------------------
+El motor para produccion es MySQL. 
+Para crear la base de datos es necesario correr las siguientes sentencias:
+
+CREATE DATABASE siim CHARACTER SET utf8;
+CREATE USER 'siim'@'localhost' IDENTIFIED BY 'un_password';
+GRANT ALL PRIVILEGES ON siim.* TO 'siim'@'localhost';
+
