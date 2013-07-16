@@ -40,14 +40,14 @@ class MedicalHistory < ActiveRecord::Base
   # -------------------------------------------------------------------------
   # Associations...
   # -------------------------------------------------------------------------
-  has_many  :allergies
-  has_many  :antecedents
-  has_many  :consultations
-  has_many  :diseases
-  has_many  :medical_exams
-  has_many  :medications
-  has_many  :vaccines
-  has_one   :patient
+  has_many  :allergies, dependent: :delete_all
+  has_many  :antecedents, dependent: :delete_all
+  has_many  :consultations, dependent: :delete_all
+  has_many  :diseases, dependent: :delete_all
+  has_many  :medical_exams, dependent: :delete_all
+  has_many  :medications, dependent: :delete_all
+  has_many  :vaccines, dependent: :delete_all
+  has_one   :patient, dependent: :delete
 
   # -------------------------------------------------------------------------
   # Nested attributes...
