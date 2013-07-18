@@ -39,14 +39,24 @@ div {
   color: green;
 }
 
-.field_with_errors {
-  padding: 2px;
-  background-color: #3a87ad;
-  display: table;
+
+.field_with_errors input {
+  border: 2px solid #3a87ad;
+}
+
+
+#mail_field .field_with_errors {
+  margin-left: 27px;
+  margin-top: -31px;
+}
+
+#datepicker .field_with_errors {
+  margin-left: 27px;
+  margin-top: -31px;
 }
 
 #error_explanation {
-  width: 450px;
+  width: 99%;
   border: 2px solid #3a87ad;
   padding: 7px;
   padding-bottom: 0;
@@ -63,6 +73,7 @@ div {
     color: #fff;
   }
   ul li {
+    color: #3a87ad;
     font-size: 12px;
     list-style: square;
   }
