@@ -31,8 +31,7 @@ en:
   home: "Home"
   sign_up: "Sign Up"
   dni: "DNI"
-  login: "DNI/Email"
-  email: "Correo Electrónico"
+  login: "User"
   email: "Email"
   remember_me: "Remember me"
   password: "Password"
@@ -282,13 +281,6 @@ en:
               blank: "Debe ingresar un nombre"
             last_application:
               blank: "Debe ingresar una fecah de última aplicación"
-
-
-
-
-
-
-
     successful:
       messages:
         created: "%{model} was creted successfully."
