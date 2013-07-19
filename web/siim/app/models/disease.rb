@@ -9,4 +9,9 @@ class Disease < ActiveRecord::Base
   # Associations...
   # -------------------------------------------------------------------------
   belongs_to :medical_history
+
+  # -------------------------------------------------------------------------
+  # Validations...
+  # -------------------------------------------------------------------------
+  validates :name, :record_date, presence: true
 end

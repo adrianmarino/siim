@@ -8,5 +8,10 @@ class MedicalExam < ActiveRecord::Base
   # -------------------------------------------------------------------------
   # Associations...
   # -------------------------------------------------------------------------
-  belongs_to :medical_history
+  belongs_to :medical_histor
+
+  # -------------------------------------------------------------------------
+  # Validations...
+  # -------------------------------------------------------------------------
+  validates :achievement_date, :name, :results, presence: true
 end

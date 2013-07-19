@@ -6,4 +6,5 @@
     %ul
       - eval(variable_name(@entity_name)).errors.messages.each do |a_message|
         %li
-          ="#{a_message[1].first}."
+          - tab_name = t("activerecord.attributes.#{@entity_name}.#{a_message[0].to_s.partition('.').first}")
+          = "#{tab_name}: #{a_message[1].first}."

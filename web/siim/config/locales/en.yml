@@ -160,6 +160,75 @@ en:
           attributes:
             name:
               blank: "Must enter a specialization"
+        patient:
+          attributes:
+            dni:
+              blank: "Must enter a DNI"
+            firstname:
+              blank: "Must enter a firstname"
+            lastname:
+              blank: "Must enter a lastname"
+            birthdate:
+              blank: "Must enter a birthdate"
+            address:
+              blank: "Must enter an address"
+            home_phone:
+              blank: "Must enter a home phone"
+            movile_phone:
+              blank: "Must enter a movile phone"
+            email:
+              blank: "Must enter an email"
+        consultation:
+          attributes:
+            achievement_date:
+              blank: "Must enter an achievement date"
+            diagnostic:
+              blank: "Must enter a diagnostic"
+        allergy:
+          attributes:
+            record_date: 
+              blank: "Debe ingresar una fecha de registro"
+            cause:
+              blank: "Debe ingresar una causa"
+        antecedent:
+          attributes:
+            description:
+              blank: "Debe ingresar una descripción"
+        disease:
+          attributes:
+            name:
+              blank: "Debe ingresar un nombre"
+            record_date:
+              blank: "Debe ingresar una fecha de resgistro"
+        medical_exam:
+          attributes:
+            achievement_date:
+              blank: "Debe ingresar una fecha de registro"
+            name:
+              blank: "Debe ingresar un nombre"
+            results:
+              blank: "Debe ingresar un resultado"
+        medication:
+          attributes:
+            name:
+              blank: "Debe ingresar un nombre"
+            dose:
+              blank: "Debe ingresar una dosis"
+            how_often:
+              blank: "Debe ingresar cada cuando se toma una dosis"
+        vaccine:
+          attributes:
+            name: 
+              blank: "Debe ingresar un nombre"
+            last_application:
+              blank: "Debe ingresar una fecah de última aplicación"
+
+
+
+
+
+
+
     successful:
       messages:
         created: "%{model} was creted successfully."

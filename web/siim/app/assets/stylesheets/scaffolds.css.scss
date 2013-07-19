@@ -39,8 +39,11 @@ div {
   color: green;
 }
 
-
 .field_with_errors input {
+  border: 2px solid #3a87ad;
+}
+
+.field_with_errors textarea {
   border: 2px solid #3a87ad;
 }
 

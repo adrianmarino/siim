@@ -8,4 +8,9 @@ class Antecedent < ActiveRecord::Base
   # Associations...
   # -------------------------------------------------------------------------
   belongs_to :medical_history
+
+  # -------------------------------------------------------------------------
+  # Validations...
+  # -------------------------------------------------------------------------
+  validates :description, presence: true
 end
