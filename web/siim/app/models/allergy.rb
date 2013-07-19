@@ -8,4 +8,9 @@ class Allergy < ActiveRecord::Base
   # Associations...
   # -------------------------------------------------------------------------
   belongs_to :medical_history
+
+  # -------------------------------------------------------------------------
+  # Validations...
+  # -------------------------------------------------------------------------
+  validates :record_date, :cause, presence: true
 end

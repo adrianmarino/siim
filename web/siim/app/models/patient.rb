@@ -26,4 +26,12 @@ class Patient < ActiveRecord::Base
   # Nested attributes...
   # -------------------------------------------------------------------------
   accepts_nested_attributes_for :contacts, allow_destroy: true
+
+  # -------------------------------------------------------------------------
+  # Validations...
+  # -------------------------------------------------------------------------
+  validates :dni, :firstname, :lastname, :birthdate, :height, :weight, 
+  :address, :home_phone, :movile_phone, presence: true
+
+  validates :email, presence: true, email: true
 end

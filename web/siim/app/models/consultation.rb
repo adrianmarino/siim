@@ -10,4 +10,9 @@ class Consultation < ActiveRecord::Base
   # -------------------------------------------------------------------------
   belongs_to :medical
   belongs_to :medical_history
+
+  # -------------------------------------------------------------------------
+  # Validations...
+  # -------------------------------------------------------------------------
+  validates :achievement_date, :diagnostic, presence: true
 end

@@ -30,7 +30,7 @@ es:
   confirm: "¿Estas seguro?"
   home: "Inicio"
   sign_up: "Regístrate"
-  login: "Correo Electronico"
+  login: "DNI/Correo Electronico"
   remember_me: "Recordar"
   password_confirmation: "Confirmación de la contraseña"
   sign_in_with: "Conéctate con"
@@ -221,6 +221,68 @@ es:
           attributes:
             name:
               blank: "Debe ingresar una especialización"
+        patient:
+          attributes:
+            dni:
+              blank: "Debe ingresar un DNI"
+            firstname:
+              blank: "Debe ingresar un nombre"
+            lastname:
+              blank: "Debe ingrsar un apellido"
+            birthdate:
+              blank: "Debe ingresar una fecha de nacimiento"
+            address:
+              blank: "Debe ingresar una dirección"
+            home_phone:
+              blank: "Debe ingresar un teléfono fijo"
+            movile_phone:
+              blank: "Debe ingresar un teléfono móvil"
+            email:
+              blank: "Debe ingresar un correo electrónico"
+        consultation:
+          attributes:
+            achievement_date:
+              blank: "Debe ingresar una fecha de registro"
+            diagnostic:
+              blank: "Debe ingresar un diagnostico"
+        allergy:
+          attributes:
+            record_date: 
+              blank: "Debe ingresar una fecha de registro"
+            cause:
+              blank: "Debe ingresar una causa"
+        antecedent:
+          attributes:
+            description:
+              blank: "Debe ingresar una descripción"
+        disease:
+          attributes:
+            name:
+              blank: "Debe ingresar un nombre"
+            record_date:
+              blank: "Debe ingresar una fecha de resgistro"
+        medical_exam:
+          attributes:
+            achievement_date:
+              blank: "Debe ingresar una fecha de registro"
+            name:
+              blank: "Debe ingresar un nombre"
+            results:
+              blank: "Debe ingresar un resultado"
+        medication:
+          attributes:
+            name:
+              blank: "Debe ingresar un nombre"
+            dose:
+              blank: "Debe ingresar una dosis"
+            how_often:
+              blank: "Debe ingresar cada cuando se toma una dosis"
+        vaccine:
+          attributes:
+            name: 
+              blank: "Debe ingresar un nombre"
+            last_application:
+              blank: "Debe ingresar una fecah de última aplicación"
     successful:
       messages:
         created: "%{model} se creo exitosamente."

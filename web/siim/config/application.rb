@@ -60,5 +60,6 @@ module Siim
     config.assets.version = '1.0'
 
     config.encoding = "utf-8"
+
   end
 end

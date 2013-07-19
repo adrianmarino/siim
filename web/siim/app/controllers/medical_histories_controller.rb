@@ -49,6 +49,7 @@ class MedicalHistoriesController < CrudController
   # POST /medical_histories.json
   def create
     @medical_history = MedicalHistory.new(params[:medical_history])
+    @medicals = Medical.all.sort
 
     respond_to do |format|
       if @medical_history.save
@@ -65,6 +66,7 @@ class MedicalHistoriesController < CrudController
   # PUT /medical_histories/1.json
   def update
     @medical_history = MedicalHistory.find(params[:id])
+    @medicals = Medical.all.sort
 
     respond_to do |format|
       if @medical_history.update_attributes(params[:medical_history])

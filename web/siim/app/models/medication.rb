@@ -9,4 +9,9 @@ class Medication < ActiveRecord::Base
   # Associations...
   # -------------------------------------------------------------------------
   belongs_to :medical_history
+
+  # -------------------------------------------------------------------------
+  # Validations...
+  # -------------------------------------------------------------------------
+  validates :name, :dose, :how_often, presence: true
 end
