@@ -124,8 +124,68 @@ en:
         specialization: "Specialization"
         home_phone: "Home Phone"
         movile_phone: "Movile Phone"
-      medical:
+      medical_specialization:
         name: "Name"
+      medical_history:
+        patient: "Patient"
+        allergies: "Allergies"
+        antecedents: "Antecedents"
+        consultations: "Consultations"
+        diseases: "Diseases"
+        medical_exams: "Medical Exams"
+        medications: "Medications"
+        vaccines: "Vaccines"
+      patient:
+        address: "Address"
+        birthdate: "Birthdate"
+        blood_type: "Blood type"
+        dni: "DNI"
+        email: "Email"
+        firstname: "Firstname"
+        lastname: "Lastname"
+        height: "Height"
+        weight: "Weight"
+        home_phone: "Home phone"
+        movile_phone: "Movile phone"
+        sex: "Sex"
+        contacts: "Contacts"
+      antecedent:
+        description: "Description"
+      allergy:
+        record_date: "Record date"
+        cause: "Cause"
+        observations: "Observations"
+      consultation:
+        achievement_date: "Achievement date"
+        diagnostic: "Diagnostic"
+        symptomps: "Symptomps"
+        treatment: "Treatment"
+        medical: "Medical"
+      disease:
+        record_date: "Record date"
+        name: "Name"
+        observations: "Observations"
+      medical_exam:
+        name: "Name"
+        achievement_date: "Achievement date"
+        observations: "Observations"
+        results: "Results"
+      medication:
+        begin_date: "Begin date"
+        end_date: "End date"
+        name: "Name"
+        dose: "Dose"
+        how_often: "How often"
+        route: "Route"
+      vaccine:
+        last_application: "Last application date"
+        name: "Name"
+      contact:
+        firstname: "Firstname"
+        lastname: "Lastname"
+        email: "Email"
+        home_phone: "Home phone"
+        movile_phone: "Movile phone"
     errors:
       models:
         user:
