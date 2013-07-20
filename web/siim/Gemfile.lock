@@ -210,6 +210,7 @@ DEPENDENCIES
   i18n-js
   jquery-datatables-rails
   jquery-rails
+  json
   mocha
   mysql2
   nested_form

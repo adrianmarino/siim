@@ -65,7 +65,7 @@ El resultado de la consulta llega en formato JSON.
 
 Un ejemplo de uso:
 - Comando:
-  curl -L 'http://localhost:3000/medical_histories/search_by_dni?query=29042902&auth_token=3AwsFwHxTqmy9yTcu11G'
+  curl -L 'http://siim.bambusolutions.com.ar/medical_histories/search_by_dni?query=29042902&auth_token=3AwsFwHxTqmy9yTcu11G'
 
 - Resultado de la consulta:
 {
