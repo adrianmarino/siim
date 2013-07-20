@@ -64,3 +64,4 @@ Net.instance_eval {remove_const :APOPSession} if defined?(Net::APOPSession)
 # ------------------------------------------------------------------------------
 
 gem 'rename'
+gem 'json'

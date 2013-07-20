@@ -1,4 +1,22 @@
 class MedicalHistoriesController < CrudController
+  # -------------------------------------------------------------------------
+  # Public Methods...
+  # -------------------------------------------------------------------------
+  # GET /medical_histories/search_by_dni?query="a DNI"
+  def search_by_dni
+    # Find medical history by DNI...
+    @medical_history = MedicalHistory.includes(:patient).where("patients.dni=?",params[:query]).first
+
+    # Create a response wrapper...
+    response = MedicalHistoryResponse.new @medical_history
+
+    # Render response...
+    render json: response.to_json
+  end
+
+  # -------------------------------------------------------------------------
+  # CRUD Methods...
+  # -------------------------------------------------------------------------
   # GET /medical_histories
   # GET /medical_histories.json
   def index
@@ -19,11 +37,6 @@ class MedicalHistoriesController < CrudController
       format.html # show.html.erb
       format.json { render json: @medical_history }
     end
-  end
-
-  def search_by_dni
-    @medical_history = MedicalHistory.includes(:patient).where("patients.dni=?",params[:query]).first
-    render json: @medical_history.as_json
   end
 
   # GET /medical_histories/new
