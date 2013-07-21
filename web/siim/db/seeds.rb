@@ -206,20 +206,20 @@ Disease.create(
 # -------------------------------------------------------------------------
 Medication.create(
   name: "Polper B12 Forte",
-  dose: "1 Comprimido",
-  how_often: "Una vez por día",
+  dose: "1 Comprimido por día",
+  amount: 100,
   medical_history: medical_history 
 )
 Medication.create(
   name: "Aspirina",
-  dose: "1 Comprimido",
-  how_often: "Una vez por semana",
+  dose: "1 Comprimido por día",
+  amount: 200,
   medical_history: medical_history 
 )
 Medication.create(
   name: "Omeprazol",
-  dose: "1 Comprimido",
-  how_often: "Una vez por día",
+  dose: "1 Comprimido por día",
+  amount: 300,
   medical_history: medical_history 
 )
 

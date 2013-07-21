@@ -37,7 +37,7 @@ es:
   password_confirmation: "Confirmación de la contraseña"
   sign_in_with: "Conéctate con"
   sign_in: "Ingresar"
-  resend_confirmation_instructions: 'Reenviar mail de confirmación'
+  resend_confirmation_instructions: 'Reen"Via de Administracionr mail de confirmación'
   forgot_your_password: "¿Olvidaste tu contraseña?"
   didnt_receive_confirmation_instructions: "¿No recibio instrucciones de confirmación?"
   didnt_receive_unlock_instructions: "¿No recibio instrucciones de desbloqueo?"
@@ -178,8 +178,8 @@ es:
         end_date: "Fecha de finalización"
         name: "Nombre"
         dose: "Dósis"
-        how_often: "Cada cuanto"
-        route: "Vía"
+        amount: "Gramaje"
+        route: "Vía de Administración"
       vaccine:
         last_application: "Fecha de última aplicación"
         name: "Nombre"
@@ -277,8 +277,8 @@ es:
               blank: "Debe ingresar un nombre"
             dose:
               blank: "Debe ingresar una dosis"
-            how_often:
-              blank: "Debe ingresar cada cuando se toma una dosis"
+            amount:
+              blank: "Debe ingresar el Gramaje de la dosis"
         vaccine:
           attributes:
             name: 
