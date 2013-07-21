@@ -22,6 +22,8 @@ es:
     zeroRecords: "No hay filas para mostrar"
     lengthMenu: "Mostrar _MENU_ filas"
 
+  error: "error"
+  errors: "errores"
   save_error: "%{entity_name} no se puede guardar ya que hay %{errors}:"
   login_as: "Logueado como"
   sign_out_question: "¿Realmente desea salir?"

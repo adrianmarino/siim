@@ -1,6 +1,6 @@
 -# encoding: utf-8
 = nested_form_for @medical_history, :html => { :class => 'well form-horizontal' } do |a_form|
-  = render :partial => 'errors', :locals => {:form => a_form}
+  = nested_errors
   %fieldset
     %div.tabbable
       %ul.nav.nav-tabs

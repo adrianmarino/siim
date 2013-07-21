@@ -1,8 +1,10 @@
 - if eval(variable_name(@entity_name)).errors.any?
   #error_explanation.hero-unit
-    - errors_number = pluralize(eval(variable_name(@entity_name)).errors.count, "error")
+    - error_count = eval(variable_name(@entity_name)).errors.count
+    - errors_text = error_count > 1 ? t('errors') : t('error')
+    - errors_text = "#{error_count} #{errors_text}"
     - entity_name = t "activerecord.models.#{@entity_name}"
-    %h2= t :save_error, :errors => errors_number, :entity_name => entity_name
+    %h2= t :save_error, :errors => errors_text, :entity_name => entity_name
     %ul
       - eval(variable_name(@entity_name)).errors.messages.each do |a_message|
         %li
