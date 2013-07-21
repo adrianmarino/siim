@@ -167,3 +167,11 @@ footer p {
   width: 99%;
 }
 
+.nested_entity_errors {
+  color: #3a87ad;
+  font-weight: bold;
+  font-size: 13px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: -20px;
+}

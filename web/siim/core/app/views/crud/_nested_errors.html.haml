@@ -6,7 +6,12 @@
     - entity_name = t "activerecord.models.#{@entity_name}"
     %h2= t :save_error, :errors => errors_text, :entity_name => entity_name
     %ul
+      - old_tab_name = ''
       - eval(variable_name(@entity_name)).errors.messages.each do |a_message|
-        %li
-          - tab_name = t("activerecord.attributes.#{@entity_name}.#{a_message[0].to_s.partition('.').first}")
-          = "#{tab_name}: #{a_message[1].first}."
+        - tab_name = t("activerecord.attributes.#{@entity_name}.#{a_message[0].to_s.partition('.').first}")
+        -if old_tab_name != tab_name
+          - old_tab_name = tab_name
+          .nested_entity_errors=tab_name
+          %li= "#{a_message[1].first}."
+        -else
+          %li= "#{a_message[1].first}."
