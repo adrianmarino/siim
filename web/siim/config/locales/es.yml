@@ -24,7 +24,7 @@ es:
 
   error: "error"
   errors: "errores"
-  save_error: "%{entity_name} no se puede guardar ya que hay %{errors}:"
+  save_error: "No se pueden gardar los datos ya que existen %{errors}"
   login_as: "Logueado como"
   sign_out_question: "¿Realmente desea salir?"
   no_: "No"
@@ -96,10 +96,14 @@ es:
     update: "Actualizar"
 
   activerecord:
+    successful:
+      messages:
+        created: "%{model} se creo exitosamente."
+        updated: "%{model} se actualizo exitosamente."
     models:
       user: "Usuario"
       medical: "Médico"
-      medical_specialization: "Especialización"
+      medical_specialization: "Especialidad"
       allergie: "Alergia"
       medication: "Medicación"
       vaccine: "Vacuna"  
@@ -126,7 +130,7 @@ es:
         specialization: "Especiazación"
         home_phone: "Teléfono Fijo"
         movile_phone: "Teléfono Movil"
-        medical_specialization: "Especialización"
+        medical_specialization: "Especialidad"
       medical_specialization:
         name: "Nombre"
       medical_history:
@@ -214,7 +218,7 @@ es:
             cuil:
               blank: "Debe ingresar un CUIL"
             specialization:
-              blank: "Debe ingresar una especialización"
+              blank: "Debe ingresar una especialidad"
             home_phone:
               blank: "Debe ingresar un teléfono fijo"
             movile_phone:
@@ -222,7 +226,7 @@ es:
         medical_specialization:
           attributes:
             name:
-              blank: "Debe ingresar una especialización"
+              blank: "Debe ingresar una especialidad"
         patient:
           attributes:
             dni:
@@ -285,10 +289,6 @@ es:
               blank: "Debe ingresar un nombre"
             last_application:
               blank: "Debe ingresar una fecah de última aplicación"
-    successful:
-      messages:
-        created: "%{model} se creo exitosamente."
-        updated: "%{model} se actualizo exitosamente."
   title:
     medical:
       new: "Nuevo Médico"
@@ -296,10 +296,10 @@ es:
       show: "Detalle de Médico"
       list: "Médicos"
     medical_specialization:
-      new: "Nueva Especialización Médica"
-      edit: "Editar Especialización Médica"
-      show: "Detalle de Especialización Médica"
-      list: "Especializaciones Médicas"
+      new: "Nueva Especialidad Médica"
+      edit: "Editar Especialidad Médica"
+      show: "Detalle de Especialidad Médica"
+      list: "Especialidades Médicas"
     medical_history:
       new: "Nueva Historia Médica"
       edit: "Editar Historia Médica"
