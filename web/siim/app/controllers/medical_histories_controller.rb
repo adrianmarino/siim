@@ -63,10 +63,9 @@ class MedicalHistoriesController < CrudController
   def create
     @medical_history = MedicalHistory.new(params[:medical_history])
     @medicals = Medical.all.sort
-
     respond_to do |format|
       if @medical_history.save
-        format.html { redirect_to @medical_history, notice: 'Medical history was successfully created.' }
+        format.html { redirect_to medical_histories_path, notice: CrudTranslations.model_was_created(@medical_history) }
         format.json { render json: @medical_history, status: :created, location: @medical_history }
       else
         format.html { render action: "new" }
@@ -83,7 +82,7 @@ class MedicalHistoriesController < CrudController
 
     respond_to do |format|
       if @medical_history.update_attributes(params[:medical_history])
-        format.html { redirect_to @medical_history, notice: 'Medical history was successfully updated.' }
+        format.html { redirect_to medical_histories_path, notice: CrudTranslations.model_was_updated(@medical_history) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

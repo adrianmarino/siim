@@ -22,6 +22,8 @@ es:
     zeroRecords: "No hay filas para mostrar"
     lengthMenu: "Mostrar _MENU_ filas"
 
+  email:
+    invalid: "La direccion de Correo Electrónico invalida"
   error: "error"
   errors: "errores"
   save_error: "No se pueden gardar los datos ya que existen %{errors}"

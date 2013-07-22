@@ -22,6 +22,8 @@ en:
     zeroRecords: "No records to display"
     lengthMenu: "Display _MENU_ records"
 
+  email:
+    invalid: "invalid email address"
   save_error: "%{entity_name} can not be saved because there are %{errors}:"
   login_as: "Login as"
   sign_out_question: "Are you sure you want to log out?"
