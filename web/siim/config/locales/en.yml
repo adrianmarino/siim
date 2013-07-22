@@ -5,7 +5,7 @@ en:
     name: 'SIIM'
     description: 'Comprehensive Medical Information Service'
     author: '&copy; BAMBU Solutions 2013'
-    version: 'Version 0.4.0'
+    version: 'Version 0.4.2'
 
   data_table:
     paginate:
@@ -22,6 +22,8 @@ en:
     zeroRecords: "No records to display"
     lengthMenu: "Display _MENU_ records"
 
+  email:
+    invalid: "invalid email address"
   save_error: "%{entity_name} can not be saved because there are %{errors}:"
   login_as: "Login as"
   sign_out_question: "Are you sure you want to log out?"
@@ -174,7 +176,7 @@ en:
         end_date: "End date"
         name: "Name"
         dose: "Dose"
-        how_often: "How often"
+        amount: "Amount(grs)"
         route: "Route"
       vaccine:
         last_application: "Last application date"
@@ -246,41 +248,41 @@ en:
         allergy:
           attributes:
             record_date: 
-              blank: "Debe ingresar una fecha de registro"
+              blank: "Must enter a record date"
             cause:
-              blank: "Debe ingresar una causa"
+              blank: "Must enter a cause"
         antecedent:
           attributes:
             description:
-              blank: "Debe ingresar una descripción"
+              blank: "Must enter a description"
         disease:
           attributes:
             name:
-              blank: "Debe ingresar un nombre"
+              blank: "Must enter a name"
             record_date:
-              blank: "Debe ingresar una fecha de resgistro"
+              blank: "Must enter a record date"
         medical_exam:
           attributes:
             achievement_date:
-              blank: "Debe ingresar una fecha de registro"
+              blank: "Must enter a achievement date"
             name:
-              blank: "Debe ingresar un nombre"
+              blank: "Must enter a name"
             results:
-              blank: "Debe ingresar un resultado"
+              blank: "Must enter results"
         medication:
           attributes:
             name:
-              blank: "Debe ingresar un nombre"
+              blank: "Must enter a name"
             dose:
-              blank: "Debe ingresar una dosis"
-            how_often:
-              blank: "Debe ingresar cada cuando se toma una dosis"
+              blank: "Must enter a dose"
+            amount:
+              blank: "Must enter an amount"
         vaccine:
           attributes:
             name: 
-              blank: "Debe ingresar un nombre"
+              blank: "Must enter a name"
             last_application:
-              blank: "Debe ingresar una fecah de última aplicación"
+              blank: "Must enter last application date"
     successful:
       messages:
         created: "%{model} was creted successfully."

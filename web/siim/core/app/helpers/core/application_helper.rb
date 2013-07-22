@@ -26,6 +26,10 @@ module Core
       return output
     end
 
+    def show_messages
+      render :partial => 'application/messages'
+    end
+
     # -------------------------------------------------------------------------
     # Private Methods...
     # -------------------------------------------------------------------------

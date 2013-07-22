@@ -47,7 +47,7 @@ class MedicalsController < CrudController
 
     respond_to do |format|
       if @medical.save
-        format.html { redirect_to @medical, notice: CrudTranslations.model_was_created(@medical) }
+        format.html { redirect_to medicals_path, notice: CrudTranslations.model_was_created(@medical) }
         format.json { render json: @medical, status: :created, location: @medical }
       else
         format.html { render action: "new" }
@@ -64,7 +64,7 @@ class MedicalsController < CrudController
 
     respond_to do |format|
       if @medical.update_attributes(params[:medical])
-        format.html { redirect_to @medical, notice: CrudTranslations.model_was_updated(@medical) }
+        format.html { redirect_to medicals_path, notice: CrudTranslations.model_was_updated(@medical) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

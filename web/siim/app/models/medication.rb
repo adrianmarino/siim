@@ -2,7 +2,7 @@ class Medication < ActiveRecord::Base
   # -------------------------------------------------------------------------
   # Attributes...
   # -------------------------------------------------------------------------
-  attr_accessible :begin_date, :dose, :end_date, :how_often, :name, :route,
+  attr_accessible :begin_date, :dose, :end_date, :amount, :name, :route,
     :medical_history, :medical_history_id
 
   # -------------------------------------------------------------------------
@@ -13,5 +13,5 @@ class Medication < ActiveRecord::Base
   # -------------------------------------------------------------------------
   # Validations...
   # -------------------------------------------------------------------------
-  validates :name, :dose, :how_often, presence: true
+  validates :name, :dose, :amount, presence: true
 end

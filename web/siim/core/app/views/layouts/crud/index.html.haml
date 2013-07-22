@@ -1,4 +1,5 @@
 - content_for :content do
+  = show_messages
   .page-header
     %h3= t "title.#{@entity_name}.list"
   - if not @hide_create_action

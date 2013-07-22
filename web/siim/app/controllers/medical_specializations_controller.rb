@@ -44,7 +44,7 @@ class MedicalSpecializationsController < CrudController
 
     respond_to do |format|
       if @medical_specialization.save
-        format.html { redirect_to @medical_specialization, notice: 'Medical specialization was successfully created.' }
+        format.html { redirect_to medical_specializations_path, notice: CrudTranslations.model_was_created(@medical_specialization) }
         format.json { render json: @medical_specialization, status: :created, location: @medical_specialization }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class MedicalSpecializationsController < CrudController
 
     respond_to do |format|
       if @medical_specialization.update_attributes(params[:medical_specialization])
-        format.html { redirect_to @medical_specialization, notice: 'Medical specialization was successfully updated.' }
+        format.html { redirect_to medical_specializations_path, notice: CrudTranslations.model_was_updated(@medical_specialization) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
