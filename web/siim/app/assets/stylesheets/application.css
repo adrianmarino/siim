@@ -14,8 +14,8 @@
  *= require dataTables/jquery.dataTables.bootstrap
  *= require bootstrap-select
  *= require bootstrap-spinedit
+ *= require bootstrap_and_overrides
  */
-
 
 .session_top {
   margin-top: 10px;
@@ -27,10 +27,12 @@
   height: 100%;
 }
 footer {
-  color: #666;
-  background: #111111;
-  height: 18px;
-  padding: 0 0 10px 15px;
+  text-align: center;
+  font-size: 12px;
+  color: rgb(165, 159, 159);
+  background: #2c3e50;
+  height: 13px;
+  padding: 0 10px 10px 13px;
 }
 footer a {
   color: #999;
@@ -38,21 +40,19 @@ footer a {
 footer a:hover {
   color: #efefef;
 }
-
 #wrapper .container {
   padding-bottom: 35px;
 }
-
 footer p {
   margin: 0;
-  padding-top: 5px;
+  padding-top: 3px;
 }
 
 #wrapper {
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -28px;
+    margin: 0 auto -23px;
 }
 .push {
   height: 28px;
@@ -80,6 +80,7 @@ footer p {
 
 .separator-bar { margin: 10px 0px; }
 
+/*
 .nav-tabs > li > a {
   font-size: 15px;
   font-weight: bold;
@@ -91,7 +92,7 @@ footer p {
   font-weight: bold;
   color: #003B6F;
 }
-
+*/
 
 .nested-form-panel {
   background-color: #F1F1F1;

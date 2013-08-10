@@ -23,23 +23,23 @@ module CrudNavigationHelper
     crud_button a_path, :show, 'icon-search'
   end
 
-  def button(a_path, a_label, a_style)
-    render :partial => 'crud/button', :locals => {:path => a_path, :label => a_label, :style_class => a_style}
+  def button(a_path, a_label, a_icon_style, a_style = '')
+    render :partial => 'crud/button', :locals => {:path => a_path, :label => a_label, :icon_style_class => a_icon_style, :style_class => a_style}
   end
 
   # -------------------------------------------------------------------------
   # Private Methods...
   # -------------------------------------------------------------------------
   private
-    def crud_button(a_path,an_action_name,a_style_name)
-      button a_path, t(action_key(an_action_name)), action_style(a_style_name)
+    def crud_button(a_path,an_action_name,a_icon_style_name, a_style = '')
+      button a_path, t(action_key(an_action_name)), action_icon_style(a_icon_style_name), a_style
     end
 
     def action_key(an_action_name)
       "actions.#{an_action_name}"
     end
 
-    def action_style(a_style_name)
-      "#{a_style_name} icon-white"
+    def action_icon_style(a_icon_style_name)
+      "#{a_icon_style_name} icon-white"
     end
 end
