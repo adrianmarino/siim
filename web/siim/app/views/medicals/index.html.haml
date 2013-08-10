@@ -1,7 +1,7 @@
 - content_for :table_header do
   %th= translate_attribute(@entity_name,:cuil)
-  %th= translate_attribute(@entity_name,:first_name)
-  %th= translate_attribute(@entity_name,:last_name)
+  %th= translate_attribute(@entity_name,:firstname)
+  %th= translate_attribute(@entity_name,:lastname)
   %th= translate_attribute(@entity_name,:medical_specialization)
   :javascript
     function tableColumnSortdDefinicion() { return [null, null, null, null, null]; }
