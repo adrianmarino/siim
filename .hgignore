@@ -5,6 +5,7 @@ web/searchapp/db/*.sqlite3
 
 syntax: regexp
 web/siim/tmp
+web/siim/.sass-cache
 web/siim/log
 web/searchapp/tmp
 web/searchapp/log
