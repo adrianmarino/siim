@@ -17,6 +17,10 @@
  */
 
 
+.footer-description {
+  text-align: center;
+}
+
 .session_top {
   margin-top: 10px;
 }
@@ -30,7 +34,7 @@ footer {
   color: #666;
   background: #111111;
   height: 18px;
-  padding: 0 0 10px 15px;
+  padding: 0 10px 10px 15px;
 }
 footer a {
   color: #999;
@@ -80,6 +84,7 @@ footer p {
 
 .separator-bar { margin: 10px 0px; }
 
+/*
 .nav-tabs > li > a {
   font-size: 15px;
   font-weight: bold;
@@ -91,7 +96,7 @@ footer p {
   font-weight: bold;
   color: #003B6F;
 }
-
+*/
 
 .nested-form-panel {
   background-color: #F1F1F1;
