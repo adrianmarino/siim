@@ -4,25 +4,25 @@
 #
 # With SQLite RDBMS...
 #
-# development:
-#   adapter: sqlite3
-#   database: db/test.sqlite3
-#   pool: 5
-#   timeout: 5000
+development:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
 #
 #
 # With MySQL RDBMS...
 #
-development:
-  adapter: mysql2
-  encoding: utf8
-  database: siim
-  username: siim
-  password: '29042902'
-  host: localhost
-  port: 3306
-  pool: 20
-  timeout: 5000
+# development:
+#   adapter: mysql2
+#   encoding: utf8
+#   database: siim
+#   username: siim
+#   password: '29042902'
+#   host: localhost
+#   port: 3306
+#   pool: 20
+#   timeout: 5000
 # -----------------------------------------------------------------------------
 test:
   adapter: sqlite3
