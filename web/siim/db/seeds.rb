@@ -102,7 +102,7 @@ contact_b = Contact.create(
 # -----------------------------------------------------------------------------
 # Patients...
 # -----------------------------------------------------------------------------
-patient = Patient.create(
+patient_a = Patient.create(
   dni: "29042902",
   firstname: "Adrian Norberto",
   lastname: "Marino",
@@ -118,12 +118,30 @@ patient = Patient.create(
   contacts: [contact_a,contact_b]
 )
 
+patient_b = Patient.create(
+  dni: "28381077",
+  firstname: "Fernando",
+  lastname: "Casabella",
+  birthdate: "14-08-1980",
+  blood_type: "B_POSITIVE",
+  height: "1.70",
+  weight: "60",
+  sex: "MALE",
+  address: "algun lugar",
+  email: "fcasabella@gmail.com",
+  home_phone: "444334444",
+  movile_phone: "1122233344",
+  contacts: [contact_a,contact_b]
+)
+
 
 
 # -----------------------------------------------------------------------------
 # Medical History...
 # -----------------------------------------------------------------------------
-medical_history = MedicalHistory.create(patient: patient)
+medical_history = MedicalHistory.create(patient: patient_a)
+medical_history = MedicalHistory.create(patient: patient_b)
+
 
 
 
