@@ -76,7 +76,10 @@ footer p {
   display: block
 }
 
-#flash_error, #flash_alert, #flash_notice { font-size: 15px; }
+#flash_error, #flash_alert, #flash_notice { 
+  font-size: 15px;
+  font-weight: bold;
+}
 
 .separator-bar { margin: 10px 0px; }
 
