@@ -21,7 +21,6 @@
   margin-top: 10px;
 }
 
-
  /* Begin Sticky footer  */
  html, body {
   height: 100%;
@@ -178,4 +177,9 @@ footer p {
   padding-top: 5px;
   padding-bottom: 5px;
   margin-left: -20px;
+}
+
+.table-header {
+  background-color: #363e50;
+  color: #fff;
 }
