@@ -136,6 +136,7 @@ es:
       medical_specialization:
         name: "Nombre"
       medical_history:
+        number: "Número"
         patient: "Paciente"
         allergies: "Alergias"
         antecedents: "Antecedentes"

@@ -11,7 +11,6 @@ task :migrate_db do |t, args|
 	Rake::Task['db:migrate'].invoke
 end
 
-
 Rake::TestTask.new :acceptance_test => [:reset_db, :stop_test_server, :start_test_server,:setup_display] do |a_task|
   a_task.libs << "test"
   a_task.test_files = FileList['test/acceptance/*_test.rb']

@@ -10,29 +10,29 @@
         .nav-collapse.collapse
           %ul.nav{:role => "navigation"}
             %li
-              = link_to raw("<i class=\"icon-user icon-white\">&nbsp;&nbsp;</i>#{t('menu.medicals')}"), medicals_path, "tabindex" => "-1"
-            %li
-              = link_to raw("<i class=\"icon-book icon-white\">&nbsp;&nbsp;</i>#{t('menu.medical_histories')}"), medical_histories_path, "tabindex" => "-1"
+              = link_to raw("<i class=\"icon-book\">&nbsp;&nbsp;</i>#{t('menu.medical_histories')}"), medical_histories_path, "tabindex" => "-1"
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
-                %i.icon-wrench.icon-white
+                %i.icon-wrench
                 =" #{t('menu.administration')}"
                 %b.caret
               %ul.dropdown-menu{"aria-labelledby" => "dLabel", :role => "menu"}
-                %li= link_to raw("<i class=\"icon-briefcase icon-white\">&nbsp;&nbsp;</i>#{t('menu.medical_specializations')}"), "/medical_specializations", "tabindex" => "-1"
+                %li
+                  = link_to raw("<i class=\"icon-user\">&nbsp;&nbsp;</i>#{t('menu.medicals')}"), medicals_path, "tabindex" => "-1"
+                %li= link_to raw("<i class=\"icon-briefcase\">&nbsp;&nbsp;</i>#{t('menu.medical_specializations')}"), "/medical_specializations", "tabindex" => "-1"
 
           %ul.nav.pull-right
             %li#fat-menu.dropdown.open
               %ul.nav.pull-right
                 %li.dropdown
                   %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button", "id"=>"session_menu"}
-                    %i.icon-user.icon-white
+                    %i.icon-user
                     = t :login_as
                     %b= current_user
                     %b.caret
                   %ul.dropdown-menu{"aria-labelledby" => "dLabel", :role => "menu"}
                     %li
-                      = link_to raw("<i class=\"icon-info-sign icon-white\">&nbsp;&nbsp;</i>#{t(:user_settings)}"), edit_user_registration_path, "tabindex" => "-1", :id => "settings"
+                      = link_to raw("<i class=\"icon-info-sign\">&nbsp;&nbsp;</i>#{t(:user_settings)}"), edit_user_registration_path, "tabindex" => "-1", :id => "settings"
                     %li.divider
                     %li
-                      = link_to raw("<i class=\"icon-off icon-white\">&nbsp;&nbsp;</i>#{t(:sign_out)}"),"#myModal", "tabindex" => "-1", "data-toggle" =>"modal", :id => "sing_out"
+                      = link_to raw("<i class=\"icon-off\">&nbsp;&nbsp;</i>#{t(:sign_out)}"),"#myModal", "tabindex" => "-1", "data-toggle" =>"modal", :id => "sing_out"

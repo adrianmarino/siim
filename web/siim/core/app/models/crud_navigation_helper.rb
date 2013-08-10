@@ -40,6 +40,6 @@ module CrudNavigationHelper
     end
 
     def action_icon_style(a_icon_style_name)
-      "#{a_icon_style_name} icon-white"
+      "#{a_icon_style_name}"
     end
 end
