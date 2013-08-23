@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
     :password_confirmation, :remember_me, :authentication_token
 
   attr_accessor :login
-
+  
   # -------------------------------------------------------------------------
   # Authorization Attributes...
   # -------------------------------------------------------------------------

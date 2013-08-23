@@ -22,6 +22,14 @@ es:
     zeroRecords: "No hay filas para mostrar"
     lengthMenu: "Mostrar _MENU_ filas"
 
+  number:
+    human:
+      storage_units:
+        format: 'Hola'
+        units:
+          byte: 'Hola'
+  avatar:
+    title: "Seleccionar Imagen"
   email:
     invalid: "La direccion de Correo Electrónico invalida"
   error: "error"
@@ -146,6 +154,7 @@ es:
         medications: "Medicaciones"
         vaccines: "Vacunas"
       patient:
+        avatar: "Foto"
         address: "Dirección"
         birthdate: "Fecha de Nacimiento"
         blood_type: "Tipo de sangre"
@@ -248,6 +257,10 @@ es:
               blank: "Debe ingresar un teléfono móvil"
             email:
               blank: "Debe ingresar un correo electrónico"
+            avatar_file_size:
+              less_than: "El tamaño de la foto supera el máximo permitido"
+            avatar_content_type:
+              invalid: "El formato de la foto no esta admitido"
         consultation:
           attributes:
             achievement_date:

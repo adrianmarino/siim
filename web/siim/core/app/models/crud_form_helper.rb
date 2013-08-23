@@ -12,7 +12,6 @@ module CrudFormHelper
     render :partial => 'crud/nested_errors'
   end
 
-
   def submit(a_form)
     render :partial => 'crud/submit', :locals => {:f => a_form}
   end

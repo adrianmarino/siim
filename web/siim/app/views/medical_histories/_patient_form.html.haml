@@ -1,4 +1,5 @@
 = form.fields_for :patient do |f|
+  = avatar_field      f, :avatar, :patient
   = nested_text       f, :dni, :patient
   = nested_text       f, :firstname, :patient
   = nested_text       f, :lastname, :patient

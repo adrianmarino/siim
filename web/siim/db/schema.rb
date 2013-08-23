@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130721170804) do
+ActiveRecord::Schema.define(:version => 20130810231030) do
 
   create_table "allergies", :force => true do |t|
     t.string   "cause"
@@ -102,10 +102,10 @@ ActiveRecord::Schema.define(:version => 20130721170804) do
     t.string   "dose"
     t.string   "how_often"
     t.string   "route"
-    t.datetime "created_at",                                        :null => false
-    t.datetime "updated_at",                                        :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.integer  "medical_history_id"
-    t.decimal  "amount",             :precision => 10, :scale => 0
+    t.decimal  "amount"
   end
 
   create_table "patients", :force => true do |t|
@@ -113,17 +113,21 @@ ActiveRecord::Schema.define(:version => 20130721170804) do
     t.string   "firstname"
     t.string   "lastname"
     t.date     "birthdate"
-    t.decimal  "height",             :precision => 8, :scale => 2
-    t.decimal  "weight",             :precision => 8, :scale => 2
+    t.decimal  "height",              :precision => 8, :scale => 2
+    t.decimal  "weight",              :precision => 8, :scale => 2
     t.string   "blood_type"
     t.string   "sex"
     t.string   "address"
     t.string   "home_phone"
     t.string   "movile_phone"
     t.string   "email"
-    t.datetime "created_at",                                       :null => false
-    t.datetime "updated_at",                                       :null => false
+    t.datetime "created_at",                                        :null => false
+    t.datetime "updated_at",                                        :null => false
     t.integer  "medical_history_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "users", :force => true do |t|

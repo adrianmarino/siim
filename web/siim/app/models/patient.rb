@@ -12,7 +12,7 @@ class Patient < ActiveRecord::Base
   attr_accessible :dni, :firstname, :lastname, :birthdate, :blood_type,
     :height, :weight, :sex, :address, :email, :home_phone, :movile_phone,
     :medical_history, :medical_history_id, :contacts, :contacts_attributes,
-    :_destroy
+    :_destroy, :avatar
 
   attr_accessor :_destroy
 
@@ -21,6 +21,7 @@ class Patient < ActiveRecord::Base
   # -------------------------------------------------------------------------
   belongs_to :medical_history
   has_many :contacts
+  has_attached_file :avatar, :styles => {:medium => "200x200>"}, :default_url => "images/avatar.png", :url  => "/assets/patients/:id/:style/:basename.:extension", :path => ":rails_root/public/assets/patients/:id/:style/:basename.:extension"
 
   # -------------------------------------------------------------------------
   # Nested attributes...
@@ -34,4 +35,5 @@ class Patient < ActiveRecord::Base
   :address, :home_phone, :movile_phone, presence: true
 
   validates :email, presence: true, email: true
+  validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/png']
 end
