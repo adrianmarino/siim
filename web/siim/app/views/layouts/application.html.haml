@@ -10,10 +10,10 @@
   %body
     #wrapper
       = render 'menu'
-      .container= yield :content      
+      .container= yield :content
       .push
     %footer
-      %p.footer-description=raw t('app.author') + " / " + t('app.version')
+      %p.footer-description=raw t('app.author') + " / " + t('app.version', :number => APP_CONFIG['app']['version'])
     / Modal
     #myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
       .modal-header

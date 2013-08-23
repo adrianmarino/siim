@@ -5,7 +5,7 @@ en:
     name: 'SIIM'
     description: 'Comprehensive Medical Information Service'
     author: '&copy; BAMBU Solutions 2013'
-    version: 'Version 0.4.2.1'
+    version: 'Version %{number}'
 
   data_table:
     paginate:
