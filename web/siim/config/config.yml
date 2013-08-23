@@ -1,0 +1,4 @@
+app:
+  version: '0.4.2.5'
+mailer:
+  password: 'Elnonocapo'

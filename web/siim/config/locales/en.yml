@@ -5,7 +5,7 @@ en:
     name: 'SIIM'
     description: 'Comprehensive Medical Information Service'
     author: '&copy; BAMBU Solutions 2013'
-    version: 'Version 0.4.2.1'
+    version: 'Version %{number}'
 
   data_table:
     paginate:
@@ -22,6 +22,8 @@ en:
     zeroRecords: "No records to display"
     lengthMenu: "Display _MENU_ records"
 
+  avatar:
+    title: "Select Photo"
   email:
     invalid: "invalid email address"
   save_error: "%{entity_name} can not be saved because there are %{errors}:"
@@ -138,6 +140,7 @@ en:
         medications: "Medications"
         vaccines: "Vaccines"
       patient:
+        avatar: "Photo"
         address: "Address"
         birthdate: "Birthdate"
         blood_type: "Blood type"
@@ -240,6 +243,12 @@ en:
               blank: "Must enter a movile phone"
             email:
               blank: "Must enter an email"
+            avatar:
+              in_between: "Photo size exceeds the maximum allowed"
+            avatar_file_size:
+              in_between: "Photo size exceeds the maximum allowed"
+            avatar_content_type:
+              invalid: "Photo format is not supported"
         consultation:
           attributes:
             achievement_date:

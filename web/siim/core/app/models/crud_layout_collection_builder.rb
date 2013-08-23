@@ -1,4 +1,3 @@
-
 class CrudLayoutCollectionBuilder
   def initialize
     @actions = []

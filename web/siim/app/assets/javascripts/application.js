@@ -22,6 +22,7 @@
 //= require bootstrap-spinedit
 //= require i18n/translations
 //= require jquery_nested_form
+//= require bootstrap-file-input
 
 $.fn.datepicker.dates['es'] = {
   days: ["Domindo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado", "Domingo"],
@@ -85,6 +86,9 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 } );
 
 $(document).ready(function() {
+    $('input[type=file]').bootstrapFileInput();
+    $('.file-inputs').bootstrapFileInput();
+
     $('.patient_height').spinedit({
         minimum: 0,
         maximum: 4,

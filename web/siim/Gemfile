@@ -15,6 +15,7 @@ gem 'bootstrap-select-rails'
 gem "twitter-bootstrap-rails"
 gem "therubyracer"
 gem "less-rails"
+gem "paperclip"
 
 # Security...
 gem 'devise'

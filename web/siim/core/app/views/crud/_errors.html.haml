@@ -7,5 +7,4 @@
     %h2= t :save_error, :errors => errors_text, :entity_name => entity_name
     %ul
       - eval(variable_name(@entity_name)).errors.messages.each do |a_message|
-        %li
-          ="#{a_message[1].first}."
+          %li="#{a_message[1].first}."
