@@ -8,8 +8,8 @@ module CrudFormHelper
     render :partial => 'crud/errors'
   end
 
-  def nested_errors
-    render :partial => 'crud/nested_errors'
+  def nested_errors(filtered = [])
+    render :partial => 'crud/nested_errors', :locals => {:filtered => filtered}
   end
 
   def submit(a_form)

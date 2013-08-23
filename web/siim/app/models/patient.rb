@@ -12,9 +12,9 @@ class Patient < ActiveRecord::Base
   attr_accessible :dni, :firstname, :lastname, :birthdate, :blood_type,
     :height, :weight, :sex, :address, :email, :home_phone, :movile_phone,
     :medical_history, :medical_history_id, :contacts, :contacts_attributes,
-    :_destroy, :avatar
+    :avatar, :_destroy
 
-  attr_accessor :_destroy
+  attr_accessor :avatar, :_destroy
 
   # -------------------------------------------------------------------------
   # Associations...
@@ -35,5 +35,8 @@ class Patient < ActiveRecord::Base
   :address, :home_phone, :movile_phone, presence: true
 
   validates :email, presence: true, email: true
-  validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/png']
+
+  validates_attachment :avatar,
+    :content_type => { :content_type => ["image/jpg","image/png","image/bmp"] },
+    :size => { :in => 0..1.megabytes }
 end

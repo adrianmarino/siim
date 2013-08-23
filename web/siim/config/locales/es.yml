@@ -257,8 +257,10 @@ es:
               blank: "Debe ingresar un teléfono móvil"
             email:
               blank: "Debe ingresar un correo electrónico"
+            avatar:
+              in_between: "El tamaño de la foto supera el máximo permitido"
             avatar_file_size:
-              less_than: "El tamaño de la foto supera el máximo permitido"
+              in_between: "El tamaño de la foto supera el máximo permitido"
             avatar_content_type:
               invalid: "El formato de la foto no esta admitido"
         consultation:

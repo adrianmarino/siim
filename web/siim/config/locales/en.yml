@@ -243,6 +243,12 @@ en:
               blank: "Must enter a movile phone"
             email:
               blank: "Must enter an email"
+            avatar:
+              in_between: "Photo size exceeds the maximum allowed"
+            avatar_file_size:
+              in_between: "Photo size exceeds the maximum allowed"
+            avatar_content_type:
+              invalid: "Photo format is not supported"
         consultation:
           attributes:
             achievement_date:
