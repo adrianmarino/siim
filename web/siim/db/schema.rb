@@ -113,21 +113,21 @@ ActiveRecord::Schema.define(:version => 20130810231030) do
     t.string   "firstname"
     t.string   "lastname"
     t.date     "birthdate"
-    t.decimal  "height",              :precision => 8, :scale => 2
-    t.decimal  "weight",              :precision => 8, :scale => 2
+    t.decimal  "height",             :precision => 8, :scale => 2
+    t.decimal  "weight",             :precision => 8, :scale => 2
     t.string   "blood_type"
     t.string   "sex"
     t.string   "address"
     t.string   "home_phone"
     t.string   "movile_phone"
     t.string   "email"
-    t.datetime "created_at",                                        :null => false
-    t.datetime "updated_at",                                        :null => false
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
     t.integer  "medical_history_id"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "users", :force => true do |t|

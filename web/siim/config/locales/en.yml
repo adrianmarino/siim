@@ -22,7 +22,7 @@ en:
     zeroRecords: "No records to display"
     lengthMenu: "Display _MENU_ records"
 
-  avatar:
+  photo:
     title: "Select Photo"
   email:
     invalid: "invalid email address"
@@ -140,7 +140,7 @@ en:
         medications: "Medications"
         vaccines: "Vaccines"
       patient:
-        avatar: "Photo"
+        photo: "Photo"
         address: "Address"
         birthdate: "Birthdate"
         blood_type: "Blood type"
@@ -243,11 +243,11 @@ en:
               blank: "Must enter a movile phone"
             email:
               blank: "Must enter an email"
-            avatar:
+            photo:
               in_between: "Photo size exceeds the maximum allowed"
-            avatar_file_size:
+            photo_file_size:
               in_between: "Photo size exceeds the maximum allowed"
-            avatar_content_type:
+            photo_content_type:
               invalid: "Photo format is not supported"
         consultation:
           attributes:
