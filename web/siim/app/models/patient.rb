@@ -38,5 +38,5 @@ class Patient < ActiveRecord::Base
 
   validates_attachment :avatar,
     :content_type => { :content_type => ["image/jpg","image/png","image/bmp"] },
-    :size => { :in => 0..1.megabytes }
+    :size => { :in => 0..5.megabytes }
 end
