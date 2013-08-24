@@ -3,5 +3,5 @@ module ApplicationHelper
   include CrudFormHelper
   include CrudPathHelper
   include Core::ApplicationHelper
-  include Core::PhotoHelper
+  include PhotoHelper
 end
