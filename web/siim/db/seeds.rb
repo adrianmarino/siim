@@ -10,10 +10,6 @@
 
 # Users...
 user = User.create(dni: "29042902",first_name: "Adrian", last_name: "Marino", email: "adrianmarino@gmail.com", password: "29042902")
-#user.confirm!
-#user.save
-
-
 
 # -----------------------------------------------------------------------------
 # Medical specializations....
