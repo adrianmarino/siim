@@ -28,7 +28,7 @@ es:
         format: 'Hola'
         units:
           byte: 'Hola'
-  avatar:
+  photo:
     title: "Seleccionar Imagen"
   email:
     invalid: "La direccion de Correo Electrónico invalida"
@@ -154,7 +154,7 @@ es:
         medications: "Medicaciones"
         vaccines: "Vacunas"
       patient:
-        avatar: "Foto"
+        photo: "Foto"
         address: "Dirección"
         birthdate: "Fecha de Nacimiento"
         blood_type: "Tipo de sangre"
@@ -257,11 +257,11 @@ es:
               blank: "Debe ingresar un teléfono móvil"
             email:
               blank: "Debe ingresar un correo electrónico"
-            avatar:
+            photo:
               in_between: "El tamaño de la foto supera el máximo permitido"
-            avatar_file_size:
+            photo_file_size:
               in_between: "El tamaño de la foto supera el máximo permitido"
-            avatar_content_type:
+            photo_content_type:
               invalid: "El formato de la foto no esta admitido"
         consultation:
           attributes:

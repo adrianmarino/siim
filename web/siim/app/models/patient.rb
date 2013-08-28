@@ -12,16 +12,16 @@ class Patient < ActiveRecord::Base
   attr_accessible :dni, :firstname, :lastname, :birthdate, :blood_type,
     :height, :weight, :sex, :address, :email, :home_phone, :movile_phone,
     :medical_history, :medical_history_id, :contacts, :contacts_attributes,
-    :avatar, :_destroy
+    :photo, :_destroy
 
-  attr_accessor :avatar, :_destroy
+  attr_accessor :photo, :_destroy
 
   # -------------------------------------------------------------------------
   # Associations...
   # -------------------------------------------------------------------------
   belongs_to :medical_history
   has_many :contacts
-  has_attached_file :avatar, :styles => {:medium => "200x200>"}, :default_url => "images/avatar.png", :url  => "/assets/patients/:id/:style/:basename.:extension", :path => ":rails_root/public/assets/patients/:id/:style/:basename.:extension"
+  has_attached_file :photo, :styles => {:medium => "200x200>"}, :default_url => "images/photo.png", :url  => "/assets/patients/:id/:style/:basename.:extension", :path => ":rails_root/public/assets/patients/:id/:style/:basename.:extension"
 
   # -------------------------------------------------------------------------
   # Nested attributes...
@@ -36,7 +36,7 @@ class Patient < ActiveRecord::Base
 
   validates :email, presence: true, email: true
 
-  validates_attachment :avatar,
+  validates_attachment :photo,
     :content_type => { :content_type => ["image/jpg","image/png","image/bmp"] },
     :size => { :in => 0..5.megabytes }
 end
