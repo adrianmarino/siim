@@ -1,5 +1,7 @@
 class SessionsController < Devise::SessionsController
-
+  # -------------------------------------------------------------------------
+  # Public Methods...
+  # -------------------------------------------------------------------------
   def create
     self.resource = warden.authenticate!(auth_options)
     set_flash_message(:notice, :signed_in) if is_navigational_format?

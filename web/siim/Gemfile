@@ -37,7 +37,7 @@ gem 'ruby_parser'
 
 # Test...
 group :development, :test do
-  gem 'mocha', :require => false
+  gem "mocha", "0.12.7", require: false
   gem 'factory_girl_rails'
   gem 'headless'
   gem 'capybara'

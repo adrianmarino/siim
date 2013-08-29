@@ -1,0 +1,2 @@
+class AvailableMedicalAttentionTime
+end
