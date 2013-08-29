@@ -3,11 +3,11 @@
 FactoryGirl.define do
   factory :medical_attention_time do
 		trait :available_clinic do
-			association :medical_specialization, :clinic, factory: :medical_specialization
+			association :medical, :clinic, factory: :medical, strategy: :build
 		end
 		trait :reserved_pediatrician do
 			state ReservedMedicalAttentionTime.new
-			association :medical_specialization, :pediatrician, factory: :medical_specialization
+			association :medical, :pediatrician, factory: :medical, strategy: :build
 		end
   end
 end

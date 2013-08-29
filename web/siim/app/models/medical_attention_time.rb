@@ -10,6 +10,10 @@ class MedicalAttentionTime
 		state.kind_of? ReservedMedicalAttentionTime
 	end
 
+	def is_available_and_has?(a_specialization)
+	 self.is_available? and self.medical.medical_specialization <=> a_specialization 
+	end
+
 	# -------------------------------------------------------------------------
 	# Initialize...
 	# -------------------------------------------------------------------------
@@ -20,5 +24,5 @@ class MedicalAttentionTime
 	# -------------------------------------------------------------------------
 	# Attributes...
 	# -------------------------------------------------------------------------
-	attr_accessor :medical_specialization, :state
+	attr_accessor :medical, :state
 end

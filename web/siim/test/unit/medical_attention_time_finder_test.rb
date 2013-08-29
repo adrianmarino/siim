@@ -15,7 +15,7 @@ class MedicalAttentionTimeFinderTest < ActiveSupport::TestCase
 
 		# Assert...
 		assert !attention_times.empty?
-		assert allAvailable?(attention_times), "Some attention times not available"
+		assert all_available_and_has_medical_specialization?(attention_times, specialization), "Some attention times not available"
 	end
 
 	# -------------------------------------------------------------------------
@@ -30,7 +30,7 @@ class MedicalAttentionTimeFinderTest < ActiveSupport::TestCase
 		FactoryGirl.build :medical_attention_time, :available_clinic
 	end
 
-	def allAvailable?(attention_times)
-		attention_times.all? do |a_attention_time| a_attention_time.is_available? end
+	def all_available_and_has_medical_specialization?(attention_times, a_medical_specialization)
+		attention_times.all? do |a_attention_time| a_attention_time.is_available? and a_attention_time.medical.medical_specialization <=> a_medical_specialization end
 	end
 end
