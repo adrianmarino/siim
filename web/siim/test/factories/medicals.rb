@@ -1,7 +1,8 @@
 FactoryGirl.define do
   factory :medical do
     trait :clinic do
-      cuil "20-29042902-2"
+      dni "999999999"
+      cuil "20-999999999-2"
       firstname "Adrian Norberto"
       lastname "Marino"
       association :medical_specialization, :clinic, factory: :medical_specialization
@@ -9,7 +10,8 @@ FactoryGirl.define do
     end
 
     trait :pediatrician do
-      cuil "20-29042999-1"
+      dni "88888888"
+      cuil "20-88888888-1"
       firstname "Juan Pablo"
       lastname "Perez"
       association :medical_specialization, :pediatrician, factory: :medical_specialization

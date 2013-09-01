@@ -13,8 +13,6 @@ gem 'i18n-js'
 gem 'nested_form'
 gem 'bootstrap-select-rails'
 gem "twitter-bootstrap-rails"
-gem "therubyracer"
-gem "less-rails"
 gem "paperclip"
 
 # Security...
@@ -25,6 +23,8 @@ gem 'cancan'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  gem "therubyracer"
+  gem "less-rails"
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
@@ -35,7 +35,7 @@ gem 'thin'
 gem 'hpricot'
 gem 'ruby_parser'
 
-# Test...
+# Dev and Test...
 group :development, :test do
   gem "mocha", "0.12.7", require: false
   gem 'factory_girl_rails'
@@ -45,11 +45,18 @@ group :development, :test do
   # To use debugger...
   gem 'debugger'
   gem 'hirb'
+  gem 'wirble'
+  gem 'bond'
   gem 'sqlite3'
 end
 
 # User custom nonosoft library...
 gem 'core', path: "core"
+
+gem 'workflow'
+gem 'rename'
+gem 'json'
+
 
 # ------------------------
 # Fix tlsmail gem error...
@@ -64,5 +71,3 @@ Net.instance_eval {remove_const :POP3Session} if defined?(Net::POP3Session)
 Net.instance_eval {remove_const :APOPSession} if defined?(Net::APOPSession)
 # ------------------------------------------------------------------------------
 
-gem 'rename'
-gem 'json'

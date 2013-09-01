@@ -34,6 +34,6 @@ class Medical < ActiveRecord::Base
   # -------------------------------------------------------------------------
   # Validations...
   # -------------------------------------------------------------------------
-  validates :cuil, :firstname, :lastname, :medical_specialization,
+  validates :cuil, :dni, :firstname, :lastname, :medical_specialization,
     :movile_phone, :presence => true
 end

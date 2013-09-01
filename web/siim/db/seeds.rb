@@ -24,13 +24,13 @@ clinic = MedicalSpecialization.create(name: "Clinico")
 # -----------------------------------------------------------------------------
 # Medicals...
 # -----------------------------------------------------------------------------
-Medical.create(
+medical_a = Medical.create(
   dni: "10042902",									cuil: "20-10042902-2",
   firstname: "Juan Pedro", 					lastname: "Pepe",
   home_phone: "47935551", 					movile_phone: "154487766",
   medical_specialization: clinic
 )
-Medical.create(
+medical_b = Medical.create(
   dni: "11042902",									cuil: "20-11042902-2",
   firstname: "Manuel", 							lastname: "Perez",
   home_phone: "47935551", 					movile_phone: "154487766",
@@ -271,4 +271,34 @@ MedicalExam.create(
   achievement_date: "12-12-2012",
   name: "Examen 3",
   medical_history: medical_history
+)
+
+
+# -------------------------------------------------------------------------
+# Medical attention times...
+# -------------------------------------------------------------------------
+MedicalAttentionTime.create( 
+  time: Time.new,
+  medical: medical_a,
+  patient: patient_a
+)
+
+MedicalAttentionTime.create( 
+  time: Time.new,
+  state: :attend,
+  medical: medical_a,
+  patient: patient_b
+)
+
+MedicalAttentionTime.create( 
+  time: Time.new,
+  medical: medical_b,
+  patient: patient_a
+)
+
+MedicalAttentionTime.create( 
+  time: Time.new,
+  state: :reserved,
+  medical: medical_b,
+  patient: patient_b
 )
