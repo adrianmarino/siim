@@ -1,3 +1,5 @@
+ENV["RAILS_ENV"] = "test"
+
 require "selenium-webdriver"
 require "test/unit"
 

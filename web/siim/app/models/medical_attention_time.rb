@@ -53,8 +53,12 @@ class MedicalAttentionTime < ActiveRecord::Base
     conditions["medicals.medical_specialization_id"] = criterions[:specialization] if criterions[:specialization] != nil
     conditions["medical_id"] = criterions[:medical] if criterions[:medical] != nil
     conditions["patient_id"] = criterions[:patient] if criterions[:patient] != nil
-    conditions["time"] = criterions[:time] if criterions[:time] != nil
     conditions["state"] = criterions[:state] if criterions[:state] != nil
+
+    from_time = criterions[:from_time] != nil ? criterions[:from_time] : Time.now
+    to_time = criterions[:to_time] != nil ? criterions[:to_time] : Time.zone.local(3000,1,1)
+    conditions["time"] = from_time..to_time
+
     conditions
   end
 end
