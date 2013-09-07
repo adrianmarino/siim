@@ -10,6 +10,5 @@ class CreateMedicalAttentionDay < ActiveRecord::Migration
 
 			a_table.timestamps
 		end
-		add_index :medical_attention_days, [:medical_id, :name]
 	end
 end
