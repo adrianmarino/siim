@@ -2,7 +2,8 @@ class MedicalAttentionDay < ActiveRecord::Base
 	# -------------------------------------------------------------------------
 	# Attributes...
 	# -------------------------------------------------------------------------
-	attr_accessible :begin_time, :end_time, :name, :medical
+	attr_accessible :begin_hour, :begin_minutes, :end_hour, :end_minutes, 
+		:name, :medical
 
 	# -------------------------------------------------------------------------
 	# Associations...
@@ -12,5 +13,6 @@ class MedicalAttentionDay < ActiveRecord::Base
 	# -------------------------------------------------------------------------
 	# Validations...
 	# -------------------------------------------------------------------------
-	validates :begin_time, :end_time, :name, presence: true
+	validates :begin_hour, :begin_minutes,:end_hour, :end_minutes, :name,
+		:medical, presence: true
 end

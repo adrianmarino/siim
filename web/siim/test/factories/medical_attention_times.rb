@@ -1,5 +1,3 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
   factory :medical_attention_time do
 		association :patient, factory: :patient, strategy: :build

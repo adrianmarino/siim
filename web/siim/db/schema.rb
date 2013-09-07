@@ -61,12 +61,14 @@ ActiveRecord::Schema.define(:version => 20130907203645) do
   end
 
   create_table "medical_attention_days", :force => true do |t|
-    t.datetime "begin_time"
-    t.datetime "end_time"
+    t.integer  "begin_hour"
+    t.integer  "begin_minutes"
+    t.integer  "end_hour"
+    t.integer  "end_minutes"
     t.string   "name"
     t.integer  "medical_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   add_index "medical_attention_days", ["medical_id", "name"], :name => "index_medical_attention_days_on_medical_id_and_name"
