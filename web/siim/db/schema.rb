@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130830214458) do
+ActiveRecord::Schema.define(:version => 20130907203645) do
 
   create_table "allergies", :force => true do |t|
     t.string   "cause"
@@ -59,6 +59,17 @@ ActiveRecord::Schema.define(:version => 20130830214458) do
     t.datetime "updated_at",         :null => false
     t.integer  "medical_history_id"
   end
+
+  create_table "medical_attention_days", :force => true do |t|
+    t.datetime "begin_time"
+    t.datetime "end_time"
+    t.string   "name"
+    t.integer  "medical_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "medical_attention_days", ["medical_id", "name"], :name => "index_medical_attention_days_on_medical_id_and_name"
 
   create_table "medical_attention_times", :force => true do |t|
     t.datetime "time"

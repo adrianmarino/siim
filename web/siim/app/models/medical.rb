@@ -23,13 +23,14 @@ class Medical < ActiveRecord::Base
   # -------------------------------------------------------------------------
   attr_accessible :cuil, :dni, :email, :firstname, :lastname,
     :home_phone, :movile_phone, :medical_specialization,
-    :medical_specialization_id
+    :medical_specialization_id, :medical_attention_days
 
   # -------------------------------------------------------------------------
   # Associations...
   # -------------------------------------------------------------------------
   belongs_to :medical_specialization
   has_many :consutations
+  has_many :medical_attention_days
 
   # -------------------------------------------------------------------------
   # Validations...
