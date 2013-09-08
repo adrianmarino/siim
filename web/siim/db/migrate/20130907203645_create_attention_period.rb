@@ -1,11 +1,11 @@
-class CreateMedicalAttentionDay < ActiveRecord::Migration
+class CreateAttentionPeriod < ActiveRecord::Migration
 	def change
-		create_table :medical_attention_days do |a_table|
+		create_table :attention_periods do |a_table|
 			a_table.integer :begin_hour
 			a_table.integer :begin_minutes
 			a_table.integer :end_hour
 			a_table.integer :end_minutes
-			a_table.string :name
+			a_table.integer :week_day
 			a_table.references :medical
 
 			a_table.timestamps

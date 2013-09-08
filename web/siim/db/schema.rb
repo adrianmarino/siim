@@ -29,6 +29,26 @@ ActiveRecord::Schema.define(:version => 20130907203645) do
     t.integer  "medical_history_id"
   end
 
+  create_table "attention_periods", :force => true do |t|
+    t.integer  "begin_hour"
+    t.integer  "begin_minutes"
+    t.integer  "end_hour"
+    t.integer  "end_minutes"
+    t.integer  "week_day"
+    t.integer  "medical_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "attention_times", :force => true do |t|
+    t.datetime "time"
+    t.string   "state"
+    t.integer  "patient_id"
+    t.integer  "medical_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "consultations", :force => true do |t|
     t.date     "achievement_date"
     t.string   "symptomps"
@@ -58,28 +78,6 @@ ActiveRecord::Schema.define(:version => 20130907203645) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.integer  "medical_history_id"
-  end
-
-  create_table "medical_attention_days", :force => true do |t|
-    t.integer  "begin_hour"
-    t.integer  "begin_minutes"
-    t.integer  "end_hour"
-    t.integer  "end_minutes"
-    t.string   "name"
-    t.integer  "medical_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
-  add_index "medical_attention_days", ["medical_id", "name"], :name => "index_medical_attention_days_on_medical_id_and_name"
-
-  create_table "medical_attention_times", :force => true do |t|
-    t.datetime "time"
-    t.string   "state"
-    t.integer  "patient_id"
-    t.integer  "medical_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "medical_exams", :force => true do |t|

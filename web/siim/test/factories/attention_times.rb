@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :medical_attention_time do
+  factory :attention_time do
 		association :patient, factory: :patient, strategy: :build
 
 		trait :available_clinic_at_2013_09_22_09_00 do

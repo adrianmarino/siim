@@ -4,38 +4,47 @@ class AvailableAttentionTimeBuilderTest < ActiveSupport::TestCase
 	# -------------------------------------------------------------------------
 	# Test Methods...
 	# -------------------------------------------------------------------------
-	def test_method_name
+	def test_build_attention_time_period
 		# Prepare...
-		today_date = Time.zone.today
-		two_months_later_date = today_date + 2.months
-		reserved_attention_times = []
-
-		# Reserved attention times...
-		attention_time = FactoryGirl.build :medical_attention_time, :reserved_clinic
-		attention_time.time = today_date + 1.week
-		reserved_attention_times << attention_time
-
-		attention_time = FactoryGirl.build :medical_attention_time, :reserved_pediatrician
-		attention_time.time = today_date + 2.week
-		reserved_attention_times << attention_time
-
-		# Medicals...
+		from = Time.zone.today
+		to = from + 1.week
+		# Medicals
 		medicals = []
-		medicals << FactoryGirl.build :medical, :clinic
-		medicals << FactoryGirl.build :medical, :pediatrician
+		medical = FactoryGirl.build :medical, :clinic
+		medical.medical_attention_days << FactoryGirl.build(:attention_period, :clinical_monday_morning)
+		medical.medical_attention_days << FactoryGirl.build(:attention_period, :clinical_monday_afternon)
+		medical.medical_attention_days << FactoryGirl.build(:attention_period, :clinical_wednesday_morning)
+		medical.medical_attention_days << FactoryGirl.build(:attention_period, :clinical_wednesday_afternon)
+		medical.medical_attention_days << FactoryGirl.build(:attention_period, :clinical_friday_morning)
+		medical.medical_attention_days << FactoryGirl.build(:attention_period, :clinical_friday_afternon)
+		medicals << medical
+
+		medical = FactoryGirl.build :medical, :pediatrician
+		medical.medical_attention_days << FactoryGirl.build :attention_period, :pediatrician_monday_afternon
+		medical.medical_attention_days << FactoryGirl.build :attention_period, :pediatrician_wednesday_afternon
+		medical.medical_attention_days << FactoryGirl.build :attention_period, :pediatrician_friday_afternon
+		medicals << medical
 
 		builder = AvailableAttentionTimeBuilder.new
-		builder.from today_date
-		builder.to two_months_later_date
-		builder.reserved_attention_times reserved_attention_times
-		builder.medicals = 
-
+		builder.from = from
+		builder.to = to
+		builder.medicals = medicals
 
 		# Perform...
-		atention_times = builder.build
+		available_times = builder.build
 
 		# Assert...
-
+		available_times.each do |a_time|
+			periods = a_time.medical_attention_periods_on_same_day
+			assert_attention_time_is_included_on_any_period a_time, periods
+		end
 	end
 
+	# -------------------------------------------------------------------------
+	# Private Methods...
+	# -------------------------------------------------------------------------
+	private
+	def assert_attention_time_is_included_on_any_period(a_time, periods)
+		periods.any? { |a_period| period.include? a_time }
+	end
 end

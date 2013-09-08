@@ -275,28 +275,28 @@ MedicalExam.create(
 
 
 # -------------------------------------------------------------------------
-# Medical attention times...
+# Attention times...
 # -------------------------------------------------------------------------
-MedicalAttentionTime.create( 
+AttentionTime.create( 
   time: Time.new,
   medical: medical_a,
   patient: patient_a
 )
 
-MedicalAttentionTime.create( 
+AttentionTime.create( 
   time: Time.new,
   state: :attend,
   medical: medical_a,
   patient: patient_b
 )
 
-MedicalAttentionTime.create( 
+AttentionTime.create( 
   time: Time.new,
   medical: medical_b,
   patient: patient_a
 )
 
-MedicalAttentionTime.create( 
+AttentionTime.create( 
   time: Time.new,
   state: :reserved,
   medical: medical_b,

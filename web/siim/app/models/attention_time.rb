@@ -1,15 +1,37 @@
-class MedicalAttentionTime < ActiveRecord::Base
+class AttentionTime < ActiveRecord::Base
 	include Workflow
 	# -------------------------------------------------------------------------
 	# Finds...
 	# -------------------------------------------------------------------------
   def ==(an_other)
-      self.time == an_other.time && self.medical == an_other.medical && self.patient == an_other.patient && self.current_state == an_other.current_state
+    self.time == an_other.time && self.medical == an_other.medical && self.patient == an_other.patient && self.current_state == an_other.current_state
   end
 
   def self.find(criterions)
-      self.includes(:medical).where find_conditions_from criterions
+    self.includes(:medical).where find_conditions_from criterions
   end
+
+  def medical_attention_periods_on_same_day
+      week_day = self.time.wday
+      self.medical.attention_periods_by_week_day week_day
+  end
+
+  def hour
+    self.time.hour
+  end
+
+  def min
+    self.time.min
+  end
+
+  def after_begin_time_of?(a_period)
+    self.hour > a_period.begin_hour || (self.hour == a_period.begin_hour && self.min >= a_period.begin_minutes)
+  end
+
+  def before_end_time_of?(a_period)
+    self.hour < a_period.end_hour || (self.hour == a_period.end_hour && self.min < a_period.end_minutes)
+  end
+
 
 	# -------------------------------------------------------------------------
 	# Workflow...
@@ -42,7 +64,6 @@ class MedicalAttentionTime < ActiveRecord::Base
   # Validations...
   # -------------------------------------------------------------------------
   validates :time, :medical, :presence => true
-
 
   # -------------------------------------------------------------------------
   # Private Methods...

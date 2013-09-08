@@ -1,6 +1,6 @@
-class CreateMedicalAttentionTime < ActiveRecord::Migration
+class CreateAttentionTime < ActiveRecord::Migration
   def change
-    create_table :medical_attention_times do |a_table|
+    create_table :attention_times do |a_table|
     	a_table.datetime :time
     	a_table.string :state
     	a_table.references :patient
