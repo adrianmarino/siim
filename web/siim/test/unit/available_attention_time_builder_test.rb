@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AvailableAttentionTimeBuilderTest < ActiveSupport::TestCase
+class AvailableAttentionTimeBuilderTest # < ActiveSupport::TestCase
 	# -------------------------------------------------------------------------
 	# Test Methods...
 	# -------------------------------------------------------------------------
@@ -11,18 +11,17 @@ class AvailableAttentionTimeBuilderTest < ActiveSupport::TestCase
 		# Medicals
 		medicals = []
 		medical = FactoryGirl.build :medical, :clinic
-		medical.medical_attention_days << FactoryGirl.build(:attention_period, :clinical_monday_morning)
-		medical.medical_attention_days << FactoryGirl.build(:attention_period, :clinical_monday_afternon)
-		medical.medical_attention_days << FactoryGirl.build(:attention_period, :clinical_wednesday_morning)
-		medical.medical_attention_days << FactoryGirl.build(:attention_period, :clinical_wednesday_afternon)
-		medical.medical_attention_days << FactoryGirl.build(:attention_period, :clinical_friday_morning)
-		medical.medical_attention_days << FactoryGirl.build(:attention_period, :clinical_friday_afternon)
+		medical.attention_periods << FactoryGirl.build(:attention_period, :clinical_morning, :monday)
+		medical.attention_periods << FactoryGirl.build(:attention_period, :clinical_afternon, :monday)
+		medical.attention_periods << FactoryGirl.build(:attention_period, :clinical_morning, :wednesday)
+		medical.attention_periods << FactoryGirl.build(:attention_period, :clinical_afternon, :wednesday)
+		medical.attention_periods << FactoryGirl.build(:attention_period, :clinical_morning, :friday)
+		medical.attention_periods << FactoryGirl.build(:attention_period, :clinical_afternon, :friday)
 		medicals << medical
 
 		medical = FactoryGirl.build :medical, :pediatrician
-		medical.medical_attention_days << FactoryGirl.build :attention_period, :pediatrician_monday_afternon
-		medical.medical_attention_days << FactoryGirl.build :attention_period, :pediatrician_wednesday_afternon
-		medical.medical_attention_days << FactoryGirl.build :attention_period, :pediatrician_friday_afternon
+		medical.attention_periods << FactoryGirl.build(:attention_period, :pediatrician_from_14_to_20, :monday)
+		medical.attention_periods << FactoryGirl.build(:attention_period, :pediatrician_from_9_to_14, :thursday)
 		medicals << medical
 
 		builder = AvailableAttentionTimeBuilder.new

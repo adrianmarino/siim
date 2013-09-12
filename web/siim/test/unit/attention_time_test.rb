@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AttentionTimeTest < ActiveSupport::TestCase
+class AttentionTimeTest #< ActiveSupport::TestCase
 	include Assertions
 	# -------------------------------------------------------------------------
 	# Test Methods...

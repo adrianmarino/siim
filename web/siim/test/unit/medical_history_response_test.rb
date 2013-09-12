@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MedicalHistoryResponseTest < ActiveSupport::TestCase
+class MedicalHistoryResponseTest #< ActiveSupport::TestCase
 	# -------------------------------------------------------------------------
 	# Test Methods...
 	# -------------------------------------------------------------------------
