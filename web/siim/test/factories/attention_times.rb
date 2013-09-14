@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :attention_time do
 		association :patient, factory: :patient, strategy: :build
 
+
 		trait :available_clinic_at_2013_09_22_09_00 do
 			time Time.zone.local(2013, 9, 22, 9, 0)
 			association :medical, :clinic, factory: :medical, strategy: :build
@@ -17,6 +18,7 @@ FactoryGirl.define do
 			association :medical, :clinic, factory: :medical, strategy: :build
 		end
 
+
 		trait :reserved_clinic_at_2013_09_22_09_30 do
 			time Time.zone.local(2013, 9, 22, 9, 30)
 			state :reserved
@@ -28,10 +30,12 @@ FactoryGirl.define do
 			association :medical, :clinic, factory: :medical, strategy: :build
 		end
 
+
 		trait :reserved_pediatrician do
 			state :reserved
 			association :medical, :pediatrician, factory: :medical, strategy: :build
 		end
+
 
 		trait :reserved_pediatrician_at_2013_09_22_10_00 do
 			time Time.zone.local(2013, 9, 22, 10, 0)

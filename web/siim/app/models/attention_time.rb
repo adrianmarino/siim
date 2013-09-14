@@ -1,14 +1,10 @@
 class AttentionTime < ActiveRecord::Base
 	include Workflow
-	# -------------------------------------------------------------------------
-	# Finds...
-	# -------------------------------------------------------------------------
+  # -------------------------------------------------------------------------
+  # Instance methods
+  # -------------------------------------------------------------------------
   def ==(an_other)
     self.time == an_other.time && self.medical == an_other.medical && self.patient == an_other.patient && self.current_state == an_other.current_state
-  end
-
-  def self.find(criterions)
-    self.includes(:medical).where find_conditions_from criterions
   end
 
   def medical_attention_periods_on_same_day
@@ -32,6 +28,12 @@ class AttentionTime < ActiveRecord::Base
     self.hour < a_period.end_hour || (self.hour == a_period.end_hour && self.min < a_period.end_minutes)
   end
 
+  # -------------------------------------------------------------------------
+  # Class methods
+  # -------------------------------------------------------------------------
+  def self.find(criterions)
+    self.includes(:medical).where find_conditions_from(criterions)
+  end
 
 	# -------------------------------------------------------------------------
 	# Workflow...
@@ -49,24 +51,24 @@ class AttentionTime < ActiveRecord::Base
   end
 
 	# -------------------------------------------------------------------------
-	# Attributes...
+	# Attributes
 	# -------------------------------------------------------------------------
 	attr_accessible :time, :state, :medical, :patient
 	workflow_column :state
 
   # -------------------------------------------------------------------------
-  # Associations...
+  # Associations
   # -------------------------------------------------------------------------
   belongs_to :medical
   belongs_to :patient
 
   # -------------------------------------------------------------------------
-  # Validations...
+  # Validations
   # -------------------------------------------------------------------------
   validates :time, :medical, :presence => true
 
   # -------------------------------------------------------------------------
-  # Private Methods...
+  # Private Methods
   # -------------------------------------------------------------------------
   private
   def self.find_conditions_from(criterions)
@@ -75,11 +77,13 @@ class AttentionTime < ActiveRecord::Base
     conditions["medical_id"] = criterions[:medical] if criterions[:medical] != nil
     conditions["patient_id"] = criterions[:patient] if criterions[:patient] != nil
     conditions["state"] = criterions[:state] if criterions[:state] != nil
-
-    from_time = criterions[:from_time] != nil ? criterions[:from_time] : Time.now
-    to_time = criterions[:to_time] != nil ? criterions[:to_time] : Time.zone.local(3000,1,1)
-    conditions["time"] = from_time..to_time
-
+    conditions["time"] = time_range criterions[:from], criterions[:to]
     conditions
+  end
+
+  def self.time_range(a_from, a_to)
+    from = a_from != nil ? a_from : Time.new(1900,1,1)
+    to = a_to != nil ? a_to : Time.new(3000,1,1)
+    from..to
   end
 end

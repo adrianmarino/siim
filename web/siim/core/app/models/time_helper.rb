@@ -2,36 +2,34 @@ module TimeHelper
 	# -------------------------------------------------------------------------
 	# Public Methods...
 	# -------------------------------------------------------------------------
-	def self.create_times(parameters)
-		start_time = start_time parameters
-		end_time = end_time parameters
-		increment = increment parameters
-		date = date parameters
+	def self.create_times(args)
+		start_time = start_time args
+		end_time = end_time args
+		increment = increment args
+		time = time args
 
 		Array.new(1 + (end_time - start_time)/increment) do |i|
-			date.midnight + (i*increment) + start_time
+			time.midnight + (i*increment) + start_time
 		end
-		puts "HOLA"
 	end
 
 	# -------------------------------------------------------------------------
 	# Private Methods...
 	# -------------------------------------------------------------------------
 	private
-	def self.start_time(parameters)
-		parameters[:start_time] ? parameters[:start_time] : 0
+	def self.start_time(args)
+		args[:start_time] ? args[:start_time] : 0
 	end
 
-	def self.end_time(parameters)
-		parameters[:end_time] ? parameters[:end_time] : 24.hours
+	def self.end_time(args)
+		args[:end_time] ? args[:end_time] : 24.hours
 	end
 
-	def self.increment(parameters)
-		parameters[:increment] ? parameters[:increment] : 30.minutes
+	def self.increment(args)
+		args[:increment] ? args[:increment] : 30.minutes
 	end
 
-	def self.date(parameters)
-		parameters[:date] ? parameters[:date] : Time.now
+	def self.time(args)
+		args[:time] ? args[:time] : Time.now
 	end
-
 end

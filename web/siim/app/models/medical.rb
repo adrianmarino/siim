@@ -18,8 +18,13 @@ class Medical < ActiveRecord::Base
     end
   end
 
-  def attention_periods_by_week_day(a_week_day)
-    self.attention_periods select do|a_period| a_period.week_day == a_week_day end
+  def attention_periods_on(a_date)
+    attention_periods.select do |a_period| a_period.week_day == a_date.wday end
+  end
+
+  def attention_times_on(a_date)
+    periods = attention_periods_on a_date
+    period.attention_times_on a_date
   end
 
   # -------------------------------------------------------------------------
