@@ -39,6 +39,6 @@ module TimeHelper
 	end
 
 	def self.log_time(time, number)
-		puts "\s-\sTime #{number+1}: #{time.strftime("%H:%M")}"
+		puts "\s-\sTime #{number+1}: #{time.strftime("%H:%M")}."
 	end
 end

@@ -10,10 +10,11 @@ class AvailableAttentionTimeBuilder
 		each_date_of_range do |a_date|
 			each_medical do |a_medical|
 				each_attention_time(a_medical, a_date) do |a_time|
-					attention_time << AttentionTime.new(time: a_time, state: :available, medical: a_medical)
+					attention_times << AttentionTime.new_available(a_time, a_medical)
 				end
 			end
 		end
+		attention_times
 	end
 	
 	# -------------------------------------------------------------------------

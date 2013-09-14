@@ -9,17 +9,17 @@ class AvailableAttentionTimeBuilderTest < ActiveSupport::TestCase
 																			distincts dayly attention periods" do
 		# Prepare...
 		builder = AvailableAttentionTimeBuilder.new
-		builder.from = Time.new
+		builder.from = Date.new
 		builder.to = builder.from + 1.week
 		builder.medicals = [new_clinical_medical, new_pediatrician_medical]
 		# Perform...
-		#=times = builder.build
+		times = builder.build
 
 		# Assert...
-		#times.each do |a_time|
-		#	periods = a_time.medical_attention_periods_on_same_day
-			#assert_attention_time_is_included_on_any_period a_time, periods
-		#end
+		times.each do |a_time|
+			periods = a_time.medical_attention_periods_on_same_day
+			assert_attention_time_is_included_on_any_period a_time, periods
+		end
 	end
 
 	# -------------------------------------------------------------------------

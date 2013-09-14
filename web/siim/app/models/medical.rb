@@ -53,6 +53,10 @@ class Medical < ActiveRecord::Base
     end
   end
 
+  def attention_times_on(a_date)
+    self.attention_times_by_period_on(a_date).flatten
+  end
+
   def attention_length_time
     Time.new_from hour: self.attention_time_length_hour, min: self.attention_time_length_minutes
   end

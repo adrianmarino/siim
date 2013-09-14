@@ -38,6 +38,10 @@ class AttentionTime < ActiveRecord::Base
     self.includes(:medical).where find_conditions_from(criterions)
   end
 
+  def self.new_available(a_time, a_medical)
+    AttentionTime.new(time: a_time, state: :available, medical: a_medical)
+  end
+
 	# -------------------------------------------------------------------------
 	# Workflow...
 	# -------------------------------------------------------------------------
