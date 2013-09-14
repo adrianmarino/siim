@@ -2,6 +2,27 @@ class Medical < ActiveRecord::Base
   include Comparable
 
   # -------------------------------------------------------------------------
+  # Attributes...
+  # -------------------------------------------------------------------------
+  attr_accessible :cuil, :dni, :email, :firstname, :lastname,
+    :home_phone, :movile_phone, :medical_specialization,
+    :medical_specialization_id, :attention_periods, 
+    :attention_time_length_hour, :attention_time_length_minutes
+
+  # -------------------------------------------------------------------------
+  # Associations...
+  # -------------------------------------------------------------------------
+  belongs_to :medical_specialization
+  has_many :consutations
+  has_many :attention_periods
+
+  # -------------------------------------------------------------------------
+  # Validations...
+  # -------------------------------------------------------------------------
+  validates :cuil, :dni, :firstname, :lastname, :medical_specialization,
+    :movile_phone, :presence => true
+
+  # -------------------------------------------------------------------------
   # Public Methods...
   # -------------------------------------------------------------------------
   def to_s
@@ -22,28 +43,17 @@ class Medical < ActiveRecord::Base
     attention_periods.select do |a_period| a_period.week_day == a_date.wday end
   end
 
-  def attention_times_on(a_date)
+  def attention_times_by_period_on(a_date)
     periods = attention_periods_on a_date
-    period.attention_times_on a_date
+    periods.collect do |a_period|
+      begin_time = a_period.begin_time_on a_date
+      end_time = a_period.end_time_on a_date
+      lenght = attention_length_time
+      TimeHelper.create_times start_time: begin_time, end_time: end_time, increment: lenght
+    end
   end
 
-  # -------------------------------------------------------------------------
-  # Attributes...
-  # -------------------------------------------------------------------------
-  attr_accessible :cuil, :dni, :email, :firstname, :lastname,
-    :home_phone, :movile_phone, :medical_specialization,
-    :medical_specialization_id, :attention_periods
-
-  # -------------------------------------------------------------------------
-  # Associations...
-  # -------------------------------------------------------------------------
-  belongs_to :medical_specialization
-  has_many :consutations
-  has_many :attention_periods
-
-  # -------------------------------------------------------------------------
-  # Validations...
-  # -------------------------------------------------------------------------
-  validates :cuil, :dni, :firstname, :lastname, :medical_specialization,
-    :movile_phone, :presence => true
+  def attention_length_time
+    Time.new_from hour: self.attention_time_length_hour, min: self.attention_time_length_minutes
+  end
 end

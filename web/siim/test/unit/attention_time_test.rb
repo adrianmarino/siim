@@ -2,6 +2,8 @@ require 'test_helper'
 
 class AttentionTimeTest < ActiveSupport::TestCase
 	include Assertions
+	include AttentionTimeAssertions
+
 	# -------------------------------------------------------------------------
 	# Test Methods...
 	# -------------------------------------------------------------------------
@@ -108,5 +110,16 @@ class AttentionTimeTest < ActiveSupport::TestCase
 		assert_has_only_one attention_times
 		assert attention_times.first.time > from
 		assert attention_times.first.time < to
+	end
+
+	test "medical attention periods on same day" do
+		# Prepare...
+		time = FactoryGirl.build(:attention_time, :available_clinic_at_2013_09_20_09_00)
+
+		# Perform...
+		periods = time.medical_attention_periods_on_same_day
+
+		# Assert...
+		assert_attention_time_is_included_on_any_period(time, periods)
 	end
 end

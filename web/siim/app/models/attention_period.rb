@@ -6,12 +6,12 @@ class AttentionPeriod < ActiveRecord::Base
 		a_time.after_begin_time_of?(self) && a_time.before_end_time_of?(self)
 	end
 
-	def begin_time_on(a_time)
-		a_time.midnight +  begin_hour.hours + begin_minutes.minutes
+	def begin_time_on(a_date)
+		Time.new_from date: a_date, hour: begin_hour, min: begin_minutes
 	end
 
-	def end_time_on(a_time)
-		a_time.midnight + end_hour.hours + end_minutes.minutes
+	def end_time_on(a_date)
+		Time.new_from date: a_date, hour: end_hour, min: end_minutes
 	end
 
 	def ==(an_other)

@@ -8,8 +8,11 @@ class AttentionTime < ActiveRecord::Base
   end
 
   def medical_attention_periods_on_same_day
-      week_day = self.time.wday
-      self.medical.attention_periods_by_week_day week_day
+      self.medical.attention_periods_on time.to_date
+  end
+
+  def week_day
+    self.time.wday
   end
 
   def hour

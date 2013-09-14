@@ -57,28 +57,34 @@ medical_a = Medical.create(
   firstname: "Juan Pedro", 					lastname: "Pepe",
   home_phone: "47935551", 					movile_phone: "154487766",
   medical_specialization: clinic,
-  attention_periods: [period_monday_a,period_monday_b]
+  attention_periods: [period_monday_a,period_monday_b],
+  attention_time_length_hour: 0,
+  attention_time_length_minutes: 15
 )
 medical_b = Medical.create(
   dni: "11042902",									cuil: "20-11042902-2",
   firstname: "Manuel", 							lastname: "Perez",
   home_phone: "47935551", 					movile_phone: "154487766",
   medical_specialization: oftalmologo,
-  attention_periods: [period_monday_a,period_monday_b]
+  attention_periods: [period_monday_a,period_monday_b],
+  attention_time_length_hour: 0,
+  attention_time_length_minutes: 20
 )
 Medical.create(
   dni: "12042902",									cuil: "20-12042902-2",
   firstname: "Martin", 							lastname: "Gomez Gomenez",
   home_phone: "47935551", 					movile_phone: "154487766",
   medical_specialization: traumatologo,
-  attention_periods: [period_monday_a,period_monday_b]
+  attention_periods: [period_monday_a,period_monday_b],
+  attention_time_length_hour: 0,
+  attention_time_length_minutes: 10
 )
 Medical.create(
   dni: "13042902",									cuil: "20-13042902-2",
   firstname: "Adrian", 							lastname: "Marino",
   home_phone: "47935551", 					movile_phone: "154487766",
   medical_specialization: pediatra,
-  attention_periods: [period_friday_c]
+  attention_periods: [period_friday_c],
 )
 Medical.create(
   dni: "14042902",									cuil: "20-14042902-2",

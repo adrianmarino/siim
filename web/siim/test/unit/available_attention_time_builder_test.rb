@@ -1,28 +1,24 @@
 require 'test_helper'
 
 class AvailableAttentionTimeBuilderTest < ActiveSupport::TestCase
+	include AttentionTimeAssertions
 	# -------------------------------------------------------------------------
 	# Test Methods...
 	# -------------------------------------------------------------------------
-	test "build attention time period" do
+	test "build 1 week available attention times for two medicals with 
+																			distincts dayly attention periods" do
 		# Prepare...
-		from = Time.zone.today
-		to = from + 1.week
-		# Medicals
-		medicals = [FactoryGirl.build(:medical, :clinic), FactoryGirl.build(:medical, :pediatrician)]
-		# Builder
 		builder = AvailableAttentionTimeBuilder.new
-		builder.from = from
-		builder.to = to
-		builder.medicals = medicals
-
+		builder.from = Time.new
+		builder.to = builder.from + 1.week
+		builder.medicals = [new_clinical_medical, new_pediatrician_medical]
 		# Perform...
-		# available_times = builder.build
+		#=times = builder.build
 
 		# Assert...
-		#available_times.each do |a_time|
+		#times.each do |a_time|
 		#	periods = a_time.medical_attention_periods_on_same_day
-		#	assert_attention_time_is_included_on_any_period a_time, periods
+			#assert_attention_time_is_included_on_any_period a_time, periods
 		#end
 	end
 
@@ -30,7 +26,15 @@ class AvailableAttentionTimeBuilderTest < ActiveSupport::TestCase
 	# Private Methods...
 	# -------------------------------------------------------------------------
 	private
-	def assert_attention_time_is_included_on_any_period(a_time, periods)
-		periods.any? { |a_period| period.include? a_time }
+	def new_clinical_medical
+		FactoryGirl.build(:medical, :clinic,
+											:attention_period_weekly_from_9_to_13_and_from_14_to_18,
+											:attention_length_of_10_minutes)
+	end
+
+	def new_pediatrician_medical
+		FactoryGirl.build(:medical, :pediatrician,
+											:attention_period_monday_from_14_to_20_and_thursday_from_9_to_14,
+											:attention_length_of_30_minutes)
 	end
 end
