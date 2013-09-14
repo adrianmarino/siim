@@ -1,20 +1,20 @@
 require 'test_helper'
 
-class TimeTest < ActiveSupport::TestCase
+class DateTest < ActiveSupport::TestCase
 	# -------------------------------------------------------------------------
 	# Test Methods...
 	# -------------------------------------------------------------------------
 	test "as date" do
 		# Prepare...
-		time = Time.new
+		date = Date.new
 
 		# Perform...
-		date = time.as_date
+		time = date.as_time
 
 		# Assert...
-		assert date.kind_of? Date
-		assert_equal time.year, date.year
-		assert_equal time.month, date.month
-		assert_equal time.day, date.day
+		assert time.kind_of? Time
+		assert_equal date.year, time.year
+		assert_equal date.month, time.month
+		assert_equal date.day, time.day
 	end
 end
