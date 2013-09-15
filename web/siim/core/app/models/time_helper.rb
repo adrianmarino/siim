@@ -18,6 +18,7 @@ module TimeHelper
 		end
 	end
 
+
 	# -------------------------------------------------------------------------
 	# Private Methods...
 	# -------------------------------------------------------------------------
@@ -31,7 +32,7 @@ module TimeHelper
 	end
 
 	def self.log_args(start_time, end_time, increment)
-		puts "\nGenerate times from: #{start_time.strftime("%H:%M")} to #{end_time.strftime("%H:%M")} with step of #{increment.sum_of_hours_and_minutes_in_seconds} seconds."
+		puts "\nGenerate times from: #{start_time.strftime("%F %H:%M")} to #{end_time.strftime("%F %H:%M")} with step of #{increment.sum_of_hours_and_minutes_in_seconds} seconds."
 	end
 
 	def self.log_count(count)
@@ -39,6 +40,6 @@ module TimeHelper
 	end
 
 	def self.log_time(time, number)
-		puts "\s-\sTime #{number+1}: #{time.strftime("%H:%M")}."
+		puts "\s-\sTime #{number+1}: #{time.strftime("%F %H:%M")}."
 	end
 end

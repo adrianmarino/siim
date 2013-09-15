@@ -34,6 +34,12 @@ FactoryGirl.define do
       attention_time_length_minutes 10
     end
 
+    trait :attention_period_monday_from_9_to_13 do
+      after(:build) do |medical|
+        FactoryGirl.create :attention_period, :from_9_to_13, :monday, medical: medical
+      end
+    end
+
 
     trait :attention_period_weekly_from_9_to_13_and_from_14_to_18 do
       after(:build) do |medical|

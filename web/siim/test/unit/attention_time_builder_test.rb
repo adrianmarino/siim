@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AvailableAttentionTimeBuilderTest < ActiveSupport::TestCase
+class AttentionTimeBuilderTest < ActiveSupport::TestCase
 	include AttentionTimeAssertions
 	# -------------------------------------------------------------------------
 	# Test Methods...
@@ -8,7 +8,7 @@ class AvailableAttentionTimeBuilderTest < ActiveSupport::TestCase
 	test "build 1 week available attention times for two medicals with 
 																			distincts dayly attention periods" do
 		# Prepare...
-		builder = AvailableAttentionTimeBuilder.new
+		builder = AttentionTimeBuilder.new
 		builder.from = Date.new
 		builder.to = builder.from + 1.week
 		builder.medicals = [new_clinical_medical, new_pediatrician_medical]

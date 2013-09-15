@@ -31,6 +31,10 @@ class AttentionTime < ActiveRecord::Base
     self.hour < a_period.end_hour || (self.hour == a_period.end_hour && self.min < a_period.end_minutes)
   end
 
+  def to_s
+    "Attention Time { Time: #{time.strftime("%F %H:%M")}, State: #{state.to_s}, Medical: #{medical}, Patient: #{patient} }"
+  end
+
   # -------------------------------------------------------------------------
   # Class methods
   # -------------------------------------------------------------------------
@@ -40,6 +44,10 @@ class AttentionTime < ActiveRecord::Base
 
   def self.new_available(a_time, a_medical)
     AttentionTime.new(time: a_time, state: :available, medical: a_medical)
+  end
+
+  def self.last
+    self.order("time DESC").limit 1
   end
 
 	# -------------------------------------------------------------------------
@@ -54,6 +62,9 @@ class AttentionTime < ActiveRecord::Base
     end
     state :attended do
       event :attend, :transitions_to => :attend
+    end
+    state :canceled do
+      event :attend, :transitions_to => :cancel
     end
   end
 

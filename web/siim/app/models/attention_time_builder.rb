@@ -1,6 +1,8 @@
-require 'time'
-
-class AvailableAttentionTimeBuilder
+class AttentionTimeBuilder
+	# -------------------------------------------------------------------------
+	# Attributes...
+	# -------------------------------------------------------------------------
+	attr_accessor :from, :to, :window_time, :medicals
 
 	# -------------------------------------------------------------------------
 	# Public Methods...
@@ -16,12 +18,13 @@ class AvailableAttentionTimeBuilder
 		end
 		attention_times
 	end
-	
+
 	# -------------------------------------------------------------------------
 	# Private Methods...
 	# -------------------------------------------------------------------------
+	private
 	def from_to_range
-		from..to
+		(from.nil? or to.nil?) ? window_time.range : from..to
 	end
 
 	def each_date_of_range
@@ -41,10 +44,4 @@ class AvailableAttentionTimeBuilder
 			yield a_medical
 		end
 	end
-
-	# -------------------------------------------------------------------------
-	# Attributes...
-	# -------------------------------------------------------------------------
-	attr_accessor :from, :to, :medicals
-
 end

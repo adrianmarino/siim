@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130914163324) do
+ActiveRecord::Schema.define(:version => 20130915012910) do
 
   create_table "allergies", :force => true do |t|
     t.string   "cause"
@@ -151,6 +151,15 @@ ActiveRecord::Schema.define(:version => 20130914163324) do
     t.integer  "photos_file_size"
     t.datetime "photos_updated_at"
   end
+
+  create_table "system_properties", :force => true do |t|
+    t.string   "name"
+    t.string   "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "system_properties", ["name"], :name => "index_system_properties_on_name", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

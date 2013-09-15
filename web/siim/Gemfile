@@ -57,6 +57,7 @@ gem 'workflow'
 gem 'rename'
 gem 'json'
 
+gem 'rufus-scheduler'
 
 # ------------------------
 # Fix tlsmail gem error...

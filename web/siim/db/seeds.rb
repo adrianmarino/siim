@@ -25,27 +25,107 @@ clinic = MedicalSpecialization.create(name: "Clinico")
 # -----------------------------------------------------------------------------
 # Attention Periods...
 # -----------------------------------------------------------------------------
-period_monday_a = AttentionPeriod.create(
+period_monday_1 = AttentionPeriod.create(
   begin_hour: 9, 
   begin_minutes: 0,
   end_hour: 13,
   end_minutes: 0,
   week_day: 1
 )
-period_monday_b = AttentionPeriod.create(
+period_monday_2 = AttentionPeriod.create(
   begin_hour: 14, 
   begin_minutes: 0,
   end_hour: 18,
   end_minutes: 0,
   week_day: 1
 )
-period_friday_c = AttentionPeriod.create(
+period_monday_3 = AttentionPeriod.create(
+  begin_hour: 9, 
+  begin_minutes: 0,
+  end_hour: 13,
+  end_minutes: 0,
+  week_day: 1
+)
+period_monday_4 = AttentionPeriod.create(
+  begin_hour: 14, 
+  begin_minutes: 0,
+  end_hour: 18,
+  end_minutes: 0,
+  week_day: 1
+)
+period_monday_5 = AttentionPeriod.create(
+  begin_hour: 9, 
+  begin_minutes: 0,
+  end_hour: 13,
+  end_minutes: 0,
+  week_day: 1
+)
+period_monday_6 = AttentionPeriod.create(
+  begin_hour: 14, 
+  begin_minutes: 0,
+  end_hour: 18,
+  end_minutes: 0,
+  week_day: 1
+)
+period_friday_7 = AttentionPeriod.create(
   begin_hour: 14, 
   begin_minutes: 0,
   end_hour: 20,
   end_minutes: 0,
   week_day: 5
 )
+
+
+period_monday_8 = AttentionPeriod.create(
+  begin_hour: 9, 
+  begin_minutes: 0,
+  end_hour: 13,
+  end_minutes: 0,
+  week_day: 1
+)
+period_monday_9 = AttentionPeriod.create(
+  begin_hour: 14, 
+  begin_minutes: 0,
+  end_hour: 18,
+  end_minutes: 0,
+  week_day: 1
+)
+period_monday_10 = AttentionPeriod.create(
+  begin_hour: 9, 
+  begin_minutes: 0,
+  end_hour: 13,
+  end_minutes: 0,
+  week_day: 1
+)
+period_monday_11 = AttentionPeriod.create(
+  begin_hour: 14, 
+  begin_minutes: 0,
+  end_hour: 18,
+  end_minutes: 0,
+  week_day: 1
+)
+period_monday_12 = AttentionPeriod.create(
+  begin_hour: 9, 
+  begin_minutes: 0,
+  end_hour: 13,
+  end_minutes: 0,
+  week_day: 1
+)
+period_monday_13 = AttentionPeriod.create(
+  begin_hour: 14, 
+  begin_minutes: 0,
+  end_hour: 18,
+  end_minutes: 0,
+  week_day: 1
+)
+period_friday_14 = AttentionPeriod.create(
+  begin_hour: 14, 
+  begin_minutes: 0,
+  end_hour: 20,
+  end_minutes: 0,
+  week_day: 5
+)
+
 
 
 
@@ -57,7 +137,7 @@ medical_a = Medical.create(
   firstname: "Juan Pedro", 					lastname: "Pepe",
   home_phone: "47935551", 					movile_phone: "154487766",
   medical_specialization: clinic,
-  attention_periods: [period_monday_a,period_monday_b],
+  attention_periods: [period_monday_1, period_monday_2],
   attention_time_length_hour: 0,
   attention_time_length_minutes: 15
 )
@@ -66,7 +146,7 @@ medical_b = Medical.create(
   firstname: "Manuel", 							lastname: "Perez",
   home_phone: "47935551", 					movile_phone: "154487766",
   medical_specialization: oftalmologo,
-  attention_periods: [period_monday_a,period_monday_b],
+  attention_periods: [period_monday_3, period_monday_4],
   attention_time_length_hour: 0,
   attention_time_length_minutes: 20
 )
@@ -75,7 +155,7 @@ Medical.create(
   firstname: "Martin", 							lastname: "Gomez Gomenez",
   home_phone: "47935551", 					movile_phone: "154487766",
   medical_specialization: traumatologo,
-  attention_periods: [period_monday_a,period_monday_b],
+  attention_periods: [period_monday_5, period_monday_6],
   attention_time_length_hour: 0,
   attention_time_length_minutes: 10
 )
@@ -84,35 +164,45 @@ Medical.create(
   firstname: "Adrian", 							lastname: "Marino",
   home_phone: "47935551", 					movile_phone: "154487766",
   medical_specialization: pediatra,
-  attention_periods: [period_friday_c],
+  attention_periods: [period_friday_7],
+  attention_time_length_hour: 0,
+  attention_time_length_minutes: 10
 )
 Medical.create(
   dni: "14042902",									cuil: "20-14042902-2",
   firstname: "Cristian", 						lastname: "Molina",
   home_phone: "47935551", 					movile_phone: "154487766",
   medical_specialization: clinic,
-  attention_periods: [period_monday_a,period_monday_b]
+  attention_periods: [period_monday_8, period_monday_9],
+  attention_time_length_hour: 0,
+  attention_time_length_minutes: 10
 )
 Medical.create(
   dni: "15042902",									cuil: "20-15042902-2",
   firstname: "Juan Pablo", 					lastname: "Ron",
   home_phone: "47935551", 					movile_phone: "154487766",
   medical_specialization: oftalmologo,
-  attention_periods: [period_monday_a,period_monday_b]
+  attention_periods: [period_monday_10, period_monday_11],
+  attention_time_length_hour: 0,
+  attention_time_length_minutes: 10
 )
 Medical.create(
   dni: "16042902",									cuil: "20-16042902-2",
   firstname: "Felix", 							lastname: "Estrada",
   home_phone: "47935551", 					movile_phone: "154487766",
   medical_specialization: traumatologo,
-  attention_periods: [period_monday_a,period_monday_b]
+  attention_periods: [period_monday_12, period_monday_13],
+  attention_time_length_hour: 0,
+  attention_time_length_minutes: 10
 )
 Medical.create(
   dni: "17042902",									cuil: "20-17042902-2",
   firstname: "Daniel", 							lastname: "Grosso",
   home_phone: "47935551", 					movile_phone: "154487766",
   medical_specialization: pediatra,
-  attention_periods: [period_friday_c]
+  attention_periods: [period_friday_14],
+  attention_time_length_hour: 0,
+  attention_time_length_minutes: 10
 )
 
 
@@ -320,27 +410,31 @@ MedicalExam.create(
 # Attention times...
 # -------------------------------------------------------------------------
 AttentionTime.create( 
-  time: Time.new,
+  time: Time.new + 1.days,
   medical: medical_a,
   patient: patient_a
 )
 
 AttentionTime.create( 
-  time: Time.new,
+  time: Time.new + 2.days,
   state: :attend,
   medical: medical_a,
   patient: patient_b
 )
 
 AttentionTime.create( 
-  time: Time.new,
+  time: Time.new + 3.days,
   medical: medical_b,
   patient: patient_a
 )
 
 AttentionTime.create( 
-  time: Time.new,
+  time: Time.new + 4.days,
   state: :reserved,
-  medical: medical_b,
-  patient: patient_b
+  medical: medical_b,  patient: patient_b
 )
+
+# -------------------------------------------------------------------------
+# System...
+# -------------------------------------------------------------------------
+SystemProperty.new_window_size("20").save

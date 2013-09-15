@@ -22,6 +22,10 @@ class AttentionPeriod < ActiveRecord::Base
 		self.end_minutes == an_other.end_minutes 
 	end
 
+	def to_s
+		"Attention Period { Week Day: #{week_day}, From #{begin_hour}:#{begin_minutes} to #{end_hour}:#{end_minutes}}"
+	end
+
 	# -------------------------------------------------------------------------
 	# Attributes...
 	# -------------------------------------------------------------------------
