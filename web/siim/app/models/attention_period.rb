@@ -23,7 +23,7 @@ class AttentionPeriod < ActiveRecord::Base
 	end
 
 	def to_s
-		"Attention Period { Week Day: #{week_day}, From #{begin_hour}:#{begin_minutes} to #{end_hour}:#{end_minutes}}"
+		"Attention Period { Week Day: #{week_day}, From #{sprintf("%02d",begin_hour)}:#{sprintf("%02d",begin_minutes)} to #{sprintf("%02d",end_hour)}:#{sprintf("%02d",end_minutes)} }"
 	end
 
 	# -------------------------------------------------------------------------

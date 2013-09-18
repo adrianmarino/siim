@@ -8,12 +8,12 @@ module TimeHelper
 		increment = args[:increment]
 		count = increment_count start_time, end_time, increment
 
-		log_args start_time, end_time, increment
-		log_count count
+		#log_args start_time, end_time, increment
+		#log_count count
 
 		count.times.inject([]) do |times, number|
 			time = next_time start_time, number, increment
-			log_time time, number
+			#log_time time, number
 			times << time
 		end
 	end

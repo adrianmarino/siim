@@ -32,7 +32,7 @@ class AttentionTime < ActiveRecord::Base
   end
 
   def to_s
-    "Attention Time { Time: #{time.strftime("%F %H:%M")}, State: #{state.to_s}, Medical: #{medical}, Patient: #{patient} }"
+    "Attention Time { Time: #{time.strftime("%F %H:%M")}, State: #{state.to_s}, Medical: #{medical}#{patient.nil? ? " }" : ", Patient: #{patient} }"}"
   end
 
   # -------------------------------------------------------------------------

@@ -3,34 +3,35 @@ class AttentionTimeGeneratorTask
 	# Public Methods...
 	# -------------------------------------------------------------------------
 	def run
+		show_begin_task
+		show_parameters
+
 		window_time = resolve_window_time
 
-		if !window_time.nil? and window_time.from != window_time.to
-			puts "Begin Attention time generation..."
+		if start_task? window_time
 			builder = AttentionTimeBuilder.new
-			puts "Window Time:\n\s-\sFrom: #{window_time.from}\n\s-\sTo: #{window_time.to}"
+			show_window_time window_time
 			builder.window_time = window_time
-			
-			puts "Get all medicals..."
+
+			show_medicals_header
 			medicals = Medical.all
-			medicals.each do |a_medical|
-				puts "\s-\sMedical: #{a_medical}"
-				a_medical.attention_periods.each do|a_period| puts "\s\s-\s#{a_period}" end
-			end
+			show_medicals medicals
+			sleep 1
 			builder.medicals = medicals
 
-			puts "Create attention times..."
+			show_create_attention_times_header
 			attention_times = builder.build
 
-			puts "Save attention times..."
+			show_save_attention_times_header
+
 			attention_times.each do |a_attention_time| 
 				a_attention_time.save
-				puts "\s-\s#{a_attention_time}"
+				show_attention_time a_attention_time
 			end
-			puts "End Attention time generation..."
 		else
-			puts "No need to create new attention times. Window attention time is complete."
+			show_not_run_process_message
 		end
+		show_end_task
 	end
 
 
@@ -49,5 +50,72 @@ class AttentionTimeGeneratorTask
 
 	def resolve_window_time
 		AttentionWindowTime.new_from last_attetion_date, window_size
+	end
+
+	def start_task?(window_time)
+		!window_time.nil? and window_time.from != window_time.to
+	end
+
+	def show_parameters
+		today = Time.now
+		last_time = AttentionTime.last.first.time
+		diference = last_time - today
+
+		puts "\n\s\s------------------------"
+		puts "\s| Process Information... |"
+		puts "\s\s------------------------"
+		puts "\s\s-\sToday: #{today.strftime("%F %H:%M")}."
+		puts "\s\s-\sLast Attention Time: #{last_time.strftime("%F %H:%M")}."
+		puts "\s\s-\sAttention Window Size: #{window_size} day/s."
+		puts "\s\s-\sDiference between 'Last Attention Time' and 'Today': #{diference.duration}."
+	end
+
+	def show_not_run_process_message
+		puts "\n\s\s---------------------------------------------------------------------------"
+		puts "\s| Information:                                                              |"
+		puts "\s| No need to create new attention times, window attention time is complete! |"
+		puts "\s\s---------------------------------------------------------------------------\n\n"
+	end
+
+	def show_medicals(medicals)
+		medicals.each do |a_medical|
+		  puts "\s\s-\sMedical: #{a_medical}"
+		  a_medical.attention_periods.each do|a_period| puts "\s\s\s-\s#{a_period}" end
+		end
+	end
+
+	def show_window_time(window_time)
+		puts "\s\s-\sWindow Time:\sFrom #{window_time.from}\sto #{window_time.to}."
+	end
+
+	def show_medicals_header
+		puts "\n\s\s---------------------"
+		puts "\s| Get all medicals... |"
+		puts "\s\s---------------------"
+	end
+
+	def show_create_attention_times_header
+		puts "\n\s\s-----------------------------"
+		puts "\s| Generate attention times... |"
+		puts "\s\s-----------------------------"
+		sleep 1
+	end
+
+	def show_save_attention_times_header
+		puts "\n\s\s-------------------------"
+		puts "\s| Save attention times... |"
+		puts "\s\s-------------------------"
+	end
+
+	def show_begin_task
+		puts "\nBegin Attention time generation..."
+	end
+
+	def show_end_task
+		puts "End Attention time generation...\n"
+	end
+
+	def show_attention_time(attention_time)
+		puts "\s\s-\s#{attention_time}"
 	end
 end

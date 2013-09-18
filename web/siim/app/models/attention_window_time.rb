@@ -3,7 +3,7 @@ class AttentionWindowTime
 	# Public Methods...
 	# -------------------------------------------------------------------------
 	def self.new_from(a_last_attention_date, a_window_size)
-		return nil if a_last_attention_date > (Date.today + a_window_size.days)
+		return nil if a_last_attention_date >= (Date.today + a_window_size.days)
 
 		if a_last_attention_date < Date.today
 			from = Date.today
