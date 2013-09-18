@@ -112,11 +112,11 @@ class AttentionTimeGeneratorTask
 	end
 
 	def show_begin_task
-		puts "\nBegin Attention time generation..."
+		puts "\nBegin Attention times generation..."
 	end
 
 	def show_end_task
-		puts "\nEnd Attention time generation...\n"
+		puts "\nEnd Attention times generation...\n"
 	end
 
 	def show_attention_time(attention_time)
