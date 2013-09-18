@@ -18,8 +18,8 @@
                 %b.caret
               %ul.dropdown-menu
                 %li
-                  = link_to raw("<i class=\" icon-hand-up\">&nbsp;&nbsp;</i>#{t('menu.sub_menu.attention_times.assignment')}"), "#", "tabindex" => "-1"
-                %li= link_to raw("<i class=\"icon-th-list\">&nbsp;&nbsp;</i>#{t('menu.sub_menu.attention_times.my_attention_times')}"), "#", "tabindex" => "-1"
+                  = link_to raw("<i class=\" icon-hand-up\">&nbsp;&nbsp;</i>#{t('menu.sub_menu.attention_times.assignment')}"), attention_times_setup_search_path, "tabindex" => "-1"
+                %li= link_to raw("<i class=\"icon-th-list\">&nbsp;&nbsp;</i>#{t('menu.sub_menu.attention_times.my_attention_times')}"), attention_times_daily_attention_times_path, "tabindex" => "-1"
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
                 %i.icon-wrench
