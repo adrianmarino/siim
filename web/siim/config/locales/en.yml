@@ -318,6 +318,12 @@ en:
     administration: "Administration"
     medical_specializations: "Medical Specializations"
     medical_histories: "Medical Histories"
+    attention_times: "Attention Times"
+    sub_menu:
+      attention_times:
+        assignment: "Assignment"
+        my_attention_times: "My Attention Times"
+
   form:
     nested:
       delete: "Remove"

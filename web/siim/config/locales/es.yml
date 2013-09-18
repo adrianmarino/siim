@@ -332,6 +332,12 @@ es:
     administration: "Administración"
     medical_specializations: "Especializaciones Medicas"
     medical_histories: "Historias Médicas"
+    attention_times: "Turnos"
+    sub_menu:
+      attention_times:
+        assignment: "Asignación de turnos"
+        my_attention_times: "Mis turnos"
+
   form:
     nested:
       delete: "Borrar"
