@@ -58,16 +58,20 @@ class AttentionTimeGeneratorTask
 
 	def show_parameters
 		today = Time.now
-		last_time = AttentionTime.last.first.time
-		diference = last_time - today
-
 		puts "\n\s\s------------------------"
 		puts "\s| Process Information... |"
 		puts "\s\s------------------------"
-		puts "\s\s-\sToday: #{today.strftime("%F %H:%M")}."
-		puts "\s\s-\sLast Attention Time: #{last_time.strftime("%F %H:%M")}."
 		puts "\s\s-\sAttention Window Size: #{window_size} day/s."
-		puts "\s\s-\sDiference between 'Last Attention Time' and 'Today': #{diference.duration}."
+		puts "\s\s-\sToday: #{today.strftime("%F %H:%M")}."
+		times = AttentionTime.last
+		if times.empty?
+			puts "\s\s-\sNo exist previous attention times."
+		else
+			last_time = AttentionTime.last.first.time
+			diference = last_time - today
+			puts "\s\s-\sLast Attention Time: #{last_time.strftime("%F %H:%M")}."
+			puts "\s\s-\sDiference between 'Last Attention Time' and 'Today': #{diference.duration}."
+		end
 	end
 
 	def show_not_run_process_message
@@ -80,7 +84,7 @@ class AttentionTimeGeneratorTask
 	def show_medicals(medicals)
 		medicals.each do |a_medical|
 		  puts "\s\s-\sMedical: #{a_medical}"
-		  a_medical.attention_periods.each do|a_period| puts "\s\s\s-\s#{a_period}" end
+		  a_medical.attention_periods.each do|a_period| puts "\s\s\s\s-\s#{a_period}" end
 		end
 	end
 
@@ -112,7 +116,7 @@ class AttentionTimeGeneratorTask
 	end
 
 	def show_end_task
-		puts "End Attention time generation...\n"
+		puts "\nEnd Attention time generation...\n"
 	end
 
 	def show_attention_time(attention_time)
