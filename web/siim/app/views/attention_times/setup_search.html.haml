@@ -1,3 +1,21 @@
 - content_for :content do
-	%div="Attention Time Search!"
+	.attention_time_search_form_content.span5.offset3
+		= form_tag :attention_times_search, :class=> 'well form-horizontal' do |f|
+			%fieldset
+				.legend
+					%legend="Buscar Turno"
+
+				.control-group
+					%label.control-label{:for => :specialization_id}="Specialization"
+					.controls= select_tag :specialization_id, options_from_collection_for_select(@specializations,:id,:to_s), {:class => :selectpicker}
+
+				.control-group
+					%label.control-label{:for => :medical_id}="Medical"
+					.controls= select_tag :medical_id, options_from_collection_for_select(@medicals,:id,:to_s), {:class => :selectpicker}
+				.control-group
+					%label.control-label{:for => :patient_id}="Patient"
+					.controls= select_tag :patient_id, options_from_collection_for_select(@patients,:id,:to_s), {:class => :selectpicker}
+			.form-actions
+				= submit_tag "Search", :class => "btn"
+
 = render :file => 'layouts/application'

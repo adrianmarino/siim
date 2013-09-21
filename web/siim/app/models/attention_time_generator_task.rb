@@ -40,8 +40,8 @@ class AttentionTimeGeneratorTask
 	# -------------------------------------------------------------------------
 	private
 	def last_attetion_date
-		times = AttentionTime.last
-		times.empty? ? Date.yesterday : times.first.time.to_date
+		time = AttentionTime.last
+		time.nil? ? Date.yesterday : time.to_date
 	end
 
 	def window_size
@@ -63,11 +63,10 @@ class AttentionTimeGeneratorTask
 		puts "\s\s------------------------"
 		puts "\s\s-\sAttention Window Size: #{window_size} day/s."
 		puts "\s\s-\sToday: #{today.strftime("%F %H:%M")}."
-		times = AttentionTime.last
-		if times.empty?
+		last_time = AttentionTime.last
+		if last_time.nil?
 			puts "\s\s-\sNo exist previous attention times."
 		else
-			last_time = AttentionTime.last.first.time
 			diference = last_time - today
 			puts "\s\s-\sLast Attention Time: #{last_time.strftime("%F %H:%M")}."
 			puts "\s\s-\sDiference between 'Last Attention Time' and 'Today': #{diference.duration}."
