@@ -1,10 +1,11 @@
 - content_for :content do
-  .session_top
+  .session_top.span6.offset3
     - if flash[:error] or flash[:notice] or flash[:alert]
       = content_tag(:div, flash[:error], :id => :flash_error, :class => "alert alert-error") if flash[:error]
       = content_tag(:div, flash[:notice], :id => :flash_notice, :class => "alert alert-success") if flash[:notice]
       = content_tag(:div, flash[:alert], :id => :flash_alert, :class => "alert alert-info") if flash[:alert]
 
+  .span6.offset3
     = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => 'well form-horizontal' }) do |f|
       %fieldset
         %legend= t :sign_in
