@@ -14,9 +14,9 @@ user = User.create(dni: "29042902",first_name: "Adrian", last_name: "Marino", em
 # -----------------------------------------------------------------------------
 # Medical specializations....
 # -----------------------------------------------------------------------------
-pediatra = MedicalSpecialization.create(name: "Pediatra")
-traumatologo = MedicalSpecialization.create(name: "Traumatologo")
-oftalmologo = MedicalSpecialization.create(name: "Oftalmologo")
+pediatra = MedicalSpecialization.create(name: "Pediatria")
+traumatologo = MedicalSpecialization.create(name: "Traumatologia")
+oftalmologo = MedicalSpecialization.create(name: "Oftalmologia")
 clinic = MedicalSpecialization.create(name: "Clinico")
 
 

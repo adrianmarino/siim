@@ -3,9 +3,12 @@
   %head
     %title
       = h(yield(:title))
+    = csrf_meta_tags
     = stylesheet_link_tag  "application", :media => "all"
     = javascript_include_tag "application"
-    = csrf_meta_tags
+    = javascript_include_tag "related_select"
+    = javascript_include_tag "https://www.google.com/jsapi"
+    = yield :head
   %body
     #wrapper
       = render 'menu'
@@ -13,7 +16,6 @@
       .push
     %footer
       %p.footer-description=raw t('app.author') + " / " + t('app.version', :number => APP_CONFIG['app']['version'])
-    / Modal
     #myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
       .modal-header
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×

@@ -42,11 +42,11 @@ es:
   confirm: "¿Estas seguro?"
   home: "Inicio"
   sign_up: "Regístrate"
-  login: "Usuario"
+  login: "DNI/Correo Electrónico"
   remember_me: "Recordar"
   password_confirmation: "Confirmación de la contraseña"
   sign_in_with: "Conéctate con"
-  sign_in: "Ingresar"
+  sign_in: "Iniciar sesión"
   resend_confirmation_instructions: 'Reen"Via de Administracionr mail de confirmación'
   forgot_your_password: "¿Olvidaste tu contraseña?"
   didnt_receive_confirmation_instructions: "¿No recibio instrucciones de confirmación?"
@@ -124,6 +124,7 @@ es:
       patient: "Paciente"
       contact: "Contacto"
       medical_history: "Historia Médica"
+      attention_time: "Turno"
     attributes:
       user:
         first_name: "Nombre"
@@ -205,6 +206,13 @@ es:
         email: "Correo Electrónico"
         home_phone: "Teléfono Fijo"
         movile_phone: "Teléfono Movil"
+      attention_time:
+        medical_specialization: "Especialidad"
+        medical: "Medico"
+        state: "Estado"
+        patient: "Paciente"
+        time: "Tiempo"
+        date: "Fecha"
     errors:
       models:
         user:
@@ -322,12 +330,15 @@ es:
       new: "Nueva Historia Médica"
       edit: "Editar Historia Médica"
       show: "Detalle de Historia Médica"
-      list: "Historias Médicas" 
+      list: "Historias Médicas"
+    attention_time:
+      search: "Asignación de Turnos"
   helpers:
     submit:
       create: "Crear %{model}"
       update: "Actualizar %{model}"
   menu:
+    statistics: "Estaditicas"
     medicals: "Médicos"
     administration: "Administración"
     medical_specializations: "Especializaciones Medicas"
@@ -337,7 +348,9 @@ es:
       attention_times:
         assignment: "Asignación de turnos"
         my_attention_times: "Mis turnos"
-
+      statistics:
+        simptoms: "Simtomas"
+        diseases: "Enfermedades"
   form:
     nested:
       delete: "Borrar"
@@ -354,3 +367,16 @@ es:
     b_negative: "B -"
     ab_positive: "AB +"
     ab_negative: "AB -"
+  attention_time:
+    state:
+      available: "Disponibles"
+      reserved: "Reservado"
+      attended: "Atendido"
+      canceled: "Cancelado"
+    search: "Buscar"
+    results: "Resultados"
+  form:
+    select:
+      all:
+        fame: "Todas"
+        male: "Todos"

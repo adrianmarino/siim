@@ -4,21 +4,16 @@ class AttentionTimeController  < ApplicationController
 	# Public Request Methods...
 	# -------------------------------------------------------------------------
 	def setup_search
-		@specializations = MedicalSpecialization.all
-		@medicals = Medical.all
-		@patients = Patient.all
-		@from = Date.today
-		@to = to_date
-
+		prepare_form
 		render 'attention_times/setup_search'
 	end
 
 	def search
-		@attention_times = AttentionTime.find specialization: specialization,
-																					medical: medical,
-																					patient: patient,
-																					state: state,
-																					from: from, to: to
+		prepare_form
+		@attention_times = AttentionTime.find specialization: specialization_param,
+																					medical: medical_param,
+																					patient: patient_param,
+																					from: Date.today, to: to_date
 		render 'attention_times/setup_search'
 	end
 
@@ -39,5 +34,12 @@ class AttentionTimeController  < ApplicationController
 	def to_date
 		last_time = AttentionTime.last
 		last_time.nil? ? Date.today : last_time.time.to_date
+	end
+
+	def prepare_form
+		@specializations = MedicalSpecialization.all.sort
+		@medicals = Medical.all
+		@patients = Patient.all
+		@states = AttentionTime.all_states
 	end
 end

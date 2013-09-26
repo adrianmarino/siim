@@ -1,33 +1,32 @@
 module AttentionTimeRequestHelper
-	def self.specialization
+	def specialization_param
+		return nil if params[:specialization] = "all"
+
+		logger.debug "Specialization: {params[:specialization]}"
+
 		specializations = MedicalSpecialization.find params[:specialization]
 		specializations.empty? ? nil : specializations.first
 	end
 
-	def self.medical
+	def medical_param
+		return nil if params[:medical] = "all"
+
+		logger.debug "Medical: {params[:medical]}"
+
 		medicals = Medical.find params[:medical]
 		medicals.empty? ? nil : medicals.first
 	end
 
-	def self.patient
-		patients = Patient.find params[:medical]
+	def patient_param
+		return nil if params[:patient] = "all"
+
+		logger.debug "Patient: {params[:patient]}"
+
+		patients = Patient.find params[:patient]
 		patients.empty? ? nil : patients.first
 	end
 
-	def self.attention_time
-		attention_times = Patient.find params[:attention_time]
-		attention_times.empty? ? nil : attention_times.first
-	end
-
-	def self.state
+	def state_param
 		param[:state]
-	end
-
-	def self.from
-		param[:from]
-	end
-
-	def self.to
-		param[:to]
 	end
 end

@@ -51,6 +51,10 @@ class AttentionTime < ActiveRecord::Base
     times.empty? ? nil : times.first
   end
 
+  def self.all_states
+    [:available,:reserved,:attended,:canceled]
+  end
+
 	# -------------------------------------------------------------------------
 	# Workflow...
 	# -------------------------------------------------------------------------

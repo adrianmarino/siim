@@ -24,6 +24,12 @@
 //= require jquery_nested_form
 //= require bootstrap-file-input
 
+function functionIsDefined(functionName) {
+  try {
+    return typeof eval(functionName) == 'function';
+  } catch(e) { return false; }
+}
+
 $.fn.datepicker.dates['es'] = {
   days: ["Domindo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado", "Domingo"],
   daysShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"],
@@ -117,10 +123,40 @@ $(document).ready(function() {
     /*  
       Tables... 
     */
-    $('#list').dataTable({
+    if (functionIsDefined('tableColumnSortdDefinicion')) {
+        $('#crud_list').dataTable({
+            "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+            "sPaginationType": "bootstrap",
+            "aoColumns": tableColumnSortdDefinicion(),
+            "oLanguage": {
+                "oPaginate": {
+                    "sFirst": I18n.t("data_table.paginate.first"),
+                    "sLast": I18n.t("data_table.paginate.last"),
+                    "sNext": I18n.t("data_table.paginate.next"),
+                    "sPrevious": I18n.t("data_table.paginate.previous")
+                },
+                "sEmptyTable": I18n.t("data_table.emptyTable"),
+                "sInfo": I18n.t("data_table.info"),
+                "sInfoEmpty": I18n.t("data_table.infoEmpty"),
+                "sInfoFiltered": I18n.t("data_table.infoFiltered"),
+                "sInfoPostFix": I18n.t("data_table.infoPostFix"),
+                "sSearch": I18n.t("data_table.search"),
+                "sZeroRecords": I18n.t("data_table.zeroRecords"),
+                "sLengthMenu": I18n.t("data_table.lengthMenu")
+            }
+        });
+        $(".sorting:last").removeClass("sorting");
+        $("[name='list_length']").selectpicker({
+            style: 'btn-info',
+            size: '10',
+            width: '70px'
+        });
+    }
+    $('#attention_time_list').dataTable({
         "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
         "sPaginationType": "bootstrap",
-        "aoColumns": tableColumnSortdDefinicion(),
+        "aLengthMenu": [[5, 10, 15, 25, 50, 100], [5, 10, 15, 25, 50, 100]],
+        "iDisplayLength": 25,
         "oLanguage": {
             "oPaginate": {
                 "sFirst": I18n.t("data_table.paginate.first"),
@@ -137,12 +173,6 @@ $(document).ready(function() {
             "sZeroRecords": I18n.t("data_table.zeroRecords"),
             "sLengthMenu": I18n.t("data_table.lengthMenu")
         }
-    });
-    $(".sorting:last").removeClass("sorting");
-    $("[name='list_length']").selectpicker({
-        style: 'btn-info',
-        size: '10',
-        width: '70px'
     });
 });
 

@@ -1,0 +1,19 @@
+- content_for :content do
+	.form-top
+		= form_tag :statistics_perform_simptom, :class=> 'well form-horizontal' do
+			%legend="Estatisticas por sintoma"
+			.control-group
+				%label.control-label="Sintomas"
+				.controls
+					%input{:type => :text, :id => :simptom, :name=> :simptom}
+			.control-group
+				%label.control-label="Año"
+				.controls
+					%input{:type => :text, :id => :year, :name=> :year}
+			.form-actions
+				= submit_tag "Ver", :class => "btn btn-primary pull-left" 
+
+	- if not @valor.nil?
+		=@valor
+
+= render :file => 'layouts/application'
