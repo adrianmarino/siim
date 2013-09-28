@@ -38,7 +38,7 @@
 			%tbody
 				- for attention_time in @attention_times
 					%tr
-						%td=attention_time.time.strftime "%F"
+						%td=attention_time.time.strftime "%d-%m-%Y"
 						%td=attention_time.time.strftime "%H:%M"
 						%td=attention_time.medical
 						%td=attention_time.patient
