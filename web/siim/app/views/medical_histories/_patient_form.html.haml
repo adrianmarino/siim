@@ -15,6 +15,5 @@
   = nested_text       f, :home_phone, :patient
   = nested_text       f, :movile_phone, :patient
   .contacts_panel
-    .contact_header
-      = contacts_section
+    .contact_header= contacts_section
     = render :partial => 'contacts_form', :locals => {:form => f}
