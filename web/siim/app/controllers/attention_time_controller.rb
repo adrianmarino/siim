@@ -13,8 +13,8 @@ class AttentionTimeController  < ApplicationController
 
 		@attention_times = AttentionTime.find specialization: helper.specialization_param,
 																					medical: helper.medical_param,
-																					patient: helper.patient_param#,
-																					#from: Date.today, to: to_date
+																					patient: helper.patient_param,
+																					from: Date.today, to: to_date
 		render 'attention_times/setup_search'
 	end
 
