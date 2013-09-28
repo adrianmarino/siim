@@ -4,7 +4,7 @@ class MedicalHistoryResponseTest < ActiveSupport::TestCase
 	# -------------------------------------------------------------------------
 	# Test Methods...
 	# -------------------------------------------------------------------------
-	def test_to_json_nil_wrapper_medical_history
+	test "to json nil wrapper medical history" do 
 		# Prepare...
 		target = MedicalHistoryResponse.new
 
@@ -15,7 +15,7 @@ class MedicalHistoryResponseTest < ActiveSupport::TestCase
 		assert_not_found_on response
 	end
 
-	def test_to_json_not_nil_wrapped_medical_history
+	test "to json not nil wrapped medical history" do
 		# Prepare...
 		medical_history = new_medical_history_with "29042902","Adrian Norberto", "Marino"
 		target = MedicalHistoryResponse.new medical_history

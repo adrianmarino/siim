@@ -19,4 +19,15 @@ Siim::Application.routes.draw do
   resources :medical_histories do
     get :search_by_dni, on: :collection
   end
+
+  get '/assets/javascripts/dinamic_medicals', to: 'javascripts#dinamic_medicals'
+  get '/attention_times/setup_search', to: 'attention_time#setup_search'
+  post '/attention_times/search', to: 'attention_time#search'
+  get '/attention_times/daily_attention_times', to: 'attention_time#daily_attention_times'
+
+  get '/statistics/setup_simptom', to: 'statistic#setup_simptom'
+  post '/statistics/perform_simptom', to: 'statistic#perform_simptom'
+
+  get '/statistics/setup_disease', to: 'statistic#setup_disease'
+  post '/statistics/perform_disease', to: 'statistic#perform_disease'
 end

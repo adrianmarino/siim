@@ -19,15 +19,15 @@
 .footer { margin-top: 0px; padding-left: 10px; }
 .container { margin-top: 60px; }
 
-#list .issue-title-column { width: 44%; }
-#list .issue-created-on-column { width: 17%; }
+#crud_list .issue-title-column { width: 44%; }
+#crud_list .issue-created-on-column { width: 17%; }
 
-#list th { padding-right: 19px; }
-#list .options {
+#crud_list th { padding-right: 19px; }
+#crud_list .options {
 	text-align: center;
 	width: 1%;
 	padding-right: 12px; 
 	padding-left: 12px;
 }
-#list td { vertical-align: middle; }
+#crud_list td { vertical-align: middle; }
 

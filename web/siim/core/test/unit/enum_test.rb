@@ -4,7 +4,7 @@ class EnumTest < ActiveSupport::TestCase
 	# -------------------------------------------------------------------------
 	# Test Methods...
 	# -------------------------------------------------------------------------
-	def test_values
+	test "values" do
 		# Perform...
 		values = EnumImpl.values
 
@@ -13,7 +13,7 @@ class EnumTest < ActiveSupport::TestCase
 		assert_equal :B, values.second.to_sym
 	end
 
-	def test_values_sorted_by_translate
+	test "values sorted by translate" do
 		# Perform...
 		values = EnumImpl.values_sorted_by_translate
 

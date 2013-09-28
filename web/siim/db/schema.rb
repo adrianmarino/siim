@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130810231030) do
+ActiveRecord::Schema.define(:version => 20130915012910) do
 
   create_table "allergies", :force => true do |t|
     t.string   "cause"
@@ -27,6 +27,26 @@ ActiveRecord::Schema.define(:version => 20130810231030) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.integer  "medical_history_id"
+  end
+
+  create_table "attention_periods", :force => true do |t|
+    t.integer  "begin_hour"
+    t.integer  "begin_minutes"
+    t.integer  "end_hour"
+    t.integer  "end_minutes"
+    t.integer  "week_day"
+    t.integer  "medical_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "attention_times", :force => true do |t|
+    t.datetime "time"
+    t.string   "state"
+    t.integer  "patient_id"
+    t.integer  "medical_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "consultations", :force => true do |t|
@@ -82,14 +102,16 @@ ActiveRecord::Schema.define(:version => 20130810231030) do
   end
 
   create_table "medicals", :force => true do |t|
-    t.string  "cuil",                      :default => "", :null => false
-    t.string  "dni",                       :default => "", :null => false
-    t.string  "firstname",                 :default => "", :null => false
-    t.string  "lastname",                  :default => "", :null => false
+    t.string  "cuil",                          :default => "", :null => false
+    t.string  "dni",                           :default => "", :null => false
+    t.string  "firstname",                     :default => "", :null => false
+    t.string  "lastname",                      :default => "", :null => false
     t.string  "email"
-    t.string  "home_phone",                :default => "", :null => false
-    t.string  "movile_phone",              :default => "", :null => false
+    t.string  "home_phone",                    :default => "", :null => false
+    t.string  "movile_phone",                  :default => "", :null => false
     t.integer "medical_specialization_id"
+    t.integer "attention_time_length_hour"
+    t.integer "attention_time_length_minutes"
   end
 
   add_index "medicals", ["cuil"], :name => "index_medicals_on_cuil", :unique => true
@@ -113,22 +135,31 @@ ActiveRecord::Schema.define(:version => 20130810231030) do
     t.string   "firstname"
     t.string   "lastname"
     t.date     "birthdate"
-    t.decimal  "height",             :precision => 8, :scale => 2
-    t.decimal  "weight",             :precision => 8, :scale => 2
+    t.decimal  "height",              :precision => 8, :scale => 2
+    t.decimal  "weight",              :precision => 8, :scale => 2
     t.string   "blood_type"
     t.string   "sex"
     t.string   "address"
     t.string   "home_phone"
     t.string   "movile_phone"
     t.string   "email"
-    t.datetime "created_at",                                       :null => false
-    t.datetime "updated_at",                                       :null => false
+    t.datetime "created_at",                                        :null => false
+    t.datetime "updated_at",                                        :null => false
     t.integer  "medical_history_id"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
+    t.string   "photos_file_name"
+    t.string   "photos_content_type"
+    t.integer  "photos_file_size"
+    t.datetime "photos_updated_at"
   end
+
+  create_table "system_properties", :force => true do |t|
+    t.string   "name"
+    t.string   "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "system_properties", ["name"], :name => "index_system_properties_on_name", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

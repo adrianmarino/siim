@@ -1,0 +1,45 @@
+- content_for :content do
+	- javascript "javascripts/dinamic_medicals"
+	.form-top
+		= form_tag :attention_times_search, :class=> 'well form-horizontal' do |f|
+			%legend=t 'title.attention_time.search'
+			.row-fluid
+				.span3.attention_time_search_column
+					%label{:for => :specialization}=translate_attribute :attention_time, :medical_specialization
+					- options = options_for_select([ [t("form.select.all.fame"), "all"] ], "all")
+					- options << options_from_collection_for_select(@specializations,:id,:to_s)
+					= select_tag :specialization, options, :class => :attention_time_search_select
+				.span3.attention_time_search_column
+					%label{:for => :medical}=translate_attribute :attention_time, :medical
+					= select_tag :medical, options_for_select([ [t("form.select.all.male")], "all"]), :class => :attention_time_search_select
+				.span3.attention_time_search_column
+					%label{:for => :patient}=translate_attribute :attention_time, :patient
+					- options = options_for_select([ [t("form.select.all.male"), "all"] ], "all")
+					- options << options_from_collection_for_select(@patients,:id,:to_s)
+					= select_tag :patient, options, :class => :attention_time_search_select
+				.span3.attention_time_search_column
+					%label{:for => :state}=translate_attribute :attention_time, :state
+					- options = @states.collect {|a_state| [t("attention_time.state.#{a_state}"),a_state]}
+					- options = options_for_select(options)
+					= select_tag :state, options, :class => :attention_time_search_select
+			.row-fluid.search-btn
+				.span2= submit_tag t("attention_time.search"), :class => "btn btn-primary pull-left"
+
+	- if not @attention_times.nil?
+		%legend=t 'attention_time.results'
+		%table#attention_time_list.table.table-striped.table-bordered{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+			%thead.table-header
+				%tr
+					%th=translate_attribute :attention_time, :date
+					%th=translate_attribute :attention_time, :medical
+					%th=translate_attribute :attention_time, :patient
+					%th=translate_attribute :attention_time, :state
+			%tbody
+				- for attention_time in @attention_times
+					%tr
+						%td=attention_time.time.strftime "%d/%m/%Y %H:%M"
+						%td=attention_time.medical
+						%td=attention_time.patient
+						%td=t "attention_time.state.#{attention_time.current_state}"
+
+= render :file => 'layouts/application'

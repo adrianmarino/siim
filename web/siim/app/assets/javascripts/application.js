@@ -24,6 +24,12 @@
 //= require jquery_nested_form
 //= require bootstrap-file-input
 
+function functionIsDefined(functionName) {
+  try {
+    return typeof eval(functionName) == 'function';
+  } catch(e) { return false; }
+}
+
 $.fn.datepicker.dates['es'] = {
   days: ["Domindo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado", "Domingo"],
   daysShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"],
@@ -42,48 +48,49 @@ $(document).on("focus", "[data-behaviour~='datepicker']", function(e){
     });
 });
 
-jQuery.extend( jQuery.fn.dataTableExt.oSort, {
-    "date-eu-pre": function ( date ) {
-        var date = date.replace(" ", "");
 
-        if (date.indexOf('.') > 0) {
-            /*date a, format dd.mn.(yyyy) ; (year is optional)*/
-            var eu_date = date.split('.');
-        } else {
-            /*date a, format dd/mn/(yyyy) ; (year is optional)*/
-            var eu_date = date.split('/');
+function trim(str) {
+    str = str.replace(/^\s+/, '');
+    for (var i = str.length - 1; i >= 0; i--) {
+        if (/\S/.test(str.charAt(i))) {
+            str = str.substring(0, i + 1);
+            break;
         }
-
-        /*year (optional)*/
-        if (eu_date[2]) {
-            var year = eu_date[2];
-        } else {
-            var year = 0;
-        }
-
-        /*month*/
-        var month = eu_date[1];
-        if (month.length == 1) {
-            month = 0+month;
-        }
-
-        /*day*/
-        var day = eu_date[0];
-        if (day.length == 1) {
-            day = 0+day;
-        }
-
-        return (year + month + day) * 1;
-    },
-
-    "date-eu-asc": function ( a, b ) {
-        return ((a < b) ? -1 : ((a > b) ? 1 : 0));
-    },
-
-    "date-eu-desc": function ( a, b ) {
-        return ((a < b) ? 1 : ((a > b) ? -1 : 0));
     }
-} );
+    return str;
+}
+ 
+function dateHeight(dateStr){
+    if (trim(dateStr) != '') {
+        var frDate = trim(dateStr).split(' ');
+        var frTime = frDate[1].split(':');
+        var frDateParts = frDate[0].split('/');
+        var day = frDateParts[0] * 60 * 24;
+        var month = frDateParts[1] * 60 * 24 * 31;
+        var year = frDateParts[2] * 60 * 24 * 366;
+        var hour = frTime[0] * 60;
+        var minutes = frTime[1];
+        var x = day+month+year+hour+minutes;
+    } else {
+        var x = 99999999999999999; //GoHorse!
+    }
+    return x;
+}
+ 
+jQuery.fn.dataTableExt.oSort['date-euro-asc'] = function(a, b) {
+    var x = dateHeight(a);
+    var y = dateHeight(b);
+    var z = ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    return z;
+};
+
+jQuery.fn.dataTableExt.oSort['date-euro-desc'] = function(a, b) {
+    var x = dateHeight(a);
+    var y = dateHeight(b);
+    var z = ((x < y) ? 1 : ((x > y) ? -1 : 0));
+    return z;
+};
+
 
 $(document).ready(function() {
     $('input[type=file]').bootstrapFileInput();
@@ -115,12 +122,43 @@ $(document).ready(function() {
 
 
     /*  
-      Tables... 
+      Tables...
     */
-    $('#list').dataTable({
+    if (functionIsDefined('tableColumnSortdDefinicion')) {
+        $('#crud_list').dataTable({
+            "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+            "sPaginationType": "bootstrap",
+            "aoColumns": tableColumnSortdDefinicion(),
+            "oLanguage": {
+                "oPaginate": {
+                    "sFirst": I18n.t("data_table.paginate.first"),
+                    "sLast": I18n.t("data_table.paginate.last"),
+                    "sNext": I18n.t("data_table.paginate.next"),
+                    "sPrevious": I18n.t("data_table.paginate.previous")
+                },
+                "sEmptyTable": I18n.t("data_table.emptyTable"),
+                "sInfo": I18n.t("data_table.info"),
+                "sInfoEmpty": I18n.t("data_table.infoEmpty"),
+                "sInfoFiltered": I18n.t("data_table.infoFiltered"),
+                "sInfoPostFix": I18n.t("data_table.infoPostFix"),
+                "sSearch": I18n.t("data_table.search"),
+                "sZeroRecords": I18n.t("data_table.zeroRecords"),
+                "sLengthMenu": I18n.t("data_table.lengthMenu")
+            }
+        });
+        $(".sorting:last").removeClass("sorting");
+        $("[name='list_length']").selectpicker({
+            style: 'btn-info',
+            size: '10',
+            width: '70px'
+        });
+    }
+    $('#attention_time_list').dataTable({
         "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
         "sPaginationType": "bootstrap",
-        "aoColumns": tableColumnSortdDefinicion(),
+        "aLengthMenu": [[5, 10, 15, 25, 50, 100], [5, 10, 15, 25, 50, 100]],
+        "iDisplayLength": 25,
+        "aoColumns": [{ "sType": "date-euro" },null,null,null],
         "oLanguage": {
             "oPaginate": {
                 "sFirst": I18n.t("data_table.paginate.first"),
@@ -137,12 +175,6 @@ $(document).ready(function() {
             "sZeroRecords": I18n.t("data_table.zeroRecords"),
             "sLengthMenu": I18n.t("data_table.lengthMenu")
         }
-    });
-    $(".sorting:last").removeClass("sorting");
-    $("[name='list_length']").selectpicker({
-        style: 'btn-info',
-        size: '10',
-        width: '70px'
     });
 });
 
