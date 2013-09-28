@@ -1,0 +1,10 @@
+var parent = new ParentSelectTag("specialization", "all");
+var related = new RelatedSelectTag("medical", ["all","#{t 'form.select.all.male'}"] );
+
+- for medical in @medicals
+	related.addOption("#{medical.medical_specialization_id }", "#{medical.to_s}", "#{medical.id}");
+
+$(document).ready(function() {
+related.updateFrom(parent);
+related.updateInOnChangeFrom(parent);
+});

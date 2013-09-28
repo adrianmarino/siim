@@ -191,6 +191,13 @@ en:
         email: "Email"
         home_phone: "Home phone"
         movile_phone: "Movile phone"
+      attention_time:
+        medical_specialization: "Specialization"
+        medical: "Medical"
+        state: "State"
+        patient: "Patient"
+        time: "Time"
+        date: "Date"
     errors:
       models:
         user:
@@ -313,11 +320,20 @@ en:
       edit: "Edit Medical History"
       show: "Medical Detail History"
       list: "Medical Histories"
+    attention_time:
+      search: "Attention Time Search"
   menu:
+    statistics: "Statistics"
     medicals: "Medicals"
     administration: "Administration"
     medical_specializations: "Medical Specializations"
     medical_histories: "Medical Histories"
+    attention_times: "Attention Times"
+    sub_menu:
+      attention_times:
+        assignment: "Assignment"
+        my_attention_times: "My Attention Times"
+
   form:
     nested:
       delete: "Remove"
@@ -334,3 +350,15 @@ en:
     b_negative: "B -"
     ab_positive: "AB +"
     ab_negative: "AB -"
+  attention_time:
+    state:
+      available: "Available"
+      reserved: "Reservec"
+      attended: "Attended"
+      canceled: "Canceled"
+    search: "Search"
+  form:
+    select:
+      all:
+        fame: "All"
+        male: "All"

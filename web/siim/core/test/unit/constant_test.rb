@@ -4,7 +4,7 @@ class ConstantTest < ActiveSupport::TestCase
 	# -------------------------------------------------------------------------
 	# Test Methods...
 	# -------------------------------------------------------------------------
-	def test_translate
+	test "translate" do
 		# Prepare...
 		enum = mock()
 		enum.expects(:class_name).returns('enum')
@@ -17,7 +17,7 @@ class ConstantTest < ActiveSupport::TestCase
 		assert_equal "translation missing: en.enum.a", value
 	end
 
-	def test_compare
+	test "compare" do
 		# Prepare...
 		constant_a = Constant.new(nil,:A)
 		constant_b = Constant.new(nil,:B)
