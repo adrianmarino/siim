@@ -6,6 +6,8 @@ es:
     description: 'Servicio Integral de Informacion Médica'
     author: '&copy; BAMBU Solutions 2013'
     version: 'Versión: %{number}'
+  commercial_message:
+    cite: 'BAMBU Solutions'
 
   data_table:
     paginate:
