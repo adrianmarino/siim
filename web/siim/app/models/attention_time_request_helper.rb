@@ -1,32 +1,47 @@
-module AttentionTimeRequestHelper
+class AttentionTimeRequestHelper
+	# -------------------------------------------------------------------------
+	# Public Methods...
+	# -------------------------------------------------------------------------
 	def specialization_param
-		return nil if params[:specialization] = "all"
-
-		logger.debug "Specialization: {params[:specialization]}"
-
-		specializations = MedicalSpecialization.find params[:specialization]
-		specializations.empty? ? nil : specializations.first
+		log_specialization_param
+		@params[:specialization] == "all" ? nil : MedicalSpecialization.find(@params[:specialization])
 	end
 
 	def medical_param
-		return nil if params[:medical] = "all"
-
-		logger.debug "Medical: {params[:medical]}"
-
-		medicals = Medical.find params[:medical]
-		medicals.empty? ? nil : medicals.first
+		log_medical_param
+		@params[:medical] == "all" ? nil : Medical.find(@params[:medical])
 	end
 
 	def patient_param
-		return nil if params[:patient] = "all"
-
-		logger.debug "Patient: {params[:patient]}"
-
-		patients = Patient.find params[:patient]
-		patients.empty? ? nil : patients.first
+		log_patient_param
+		@params[:patient] == "all" ? nil : Patient.find(@params[:patient])
 	end
 
 	def state_param
-		param[:state]
+		@param[:state]
+	end
+
+	# -------------------------------------------------------------------------
+	# Private Methods...
+	# -------------------------------------------------------------------------
+	private
+	def log_patient_param
+		@logger.info "Patient Param: #{@params[:patient]}"
+	end
+
+	def log_medical_param
+		@logger.info "Medical Param: #{@params[:medical]}"
+	end
+
+	def log_specialization_param
+		@logger.info "Specialization Param: #{@params[:specialization]}"
+	end
+
+	# -------------------------------------------------------------------------
+	# Initialize...
+	# -------------------------------------------------------------------------
+	def initialize(params, logger)
+		@params = params
+		@logger = logger
 	end
 end
