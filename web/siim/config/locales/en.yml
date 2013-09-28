@@ -333,11 +333,6 @@ en:
       attention_times:
         assignment: "Assignment"
         my_attention_times: "My Attention Times"
-
-  form:
-    nested:
-      delete: "Remove"
-      add: "Add"
   sex:
     male: "Male"
     female: "Female"
@@ -358,6 +353,9 @@ en:
       canceled: "Canceled"
     search: "Search"
   form:
+    nested:
+      delete: "Remove"
+      add: "Add"
     select:
       all:
         fame: "All"

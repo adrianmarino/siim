@@ -351,10 +351,6 @@ es:
       statistics:
         simptoms: "Simtomas"
         diseases: "Enfermedades"
-  form:
-    nested:
-      delete: "Borrar"
-      add: "Agregar"
   sex:
     male: "Masculino"
     female: "Femenino"
@@ -376,6 +372,9 @@ es:
     search: "Buscar"
     results: "Resultados"
   form:
+    nested:
+      delete: "Borrar"
+      add: "Agregar"
     select:
       all:
         fame: "Todas"
