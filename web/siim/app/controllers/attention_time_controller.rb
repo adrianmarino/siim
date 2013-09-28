@@ -1,5 +1,4 @@
 class AttentionTimeController  < ApplicationController
-	include AttentionTimeRequestHelper
 	# -------------------------------------------------------------------------
 	# Public Request Methods...
 	# -------------------------------------------------------------------------
@@ -10,10 +9,12 @@ class AttentionTimeController  < ApplicationController
 
 	def search
 		prepare_form
-		@attention_times = AttentionTime.find specialization: specialization_param,
-																					medical: medical_param,
-																					patient: patient_param,
-																					from: Date.today, to: to_date
+		helper = AttentionTimeRequestHelper.new params, logger
+
+		@attention_times = AttentionTime.find specialization: helper.specialization_param,
+																					medical: helper.medical_param,
+																					patient: helper.patient_param#,
+																					#from: Date.today, to: to_date
 		render 'attention_times/setup_search'
 	end
 
@@ -33,7 +34,7 @@ class AttentionTimeController  < ApplicationController
 	private
 	def to_date
 		last_time = AttentionTime.last
-		last_time.nil? ? Date.today : last_time.time.to_date
+		last_time.nil? ? Date.today : last_time.to_date
 	end
 
 	def prepare_form
