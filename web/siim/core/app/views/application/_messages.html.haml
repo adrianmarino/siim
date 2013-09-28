@@ -1,4 +1,4 @@
-.session_top
+.session
   - if flash[:error] or flash[:notice] or flash[:alert]
     = content_tag(:div, flash[:error], :id => :flash_error, :class => "alert alert-error") if flash[:error]
     = content_tag(:div, flash[:notice], :id => :flash_notice, :class => "alert alert-success") if flash[:notice]
