@@ -26,20 +26,18 @@
 				.span2= submit_tag t("attention_time.search"), :class => "btn btn-primary pull-left"
 
 	- if not @attention_times.nil?
-		-#%legend=t 'attention_time.results'
+		%legend=t 'attention_time.results'
 		%table#attention_time_list.table.table-striped.table-bordered{:border => "0", :cellpadding => "0", :cellspacing => "0"}
 			%thead.table-header
 				%tr
 					%th=translate_attribute :attention_time, :date
-					%th=translate_attribute :attention_time, :time
 					%th=translate_attribute :attention_time, :medical
 					%th=translate_attribute :attention_time, :patient
 					%th=translate_attribute :attention_time, :state
 			%tbody
 				- for attention_time in @attention_times
 					%tr
-						%td=attention_time.time.strftime "%d-%m-%Y"
-						%td=attention_time.time.strftime "%H:%M"
+						%td=attention_time.time.strftime "%d/%m/%Y %H:%M"
 						%td=attention_time.medical
 						%td=attention_time.patient
 						%td=t "attention_time.state.#{attention_time.current_state}"
