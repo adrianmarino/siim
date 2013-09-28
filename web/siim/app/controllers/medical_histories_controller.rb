@@ -21,6 +21,8 @@ class MedicalHistoriesController < CrudController
   # GET /medical_histories.json
   def index
     @medical_histories = MedicalHistory.all
+    hide_view_action
+    hide_remove_action
 
     respond_to do |format|
       format.html # index.html.erb

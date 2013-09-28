@@ -3,6 +3,7 @@ class MedicalsController < CrudController
   # GET /medicals.json
   def index
     @medicals = Medical.all
+    hide_view_action
 
     respond_to do |format|
       format.html # index.html.erb
