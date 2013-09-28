@@ -3,8 +3,8 @@
   %head
     %title
       = h(yield(:title))
-    = csrf_meta_tags
     = stylesheet_link_tag  "application", :media => "all"
+    = csrf_meta_tags
     = javascript_include_tag "application"
     = javascript_include_tag "related_select"
     = javascript_include_tag "https://www.google.com/jsapi"

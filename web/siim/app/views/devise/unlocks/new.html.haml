@@ -1,4 +1,4 @@
-.session_top
+.session
   = form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post, :class => 'well form-horizontal' }) do |f|
     %fieldset
       %legend= t :resend_unlock_instructions

@@ -1,16 +1,17 @@
 - content_for :content do
-  .row.session_top
-    .span4.offset4.well
+  .row.session.login-content
+    .span4.offset0.well
       = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
         - if flash[:error] or flash[:notice] or flash[:alert]
           = content_tag(:div, flash[:error], :id => :flash_error, :class => "alert alert-error") if flash[:error]
           = content_tag(:div, flash[:notice], :id => :flash_notice, :class => "alert alert-success") if flash[:notice]
           = content_tag(:div, flash[:alert], :id => :flash_alert, :class => "alert alert-info") if flash[:alert]
-        = f.text_field :login, :class => :span4, :placeholder => t(:login)
-        = f.password_field :password, :class => :span4, :placeholder => User.human_attribute_name(:password)
+        = f.text_field :login, :class => "span4" , :placeholder => t(:login)
+        = f.password_field :password, :class => "span4", :placeholder => User.human_attribute_name(:password)
         - if devise_mapping.rememberable?
           %label.checkbox
             = f.check_box :remember_me
             = t(:remember_me)
         = f.submit t(:sign_in), :class => "btn btn-primary btn-block"
       %div= render "devise/shared/links"
+= render :file => 'layouts/session'

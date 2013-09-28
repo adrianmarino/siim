@@ -1,5 +1,5 @@
 - content_for :content do
-  .session_top
+  .session
     = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put , :class => 'well form-horizontal' }) do |f|
       %fieldset
         %legend= t :change_your_password
