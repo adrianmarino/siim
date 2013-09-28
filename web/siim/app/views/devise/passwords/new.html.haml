@@ -1,11 +1,10 @@
-- content_for :content do
-	.row.session
-		.span4.offset0.well
-			= form_for(resource, :as => resource_name, :url => password_path(resource_name)) do |f|
-				%fieldset
-					%legend= t :forgot_your_password
-					= devise_error_messages!
-					= f.email_field :email, :class => :span4,  :placeholder => User.human_attribute_name(:email)
-					= f.submit t(:send_me_reset_password_instructions), :class => "btn btn-primary btn-block"
-					= render "devise/shared/links"
+- content_for :session do
+	.span4.session.well
+		= form_for(resource, :as => resource_name, :url => password_path(resource_name)) do |f|
+			%legend= t :forgot_your_password
+			%fieldset
+				= devise_error_messages!
+				= f.email_field :email, :class => :span4,  :placeholder => User.human_attribute_name(:email)
+				= f.submit t(:send_me_reset_password_instructions), :class => "btn btn-primary btn-block"
+				= render "devise/shared/links"
 = render :file => 'layouts/session'
