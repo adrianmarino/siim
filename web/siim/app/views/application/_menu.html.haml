@@ -21,6 +21,14 @@
                 %li= link_to raw("<i class=\"icon-th-list\">&nbsp;&nbsp;</i>#{t('menu.sub_menu.attention_times.my_attention_times')}"), attention_times_daily_attention_times_path, "tabindex" => "-1"
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
+                %i.icon-signal=" #{t('menu.statistics')}"
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  = link_to raw("<i class=\" icon-signal\">&nbsp;&nbsp;</i>#{t('menu.sub_menu.statistics.simptoms')}"), statistics_setup_simptom_path, "tabindex" => "-1"
+                %li= link_to raw("<i class=\"icon-signal\">&nbsp;&nbsp;</i>#{t('menu.sub_menu.statistics.diseases')}"), statistics_setup_disease_path, "tabindex" => "-1"
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
                 %i.icon-wrench
                 =" #{t('menu.administration')}"
                 %b.caret
@@ -28,15 +36,6 @@
                 %li
                   = link_to raw("<i class=\"icon-user\">&nbsp;&nbsp;</i>#{t('menu.medicals')}"), medicals_path, "tabindex" => "-1"
                 %li= link_to raw("<i class=\"icon-briefcase\">&nbsp;&nbsp;</i>#{t('menu.medical_specializations')}"), "/medical_specializations", "tabindex" => "-1"
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
-                %i.icon-calendar
-                =" #{t('menu.statistics')}"
-                %b.caret
-              %ul.dropdown-menu
-                %li
-                  = link_to raw("<i class=\" icon-hand-up\">&nbsp;&nbsp;</i>#{t('menu.sub_menu.statistics.simptoms')}"), statistics_setup_simptom_path, "tabindex" => "-1"
-                %li= link_to raw("<i class=\"icon-th-list\">&nbsp;&nbsp;</i>#{t('menu.sub_menu.statistics.diseases')}"), statistics_setup_disease_path, "tabindex" => "-1"
 
 
 
