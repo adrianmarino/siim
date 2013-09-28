@@ -33,6 +33,7 @@
 					%th=translate_attribute :attention_time, :date
 					%th=translate_attribute :attention_time, :time
 					%th=translate_attribute :attention_time, :medical
+					%th=translate_attribute :attention_time, :patient
 					%th=translate_attribute :attention_time, :state
 			%tbody
 				- for attention_time in @attention_times
@@ -40,6 +41,7 @@
 						%td=attention_time.time.strftime "%F"
 						%td=attention_time.time.strftime "%H:%M"
 						%td=attention_time.medical
+						%td=attention_time.patient
 						%td=t "attention_time.state.#{attention_time.current_state}"
 
 = render :file => 'layouts/application'
