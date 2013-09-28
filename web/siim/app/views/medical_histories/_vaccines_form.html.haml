@@ -1,8 +1,7 @@
 %div
   = form.fields_for :vaccines do |f|
     %div.nested-form-panel
-      %div
-        = f.link_to_remove t('form.nested.delete')
+      %div= f.link_to_remove t('form.nested.delete')
       %div
         = nested_datepicker f, :last_application, :vaccine
         = nested_text f, :name, :vaccine
