@@ -1,4 +1,6 @@
 = form.fields_for :patient do |f|
+  .control-group
+    .controls= show_photo @medical_history.patient.photo.url :medium
   = photo_field       f, :photo, :patient
   = nested_text       f, :dni, :patient
   = nested_text       f, :firstname, :patient

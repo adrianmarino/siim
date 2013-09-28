@@ -128,6 +128,8 @@ $(document).ready(function() {
         $('#crud_list').dataTable({
             "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
             "sPaginationType": "bootstrap",
+            "aLengthMenu": [[5, 10, 15, 25, 50, 100], [5, 10, 15, 25, 50, 100]],
+            "iDisplayLength": 5,
             "aoColumns": tableColumnSortdDefinicion(),
             "oLanguage": {
                 "oPaginate": {

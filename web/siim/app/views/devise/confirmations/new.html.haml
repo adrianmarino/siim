@@ -1,5 +1,5 @@
 - content_for :content do
-  .session_top
+  .session
     = form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post, :class => 'well form-horizontal' }) do |f|
       %fieldset
         %legend= t :resend_confirmation_instructions
