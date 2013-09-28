@@ -48,7 +48,7 @@ class AttentionTime < ActiveRecord::Base
 
   def self.last
     times = self.order("time DESC").limit 1
-    times.empty? ? nil : times.first
+    times.empty? ? nil : times.first.time
   end
 
   def self.all_states
