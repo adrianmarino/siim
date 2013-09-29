@@ -6,26 +6,24 @@ require 'headless'
 # server.
 # -------------------------------------------------------------------------
 module AcceptanceTestPresetation
-
-	# -------------------------------------------------------------------------
-	# Public Methods...
-	# -------------------------------------------------------------------------
-
+  # -------------------------------------------------------------------------
+  # Public Methods...
+  # -------------------------------------------------------------------------
   def hide_test_output
-  	if enable_hide
-  		puts 'Hide test output...'
-  		@headless = Headless.new
-    	@headless.start
-  	end
-  end
-
-  def stop_hide
-  	if enable_hide
-    	@headless.destroy
+    if hide_output?
+      puts 'Hide test output...'
+      @headless = Headless.new
+      @headless.start
     end
   end
 
-  def enable_hide
-  	ENV['SHOW_TESTS'] == 'yes' ? false : true
+  def stop_hide
+    if hide_output?
+      @headless.destroy
+    end
+  end
+
+  def hide_output?
+    not ENV['SHOW_TESTS'] == 'true'
   end
 end

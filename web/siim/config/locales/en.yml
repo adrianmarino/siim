@@ -6,6 +6,8 @@ en:
     description: 'Comprehensive Medical Information Service'
     author: '&copy; BAMBU Solutions 2013'
     version: 'Version %{number}'
+  commercial_message:
+    cite: 'BAMBU Solutions'
 
   data_table:
     paginate:
@@ -35,7 +37,7 @@ en:
   home: "Home"
   sign_up: "Sign Up"
   dni: "DNI"
-  login: "User"
+  login: "DNI/Email"
   email: "Email"
   remember_me: "Remember me"
   password: "Password"
