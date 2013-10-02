@@ -120,6 +120,12 @@ en:
         dni: "DNI"
         email: "Email"
         password: "Password"
+        sex: "Sex"
+        address: "Address"
+        home_phone: "Home Phone"
+        movile_phone: "Movile Phone"
+        birthdate: "Birthdate"
+        is_medical: "Is Medical"
       medical:
         cuil: "CUIL"
         dni: "DNI"
@@ -129,6 +135,7 @@ en:
         specialization: "Specialization"
         home_phone: "Home Phone"
         movile_phone: "Movile Phone"
+        registration_number: "Registration Number"
       medical_specialization:
         name: "Name"
       medical_history:
@@ -330,6 +337,8 @@ en:
     administration: "Administration"
     medical_specializations: "Medical Specializations"
     medical_histories: "Medical Histories"
+    managerUsers: "Manager Users"
+    confProfiles: "Configurar Perfiles"
     attention_times: "Attention Times"
     sub_menu:
       attention_times:

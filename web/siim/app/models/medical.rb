@@ -7,20 +7,21 @@ class Medical < ActiveRecord::Base
   attr_accessible :cuil, :dni, :email, :firstname, :lastname,
     :home_phone, :movile_phone, :medical_specialization,
     :medical_specialization_id, :attention_periods, 
-    :attention_time_length_hour, :attention_time_length_minutes
+    :attention_time_length_hour, :attention_time_length_minutes, :user, :user_id, :registration_number
 
   # -------------------------------------------------------------------------
   # Associations...
   # -------------------------------------------------------------------------
   belongs_to :medical_specialization
+  belongs_to :user
   has_many :consutations
   has_many :attention_periods
 
   # -------------------------------------------------------------------------
   # Validations...
   # -------------------------------------------------------------------------
-  validates :cuil, :dni, :firstname, :lastname, :medical_specialization,
-    :movile_phone, :presence => true
+  #validates :cuil, :dni, :firstname, :lastname, :medical_specialization, :email,
+  #  :movile_phone, :presence => true
 
   # -------------------------------------------------------------------------
   # Public Methods...
