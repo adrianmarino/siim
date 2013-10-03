@@ -35,6 +35,10 @@ class AttentionTime < ActiveRecord::Base
     "Attention Time { Time: #{time.strftime("%F %H:%M")}, State: #{state.to_s}, Medical: #{medical}#{patient.nil? ? " }" : ", Patient: #{patient} }"}"
   end
 
+  def liberate
+    self.patient = nil
+  end
+
   # -------------------------------------------------------------------------
   # Class methods
   # -------------------------------------------------------------------------
@@ -82,8 +86,8 @@ class AttentionTime < ActiveRecord::Base
   # -------------------------------------------------------------------------
   # Associations
   # -------------------------------------------------------------------------
-  belongs_to :medical
-  belongs_to :patient
+  belongs_to :medical, :autosave => true
+  belongs_to :patient, :autosave => true
 
   # -------------------------------------------------------------------------
   # Validations

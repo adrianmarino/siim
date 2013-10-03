@@ -22,6 +22,9 @@ Siim::Application.routes.draw do
 
   get '/assets/javascripts/dinamic_medicals', to: 'javascripts#dinamic_medicals'
   get '/attention_times/setup_search', to: 'attention_time#setup_search'
+  post '/attention_times/liberate', to: 'attention_time#liberate'
+  post '/attention_times/reserve', to: 'attention_time#reserve'
+
   post '/attention_times/search', to: 'attention_time#search'
   get '/attention_times/daily_attention_times', to: 'attention_time#daily_attention_times'
 

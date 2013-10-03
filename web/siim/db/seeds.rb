@@ -412,26 +412,47 @@ MedicalExam.create(
 AttentionTime.create( 
   time: Time.new + 1.days,
   medical: medical_a,
-  patient: patient_a
+  patient: patient_a,
+  state: :reserved
 )
 
 AttentionTime.create( 
   time: Time.new + 2.days,
   state: :attend,
   medical: medical_a,
-  patient: patient_b
+  patient: patient_b,
+  state: :reserved
 )
 
 AttentionTime.create( 
   time: Time.new + 3.days,
   medical: medical_b,
-  patient: patient_a
+  patient: patient_a,
+  state: :reserved
 )
 
 AttentionTime.create( 
   time: Time.new + 4.days,
   state: :reserved,
-  medical: medical_b,  patient: patient_b
+  medical: medical_b,
+  patient: patient_b,
+  state: :reserved
+)
+
+AttentionTime.create( 
+  time: Time.new + 5.days,
+  state: :reserved,
+  medical: medical_b,
+  patient: patient_b,
+  state: :reserved
+)
+
+AttentionTime.create( 
+  time: Time.new + 6.days,
+  state: :reserved,
+  medical: medical_b,
+  patient: patient_a,
+  state: :reserved
 )
 
 # -------------------------------------------------------------------------

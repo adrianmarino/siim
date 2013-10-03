@@ -4,28 +4,39 @@ class AttentionTimeController  < ApplicationController
 	# -------------------------------------------------------------------------
 	def setup_search
 		prepare_form
-		render 'attention_times/setup_search'
+		render attention_times_setup_search_path
 	end
 
 	def search
 		prepare_form
-		helper = AttentionTimeRequestHelper.new params, logger
+		helper = request_helper
 
 		@attention_times = AttentionTime.find specialization: helper.specialization_param,
 																					medical: helper.medical_param,
 																					patient: helper.patient_param,
-																					from: Date.today, to: to_date
-		render 'attention_times/setup_search'
+																					state: helper.state_param,
+																					from: helper.from_param,
+																					to: helper.to_param
+		render attention_times_setup_search_path
 	end
 
-	def daily_attention_times
-		@attention_times = AttentionTimes.all
-		render 'attention_times/daily_attention_times'
+	def liberate
+		attention_time = request_helper.attention_time_param
+		if not attention_time.nil?
+			attention_time.liberate!
+			attention_time.save
+		end
+		redirect_to attention_times_setup_search_path
 	end
 
-	def attention_time_attended
-		attenton_time.attend
-		daily_attention_times
+	def reserve
+		attention_time = request_helper.attention_time_param
+		if not attention_time.nil?
+			attention_time.reserve!
+			attention_time.patient = request_helper.patient_param
+			attention_time.save
+		end
+		redirect_to attention_times_setup_search_path
 	end
 
 	# -------------------------------------------------------------------------
@@ -42,5 +53,11 @@ class AttentionTimeController  < ApplicationController
 		@medicals = Medical.all
 		@patients = Patient.all
 		@states = AttentionTime.all_states
+		@from = Date.today
+		@to = to_date
+	end
+
+	def request_helper
+		AttentionTimeRequestHelper.new params, logger
 	end
 end

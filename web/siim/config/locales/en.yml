@@ -354,11 +354,21 @@ en:
       attended: "Attended"
       canceled: "Canceled"
     search: "Search"
+
   form:
+    date:
+      from: "From"
+      to: "To"
     nested:
       delete: "Remove"
       add: "Add"
+    action:
+      reserve: "Reserve"
+      liberate: "Liberate"
     select:
       all:
         fame: "All"
         male: "All"
+    reserve_attention_time:
+      title: "Select a patient"
+      back: "Back"
