@@ -65,6 +65,7 @@ class UsersController < CrudController
       
     respond_to do |format|
       if @user.save
+        @user.inscription_at_system_mailer
         format.html { redirect_to users_path, notice: CrudTranslations.model_was_created(@user) }
         format.json { render json: @user, status: :created, location: @user }
       else
