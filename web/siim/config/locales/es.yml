@@ -371,9 +371,15 @@ es:
       reserved: "Reservado"
       attended: "Atendido"
       canceled: "Cancelado"
+    action:
+      reserve: "Reservar"
+      liberate: "Liberar"
     search: "Buscar"
     results: "Resultados"
   form:
+    date:
+      from: "Desde"
+      to: "Hasta"
     nested:
       delete: "Borrar"
       add: "Agregar"
@@ -381,3 +387,6 @@ es:
       all:
         fame: "Todas"
         male: "Todos"
+    reserve_attention_time:
+      title: "Seleccione un paciente"
+      back: "Volver"

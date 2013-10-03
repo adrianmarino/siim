@@ -1,5 +1,5 @@
 desc "Deploy to apache"
-task :redeploy => [:migrate_db] do
+task :redeploy => [:reset_db] do
 	apache_path = "/var/www/siim"
 
 	puts " -------------------------------------------"

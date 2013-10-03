@@ -1,5 +1,5 @@
 module ApplicationHelper
-  include CrudNavigationHelper
+  include NavigationHelper
   include CrudFormHelper
   include CrudPathHelper
   include Core::ApplicationHelper
