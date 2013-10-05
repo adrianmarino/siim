@@ -8,9 +8,9 @@
       = photo_field f, :photo, :user
       = nested_text f, :first_name
       = nested_text f, :last_name
-      = nested_text f, :dni      
+      = nested_text f, :dni
 
-      -if @user.is_medical 
+      -if @user.is_medical
         = render :partial => 'medical', :locals => {:form => f};
 
       = nested_select_box f, :sex, sex_values
