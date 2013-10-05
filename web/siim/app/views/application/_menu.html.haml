@@ -36,5 +36,5 @@
           %ul.nav.pull-right
             %li#fat-menu.dropdown.open
               %ul.nav.pull-right
-                %li= link_to raw("<i class=\"icon-user\">&nbsp;</i>#{t :login_as} #{current_user}"), medical_histories_path, "tabindex" => "-1"
+                %li= link_to raw("<i class=\"icon-user\">&nbsp;</i>#{t :login_as} #{current_user}"), "#", "tabindex" => "-1"
                 %li= link_to raw("<i class=\"icon-off\">&nbsp;</i>#{t :sign_out}"),"#myModal", "tabindex" => "-1", "data-toggle" =>"modal", :id => "sing_out"
