@@ -1,44 +1,42 @@
 - content_for :content do
   .session
-    = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'well form-horizontal' }) do |f|
+    = form_for(resource, :as => resource_name, :url => user_registration_path(resource_name), :html => { :method => :put, :class => 'well form-horizontal' }) do |f|
       %fieldset
-        %legend
-          = t :user_profile
+        %legend= t :user_profile
         = devise_error_messages!
-        .control-group
-          .controls= show_photo @user.photo.url :medium
-        = photo_field f, :photo, :user
-          
-        .control-group
-          = f.label User.human_attribute_name(:first_name), :class => 'control-label'
-          .controls= f.text_field :first_name
-        .control-group
-          = f.label User.human_attribute_name(:last_name), :class => 'control-label'
-          .controls= f.text_field :last_name
-        .control-group
-          = f.label User.human_attribute_name(:dni), :class => 'control-label'
-          .controls= f.text_field :dni
-
-        .control-group
-          = f.label User.human_attribute_name(:birthdate), :class => 'control-label'
-          .controls= f.text_field :birthdate
-        .control-group
-          = f.label User.human_attribute_name(:sex), :class => 'control-label'
-          .controls= f.text_field :sex
-        .control-group
-          = f.label User.human_attribute_name(:address), :class => 'control-label'
-          .controls= f.text_field :address
-        .control-group
-          = f.label User.human_attribute_name(:home_phone), :class => 'control-label'
-          .controls= f.text_field :home_phone
-        .control-group
-          = f.label User.human_attribute_name(:movile_phone), :class => 'control-label'
-          .controls= f.text_field :movile_phone
-        .control-group
-          = f.label User.human_attribute_name(:email), :class => 'control-label'
-          .controls= f.text_field :email
-
-        
+        .row-fluid
+          .span5
+            .control-group
+              = f.label User.human_attribute_name(:dni), :class => 'control-label'
+              .controls= f.text_field :dni
+            .control-group
+              = f.label User.human_attribute_name(:email), :class => 'control-label'
+              .controls= f.text_field :email
+            .control-group
+              = f.label User.human_attribute_name(:first_name), :class => 'control-label'
+              .controls= f.text_field :first_name
+            .control-group
+              = f.label User.human_attribute_name(:last_name), :class => 'control-label'
+              .controls= f.text_field :last_name
+            .control-group
+              = f.label User.human_attribute_name(:birthdate), :class => 'control-label'
+              .controls= f.text_field :birthdate
+            .control-group
+              = f.label User.human_attribute_name(:sex), :class => 'control-label'
+              .controls= f.text_field :sex
+            .control-group
+              = f.label User.human_attribute_name(:address), :class => 'control-label'
+              .controls= f.text_field :address
+            .control-group
+              = f.label User.human_attribute_name(:movile_phone), :class => 'control-label'
+              .controls= f.text_field :movile_phone
+            .control-group
+              = f.label User.human_attribute_name(:home_phone), :class => 'control-label'
+              .controls= f.text_field :home_phone
+          .span5
+            .control-group
+              .controls= show_photo @user.photo.url :medium
+            = photo_field f, :photo, :user
         %legend
           = t(:change_my_password)
         .control-group
