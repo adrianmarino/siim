@@ -6,6 +6,8 @@ en:
     description: 'Comprehensive Medical Information Service'
     author: '&copy; BAMBU Solutions 2013'
     version: 'Version %{number}'
+  commercial_message:
+    cite: 'BAMBU Solutions'
 
   data_table:
     paginate:
@@ -35,7 +37,7 @@ en:
   home: "Home"
   sign_up: "Sign Up"
   dni: "DNI"
-  login: "User"
+  login: "DNI/Email"
   email: "Email"
   remember_me: "Remember me"
   password: "Password"
@@ -118,6 +120,12 @@ en:
         dni: "DNI"
         email: "Email"
         password: "Password"
+        sex: "Sex"
+        address: "Address"
+        home_phone: "Home Phone"
+        movile_phone: "Movile Phone"
+        birthdate: "Birthdate"
+        is_medical: "Is Medical"
       medical:
         cuil: "CUIL"
         dni: "DNI"
@@ -127,6 +135,7 @@ en:
         specialization: "Specialization"
         home_phone: "Home Phone"
         movile_phone: "Movile Phone"
+        registration_number: "Registration Number"
       medical_specialization:
         name: "Name"
       medical_history:
@@ -328,6 +337,8 @@ en:
     administration: "Administration"
     medical_specializations: "Medical Specializations"
     medical_histories: "Medical Histories"
+    managerUsers: "Manager Users"
+    confProfiles: "Configurar Perfiles"
     attention_times: "Attention Times"
     sub_menu:
       attention_times:
@@ -352,11 +363,21 @@ en:
       attended: "Attended"
       canceled: "Canceled"
     search: "Search"
+
   form:
+    date:
+      from: "From"
+      to: "To"
     nested:
       delete: "Remove"
       add: "Add"
+    action:
+      reserve: "Reserve"
+      liberate: "Liberate"
     select:
       all:
         fame: "All"
         male: "All"
+    reserve_attention_time:
+      title: "Select a patient"
+      back: "Back"

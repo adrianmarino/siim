@@ -30,6 +30,10 @@ function functionIsDefined(functionName) {
   } catch(e) { return false; }
 }
 
+function existElement(aQuery) {
+  return $(aQuery).length;
+}
+
 $.fn.datepicker.dates['es'] = {
   days: ["Domindo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado", "Domingo"],
   daysShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"],
@@ -39,15 +43,15 @@ $.fn.datepicker.dates['es'] = {
   today: "Hoy"
 };
 
+
 $(document).on("focus", "[data-behaviour~='datepicker']", function(e){
     $(this).datepicker({
-        "format": "yyyy-mm-dd", 
+        "format": "yyyy-mm-dd",
         "weekStart": 1, 
         "autoclose": true,
         "language": I18n.locale
     });
 });
-
 
 function trim(str) {
     str = str.replace(/^\s+/, '');
@@ -155,29 +159,37 @@ $(document).ready(function() {
             width: '70px'
         });
     }
-    $('#attention_time_list').dataTable({
-        "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
-        "sPaginationType": "bootstrap",
-        "aLengthMenu": [[5, 10, 15, 25, 50, 100], [5, 10, 15, 25, 50, 100]],
-        "iDisplayLength": 25,
-        "aoColumns": [{ "sType": "date-euro" },null,null,null],
-        "oLanguage": {
-            "oPaginate": {
-                "sFirst": I18n.t("data_table.paginate.first"),
-                "sLast": I18n.t("data_table.paginate.last"),
-                "sNext": I18n.t("data_table.paginate.next"),
-                "sPrevious": I18n.t("data_table.paginate.previous")
-            },
-            "sEmptyTable": I18n.t("data_table.emptyTable"),
-            "sInfo": I18n.t("data_table.info"),
-            "sInfoEmpty": I18n.t("data_table.infoEmpty"),
-            "sInfoFiltered": I18n.t("data_table.infoFiltered"),
-            "sInfoPostFix": I18n.t("data_table.infoPostFix"),
-            "sSearch": I18n.t("data_table.search"),
-            "sZeroRecords": I18n.t("data_table.zeroRecords"),
-            "sLengthMenu": I18n.t("data_table.lengthMenu")
-        }
-    });
+    if (existElement('#attention_time_list')) {
+        $('#attention_time_list').dataTable({
+            "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+            "sPaginationType": "bootstrap",
+            "aLengthMenu": [[5, 10, 15, 25, 50, 100], [5, 10, 15, 25, 50, 100]],
+            "iDisplayLength": 25,
+            "aoColumns": [null,{ "sType": "date-euro" },null,null,null,null],
+            "oLanguage": {
+                "oPaginate": {
+                    "sFirst": I18n.t("data_table.paginate.first"),
+                    "sLast": I18n.t("data_table.paginate.last"),
+                    "sNext": I18n.t("data_table.paginate.next"),
+                    "sPrevious": I18n.t("data_table.paginate.previous")
+                },
+                "sEmptyTable": I18n.t("data_table.emptyTable"),
+                "sInfo": I18n.t("data_table.info"),
+                "sInfoEmpty": I18n.t("data_table.infoEmpty"),
+                "sInfoFiltered": I18n.t("data_table.infoFiltered"),
+                "sInfoPostFix": I18n.t("data_table.infoPostFix"),
+                "sSearch": I18n.t("data_table.search"),
+                "sZeroRecords": I18n.t("data_table.zeroRecords"),
+                "sLengthMenu": I18n.t("data_table.lengthMenu")
+            }
+        });
+        $(".sorting:last").removeClass("sorting");
+        $("[name='list_length']").selectpicker({
+            style: 'btn-info',
+            size: '10',
+            width: '70px'
+        });
+    }
 });
 
 $(document).on('nested:fieldAdded', function(event){
@@ -186,8 +198,16 @@ $(document).on('nested:fieldAdded', function(event){
   remove_button.addClass('btn').prepend('<i class="icon-minus-sign icon-white remove_nested_fields_icon">&nbsp;</i>');
 
   $("#consultations .selectpicker").selectpicker({
-        style: 'btn-info',
-        size: '10'
+    style: 'btn-info',
+    size: '10'
   });
 });
 
+$(document).on('click', '#user_is_medical', function() {
+    var isChecked = $('#user_is_medical').is(':checked');
+    if(isChecked) {
+        $('#divMedical').show();
+    } else {
+        $('#divMedical').hide();
+    }
+});
