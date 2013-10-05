@@ -198,18 +198,16 @@ $(document).on('nested:fieldAdded', function(event){
   remove_button.addClass('btn').prepend('<i class="icon-minus-sign icon-white remove_nested_fields_icon">&nbsp;</i>');
 
   $("#consultations .selectpicker").selectpicker({
-        style: 'btn-info',
-        size: '10'
+    style: 'btn-info',
+    size: '10'
   });
 });
 
-$(document).on('click', '#user_is_medical', function(){
-   
-      var isChecked = $('#user_is_medical').is(':checked');
-
-      if(isChecked){       
-        $('#divMedical').show();       
-      } else {
-         $('#divMedical').hide(); 
-      }
- });
+$(document).on('click', '#user_is_medical', function() {
+    var isChecked = $('#user_is_medical').is(':checked');
+    if(isChecked) {
+        $('#divMedical').show();
+    } else {
+        $('#divMedical').hide();
+    }
+});
