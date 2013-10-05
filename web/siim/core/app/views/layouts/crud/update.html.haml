@@ -1,5 +1,4 @@
 - content_for :content do
-  .page-header
-    %h3= t "title.#{@entity_name}.edit"
+  %legend= t "title.#{@entity_name}.edit"
   = yield
 = render :file => 'layouts/application'
