@@ -10,13 +10,7 @@
         .nav-collapse.collapse
           %ul.nav{:role => "navigation"}
             %li= link_to raw("<i class=\"icon-book\">&nbsp;</i>#{t('menu.medical_histories')}"), medical_histories_path, "tabindex" => "-1"
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
-                %i.icon-calendar=" #{t 'menu.attention_times'}"
-                %b.caret
-              %ul.dropdown-menu
-                %li= link_to t('menu.sub_menu.attention_times.assignment'), attention_times_setup_search_path, "tabindex" => "-1"
-                %li= link_to t('menu.sub_menu.attention_times.my_attention_times'), attention_times_daily_attention_times_path, "tabindex" => "-1"
+            %li= link_to raw("<i class=\"icon-calendar\">&nbsp;</i>#{t('menu.sub_menu.attention_times.assignment')}"), attention_times_setup_search_path, "tabindex" => "-1"
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
                 %i.icon-signal=" #{t 'menu.statistics'}"
@@ -36,5 +30,12 @@
           %ul.nav.pull-right
             %li#fat-menu.dropdown.open
               %ul.nav.pull-right
-                %li= link_to raw("<i class=\"icon-user\">&nbsp;</i>#{t :login_as} #{current_user}"), "#", "tabindex" => "-1"
-                %li= link_to raw("<i class=\"icon-off\">&nbsp;</i>#{t :sign_out}"),"#myModal", "tabindex" => "-1", "data-toggle" =>"modal", :id => "sing_out"
+                %li.dropdown
+                  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button", "id"=>"session_menu"}
+                    %i.icon-user
+                    = t :login_as
+                    %b= current_user
+                    %b.caret
+                  %ul.dropdown-menu{"aria-labelledby" => "dLabel", :role => "menu"}
+                    %li= link_to raw("<i class=\"icon-calendar\">&nbsp;</i>#{t('menu.sub_menu.attention_times.my_attention_times')}"), attention_times_daily_attention_times_path, "tabindex" => "-1"
+                    %li= link_to link_to raw("<i class=\"icon-off\">&nbsp;</i>#{t(:sign_out)}"),"#myModal", "tabindex" => "-1", "data-toggle" =>"modal", :id => "sing_out"
