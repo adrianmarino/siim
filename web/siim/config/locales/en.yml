@@ -115,17 +115,21 @@ en:
       medical_history: "Medical History"
     attributes:
       user:
+        photo: "Photo"
         first_name: "Firstname"
         last_name: "Lastname"
         dni: "DNI"
         email: "Email"
         password: "Password"
+        medical: "Medical"
         sex: "Sex"
         address: "Address"
         home_phone: "Home Phone"
         movile_phone: "Movile Phone"
         birthdate: "Birthdate"
         is_medical: "Is Medical"
+        medical_specialization: "Specialization"
+        registration_number: "Registration Number"
       medical:
         cuil: "CUIL"
         dni: "DNI"
@@ -223,6 +227,8 @@ en:
               too_short: "too short"
             confirmation_token:
               invalid: "invalid"
+            dni:
+              taken: "Already exist another user with this DNI"
         medical:
           attributes:
             firstname:
