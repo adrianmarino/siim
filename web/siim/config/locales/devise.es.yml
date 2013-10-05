@@ -55,7 +55,7 @@ es:
                       blank: "Debe ingresar una contraseña."
                   email:
                       taken: "Ya existe un usuario con este mail."
-                      blank: "Debe ingresar una correo electrónico."
+                      blank: "Debe ingresar un correo electrónico"
           user:
               attributes:
                   current_password:
@@ -65,4 +65,4 @@ es:
                       blank: "Debe ingresar una contraseña."
                   email:
                       taken: "Ya existe un usuario con este mail."
-                      blank: "Debe ingresar una correo electrónico."
+                      blank: "Debe ingresar un correo electrónico."

@@ -6,38 +6,24 @@
         Estimado
         %b= @user.first_name
         %b= @user.last_name
-      %br/  
+      %br/
       %p
         Le damos la bienvenida al
-        %b 
-          Sistema Integral de Informacion Medica.
-      %br/
-      %p
-        Para que su ingreso sea mucho mas facil hemos habilitado su email y DNI que podra utilizar indistintamente en el momento de su ingreso al sistema.
-      %br/
-      %p
-        La contraseña sigue siendo la misma para ambos.
-      %br/
+        %b="Sistema Integral de Informacion Medica."
+      %p="Para que su ingreso sea mucho mas facil hemos habilitado su email y DNI que podra utilizar indistintamente en el momento de su ingreso al sistema."
+      %p="La contraseña sigue siendo la misma para ambos."
       %dl
         %dt
-          %b 
-            e-mail:
+          %b="E-mail:"
           = @user.email
         %dt
-          %b 
-            DNI:
+          %b="DNI:"
           = @user.dni
-        %br/
         %dt
-          %b 
-            Password:
+          %b="Password:"
           = @user.password
       %br/
-      %p
-        Recuerde que su password es temporal y debera cambiarlo al ingresar al sistema.
+      %p="Recuerde que su password es temporal y debera cambiarlo al ingresar al sistema."
+      %p="Si tiene problemas para ingresar a su cuenta envíenos un mail a esta dirección: siim.bambusolutions@gmail.com"
       %br/
-      %p
-        Si tiene problemas para ingresar a su cuenta envíenos un mail a esta dirección: siim.bambusolutions@gmail.com
-      %br/
-      %p
-        Saludos.-
+      %p="Saludos.-"

@@ -34,7 +34,6 @@ class User < ActiveRecord::Base
   attr_accessor :login
   attr_accessor :photo, :_destroy
 
-  
   # -------------------------------------------------------------------------
   # Authorization Attributes...
   # -------------------------------------------------------------------------
@@ -44,7 +43,8 @@ class User < ActiveRecord::Base
   # -------------------------------------------------------------------------
   # Validations...
   # -------------------------------------------------------------------------
-  validates :first_name, :last_name,:dni,:email, :presence => true
+  validates :first_name, :last_name, :dni,:email, :presence => true
+  validates :dni, :uniqueness => true
 
   # -------------------------------------------------------------------------
   # Associations...
