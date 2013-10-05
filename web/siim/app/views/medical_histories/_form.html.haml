@@ -34,7 +34,7 @@
         %li
           %a{:href => "#vaccines-panel", 'data-toggle' => 'tab'}= section :vaccines
         %li
-          %a{:href => "#consultations-panel", 'data-toggle' => 'tab'}= contacts_section
+          %a{:href => "#contacts-panel", 'data-toggle' => 'tab'}= contacts_section
       %div.tab-content
         %div#consultations-panel.tab-pane.active
           = render :partial => 'consultations_form', :locals => {:form => a_form}
@@ -50,7 +50,7 @@
           = render :partial => 'allergies_form', :locals => {:form => a_form}
         %div#vaccines-panel.tab-pane
           = render :partial => 'vaccines_form', :locals => {:form => a_form}
-        %div#consultations-panel.tab-pane
+        %div#contacts-panel.tab-pane
           = render :partial => 'contacts_form', :locals => {:form => a_patient_form}
     .form-actions
       = back_button list_path
