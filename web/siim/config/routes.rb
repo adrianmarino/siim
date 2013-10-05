@@ -1,4 +1,6 @@
 Siim::Application.routes.draw do
+  get "manager_users/index"
+
   mount Core::Engine, at: "/core"
 
   root :to => "home#index"
@@ -14,6 +16,7 @@ Siim::Application.routes.draw do
     :users => 'users'
   }, :controllers => { :sessions => "sessions" }
 
+  resources :users
   resources :medicals
   resources :medical_specializations
   resources :medical_histories do
