@@ -1,30 +1,29 @@
--# encoding: utf-8
 = nested_form_for @user, :html => { :class => 'well form-horizontal', :multipart => true } do |f|
   = errors
-  %fieldset
-    %div
-      .control-group
-        .controls= show_photo @user.photo.url :medium
-      = photo_field f, :photo, :user
-      = nested_text f, :first_name
-      = nested_text f, :last_name
-      = nested_text f, :dni      
-      = nested_select_box f, :sex, sex_values
-      = nested_datepicker f, :birthdate
-      = nested_mail  f, :email
-      = nested_text f, :address
-      = nested_text f, :home_phone
-      = nested_text f,:movile_phone
-      = nested_text f,:password
- 
-    %div 
-      .control-group
-        = f.label t('activerecord.attributes.user.medical'), :class => 'control-label'
-        .controls
-          = f.check_box :is_medical, {}, 1, 0
-
-    %div#divMedical.hide 
-      = render :partial => 'medical', :locals => {:form => f};
+  %fieldset.user-form
+    .row-fliud
+      .span5
+        = nested_text f, :dni
+        = nested_mail  f, :email
+        = nested_text f,:password
+        = nested_text f, :first_name
+        = nested_text f, :last_name
+        = nested_select_box f, :sex, sex_values
+        = nested_datepicker f, :birthdate
+        = nested_text f, :address
+        = nested_text f, :home_phone
+        = nested_text f,:movile_phone
+      .span5
+        .control-group
+          .controls= show_photo @user.photo.url :medium
+        = photo_field f, :photo, :user
+        %div
+          .control-group
+            = f.label t('activerecord.attributes.user.medical'), :class => 'control-label'
+            .controls
+              = f.check_box :is_medical, {}, 1, 0
+        %div#divMedical.hide 
+          = render :partial => 'medical', :locals => {:form => f};
 
   .form-actions
     = back_button list_path

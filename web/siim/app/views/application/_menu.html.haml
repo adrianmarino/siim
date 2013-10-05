@@ -16,7 +16,7 @@
                 %b.caret
               %ul.dropdown-menu
                 %li= link_to t('menu.sub_menu.attention_times.assignment'), attention_times_setup_search_path, "tabindex" => "-1"
-                -# %li= link_to t('menu.sub_menu.attention_times.my_attention_times'), attention_times_daily_attention_times_path, "tabindex" => "-1"
+                %li= link_to t('menu.sub_menu.attention_times.my_attention_times'), attention_times_daily_attention_times_path, "tabindex" => "-1"
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
                 %i.icon-signal=" #{t 'menu.statistics'}"
