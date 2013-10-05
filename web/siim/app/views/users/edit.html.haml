@@ -1,6 +1,6 @@
 -# encoding: utf-8
 = nested_form_for @user, :html => { :class => 'well form-horizontal', :multipart => true } do |f|
-  = nested_errors ['patient.photo']
+  = errors
   %fieldset
     %div
       .control-group
