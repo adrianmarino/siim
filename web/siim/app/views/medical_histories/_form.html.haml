@@ -1,22 +1,28 @@
 -# encoding: utf-8
 = nested_form_for @medical_history, :html => { :class => 'well form-horizontal', :multipart => true } do |a_form|
   = nested_errors ['patient.photo']
+  %legend="Paciente"
   = a_form.fields_for :patient do |a_patient_form|
-    .control-group
-      .controls= show_photo @medical_history.patient.photo.url :medium
-    = photo_field       a_patient_form, :photo, :patient
-    = nested_text       a_patient_form, :dni, :patient
-    = nested_text       a_patient_form, :firstname, :patient
-    = nested_text       a_patient_form, :lastname, :patient
-    = nested_datepicker a_patient_form, :birthdate, :patient
-    = nested_select_box a_patient_form, :blood_type, blood_types, :patient
-    = nested_number     a_patient_form, :height, :patient, :patient_height
-    = nested_number     a_patient_form, :weight, :patient, :patient_weight
-    = nested_select_box a_patient_form, :sex, sex_values, :patient
-    = nested_text       a_patient_form, :address, :patient
-    = nested_mail       a_patient_form, :email, :patient
-    = nested_text       a_patient_form, :home_phone, :patient
-    = nested_text       a_patient_form, :movile_phone, :patient
+    .patient-form
+      .row-fluid
+        .span4
+          = nested_text       a_patient_form, :dni, :patient
+          = nested_text       a_patient_form, :firstname, :patient
+          = nested_text       a_patient_form, :lastname, :patient
+          = nested_datepicker a_patient_form, :birthdate, :patient
+          = nested_select_box a_patient_form, :sex, sex_values, :patient
+          = nested_text       a_patient_form, :address, :patient
+        .span5
+          = nested_mail       a_patient_form, :email, :patient
+          = nested_text       a_patient_form, :home_phone, :patient
+          = nested_text       a_patient_form, :movile_phone, :patient
+          = nested_select_box a_patient_form, :blood_type, blood_types, :patient
+          = nested_number     a_patient_form, :height, :patient, :patient_height
+          = nested_number     a_patient_form, :weight, :patient, :patient_weight
+        .span3
+          = show_photo @medical_history.patient.photo.url :medium
+          = a_patient_form.file_field :photo, :title => t('photo.title'), :class => :patient_photo_button
+
     %div.tabbable
       %ul.nav.nav-tabs
         %li.active
