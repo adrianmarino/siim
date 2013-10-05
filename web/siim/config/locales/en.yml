@@ -227,6 +227,8 @@ en:
               too_short: "too short"
             confirmation_token:
               invalid: "invalid"
+            dni:
+              taken: "Already exist another user with this DNI"
         medical:
           attributes:
             firstname:

@@ -244,6 +244,8 @@ es:
               too_short: "muy corta"
             confirmation_token:
               invalid: "invalido"
+            dni:
+              taken: "Ya existe un usuario con este DNI"
         medical:
           attributes:
             firstname:
