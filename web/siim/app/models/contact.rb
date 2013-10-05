@@ -8,5 +8,5 @@ class Contact < ActiveRecord::Base
   # -------------------------------------------------------------------------
   # Associations...
   # -------------------------------------------------------------------------
-  belongs_to :patinent
+  belongs_to :patient
 end

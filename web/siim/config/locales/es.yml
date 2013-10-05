@@ -67,10 +67,11 @@ es:
       user:
         not_found_in_database: "El usuario no se encuentra registrado!"
 
+  user_profile: "Perfil del Usuario"
   change_your_password: "Cambie su contraseña"
   new_password: "Nueva contraseña"
   confirm_new_password: "Confirmar nueva contraseña"
-  change_my_password: "Cambiar mi contraseña"
+  change_my_password: "Cambiar contraseña"
   welcome: "Bienvenido"
   confirm_my_account: "Confirmar mi cuenta"
   confirm_password_mail_body: "Puede confirmar su cuenta a través del siguiente enlace:"
@@ -82,10 +83,11 @@ es:
   if_you_didnt_request_this_please_ignore_this_email: "Si usted no solicitó, por favor ignore este mensaje."
   your_password_wont_change_until_you_access_the_link: "Su contraseña no va a cambiar hasta que acceda al enlace anterior y cree uno nuevo."
   resend_confirmation_instructions: "Volver a enviar las instrucciones de confirmación"
+  inscription_at_integral_system_medical_information: "Inscripcion al Sistema Integral de Informacion Medica"
   current_password: "Contraseña actual"
   update: "Actualizar"
   edit: "Editar"
-  back: "Atrás"
+  back: "Atrás" 
   resend_unlock_instructions: "Volver a enviar las instrucciones de desbloqueo"
   cancel_my_account: "Cancelar mi cuenta"
   password_clarification: "(Dejelo en blanco si no desea cambiarlo)"
@@ -129,11 +131,21 @@ es:
       attention_time: "Turno"
     attributes:
       user:
+        photo: "Foto"
         first_name: "Nombre"
         last_name: "Apellido"
         dni: "DNI"
         email: "Correo electrónico"
         password: "Contraseña"
+        medical: "Medico"
+        sex: "Sexo"
+        address: "Direccion"
+        home_phone: "Teléfono Fijo"
+        movile_phone: "Teléfono Movil"
+        birthdate: "Fecha de Nacimiento"
+        is_medical: "Es Medico?"
+        medical_specialization: "Especialidad"
+        registration_number: "Numero de Matricula"
       medical:
         cuil: "CUIL"
         dni: "DNI"
@@ -144,6 +156,7 @@ es:
         home_phone: "Teléfono Fijo"
         movile_phone: "Teléfono Movil"
         medical_specialization: "Especialidad"
+        registration_number: "Numero de Matricula"
       medical_specialization:
         name: "Nombre"
       medical_history:
@@ -333,6 +346,11 @@ es:
       edit: "Editar Historia Médica"
       show: "Detalle de Historia Médica"
       list: "Historias Médicas"
+    user:
+      new: "Nuevo Usuario"
+      edit: "Editar Usuario"
+      show: "Detalle de Usuario"
+      list: "Usuarios"
     attention_time:
       search: "Asignación de Turnos"
   helpers:
@@ -345,6 +363,9 @@ es:
     administration: "Administración"
     medical_specializations: "Especializaciones Medicas"
     medical_histories: "Historias Médicas"
+    users: "Usuarios"
+    managerUsers: "Administrar usuarios"
+    confProfiles: "Configurar Perfiles"
     attention_times: "Turnos"
     sub_menu:
       attention_times:

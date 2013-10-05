@@ -14,7 +14,7 @@ class Patient < ActiveRecord::Base
     :medical_history, :medical_history_id, :contacts, :contacts_attributes,
     :photo, :photo_content_type, :photo_file_size, :photo_file_name, :_destroy
 
-  attr_accessor :photo, :_destroy
+  attr_accessor :photo, :photo_content_type, :photo_file_size, :_destroy
 
   # -------------------------------------------------------------------------
   # Associations...
