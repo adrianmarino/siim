@@ -7,7 +7,8 @@ class Medical < ActiveRecord::Base
   attr_accessible :cuil, :dni, :email, :firstname, :lastname,
     :home_phone, :movile_phone, :medical_specialization,
     :medical_specialization_id, :attention_periods, 
-    :attention_time_length_hour, :attention_time_length_minutes, :user, :user_id, :registration_number
+    :attention_time_length_hour, :attention_time_length_minutes, :user,
+    :user_id, :registration_number
 
   # -------------------------------------------------------------------------
   # Associations...
