@@ -387,3 +387,7 @@ en:
     reserve_attention_time:
       title: "Select a patient"
       back: "Back"
+  page:
+    error:
+      505:
+        description: "We're sorry, but something went wrong."

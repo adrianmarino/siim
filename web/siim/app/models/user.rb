@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
   # Authorization Attributes...
   # -------------------------------------------------------------------------
   devise :database_authenticatable, :recoverable, :rememberable, :trackable,
-   :validatable, :token_authenticatable
+   :validatable, :token_authenticatable, :registerable
 
   # -------------------------------------------------------------------------
   # Validations...
@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
   # Associations...
   # -------------------------------------------------------------------------
   has_many :medical
-  has_attached_file :photo, :styles => {:medium => "200x200>"}, 
+  has_attached_file :photo, :styles => {:small => "45x45>", :medium => "200x200>"}, 
     :default_url => "images/photo.png", :url  => "/assets/patients/:id/:style/:basename.:extension", 
     :path => ":rails_root/public/assets/patients/:id/:style/:basename.:extension"
 
