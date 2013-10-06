@@ -413,3 +413,7 @@ es:
     reserve_attention_time:
       title: "Seleccione un paciente"
       back: "Volver"
+  page:
+    error:
+      505:
+        description: "Lo sentimos, pero algo salió mal."

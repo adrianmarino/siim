@@ -80,5 +80,10 @@ function RelatedSelectTag(aSelectId, anAllOption) {
 		a_this = this;
 		aParent.tag().change(function(){a_this.updateFrom(aParent)});
 	};
+
+	this.selectOptionWithValue = function(aValue) {
+		if(aValue.length > 0)
+			this.tag().val(aValue);
+	}
 }
 

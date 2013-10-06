@@ -3,61 +3,53 @@ class AttentionTimeController  < ApplicationController
 	# Public Request Methods...
 	# -------------------------------------------------------------------------
 	def setup_search
-		prepare_form
+		@form = new_form
 		render attention_times_setup_search_path
 	end
 
 	def search
-		prepare_form
-		helper = request_helper
-
-		@attention_times = AttentionTime.find specialization: helper.specialization_param,
-																					medical: helper.medical_param,
-																					patient: helper.patient_param,
-																					state: helper.state_param,
-																					from: helper.from_param,
-																					to: helper.to_param
+		@form = new_form
+		@attention_times = AttentionTime.find specialization: @form.specialization_model,
+																					medical: @form.medical_model,
+																					patient: @form.patient_model,
+																					state: @form.state,
+																					from: @form.from_date,
+																					to: @form.to_date
 		render attention_times_setup_search_path
 	end
 
 	def liberate
-		attention_time = request_helper.attention_time_param
-		if not attention_time.nil?
-			attention_time.liberate!
-			attention_time.save
+		appointment = request_helper.appointment
+
+		if not appointment.nil?
+			appointment.liberate!
+			appointment.save
 		end
-		redirect_to attention_times_setup_search_path
+
+		search
 	end
 
 	def reserve
-		attention_time = request_helper.attention_time_param
-		if not attention_time.nil?
-			attention_time.reserve!
-			attention_time.patient = request_helper.patient_param
-			attention_time.save
+		helper = request_helper
+		appointment = helper.appointment
+
+		if not appointment.nil?
+			appointment.reserve!
+			appointment.patient = helper.appointment_patient
+			appointment.save
 		end
-		redirect_to attention_times_setup_search_path
+		search
 	end
 
 	# -------------------------------------------------------------------------
 	# Private Methods...
 	# -------------------------------------------------------------------------
 	private
-	def to_date
-		last_time = AttentionTime.last
-		last_time.nil? ? Date.today : last_time.to_date
-	end
-
-	def prepare_form
-		@specializations = MedicalSpecialization.all.sort
-		@medicals = Medical.all
-		@patients = Patient.all
-		@states = AttentionTime.all_states
-		@from = Date.today
-		@to = to_date
-	end
-
 	def request_helper
-		AttentionTimeRequestHelper.new params, logger
+		AttentionTimeRequestHelper.new params
+	end
+
+	def new_form
+		AttentionTimeForm.new params
 	end
 end

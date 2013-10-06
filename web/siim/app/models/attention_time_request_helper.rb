@@ -2,76 +2,84 @@ class AttentionTimeRequestHelper
 	# -------------------------------------------------------------------------
 	# Public Methods...
 	# -------------------------------------------------------------------------
+	def specialization
+		specialization_param.empty? ? nil : MedicalSpecialization.find(specialization_param)
+	end
+
+	def medical
+		medical_param.empty? ? nil : Medical.find(medical_param)
+	end
+
+	def patient
+		patient_param.empty? ? nil : Patient.find(patient_param)
+	end
+
+	def from(a_default_value)
+		from_param.empty? ? a_default_value : from_param.to_date
+	end
+
+	def to(a_default_value)
+		to_param.empty? ? a_default_value : to_param.to_date
+	end
+
+	def appointment
+		appointment_param.empty? ? nil : AttentionTime.find_by_id(appointment_param)
+	end
+
+	def appointment_patient
+		appointment_patient_param.empty? ? nil : Patient.find(appointment_patient_param)
+	end
+
 	def specialization_param
-		log_specialization_param
-		@params[:specialization] == "all" ? nil : MedicalSpecialization.find(@params[:specialization])
+		param_is_empty?(:specialization) ? EMPTY : @params[:specialization]
 	end
 
 	def medical_param
-		log_medical_param
-		@params[:medical] == "all" ? nil : Medical.find(@params[:medical])
+		param_is_empty?(:medical) ? EMPTY : @params[:medical]
 	end
 
 	def patient_param
-		log_patient_param
-		@params[:patient] == "all" ? nil : Patient.find(@params[:patient])
+		param_is_empty?(:patient) ? EMPTY : @params[:patient]
+	end
+
+	def appointment_patient_param
+		param_is_empty?(:appointment_patient) ? EMPTY : @params[:appointment_patient]
+	end
+
+	def appointment_param
+		param_is_empty?(:appointment) ? EMPTY : @params[:appointment]
 	end
 
 	def state_param
-		@params[:state]
+		param_is_empty?(:state) ? EMPTY : @params[:state]
 	end
 
 	def from_param
-		log_from_param
-		@params[:from].nil? ? nil : @params[:from].to_date
+		param_is_empty?(:from) ? EMPTY : @params[:from]
 	end
 
 	def to_param
-		log_to_param
-		@params[:to].nil? ? nil : @params[:to].to_date
-	end
-
-	def attention_time_param
-		log_attention_time_param
-		@params[:attention_time].nil? ? nil : AttentionTime.find_by_id(@params[:attention_time].to_i)
+		param_is_empty?(:to) ? EMPTY : @params[:to]
 	end
 
 	# -------------------------------------------------------------------------
 	# Private Methods...
 	# -------------------------------------------------------------------------
 	private
-	def log_attention_time_param
-		log_param "Attention Time" ,@params[:attention_time]
+	def param_is_empty?(a_param)
+		[nil,EMPTY,ALL].include? @params[a_param]
 	end
 
-	def log_from_param
-		log_param "From" ,@params[:from]
-	end
-
-	def log_to_param
-		log_param "To" ,@params[:to]
-	end
-
-	def log_patient_param
-		log_param "Patient" ,@params[:patient]
-	end
-
-	def log_medical_param
-		log_param "Medical" ,@params[:medical]
-	end
-
-	def log_specialization_param
-		log_param "Specialization" ,@params[:specialization]
-	end
-
-	def log_param(a_name,a_value)
-		@logger.info "#{a_name} Param: #{a_value}"
-	end
 	# -------------------------------------------------------------------------
 	# Initialize...
 	# -------------------------------------------------------------------------
-	def initialize(params, logger)
+	def initialize(params)
 		@params = params
-		@logger = logger
 	end
+
+	# ----------------------------------------------------------------------------
+	# Constants
+	# ----------------------------------------------------------------------------
+	EMPTY = ""
+	ALL = "all"
 end
