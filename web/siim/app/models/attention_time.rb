@@ -109,8 +109,8 @@ class AttentionTime < ActiveRecord::Base
   end
 
   def self.time_range(a_from, a_to)
-    from = a_from != nil ? a_from - 1.day: Time.new(1900,1,1)
-    to = a_to != nil ? a_to + 1.day: Time.new(3000,1,1)
+    from = a_from != nil ? a_from : Time.new(1900,1,1)
+    to = a_to != nil ? a_to : Time.new(3000,1,1)
     from..to
   end
 end
