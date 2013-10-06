@@ -5,39 +5,52 @@
 			%legend=t 'title.attention_time.search'
 			.row-fluid
 				.span3.attention_time_search_column
+					="Specialization: #{@form.specialization}"
 					%label{:for => :specialization}=translate_attribute :attention_time, :medical_specialization
-					- options = options_for_select([ [t("form.select.all.fame"), "all"] ], "all")
-					- options << options_from_collection_for_select(@specializations,:id,:to_s)
+					- options = options_for_select([ [t("form.select.all.fame"), @form.specialization]])
+					- options << options_from_collection_for_select(@form.specializations,:id, :to_s, @form.specialization)
 					= select_tag :specialization, options, :class => :attention_time_search_select
 				.span3.attention_time_search_column
+					="Medical: #{@form.medical}"
 					%label{:for => :medical}=translate_attribute :attention_time, :medical
 					= select_tag :medical, options_for_select([ [t("form.select.all.male")], "all"]), :class => :attention_time_search_select
 				.span3.attention_time_search_column
+					="Patient: #{@form.patient}"
 					%label{:for => :patient}=translate_attribute :attention_time, :patient
-					- patient_options = options_for_select([ [t("form.select.all.male"), "all"] ], "all")
-					- patient_options << options_from_collection_for_select(@patients,:id,:to_s)
+					- patient_options = options_for_select([ [t("form.select.all.male"), "all"] ], @form.patient)
+					- patient_options << options_from_collection_for_select(@form.patients,:id,:to_s, @form.patient)
 					= select_tag :patient, patient_options, :class => :attention_time_search_select
 				.span3.attention_time_search_column
+					="State: #{@form.state}"
 					%label{:for => :state}=translate_attribute :attention_time, :state
-					- options = @states.collect {|a_state| [t("attention_time.state.#{a_state}"),a_state]}
-					- options = options_for_select(options)
+					- options = @form.states.collect {|a_state| [t("attention_time.state.#{a_state}"),a_state]}
+					- options = options_for_select(options, selected: @form.state)
 					= select_tag :state, options, :class => :attention_time_search_select
 			.row-fluid.attention_time_search_row
 				.span3
+					="From: #{@form.from}"
 					%label{:for=>:from}=t "form.date.from"
 					.input-prepend.date#datepicker
 						%spam.add-on
 							%i.icon-calendar
-						%input#from{:name => :from, :type=>:text, :value => "#{@from}", "data-behaviour"=>"datepicker", "language" => "es", :class => "attention_time_search_date"}
+						%input#from{:name => :from, :type=>:text, :value => "#{@form.from}", "data-behaviour"=>"datepicker", "language" => "es", :class => "attention_time_search_date"}
 				.span3
+					="To: #{@form.to}"
 					%label{:for=>:to}=t "form.date.to"
 					.input-prepend.date#datepicker
 						%spam.add-on
 							%i.icon-calendar
-						%input#to{:name => :to, :type=>:text, :value => "#{@to}", "data-behaviour"=>"datepicker", "language" => "es", :class => "attention_time_search_date"}
+						%input#to{:name => :to, :type=>:text, :value => "#{@form.to}", "data-behaviour"=>"datepicker", "language" => "es", :class => "attention_time_search_date"}
 			.row-fluid.search-btn
-				.span2= submit_tag t("attention_time.search"), :class => "btn btn-primary"
+				.span2
+					= submit_tag t("attention_time.search"), :class => "btn btn-primary"
+					= link_to "Limpiar" , attention_times_setup_search_path, :class => "btn"
 
+		:javascript
+			$(document).ready(function() {
+				medicalSelect.selectOptionWithValue("#{@form.medical}");
+			});
+			
 	- if not @attention_times.nil?
 		%legend=t 'attention_time.results'
 		%table#attention_time_list.table.table-striped.table-bordered{:border => "0", :cellpadding => "0", :cellspacing => "0"}
@@ -64,15 +77,17 @@
 									= link_to raw("<i class=\"icon-minus-sign\">&nbsp;</i>#{t 'attention_time.action.liberate'}"), "#", :class => "btn btn-small disabled"
 								- else
 									= link_to raw("<i class=\"icon-plus-sign\">&nbsp;</i>#{t 'attention_time.action.reserve'}") , "#", :class => "btn btn-small disabled"
-									= link_to raw("<i class=\"icon-minus-sign\">&nbsp;</i>#{t 'attention_time.action.liberate'}") , attention_times_liberate_path( :attention_time => an_attention_time.id), :method => :post, :class => "btn btn-small", data: { confirm: t(:confirm) }
+									- arguments = @form.fields.merge({:appointment => an_attention_time.id})
+									= link_to raw("<i class=\"icon-minus-sign\">&nbsp;</i>#{t 'attention_time.action.liberate'}") , attention_times_liberate_path(arguments), :method => :post, :class => "btn btn-small", data: { confirm: t(:confirm) }
 								.modal.modal-small.hide{:id=>"reserve_modal_#{an_attention_time.id}"}
 									.modal-header
 										%button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} x
 										%h3=t "form.reserve_attention_time.title"
 									.modal-body
-										= form_tag :attention_times_reserve, :id => "reserve_form_#{an_attention_time.id}" do
-											= hidden_field_tag :attention_time, an_attention_time.id
-											= select_tag :patient, options_from_collection_for_select(@patients,:id,:to_s), :class => :reserve_patient_select
+										- arguments = @form.fields.merge({:appointment => an_attention_time.id})
+										= form_tag attention_times_reserve_path(arguments), :id => "reserve_form_#{an_attention_time.id}" do
+											= hidden_field_tag :appointment, an_attention_time.id
+											= select_tag :appointment_patient, options_from_collection_for_select(@form.patients,:id,:to_s), :class => :reserve_patient_select
 									.modal-footer
 										= link_to t('form.reserve_attention_time.back'), "#", :class => "btn", "data-dismiss" => "modal"
 										= submit_tag t('attention_time.action.reserve'), :id => "submit_reserve_form_#{an_attention_time.id}", :class => "btn btn-primary"
