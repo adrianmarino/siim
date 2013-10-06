@@ -1,0 +1,99 @@
+- content_for :content do
+	- javascript "javascripts/dinamic_medicals"
+	.form-top
+		= form_tag :appointments_search, :class=> 'well form-horizontal' do
+			%legend=t 'title.appointment.search'
+			.row-fluid
+				.span3.appointment_search_column
+					="Specialization: #{@form.specialization}"
+					%label{:for => :specialization}=translate_attribute :appointment, :medical_specialization
+					- options = options_for_select([ [t("form.select.all.fame"), @form.specialization]])
+					- options << options_from_collection_for_select(@form.specializations,:id, :to_s, @form.specialization)
+					= select_tag :specialization, options, :class => :appointment_search_select
+				.span3.appointment_search_column
+					="Medical: #{@form.medical}"
+					%label{:for => :medical}=translate_attribute :appointment, :medical
+					= select_tag :medical, options_for_select([ [t("form.select.all.male")], "all"]), :class => :appointment_search_select
+				.span3.appointment_search_column
+					="Patient: #{@form.patient}"
+					%label{:for => :patient}=translate_attribute :appointment, :patient
+					- patient_options = options_for_select([ [t("form.select.all.male"), "all"] ], @form.patient)
+					- patient_options << options_from_collection_for_select(@form.patients,:id,:to_s, @form.patient)
+					= select_tag :patient, patient_options, :class => :appointment_search_select
+				.span3.appointment_search_column
+					="State: #{@form.state}"
+					%label{:for => :state}=translate_attribute :appointment, :state
+					- options = @form.states.collect {|a_state| [t("appointment.state.#{a_state}"),a_state]}
+					- options = options_for_select(options, selected: @form.state)
+					= select_tag :state, options, :class => :appointment_search_select
+			.row-fluid.appointment_search_row
+				.span3
+					="From: #{@form.from}"
+					%label{:for=>:from}=t "form.date.from"
+					.input-prepend.date#datepicker
+						%spam.add-on
+							%i.icon-calendar
+						%input#from{:name => :from, :type=>:text, :value => "#{@form.from}", "data-behaviour"=>"datepicker", "language" => "es", :class => "appointment_search_date"}
+				.span3
+					="To: #{@form.to}"
+					%label{:for=>:to}=t "form.date.to"
+					.input-prepend.date#datepicker
+						%spam.add-on
+							%i.icon-calendar
+						%input#to{:name => :to, :type=>:text, :value => "#{@form.to}", "data-behaviour"=>"datepicker", "language" => "es", :class => "appointment_search_date"}
+			.row-fluid.search-btn
+				.span2
+					= submit_tag t("appointment.search"), :class => "btn btn-primary"
+					= link_to "Limpiar" , appointments_setup_search_path, :class => "btn"
+
+		:javascript
+			$(document).ready(function() {
+				medicalSelect.selectOptionWithValue("#{@form.medical}");
+			});
+			
+	- if not @appointments.nil?
+		%legend=t 'appointment.results'
+		%table#appointment_list.table.table-striped.table-bordered{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+			%thead.table-header
+				%tr
+					%th="ID"
+					%th=translate_attribute :appointment, :date
+					%th=translate_attribute :appointment, :medical
+					%th=translate_attribute :appointment, :patient
+					%th=translate_attribute :appointment, :state
+					%th.options= t :options
+			%tbody
+				- for an_appointment in @appointments
+					%tr
+						%td=an_appointment.id
+						%td=an_appointment.time.strftime "%d/%m/%Y %H:%M"
+						%td=an_appointment.medical
+						%td=an_appointment.patient
+						%td=t "appointment.state.#{an_appointment.current_state}"
+						%td.options
+							.btn-group
+								- if an_appointment.current_state == :available
+									= link_to raw("<i class=\"icon-plus-sign\">&nbsp;</i>#{t 'appointment.action.reserve'}"), "#reserve_modal_#{an_appointment.id}", :class => "btn btn-small", "data-toggle" =>"modal"
+									= link_to raw("<i class=\"icon-minus-sign\">&nbsp;</i>#{t 'appointment.action.liberate'}"), "#", :class => "btn btn-small disabled"
+								- else
+									= link_to raw("<i class=\"icon-plus-sign\">&nbsp;</i>#{t 'appointment.action.reserve'}") , "#", :class => "btn btn-small disabled"
+									- arguments = @form.fields.merge({:appointment => an_appointment.id})
+									= link_to raw("<i class=\"icon-minus-sign\">&nbsp;</i>#{t 'appointment.action.liberate'}") , appointments_liberate_path(arguments), :method => :post, :class => "btn btn-small", data: { confirm: t(:confirm) }
+								.modal.modal-small.hide{:id=>"reserve_modal_#{an_appointment.id}"}
+									.modal-header
+										%button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} x
+										%h3=t "form.reserve_appointment.title"
+									.modal-body
+										- arguments = @form.fields.merge({:appointment => an_appointment.id})
+										= form_tag appointments_reserve_path(arguments), :id => "reserve_form_#{an_appointment.id}" do
+											= hidden_field_tag :appointment, an_appointment.id
+											= select_tag :appointment_patient, options_from_collection_for_select(@form.patients,:id,:to_s), :class => :reserve_patient_select
+									.modal-footer
+										= link_to t('form.reserve_appointment.back'), "#", :class => "btn", "data-dismiss" => "modal"
+										= submit_tag t('appointment.action.reserve'), :id => "submit_reserve_form_#{an_appointment.id}", :class => "btn btn-primary"
+									:javascript
+										$('#submit_reserve_form_#{an_appointment.id}').on('click', function(e){
+											$('#reserve_form_#{an_appointment.id}').submit();
+										});
+
+= render :file => 'layouts/application'

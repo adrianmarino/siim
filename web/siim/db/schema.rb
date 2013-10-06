@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130915012910) do
+ActiveRecord::Schema.define(:version => 20131006230101) do
 
   create_table "allergies", :force => true do |t|
     t.string   "cause"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(:version => 20130915012910) do
     t.integer  "medical_history_id"
   end
 
+  create_table "appointments", :force => true do |t|
+    t.datetime "time"
+    t.string   "state"
+    t.integer  "patient_id"
+    t.integer  "medical_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "attention_periods", :force => true do |t|
     t.integer  "begin_hour"
     t.integer  "begin_minutes"
@@ -38,15 +47,6 @@ ActiveRecord::Schema.define(:version => 20130915012910) do
     t.integer  "medical_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-  end
-
-  create_table "attention_times", :force => true do |t|
-    t.datetime "time"
-    t.string   "state"
-    t.integer  "patient_id"
-    t.integer  "medical_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "consultations", :force => true do |t|
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(:version => 20130915012910) do
   end
 
   create_table "medicals", :force => true do |t|
-    t.string  "registration_number",       :limit => nil
+    t.string  "registration_number"
     t.integer "user_id"
     t.string  "cuil",                          :default => "", :null => false
     t.string  "dni",                           :default => "", :null => false

@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :attention_time do
+  factory :appointment do
 		association :patient, factory: :patient, strategy: :build
 
 

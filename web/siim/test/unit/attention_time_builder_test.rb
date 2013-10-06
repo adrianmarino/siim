@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class AttentionTimeBuilderTest < ActiveSupport::TestCase
-	include AttentionTimeAssertions
+	include AppointmentAssertions
 	# -------------------------------------------------------------------------
 	# Test Methods...
 	# -------------------------------------------------------------------------
@@ -18,7 +18,7 @@ class AttentionTimeBuilderTest < ActiveSupport::TestCase
 		# Assert...
 		times.each do |a_time|
 			periods = a_time.medical_attention_periods_on_same_day
-			assert_attention_time_is_included_on_any_period a_time, periods
+			assert_appointment_is_included_on_any_period a_time, periods
 		end
 	end
 

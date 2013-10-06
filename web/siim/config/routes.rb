@@ -31,12 +31,11 @@ Siim::Application.routes.draw do
   end
 
   get '/assets/javascripts/dinamic_medicals', to: 'javascripts#dinamic_medicals'
-  get '/attention_times/setup_search', to: 'attention_time#setup_search'
-  post '/attention_times/liberate', to: 'attention_time#liberate'
-  post '/attention_times/reserve', to: 'attention_time#reserve'
-
-  post '/attention_times/search', to: 'attention_time#search'
-  get '/attention_times/daily_attention_times', to: 'attention_time#daily_attention_times'
+  get '/appointments/setup_search', to: 'appointment#setup_search'
+  post '/appointments/liberate', to: 'appointment#liberate'
+  post '/appointments/reserve', to: 'appointment#reserve'
+  post '/appointments/search', to: 'appointment#search'
+  get '/appointments/daily_appointments', to: 'appointment#daily_appointments'
 
   get '/statistics/setup_simptom', to: 'statistic#setup_simptom'
   post '/statistics/perform_simptom', to: 'statistic#perform_simptom'
