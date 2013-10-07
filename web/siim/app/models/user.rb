@@ -15,6 +15,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def is_medical?
+    not self.medical.nil?
+  end
+
   # -------------------------------------------------------------------------
   # Private Methods
   # -------------------------------------------------------------------------

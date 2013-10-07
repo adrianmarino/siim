@@ -39,9 +39,15 @@ class AppointmentController < ApplicationController
 			appointment.save
 		end
 		search
-	end
+  end
 
-	# -------------------------------------------------------------------------
+  def my_appointments
+    redirect_to(root_path) unless current_user.is_medical?
+    @appointments = Appointment.find_today_by_medical current_user.medical
+    render appointments_my_appointments_path
+  end
+
+  # -------------------------------------------------------------------------
 	# Private Methods...
 	# -------------------------------------------------------------------------
 	private

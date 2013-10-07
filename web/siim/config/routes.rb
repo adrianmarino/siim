@@ -35,7 +35,7 @@ Siim::Application.routes.draw do
   post '/appointments/liberate', to: 'appointment#liberate'
   post '/appointments/reserve', to: 'appointment#reserve'
   post '/appointments/search', to: 'appointment#search'
-  get '/appointments/daily_appointments', to: 'appointment#daily_appointments'
+  get '/appointments/my_appointments', to: 'appointment#my_appointments'
 
   get '/statistics/setup_simptom', to: 'statistic#setup_simptom'
   post '/statistics/perform_simptom', to: 'statistic#perform_simptom'

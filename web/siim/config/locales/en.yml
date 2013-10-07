@@ -368,6 +368,13 @@ en:
       reserved: "Reservec"
       attended: "Attended"
       canceled: "Canceled"
+      finalized: "Finalized"
+    action:
+      reserve: "Reserve"
+      liberate: "Liberate"
+      finalize: "Finalize"
+      attend: "Attend"
+      cancel: "Cancel"
     search: "Search"
 
   form:

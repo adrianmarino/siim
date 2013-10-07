@@ -67,6 +67,15 @@ period_monday_6 = AttentionPeriod.create(
   end_minutes: 0,
   week_day: 1
 )
+
+period_monday_7 = AttentionPeriod.create(
+    begin_hour: 9,
+    begin_minutes: 0,
+    end_hour: 13,
+    end_minutes: 0,
+    week_day: 1
+)
+
 period_friday_7 = AttentionPeriod.create(
   begin_hour: 14, 
   begin_minutes: 0,
@@ -74,7 +83,6 @@ period_friday_7 = AttentionPeriod.create(
   end_minutes: 0,
   week_day: 5
 )
-
 
 period_monday_8 = AttentionPeriod.create(
   begin_hour: 9, 
@@ -118,6 +126,7 @@ period_monday_13 = AttentionPeriod.create(
   end_minutes: 0,
   week_day: 1
 )
+
 period_friday_14 = AttentionPeriod.create(
   begin_hour: 14, 
   begin_minutes: 0,
@@ -164,10 +173,12 @@ Medical.create(
   firstname: "Adrian", 							lastname: "Marino",
   home_phone: "47935551", 					movile_phone: "154487766",
   medical_specialization: pediatra,
-  attention_periods: [period_friday_7],
+  attention_periods: [period_monday_7, period_friday_7],
   attention_time_length_hour: 0,
-  attention_time_length_minutes: 10
+  attention_time_length_minutes: 10,
+  user: user
 )
+
 Medical.create(
   dni: "14042902",									cuil: "20-14042902-2",
   firstname: "Cristian", 						lastname: "Molina",
