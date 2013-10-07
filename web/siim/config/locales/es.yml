@@ -128,7 +128,7 @@ es:
       patient: "Paciente"
       contact: "Contacto"
       medical_history: "Historia Médica"
-      attention_time: "Turno"
+      appointment: "Turno"
     attributes:
       user:
         photo: "Foto"
@@ -221,7 +221,7 @@ es:
         email: "Correo Electrónico"
         home_phone: "Teléfono Fijo"
         movile_phone: "Teléfono Movil"
-      attention_time:
+      appointment:
         medical_specialization: "Especialidad"
         medical: "Medico"
         state: "Estado"
@@ -353,7 +353,7 @@ es:
       edit: "Editar Usuario"
       show: "Detalle de Usuario"
       list: "Usuarios"
-    attention_time:
+    appointment:
       search: "Asignación de Turnos"
   helpers:
     submit:
@@ -368,11 +368,11 @@ es:
     users: "Usuarios"
     managerUsers: "Administrar usuarios"
     confProfiles: "Configurar Perfiles"
-    attention_times: "Turnos"
+    appointments: "Turnos"
     sub_menu:
-      attention_times:
+      appointments:
         assignment: "Asignación de turnos"
-        my_attention_times: "Mis turnos"
+        my_appointments: "Mis turnos"
       statistics:
         simptoms: "Simtomas"
         diseases: "Enfermedades"
@@ -388,7 +388,7 @@ es:
     b_negative: "B -"
     ab_positive: "AB +"
     ab_negative: "AB -"
-  attention_time:
+  appointment:
     state:
       available: "Disponibles"
       reserved: "Reservado"
@@ -410,7 +410,7 @@ es:
       all:
         fame: "Todas"
         male: "Todos"
-    reserve_attention_time:
+    reserve_appointment:
       title: "Seleccione un paciente"
       back: "Volver"
   page:

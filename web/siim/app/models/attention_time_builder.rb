@@ -8,15 +8,15 @@ class AttentionTimeBuilder
 	# Public Methods...
 	# -------------------------------------------------------------------------
 	def build
-		attention_times = []
+		appointments = []
 		each_date_of_range do |a_date|
 			each_medical do |a_medical|
-				each_attention_time(a_medical, a_date) do |a_time|
-					attention_times << AttentionTime.new_available(a_time, a_medical)
+				each_appointment(a_medical, a_date) do |a_time|
+					appointments << Appointment.new_available(a_time, a_medical)
 				end
 			end
 		end
-		attention_times
+		appointments
 	end
 
 	# -------------------------------------------------------------------------
@@ -33,8 +33,8 @@ class AttentionTimeBuilder
 		end
 	end
 
-	def each_attention_time(a_medical, a_date)
-		a_medical.attention_times_on(a_date).each do |a_time|
+	def each_appointment(a_medical, a_date)
+		a_medical.appointments_on(a_date).each do |a_time|
 			yield a_time
 		end
 	end

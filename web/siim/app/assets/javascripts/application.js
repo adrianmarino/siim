@@ -159,8 +159,8 @@ $(document).ready(function() {
             width: '70px'
         });
     }
-    if (existElement('#attention_time_list')) {
-        $('#attention_time_list').dataTable({
+    if (existElement('#appointment_list')) {
+        $('#appointment_list').dataTable({
             "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
             "sPaginationType": "bootstrap",
             "aLengthMenu": [[5, 10, 15, 25, 50, 100], [5, 10, 15, 25, 50, 100]],

@@ -1,4 +1,4 @@
-class AttentionTimeGeneratorTask
+class AppointmentGeneratorTask
 	# -------------------------------------------------------------------------
 	# Public Methods...
 	# -------------------------------------------------------------------------
@@ -19,14 +19,14 @@ class AttentionTimeGeneratorTask
 			sleep 1
 			builder.medicals = medicals
 
-			show_create_attention_times_header
-			attention_times = builder.build
+			show_create_appointments_header
+			appointments = builder.build
 
-			show_save_attention_times_header
+			show_save_appointments_header
 
-			attention_times.each do |a_attention_time| 
-				a_attention_time.save
-				show_attention_time a_attention_time
+			appointments.each do |a_appointment|
+				a_appointment.save
+				show_appointment a_appointment
 			end
 		else
 			show_not_run_process_message
@@ -40,7 +40,7 @@ class AttentionTimeGeneratorTask
 	# -------------------------------------------------------------------------
 	private
 	def last_attetion_date
-		time = AttentionTime.last
+		time = Appointment.last
 		time.nil? ? Date.yesterday : time.to_date
 	end
 
@@ -63,7 +63,7 @@ class AttentionTimeGeneratorTask
 		puts "\s\s------------------------"
 		puts "\s\s-\sAttention Window Size: #{window_size} day/s."
 		puts "\s\s-\sToday: #{today.strftime("%F %H:%M")}."
-		last_time = AttentionTime.last
+		last_time = Appointment.last
 		if last_time.nil?
 			puts "\s\s-\sNo exist previous attention times."
 		else
@@ -97,14 +97,14 @@ class AttentionTimeGeneratorTask
 		puts "\s\s---------------------"
 	end
 
-	def show_create_attention_times_header
+	def show_create_appointments_header
 		puts "\n\s\s-----------------------------"
 		puts "\s| Generate attention times... |"
 		puts "\s\s-----------------------------"
 		sleep 1
 	end
 
-	def show_save_attention_times_header
+	def show_save_appointments_header
 		puts "\n\s\s-------------------------"
 		puts "\s| Save attention times... |"
 		puts "\s\s-------------------------"
@@ -118,7 +118,7 @@ class AttentionTimeGeneratorTask
 		puts "\nEnd Attention times generation...\n"
 	end
 
-	def show_attention_time(attention_time)
-		puts "\s\s-\s#{attention_time}"
+	def show_appointment(appointment)
+		puts "\s\s-\s#{appointment}"
 	end
 end

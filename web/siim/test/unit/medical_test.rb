@@ -28,15 +28,15 @@ class MedicalTest < ActiveSupport::TestCase
 		date = Date.new(2013,1,7)
 
 		# Perform...
-		times = medical.attention_times_by_period_on date
+		times = medical.appointments_by_period_on date
 
 		# Assert...
-		assert_attention_times	times.first, 
-														medical.attention_periods.first.begin_time_on(date),
-														medical.attention_length_time.sum_of_hours_and_minutes_in_seconds
-		assert_attention_times	times.second,
-														medical.attention_periods.second.begin_time_on(date),
-														medical.attention_length_time.sum_of_hours_and_minutes_in_seconds
+		assert_appointments	times.first,
+												medical.attention_periods.first.begin_time_on(date),
+												medical.attention_length_time.sum_of_hours_and_minutes_in_seconds
+		assert_appointments	times.second,
+												medical.attention_periods.second.begin_time_on(date),
+												medical.attention_length_time.sum_of_hours_and_minutes_in_seconds
 	end
 
 	# -------------------------------------------------------------------------
@@ -49,7 +49,7 @@ class MedicalTest < ActiveSupport::TestCase
 			end_hour: end_hour, end_minutes: end_minutes)
 	end
 
-	def assert_attention_times(times, begin_time, attention_length)
+	def assert_appointments(times, begin_time, attention_length)
 		current_time = begin_time
 		times.each do |a_time|
 			assert_equal current_time, a_time

@@ -1,21 +1,21 @@
-class AttentionTimeController  < ApplicationController
+class AppointmentController < ApplicationController
 	# -------------------------------------------------------------------------
 	# Public Request Methods...
 	# -------------------------------------------------------------------------
 	def setup_search
 		@form = new_form
-		render attention_times_setup_search_path
+		render appointments_setup_search_path
 	end
 
 	def search
 		@form = new_form
-		@attention_times = AttentionTime.find specialization: @form.specialization_model,
+		@appointments = Appointment.find specialization: @form.specialization_model,
 																					medical: @form.medical_model,
 																					patient: @form.patient_model,
 																					state: @form.state,
 																					from: @form.from_date,
 																					to: @form.to_date
-		render attention_times_setup_search_path
+		render appointments_setup_search_path
 	end
 
 	def liberate
@@ -46,10 +46,10 @@ class AttentionTimeController  < ApplicationController
 	# -------------------------------------------------------------------------
 	private
 	def request_helper
-		AttentionTimeRequestHelper.new params
+		AppointmentRequestHelper.new params
 	end
 
 	def new_form
-		AttentionTimeForm.new params
+		AppointmentForm.new params
 	end
 end
