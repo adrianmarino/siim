@@ -5,37 +5,31 @@
 			%legend=t 'title.appointment.search'
 			.row-fluid
 				.span3.appointment_search_column
-					="Specialization: #{@form.specialization}"
 					%label{:for => :specialization}=translate_attribute :appointment, :medical_specialization
 					- options = options_for_select([ [t("form.select.all.fame"), @form.specialization]])
 					- options << options_from_collection_for_select(@form.specializations,:id, :to_s, @form.specialization)
 					= select_tag :specialization, options, :class => :appointment_search_select
 				.span3.appointment_search_column
-					="Medical: #{@form.medical}"
 					%label{:for => :medical}=translate_attribute :appointment, :medical
 					= select_tag :medical, options_for_select([ [t("form.select.all.male")], "all"]), :class => :appointment_search_select
 				.span3.appointment_search_column
-					="Patient: #{@form.patient}"
 					%label{:for => :patient}=translate_attribute :appointment, :patient
 					- patient_options = options_for_select([ [t("form.select.all.male"), "all"] ], @form.patient)
 					- patient_options << options_from_collection_for_select(@form.patients,:id,:to_s, @form.patient)
 					= select_tag :patient, patient_options, :class => :appointment_search_select
 				.span3.appointment_search_column
-					="State: #{@form.state}"
 					%label{:for => :state}=translate_attribute :appointment, :state
 					- options = @form.states.collect {|a_state| [t("appointment.state.#{a_state}"),a_state]}
 					- options = options_for_select(options, selected: @form.state)
 					= select_tag :state, options, :class => :appointment_search_select
 			.row-fluid.appointment_search_row
 				.span3
-					="From: #{@form.from}"
 					%label{:for=>:from}=t "form.date.from"
 					.input-prepend.date#datepicker
 						%spam.add-on
 							%i.icon-calendar
 						%input#from{:name => :from, :type=>:text, :value => "#{@form.from}", "data-behaviour"=>"datepicker", "language" => "es", :class => "appointment_search_date"}
 				.span3
-					="To: #{@form.to}"
 					%label{:for=>:to}=t "form.date.to"
 					.input-prepend.date#datepicker
 						%spam.add-on
