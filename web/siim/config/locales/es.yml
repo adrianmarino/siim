@@ -398,6 +398,7 @@ es:
       reserve: "Reservar"
       liberate: "Liberar"
     search: "Buscar"
+    clean: "Limpiar"
     results: "Resultados"
   form:
     date:

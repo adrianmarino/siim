@@ -369,7 +369,8 @@ en:
       attended: "Attended"
       canceled: "Canceled"
     search: "Search"
-
+    clean: "Clean"
+    results: "Results"
   form:
     date:
       from: "From"

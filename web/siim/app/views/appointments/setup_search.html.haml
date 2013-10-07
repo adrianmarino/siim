@@ -37,8 +37,8 @@
 						%input#to{:name => :to, :type=>:text, :value => "#{@form.to}", "data-behaviour"=>"datepicker", "language" => "es", :class => "appointment_search_date"}
 			.row-fluid.search-btn
 				.span2
-					= submit_tag t("appointment.search"), :class => "btn btn-primary"
-					= link_to "Limpiar" , appointments_setup_search_path, :class => "btn"
+					= submit_tag t('appointment.search'), :class => "btn btn-primary"
+					= link_to t('appointment.clean') , appointments_setup_search_path, :class => "btn"
 
 		:javascript
 			$(document).ready(function() {
