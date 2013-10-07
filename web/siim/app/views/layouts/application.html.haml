@@ -24,8 +24,8 @@
       .modal-body
         %p= t :sign_out_question
       .modal-footer
-        %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"}= t :no_
         %a.btn.btn-primary{"data-method" => "delete", :href => "/logout", :rel => "nofollow"}= t :yes_
+        %a.btn{"aria-hidden" => "true", "data-dismiss" => "modal"}= t :no_
 :javascript
   I18n.defaultLocale = "#{I18n.locale}";
   I18n.locale = "#{I18n.locale}";
