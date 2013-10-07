@@ -15,7 +15,7 @@ class Medical < ActiveRecord::Base
   # -------------------------------------------------------------------------
   belongs_to :medical_specialization
   belongs_to :user
-  has_many :consutations
+  has_many :consultations
   has_many :attention_periods
 
   # -------------------------------------------------------------------------
@@ -45,7 +45,7 @@ class Medical < ActiveRecord::Base
     attention_periods.select do |a_period| a_period.week_day == a_date.wday end
   end
 
-  def attention_times_by_period_on(a_date)
+  def appointments_by_period_on(a_date)
     periods = attention_periods_on a_date
     periods.collect do |a_period|
       begin_time = a_period.begin_time_on a_date
@@ -55,8 +55,8 @@ class Medical < ActiveRecord::Base
     end
   end
 
-  def attention_times_on(a_date)
-    self.attention_times_by_period_on(a_date).flatten
+  def appointments_on(a_date)
+    self.appointments_by_period_on(a_date).flatten
   end
 
   def attention_length_time

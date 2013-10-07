@@ -1,4 +1,4 @@
-class AttentionTimeRequestHelper
+class AppointmentRequestHelper
 	# -------------------------------------------------------------------------
 	# Public Methods...
 	# -------------------------------------------------------------------------
@@ -8,7 +8,7 @@ class AttentionTimeRequestHelper
 
 	def medical
 		medical_param.empty? ? nil : Medical.find(medical_param)
-	end
+  end
 
 	def patient
 		patient_param.empty? ? nil : Patient.find(patient_param)
@@ -23,7 +23,7 @@ class AttentionTimeRequestHelper
 	end
 
 	def appointment
-		appointment_param.empty? ? nil : AttentionTime.find_by_id(appointment_param)
+		appointment_param.empty? ? nil : Appointment.find_by_id(appointment_param)
 	end
 
 	def appointment_patient

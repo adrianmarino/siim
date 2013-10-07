@@ -204,7 +204,7 @@ en:
         email: "Email"
         home_phone: "Home phone"
         movile_phone: "Movile phone"
-      attention_time:
+      appointment:
         medical_specialization: "Specialization"
         medical: "Medical"
         state: "State"
@@ -335,7 +335,7 @@ en:
       edit: "Edit Medical History"
       show: "Medical Detail History"
       list: "Medical Histories"
-    attention_time:
+    appointment:
       search: "Attention Time Search"
   menu:
     statistics: "Statistics"
@@ -345,11 +345,11 @@ en:
     medical_histories: "Medical Histories"
     managerUsers: "Manager Users"
     confProfiles: "Configurar Perfiles"
-    attention_times: "Attention Times"
+    appointments: "Attention Times"
     sub_menu:
-      attention_times:
+      appointments:
         assignment: "Assignment"
-        my_attention_times: "My Attention Times"
+        my_appointments: "My Attention Times"
   sex:
     male: "Male"
     female: "Female"
@@ -362,7 +362,7 @@ en:
     b_negative: "B -"
     ab_positive: "AB +"
     ab_negative: "AB -"
-  attention_time:
+  appointment:
     state:
       available: "Available"
       reserved: "Reservec"
@@ -384,7 +384,7 @@ en:
       all:
         fame: "All"
         male: "All"
-    reserve_attention_time:
+    reserve_appointment:
       title: "Select a patient"
       back: "Back"
   page:

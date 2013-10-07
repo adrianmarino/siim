@@ -1,8 +1,8 @@
-module AttentionTimeAssertions
+module AppointmentAssertions
 	# -------------------------------------------------------------------------
 	# Public Methods...
 	# -------------------------------------------------------------------------
-	def assert_attention_time_is_included_on_any_period(a_time, periods)
+	def assert_appointment_is_included_on_any_period(a_time, periods)
 		periods.any? { |a_period| a_period.include? a_time }
 	end
 end

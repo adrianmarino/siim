@@ -1,4 +1,4 @@
-class AttentionTimeForm
+class AppointmentForm
 	# -------------------------------------------------------------------------
 	# Public Methods...
 	# -------------------------------------------------------------------------
@@ -28,7 +28,7 @@ class AttentionTimeForm
 	# -------------------------------------------------------------------------
 	private
 	def requst_helper(params)
-		AttentionTimeRequestHelper.new params
+		AppointmentRequestHelper.new params
 	end
 
 	def is_empty?(a_value)
@@ -42,7 +42,7 @@ class AttentionTimeForm
 		@specializations = MedicalSpecialization.all
 		@medicals = Medical.all
 		@patients = Patient.all
-		@states = AttentionTime.all_states
+		@states = Appointment.all_states
 
 		helper = requst_helper params
 		@specialization = helper.specialization_param
@@ -50,12 +50,12 @@ class AttentionTimeForm
 		@patient = helper.patient_param
 		@state = helper.state_param
 		@from = helper.from(Date.today).to_s
-		@to = helper.to(AttentionTime.last.to_date).to_s
+		@to = helper.to(Appointment.last.to_date).to_s
 
 		@specialization_model = helper.specialization
 		@medical_model = helper.medical
 		@patient_model = helper.patient
 		@from_date = helper.from(Date.today)
-		@to_date = helper.to(AttentionTime.last.to_date)
+		@to_date = helper.to(Appointment.last.to_date)
 	end
 end

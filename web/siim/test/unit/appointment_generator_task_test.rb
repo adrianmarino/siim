@@ -1,24 +1,24 @@
 require 'test_helper'
 
-class AttentionTimeGeneratorTaskTest < ActiveSupport::TestCase
+class AppointmentGeneratorTaskTest < ActiveSupport::TestCase
 	include Assertions
 	# -------------------------------------------------------------------------
 	# Test Methods...
 	# -------------------------------------------------------------------------
 	test "startup medical attention times" do
 		# Prepare...
-		assert AttentionTime.all.empty?
+		assert Appointment.all.empty?
 		assert Medical.all.empty?
 		assert SystemProperty.all.empty?
 		create_clinica_medical
 		FactoryGirl.create :system_property, :window_size_12
-		task = AttentionTimeGeneratorTask.new
+		task = AppointmentGeneratorTask.new
 
 		# Perform...
 		task.run
 
 		# Assert...
-		assert_not_empty AttentionTime.all
+		assert_not_empty Appointment.all
 	end
 
 
