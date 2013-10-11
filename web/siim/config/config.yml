@@ -3,4 +3,4 @@ app:
 mailer:
   password: 'Elnonocapo'
 scheduler:
-  appointment_genetator_task_time: '0 30 * * *'
+  appointment_genetator_task_time: '40 0 * * *'
