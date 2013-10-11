@@ -27,7 +27,7 @@ class AppointmentForm
 	# Private Methods...
 	# -------------------------------------------------------------------------
 	private
-	def requst_helper(params)
+	def request_helper(params)
 		AppointmentRequestHelper.new params
 	end
 
@@ -44,13 +44,13 @@ class AppointmentForm
 		@patients = Patient.all
 		@states = Appointment.all_states
 
-		helper = requst_helper params
+		helper = request_helper params
 		@specialization = helper.specialization_param
 		@medical = helper.medical_param
 		@patient = helper.patient_param
 		@state = helper.state_param
-		@from = helper.from(Date.today).to_s
-		@to = helper.to(Appointment.last.to_date).to_s
+		@from = helper.from(Date.today.at_midnight).strftime("%Y-%m-%d")
+		@to = helper.to(Appointment.last.to_date.at_midnight).strftime("%Y-%m-%d")
 
 		@specialization_model = helper.specialization
 		@medical_model = helper.medical

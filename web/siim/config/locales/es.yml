@@ -58,7 +58,7 @@ es:
   sign_up_as_user: "Regístrate como usuario"
   sign_in_as_user: "Iniciar sesión como usuario"
   token_authentication_example: "Ejemplo de autenticación Token"
-  send_me_reset_password_instructions: "Envíar instrucciones para restablecer mi contraseña"
+  send_me_reset_password_instructions: "Envíar instrucciones"
   devise:
     registrations:
       user:
@@ -392,9 +392,9 @@ es:
     state:
       available: "Disponibles"
       reserved: "Reservado"
+      on_attention: "En Atención"
       attended: "Atendido"
       canceled: "Cancelado"
-      finalized: "Finalizado"
     action:
       reserve: "Reservar"
       liberate: "Liberar"
@@ -421,3 +421,5 @@ es:
     error:
       505:
         description: "Lo sentimos, pero algo salió mal."
+  my_appointments:
+    title: "Mis Turnos"

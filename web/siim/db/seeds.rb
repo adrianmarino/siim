@@ -76,6 +76,30 @@ period_monday_7 = AttentionPeriod.create(
     week_day: 1
 )
 
+period_tuesday_7 = AttentionPeriod.create(
+    begin_hour: 9,
+    begin_minutes: 0,
+    end_hour: 13,
+    end_minutes: 0,
+    week_day: 2
+)
+
+period_wednesday_7 = AttentionPeriod.create(
+    begin_hour: 9,
+    begin_minutes: 0,
+    end_hour: 13,
+    end_minutes: 0,
+    week_day: 3
+)
+
+period_thursday_7 = AttentionPeriod.create(
+    begin_hour: 9,
+    begin_minutes: 0,
+    end_hour: 13,
+    end_minutes: 0,
+    week_day: 4
+)
+
 period_friday_7 = AttentionPeriod.create(
   begin_hour: 14, 
   begin_minutes: 0,
@@ -173,7 +197,7 @@ Medical.create(
   firstname: "Adrian", 							lastname: "Marino",
   home_phone: "47935551", 					movile_phone: "154487766",
   medical_specialization: pediatra,
-  attention_periods: [period_monday_7, period_friday_7],
+  attention_periods: [period_monday_7, period_tuesday_7, period_wednesday_7, period_thursday_7, period_friday_7],
   attention_time_length_hour: 0,
   attention_time_length_minutes: 10,
   user: user
@@ -421,14 +445,14 @@ MedicalExam.create(
 # Attention times...
 # -------------------------------------------------------------------------
 Appointment.create(
-  time: Time.new + 1.days,
+  time: Time.now - 10.days,
   medical: medical_a,
   patient: patient_a,
   state: :reserved
 )
 
 Appointment.create(
-  time: Time.new + 2.days,
+  time: Time.now - 12.days,
   state: :attend,
   medical: medical_a,
   patient: patient_b,
@@ -436,14 +460,14 @@ Appointment.create(
 )
 
 Appointment.create(
-  time: Time.new + 3.days,
+  time: Time.now - 13.days,
   medical: medical_b,
   patient: patient_a,
   state: :reserved
 )
 
 Appointment.create(
-  time: Time.new + 4.days,
+  time: Time.now - 14.days,
   state: :reserved,
   medical: medical_b,
   patient: patient_b,
@@ -451,7 +475,7 @@ Appointment.create(
 )
 
 Appointment.create(
-  time: Time.new + 5.days,
+  time: Time.now - 15.days,
   state: :reserved,
   medical: medical_b,
   patient: patient_b,
@@ -459,7 +483,7 @@ Appointment.create(
 )
 
 Appointment.create(
-  time: Time.new + 6.days,
+  time: Time.now - 16.days,
   state: :reserved,
   medical: medical_b,
   patient: patient_a,

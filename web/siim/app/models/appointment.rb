@@ -42,10 +42,10 @@ class Appointment < ActiveRecord::Base
   # -------------------------------------------------------------------------
   # Class methods
   # -------------------------------------------------------------------------
-  def self.find_today_by_medical(a_medical)
-    from = Date.today
-    to = from +1.day
-    self.find medical: a_medical, from: from, to: to
+  def self.find_reserved_appointment_today_by_medical(a_medical)
+    from = Date.today.at_midnight-1.day
+    to = Date.today.at_midnight+1.day
+    self.find medical: a_medical, from: from, to: to, state: :reserved
   end
 
   def self.find(criterions)
@@ -62,7 +62,7 @@ class Appointment < ActiveRecord::Base
   end
 
   def self.all_states
-    [:available,:reserved,:attended,:finalized,:canceled]
+    [:available,:reserved,:on_attention,:attended,:canceled]
   end
 
 	# -------------------------------------------------------------------------
@@ -71,20 +71,19 @@ class Appointment < ActiveRecord::Base
 	workflow do
     state :available do
       event :reserve, :transitions_to => :reserved
+      event :cancel, :transitions_to => :canceled
     end
     state :reserved do
       event :liberate, :transitions_to => :available
+      event :attend, :transitions_to => :on_attention
+      event :cancel, :transitions_to => :canceled
+    end
+    state :on_attention do
+      event :finalize, :transitions_to => :attended
+    end
+    state :canceled do
     end
     state :attended do
-      event :attend, :transitions_to => :attend
-    end
-
-    state :finalized do
-      event :finalize, :transitions_to => :finalize
-    end
-
-    state :canceled do
-      event :attend, :transitions_to => :cancel
     end
   end
 

@@ -4,13 +4,8 @@ class MedicalHistoriesController < CrudController
   # -------------------------------------------------------------------------
   # GET /medical_histories/search_by_dni?query="a DNI"
   def search_by_dni
-    # Find medical history by DNI...
-    @medical_history = MedicalHistory.includes(:patient).where("patients.dni=?",params[:query]).first
-
-    # Create a response wrapper...
-    response = MedicalHistoryResponse.new @medical_history
-
-    # Render response...
+    medical_history = MedicalHistory.find_by_dni dni_param
+    response = new_medical_history_response medical_history
     render json: response.to_json
   end
 
@@ -103,6 +98,18 @@ class MedicalHistoriesController < CrudController
       format.html { redirect_to medical_histories_url }
       format.json { head :no_content }
     end
+  end
+
+  # -------------------------------------------------------------------------
+  # Private Methods...
+  # -------------------------------------------------------------------------
+  private
+  def dni_param
+    dni = params[:query]
+  end
+
+  def new_medical_history_response(a_medical_history)
+    MedicalHistoryResponse.new a_medical_history
   end
 
   # -------------------------------------------------------------------------

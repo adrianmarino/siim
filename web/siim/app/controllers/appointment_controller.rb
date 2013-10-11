@@ -41,9 +41,30 @@ class AppointmentController < ApplicationController
 		search
   end
 
+  def attend
+    appointment = request_helper.appointment
+    if not appointment.nil?
+      appointment.attend!
+      appointment.save
+      medical_history = medical_history_from appointment
+      redirect_to edit_medical_history_path medical_history
+    end
+    my_appointments
+  end
+
+  def finalize
+    appointment = request_helper.appointment
+    if not appointment.nil?
+      appointment.finalize!
+      appointment.save
+    end
+    my_appointments
+  end
+
+
   def my_appointments
     redirect_to(root_path) unless current_user.is_medical?
-    @appointments = Appointment.find_today_by_medical current_user.medical
+    @appointments = Appointment.find_reserved_appointment_today_by_medical current_user.medical
     render appointments_my_appointments_path
   end
 
@@ -57,5 +78,9 @@ class AppointmentController < ApplicationController
 
 	def new_form
 		AppointmentForm.new params
-	end
+  end
+
+  def medical_history_from(an_appointment)
+    MedicalHistory.find_by_patient an_appointment.patient
+  end
 end
