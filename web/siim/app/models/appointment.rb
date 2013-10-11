@@ -39,6 +39,28 @@ class Appointment < ActiveRecord::Base
     self.patient = nil
   end
 
+  def attend_and_save
+    self.attend! 
+    self.save
+  end
+
+  def finalize_and_save
+    self.finalize!
+    self.save
+  end
+
+  def libarate_and_save
+    self.liberate!
+    self.save
+  end
+
+  def reserve_adnd_save(a_patient)
+    self.reserve!
+    self.patient = a_patient
+    self.save
+  end
+
+
   # -------------------------------------------------------------------------
   # Class methods
   # -------------------------------------------------------------------------
@@ -119,8 +141,8 @@ class Appointment < ActiveRecord::Base
   end
 
   def self.time_range(a_from, a_to)
-    from = a_from != nil ? a_from : Time.new(1900,1,1)
-    to = a_to != nil ? a_to : Time.new(3000,1,1)
+    from = a_from != nil ? a_from : Time.min
+    to = a_to != nil ? a_to : Time.max
     from..to
   end
 end

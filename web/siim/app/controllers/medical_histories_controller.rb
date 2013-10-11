@@ -53,6 +53,7 @@ class MedicalHistoriesController < CrudController
   def edit
     @medical_history = MedicalHistory.find(params[:id])
     @medicals = Medical.all.sort
+    @back_path = params[:back].nil? ? medical_histories_path : appointments_my_appointments_path
   end
 
   # POST /medical_histories

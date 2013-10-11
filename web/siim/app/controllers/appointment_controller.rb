@@ -20,67 +20,59 @@ class AppointmentController < ApplicationController
 
 	def liberate
 		appointment = request_helper.appointment
-
-		if not appointment.nil?
-			appointment.liberate!
-			appointment.save
-		end
-
+		appointment.libarate_and_save if not appointment.nil?
 		search
 	end
 
 	def reserve
 		helper = request_helper
 		appointment = helper.appointment
+		patient = helper.patient
 
-		if not appointment.nil?
-			appointment.reserve!
-			appointment.patient = helper.appointment_patient
-			appointment.save
-		end
+		appointment.reserve_adnd_save(patient) if not appointment.nil?
 		search
-  end
+	end
 
-  def attend
-    appointment = request_helper.appointment
-    if not appointment.nil?
-      appointment.attend!
-      appointment.save
-      medical_history = medical_history_from appointment
-      redirect_to edit_medical_history_path medical_history
-    end
-    my_appointments
-  end
+	def attend
+		appointment = request_helper.appointment
+		if not appointment.nil?
+			# appointment.attend_and_save
+			redirect_to_medical_history_of appointment
+		else
+			my_appointments
+		end
+	end
 
-  def finalize
-    appointment = request_helper.appointment
-    if not appointment.nil?
-      appointment.finalize!
-      appointment.save
-    end
-    my_appointments
-  end
+	def finalize
+		appointment = request_helper.appointment
+		appointment.finalize_and_save if not appointment.nil?
+		my_appointments
+	end
 
+	def my_appointments
+		redirect_to(root_path) unless current_user.is_medical?
+		@appointments = Appointment.find_reserved_appointment_today_by_medical current_user.medical
+		render appointments_my_appointments_path
+	end
 
-  def my_appointments
-    redirect_to(root_path) unless current_user.is_medical?
-    @appointments = Appointment.find_reserved_appointment_today_by_medical current_user.medical
-    render appointments_my_appointments_path
-  end
-
-  # -------------------------------------------------------------------------
+	# -------------------------------------------------------------------------
 	# Private Methods...
 	# -------------------------------------------------------------------------
 	private
+	def redirect_to_medical_history_of(an_appointment)
+		medical_history = medical_history_from an_appointment
+		redirect_to edit_medical_history_path(:id => medical_history.id, :back => appointments_my_appointments_path)
+	end
+
 	def request_helper
 		AppointmentRequestHelper.new params
 	end
 
 	def new_form
 		AppointmentForm.new params
-  end
+	end
 
-  def medical_history_from(an_appointment)
-    MedicalHistory.find_by_patient an_appointment.patient
-  end
+	def medical_history_from(an_appointment)
+		MedicalHistory.find_by_patient an_appointment.patient
+	end
 end
