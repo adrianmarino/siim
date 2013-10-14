@@ -404,6 +404,7 @@ es:
       attend: "Atender"
       cancel: "Cancelar"
     search: "Buscar"
+    clean: "Limpiar"
     results: "Resultados"
   form:
     date:
