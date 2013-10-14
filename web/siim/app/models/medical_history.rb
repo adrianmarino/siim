@@ -27,6 +27,17 @@ class MedicalHistory < ActiveRecord::Base
   end
 
   # -------------------------------------------------------------------------
+  # Public Class Methods...
+  # -------------------------------------------------------------------------
+  def self.find_by_dni(a_dni)
+    MedicalHistory.includes(:patient).where("patients.dni=?",a_dni).first
+  end
+
+  def self.find_by_patient(a_patient)
+    MedicalHistory.includes(:patient).where("patients.id=?",a_patient.id).first
+  end
+
+  # -------------------------------------------------------------------------
   # Attributes...
   # -------------------------------------------------------------------------
   attr_accessible :id, :allergies, :antecedents, :consultations, :diseases,

@@ -4,13 +4,8 @@ class MedicalHistoriesController < CrudController
   # -------------------------------------------------------------------------
   # GET /medical_histories/search_by_dni?query="a DNI"
   def search_by_dni
-    # Find medical history by DNI...
-    @medical_history = MedicalHistory.includes(:patient).where("patients.dni=?",params[:query]).first
-
-    # Create a response wrapper...
-    response = MedicalHistoryResponse.new @medical_history
-
-    # Render response...
+    medical_history = MedicalHistory.find_by_dni dni_param
+    response = new_medical_history_response medical_history
     render json: response.to_json
   end
 
@@ -58,6 +53,7 @@ class MedicalHistoriesController < CrudController
   def edit
     @medical_history = MedicalHistory.find(params[:id])
     @medicals = Medical.all.sort
+    @back_url = params[:back_url].nil? ? medical_histories_path : params[:back_url]
   end
 
   # POST /medical_histories
@@ -81,10 +77,10 @@ class MedicalHistoriesController < CrudController
   def update
     @medical_history = MedicalHistory.find(params[:id])
     @medicals = Medical.all.sort
-
+    @back_url = params[:back_url].nil? ? medical_histories_path : params[:back_url]
     respond_to do |format|
       if @medical_history.update_attributes(params[:medical_history])
-        format.html { redirect_to medical_histories_path, notice: CrudTranslations.model_was_updated(@medical_history) }
+        format.html { redirect_to @back_url, notice: CrudTranslations.model_was_updated(@medical_history) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -103,6 +99,18 @@ class MedicalHistoriesController < CrudController
       format.html { redirect_to medical_histories_url }
       format.json { head :no_content }
     end
+  end
+
+  # -------------------------------------------------------------------------
+  # Private Methods...
+  # -------------------------------------------------------------------------
+  private
+  def dni_param
+    dni = params[:query]
+  end
+
+  def new_medical_history_response(a_medical_history)
+    MedicalHistoryResponse.new a_medical_history
   end
 
   # -------------------------------------------------------------------------

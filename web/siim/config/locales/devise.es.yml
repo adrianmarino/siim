@@ -66,3 +66,5 @@ es:
                   email:
                       taken: "Ya existe un usuario con este mail."
                       blank: "Debe ingresar un correo electrónico."
+  my_appointments:
+    title: "Mis Turnos"

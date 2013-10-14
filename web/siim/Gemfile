@@ -36,18 +36,22 @@ gem 'thin'
 gem 'hpricot'
 gem 'ruby_parser'
 
+group :development do
+  gem 'pry-debugger'
+  gem 'pry-rails'
+  gem 'awesome_print'
+end
+
 # Dev and Test...
 group :development, :test do
   gem "mocha", "0.12.7", require: false
   gem 'factory_girl_rails'
   gem 'headless'
-  gem 'capybara'
   gem 'selenium-webdriver', '2.32.1'
-  # To use debugger...
-  gem 'debugger'
-  gem 'hirb'
-  gem 'wirble'
-  gem 'bond'
+  # gem "debugger"
+  #gem 'wirble'
+  #gem 'bond'
+  #gem 'hirb'
   gem 'sqlite3'
 end
 

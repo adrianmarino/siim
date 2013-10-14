@@ -39,9 +39,37 @@ class Appointment < ActiveRecord::Base
     self.patient = nil
   end
 
+  def attend_and_save
+    self.attend!
+    self.save
+  end
+
+  def finalize_and_save
+    self.finalize!
+    self.save
+  end
+
+  def liberate_and_save
+    self.liberate!
+    self.save
+  end
+
+  def reserve_and_save(a_patient)
+    self.reserve!
+    self.patient = a_patient
+    self.save
+  end
+
+
   # -------------------------------------------------------------------------
   # Class methods
   # -------------------------------------------------------------------------
+  def self.today_of(a_medical)
+    from = Date.today.at_midnight-1.day
+    to = Date.today.at_midnight+1.day
+    self.find medical: a_medical, from: from, to: to, state: [:reserved,:on_attention]
+  end
+
   def self.find(criterions)
     self.includes(:medical).where find_conditions_from(criterions)
   end
@@ -56,7 +84,7 @@ class Appointment < ActiveRecord::Base
   end
 
   def self.all_states
-    [:available,:reserved,:attended,:canceled]
+    [:available,:reserved,:on_attention,:attended,:canceled]
   end
 
 	# -------------------------------------------------------------------------
@@ -65,15 +93,19 @@ class Appointment < ActiveRecord::Base
 	workflow do
     state :available do
       event :reserve, :transitions_to => :reserved
+      event :cancel, :transitions_to => :canceled
     end
     state :reserved do
       event :liberate, :transitions_to => :available
+      event :attend, :transitions_to => :on_attention
+      event :cancel, :transitions_to => :canceled
     end
-    state :attended do
-      event :attend, :transitions_to => :attend
+    state :on_attention do
+      event :finalize, :transitions_to => :attended
     end
     state :canceled do
-      event :attend, :transitions_to => :cancel
+    end
+    state :attended do
     end
   end
 
@@ -109,8 +141,8 @@ class Appointment < ActiveRecord::Base
   end
 
   def self.time_range(a_from, a_to)
-    from = a_from != nil ? a_from : Time.new(1900,1,1)
-    to = a_to != nil ? a_to : Time.new(3000,1,1)
+    from = a_from != nil ? a_from : Time.min
+    to = a_to != nil ? a_to : Time.max
     from..to
   end
 end
