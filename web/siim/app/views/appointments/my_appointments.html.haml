@@ -10,11 +10,13 @@
       %tbody
         - for appointment in @appointments
           %tr
-            %td=appointment.time.strftime "%d/%m/%Y %H:%M"
-            %td=appointment.patient
-            %td=t "appointment.state.#{appointment.current_state}"
+            %td{"style" => "vertical-align: middle;"}=appointment.time.strftime "%d/%m/%Y %H:%M"
+            %td{"style" => "vertical-align: middle;"}=appointment.patient
+            %td{"style" => "vertical-align: middle;"}=t "appointment.state.#{appointment.current_state}"
             %td.options
-              .btn-group
+              - if appointment.current_state == :reserved
                 = link_to raw("<i class=\"icon-plus-sign\">&nbsp;#{t('appointment.action.attend')}</i>"), appointments_attend_path(:appointment => appointment.id), :class => "btn btn-small"
-                = link_to raw("<i class=\"icon-minus-sign\">&nbsp;#{t('appointment.action.finalize')}</i>"), "#", :class => "btn btn-small"
-= render :file => 'layouts/application'
+              - elsif appointment.current_state == :on_attention
+                .btn-group-vertical
+                  = link_to raw("<i class=\"icon-edit\">&nbsp;#{t('my_appointments.show_medical_history')}</i>"), appointments_show_medical_history_path(:appointment => appointment.id), :class => "btn btn-small"
+                  = link_to raw("<i class=\"icon-minus-sign\">&nbsp;#{t('appointment.action.finalize')}</i>"), appointments_finalize_path(:appointment => appointment.id), :class => "btn btn-small", data: { confirm: t(:confirm) }

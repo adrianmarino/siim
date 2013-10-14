@@ -400,3 +400,4 @@ en:
         description: "We're sorry, but something went wrong."
   my_appointments:
     title: "My Appointments"
+    show_medical_history: "History"

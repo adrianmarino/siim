@@ -53,7 +53,7 @@ class MedicalHistoriesController < CrudController
   def edit
     @medical_history = MedicalHistory.find(params[:id])
     @medicals = Medical.all.sort
-    @back_path = params[:back].nil? ? medical_histories_path : appointments_my_appointments_path
+    @back_url = params[:back_url].nil? ? medical_histories_path : params[:back_url]
   end
 
   # POST /medical_histories
@@ -77,10 +77,10 @@ class MedicalHistoriesController < CrudController
   def update
     @medical_history = MedicalHistory.find(params[:id])
     @medicals = Medical.all.sort
-
+    @back_url = params[:back_url].nil? ? medical_histories_path : params[:back_url]
     respond_to do |format|
       if @medical_history.update_attributes(params[:medical_history])
-        format.html { redirect_to medical_histories_path, notice: CrudTranslations.model_was_updated(@medical_history) }
+        format.html { redirect_to @back_url, notice: CrudTranslations.model_was_updated(@medical_history) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

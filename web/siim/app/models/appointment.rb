@@ -40,7 +40,7 @@ class Appointment < ActiveRecord::Base
   end
 
   def attend_and_save
-    self.attend! 
+    self.attend!
     self.save
   end
 
@@ -49,12 +49,12 @@ class Appointment < ActiveRecord::Base
     self.save
   end
 
-  def libarate_and_save
+  def liberate_and_save
     self.liberate!
     self.save
   end
 
-  def reserve_adnd_save(a_patient)
+  def reserve_and_save(a_patient)
     self.reserve!
     self.patient = a_patient
     self.save
@@ -64,10 +64,10 @@ class Appointment < ActiveRecord::Base
   # -------------------------------------------------------------------------
   # Class methods
   # -------------------------------------------------------------------------
-  def self.find_reserved_appointment_today_by_medical(a_medical)
+  def self.today_of(a_medical)
     from = Date.today.at_midnight-1.day
     to = Date.today.at_midnight+1.day
-    self.find medical: a_medical, from: from, to: to, state: :reserved
+    self.find medical: a_medical, from: from, to: to, state: [:reserved,:on_attention]
   end
 
   def self.find(criterions)

@@ -20,28 +20,33 @@ class AppointmentController < ApplicationController
 
 	def liberate
 		appointment = request_helper.appointment
-		appointment.libarate_and_save if not appointment.nil?
+		appointment.liberate_and_save if not appointment.nil?
 		search
 	end
 
 	def reserve
 		helper = request_helper
 		appointment = helper.appointment
-		patient = helper.patient
+		patient = helper.appointment_patient
 
-		appointment.reserve_adnd_save(patient) if not appointment.nil?
+		appointment.reserve_and_save(patient) if not appointment.nil?
 		search
 	end
 
 	def attend
 		appointment = request_helper.appointment
 		if not appointment.nil?
-			# appointment.attend_and_save
+			appointment.attend_and_save
 			redirect_to_medical_history_of appointment
 		else
 			my_appointments
 		end
 	end
+
+  def show_medical_history
+    appointment = request_helper.appointment
+    redirect_to_medical_history_of appointment
+  end
 
 	def finalize
 		appointment = request_helper.appointment
@@ -51,7 +56,7 @@ class AppointmentController < ApplicationController
 
 	def my_appointments
 		redirect_to(root_path) unless current_user.is_medical?
-		@appointments = Appointment.find_reserved_appointment_today_by_medical current_user.medical
+		@appointments = Appointment.today_of current_user.medical
 		render appointments_my_appointments_path
 	end
 
@@ -61,7 +66,7 @@ class AppointmentController < ApplicationController
 	private
 	def redirect_to_medical_history_of(an_appointment)
 		medical_history = medical_history_from an_appointment
-		redirect_to edit_medical_history_path(:id => medical_history.id, :back => appointments_my_appointments_path)
+		redirect_to edit_medical_history_path(:id => medical_history.id, :back_url => appointments_my_appointments_path)
 	end
 
 	def request_helper

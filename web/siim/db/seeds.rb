@@ -108,6 +108,24 @@ period_friday_7 = AttentionPeriod.create(
   week_day: 5
 )
 
+
+period_saturday_7 = AttentionPeriod.create(
+  begin_hour: 14, 
+  begin_minutes: 0,
+  end_hour: 20,
+  end_minutes: 0,
+  week_day: 6
+)
+
+
+period_sunday_7 = AttentionPeriod.create(
+  begin_hour: 14, 
+  begin_minutes: 0,
+  end_hour: 20,
+  end_minutes: 0,
+  week_day: 7
+)
+
 period_monday_8 = AttentionPeriod.create(
   begin_hour: 9, 
   begin_minutes: 0,
@@ -197,7 +215,7 @@ Medical.create(
   firstname: "Adrian", 							lastname: "Marino",
   home_phone: "47935551", 					movile_phone: "154487766",
   medical_specialization: pediatra,
-  attention_periods: [period_monday_7, period_tuesday_7, period_wednesday_7, period_thursday_7, period_friday_7],
+  attention_periods: [period_monday_7, period_tuesday_7, period_wednesday_7, period_thursday_7, period_friday_7, period_saturday_7, period_saturday_7],
   attention_time_length_hour: 0,
   attention_time_length_minutes: 10,
   user: user

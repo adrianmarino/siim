@@ -246,6 +246,8 @@ es:
               invalid: "invalido"
             dni:
               taken: "Ya existe un usuario con este DNI"
+            email:
+              not_found: "No es un correo electrónico no esta registrado"
         medical:
           attributes:
             firstname:
@@ -423,3 +425,4 @@ es:
         description: "Lo sentimos, pero algo salió mal."
   my_appointments:
     title: "Mis Turnos"
+    show_medical_history: "Historial"
