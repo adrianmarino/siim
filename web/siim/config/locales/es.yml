@@ -246,6 +246,8 @@ es:
               invalid: "invalido"
             dni:
               taken: "Ya existe un usuario con este DNI"
+            email:
+              not_found: "No es un correo electrónico no esta registrado"
         medical:
           attributes:
             firstname:
@@ -392,11 +394,15 @@ es:
     state:
       available: "Disponibles"
       reserved: "Reservado"
+      on_attention: "En Atención"
       attended: "Atendido"
       canceled: "Cancelado"
     action:
       reserve: "Reservar"
       liberate: "Liberar"
+      finalize: "Finalizar"
+      attend: "Atender"
+      cancel: "Cancelar"
     search: "Buscar"
     clean: "Limpiar"
     results: "Resultados"
@@ -418,3 +424,6 @@ es:
     error:
       505:
         description: "Lo sentimos, pero algo salió mal."
+  my_appointments:
+    title: "Mis Turnos"
+    show_medical_history: "Historial"

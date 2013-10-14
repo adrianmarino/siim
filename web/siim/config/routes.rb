@@ -34,8 +34,11 @@ Siim::Application.routes.draw do
   get '/appointments/setup_search', to: 'appointment#setup_search'
   post '/appointments/liberate', to: 'appointment#liberate'
   post '/appointments/reserve', to: 'appointment#reserve'
+  get '/appointments/attend', to: 'appointment#attend'
+  get '/appointments/finalize', to: 'appointment#finalize'
   post '/appointments/search', to: 'appointment#search'
-  get '/appointments/daily_appointments', to: 'appointment#daily_appointments'
+  get '/appointments/my_appointments', to: 'appointment#my_appointments'
+  get '/appointments/show_medical_history', to: 'appointment#show_medical_history'
 
   get '/statistics/setup_simptom', to: 'statistic#setup_simptom'
   post '/statistics/perform_simptom', to: 'statistic#perform_simptom'

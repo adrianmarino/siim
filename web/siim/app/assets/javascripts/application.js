@@ -128,13 +128,13 @@ $(document).ready(function() {
     /*  
       Tables...
     */
-    if (functionIsDefined('tableColumnSortdDefinicion')) {
+    if (functionIsDefined('tableColumnSortdDefinition')) {
         $('#crud_list').dataTable({
             "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
             "sPaginationType": "bootstrap",
             "aLengthMenu": [[5, 10, 15, 25, 50, 100], [5, 10, 15, 25, 50, 100]],
             "iDisplayLength": 5,
-            "aoColumns": tableColumnSortdDefinicion(),
+            "aoColumns": tableColumnSortdDefinition(),
             "oLanguage": {
                 "oPaginate": {
                     "sFirst": I18n.t("data_table.paginate.first"),
@@ -164,8 +164,39 @@ $(document).ready(function() {
             "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
             "sPaginationType": "bootstrap",
             "aLengthMenu": [[5, 10, 15, 25, 50, 100], [5, 10, 15, 25, 50, 100]],
-            "iDisplayLength": 25,
-            "aoColumns": [null,{ "sType": "date-euro" },null,null,null,null],
+            "iDisplayLength": 10,
+            "aoColumns": [{ "sType": "date-euro" },null,null,null,null],
+            "oLanguage": {
+                "oPaginate": {
+                    "sFirst": I18n.t("data_table.paginate.first"),
+                    "sLast": I18n.t("data_table.paginate.last"),
+                    "sNext": I18n.t("data_table.paginate.next"),
+                    "sPrevious": I18n.t("data_table.paginate.previous")
+                },
+                "sEmptyTable": I18n.t("data_table.emptyTable"),
+                "sInfo": I18n.t("data_table.info"),
+                "sInfoEmpty": I18n.t("data_table.infoEmpty"),
+                "sInfoFiltered": I18n.t("data_table.infoFiltered"),
+                "sInfoPostFix": I18n.t("data_table.infoPostFix"),
+                "sSearch": I18n.t("data_table.search"),
+                "sZeroRecords": I18n.t("data_table.zeroRecords"),
+                "sLengthMenu": I18n.t("data_table.lengthMenu")
+            }
+        });
+        $(".sorting:last").removeClass("sorting");
+        $("[name='list_length']").selectpicker({
+            style: 'btn-info',
+            size: '10',
+            width: '70px'
+        });
+    }
+    if (existElement('#my_appointments_list')) {
+        $('#my_appointments_list').dataTable({
+            "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+            "sPaginationType": "bootstrap",
+            "aLengthMenu": [[5, 8, 10, 15, 25, 50, 100], [5, 8, 10, 15, 25, 50, 100]],
+            "iDisplayLength": 8,
+            "aoColumns": [null,null,null,null],
             "oLanguage": {
                 "oPaginate": {
                     "sFirst": I18n.t("data_table.paginate.first"),

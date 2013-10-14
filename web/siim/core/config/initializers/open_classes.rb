@@ -21,6 +21,14 @@ class Time
   def sum_of_hours_and_minutes_in_seconds
     self.hour.hours + self.min.minutes
   end
+
+  def self.max
+    Time.new(3000,1,1)
+  end
+
+  def self.min
+    Time.new(1900,1,1)
+  end
 end
 
 class String

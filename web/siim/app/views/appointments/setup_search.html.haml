@@ -50,7 +50,6 @@
 		%table#appointment_list.table.table-striped.table-bordered{:border => "0", :cellpadding => "0", :cellspacing => "0"}
 			%thead.table-header
 				%tr
-					%th="ID"
 					%th=translate_attribute :appointment, :date
 					%th=translate_attribute :appointment, :medical
 					%th=translate_attribute :appointment, :patient
@@ -59,7 +58,6 @@
 			%tbody
 				- for an_appointment in @appointments
 					%tr
-						%td=an_appointment.id
 						%td=an_appointment.time.strftime "%d/%m/%Y %H:%M"
 						%td=an_appointment.medical
 						%td=an_appointment.patient
