@@ -33,9 +33,9 @@ class MedicalHistory < ActiveRecord::Base
 		as_json
 	end
 
-	def self.search(a_text) 
+	def self.search(a_text)
 		if a_text.empty?
-			@results = self.all 
+			@results = self.all
 		else
 			content_query = lambda do |should|
 				should.string "content:#{a_text}" # , :boost => 5, :type => "phrase"

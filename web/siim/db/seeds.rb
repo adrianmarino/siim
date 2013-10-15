@@ -1,16 +1,22 @@
 # encoding: utf-8
-
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+# -----------------------------------------------------------------------------
 #
-# Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-# Users...
+#
+# -----------------------------------------------------------------------------
+# Delete Indexes....
+# -----------------------------------------------------------------------------
+Tire.index('medical_histories').delete
+#
+#
+#
+# -----------------------------------------------------------------------------
+# users....
+# -----------------------------------------------------------------------------
 user = User.create(dni: "29042902",first_name: "Adrian", last_name: "Marino", email: "adrianmarino@gmail.com", password: "29042902")
-
+#
+#
+#
 # -----------------------------------------------------------------------------
 # Medical specializations....
 # -----------------------------------------------------------------------------
@@ -18,10 +24,9 @@ pediatra = MedicalSpecialization.create(name: "Pediatria")
 traumatologo = MedicalSpecialization.create(name: "Traumatologia")
 oftalmologo = MedicalSpecialization.create(name: "Oftalmologia")
 clinic = MedicalSpecialization.create(name: "Clinico")
-
-
-
-
+#
+#
+#
 # -----------------------------------------------------------------------------
 # Attention Periods...
 # -----------------------------------------------------------------------------
@@ -75,7 +80,6 @@ period_monday_7 = AttentionPeriod.create(
     end_minutes: 0,
     week_day: 1
 )
-
 period_tuesday_7 = AttentionPeriod.create(
     begin_hour: 9,
     begin_minutes: 0,
@@ -83,7 +87,6 @@ period_tuesday_7 = AttentionPeriod.create(
     end_minutes: 0,
     week_day: 2
 )
-
 period_wednesday_7 = AttentionPeriod.create(
     begin_hour: 9,
     begin_minutes: 0,
@@ -91,7 +94,6 @@ period_wednesday_7 = AttentionPeriod.create(
     end_minutes: 0,
     week_day: 3
 )
-
 period_thursday_7 = AttentionPeriod.create(
     begin_hour: 9,
     begin_minutes: 0,
@@ -99,7 +101,6 @@ period_thursday_7 = AttentionPeriod.create(
     end_minutes: 0,
     week_day: 4
 )
-
 period_friday_7 = AttentionPeriod.create(
   begin_hour: 14, 
   begin_minutes: 0,
@@ -107,8 +108,6 @@ period_friday_7 = AttentionPeriod.create(
   end_minutes: 0,
   week_day: 5
 )
-
-
 period_saturday_7 = AttentionPeriod.create(
   begin_hour: 14, 
   begin_minutes: 0,
@@ -116,8 +115,6 @@ period_saturday_7 = AttentionPeriod.create(
   end_minutes: 0,
   week_day: 6
 )
-
-
 period_sunday_7 = AttentionPeriod.create(
   begin_hour: 14, 
   begin_minutes: 0,
@@ -125,7 +122,6 @@ period_sunday_7 = AttentionPeriod.create(
   end_minutes: 0,
   week_day: 7
 )
-
 period_monday_8 = AttentionPeriod.create(
   begin_hour: 9, 
   begin_minutes: 0,
@@ -168,7 +164,6 @@ period_monday_13 = AttentionPeriod.create(
   end_minutes: 0,
   week_day: 1
 )
-
 period_friday_14 = AttentionPeriod.create(
   begin_hour: 14, 
   begin_minutes: 0,
@@ -176,10 +171,9 @@ period_friday_14 = AttentionPeriod.create(
   end_minutes: 0,
   week_day: 5
 )
-
-
-
-
+#
+#
+#
 # -----------------------------------------------------------------------------
 # Medicals...
 # -----------------------------------------------------------------------------
@@ -220,7 +214,6 @@ Medical.create(
   attention_time_length_minutes: 10,
   user: user
 )
-
 Medical.create(
   dni: "14042902",									cuil: "20-14042902-2",
   firstname: "Cristian", 						lastname: "Molina",
@@ -257,9 +250,9 @@ Medical.create(
   attention_time_length_hour: 0,
   attention_time_length_minutes: 10
 )
-
-
-
+#
+#
+#
 # -----------------------------------------------------------------------------
 # Contacts...
 # -----------------------------------------------------------------------------
@@ -277,9 +270,9 @@ contact_b = Contact.create(
   home_phone: "47991111",
   movile_phone: "1589222222"
 )
-
-
-
+#
+#
+#
 # -----------------------------------------------------------------------------
 # Patients...
 # -----------------------------------------------------------------------------
@@ -298,7 +291,6 @@ patient_a = Patient.create(
   movile_phone: "88888888",
   contacts: [contact_a,contact_b]
 )
-
 patient_b = Patient.create(
   dni: "28381077",
   firstname: "Fernando",
@@ -314,18 +306,17 @@ patient_b = Patient.create(
   movile_phone: "1122233344",
   contacts: [contact_a,contact_b]
 )
-
-
-
+#
+#
+#
 # -----------------------------------------------------------------------------
 # Medical History...
 # -----------------------------------------------------------------------------
 medical_history = MedicalHistory.create(patient: patient_a)
 medical_history = MedicalHistory.create(patient: patient_b)
-
-
-
-
+#
+#
+#
 # -----------------------------------------------------------------------------
 # Allergies...
 # -----------------------------------------------------------------------------
@@ -341,9 +332,9 @@ Allergy.create(
   cause: 'Causa 3',
   medical_history: medical_history
 )
-
-
-
+#
+#
+#
 # -----------------------------------------------------------------------------
 # Consultations...
 # -----------------------------------------------------------------------------
@@ -361,9 +352,9 @@ Consultation.create(
   treatment: 'Tratamiento 1',
   medical_history: medical_history
 )
-
-
-
+#
+#
+#
 # -----------------------------------------------------------------------------
 # Antecedents...
 # -----------------------------------------------------------------------------
@@ -379,9 +370,9 @@ Antecedent.create(
   description: 'Descripción 3',
   medical_history: medical_history
 )
-
-
-
+#
+#
+#
 # -------------------------------------------------------------------------
 # Diseases...
 # -------------------------------------------------------------------------
@@ -397,9 +388,9 @@ Disease.create(
   name: "Epatitis",
   medical_history: medical_history 
 )
-
-
-
+#
+#
+#
 # -------------------------------------------------------------------------
 # Medications...
 # -------------------------------------------------------------------------
@@ -421,9 +412,9 @@ Medication.create(
   amount: 300,
   medical_history: medical_history 
 )
-
-
-
+#
+#
+#
 # -------------------------------------------------------------------------
 # Vaccines...
 # -------------------------------------------------------------------------
@@ -437,8 +428,9 @@ Vaccine.create(
   name: "Vacuna 2",
   medical_history: medical_history
 )
-
-
+#
+#
+#
 # -------------------------------------------------------------------------
 # Medical exams...
 # -------------------------------------------------------------------------
@@ -457,8 +449,9 @@ MedicalExam.create(
   name: "Examen 3",
   medical_history: medical_history
 )
-
-
+#
+#
+#
 # -------------------------------------------------------------------------
 # Attention times...
 # -------------------------------------------------------------------------
@@ -468,7 +461,6 @@ Appointment.create(
   patient: patient_a,
   state: :reserved
 )
-
 Appointment.create(
   time: Time.now - 12.days,
   state: :attend,
@@ -476,14 +468,12 @@ Appointment.create(
   patient: patient_b,
   state: :reserved
 )
-
 Appointment.create(
   time: Time.now - 13.days,
   medical: medical_b,
   patient: patient_a,
   state: :reserved
 )
-
 Appointment.create(
   time: Time.now - 14.days,
   state: :reserved,
@@ -491,7 +481,6 @@ Appointment.create(
   patient: patient_b,
   state: :reserved
 )
-
 Appointment.create(
   time: Time.now - 15.days,
   state: :reserved,
@@ -499,7 +488,6 @@ Appointment.create(
   patient: patient_b,
   state: :reserved
 )
-
 Appointment.create(
   time: Time.now - 16.days,
   state: :reserved,
@@ -507,8 +495,10 @@ Appointment.create(
   patient: patient_a,
   state: :reserved
 )
-
+#
+#
+#
 # -------------------------------------------------------------------------
-# System...
+# System Properties...
 # -------------------------------------------------------------------------
 SystemProperty.new_window_size("20").save
