@@ -347,9 +347,16 @@ en:
     confProfiles: "Configurar Perfiles"
     appointments: "Attention Times"
     sub_menu:
+      medical_histories:
+        show: "Show"
+        search: "Search"
+        custom_search: "Custom Search"
       appointments:
         assignment: "Assignment"
         my_appointments: "My Attention Times"
+      statistics:
+        simptoms: "simptoms"
+        diseases: "Diseases"
   sex:
     male: "Male"
     female: "Female"
@@ -402,3 +409,6 @@ en:
   my_appointments:
     title: "My Appointments"
     show_medical_history: "History"
+  custom_search:
+    text: "Search..."
+    result: "Results"

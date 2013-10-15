@@ -159,13 +159,14 @@ $(document).ready(function() {
             width: '70px'
         });
     }
+
     if (existElement('#appointment_list')) {
         $('#appointment_list').dataTable({
             "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
             "sPaginationType": "bootstrap",
             "aLengthMenu": [[5, 10, 15, 25, 50, 100], [5, 10, 15, 25, 50, 100]],
             "iDisplayLength": 10,
-            "aoColumns": [{ "sType": "date-euro" },null,null,null,null],
+            "aoColumns": [{"sType": "date-euro"},null,null,null,null],
             "oLanguage": {
                 "oPaginate": {
                     "sFirst": I18n.t("data_table.paginate.first"),
@@ -190,13 +191,14 @@ $(document).ready(function() {
             width: '70px'
         });
     }
+
     if (existElement('#my_appointments_list')) {
         $('#my_appointments_list').dataTable({
             "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
             "sPaginationType": "bootstrap",
             "aLengthMenu": [[5, 8, 10, 15, 25, 50, 100], [5, 8, 10, 15, 25, 50, 100]],
             "iDisplayLength": 8,
-            "aoColumns": [null,null,null,null],
+            "aoColumns": [{ "sType": "date-euro" },null,null,null],
             "oLanguage": {
                 "oPaginate": {
                     "sFirst": I18n.t("data_table.paginate.first"),

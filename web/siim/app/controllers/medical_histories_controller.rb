@@ -9,6 +9,25 @@ class MedicalHistoriesController < CrudController
     render json: response.to_json
   end
 
+  def search
+    render search_medical_histories_path
+  end
+
+  def perform_search
+    # @medical_histories = MedicalHistory.all
+    search
+  end
+
+  def custom_search
+    render custom_search_medical_histories_path
+  end
+
+  def perform_custom_search
+    @text = params[:text]
+    @medical_histories = MedicalHistory.all
+    custom_search
+  end
+
   # -------------------------------------------------------------------------
   # CRUD Methods...
   # -------------------------------------------------------------------------

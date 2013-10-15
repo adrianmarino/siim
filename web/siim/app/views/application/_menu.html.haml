@@ -9,7 +9,15 @@
         %a.brand{:href => '/', :title => t('app.description') }= t 'app.name'
         .nav-collapse.collapse
           %ul.nav{:role => "navigation"}
-            %li= link_to raw("<i class=\"icon-book\">&nbsp;</i>#{t('menu.medical_histories')}"), medical_histories_path, "tabindex" => "-1"
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
+                %i.icon-book=" #{t 'menu.medical_histories'}"
+                %b.caret
+              %ul.dropdown-menu
+                %li= link_to t('menu.sub_menu.medical_histories.custom_search'), custom_search_medical_histories_path, "tabindex" => "-1"
+                %li= link_to t('menu.sub_menu.medical_histories.search'), search_medical_histories_path, "tabindex" => "-1"
+                %li= link_to t('menu.sub_menu.medical_histories.show'), medical_histories_path, "tabindex" => "-1"
+
             %li= link_to raw("<i class=\"icon-calendar\">&nbsp;</i>#{t('menu.sub_menu.appointments.assignment')}"), appointments_setup_search_path, "tabindex" => "-1"
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}

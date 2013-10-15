@@ -372,6 +372,10 @@ es:
     confProfiles: "Configurar Perfiles"
     appointments: "Turnos"
     sub_menu:
+      medical_histories:
+        show: "Lista"
+        search: "Buscar"
+        custom_search: "Busqueda Avanzada"
       appointments:
         assignment: "Asignación de turnos"
         my_appointments: "Mis turnos"
@@ -427,3 +431,6 @@ es:
   my_appointments:
     title: "Mis Turnos"
     show_medical_history: "Historial"
+  custom_search:
+    text: "Buscar..."
+    result: "Resultados"
