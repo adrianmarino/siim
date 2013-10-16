@@ -1,7 +1,9 @@
 class MedicalHistory < ActiveRecord::Base
 	include Tire::Model::Search
 	include Tire::Model::Callbacks
-
+	#
+	#
+	#
 	# -------------------------------------------------------------------------
 	# Public Methods...
 	# -------------------------------------------------------------------------
@@ -30,33 +32,42 @@ class MedicalHistory < ActiveRecord::Base
 	end
 
 	def to_indexed_json
-		as_json
+		to_json( include: {
+				:patient => { :only => [
+					:dni, :firstname, :lastname, :birthdate, :blood_type, :height, :weight, :sex, 
+					:address, :email, :home_phone, :movile_phone
+				]},
+				:allergies => {:only =>[:cause]},
+				:antecedents => { :only => [:description]},
+				:consultations => {:only=>[:diagnostic]},
+				:diseases => {:only =>[:name]},
+				:medications => {:only => [:name,:dose,:how_often]},
+				:vaccines => {:only => [:last_application, :name]},
+				:medical_exams => {:only => [:achievement_date, :name]}
+			}
+		)
 	end
 
-	def self.search(a_text)
-		if a_text.empty?
-			@results = self.all
-		else
-			content_query = lambda do |should|
-				should.string "content:#{a_text}" # , :boost => 5, :type => "phrase"
-			end
-			title_query = lambda do |should|
-				should.string "title:#{a_text}" # , :boost => 5, :type => "phrase"
-			end
-			search = Tire.search 'results' do
-				query do
-					boolean do
-						should &content_query
-						should &title_query
-					end
-				end
-				highlight :title, :content, :options => { :tag => '<strong class="highlight">' }
-			end
-			@results = search.results
+	def self.custom_search(a_text)
+		query = lambda do |should|
+			should.string a_text
 		end
-		@results
+		search = Tire.search :medical_histories do
+			query do
+				boolean do
+					should &query
+				end
+			end
+			highlight "firstname", :options => { :tag => '<strong class="highlight">' }
+		end
+		result = search.results.each_with_hit do |result, hit|
+			puts "#{result.title} (score: #{hit['_score']})"
+		end
+		result
 	end
-
+	#
+	#
+	#
 	# -------------------------------------------------------------------------
 	# Public Class Methods...
 	# -------------------------------------------------------------------------
@@ -67,7 +78,9 @@ class MedicalHistory < ActiveRecord::Base
 	def self.find_by_patient(a_patient)
 		MedicalHistory.includes(:patient).where("patients.id=?",a_patient.id).first
 	end
-
+	#
+	#
+	#
 	# -------------------------------------------------------------------------
 	# Attributes...
 	# -------------------------------------------------------------------------
@@ -78,7 +91,9 @@ class MedicalHistory < ActiveRecord::Base
 		:patient_attributes, :_destroy
 
 	attr_accessor :_destroy
-
+	#
+	#
+	#
 	# -------------------------------------------------------------------------
 	# Associations...
 	# -------------------------------------------------------------------------
@@ -90,7 +105,9 @@ class MedicalHistory < ActiveRecord::Base
 	has_many	:medications, dependent: :delete_all
 	has_many	:vaccines, dependent: :delete_all
 	has_one	 :patient, dependent: :delete
-
+	#
+	#
+	#
 	# -------------------------------------------------------------------------
 	# Nested attributes...
 	# -------------------------------------------------------------------------
@@ -102,11 +119,17 @@ class MedicalHistory < ActiveRecord::Base
 	accepts_nested_attributes_for :medications, allow_destroy: true
 	accepts_nested_attributes_for :vaccines, allow_destroy: true
 	accepts_nested_attributes_for :patient, allow_destroy: true
-
+	#
+	#
+	#
 	# -------------------------------------------------------------------------
 	# Search Settings...
 	# -------------------------------------------------------------------------
+	# Enable automatic saving in elasticsearch when associated objects change...
 	after_touch() { tire.update_index }
+
+	# Properly serialize JSON for elasticsearch...
+	self.include_root_in_json = false
 
 	settings :number_of_shards => 1,
 					 :number_of_replicas => 1,
