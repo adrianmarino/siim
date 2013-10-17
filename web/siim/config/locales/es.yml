@@ -371,17 +371,23 @@ es:
     managerUsers: "Administrar usuarios"
     confProfiles: "Configurar Perfiles"
     appointments: "Turnos"
+    medical_histories_search: "Búsqueda"
+    search_engine: "Motor de Búsqueda"
     sub_menu:
       medical_histories:
         show: "Lista"
-        search: "Buscar"
-        custom_search: "Busqueda Avanzada"
+        search: "Por DNI/Nombre"
+        custom_search: "Avanzada"
       appointments:
         assignment: "Asignación de turnos"
         my_appointments: "Mis turnos"
       statistics:
         simptoms: "Simtomas"
         diseases: "Enfermedades"
+      search_engine:
+        head: "Head"
+        inquisitor: "Inquisitor"
+        bigdesk: "BigDesk"
   sex:
     male: "Masculino"
     female: "Femenino"

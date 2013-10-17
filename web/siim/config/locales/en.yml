@@ -346,17 +346,22 @@ en:
     managerUsers: "Manager Users"
     confProfiles: "Configurar Perfiles"
     appointments: "Attention Times"
+    medical_histories_search: "Search"
     sub_menu:
       medical_histories:
         show: "Show"
-        search: "Search"
-        custom_search: "Custom Search"
+        search: "By DNI/Name"
+        custom_search: "Custom"
       appointments:
         assignment: "Assignment"
         my_appointments: "My Attention Times"
       statistics:
         simptoms: "simptoms"
         diseases: "Diseases"
+      search_engine:
+        head: "Head"
+        inquisitor: "Inquisitor"
+        bigdesk: "BigDesk"
   sex:
     male: "Male"
     female: "Female"
