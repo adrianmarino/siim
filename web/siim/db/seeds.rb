@@ -321,26 +321,32 @@ medical_history_b = MedicalHistory.create(patient: patient_b)
 # Allergies...
 # -----------------------------------------------------------------------------
 Allergy.create(
+  record_date: '22-08-2013',
   cause: 'Alergia al polen',
   medical_history: medical_history_a
 )
 Allergy.create(
+  record_date: '22-08-2013',
   cause: 'Alergia a los acaros',
   medical_history: medical_history_a
 )
 Allergy.create(
+  record_date: '22-08-2013',
   cause: 'Alergia al pelo de animales',
   medical_history: medical_history_a
 )
 Allergy.create(
+  record_date: '22-08-2013',
   cause: 'Alergia a los medicamente. Especialmente al rivotril',
   medical_history: medical_history_b
 )
 Allergy.create(
+  record_date: '22-08-2013',
   cause: 'Alergia a las picaduras de insectos. Mosquitos, cocogrilos.',
   medical_history: medical_history_b
 )
 Allergy.create(
+  record_date: '22-08-2013',
   cause: 'Alergia a los animales. Todos, seres humanos incluidos.',
   medical_history: medical_history_b
 )
@@ -415,26 +421,32 @@ Antecedent.create(
 # Diseases...
 # -------------------------------------------------------------------------
 Disease.create(
+  record_date: "12-12-2012",
   name: "Reuma",
   medical_history: medical_history_a
 )
 Disease.create(
+  record_date: "12-12-2012",
   name: "Artrocis",
   medical_history: medical_history_a
 )
 Disease.create(
+  record_date: "12-12-2012",
   name: "Hepatitis",
   medical_history: medical_history_a
 )
 Disease.create(
+  record_date: "12-12-2012",
   name: "Reuma",
   medical_history: medical_history_b
 )
 Disease.create(
+  record_date: "12-12-2012",
   name: "Artrocis",
   medical_history: medical_history_b
 )
 Disease.create(
+  record_date: "12-12-2012",
   name: "Hepatitis",
   medical_history: medical_history_b
 )
@@ -535,41 +547,49 @@ Vaccine.create(
 MedicalExam.create(
   achievement_date: "12-12-2012",
   name: "Examen de sangre",
+  results: "Ok",
   medical_history: medical_history_a
 )
 MedicalExam.create(
   achievement_date: "12-12-2012",
   name: "Análisis de heces",
+  results: "Ok",
   medical_history: medical_history_a
 )
 MedicalExam.create(
   achievement_date: "12-12-2012",
   name: "Examen de orina",
+  results: "Ok",
   medical_history: medical_history_a
 )
 MedicalExam.create(
   achievement_date: "12-12-2012",
   name: "Examen de electrocardiografía",
+  results: "Ok",
   medical_history: medical_history_a
 )
 MedicalExam.create(
   achievement_date: "12-12-2012",
   name: "Examen de cultivo de garganta",
+  results: "Ok",
   medical_history: medical_history_b
 )
 MedicalExam.create(
   achievement_date: "12-12-2012",
   name: "Examen lumbar",
+  results: "Ok",
   medical_history: medical_history_b
 )
 MedicalExam.create(
   achievement_date: "12-12-2012",
   name: "Biopsia",
+  results: "Ok",
   medical_history: medical_history_b
 )
 MedicalExam.create(
   achievement_date: "12-12-2012",
   name: "Exámenes de radiología",
+  results: "Ok",
   medical_history: medical_history_b
 )
 #
