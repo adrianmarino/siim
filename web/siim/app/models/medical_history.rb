@@ -46,6 +46,17 @@ class MedicalHistory < ActiveRecord::Base
 		)
 	end
 
+	def self.custom_search2(a_text)
+		if a_text.empty?
+			return []
+		else
+			results = search do
+				query { string a_text }
+			end
+			results.collect {|a_result| MedicalHistorySearchResult.new(find(a_result.id))}
+		end
+	end
+
 	def self.custom_search(a_text)
 		if a_text.empty?
 			return []
@@ -53,14 +64,14 @@ class MedicalHistory < ActiveRecord::Base
 			search = Tire.search 'medical_histories' do
 				query do
 					boolean do
-						should &SearchCriteria.field("patient.firstname",a_text)
-						should &SearchCriteria.field("patient.lastname",a_text)
-						should &SearchCriteria.field("patient.birthdate",a_text)
-						should &SearchCriteria.field("patient.height",a_text)
-						should &SearchCriteria.field("patient.weight",a_text)
+						# should &SearchCriteria.field("patient.firstname",a_text)
+						# should &SearchCriteria.field("patient.lastname",a_text)
+						# should &SearchCriteria.field("patient.birthdate",a_text)
+						# should &SearchCriteria.field("patient.height",a_text)
+						# should &SearchCriteria.field("patient.weight",a_text)
 
-						should &SearchCriteria.field("allergies.cause", a_text)
-						should &SearchCriteria.field("allergies.observations",a_text)
+						#should &SearchCriteria.field("allergies.cause", a_text)
+						# should &SearchCriteria.field("allergies.observations",a_text)
 
 						# should &SearchCriteria.field("antecedents.description",a_text)
 
@@ -154,55 +165,55 @@ class MedicalHistory < ActiveRecord::Base
 	# Properly serialize JSON for elasticsearch...
 	self.include_root_in_json = false
 
-	settings :number_of_shards => 1,
-					 :number_of_replicas => 1,
-					 :analysis => {
-						 :filter => {
-								:spanish_stop	=> {
-									'type'					 => 'stop',
-									'stopwords_path' => 'spanish_stop_words.txt'
+	settings	number_of_shards:		1,
+						number_of_replicas:	1,
+						analysis:{
+							filter:{
+								spanish_stop:{
+									'type'						=>	'stop',
+									'stopwords_path'	=>	'spanish_stop_words.txt'
 								},
-								:name_ngrams => {
-									'type'			=> 'edgeNGram',
-									'side'			=> 'front',
-									'max_gram'	=> 50,
-									'min_gram'	=> 2
+								name_ngrams:{
+									'type'			=>	'edgeNGram',
+									'side'			=>	'front',
+									'max_gram'	=>	50,
+									'min_gram'	=>	2
 								},
-								:name_ngrams_back => {
-									 'side'		 => 'back',
-									 'max_gram' => 50,
-									 'min_gram' => 2,
-									 'type'		 => 'edgeNGram'
+								name_ngrams_back:{
+									 'side'			=>	'back',
+									 'max_gram'	=>	50,
+									 'min_gram'	=>	2,
+									 'type'			=>	'edgeNGram'
 								},
-								:name_middle_ngrams => {
-									 'type'		 => 'nGram',
-									 'max_gram' => 50,
-									 'min_gram' => 2
+								name_middle_ngrams:{
+									 'type'			=>	'nGram',
+									 'max_gram'	=>	50,
+									 'min_gram'	=>	2
 								}
-						 },
-						 :analyzer => {
-								:full_name => {
-									'filter'		=> [ 'standard', 'lowercase','asciifolding','spanish_stop'],
-									'type'			=> 'custom',
-									'tokenizer' => 'standard'
+							},
+							analyzer:{
+								full_name:{
+									'filter'		=>	['standard', 'lowercase','asciifolding','spanish_stop'],
+									'type'			=>	'custom',
+									'tokenizer'	=>	'standard'
 								},
-								:partial_name => {
-									'type'			=> 'custom',
-									'tokenizer' => 'standard',
-									'filter'		=> ['standard','lowercase','asciifolding','name_ngrams','spanish_stop']		 
+								partial_name:{
+									'type'			=>	'custom',
+									'tokenizer'	=>	'standard',
+									'filter'		=>	['standard','lowercase','asciifolding','name_ngrams','spanish_stop']
 								},
-								:partial_name_back => {
-									'type'			 => 'custom',
-									'tokenizer'	=> 'standard',
-									'filter'		 => ['standard','lowercase','asciifolding','name_ngrams_back','spanish_stop']
+								partial_name_back:{
+									'type'			=>	'custom',
+									'tokenizer'	=>	'standard',
+									'filter'		=>	['standard','lowercase','asciifolding','name_ngrams_back','spanish_stop']
 								},
-								:partial_middle_name => {
-									'type' =>'custom',
-									'tokenizer' => 'standard',
-									'filter' => ['standard','lowercase','asciifolding','name_middle_ngrams','spanish_stop']
+								partial_middle_name:{
+									'type'			=>	'custom',
+									'tokenizer'	=>	'standard',
+									'filter'		=>	['standard','lowercase','asciifolding','name_middle_ngrams','spanish_stop']
 								}
-							 }
-						} do
+							}
+						}	do
 				mapping do
 					indexes :allergies do
 						indexes :cause,				type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
