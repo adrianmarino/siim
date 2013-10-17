@@ -15,50 +15,78 @@ class MedicalHistory < ActiveRecord::Base
 
 	def as_json(options={})
 		super(
-			:only => [:id],
-			:include =>	{
-				:patient => { :only => [
-					:dni, :firstname, :lastname, :birthdate, :blood_type, :height,
-					:weight, :sex, :address, :email, :home_phone, :movile_phone
-				]},
-				:allergies => {:only =>[:cause]},
-				:antecedents => { :only => [:description]},
-				:consultations => {:only=>[:diagnostic]},
-				:diseases => {:only =>[:name]},
-				:medications => {:only => [:name,:dose,:amount]},
-				:vaccines => {:only => [:last_application, :name]},
-				:medical_exams => {:only => [:achievement_date, :name]}
+			only:[:id],
+			include:{
+				patient:				{only:[:dni,:firstname,:lastname,:birthdate,:blood_type,
+																:height,:weight,:sex,:address,:email,:home_phone,
+																:movile_phone]},
+				allergies:			{only:[:cause]},
+				antecedents:		{only:[:description]},
+				consultations:	{only:[:diagnostic]},
+				diseases:				{only:[:name]},
+				medications:		{only:[:name,:dose,:amount]},
+				vaccines:				{only:[:last_application,:name]},
+				medical_exams:	{only:[:achievement_date,:name]}
 			}
 		)
 	end
 
 	def to_indexed_json
-		to_json( include: {
-				:patient => { :only => [:firstname, :lastname, :birthdate, :height, :weight]},
-				:allergies => {:only =>[:cause, :observations]},
-				:antecedents => { :only => [:description]},
-				:consultations => {:only=>[:diagnostic, :symptomps, :treatment]},
-				:diseases => {:only =>[:name,:observations]},
-				:medications => {:only => [:name,:route,:dose,:amount]},
-				:vaccines => {:only => [:name]},
-				:medical_exams => {:only => [:name, :results, :observations]}
+		to_json(
+			include:{
+				patient:				{only:[:firstname,:lastname,:birthdate,:height,:weight]},
+				allergies:			{only:[:cause,:observations]},
+				antecedents:		{only:[:description]},
+				consultations:	{only:[:diagnostic,:symptomps,:treatment]},
+				diseases: 			{only:[:name,:observations]},
+				medications:		{only:[:name,:route,:dose,:amount]},
+				vaccines:				{only:[:name]},
+				medical_exams:	{only:[:name,:results,:observations]}
 			}
 		)
 	end
 
 	def self.custom_search(a_text)
-		content_query = lambda do |should|
-			should.string "#{a_text}*"
-		end
-		search = Tire.search 'medical_histories' do
-			query do
-				boolean do
-					should &content_query
+		if a_text.empty?
+			return []
+		else
+			search = Tire.search 'medical_histories' do
+				query do
+					boolean do
+						should &SearchCriteria.field("patient.firstname",a_text)
+						should &SearchCriteria.field("patient.lastname",a_text)
+						should &SearchCriteria.field("patient.birthdate",a_text)
+						should &SearchCriteria.field("patient.height",a_text)
+						should &SearchCriteria.field("patient.weight",a_text)
+
+						should &SearchCriteria.field("allergies.cause", a_text)
+						should &SearchCriteria.field("allergies.observations",a_text)
+
+						# should &SearchCriteria.field("antecedents.description",a_text)
+
+						# should &SearchCriteria.field("consultations.diagnostic",a_text)
+						# should &SearchCriteria.field("consultations.symptomps",a_text)
+						# should &SearchCriteria.field("consultations.treatment",a_text)
+
+						# should &SearchCriteria.field("diseases.name",a_text)
+						# should &SearchCriteria.field("diseases.observations",a_text)
+
+						# should &SearchCriteria.field("medications.name",a_text)
+						# should &SearchCriteria.field("medications.route",a_text)
+						# should &SearchCriteria.field("medications.dose",a_text)
+						# should &SearchCriteria.field("medications.amount",a_text)
+
+						# should &SearchCriteria.field("vaccines.name",a_text)
+
+						# should &SearchCriteria.field("medical_exams.name",a_text)
+						# should &SearchCriteria.field("medical_exams.observations",a_text)
+						# should &SearchCriteria.field("medical_exams.results",a_text)
+					end
 				end
+				highlight :_all, :options => { :tag => "<strong class=\"highlight\">" }
 			end
-			highlight :_all, :options => { :tag => "<strong class=\"highlight\">" }
+			search.results.collect {|a_result| MedicalHistorySearchResult.new(find(a_result.id))}
 		end
-		search.results.collect {|a_result| MedicalHistorySearchResult.new(find(a_result.id))}
 	end
 	#
 	#
@@ -176,42 +204,42 @@ class MedicalHistory < ActiveRecord::Base
 							 }
 						} do
 				mapping do
-					indexes :patient do
-						indexes :firstname, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
-						indexes :lastname, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
-						indexes :birthdate, :type => 'date', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
-						indexes :height, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
-						indexes :weight, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
-					end
 					indexes :allergies do
-						indexes :cause, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
-						indexes :observations, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
+						indexes :cause,				type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
+						indexes :observations,type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
 					end
 					indexes :antecedents do
-						indexes :description, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
+						indexes :description,	type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
 					end
 					indexes :consultations do
-						indexes :diagnostic, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
-						indexes :symptomps, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
-						indexes :treatment, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
+						indexes :diagnostic,	type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
+						indexes :symptomps,		type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
+						indexes :treatment,		type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
 					end
 					indexes :diseases do
-						indexes :name, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
-						indexes :observations, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
+						indexes :name,				type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
+						indexes :observations,type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
 					end
 					indexes :medications do
-						indexes :name, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
-						indexes :route, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
-						indexes :dose, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
-						indexes :amount, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
+						indexes :name,				type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
+						indexes :route,				type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
+						indexes :dose,				type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
+						indexes :amount,			type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
 					end
 					indexes :vaccines do
-						indexes :name, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
+						indexes :name,				type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
 					end
 					indexes :medical_exams do
-						indexes :name, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
-						indexes :results, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
-						indexes :observations, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
+						indexes :name,				type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
+						indexes :results,			type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
+						indexes :observations,type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
+					end
+					indexes :patient do
+						indexes :firstname,		type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
+						indexes :lastname,		type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
+						indexes :birthdate,		type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
+						indexes :height,			type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
+						indexes :weight,			type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
 					end
 			end
 	end
