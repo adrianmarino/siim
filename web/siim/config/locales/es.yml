@@ -377,7 +377,7 @@ es:
       medical_histories:
         show: "Lista"
         search: "Por DNI/Nombre"
-        custom_search: "Avanzada"
+        custom_search: "Personalizada"
       appointments:
         assignment: "Asignación de turnos"
         my_appointments: "Mis turnos"
