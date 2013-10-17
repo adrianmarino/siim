@@ -312,8 +312,8 @@ patient_b = Patient.create(
 # -----------------------------------------------------------------------------
 # Medical History...
 # -----------------------------------------------------------------------------
-medical_history = MedicalHistory.create(patient: patient_a)
-medical_history = MedicalHistory.create(patient: patient_b)
+medical_history_a = MedicalHistory.create(patient: patient_a)
+medical_history_b = MedicalHistory.create(patient: patient_b)
 #
 #
 #
@@ -321,16 +321,28 @@ medical_history = MedicalHistory.create(patient: patient_b)
 # Allergies...
 # -----------------------------------------------------------------------------
 Allergy.create(
-  cause: 'Causa 1',
-  medical_history: medical_history
+  cause: 'Alergia al polen',
+  medical_history: medical_history_a
 )
 Allergy.create(
-  cause: 'Causa 2',
-  medical_history: medical_history
+  cause: 'Alergia a los acaros',
+  medical_history: medical_history_a
 )
 Allergy.create(
-  cause: 'Causa 3',
-  medical_history: medical_history
+  cause: 'Alergia al pelo de animales',
+  medical_history: medical_history_a
+)
+Allergy.create(
+  cause: 'Alergia a los medicamente. Especialmente al rivotril',
+  medical_history: medical_history_b
+)
+Allergy.create(
+  cause: 'Alergia a las picaduras de insectos. Mosquitos, cocogrilos.',
+  medical_history: medical_history_b
+)
+Allergy.create(
+  cause: 'Alergia a los animales. Todos, seres humanos incluidos.',
+  medical_history: medical_history_b
 )
 #
 #
@@ -339,18 +351,32 @@ Allergy.create(
 # Consultations...
 # -----------------------------------------------------------------------------
 Consultation.create(
-  achievement_date: '22-08-2013', 
-  diagnostic: 'Diagnostico',
-  symptomps: 'Sintomas',
-  treatment: 'Tratamiento',
-  medical_history: medical_history
+  achievement_date: '22-08-2013',
+  diagnostic: 'Fractura expuesta de tobillo',
+  symptomps: 'Dificulta al caminar',
+  treatment: 'Enyesado. Reposo por 2 meses',
+  medical_history: medical_history_a
 )
 Consultation.create(
-  achievement_date: '23-08-2013', 
+  achievement_date: '23-08-2013',
+  diagnostic: 'Gripe Aviar H1N1',
+  symptomps: 'Fiebre alta de más de 38 grados, dificultad respiratoria, tos, malestar general.',
+  treatment: 'Tamiflú y Ralenza',
+  medical_history: medical_history_a
+)
+Consultation.create(
+  achievement_date: '22-08-2013',
+  diagnostic: 'Descompesación gastrica menor',
+  symptomps: 'Mareos y vómito',
+  treatment: 'Reliveran',
+  medical_history: medical_history_b
+)
+Consultation.create(
+  achievement_date: '23-08-2013',
   diagnostic: 'Diagnostico 2',
   symptomps: 'Sintomas 2',
   treatment: 'Tratamiento 1',
-  medical_history: medical_history
+  medical_history: medical_history_b
 )
 #
 #
@@ -359,16 +385,28 @@ Consultation.create(
 # Antecedents...
 # -----------------------------------------------------------------------------
 Antecedent.create(
-  description: 'Descripción 1',
-  medical_history: medical_history
+  description: 'Fractura de tivia y perone',
+  medical_history: medical_history_a
 )
 Antecedent.create(
-  description: 'Descripción 2',
-  medical_history: medical_history
+  description: 'Gripe Aviar H1N1',
+  medical_history: medical_history_a
 )
 Antecedent.create(
-  description: 'Descripción 3',
-  medical_history: medical_history
+  description: 'Hepatitis B',
+  medical_history: medical_history_a
+)
+Antecedent.create(
+  description: 'Dolores de Cabeza recurrentes',
+  medical_history: medical_history_b
+)
+Antecedent.create(
+  description: 'Estrés',
+  medical_history: medical_history_b
+)
+Antecedent.create(
+  description: 'Padres separados',
+  medical_history: medical_history_b
 )
 #
 #
@@ -378,15 +416,27 @@ Antecedent.create(
 # -------------------------------------------------------------------------
 Disease.create(
   name: "Reuma",
-  medical_history: medical_history 
+  medical_history: medical_history_a
 )
 Disease.create(
   name: "Artrocis",
-  medical_history: medical_history 
+  medical_history: medical_history_a
 )
 Disease.create(
-  name: "Epatitis",
-  medical_history: medical_history 
+  name: "Hepatitis",
+  medical_history: medical_history_a
+)
+Disease.create(
+  name: "Reuma",
+  medical_history: medical_history_b
+)
+Disease.create(
+  name: "Artrocis",
+  medical_history: medical_history_b
+)
+Disease.create(
+  name: "Hepatitis",
+  medical_history: medical_history_b
 )
 #
 #
@@ -398,19 +448,37 @@ Medication.create(
   name: "Polper B12 Forte",
   dose: "1 Comprimido por día",
   amount: 100,
-  medical_history: medical_history 
+  medical_history: medical_history_a
 )
 Medication.create(
   name: "Aspirina",
   dose: "1 Comprimido por día",
   amount: 200,
-  medical_history: medical_history 
+  medical_history: medical_history_a
 )
 Medication.create(
   name: "Omeprazol",
   dose: "1 Comprimido por día",
   amount: 300,
-  medical_history: medical_history 
+  medical_history: medical_history_a
+)
+Medication.create(
+  name: "Polper B12 Forte",
+  dose: "1 Comprimido por día",
+  amount: 100,
+  medical_history: medical_history_b
+)
+Medication.create(
+  name: "Aspirina",
+  dose: "1 Comprimido por día",
+  amount: 200,
+  medical_history: medical_history_b
+)
+Medication.create(
+  name: "Omeprazol",
+  dose: "1 Comprimido por día",
+  amount: 300,
+  medical_history: medical_history_b
 )
 #
 #
@@ -420,13 +488,43 @@ Medication.create(
 # -------------------------------------------------------------------------
 Vaccine.create(
   last_application: "12-12-2012",
-  name: "Vacuna 1",
-  medical_history: medical_history
+  name: "BGC",
+  medical_history: medical_history_a
 )
 Vaccine.create(
   last_application: "12-12-2002",
-  name: "Vacuna 2",
-  medical_history: medical_history
+  name: "Hepatitis B HB",
+  medical_history: medical_history_a
+)
+Vaccine.create(
+  last_application: "12-12-2002",
+  name: "Gripe",
+  medical_history: medical_history_a
+)
+Vaccine.create(
+  last_application: "12-12-2002",
+  name: "Neumococo Conjugada",
+  medical_history: medical_history_a
+)
+Vaccine.create(
+  last_application: "12-12-2012",
+  name: "Sabin OPV",
+  medical_history: medical_history_b
+)
+Vaccine.create(
+  last_application: "12-12-2002",
+  name: "VPH",
+  medical_history: medical_history_b
+)
+Vaccine.create(
+  last_application: "12-12-2002",
+  name: "Gripe",
+  medical_history: medical_history_b
+)
+Vaccine.create(
+  last_application: "12-12-2002",
+  name: "Neumococo Conjugada",
+  medical_history: medical_history_b
 )
 #
 #
@@ -436,18 +534,43 @@ Vaccine.create(
 # -------------------------------------------------------------------------
 MedicalExam.create(
   achievement_date: "12-12-2012",
-  name: "Examen 1",
-  medical_history: medical_history
+  name: "Examen de sangre",
+  medical_history: medical_history_a
 )
 MedicalExam.create(
   achievement_date: "12-12-2012",
-  name: "Examen 2",
-  medical_history: medical_history
+  name: "Análisis de heces",
+  medical_history: medical_history_a
 )
 MedicalExam.create(
   achievement_date: "12-12-2012",
-  name: "Examen 3",
-  medical_history: medical_history
+  name: "Examen de orina",
+  medical_history: medical_history_a
+)
+MedicalExam.create(
+  achievement_date: "12-12-2012",
+  name: "Examen de electrocardiografía",
+  medical_history: medical_history_a
+)
+MedicalExam.create(
+  achievement_date: "12-12-2012",
+  name: "Examen de cultivo de garganta",
+  medical_history: medical_history_b
+)
+MedicalExam.create(
+  achievement_date: "12-12-2012",
+  name: "Examen lumbar",
+  medical_history: medical_history_b
+)
+MedicalExam.create(
+  achievement_date: "12-12-2012",
+  name: "Biopsia",
+  medical_history: medical_history_b
+)
+MedicalExam.create(
+  achievement_date: "12-12-2012",
+  name: "Exámenes de radiología",
+  medical_history: medical_history_b
 )
 #
 #

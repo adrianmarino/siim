@@ -49,6 +49,7 @@ class MedicalHistoriesController < CrudController
 	# GET /medical_histories/1.json
 	def show
 		@medical_history = MedicalHistory.find(params[:id])
+		@back_url = params[:back_url].nil? ? medical_histories_path : params[:back_url]
 
 		respond_to do |format|
 			format.html # show.html.erb
