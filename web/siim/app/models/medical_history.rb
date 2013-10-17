@@ -17,14 +17,15 @@ class MedicalHistory < ActiveRecord::Base
 		super(
 			:only => [:id],
 			:include =>	{
-				:patient => { :only => [:dni, :firstname, :lastname, :birthdate, :blood_type,
-																:height, :weight, :sex, :address, :email, :home_phone, :movile_phone] 
-										},
+				:patient => { :only => [
+					:dni, :firstname, :lastname, :birthdate, :blood_type, :height,
+					:weight, :sex, :address, :email, :home_phone, :movile_phone
+				]},
 				:allergies => {:only =>[:cause]},
 				:antecedents => { :only => [:description]},
 				:consultations => {:only=>[:diagnostic]},
 				:diseases => {:only =>[:name]},
-				:medications => {:only => [:name,:dose,:how_often]},
+				:medications => {:only => [:name,:dose,:amount]},
 				:vaccines => {:only => [:last_application, :name]},
 				:medical_exams => {:only => [:achievement_date, :name]}
 			}
@@ -33,37 +34,31 @@ class MedicalHistory < ActiveRecord::Base
 
 	def to_indexed_json
 		to_json( include: {
-				:patient => { :only => [
-					:dni, :firstname, :lastname, :birthdate, :blood_type, :height, :weight, :sex, 
-					:address, :email, :home_phone, :movile_phone
-				]},
-				:allergies => {:only =>[:cause]},
+				:patient => { :only => [:firstname, :lastname, :birthdate, :height, :weight]},
+				:allergies => {:only =>[:cause, :observations]},
 				:antecedents => { :only => [:description]},
-				:consultations => {:only=>[:diagnostic]},
-				:diseases => {:only =>[:name]},
-				:medications => {:only => [:name,:dose,:how_often]},
-				:vaccines => {:only => [:last_application, :name]},
-				:medical_exams => {:only => [:achievement_date, :name]}
+				:consultations => {:only=>[:diagnostic, :symptomps, :treatment]},
+				:diseases => {:only =>[:name,:observations]},
+				:medications => {:only => [:name,:route,:dose,:amount]},
+				:vaccines => {:only => [:name]},
+				:medical_exams => {:only => [:name, :results, :observations]}
 			}
 		)
 	end
 
 	def self.custom_search(a_text)
-		query = lambda do |should|
-			should.string a_text
+		content_query = lambda do |should|
+			should.string "#{a_text}*"
 		end
-		search = Tire.search :medical_histories do
+		search = Tire.search 'medical_histories' do
 			query do
 				boolean do
-					should &query
+					should &content_query
 				end
 			end
-			highlight "firstname", :options => { :tag => '<strong class="highlight">' }
+			highlight :_all, :options => { :tag => "<strong class=\"highlight\">" }
 		end
-		result = search.results.each_with_hit do |result, hit|
-			puts "#{result.title} (score: #{hit['_score']})"
-		end
-		result
+		search.results.collect {|a_result| MedicalHistorySearchResult.new(find(a_result.id))}
 	end
 	#
 	#
@@ -104,7 +99,7 @@ class MedicalHistory < ActiveRecord::Base
 	has_many	:medical_exams, dependent: :delete_all
 	has_many	:medications, dependent: :delete_all
 	has_many	:vaccines, dependent: :delete_all
-	has_one	 :patient, dependent: :delete
+	has_one		:patient, dependent: :delete
 	#
 	#
 	#
@@ -208,7 +203,7 @@ class MedicalHistory < ActiveRecord::Base
 						indexes :name, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
 						indexes :route, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
 						indexes :dose, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
-						indexes :how_often, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
+						indexes :amount, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'
 					end
 					indexes :vaccines do
 						indexes :name, :type => 'string', :index_analyzer => 'partial_middle_name' ,:search_analyzer => 'full_name'

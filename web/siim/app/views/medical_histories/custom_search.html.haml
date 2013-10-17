@@ -6,31 +6,27 @@
 				%button.btn{"type"=>"submit"}
 					%i.icon-search
 
-	- if not @medical_histories.nil?
-		%legend=t "custom_search.result"
+	- if not @results.nil?
 		.custom-search-results
 			%table#custom_search_result.table.table-striped.table-bordered{:border => "0", :cellpadding => "0", :cellspacing => "0"}
 				%thead.table-header
 					%tr
-						%th= translate_attribute(:medical_history,:number)
-						%th= translate_attribute(:medical_history,:dni)
-						%th= translate_attribute(:medical_history,:patient)
+						%th=t "custom_search.result"
 						%th.options= t :options
 				%tbody
-					- for a_history in @medical_histories
+					- for a_result in @results
 						%tr
-							%td=a_history.id
-							%td=a_history.patient.dni
-							%td=a_history.patient
-							%td.options
+							%td{"style" => "vertical-align: middle;"}=a_result
+							%td.options{"style" => "vertical-align: middle;"}
+								= link_to raw("<i class=\"icon-minus-sign\">&nbsp;#{t('appointment.action.finalize')}</i>"), edit_medical_history_path(:id => a_result.medical_history.id, :back_url => appointments_my_appointments_path), :class => "btn"
 		:javascript
 			$(document).ready(function() {
 						$('#custom_search_result').dataTable({
+						"bSort": false,
 						"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
 						"sPaginationType": "bootstrap",
 						"aLengthMenu": [[5, 10, 15, 25, 50, 100], [5, 10, 15, 25, 50, 100]],
 						"iDisplayLength": 10,
-						"aoColumns": [null, null, null, null],
 						"oLanguage": {
 							"oPaginate": {
 									"sFirst": I18n.t("data_table.paginate.first"),
@@ -47,12 +43,6 @@
 								"sZeroRecords": I18n.t("data_table.zeroRecords"),
 								"sLengthMenu": I18n.t("data_table.lengthMenu")
 						}
-				});
-				$(".sorting:last").removeClass("sorting");
-				$("[name='list_length']").selectpicker({
-						style: 'btn-info',
-						size: '10',
-						width: '70px'
 				});
 			});
 
