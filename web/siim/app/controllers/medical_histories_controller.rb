@@ -25,7 +25,7 @@ class MedicalHistoriesController < CrudController
 
 	def perform_custom_search
 		@text = params[:text]
-		@results= MedicalHistory.custom_search2 @text
+		@results= MedicalHistorySearchEngine.search @text
 		custom_search
 	end
 
