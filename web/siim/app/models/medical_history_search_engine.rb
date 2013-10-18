@@ -10,7 +10,7 @@ module MedicalHistorySearchEngine
 		MedicalHistory.tire.index.refresh
 	end
 
-	def self.search(a_text)
+	def self.raw_search(a_text)
 		return [] if a_text.empty?
 		results = MedicalHistory.search do
 			query do
@@ -51,6 +51,9 @@ module MedicalHistorySearchEngine
 								"medical_exams.name","medical_exams.results","medical_exams.observations",
 								:options => { :tag => "<strong class=\"highlight\">" }
 		end
-		results.collect { |a_result| MedicalHistorySearchResult.new a_result }
+	end
+
+	def self.search(a_text)
+		raw_search(a_text).collect { |a_result| MedicalHistorySearchResult.new a_result }
 	end
 end
