@@ -18,7 +18,7 @@
                 %li.divider
                 %li.nav-header=" #{t 'menu.medical_histories_search'}"
                 %li= link_to t('menu.sub_menu.medical_histories.custom_search'), custom_search_medical_histories_path, "tabindex" => "-1"
-                %li= link_to t('menu.sub_menu.medical_histories.search'), search_medical_histories_path, "tabindex" => "-1"
+                -#%li= link_to t('menu.sub_menu.medical_histories.search'), search_medical_histories_path, "tabindex" => "-1"
 
             %li= link_to raw("<i class=\"icon-calendar\">&nbsp;</i>#{t('menu.sub_menu.appointments.assignment')}"), appointments_setup_search_path, "tabindex" => "-1"
             %li.dropdown

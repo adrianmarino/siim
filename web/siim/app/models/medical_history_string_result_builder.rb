@@ -76,106 +76,87 @@ class MedicalHistoryStringResultBuilder
 	# -------------------------------------------------------------------------
 	private
 	def patient_firstname
-		value_of @medical_history.patient.firstname, "patient.firstname"
+		value_of "patient.firstname", @medical_history.patient.firstname
 	end
 
 	def patient_lastname
-		value_of @medical_history.patient.lastname, "patient.lastname"
+		value_of "patient.lastname", @medical_history.patient.lastname
 	end
 
 	def patient_birthdate
-		value_of @medical_history.patient.birthdate, "patient.birthdate"
+		value_of "patient.birthdate", @medical_history.patient.birthdate
 	end
 
 	def patient_height
-		value_of @medical_history.patient.height, "patient.height"
+		value_of "patient.height", @medical_history.patient.height
 	end
 
 	def patient_weight
-		value_of @medical_history.patient.weight, "patient.weight"
+		value_of "patient.weight", @medical_history.patient.weight
 	end
 
 	def allergy_cause(an_model)
-		value_of an_model.cause, "allergies.cause"
+		value_of "allergies.cause", an_model.cause
 	end
 
 	def allergy_observations(an_model)
-		value_of an_model.observations, "allergies.observations"
+		value_of "allergies.observations", an_model.observations
 	end
 
 	def consultation_treatment(a_model)
-		value_of a_model.treatment, "consultations.treatment"
+		value_of "consultations.treatment", a_model.treatment
 	end
 
 	def consultation_symptomps(a_model)
-		value_of a_model.symptomps, "consultations.symptomps"
+		value_of "consultations.symptomps", a_model.symptomps
 	end
 
 	def consultation_diagnostic(a_model)
-		value_of a_model.diagnostic, "consultations.diagnostic"
+		value_of "consultations.diagnostic", a_model.diagnostic
 	end
 
 	def disease_name(a_model)
-		value_of a_model.name, "diseases.name"
+		value_of "diseases.name", a_model.name
 	end
 
 	def disease_observations(a_model)
-		value_of a_model.observations, "diseases.observations"
+		value_of "diseases.observations", a_model.observations
 	end
 
 	def medication_name(a_model)
-		value_of a_model.name, "medications.name"
+		value_of "medications.name", a_model.name
 	end
 
 	def medication_dose(a_model)
-		value_of a_model.dose, "medications.dose"
+		value_of "medications.dose", a_model.dose
 	end
 
 	def medication_amount(a_model)
-		value_of a_model.amount, "medications.amount"
+		value_of "medications.amount", a_model.amount
 	end
 
 	def medication_route(a_model)
-		value_of a_model.route, "medications.route"
+		value_of "medications.route", a_model.route
 	end
 
 	def exam_name(a_model)
-		value_of a_model.name, "medical_exams.name"
+		value_of "medical_exams.name", a_model.name
 	end
 
 	def exam_results(a_model)
-		value_of a_model.results, "medical_exams.results"
+		value_of "medical_exams.results", a_model.results
 	end
 
 	def exam_observations(a_model)
-		value_of a_model.observations, "medical_exams.observations"
+		value_of "medical_exams.observations", a_model.observations 
 	end
 
-
-	def value_of(a_value, a_field_name)
-		if !@medical_history.highlight.nil? and !@medical_history.highlight[a_field_name].nil?
-			highlight = @medical_history.highlight[a_field_name][0]
-			if are_equal(highlight,a_value)
-				highlight
-			else
-				a_value
-			end
-		else
-			a_value
-		end
+	def value_of(a_field_name, a_value)
+		@highlight_wrapper.value_of a_field_name, a_value
 	end
 
 	def are_equal(a_highlight, a_value)
-		e = remove_highlight(a_highlight)
-		puts "e: #{e}"
-		e == a_value
-	end
-
-	def remove_highlight(a_value)
-		copy = a_value.dup
-		copy.slice! "<strong class=\"highlight\">"
-		copy.slice! "</strong>"
-		copy
+		remove_highlight(a_highlight) == a_value
 	end
 
 	# -------------------------------------------------------------------------
@@ -184,5 +165,6 @@ class MedicalHistoryStringResultBuilder
 	def initialize(a_medical_history)
 		@medical_history = a_medical_history
 		@result = ""
+		@highlight_wrapper  = HighlightWrapper.new_with_default_tags @medical_history.highlight
 	end
 end

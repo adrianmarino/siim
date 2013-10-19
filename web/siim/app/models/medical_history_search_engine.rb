@@ -49,7 +49,7 @@ module MedicalHistorySearchEngine
 								"medications.amount",
 								"vaccines.name",
 								"medical_exams.name","medical_exams.results","medical_exams.observations",
-								:options => { :tag => "<strong class=\"highlight\">" }
+								:options => { :tag => APP_CONFIG['search']['highlight']['begin'] }
 		end
 	end
 

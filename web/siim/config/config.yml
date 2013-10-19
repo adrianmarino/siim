@@ -1,5 +1,9 @@
 app:
   version: '0.8.9.0'
+search:
+  highlight:
+    begin: "<strong class=\"highlight\">"
+    end: "</strong>"
 mailer:
   password: 'Elnonocapo'
 scheduler:
