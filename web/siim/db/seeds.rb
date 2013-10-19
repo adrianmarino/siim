@@ -1,16 +1,22 @@
 # encoding: utf-8
-
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+# -----------------------------------------------------------------------------
 #
-# Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-# Users...
+#
+# -----------------------------------------------------------------------------
+# Delete Indexes....
+# -----------------------------------------------------------------------------
+MedicalHistorySearchEngine.delete_indexes
+#
+#
+#
+# -----------------------------------------------------------------------------
+# users....
+# -----------------------------------------------------------------------------
 user = User.create(dni: "29042902",first_name: "Adrian", last_name: "Marino", email: "adrianmarino@gmail.com", password: "29042902")
-
+#
+#
+#
 # -----------------------------------------------------------------------------
 # Medical specializations....
 # -----------------------------------------------------------------------------
@@ -18,10 +24,9 @@ pediatra = MedicalSpecialization.create(name: "Pediatria")
 traumatologo = MedicalSpecialization.create(name: "Traumatologia")
 oftalmologo = MedicalSpecialization.create(name: "Oftalmologia")
 clinic = MedicalSpecialization.create(name: "Clinico")
-
-
-
-
+#
+#
+#
 # -----------------------------------------------------------------------------
 # Attention Periods...
 # -----------------------------------------------------------------------------
@@ -75,7 +80,6 @@ period_monday_7 = AttentionPeriod.create(
     end_minutes: 0,
     week_day: 1
 )
-
 period_tuesday_7 = AttentionPeriod.create(
     begin_hour: 9,
     begin_minutes: 0,
@@ -83,7 +87,6 @@ period_tuesday_7 = AttentionPeriod.create(
     end_minutes: 0,
     week_day: 2
 )
-
 period_wednesday_7 = AttentionPeriod.create(
     begin_hour: 9,
     begin_minutes: 0,
@@ -91,7 +94,6 @@ period_wednesday_7 = AttentionPeriod.create(
     end_minutes: 0,
     week_day: 3
 )
-
 period_thursday_7 = AttentionPeriod.create(
     begin_hour: 9,
     begin_minutes: 0,
@@ -99,7 +101,6 @@ period_thursday_7 = AttentionPeriod.create(
     end_minutes: 0,
     week_day: 4
 )
-
 period_friday_7 = AttentionPeriod.create(
   begin_hour: 14, 
   begin_minutes: 0,
@@ -107,8 +108,6 @@ period_friday_7 = AttentionPeriod.create(
   end_minutes: 0,
   week_day: 5
 )
-
-
 period_saturday_7 = AttentionPeriod.create(
   begin_hour: 14, 
   begin_minutes: 0,
@@ -116,8 +115,6 @@ period_saturday_7 = AttentionPeriod.create(
   end_minutes: 0,
   week_day: 6
 )
-
-
 period_sunday_7 = AttentionPeriod.create(
   begin_hour: 14, 
   begin_minutes: 0,
@@ -125,7 +122,6 @@ period_sunday_7 = AttentionPeriod.create(
   end_minutes: 0,
   week_day: 7
 )
-
 period_monday_8 = AttentionPeriod.create(
   begin_hour: 9, 
   begin_minutes: 0,
@@ -168,7 +164,6 @@ period_monday_13 = AttentionPeriod.create(
   end_minutes: 0,
   week_day: 1
 )
-
 period_friday_14 = AttentionPeriod.create(
   begin_hour: 14, 
   begin_minutes: 0,
@@ -176,10 +171,9 @@ period_friday_14 = AttentionPeriod.create(
   end_minutes: 0,
   week_day: 5
 )
-
-
-
-
+#
+#
+#
 # -----------------------------------------------------------------------------
 # Medicals...
 # -----------------------------------------------------------------------------
@@ -220,7 +214,6 @@ Medical.create(
   attention_time_length_minutes: 10,
   user: user
 )
-
 Medical.create(
   dni: "14042902",									cuil: "20-14042902-2",
   firstname: "Cristian", 						lastname: "Molina",
@@ -257,9 +250,9 @@ Medical.create(
   attention_time_length_hour: 0,
   attention_time_length_minutes: 10
 )
-
-
-
+#
+#
+#
 # -----------------------------------------------------------------------------
 # Contacts...
 # -----------------------------------------------------------------------------
@@ -277,9 +270,9 @@ contact_b = Contact.create(
   home_phone: "47991111",
   movile_phone: "1589222222"
 )
-
-
-
+#
+#
+#
 # -----------------------------------------------------------------------------
 # Patients...
 # -----------------------------------------------------------------------------
@@ -298,7 +291,6 @@ patient_a = Patient.create(
   movile_phone: "88888888",
   contacts: [contact_a,contact_b]
 )
-
 patient_b = Patient.create(
   dni: "28381077",
   firstname: "Fernando",
@@ -314,161 +306,164 @@ patient_b = Patient.create(
   movile_phone: "1122233344",
   contacts: [contact_a,contact_b]
 )
-
-
-
+#
+#
+#
 # -----------------------------------------------------------------------------
 # Medical History...
 # -----------------------------------------------------------------------------
-medical_history = MedicalHistory.create(patient: patient_a)
-medical_history = MedicalHistory.create(patient: patient_b)
-
-
-
-
+medical_history_a = MedicalHistory.create(patient: patient_a)
+medical_history_b = MedicalHistory.create(patient: patient_b)
+#
+#
+#
 # -----------------------------------------------------------------------------
 # Allergies...
 # -----------------------------------------------------------------------------
-Allergy.create(
-  cause: 'Causa 1',
-  medical_history: medical_history
+medical_history_a.allergies.create(
+  record_date: '22-08-2013',
+  cause: 'Alergia al polen'
 )
-Allergy.create(
-  cause: 'Causa 2',
-  medical_history: medical_history
+medical_history_a.allergies.create(
+  record_date: '22-08-2013',
+  cause: 'Alergia a los acaros'
 )
-Allergy.create(
-  cause: 'Causa 3',
-  medical_history: medical_history
+medical_history_a.allergies.create(
+  record_date: '22-08-2013',
+  cause: 'Alergia al pelo de animales'
 )
-
-
-
+medical_history_b.allergies.create(
+  record_date: '22-08-2013',
+  cause: 'Alergia a los medicamente. Especialmente al rivotril'
+)
+medical_history_b.allergies.create(
+  record_date: '22-08-2013',
+  cause: 'Alergia a las picaduras de insectos. Mosquitos, cocogrilos.'
+)
+medical_history_b.allergies.create(
+  record_date: '22-08-2013',
+  cause: 'Alergia a los animales. Todos, seres humanos incluidos.'
+)
+#
+#
+#
 # -----------------------------------------------------------------------------
 # Consultations...
 # -----------------------------------------------------------------------------
-Consultation.create(
-  achievement_date: '22-08-2013', 
-  diagnostic: 'Diagnostico',
-  symptomps: 'Sintomas',
-  treatment: 'Tratamiento',
-  medical_history: medical_history
+medical_history_a.consultations.create(
+  achievement_date: '22-08-2013',
+  diagnostic: 'Fractura expuesta de tobillo',
+  symptomps: 'Dificulta al caminar',
+  treatment: 'Enyesado. Reposo por 2 meses'
 )
-Consultation.create(
-  achievement_date: '23-08-2013', 
+medical_history_a.consultations.create(
+  achievement_date: '23-08-2013',
+  diagnostic: 'Gripe Aviar H1N1',
+  symptomps: 'Fiebre alta de más de 38 grados, dificultad respiratoria, tos, malestar general.',
+  treatment: 'Tamiflú y Ralenza'
+)
+medical_history_b.consultations.create(
+  achievement_date: '22-08-2013',
+  diagnostic: 'Descompesación gastrica menor',
+  symptomps: 'Mareos y vómito',
+  treatment: 'Reliveran'
+)
+medical_history_b.consultations.create(
+  achievement_date: '23-08-2013',
   diagnostic: 'Diagnostico 2',
   symptomps: 'Sintomas 2',
-  treatment: 'Tratamiento 1',
-  medical_history: medical_history
+  treatment: 'Tratamiento 1'
 )
-
-
-
+#
+#
+#
 # -----------------------------------------------------------------------------
 # Antecedents...
 # -----------------------------------------------------------------------------
-Antecedent.create(
-  description: 'Descripción 1',
-  medical_history: medical_history
-)
-Antecedent.create(
-  description: 'Descripción 2',
-  medical_history: medical_history
-)
-Antecedent.create(
-  description: 'Descripción 3',
-  medical_history: medical_history
-)
+medical_history_a.antecedents.create description: 'Fractura de tivia y perone'
+medical_history_a.antecedents.create description: 'Gripe Aviar H1N1'
+medical_history_a.antecedents.create description: 'Hepatitis B'
 
-
-
-# -------------------------------------------------------------------------
+medical_history_b.antecedents.create description: 'Dolores de Cabeza recurrentes'
+medical_history_b.antecedents.create description: 'Estrés'
+medical_history_b.antecedents.create description: 'Padres separados'
+#
+#
+#
+# -----------------------------------------------------------------------------
 # Diseases...
-# -------------------------------------------------------------------------
-Disease.create(
-  name: "Reuma",
-  medical_history: medical_history 
-)
-Disease.create(
-  name: "Artrocis",
-  medical_history: medical_history 
-)
-Disease.create(
-  name: "Epatitis",
-  medical_history: medical_history 
-)
+# -----------------------------------------------------------------------------
+medical_history_a.diseases.create record_date: "12-12-2012", name: "Reuma"
+medical_history_a.diseases.create record_date: "12-12-2012", name: "Artrocis"
+medical_history_a.diseases.create record_date: "12-12-2012", name: "Hepatitis"
 
-
-
-# -------------------------------------------------------------------------
+medical_history_b.diseases.create record_date: "12-12-2012", name: "Reuma"
+medical_history_b.diseases.create record_date: "12-12-2012", name: "Artrocis"
+medical_history_b.diseases.create record_date: "12-12-2012", name: "Hepatitis"
+#
+#
+#
+# -----------------------------------------------------------------------------
 # Medications...
-# -------------------------------------------------------------------------
-Medication.create(
-  name: "Polper B12 Forte",
-  dose: "1 Comprimido por día",
-  amount: 100,
-  medical_history: medical_history 
-)
-Medication.create(
-  name: "Aspirina",
-  dose: "1 Comprimido por día",
-  amount: 200,
-  medical_history: medical_history 
-)
-Medication.create(
-  name: "Omeprazol",
-  dose: "1 Comprimido por día",
-  amount: 300,
-  medical_history: medical_history 
-)
+# -----------------------------------------------------------------------------
+medical_history_a.medications.create name: "Polper B12 Forte", dose: "1 Comprimido por día", amount: 100
+medical_history_a.medications.create name: "Aspirina", dose: "1 Comprimido por día", amount: 200
+medical_history_a.medications.create name: "Omeprazol", dose: "1 Comprimido por día", amount: 300
 
-
-
-# -------------------------------------------------------------------------
+medical_history_b.medications.create name: "Polper B12 Forte", dose: "1 Comprimido por día", amount: 100
+medical_history_b.medications.create name: "Aspirina", dose: "1 Comprimido por día", amount: 200
+medical_history_b.medications.create name: "Omeprazol", dose: "1 Comprimido por día", amount: 300
+#
+#
+#
+# -----------------------------------------------------------------------------
 # Vaccines...
-# -------------------------------------------------------------------------
-Vaccine.create(
-  last_application: "12-12-2012",
-  name: "Vacuna 1",
-  medical_history: medical_history
-)
-Vaccine.create(
-  last_application: "12-12-2002",
-  name: "Vacuna 2",
-  medical_history: medical_history
-)
+# -----------------------------------------------------------------------------
+medical_history_a.vaccines.create last_application: "12-12-2012", name: "BGC"
+medical_history_a.vaccines.create last_application: "12-12-2002", name: "Hepatitis B HB"
+medical_history_a.vaccines.create last_application: "12-12-2002", name: "Gripe"
+medical_history_a.vaccines.create last_application: "12-12-2002", name: "Neumococo Conjugada"
 
-
-# -------------------------------------------------------------------------
+medical_history_b.vaccines.create last_application: "12-12-2012", name: "Sabin OPV"
+medical_history_b.vaccines.create last_application: "12-12-2002", name: "VPH"
+medical_history_b.vaccines.create last_application: "12-12-2002", name: "Gripe"
+medical_history_b.vaccines.create last_application: "12-12-2002", name: "Neumococo Conjugada"
+#
+#
+#
+# -----------------------------------------------------------------------------
 # Medical exams...
-# -------------------------------------------------------------------------
-MedicalExam.create(
-  achievement_date: "12-12-2012",
-  name: "Examen 1",
-  medical_history: medical_history
-)
-MedicalExam.create(
-  achievement_date: "12-12-2012",
-  name: "Examen 2",
-  medical_history: medical_history
-)
-MedicalExam.create(
-  achievement_date: "12-12-2012",
-  name: "Examen 3",
-  medical_history: medical_history
-)
+# -----------------------------------------------------------------------------
+medical_history_a.medical_exams.create( achievement_date: "12-12-2012",
+  name: "Examen de sangre",results: "Ok")
+medical_history_a.medical_exams.create( achievement_date: "12-12-2012",
+  name: "Análisis de heces", results: "Ok")
+medical_history_a.medical_exams.create( achievement_date: "12-12-2012",
+  name: "Examen de orina", results: "Ok")
+medical_history_a.medical_exams.create( achievement_date: "12-12-2012",
+  name: "Examen de electrocardiografía", results: "Ok")
 
 
-# -------------------------------------------------------------------------
+medical_history_b.medical_exams.create( achievement_date: "12-12-2012",
+  name: "Examen de cultivo de garganta", results: "Ok")
+medical_history_b.medical_exams.create( achievement_date: "12-12-2012",
+  name: "Examen lumbar", results: "Ok")
+medical_history_b.medical_exams.create( achievement_date: "12-12-2012",
+  name: "Biopsia", results: "Ok")
+medical_history_b.medical_exams.create( achievement_date: "12-12-2012",
+  name: "Exámenes de radiología", results: "Ok")
+#
+#
+#
+# -----------------------------------------------------------------------------
 # Attention times...
-# -------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 Appointment.create(
   time: Time.now - 10.days,
   medical: medical_a,
   patient: patient_a,
   state: :reserved
 )
-
 Appointment.create(
   time: Time.now - 12.days,
   state: :attend,
@@ -476,14 +471,12 @@ Appointment.create(
   patient: patient_b,
   state: :reserved
 )
-
 Appointment.create(
   time: Time.now - 13.days,
   medical: medical_b,
   patient: patient_a,
   state: :reserved
 )
-
 Appointment.create(
   time: Time.now - 14.days,
   state: :reserved,
@@ -491,7 +484,6 @@ Appointment.create(
   patient: patient_b,
   state: :reserved
 )
-
 Appointment.create(
   time: Time.now - 15.days,
   state: :reserved,
@@ -499,7 +491,6 @@ Appointment.create(
   patient: patient_b,
   state: :reserved
 )
-
 Appointment.create(
   time: Time.now - 16.days,
   state: :reserved,
@@ -507,8 +498,17 @@ Appointment.create(
   patient: patient_a,
   state: :reserved
 )
-
-# -------------------------------------------------------------------------
-# System...
-# -------------------------------------------------------------------------
+#
+#
+#
+# -----------------------------------------------------------------------------
+# System Properties...
+# -----------------------------------------------------------------------------
 SystemProperty.new_window_size("20").save
+#
+#
+#
+# -----------------------------------------------------------------------------
+# Refresh Indexes....
+# -----------------------------------------------------------------------------
+MedicalHistorySearchEngine.refresh_indexes

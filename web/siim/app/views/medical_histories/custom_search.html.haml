@@ -1,0 +1,49 @@
+- content_for :content do
+	.custom-search-form.span12
+		= form_tag :perform_custom_search_medical_histories,  :id=>"custom-search-form", :class=>"form-search form-horizontal pull-right" do
+			.input-append
+				= text_field_tag :text, params[:text], :class => "search-query span12", :placeholder=> "#{t('custom_search.text')}"
+				%button.btn{"type"=>"submit"}
+					%i.icon-search
+
+	- if not @results.nil?
+		.custom-search-results
+			%table#custom_search_result.table.table-striped.table-bordered{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+				%thead.table-header
+					%tr
+						%th=t "custom_search.result"
+						%th.options= t :options
+				%tbody
+					- for a_result in @results
+						%tr
+							%td{"style" => "vertical-align: middle;"}=raw(a_result)
+							%td.options{"style" => "vertical-align: middle;"}
+								=link_to raw("<i class=\"icon-search\">&nbsp;#{t 'actions.show'}</i>"), edit_medical_history_path(:id => a_result.medical_history.id, :back_url => custom_search_medical_histories_path), :class => "btn"
+		:javascript
+			$(document).ready(function() {
+						$('#custom_search_result').dataTable({
+						"bSort": false,
+						"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+						"sPaginationType": "bootstrap",
+						"aLengthMenu": [[5, 10, 15, 25, 50, 100], [5, 10, 15, 25, 50, 100]],
+						"iDisplayLength": 10,
+						"oLanguage": {
+							"oPaginate": {
+									"sFirst": I18n.t("data_table.paginate.first"),
+									"sLast": I18n.t("data_table.paginate.last"),
+									"sNext": I18n.t("data_table.paginate.next"),
+									"sPrevious": I18n.t("data_table.paginate.previous")
+								},
+								"sEmptyTable": I18n.t("data_table.emptyTable"),
+								"sInfo": I18n.t("data_table.info"),
+								"sInfoEmpty": I18n.t("data_table.infoEmpty"),
+								"sInfoFiltered": I18n.t("data_table.infoFiltered"),
+								"sInfoPostFix": I18n.t("data_table.infoPostFix"),
+								"sSearch": I18n.t("data_table.search"),
+								"sZeroRecords": I18n.t("data_table.zeroRecords"),
+								"sLengthMenu": I18n.t("data_table.lengthMenu")
+						}
+				});
+			});
+
+= render :file => 'layouts/application'

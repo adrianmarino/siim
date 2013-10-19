@@ -4,7 +4,7 @@ class AppointmentController < ApplicationController
 	# -------------------------------------------------------------------------
 	def setup_search
 		@form = new_form
-		render appointments_setup_search_path
+		render appointments_search_path
 	end
 
 	def search
@@ -15,7 +15,7 @@ class AppointmentController < ApplicationController
 																					state: @form.state,
 																					from: @form.from_date,
 																					to: @form.to_date
-		render appointments_setup_search_path
+		render appointments_search_path
 	end
 
 	def liberate

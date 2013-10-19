@@ -17,7 +17,7 @@ class Patient < ActiveRecord::Base
   # -------------------------------------------------------------------------
   # Associations...
   # -------------------------------------------------------------------------
-  belongs_to :medical_history
+  belongs_to :medical_history, touch: true
   has_many :contacts
   has_attached_file :photo, :styles => {:medium => "200x200>"}, :default_url => "images/photo.png", :url  => "/assets/patients/:id/:style/:basename.:extension", :path => ":rails_root/public/assets/patients/:id/:style/:basename.:extension"
 
