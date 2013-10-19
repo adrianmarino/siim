@@ -156,42 +156,201 @@ class MedicalHistory < ActiveRecord::Base
 						}
 		} do
 			mapping do
-				indexes :allergies do
-					indexes :cause,				type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-					indexes :observations,type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-				end
-				indexes :antecedents do
-					indexes :description,	type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-				end
-				indexes :consultations do
-					indexes :diagnostic,	type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-					indexes :symptomps,		type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-					indexes :treatment,		type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-				end
-				indexes :diseases do
-					indexes :name,				type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-					indexes :observations,type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-				end
-				indexes :medications do
-					indexes :name,				type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-					indexes :route,				type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-					indexes :dose,				type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-					indexes :amount,			type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-				end
-				indexes :vaccines do
-					indexes :name,				type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-				end
-				indexes :medical_exams do
-					indexes :name,				type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-					indexes :results,			type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-					indexes :observations,type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-				end
 				indexes :patient do
-					indexes :firstname,		type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-					indexes :lastname,		type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-					indexes :birthdate,		type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-					indexes :height,			type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
-					indexes :weight,			type:'string',index_analyzer:'partial_middle_name',search_analyzer:'full_name'
+					indexes :firstname,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+					indexes :lastname,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+					indexes :birthdate,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+					indexes :height,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+					indexes :weight,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+				end
+
+				indexes :allergies do
+					indexes :cause,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+					indexes :observations,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+				end
+
+
+				indexes :antecedents do
+					indexes :description,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+				end
+
+
+				indexes :consultations do
+					indexes :diagnostic,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+					indexes :symptomps,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+					indexes :treatment,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+				end
+
+
+				indexes :diseases do
+					indexes :name,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+					indexes :observations,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+				end
+
+
+				indexes :medications do
+					indexes :name,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+					indexes :route,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+					indexes :dose,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+					indexes :amount,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+				end
+
+
+				indexes :vaccines do
+					indexes :name,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+				end
+
+				indexes :medical_exams do
+					indexes :name,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+					indexes :results,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
+					indexes :observations,
+									type: 'multi_field',
+									fields:{
+											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
+											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
+											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
+											"title"					=>{type:"string", analyzer: "full_name"}
+									}
 				end
 			end
 		end
