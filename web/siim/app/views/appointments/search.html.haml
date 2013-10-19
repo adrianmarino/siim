@@ -39,53 +39,54 @@
 				.span2
 					= submit_tag t('appointment.search'), :class => "btn btn-primary"
 					= link_to t('appointment.clean') , appointments_setup_search_path, :class => "btn"
-
 		:javascript
 			$(document).ready(function() {
 				medicalSelect.selectOptionWithValue("#{@form.medical}");
+				$(".results").show();
 			});
-			
+
 	- if not @appointments.nil?
-		%legend=t 'appointment.results'
-		%table#appointment_list.table.table-striped.table-bordered{:border => "0", :cellpadding => "0", :cellspacing => "0"}
-			%thead.table-header
-				%tr
-					%th=translate_attribute :appointment, :date
-					%th=translate_attribute :appointment, :medical
-					%th=translate_attribute :appointment, :patient
-					%th=translate_attribute :appointment, :state
-					%th.options= t :options
-			%tbody
-				- for an_appointment in @appointments
+		.results{"style"=> "display: none;"}
+			%legend=t 'appointment.results'
+			%table#appointment_list.table.table-striped.table-bordered{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+				%thead.table-header
 					%tr
-						%td=an_appointment.time.strftime "%d/%m/%Y %H:%M"
-						%td=an_appointment.medical
-						%td=an_appointment.patient
-						%td=t "appointment.state.#{an_appointment.current_state}"
-						%td.options
-							.btn-group
-								- if an_appointment.current_state == :available
-									= link_to raw("<i class=\"icon-plus-sign\">&nbsp;</i>#{t 'appointment.action.reserve'}"), "#reserve_modal_#{an_appointment.id}", :class => "btn btn-small", "data-toggle" =>"modal"
-									= link_to raw("<i class=\"icon-minus-sign\">&nbsp;</i>#{t 'appointment.action.liberate'}"), "#", :class => "btn btn-small disabled"
-								- else
-									= link_to raw("<i class=\"icon-plus-sign\">&nbsp;</i>#{t 'appointment.action.reserve'}") , "#", :class => "btn btn-small disabled"
-									- arguments = @form.fields.merge({:appointment => an_appointment.id})
-									= link_to raw("<i class=\"icon-minus-sign\">&nbsp;</i>#{t 'appointment.action.liberate'}") , appointments_liberate_path(arguments), :method => :post, :class => "btn btn-small", data: { confirm: t(:confirm) }
-								.modal.modal-small.hide{:id=>"reserve_modal_#{an_appointment.id}"}
-									.modal-header
-										%button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} x
-										%h3=t "form.reserve_appointment.title"
-									.modal-body
+						%th=translate_attribute :appointment, :date
+						%th=translate_attribute :appointment, :medical
+						%th=translate_attribute :appointment, :patient
+						%th=translate_attribute :appointment, :state
+						%th.options= t :options
+				%tbody
+					- for an_appointment in @appointments
+						%tr
+							%td=an_appointment.time.strftime "%d/%m/%Y %H:%M"
+							%td=an_appointment.medical
+							%td=an_appointment.patient
+							%td=t "appointment.state.#{an_appointment.current_state}"
+							%td.options
+								.btn-group
+									- if an_appointment.current_state == :available
+										= link_to raw("<i class=\"icon-plus-sign\">&nbsp;</i>#{t 'appointment.action.reserve'}"), "#reserve_modal_#{an_appointment.id}", :class => "btn btn-small", "data-toggle" =>"modal"
+										= link_to raw("<i class=\"icon-minus-sign\">&nbsp;</i>#{t 'appointment.action.liberate'}"), "#", :class => "btn btn-small disabled"
+									- else
+										= link_to raw("<i class=\"icon-plus-sign\">&nbsp;</i>#{t 'appointment.action.reserve'}") , "#", :class => "btn btn-small disabled"
 										- arguments = @form.fields.merge({:appointment => an_appointment.id})
-										= form_tag appointments_reserve_path(arguments), :id => "reserve_form_#{an_appointment.id}" do
-											= hidden_field_tag :appointment, an_appointment.id
-											= select_tag :appointment_patient, options_from_collection_for_select(@form.patients,:id,:to_s), :class => :reserve_patient_select
-									.modal-footer
-										= link_to t('form.reserve_appointment.back'), "#", :class => "btn", "data-dismiss" => "modal"
-										= submit_tag t('appointment.action.reserve'), :id => "submit_reserve_form_#{an_appointment.id}", :class => "btn btn-primary"
-									:javascript
-										$('#submit_reserve_form_#{an_appointment.id}').on('click', function(e){
-											$('#reserve_form_#{an_appointment.id}').submit();
-										});
+										= link_to raw("<i class=\"icon-minus-sign\">&nbsp;</i>#{t 'appointment.action.liberate'}") , appointments_liberate_path(arguments), :method => :post, :class => "btn btn-small", data: { confirm: t(:confirm) }
+									.modal.modal-small.hide{:id=>"reserve_modal_#{an_appointment.id}"}
+										.modal-header
+											%button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} x
+											%h3=t "form.reserve_appointment.title"
+										.modal-body
+											- arguments = @form.fields.merge({:appointment => an_appointment.id})
+											= form_tag appointments_reserve_path(arguments), :id => "reserve_form_#{an_appointment.id}" do
+												= hidden_field_tag :appointment, an_appointment.id
+												= select_tag :appointment_patient, options_from_collection_for_select(@form.patients,:id,:to_s), :class => :reserve_patient_select
+										.modal-footer
+											= link_to t('form.reserve_appointment.back'), "#", :class => "btn", "data-dismiss" => "modal"
+											= submit_tag t('appointment.action.reserve'), :id => "submit_reserve_form_#{an_appointment.id}", :class => "btn btn-primary"
+										:javascript
+											$('#submit_reserve_form_#{an_appointment.id}').on('click', function(e){
+												$('#reserve_form_#{an_appointment.id}').submit();
+											});
 
 = render :file => 'layouts/application'

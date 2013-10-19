@@ -28,9 +28,14 @@ Siim::Application.routes.draw do
   resources :medical_specializations
   resources :medical_histories do
     get :search_by_dni, on: :collection
+    get :search, on: :collection
+    post :perform_search, on: :collection
+    get :custom_search, on: :collection
+    post :perform_custom_search, on: :collection
   end
 
   get '/assets/javascripts/dinamic_medicals', to: 'javascripts#dinamic_medicals'
+
   get '/appointments/setup_search', to: 'appointment#setup_search'
   post '/appointments/liberate', to: 'appointment#liberate'
   post '/appointments/reserve', to: 'appointment#reserve'
@@ -42,7 +47,6 @@ Siim::Application.routes.draw do
 
   get '/statistics/setup_simptom', to: 'statistic#setup_simptom'
   post '/statistics/perform_simptom', to: 'statistic#perform_simptom'
-
   get '/statistics/setup_disease', to: 'statistic#setup_disease'
   post '/statistics/perform_disease', to: 'statistic#perform_disease'
 end

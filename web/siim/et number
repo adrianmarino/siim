@@ -1,0 +1,100 @@
+
+[1mFrom:[0m /home/adrian/.rvm/gems/ruby-1.9.3-p125/bundler/gems/tire-6903964784c9/lib/tire/results/item.rb @ line 4:
+[1mClass[0m [1mname:[0m Tire::Results::Item
+[1mNumber of lines:[0m 95
+
+[1;31mclass[0m [1;35mItem[0m
+  extend  [1;34m[4mActiveModel[0m::[1;34m[4mNaming[0m
+  include [1;34m[4mActiveModel[0m::[1;34m[4mConversion[0m
+
+  [0;34m# Create new instance, recursively converting all Hashes to Item[0m
+  [0;34m# and leaving everything else alone.[0m
+  [0;34m#[0m
+  [1;31mdef[0m [1;34minitialize[0m(args={})
+    raise [1;34m[4mArgumentError[0m, [32m[1;32m"[0m[32mPlease pass a Hash-like object[1;32m"[0m[32m[0m [1;31munless[0m args.respond_to?([1;32m:each_pair[0m)
+    @attributes = {}
+    args.each_pair [1;31mdo[0m |key, value|
+      [1;31mif[0m value.is_a?([1;34m[4mArray[0m)
+        @attributes[key.to_sym] = value.map { |item| @attributes[key.to_sym] = item.is_a?([1;34m[4mHash[0m) ? [1;34m[4mItem[0m.new(item.to_hash) : item }
+      [1;31melse[0m
+        @attributes[key.to_sym] = value.is_a?([1;34m[4mHash[0m) ? [1;34m[4mItem[0m.new(value.to_hash) : value
+      [1;31mend[0m
+    [1;31mend[0m
+  [1;31mend[0m
+
+  [0;34m# Delegate method to a key in underlying hash, if present, otherwise return +nil+.[0m
+  [0;34m#[0m
+  [1;31mdef[0m [1;34mmethod_missing[0m(method_name, *arguments)
+    @attributes[method_name.to_sym]
+  [1;31mend[0m
+
+  [1;31mdef[0m [1;34mrespond_to?[0m(method_name, include_private = [1;36mfalse[0m)
+    @attributes.has_key?(method_name.to_sym) || [1;31msuper[0m
+  [1;31mend[0m
+
+  [1;31mdef[0m [1;34m[][0m(key)
+    @attributes[key.to_sym]
+  [1;31mend[0m
+
+  [1;31malias[0m [1;32m:read_attribute_for_serialization[0m [1;32m:[][0m
+
+
+  [1;31mdef[0m [1;34mid[0m
+    @attributes[[1;32m:_id[0m]   || @attributes[[1;32m:id[0m]
+  [1;31mend[0m
+
+  [1;31mdef[0m [1;34mtype[0m
+    @attributes[[1;32m:_type[0m] || @attributes[[1;32m:type[0m]
+  [1;31mend[0m
+
+  [1;31mdef[0m [1;34mpersisted?[0m
+    !!id
+  [1;31mend[0m
+
+  [1;31mdef[0m [1;34merrors[0m
+    [1;34m[4mActiveModel[0m::[1;34m[4mErrors[0m.new([1;36mself[0m)
+  [1;31mend[0m
+
+  [1;31mdef[0m [1;34mvalid?[0m
+    [1;36mtrue[0m
+  [1;31mend[0m
+
+  [1;31mdef[0m [1;34mto_key[0m
+    persisted? ? [id] : [1;36mnil[0m
+  [1;31mend[0m
+
+  [1;31mdef[0m [1;34mto_hash[0m
+    @attributes.reduce({}) [1;31mdo[0m |sum, item|
+      [1;31mif[0m item.last.is_a?([1;34m[4mArray[0m)
+        sum[ item.first ] = item.last.map { |item| item.respond_to?([1;32m:to_hash[0m) ? item.to_hash : item }
+      [1;31melse[0m
+        sum[ item.first ] = item.last.respond_to?([1;32m:to_hash[0m) ? item.last.to_hash : item.last
+      [1;31mend[0m
+      sum
+    [1;31mend[0m
+  [1;31mend[0m
+
+  [1;31mdef[0m [1;34mas_json[0m(options=[1;36mnil[0m)
+    hash = to_hash
+    hash.respond_to?([1;32m:with_indifferent_access[0m) ? hash.with_indifferent_access.as_json(options) : hash.as_json(options)
+  [1;31mend[0m
+
+  [1;31mdef[0m [1;34mto_json[0m(options=[1;36mnil[0m)
+    as_json.to_json(options)
+  [1;31mend[0m
+  alias_method [1;32m:to_indexed_json[0m, [1;32m:to_json[0m
+
+  [0;34m# Let's pretend we're someone else in Rails[0m
+  [0;34m#[0m
+  [1;31mdef[0m [1;34mclass[0m
+    [1;31mdefined?[0m(::[1;34m[4mRails[0m) && @attributes[[1;32m:_type[0m] ? @attributes[[1;32m:_type[0m].camelize.constantize : [1;31msuper[0m
+  [1;31mrescue[0m [1;34m[4mNameError[0m
+    [1;31msuper[0m
+  [1;31mend[0m
+
+  [1;31mdef[0m [1;34minspect[0m
+    s = []; @attributes.each { |k,v| s << [32m[1;32m"[0m[32m#{k}[0m[32m: #{v.inspect}[0m[32m[1;32m"[0m[32m[0m }
+    [32m[1;32m%Q|[0m[32m<Item#{[1;36mself[0m.class.to_s == [32m[1;32m'[0m[32mTire::Results::Item[1;32m'[0m[32m[0m ? [32m[1;32m'[0m[32m[1;32m'[0m[32m[0m : [32m[1;32m"[0m[32m (#{[1;36mself[0m.class}[0m[32m)[1;32m"[0m[32m[0m}[0m[32m #{s.join([32m[1;32m'[0m[32m, [1;32m'[0m[32m[0m)}[0m[32m>[1;32m|[0m[32m[0m
+  [1;31mend[0m
+
+[1;31mend[0m
