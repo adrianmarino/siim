@@ -13,7 +13,42 @@
 			.form-actions
 				= submit_tag "Ver", :class => "btn btn-primary pull-left" 
 
-	- if not @valor.nil?
-		=@valor
+		%div#percentage_of_patient_chart
+
+	- if not @amount_of_patients_on_year.nil? and not @treatments_used.nil?
+		%ul
+			%li
+				- end_string = (@year.nil? or @year.empty?) ? "." : " en el año #{@year}."
+				= "#{@amount_of_patients_on_year} pacientes con la sintomatologia \"#{@simptom}\"#{end_string}"
+			%li="Tipo de tratamiento utilizado para el sintoma \"#{@simptom}\": #{@treatments_used.join(',')}."
+
+	:javascript
+		// Load the Visualization API and the piechart package.
+		google.load('visualization', '1.0', {'packages':['corechart']});
+
+		// Set a callback to run when the Google Visualization API is loaded.
+		google.setOnLoadCallback(drawChart);
+
+		// Callback that creates and populates a data table,
+		// instantiates the pie chart, passes in the data and
+		// draws it.
+		function drawChart() {
+
+			// Create the data table.
+			var data = new google.visualization.DataTable();
+			data.addColumn('string', 'Topping');
+			data.addColumn('number', 'Slices');
+			data.addRows([
+				['Poblacion Afectada', #{@percentage_of_patient}],
+				['Poblacion No Afectada', 100 - #{@percentage_of_patient}]
+			]);
+
+			// Set chart options
+			var options = {'title':'Porcentaje de la poblacion afectada por el sintoma','width':400, 'height':300};
+
+			// Instantiate and draw our chart, passing in some options.
+			var chart = new google.visualization.PieChart(document.getElementById('percentage_of_patient_chart'));
+			chart.draw(data, options);
+		}
 
 = render :file => 'layouts/application'
