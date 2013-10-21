@@ -11,122 +11,124 @@ module MedicalHistorySearchEngine
 	end
 
 	def self.raw_search(a_text)
-		return [] if a_text.empty?
+		search_string = SearchEngineHelper.sanitize a_text
+		return [] if search_string.empty?
+
 		results = MedicalHistory.search do
 			query do
 				boolean do
 					# Patient
-					should {string "patient.firstname.partial:#{a_text}"}
-					should {string "patient.firstname.partial_back:#{a_text}"}
-					should {string "patient.firstname.partial_middle:#{a_text}"}
-					should {string "patient.firstname.title:#{a_text}"}
+					should {string "patient.firstname.partial:#{search_string}"}
+					should {string "patient.firstname.partial_back:#{search_string}"}
+					should {string "patient.firstname.partial_middle:#{search_string}"}
+					should {string "patient.firstname.title:#{search_string}"}
 
-					should {string "patient.lastname.partial:#{a_text}"}
-					should {string "patient.lastname.partial_back:#{a_text}"}
-					should {string "patient.lastname.partial_middle:#{a_text}"}
-					should {string "patient.lastname.title:#{a_text}"}
+					should {string "patient.lastname.partial:#{search_string}"}
+					should {string "patient.lastname.partial_back:#{search_string}"}
+					should {string "patient.lastname.partial_middle:#{search_string}"}
+					should {string "patient.lastname.title:#{search_string}"}
 
-					should {string "patient.birthdate.partial:#{a_text}"}
-					should {string "patient.birthdate.partial_back:#{a_text}"}
-					should {string "patient.birthdate.partial_middle:#{a_text}"}
-					should {string "patient.birthdate.title:#{a_text}"}
+					should {string "patient.birthdate.partial:#{search_string}"}
+					should {string "patient.birthdate.partial_back:#{search_string}"}
+					should {string "patient.birthdate.partial_middle:#{search_string}"}
+					should {string "patient.birthdate.title:#{search_string}"}
 
-					should {string "patient.height.partial:#{a_text}"}
-					should {string "patient.height.partial_back:#{a_text}"}
-					should {string "patient.height.partial_middle:#{a_text}"}
-					should {string "patient.height.title:#{a_text}"}
+					should {string "patient.height.partial:#{search_string}"}
+					should {string "patient.height.partial_back:#{search_string}"}
+					should {string "patient.height.partial_middle:#{search_string}"}
+					should {string "patient.height.title:#{search_string}"}
 
-					should {string "patient.weight.partial:#{a_text}"}
-					should {string "patient.weight.partial_back:#{a_text}"}
-					should {string "patient.weight.partial_middle:#{a_text}"}
-					should {string "patient.weight.title:#{a_text}"}
+					should {string "patient.weight.partial:#{search_string}"}
+					should {string "patient.weight.partial_back:#{search_string}"}
+					should {string "patient.weight.partial_middle:#{search_string}"}
+					should {string "patient.weight.title:#{search_string}"}
 
 					# Allergies...
-					should {string "allergies.cause.partial:#{a_text}"}
-					should {string "allergies.cause.partial_back:#{a_text}"}
-					should {string "allergies.cause.partial_middle:#{a_text}"}
-					should {string "allergies.cause.title:#{a_text}"}
+					should {string "allergies.cause.partial:#{search_string}"}
+					should {string "allergies.cause.partial_back:#{search_string}"}
+					should {string "allergies.cause.partial_middle:#{search_string}"}
+					should {string "allergies.cause.title:#{search_string}"}
 
-					should {string "allergies.observations.partial:#{a_text}"}
-					should {string "allergies.observations.partial_back:#{a_text}"}
-					should {string "allergies.observations.partial_middle:#{a_text}"}
-					should {string "allergies.observations.title:#{a_text}"}
+					should {string "allergies.observations.partial:#{search_string}"}
+					should {string "allergies.observations.partial_back:#{search_string}"}
+					should {string "allergies.observations.partial_middle:#{search_string}"}
+					should {string "allergies.observations.title:#{search_string}"}
 
 					# Antecedents...
-					should {string "antecedents.description.partial:#{a_text}"}
-					should {string "antecedents.description.partial_back:#{a_text}"}
-					should {string "antecedents.description.partial_middle:#{a_text}"}
-					should {string "antecedents.description.title:#{a_text}"}
+					should {string "antecedents.description.partial:#{search_string}"}
+					should {string "antecedents.description.partial_back:#{search_string}"}
+					should {string "antecedents.description.partial_middle:#{search_string}"}
+					should {string "antecedents.description.title:#{search_string}"}
 
 					# Consultations...
-					should {string "consultations.diagnostic.partial:#{a_text}"}
-					should {string "consultations.diagnostic.partial_back:#{a_text}"}
-					should {string "consultations.diagnostic.partial_middle:#{a_text}"}
-					should {string "consultations.diagnostic.title:#{a_text}"}
+					should {string "consultations.diagnostic.partial:#{search_string}"}
+					should {string "consultations.diagnostic.partial_back:#{search_string}"}
+					should {string "consultations.diagnostic.partial_middle:#{search_string}"}
+					should {string "consultations.diagnostic.title:#{search_string}"}
 
-					should {string "consultations.symptomps.partial:#{a_text}"}
-					should {string "consultations.symptomps.partial_back:#{a_text}"}
-					should {string "consultations.symptomps.partial_middle:#{a_text}"}
-					should {string "consultations.symptomps.title:#{a_text}"}
+					should {string "consultations.symptomps.partial:#{search_string}"}
+					should {string "consultations.symptomps.partial_back:#{search_string}"}
+					should {string "consultations.symptomps.partial_middle:#{search_string}"}
+					should {string "consultations.symptomps.title:#{search_string}"}
 
-					should {string "consultations.treatment.partial:#{a_text}"}
-					should {string "consultations.treatment.partial_back:#{a_text}"}
-					should {string "consultations.treatment.partial_middle:#{a_text}"}
-					should {string "consultations.treatment.title:#{a_text}"}
+					should {string "consultations.treatment.partial:#{search_string}"}
+					should {string "consultations.treatment.partial_back:#{search_string}"}
+					should {string "consultations.treatment.partial_middle:#{search_string}"}
+					should {string "consultations.treatment.title:#{search_string}"}
 
 					# Diaseases...
-					should {string "diseases.name.partial:#{a_text}"}
-					should {string "diseases.name.partial_back:#{a_text}"}
-					should {string "diseases.name.partial_middle:#{a_text}"}
-					should {string "diseases.name.title:#{a_text}"}
+					should {string "diseases.name.partial:#{search_string}"}
+					should {string "diseases.name.partial_back:#{search_string}"}
+					should {string "diseases.name.partial_middle:#{search_string}"}
+					should {string "diseases.name.title:#{search_string}"}
 
-					should {string "diseases.observations.partial:#{a_text}"}
-					should {string "diseases.observations.partial_back:#{a_text}"}
-					should {string "diseases.observations.partial_middle:#{a_text}"}
-					should {string "diseases.observations.title:#{a_text}"}
+					should {string "diseases.observations.partial:#{search_string}"}
+					should {string "diseases.observations.partial_back:#{search_string}"}
+					should {string "diseases.observations.partial_middle:#{search_string}"}
+					should {string "diseases.observations.title:#{search_string}"}
 
 					# Medications...
-					should {string "medications.name.partial:#{a_text}"}
-					should {string "medications.name.partial_back:#{a_text}"}
-					should {string "medications.name.partial_middle:#{a_text}"}
-					should {string "medications.name.title:#{a_text}"}
+					should {string "medications.name.partial:#{search_string}"}
+					should {string "medications.name.partial_back:#{search_string}"}
+					should {string "medications.name.partial_middle:#{search_string}"}
+					should {string "medications.name.title:#{search_string}"}
 
-					should {string "medications.route.partial:#{a_text}"}
-					should {string "medications.route.partial_back:#{a_text}"}
-					should {string "medications.route.partial_middle:#{a_text}"}
-					should {string "medications.route.title:#{a_text}"}
+					should {string "medications.route.partial:#{search_string}"}
+					should {string "medications.route.partial_back:#{search_string}"}
+					should {string "medications.route.partial_middle:#{search_string}"}
+					should {string "medications.route.title:#{search_string}"}
 
-					should {string "medications.dose.partial:#{a_text}"}
-					should {string "medications.dose.partial_back:#{a_text}"}
-					should {string "medications.dose.partial_middle:#{a_text}"}
-					should {string "medications.dose.title:#{a_text}"}
+					should {string "medications.dose.partial:#{search_string}"}
+					should {string "medications.dose.partial_back:#{search_string}"}
+					should {string "medications.dose.partial_middle:#{search_string}"}
+					should {string "medications.dose.title:#{search_string}"}
 
-					should {string "medications.amount.partial:#{a_text}"}
-					should {string "medications.amount.partial_back:#{a_text}"}
-					should {string "medications.amount.partial_middle:#{a_text}"}
-					should {string "medications.amount.title:#{a_text}"}
+					should {string "medications.amount.partial:#{search_string}"}
+					should {string "medications.amount.partial_back:#{search_string}"}
+					should {string "medications.amount.partial_middle:#{search_string}"}
+					should {string "medications.amount.title:#{search_string}"}
 
 					# Vaccines...
-					should {string "vaccines.name.partial:#{a_text}"}
-					should {string "vaccines.name.partial_back:#{a_text}"}
-					should {string "vaccines.name.partial_middle:#{a_text}"}
-					should {string "vaccines.name.title:#{a_text}"}
+					should {string "vaccines.name.partial:#{search_string}"}
+					should {string "vaccines.name.partial_back:#{search_string}"}
+					should {string "vaccines.name.partial_middle:#{search_string}"}
+					should {string "vaccines.name.title:#{search_string}"}
 
 					# Exams...
-					should {string "medical_exams.name.partial:#{a_text}"}
-					should {string "medical_exams.name.partial_back:#{a_text}"}
-					should {string "medical_exams.name.partial_middle:#{a_text}"}
-					should {string "medical_exams.name.title:#{a_text}"}
+					should {string "medical_exams.name.partial:#{search_string}"}
+					should {string "medical_exams.name.partial_back:#{search_string}"}
+					should {string "medical_exams.name.partial_middle:#{search_string}"}
+					should {string "medical_exams.name.title:#{search_string}"}
 
-					should {string "medical_exams.results.partial:#{a_text}"}
-					should {string "medical_exams.results.partial_back:#{a_text}"}
-					should {string "medical_exams.results.partial_middle:#{a_text}"}
-					should {string "medical_exams.results.title:#{a_text}"}
+					should {string "medical_exams.results.partial:#{search_string}"}
+					should {string "medical_exams.results.partial_back:#{search_string}"}
+					should {string "medical_exams.results.partial_middle:#{search_string}"}
+					should {string "medical_exams.results.title:#{search_string}"}
 
-					should {string "medical_exams.observations.partial:#{a_text}"}
-					should {string "medical_exams.observations.partial_back:#{a_text}"}
-					should {string "medical_exams.observations.partial_middle:#{a_text}"}
-					should {string "medical_exams.observations.title:#{a_text}"}
+					should {string "medical_exams.observations.partial:#{search_string}"}
+					should {string "medical_exams.observations.partial_back:#{search_string}"}
+					should {string "medical_exams.observations.partial_middle:#{search_string}"}
+					should {string "medical_exams.observations.title:#{search_string}"}
 				end
 			end
 			highlight "patient.firstname.partial",
@@ -252,7 +254,7 @@ module MedicalHistorySearchEngine
 		end
 	end
 
-	def self.search(a_text)
-		raw_search(a_text).collect { |a_result| MedicalHistorySearchResult.new a_result }
+	def self.search(a_search_string)
+		raw_search(a_search_string).collect { |a_result| MedicalHistorySearchResult.new a_result }
 	end
 end

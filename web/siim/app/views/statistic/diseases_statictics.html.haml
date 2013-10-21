@@ -13,12 +13,14 @@
 			.form-actions
 				= submit_tag "Ver", :class => "btn btn-primary pull-left" 
 
-	- if not @valor.nil?
-		=@valor
+					
+		%div#chart_consulta3
 
-		- @valor = 15
-
-	%div#chart_div
+	- if not @amount_of_patients_on_year.nil?
+		%ul
+			%li
+				- end_string = (@year.nil? or @year.empty?) ? "." : " en el año #{@year}."
+				="#{@amount_of_patients_on_year} pacientes afectados#{end_string}"
 
 	:javascript
 		// Load the Visualization API and the piechart package.
@@ -37,19 +39,16 @@
 			data.addColumn('string', 'Topping');
 			data.addColumn('number', 'Slices');
 			data.addRows([
-				['Mushrooms', #{@valor}],
-				['Onions', 1],
-				['Olives', 1],
-				['Zucchini', 1],
-				['Pepperoni', 2]
+				['Poblacion Afectada', #{@percentage_of_patient}],
+				['Poblacion No Afectada', 100 - #{@percentage_of_patient}]
 			]);
 
 			// Set chart options
-			var options = {'title':'How Much Pizza I Ate Last Night','width':400, 'height':300};
+			var options = {'title':'Porcentaje de la poblacion afectada por la enfermedad','width':400, 'height':300};
 
 			// Instantiate and draw our chart, passing in some options.
-			var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+			var chart = new google.visualization.PieChart(document.getElementById('chart_consulta3'));
 			chart.draw(data, options);
 		}
-
+		
 = render :file => 'layouts/application'
