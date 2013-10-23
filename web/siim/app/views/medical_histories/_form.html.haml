@@ -61,4 +61,4 @@
           = render :partial => 'contacts_form', :locals => {:form => a_patient_form}
     .form-actions
       = back_button @back_url
-      = submit a_form
+      = submit_with_confirm a_form, t('medical_history.configm_save')

@@ -349,6 +349,7 @@ en:
     medical_histories_search: "Search"
     sub_menu:
       medical_histories:
+        create: "Create"
         show: "Show"
         search: "By DNI/Name"
         custom_search: "Custom"
@@ -417,3 +418,5 @@ en:
   custom_search:
     text: "Search..."
     result: "Results"
+  medical_history:
+    configm_save: "Are you sure you want to save changes?"

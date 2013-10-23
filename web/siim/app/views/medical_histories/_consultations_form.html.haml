@@ -2,10 +2,11 @@
   = form.fields_for :consultations do |f|
     %div.nested-form-panel
       -# %div= f.link_to_remove t('form.nested.delete')
-      %div
-        = nested_datepicker f, :achievement_date, :consultation
-        = nested_select_one f, :medical, :consultation
-        = nested_big_text f, :symptomps, :consultation, :antecedent_description
-        = nested_big_text f, :diagnostic, :consultation, :antecedent_description
-        = nested_big_text f, :treatment, :consultation, :antecedent_description
+      .row-fluid
+        .span4= nested_datepicker f, :achievement_date, :consultation
+        .span4= nested_select_one f, :medical, :consultation
+      .row-fluid
+        = nested_big_text f, :symptomps, :consultation, :symptomps
+        = nested_big_text f, :diagnostic, :consultation, :diagnostic
+        = nested_big_text f, :treatment, :consultation, :treatment
   = form.link_to_add t('form.nested.add'), :consultations

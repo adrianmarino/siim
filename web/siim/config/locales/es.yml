@@ -375,7 +375,8 @@ es:
     search_engine: "Motor de Búsqueda"
     sub_menu:
       medical_histories:
-        show: "Lista"
+        create: "Nueva"
+        show: "Modificar"
         search: "Por DNI/Nombre"
         custom_search: "Personalizada"
       appointments:
@@ -440,3 +441,5 @@ es:
   custom_search:
     text: "Buscar..."
     result: "Resultados"
+  medical_history:
+    configm_save: "¿Esta seguro que debsea guardar los cambios?"
