@@ -376,7 +376,7 @@ es:
     sub_menu:
       medical_histories:
         create: "Nueva"
-        show: "Modificar"
+        edit: "Editar"
         search: "Por DNI/Nombre"
         custom_search: "Avanzada"
       appointments:

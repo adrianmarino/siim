@@ -350,7 +350,7 @@ en:
     sub_menu:
       medical_histories:
         create: "Create"
-        show: "Show"
+        edit: "Edit"
         search: "By DNI/Name"
         custom_search: "Custom"
       appointments:

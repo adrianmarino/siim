@@ -36,6 +36,7 @@ class MedicalHistoriesController < CrudController
 	# GET /medical_histories.json
 	def index
 		@medical_histories = MedicalHistory.all
+		hide_create_action
 		hide_view_action
 		hide_remove_action
 
