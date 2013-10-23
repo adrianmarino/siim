@@ -516,3 +516,11 @@ SystemProperty.new_window_size("20").save
 # Comment if not has installed and running elasticsearch server...
 MedicalHistorySearchEngine.refresh_indexes
 # -----------------------------------------------------------------------------
+#
+#
+#
+# -----------------------------------------------------------------------------
+# Generate appointment window (Only for porduction deploy)...
+# -----------------------------------------------------------------------------
+AppointmentGeneratiorTask.new.run if Rails.env == 'production'
+# -----------------------------------------------------------------------------
