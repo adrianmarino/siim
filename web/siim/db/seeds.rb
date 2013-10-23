@@ -15,8 +15,10 @@ MedicalHistorySearchEngine.delete_indexes
 # -----------------------------------------------------------------------------
 # users....
 # -----------------------------------------------------------------------------
-user = User.create( dni: "29042902",first_name: "Adrian", last_name: "Marino",
-                    email: "adrianmarino@gmail.com", password: "29042902")
+user = User.create  dni: "29042902",first_name: "Adrian", last_name: "Marino", 
+                    email: "adrianmarino@gmail.com", password: "29042902"
+User.create   dni: "77777777",first_name: "Demo 1", last_name: "Demo 1",
+              email: "marquez.ezequiel19@gmail.com", password: "usrDemo1"
 #
 #
 #
@@ -212,10 +214,7 @@ Medical.create(
   firstname: "Adrian", 							lastname: "Marino",
   home_phone: "47935551", 					movile_phone: "154487766",
   medical_specialization: pediatra,
-  attention_periods: [period_monday_7, period_tuesday_7, 
-                      period_wednesday_7, period_thursday_7, 
-                      period_friday_7, period_saturday_7, 
-                      period_saturday_7],
+  attention_periods: [period_monday_7, period_tuesday_7, period_wednesday_7, period_thursday_7, period_friday_7, period_saturday_7, period_saturday_7],
   attention_time_length_hour: 0,
   attention_time_length_minutes: 10,
   user: user
@@ -526,5 +525,5 @@ MedicalHistorySearchEngine.refresh_indexes
 # -----------------------------------------------------------------------------
 # Generate appointment window (Only for porduction deploy)...
 # -----------------------------------------------------------------------------
-AppointmentGeneratorTask.new.run if Rails.env == 'production'
+AppointmentGeneratiorTask.new.run if Rails.env == 'production'
 # -----------------------------------------------------------------------------
