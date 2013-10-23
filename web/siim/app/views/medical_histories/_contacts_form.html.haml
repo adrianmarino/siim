@@ -2,10 +2,12 @@
   = form.fields_for :contacts do |f|
     %div.nested-form-panel
       %div= f.link_to_remove t('form.nested.delete')
-      %div
-        = nested_text f, :firstname, :contact
-        = nested_text f, :lastname, :contact
-        = nested_mail f, :email, :contact
-        = nested_text f, :home_phone, :contact
-        = nested_text f, :movile_phone, :contact
+      .row-fluid
+        .span4= nested_text f, :firstname, :contact
+        .span4= nested_text f, :lastname, :contact
+      .row-fluid
+        .span4= nested_mail f, :email, :contact
+        .span4= nested_text f, :home_phone, :contact
+      .row-fluid
+        .span4= nested_text f, :movile_phone, :contact
   = form.link_to_add t('form.nested.add'), :contacts

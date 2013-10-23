@@ -1,7 +1,7 @@
 -# encoding: utf-8
 = nested_form_for @medical_history, :html => { :class => 'well form-horizontal', :multipart => true } do |a_form|
   = nested_errors ['patient.photo']
-  %legend= section :patient
+  -# %legend= section :patient
   = a_form.fields_for :patient do |a_patient_form|
     .patient-form
       .row-fluid
@@ -61,4 +61,4 @@
           = render :partial => 'contacts_form', :locals => {:form => a_patient_form}
     .form-actions
       = back_button @back_url
-      = submit a_form
+      = submit_with_confirm a_form, t('medical_history.configm_save')

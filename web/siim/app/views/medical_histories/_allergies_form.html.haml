@@ -1,11 +1,10 @@
 %div
   = form.fields_for :allergies do |f|
     %div.nested-form-panel
-      %div
-        = f.link_to_remove t('form.nested.delete')
-      %div
-        = nested_datepicker f, :record_date, :allergy
-        = nested_text f, :cause, :allergy
-      %div
+      -# %div= f.link_to_remove t('form.nested.delete')
+      .row-fluid
+        .span4= nested_datepicker f, :record_date, :allergy
+        .span4= nested_text f, :cause, :allergy
+      .row-fluid
         = nested_big_text f, :observations, :allergy, :allergy_observations
   = form.link_to_add t('form.nested.add'), :allergies

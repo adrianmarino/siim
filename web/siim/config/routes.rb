@@ -49,4 +49,6 @@ Siim::Application.routes.draw do
   post '/statistics/perform_simptom', to: 'statistic#perform_simptom'
   get '/statistics/setup_disease', to: 'statistic#setup_disease'
   post '/statistics/perform_disease', to: 'statistic#perform_disease'
+
+  get '/log/show', to: 'log#show'
 end

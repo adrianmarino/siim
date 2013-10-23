@@ -16,6 +16,10 @@ module CrudFormHelper
     render :partial => 'crud/submit', :locals => {:f => a_form}
   end
 
+  def submit_with_confirm(a_form, a_config_question)
+    render :partial => 'crud/submit', :locals => {:f => a_form, :confirm => true, :question =>  a_config_question}
+  end
+
   # -------------------------------------------------------------------------
   # Simple Fields...
   # -------------------------------------------------------------------------
