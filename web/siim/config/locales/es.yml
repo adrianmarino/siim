@@ -378,7 +378,7 @@ es:
         create: "Nueva"
         show: "Modificar"
         search: "Por DNI/Nombre"
-        custom_search: "Personalizada"
+        custom_search: "Avanzada"
       appointments:
         assignment: "Asignación de turnos"
         my_appointments: "Mis turnos"
