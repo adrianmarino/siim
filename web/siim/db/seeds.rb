@@ -15,7 +15,10 @@ MedicalHistorySearchEngine.delete_indexes
 # -----------------------------------------------------------------------------
 # users....
 # -----------------------------------------------------------------------------
-user = User.create(dni: "29042902",first_name: "Adrian", last_name: "Marino", email: "adrianmarino@gmail.com", password: "29042902")
+user = User.create  dni: "29042902",first_name: "Adrian", last_name: "Marino", 
+                    email: "adrianmarino@gmail.com", password: "29042902"
+User.create   dni: "77777777",first_name: "Demo 1", last_name: "Demo 1",
+              email: "marquez.ezequiel19@gmail.com", password: "usrDemo1"
 #
 #
 #
