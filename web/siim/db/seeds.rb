@@ -6,7 +6,9 @@
 # -----------------------------------------------------------------------------
 # Delete Indexes....
 # -----------------------------------------------------------------------------
+# Comment if not has installed and running elasticsearch server...
 MedicalHistorySearchEngine.delete_indexes
+# -----------------------------------------------------------------------------
 #
 #
 #
@@ -511,4 +513,6 @@ SystemProperty.new_window_size("20").save
 # -----------------------------------------------------------------------------
 # Refresh Indexes....
 # -----------------------------------------------------------------------------
+# Comment if not has installed and running elasticsearch server...
 MedicalHistorySearchEngine.refresh_indexes
+# -----------------------------------------------------------------------------
