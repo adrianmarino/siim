@@ -526,5 +526,5 @@ MedicalHistorySearchEngine.refresh_indexes
 # -----------------------------------------------------------------------------
 # Generate appointment window (Only for porduction deploy)...
 # -----------------------------------------------------------------------------
-AppointmentGeneratiorTask.new.run if Rails.env == 'production'
+AppointmentGeneratorTask.new.run if Rails.env == 'production'
 # -----------------------------------------------------------------------------
