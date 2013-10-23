@@ -365,11 +365,7 @@ es:
     statistics: "Estaditicas"
     medicals: "Médicos"
     administration: "Administración"
-    medical_specializations: "Especializaciones Medicas"
     medical_histories: "Historias Médicas"
-    users: "Usuarios"
-    managerUsers: "Administrar usuarios"
-    confProfiles: "Configurar Perfiles"
     appointments: "Turnos"
     medical_histories_search: "Búsqueda"
     search_engine: "Motor de Búsqueda"
@@ -385,6 +381,10 @@ es:
       statistics:
         simptoms: "Simtomas"
         diseases: "Enfermedades"
+      administration:
+        manager_users: "Administrar usuarios"
+        medical_specializations: "Especializaciones Medicas"
+        download_log: "Descargar log"
       search_engine:
         head: "Head"
         inquisitor: "Inquisitor"
@@ -442,4 +442,4 @@ es:
     text: "Buscar..."
     result: "Resultados"
   medical_history:
-    configm_save: "¿Esta seguro que debsea guardar los cambios?"
+    configm_save: "¿Esta seguro que desea guardar los cambios?"

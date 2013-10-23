@@ -35,9 +35,9 @@
                 %b.caret
               %ul.dropdown-menu
                 -# %li= link_to t('menu.medicals'), medicals_path, "tabindex" => "-1"
-                %li= link_to t('menu.medical_specializations'), "/medical_specializations", "tabindex" => "-1"
-                %li= link_to t('menu.managerUsers'), users_path, "tabindex" => "-1"
-                -#%li= link_to t('menu.confProfiles'), "#", "tabindex" => "-1"
+                %li= link_to t('menu.sub_menu.administration.medical_specializations'), "/medical_specializations", "tabindex" => "-1"
+                %li= link_to t('menu.sub_menu.administration.manager_users'), users_path, "tabindex" => "-1"
+                %li= link_to t('menu.sub_menu.administration.download_log'), log_show_path, "tabindex" => "-1"
                 %li.divider
                 %li.nav-header=" #{t 'menu.search_engine'}"
                 %li= link_to t('menu.sub_menu.search_engine.head'), "http://searchengine.nonosoft.com.ar/_plugin/head", "tabindex" => "-1"

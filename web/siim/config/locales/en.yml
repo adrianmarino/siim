@@ -341,12 +341,10 @@ en:
     statistics: "Statistics"
     medicals: "Medicals"
     administration: "Administration"
-    medical_specializations: "Medical Specializations"
     medical_histories: "Medical Histories"
-    managerUsers: "Manager Users"
-    confProfiles: "Configurar Perfiles"
-    appointments: "Attention Times"
+    appointments: "Appointments"
     medical_histories_search: "Search"
+    search_engine: "Search Engine"
     sub_menu:
       medical_histories:
         create: "Create"
@@ -359,6 +357,10 @@ en:
       statistics:
         simptoms: "simptoms"
         diseases: "Diseases"
+      administration:
+        manager_users: "Manager Users"
+        medical_specializations: "Medical Specializations"
+        download_log: "Download log"
       search_engine:
         head: "Head"
         inquisitor: "Inquisitor"
