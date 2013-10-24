@@ -1,26 +1,28 @@
 - content_for :content do
 	.form-top
-		= form_tag :statistics_perform_simptom, :class=> 'well form-horizontal' do
-			%legend="Estatisticas por sintoma"
-			.control-group
-				%label.control-label="Sintomas"
-				.controls
-					%input{:type => :text, :id => :simptom, :name=> :simptom}
-			.control-group
-				%label.control-label="Año"
-				.controls
-					%input{:type => :text, :id => :year, :name=> :year}
-			.form-actions
-				= submit_tag "Ver", :class => "btn btn-primary pull-left" 
-
-		%div#percentage_of_patient_chart
-
-	- if not @amount_of_patients_on_year.nil? and not @treatments_used.nil?
-		%ul
-			%li
-				- end_string = (@year.nil? or @year.empty?) ? "." : " en el año #{@year}."
-				= "#{@amount_of_patients_on_year} pacientes con la sintomatologia \"#{@simptom}\"#{end_string}"
-			%li="Tipo de tratamiento utilizado para el sintoma \"#{@simptom}\": #{@treatments_used.join(',')}."
+		.row-fluid
+			.span3.well
+				= form_tag :statistics_perform_simptom, :class=> 'form-inline' do
+					%legend="Estatisticas por sintoma"
+					.control-group
+						%label.control-label="Sintomas"
+						.controls
+							%input{:type => :text, :id => :simptom, :name=> :simptom}
+					.control-group
+						%label.control-label="Año"
+						.controls
+							%input{:type => :text, :id => :year, :name=> :year}
+					.form-actions= submit_tag "Ver", :class => "btn btn-primary pull-left" 
+			- if not @amount_of_patients_on_year.nil? and not @treatments_used.nil?
+				.span7
+					%legend="Resultados"
+					%div#percentage_of_patient_chart
+					%div
+						%ul
+							%li
+								- end_string = (@year.nil? or @year.empty?) ? "." : " en el año #{@year}."
+								= "#{@amount_of_patients_on_year} pacientes con la sintomatologia \"#{@simptom}\"#{end_string}"
+							%li="Tipo de tratamiento utilizado para el sintoma \"#{@simptom}\": #{@treatments_used.join(',')}."
 
 	:javascript
 		// Load the Visualization API and the piechart package.
@@ -44,7 +46,7 @@
 			]);
 
 			// Set chart options
-			var options = {'title':'Porcentaje de la poblacion afectada por el sintoma','width':400, 'height':300};
+			var options = {'title':'Porcentaje de la poblacion afectada por el sintoma','width':750, 'height':312};
 
 			// Instantiate and draw our chart, passing in some options.
 			var chart = new google.visualization.PieChart(document.getElementById('percentage_of_patient_chart'));
