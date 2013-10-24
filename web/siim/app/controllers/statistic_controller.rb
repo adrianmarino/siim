@@ -12,11 +12,14 @@ class StatisticController < ApplicationController
 		@simptom = params[:simptom]
 		@year = params[:year]
 
-		@percentage_of_patient = MedicalHistoryStatistics.percentage_of_patient_with_simptomp @simptom
-		@amount_of_patients_on_year = MedicalHistoryStatistics.amount_of_patients_with_simptomp_on_year @simptom, @year
-		@treatments_used = MedicalHistoryStatistics.treatments_used_for @simptom
-
-		render 'simptoms_statictics'
+		if not @simptom.empty?
+			@percentage_of_patient = MedicalHistoryStatistics.percentage_of_patient_with_simptomp @simptom
+			@amount_of_patients_on_year = MedicalHistoryStatistics.amount_of_patients_with_simptomp_on_year @simptom, @year
+			@treatments_used = MedicalHistoryStatistics.treatments_used_for @simptom
+			render 'simptoms_statictics'
+		else
+			setup_simptom
+		end
 	end
 
 	/disease statictics/
@@ -28,9 +31,12 @@ class StatisticController < ApplicationController
 		disease = params[:disease]
 		@year = params[:year]
 
-		@percentage_of_patient = MedicalHistoryStatistics.percentage_of_patient_with_disease disease
-		@amount_of_patients_on_year =MedicalHistoryStatistics.amount_of_patients_with_disease_on_year disease, @year
-
-		render 'diseases_statictics'
+		if not disease.empty?
+			@percentage_of_patient = MedicalHistoryStatistics.percentage_of_patient_with_disease disease
+			@amount_of_patients_on_year =MedicalHistoryStatistics.amount_of_patients_with_disease_on_year disease, @year
+			render 'diseases_statictics'
+		else
+			setup_disease
+		end
 	end
 end
