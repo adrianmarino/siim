@@ -233,8 +233,6 @@ module MedicalHistorySearchEngine
 								"vaccines.name.partial_middle",
 								"vaccines.name.title",
 
-
-
 								"medical_exams.name.partial",
 								"medical_exams.name.partial_back",
 								"medical_exams.name.partial_middle",
@@ -250,7 +248,7 @@ module MedicalHistorySearchEngine
 								"medical_exams.observations.partial_middle",
 								"medical_exams.observations.title",
 
-								:options => { :tag => APP_CONFIG['search']['highlight']['begin'] }
+								:options => { :tag => APP_CONFIG.highlight_begin }
 		end
 	end
 
