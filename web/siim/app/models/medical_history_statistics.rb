@@ -16,7 +16,7 @@ module MedicalHistoryStatistics
 		if a_year.nil?
 			Patient.joins('INNER JOIN consultations ON consultations.medical_history_id = patients.medical_history_id').where("consultations.symptomps = ?", a_simptomp).count
 		else
-			Patient.joins('INNER JOIN consultations ON consultations.medical_history_id = patients.medical_history_id').where("consultations.symptomps = ? AND strftime('%Y',consultations.created_at) = ?", a_simptomp, a_year).count
+			Patient.joins('INNER JOIN consultations ON consultations.medical_history_id = patients.medical_history_id').where("consultations.symptomps = ? AND year(consultations.created_at) = ?", a_simptomp, a_year).count
 		end
 	end
 
@@ -37,7 +37,7 @@ module MedicalHistoryStatistics
 		if a_year.nil?
 			Patient.joins('INNER JOIN diseases ON diseases.medical_history_id = patients.medical_history_id').where("diseases.name = ?", a_disease).count
 		else
-			Patient.joins('INNER JOIN diseases ON diseases.medical_history_id = patients.medical_history_id').where("diseases.name = ? AND strftime('%Y', diseases.created_at) = ?", a_disease, a_year).count
+			Patient.joins('INNER JOIN diseases ON diseases.medical_history_id = patients.medical_history_id').where("diseases.name = ? AND year(diseases.created_at) = ?", a_disease, a_year).count
 		end
 	end
 
