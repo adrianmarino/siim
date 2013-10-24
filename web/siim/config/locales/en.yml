@@ -422,3 +422,19 @@ en:
     result: "Results"
   medical_history:
     configm_save: "Are you sure you want to save changes?"
+  statistics:
+    show: "Show"
+    disease:
+      title: "Diseases Statistics"
+      disease: "Disease"
+      year: "Year"
+      result:
+        title: "Results"
+        percentage: 'Percentage of population affected by the disease'
+    simptomp:
+      title: "Simptomps Statistics"
+      simptomp: "Simptomp"
+      year: "Year"
+      result:
+        title: "Results"
+        percentage: "Percentage of population affected by the symptom"

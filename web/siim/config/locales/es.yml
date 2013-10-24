@@ -443,3 +443,19 @@ es:
     result: "Resultados"
   medical_history:
     configm_save: "¿Esta seguro que desea guardar los cambios?"
+  statistics:
+    show: "Ver"
+    disease:
+      title: "Estatisticas por enfermedad"
+      disease: "Enfermedad"
+      year: "Año"
+      result:
+        title: "Resultatos"
+        percentage: 'Porcentaje de la poblacion afectada por la enfermedad'
+    simptomp:
+      title: "Estatisticas por sintoma"
+      simptomp: "Sintoma"
+      year: "Año"
+      result:
+        title: "Resultatos"
+        percentage: "Porcentaje de la poblacion afectada por el sintoma"

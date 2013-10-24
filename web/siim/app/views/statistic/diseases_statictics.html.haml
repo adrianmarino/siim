@@ -1,26 +1,24 @@
 - content_for :content do
-	.form-top
-		= form_tag :statistics_perform_disease, :class=> 'well form-horizontal' do
-			%legend="Estatisticas por Enfermedades"
-			.control-group
-				%label.control-label="Enfermedad"
-				.controls
-					%input{:type => :text, :id => :simptom, :name=> :simptom}
-			.control-group
-				%label.control-label="Año"
-				.controls
-					%input{:type => :text, :id => :year, :name=> :year}
-			.form-actions
-				= submit_tag "Ver", :class => "btn btn-primary pull-left" 
-
-					
-		%div#chart_consulta3
-
-	- if not @amount_of_patients_on_year.nil?
-		%ul
-			%li
-				- end_string = (@year.nil? or @year.empty?) ? "." : " en el año #{@year}."
-				="#{@amount_of_patients_on_year} pacientes afectados#{end_string}"
+	%legend=t 'statistics.disease.title'
+	.row-fluid
+		.span3.well.statistic-form-top
+			= form_tag :statistics_perform_disease, :class=> 'form-inline' do
+				.control-group
+					%label.control-label=t 'statistics.disease.disease'
+					.controls
+						%input{:type => :text, :id => :disease, :name=> :disease}
+				.control-group
+					%label.control-label=t 'statistics.disease.year'
+					.controls
+						%input{:type => :text, :id => :year, :name=> :year}
+				.form-actions= submit_tag t('statistics.show'), :class => "btn btn-primary pull-left" 
+		- if not @percentage_of_patient.nil?
+			.span7
+				%legend=t 'statistics.disease.result.title'
+				%div#chart_consulta3
+				%div
+					- end_string = " en el año #{@year}" unless @year.nil? or @year.empty?
+					="(#{@amount_of_patients_on_year} pacientes afectados#{end_string})"
 
 	:javascript
 		// Load the Visualization API and the piechart package.
@@ -44,7 +42,7 @@
 			]);
 
 			// Set chart options
-			var options = {'title':'Porcentaje de la poblacion afectada por la enfermedad','width':400, 'height':300};
+			var options = {'title': '#{t 'statistics.disease.result.percentage'}','width':750, 'height':312};
 
 			// Instantiate and draw our chart, passing in some options.
 			var chart = new google.visualization.PieChart(document.getElementById('chart_consulta3'));

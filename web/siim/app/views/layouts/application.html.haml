@@ -16,7 +16,8 @@
       .container= yield :content
       .push
     %footer
-      %p.footer-description=raw t('app.author') + " / " + t('app.version', :number => APP_CONFIG['app']['version'])
+      - version = APP_CONFIG.version
+      %p.footer-description=raw t('app.author') + " / " + t('app.version', :number => version)
     #myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
       .modal-header
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×

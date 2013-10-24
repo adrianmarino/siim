@@ -4,10 +4,10 @@ class HighlightWrapper
 	# -------------------------------------------------------------------------
 	def value_of(a_field_name, a_frase)
 		if exist_highlight_for(a_field_name)
-			value = highlight_of(a_field_name).select do|a_value_highlihted|
-				value = remove_highlight_to(a_value_highlihted)
-				a_frase == value
+			value = highlight_of(a_field_name).select do|a_highlihted_value|
+				a_frase == remove_highlight_to(a_highlihted_value)
 			end
+			puts "VALUE :#{value.first}"
 			value.first
 		else
 			a_frase
@@ -15,7 +15,7 @@ class HighlightWrapper
 	end
 
 	def self.new_with_default_tags(a_highlight)
-		self.new a_highlight, APP_CONFIG['search']['highlight']['begin'], APP_CONFIG['search']['highlight']['end']
+		self.new a_highlight, APP_CONFIG.highlight_begin, APP_CONFIG.highlight_end
 	end
 	# -------------------------------------------------------------------------
 	# Private Methods...

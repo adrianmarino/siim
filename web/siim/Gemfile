@@ -41,6 +41,7 @@ group :development do
   gem 'pry-rails'
   gem 'pry-plus'
   gem 'pry-debundle'
+  gem 'awesome_print'
 end
 
 # Dev and Test...
