@@ -1,7 +1,7 @@
 %div
   = form.fields_for :medications do |f|
     %div.nested-form-panel
-      -# %div= f.link_to_remove t('form.nested.delete')
+      .hide= f.link_to_remove t('form.nested.delete')
       .row-fluid
         .span5= nested_datepicker f, :begin_date, :medication
         .span5= nested_datepicker f, :end_date, :medication

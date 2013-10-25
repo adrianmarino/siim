@@ -1,7 +1,7 @@
 %div
   = form.fields_for :medical_exams do |f|
     %div.nested-form-panel
-      -# %div= f.link_to_remove t('form.nested.delete')
+      .hide= f.link_to_remove t('form.nested.delete')
       .row-fluid
         .span4= nested_datepicker f, :achievement_date, :medical_exam
         .span4= nested_text f, :name, :medical_exam

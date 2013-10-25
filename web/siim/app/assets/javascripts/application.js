@@ -228,6 +228,7 @@ $(document).ready(function() {
 $(document).on('nested:fieldAdded', function(event){
   var field = event.field; 
   var remove_button = field.find('.remove_nested_fields');
+  remove_button.parent().removeClass("hide");
   remove_button.addClass('btn').prepend('<i class="icon-minus-sign icon-white remove_nested_fields_icon">&nbsp;</i>');
 
   $("#consultations .selectpicker").selectpicker({
