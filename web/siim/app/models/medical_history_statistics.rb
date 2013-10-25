@@ -13,10 +13,10 @@ module MedicalHistoryStatistics
 	# Cantidad de pacientes con "X" sintomas para un año en particular #
 	#------------------------------------------------------------------#
 	def self.amount_of_patients_with_simptomp_on_year(a_simptomp, a_year)
-		if a_year.nil?
-			Patient.joins('INNER JOIN consultations ON consultations.medical_history_id = patients.medical_history_id').where("LOWER(consultations.symptomps) = LOWER(?)", a_simptomp).count
+		if a_year.nil? or a_year == 'all'
+			Patient.joins('INNER JOIN consultations ON consultations.medical_history_id = patients.medical_history_id').where("consultations.symptomps like concat('%', ?, '%')", a_simptomp).count
 		else
-			Patient.joins('INNER JOIN consultations ON consultations.medical_history_id = patients.medical_history_id').where("LOWER(consultations.symptomps) = LOWER(?) AND year(consultations.created_at) = ?", a_simptomp, a_year).count
+			Patient.joins('INNER JOIN consultations ON consultations.medical_history_id = patients.medical_history_id').where("consultations.symptomps like concat('%', ?, '%') AND YEAR(consultations.created_at) = ?", a_simptomp, a_year).count
 		end
 	end
 
@@ -25,7 +25,7 @@ module MedicalHistoryStatistics
 	#-------------------------------------------------------------------------#
 	def self.percentage_of_patient_with_disease(a_disease)
 		patient_count = Patient.count(:dni)
-		amount_of_consultations_for_disease = Patient.joins('INNER JOIN diseases ON diseases.medical_history_id = patients.medical_history_id').where("LOWER(diseases.name) = ?",a_disease).count
+		amount_of_consultations_for_disease = Patient.joins('INNER JOIN diseases ON diseases.medical_history_id = patients.medical_history_id').where("diseases.name like concat('%', ?, '%')",a_disease).count
 
 		(((amount_of_consultations_for_disease.to_f)/patient_count)*100)
 	end
@@ -34,10 +34,10 @@ module MedicalHistoryStatistics
 	# Cantidad de pacientes con una enfermedad "X" para un año en particular#
 	#-----------------------------------------------------------------------#
 	def self.amount_of_patients_with_disease_on_year(a_disease, a_year)
-		if a_year.nil?
-			Patient.joins('INNER JOIN diseases ON diseases.medical_history_id = patients.medical_history_id').where("LOWER(diseases.name) = LOWER(?)", a_disease).count
+		if a_year.nil? or a_year == 'all'
+			Patient.joins('INNER JOIN diseases ON diseases.medical_history_id = patients.medical_history_id').where("diseases.name like concat('%', ?, '%')", a_disease).count
 		else
-			Patient.joins('INNER JOIN diseases ON diseases.medical_history_id = patients.medical_history_id').where("LOWER(diseases.name) = LOWER(?) AND year(diseases.created_at) = ?", a_disease, a_year).count
+			Patient.joins('INNER JOIN diseases ON diseases.medical_history_id = patients.medical_history_id').where("diseases.name like concat('%', ?, '%') AND YEAR(diseases.created_at) = ?", a_disease, a_year).count
 		end
 	end
 

@@ -10,16 +10,18 @@
 				.control-group
 					%label.control-label=t 'statistics.simptomp.year'
 					.controls
-						%input{:type => :text, :id => :year, :name=> :year}
+						- options = options_for_select([ [t("form.select.all.male"), "all"]])
+						- options << options_from_collection_for_select(@years, :to_s, :to_s)
+						= select_tag :year, options
 				.form-actions= submit_tag t('statistics.show'), :class => "btn btn-primary pull-left" 
 		- if not @percentage_of_patient.nil?
 			.span7
-				%legend=t 'statistics.simptomp.result.title'
+				-#%legend=t 'statistics.simptomp.result.title'
 				%div#percentage_of_patient_chart
 				%div
 					%ul
 						%li
-							- end_string = (@year.nil? or @year.empty?) ? "." : " en el año #{@year}."
+							- end_string = @year == 'all' ? "." : " en el año #{@year}."
 							= "#{@amount_of_patients_on_year} pacientes con la sintomatologia \"#{@simptom}\"#{end_string}"
 						%li="Tipo de tratamiento utilizado para el sintoma \"#{@simptom}\": #{@treatments_used.join(',')}."
 

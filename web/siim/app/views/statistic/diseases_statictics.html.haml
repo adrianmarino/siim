@@ -10,14 +10,16 @@
 				.control-group
 					%label.control-label=t 'statistics.disease.year'
 					.controls
-						%input{:type => :text, :id => :year, :name=> :year}
+						- options = options_for_select([ [t("form.select.all.male"), "all"]])
+						- options << options_from_collection_for_select(@years, :to_s, :to_s)
+						= select_tag :year, options
 				.form-actions= submit_tag t('statistics.show'), :class => "btn btn-primary pull-left" 
 		- if not @percentage_of_patient.nil?
 			.span7
-				%legend=t 'statistics.disease.result.title'
+				-#%legend=t 'statistics.disease.result.title'
 				%div#chart_consulta3
 				%div
-					- end_string = " en el año #{@year}" unless @year.nil? or @year.empty?
+					- end_string = " en el año #{@year}" unless @year == 'all'
 					="(#{@amount_of_patients_on_year} pacientes afectados#{end_string})"
 
 	:javascript
