@@ -1,7 +1,10 @@
+- allergy_number = 0
 %div
   = form.fields_for :allergies do |f|
+    - allergy_number+=1
     %div.nested-form-panel
-      .hide= f.link_to_remove t('form.nested.delete')
+      -if allergy_number > @allergies_count
+        = f.link_to_remove t('form.nested.delete')
       .row-fluid
         .span4= nested_datepicker f, :record_date, :allergy
         .span4= nested_text f, :cause, :allergy

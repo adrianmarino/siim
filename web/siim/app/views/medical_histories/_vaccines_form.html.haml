@@ -1,7 +1,10 @@
+- vaccine_number = 0
 %div
   = form.fields_for :vaccines do |f|
+    - vaccine_number+=1
     %div.nested-form-panel
-      .hide= f.link_to_remove t('form.nested.delete')
+      - if vaccine_number > @vaccines_count
+        = f.link_to_remove t('form.nested.delete')
       .row-fluid
         .span4= nested_datepicker f, :last_application, :vaccine
         .span4= nested_text f, :name, :vaccine
