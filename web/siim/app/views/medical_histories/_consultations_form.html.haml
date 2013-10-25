@@ -1,7 +1,7 @@
 %div#consultations
   = form.fields_for :consultations do |f|
     %div.nested-form-panel
-      -# %div= f.link_to_remove t('form.nested.delete')
+      .hide= f.link_to_remove t('form.nested.delete')
       .row-fluid
         .span4= nested_datepicker f, :achievement_date, :consultation
         .span4= nested_select_one f, :medical, :consultation
