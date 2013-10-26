@@ -51,17 +51,12 @@ class MedicalHistory < ActiveRecord::Base
 	end
 
 	def self.find_by_patient(a_patient)
-		MedicalHistory.includes(:patient).where("patients.id=?",a_patient.id).first
+		MedicalHistory.includes(:patient).where("patients.id=?",a_patient.id)
 	end
 
-	def self.search_medical_history_by_dni(a_dni)
-    	MedicalHistory.joins('INNER JOIN patients ON medical_histories.id = patients.medical_history_id').where("LOWER(patients.dni) = LOWER(?)", a_dni).first
+	def self.find_by_firname_and_lastname(a_first_name, a_last_name)
+		MedicalHistory.includes(:patient).where("patients.firstname LIKE concat('%', ?, '%') AND patients.lastname like concat('%', ?, '%')", a_first_name, a_last_name)
 	end
-
-	def self.search_medical_history_by_name(a_first_name, a_last_name)
-    	MedicalHistory.joins('INNER JOIN patients ON medical_histories.id = patients.medical_history_id').where("LOWER(patients.firstname) = LOWER(?) AND LOWER(patients.lastname) = LOWER(?) ", a_first_name, a_last_name).first
-	end
-
 	#
 	# -------------------------------------------------------------------------
 	# Attributes...

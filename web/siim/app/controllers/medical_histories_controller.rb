@@ -2,6 +2,7 @@ class MedicalHistoriesController < CrudController
 	# -------------------------------------------------------------------------
 	# Public Methods...
 	# -------------------------------------------------------------------------
+	# Andriod search...
 	# GET /medical_histories/search_by_dni?query="a DNI"
 	def search_by_dni
 		medical_history = MedicalHistory.find_by_dni dni_param
@@ -9,42 +10,27 @@ class MedicalHistoriesController < CrudController
 		render json: response.to_json
 	end
 
+	# Search by patient...
 	def search
 		render search_medical_histories_path
 	end
-
-	def search_patient
+	def search_patient_by_dni
 		@dni = params[:dni]
+		medical_history = MedicalHistory.find_by_dni(@dni)
+		@medical_histories = medical_history.nil? ? [] : [medical_history]
+		search
+	end
+	def search_patient_by_name
 		@first_name = params[:first_name]
 		@last_name = params[:last_name]
-
-		if not @dni.empty?
-     		@medical_history = MedicalHistory.search_medical_history_by_dni @dni       		
-            if @medical_history.nil? 
-     		    @message =  params[:dni]
-     		end    
-		end
-
-        if not @first_name.empty? and not @last_name.empty?
-     		@medical_history = MedicalHistory.search_medical_history_by_name @first_name, @last_name      		
-            if @medical_history.nil? 
-     		    @message =  params[:first_name]
-     		end    
-		end
-
-		search
-	end	
-
-	def perform_search
-		@text = params[:text]
-		@medical_histories = MedicalHistory.search text
+		@medical_histories = MedicalHistory.find_by_firname_and_lastname @first_name, @last_name
 		search
 	end
 
+	# Custom Search...
 	def custom_search
 		render custom_search_medical_histories_path
 	end
-
 	def perform_custom_search
 		@text = params[:text]
 		@results= MedicalHistorySearchEngine.search @text
@@ -149,7 +135,7 @@ class MedicalHistoriesController < CrudController
 		@back_url = params[:back_url].nil? ? medical_histories_path : params[:back_url]
 
 		@allergies_count			= @medical_history.allergies.size
-		@antecedents_count		=  @medical_history.antecedents.size
+		@antecedents_count		=	@medical_history.antecedents.size
 		@consultations_count	= @medical_history.consultations.size
 		@diseases_count				= @medical_history.diseases.size
 		@medical_exams_count	= @medical_history.medical_exams.size

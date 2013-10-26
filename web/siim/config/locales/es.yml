@@ -169,8 +169,6 @@ es:
         medical_exams: "Examenes"
         medications: "Medicaciones"
         vaccines: "Vacunas"
-        search_for_dni: "Busqueda por DNI"
-        search_for_name: "Busqueda por Nombre"
       patient:
         photo: "Foto"
         address: "Dirección"
@@ -451,14 +449,17 @@ es:
       header: "Resultados"
       content: "No hay resultados"
   medical_history:
-    configm_save: "¿Esta seguro que desea guardar los cambios?"
-    search_dni: "DNI"
-    search_firstName: "Nombre"
-    search_lastName: "Apellido"
-    not_found_data: "No se encuentran datos en la busqueda"
-    search: "Buscar"
-    clean: "Limpiar"
-    results: "Resultados"  
+    confirm_save: "¿Esta seguro que desea guardar los cambios?"
+    search:
+      title:
+        by_dni: "Buscar por DNI"
+        by_name: " Buscar por Nombre"
+      dni: "DNI"
+      firstName: "Nombre"
+      lastName: "Apellido"
+      search: "Buscar"
+      clean: "Limpiar"
+      no_results: "No se encontraron resultados para busqueda."
   statistics:
     show: "Ver"
     disease:

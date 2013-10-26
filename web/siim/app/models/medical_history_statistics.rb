@@ -14,9 +14,9 @@ module MedicalHistoryStatistics
 	#------------------------------------------------------------------#
 	def self.amount_of_patients_with_simptomp_on_year(a_simptomp, a_year)
 		if a_year.nil? or a_year == 'all'
-			Patient.joins('INNER JOIN consultations ON consultations.medical_history_id = patients.medical_history_id').where("consultations.symptomps like concat('%', ?, '%')", a_simptomp).count
+			Patient.joins('INNER JOIN consultations ON consultations.medical_history_id = patients.medical_history_id').where("consultations.symptomps LIKE concat('%', ?, '%')", a_simptomp).count
 		else
-			Patient.joins('INNER JOIN consultations ON consultations.medical_history_id = patients.medical_history_id').where("consultations.symptomps like concat('%', ?, '%') AND YEAR(consultations.created_at) = ?", a_simptomp, a_year).count
+			Patient.joins('INNER JOIN consultations ON consultations.medical_history_id = patients.medical_history_id').where("consultations.symptomps LIKE concat('%', ?, '%') AND YEAR(consultations.created_at) = ?", a_simptomp, a_year).count
 		end
 	end
 
@@ -25,7 +25,7 @@ module MedicalHistoryStatistics
 	#-------------------------------------------------------------------------#
 	def self.percentage_of_patient_with_disease(a_disease)
 		patient_count = Patient.count(:dni)
-		amount_of_consultations_for_disease = Patient.joins('INNER JOIN diseases ON diseases.medical_history_id = patients.medical_history_id').where("diseases.name like concat('%', ?, '%')",a_disease).count
+		amount_of_consultations_for_disease = Patient.joins('INNER JOIN diseases ON diseases.medical_history_id = patients.medical_history_id').where("diseases.name LIKE concat('%', ?, '%')",a_disease).count
 
 		(((amount_of_consultations_for_disease.to_f)/patient_count)*100)
 	end
@@ -35,9 +35,9 @@ module MedicalHistoryStatistics
 	#-----------------------------------------------------------------------#
 	def self.amount_of_patients_with_disease_on_year(a_disease, a_year)
 		if a_year.nil? or a_year == 'all'
-			Patient.joins('INNER JOIN diseases ON diseases.medical_history_id = patients.medical_history_id').where("diseases.name like concat('%', ?, '%')", a_disease).count
+			Patient.joins('INNER JOIN diseases ON diseases.medical_history_id = patients.medical_history_id').where("diseases.name LIKE concat('%', ?, '%')", a_disease).count
 		else
-			Patient.joins('INNER JOIN diseases ON diseases.medical_history_id = patients.medical_history_id').where("diseases.name like concat('%', ?, '%') AND YEAR(diseases.created_at) = ?", a_disease, a_year).count
+			Patient.joins('INNER JOIN diseases ON diseases.medical_history_id = patients.medical_history_id').where("diseases.name LIKE concat('%', ?, '%') AND YEAR(diseases.created_at) = ?", a_disease, a_year).count
 		end
 	end
 

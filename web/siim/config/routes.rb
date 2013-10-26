@@ -32,6 +32,8 @@ Siim::Application.routes.draw do
     post :perform_search, on: :collection
     get :custom_search, on: :collection
     post :perform_custom_search, on: :collection
+    post :search_patient_by_dni, on: :collection
+    post :search_patient_by_name, on: :collection
   end
 
   get '/assets/javascripts/dinamic_medicals', to: 'javascripts#dinamic_medicals'
@@ -50,7 +52,5 @@ Siim::Application.routes.draw do
   get '/statistics/setup_disease', to: 'statistic#setup_disease'
   post '/statistics/perform_disease', to: 'statistic#perform_disease'
 
-  post '/medical_histories/search_patient', to: 'medical_histories#search_patient'
-  
   get '/log/show', to: 'log#show'
 end
