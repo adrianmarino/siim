@@ -440,8 +440,13 @@ es:
     show_medical_history: "Historial"
   custom_search:
     text: "Buscar..."
-    result: "Resultados"
-    no_results: "No se encontraton resultados que concuerden con la busqueda realizada."
+    result:
+      content: "Resultado"
+      patient: "Paciente"
+      options: "Ver"
+    no_results:
+      header: "Resultados"
+      content: "No hay resultados"
   medical_history:
     configm_save: "¿Esta seguro que desea guardar los cambios?"
   statistics:

@@ -54,6 +54,6 @@ class ApplicationConfiguration
 	# -------------------------------------------------------------------------
 	def initialize(a_path)
 		@config = YAML.load_file "#{Rails.root}#{a_path}"
-		print_all if Rails.env == 'development'
+		#print_all if Rails.env == 'development'
 	end
 end
