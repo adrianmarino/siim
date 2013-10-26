@@ -440,7 +440,7 @@ es:
     title: "Mis Turnos"
     show_medical_history: "Historial"
   custom_search:
-    text: "Buscar..."
+    text: "Para realizar una búsquedas ingrese una o más pablabras y presione en la lupa..."
     result:
       content: "Resultado"
       patient: "Paciente"
