@@ -53,8 +53,15 @@ class MedicalHistory < ActiveRecord::Base
 	def self.find_by_patient(a_patient)
 		MedicalHistory.includes(:patient).where("patients.id=?",a_patient.id).first
 	end
-	#
-	#
+
+	def self.search_medical_history_by_dni(a_dni)
+    	MedicalHistory.joins('INNER JOIN patients ON medical_histories.id = patients.medical_history_id').where("LOWER(patients.dni) = LOWER(?)", a_dni).first
+	end
+
+	def self.search_medical_history_by_name(a_first_name, a_last_name)
+    	MedicalHistory.joins('INNER JOIN patients ON medical_histories.id = patients.medical_history_id').where("LOWER(patients.firstname) = LOWER(?) AND LOWER(patients.lastname) = LOWER(?) ", a_first_name, a_last_name).first
+	end
+
 	#
 	# -------------------------------------------------------------------------
 	# Attributes...

@@ -169,6 +169,8 @@ es:
         medical_exams: "Examenes"
         medications: "Medicaciones"
         vaccines: "Vacunas"
+        search_for_dni: "Busqueda por DNI"
+        search_for_name: "Busqueda por Nombre"
       patient:
         photo: "Foto"
         address: "Dirección"
@@ -350,6 +352,7 @@ es:
       edit: "Editar Historia Médica"
       show: "Detalle de Historia Médica"
       list: "Historias Médicas"
+      search: "Buscar Historias Médicas"
     user:
       new: "Nuevo Usuario"
       edit: "Editar Usuario"
@@ -449,6 +452,13 @@ es:
       content: "No hay resultados"
   medical_history:
     configm_save: "¿Esta seguro que desea guardar los cambios?"
+    search_dni: "DNI"
+    search_firstName: "Nombre"
+    search_lastName: "Apellido"
+    not_found_data: "No se encuentran datos en la busqueda"
+    search: "Buscar"
+    clean: "Limpiar"
+    results: "Resultados"  
   statistics:
     show: "Ver"
     disease:

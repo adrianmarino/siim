@@ -13,6 +13,28 @@ class MedicalHistoriesController < CrudController
 		render search_medical_histories_path
 	end
 
+	def search_patient
+		@dni = params[:dni]
+		@first_name = params[:first_name]
+		@last_name = params[:last_name]
+
+		if not @dni.empty?
+     		@medical_history = MedicalHistory.search_medical_history_by_dni @dni       		
+            if @medical_history.nil? 
+     		    @message =  params[:dni]
+     		end    
+		end
+
+        if not @first_name.empty? and not @last_name.empty?
+     		@medical_history = MedicalHistory.search_medical_history_by_name @first_name, @last_name      		
+            if @medical_history.nil? 
+     		    @message =  params[:first_name]
+     		end    
+		end
+
+		search
+	end	
+
 	def perform_search
 		@text = params[:text]
 		@medical_histories = MedicalHistory.search text
