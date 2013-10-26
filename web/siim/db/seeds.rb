@@ -297,7 +297,7 @@ patient_a = Patient.create(
   contacts: [contact_a,contact_b]
 )
 patient_b = Patient.create(
-  dni: "28381077",
+  dni: "38381077",
   firstname: "Fernando",
   lastname: "Casabella",
   birthdate: "14-08-1980",
@@ -312,7 +312,7 @@ patient_b = Patient.create(
   contacts: [contact_a,contact_b]
 )
 patient_c = Patient.create(
-  dni: "28381077",
+  dni: "18381077",
   firstname: "Maria",
   lastname: "Pepe",
   birthdate: "14-08-1950",
@@ -327,7 +327,7 @@ patient_c = Patient.create(
   contacts: [contact_a,contact_b]
 )
 patient_d = Patient.create(
-  dni: "28381077",
+  dni: "8381077",
   firstname: "Javier",
   lastname: "Lopez",
   birthdate: "14-08-1980",
