@@ -420,6 +420,7 @@ en:
   custom_search:
     text: "Search..."
     result: "Results"
+    no_results: "Not found results that match your search."
   medical_history:
     configm_save: "Are you sure you want to save changes?"
   statistics:

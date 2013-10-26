@@ -1,7 +1,13 @@
+- antecedent_number = 0
 %div#antecedents
   = form.fields_for :antecedents do |f|
-    %div.nested-form-panel.antecedent_form_panel
-      .hide= f.link_to_remove t('form.nested.delete')
-      %div
-        = nested_big_text f, :description, :antecedent, :antecedent_description
+    - antecedent_number+=1
+    -if antecedent_number > @antecedents_count
+      %div.nested-form-panel.antecedent_form_panel
+        = f.link_to_remove t('form.nested.delete')
+        %div= nested_big_text f, :description, :antecedent, :antecedent_description
+    -else
+      %div.nested-form-panel
+        %div= nested_big_text f, :description, :antecedent, :antecedent_description
+
   = form.link_to_add t('form.nested.add'), :antecedents

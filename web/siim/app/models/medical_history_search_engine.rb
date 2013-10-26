@@ -253,6 +253,11 @@ module MedicalHistorySearchEngine
 	end
 
 	def self.search(a_search_string)
-		raw_search(a_search_string).collect { |a_result| MedicalHistorySearchResult.new a_result }
+		raw_search(a_search_string).collect { |a_result| MedicalHistorySearchResult.new a_result, INDEXES }
 	end
+
+	# ----------------------------------------------------------------------------
+	# Constants
+	# ----------------------------------------------------------------------------
+	INDEXES = ['title','partial', 'partial_back','partial_middle']
 end

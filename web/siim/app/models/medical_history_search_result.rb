@@ -14,8 +14,8 @@ class MedicalHistorySearchResult
 	# -------------------------------------------------------------------------
 	# Initialize...
 	# -------------------------------------------------------------------------
-	def initialize(a_medical_history)
+	def initialize(a_medical_history, indexes)
 		@medical_history = a_medical_history
-		@text = MedicalHistoryStringResultBuilder.new(a_medical_history).with_all.to_s
+		@text = MedicalHistoryStringResultBuilder.new(a_medical_history, indexes).with_all.to_s
 	end
 end

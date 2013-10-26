@@ -12,13 +12,14 @@
 				%thead.table-header
 					%tr
 						%th=t "custom_search.result"
-						%th.options= t :options
+						- if not @results.empty?
+							%th.options
 				%tbody
 					- for a_result in @results
 						%tr
 							%td{"style" => "vertical-align: middle;"}=raw(a_result)
-							%td.options{"style" => "vertical-align: middle;"}
-								=link_to raw("<i class=\"icon-search\">&nbsp;#{t 'actions.show'}</i>"), edit_medical_history_path(:id => a_result.medical_history.id, :back_url => custom_search_medical_histories_path), :class => "btn"
+							%td{"style" => "vertical-align: middle"}
+								=link_to raw("<i class=\"icon-search\"></i>"), edit_medical_history_path(:id => a_result.medical_history.id, :back_url => custom_search_medical_histories_path), :class => "btn"
 		:javascript
 			$(document).ready(function() {
 						$('#custom_search_result').dataTable({
@@ -34,7 +35,7 @@
 									"sNext": I18n.t("data_table.paginate.next"),
 									"sPrevious": I18n.t("data_table.paginate.previous")
 								},
-								"sEmptyTable": I18n.t("data_table.emptyTable"),
+								"sEmptyTable": I18n.t("custom_search.no_results"),
 								"sInfo": I18n.t("data_table.info"),
 								"sInfoEmpty": I18n.t("data_table.infoEmpty"),
 								"sInfoFiltered": I18n.t("data_table.infoFiltered"),

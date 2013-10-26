@@ -15,7 +15,7 @@ es:
       last: "Ultima"
       next: "Proxima"
       previous: "Anterior"
-    emptyTable: "No hay datos disponibles en la tabla"
+    emptyTable: "No hay datos disponibles"
     info: "Hay un total de _TOTAL_ filas a mostrar (_START_ a _END_)"
     infoEmpty: "No hay filas para mostrar"
     infoFiltered: " - Filtrando desde _MAX_ filas"
@@ -441,6 +441,7 @@ es:
   custom_search:
     text: "Buscar..."
     result: "Resultados"
+    no_results: "No se encontraton resultados que concuerden con la busqueda realizada."
   medical_history:
     configm_save: "¿Esta seguro que desea guardar los cambios?"
   statistics:
