@@ -5,7 +5,7 @@ class MedicalHistoriesController < CrudController
 	# Andriod search...
 	# GET /medical_histories/search_by_dni?query="a DNI"
 	def search_by_dni
-		medical_history = MedicalHistory.find_by_dni dni_param
+		medical_history = MedicalHistory.find_by_dni(query_param).first
 		response = new_medical_history_response medical_history
 		render json: response.to_json
 	end
@@ -15,15 +15,11 @@ class MedicalHistoriesController < CrudController
 		render search_medical_histories_path
 	end
 	def search_patient_by_dni
-		@dni = params[:dni]
-		medical_history = MedicalHistory.find_by_dni(@dni)
-		@medical_histories = medical_history.nil? ? [] : [medical_history]
+		@medical_histories = MedicalHistory.find_by_dni dni_param
 		search
 	end
 	def search_patient_by_name
-		@first_name = params[:first_name]
-		@last_name = params[:last_name]
-		@medical_histories = MedicalHistory.find_by_firname_and_lastname @first_name, @last_name
+		@medical_histories = MedicalHistory.find_by_firname_and_lastname firstname_param, lastname_param
 		search
 	end
 
@@ -169,8 +165,20 @@ class MedicalHistoriesController < CrudController
 	# Private Methods...
 	# -------------------------------------------------------------------------
 	private
+	def query_param
+		params[:query]
+	end
+
 	def dni_param
-		dni = params[:query]
+		params[:dni]
+	end
+
+	def firstname_param
+		params[:first_name]
+	end
+
+	def lastname_param
+		params[:last_name]
 	end
 
 	def new_medical_history_response(a_medical_history)
