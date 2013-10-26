@@ -19,7 +19,7 @@ class Patient < ActiveRecord::Base
   # -------------------------------------------------------------------------
   belongs_to :medical_history, touch: true
   has_many :contacts
-  has_attached_file :photo, :styles => {:medium => "200x200>"}, :default_url => "images/photo.png", :url  => "/assets/patients/:id/:style/:basename.:extension", :path => ":rails_root/public/assets/patients/:id/:style/:basename.:extension"
+  has_attached_file :photo, :styles => {:medium => "200x200>", :small => "45x41>"}, :default_url => "images/photo-:style.png", :url  => "/assets/patients/:id/:style/:basename.:extension", :path => ":rails_root/public/assets/patients/:id/:style/:basena.:extension"
 
   # -------------------------------------------------------------------------
   # Nested attributes...

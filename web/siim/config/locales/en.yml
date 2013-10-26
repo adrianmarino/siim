@@ -419,8 +419,13 @@ en:
     show_medical_history: "History"
   custom_search:
     text: "Search..."
-    result: "Results"
-    no_results: "Not found results that match your search."
+    result:
+      content: "Result"
+      patient: "Pacient"
+      options: "Show"
+    no_results:
+      header: "Results"
+      content: "Not found results"
   medical_history:
     configm_save: "Are you sure you want to save changes?"
   statistics:

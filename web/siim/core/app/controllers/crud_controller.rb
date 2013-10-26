@@ -1,4 +1,3 @@
-
 class CrudController < ApplicationController
   layout :layout_selector
 
