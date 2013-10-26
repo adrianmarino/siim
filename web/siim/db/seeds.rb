@@ -311,6 +311,36 @@ patient_b = Patient.create(
   movile_phone: "1122233344",
   contacts: [contact_a,contact_b]
 )
+patient_c = Patient.create(
+  dni: "28381077",
+  firstname: "Maria",
+  lastname: "Pepe",
+  birthdate: "14-08-1950",
+  blood_type: "B_POSITIVE",
+  height: "1.40",
+  weight: "100",
+  sex: "FALE",
+  address: "algun lugar",
+  email: "mariapepe@gmail.com",
+  home_phone: "444334444",
+  movile_phone: "1122233344",
+  contacts: [contact_a,contact_b]
+)
+patient_d = Patient.create(
+  dni: "28381077",
+  firstname: "Javier",
+  lastname: "Lopez",
+  birthdate: "14-08-1980",
+  blood_type: "B_POSITIVE",
+  height: "1.70",
+  weight: "60",
+  sex: "MALE",
+  address: "algun lugar",
+  email: "javilopez@gmail.com",
+  home_phone: "444334444",
+  movile_phone: "1122233344",
+  contacts: [contact_a,contact_b]
+)
 #
 #
 #
@@ -319,6 +349,8 @@ patient_b = Patient.create(
 # -----------------------------------------------------------------------------
 medical_history_a = MedicalHistory.create(patient: patient_a)
 medical_history_b = MedicalHistory.create(patient: patient_b)
+medical_history_c = MedicalHistory.create(patient: patient_c)
+medical_history_d = MedicalHistory.create(patient: patient_d)
 #
 #
 #
@@ -349,6 +381,26 @@ medical_history_b.allergies.create(
   record_date: '22-08-2013',
   cause: 'Alergia a los animales. Todos, seres humanos incluidos.'
 )
+medical_history_c.allergies.create(
+  record_date: '22-08-2013',
+  cause: 'Alergia a los animales'
+)
+medical_history_c.allergies.create(
+  record_date: '22-08-2013',
+  cause: 'Intolerancia a la lactosa'
+)
+medical_history_c.allergies.create(
+  record_date: '22-08-2013',
+  cause: 'acaros'
+)
+medical_history_d.allergies.create(
+  record_date: '22-08-2013',
+  cause: 'Alergia al pelo de gatos/perros'
+)
+medical_history_d.allergies.create(
+  record_date: '22-08-2013',
+  cause: 'polen'
+)
 #
 #
 #
@@ -375,9 +427,32 @@ medical_history_b.consultations.create(
 )
 medical_history_b.consultations.create(
   achievement_date: '23-08-2013',
-  diagnostic: 'Diagnostico 2',
-  symptomps: 'Sintomas 2',
+  diagnostic: '',
+  symptomps: 'volito,  mareos',
   treatment: 'Tratamiento 1'
+)
+medical_history_c.consultations.create(
+  achievement_date: '23-08-2013',
+  diagnostic: 'Embarazo',
+  symptomps: ' Aversión a ciertos alimentos, Cambios de humor, Hinchazón abdominal,Ganas de orinar frecuentemente, Cansancio, Sensibilidad e hinchazón en los senos, Náuseas, Retraso de la menstruación, Tu temperatura basal permanece elevada.'
+)
+medical_history_c.consultations.create(
+  achievement_date: '23-08-2013',
+  diagnostic: 'Gripe Aviar',
+  symptomps: 'Tos, mas de 38 grados de fiebre y dificultad respiratoria.',
+  treatment: 'Tamiflú o Ralenza'
+)
+medical_history_d.consultations.create(
+  achievement_date: '23-08-2013',
+  diagnostic: 'Descompesación gastrica menor',
+  symptomps: 'vómito y mareos.',
+  treatment: 'Reliveran'
+)
+medical_history_d.consultations.create(
+  achievement_date: '23-08-2013',
+  diagnostic: 'Psoriasis',
+  symptomps: 'Manchas enrojecidas en la piel de mediano tammaño y escamosas. Con protuberancias alrededor de la zona afectada.',
+  treatment: 'Farmacos via oral y cremas.'
 )
 #
 #
@@ -398,13 +473,21 @@ medical_history_b.antecedents.create description: 'Padres separados'
 # -----------------------------------------------------------------------------
 # Diseases...
 # -----------------------------------------------------------------------------
-medical_history_a.diseases.create record_date: "12-12-2012", name: "Reuma"
-medical_history_a.diseases.create record_date: "12-12-2012", name: "Artrocis"
-medical_history_a.diseases.create record_date: "12-12-2012", name: "Hepatitis"
+medical_history_a.diseases.create record_date: "12-12-2010", name: "Reuma"
+medical_history_a.diseases.create record_date: "12-12-2005", name: "Artrocis"
+medical_history_a.diseases.create record_date: "12-12-1990", name: "Hepatitis C"
 
-medical_history_b.diseases.create record_date: "12-12-2012", name: "Reuma"
+medical_history_b.diseases.create record_date: "12-12-2009", name: "Arritmia"
 medical_history_b.diseases.create record_date: "12-12-2012", name: "Artrocis"
-medical_history_b.diseases.create record_date: "12-12-2012", name: "Hepatitis"
+medical_history_b.diseases.create record_date: "12-12-1998", name: "Hepatitis B"
+
+medical_history_b.diseases.create record_date: "12-12-2009", name: "Arritmia"
+medical_history_b.diseases.create record_date: "12-12-2012", name: "Artrocis"
+medical_history_b.diseases.create record_date: "12-12-1998", name: "Hepatitis A"
+
+medical_history_d.diseases.create record_date: "12-12-2012", name: "Envenenamientos prepamuturo"
+medical_history_d.diseases.create record_date: "12-12-2012", name: "Artrocis"
+medical_history_d.diseases.create record_date: "12-12-2012", name: "Sida"
 #
 #
 #
@@ -418,6 +501,14 @@ medical_history_a.medications.create name: "Omeprazol", dose: "1 Comprimido por 
 medical_history_b.medications.create name: "Polper B12 Forte", dose: "1 Comprimido por día", amount: 100
 medical_history_b.medications.create name: "Aspirina", dose: "1 Comprimido por día", amount: 200
 medical_history_b.medications.create name: "Omeprazol", dose: "1 Comprimido por día", amount: 300
+
+medical_history_c.medications.create name: "Polper B12", dose: "1 Comprimido por día", amount: 100
+medical_history_c.medications.create name: "Aspirina", dose: "1 Comprimido cada 3 días", amount: 200
+medical_history_c.medications.create name: "Omeprazol", dose: "1 Comprimido por día", amount: 300
+
+medical_history_d.medications.create name: "Viaminas", dose: "1 Comprimido por día", amount: 100
+medical_history_d.medications.create name: "Aspirina", dose: "1 Comprimido por día", amount: 200
+medical_history_d.medications.create name: "Tamiflú", dose: "1 Comprimido por día", amount: 300
 #
 #
 #
@@ -433,6 +524,12 @@ medical_history_b.vaccines.create last_application: "12-12-2012", name: "Sabin O
 medical_history_b.vaccines.create last_application: "12-12-2002", name: "VPH"
 medical_history_b.vaccines.create last_application: "12-12-2002", name: "Gripe"
 medical_history_b.vaccines.create last_application: "12-12-2002", name: "Neumococo Conjugada"
+
+medical_history_c.vaccines.create last_application: "12-12-2012", name: "Sabin OPV"
+medical_history_c.vaccines.create last_application: "12-12-2002", name: "Gripe"
+
+medical_history_d.vaccines.create last_application: "12-12-2012", name: "Sabin OPV"
+medical_history_d.vaccines.create last_application: "12-12-2002", name: "Gripe"
 #
 #
 #
@@ -448,7 +545,6 @@ medical_history_a.medical_exams.create( achievement_date: "12-12-2012",
 medical_history_a.medical_exams.create( achievement_date: "12-12-2012",
   name: "Examen de electrocardiografía", results: "Ok")
 
-
 medical_history_b.medical_exams.create( achievement_date: "12-12-2012",
   name: "Examen de cultivo de garganta", results: "Ok")
 medical_history_b.medical_exams.create( achievement_date: "12-12-2012",
@@ -457,6 +553,16 @@ medical_history_b.medical_exams.create( achievement_date: "12-12-2012",
   name: "Biopsia", results: "Ok")
 medical_history_b.medical_exams.create( achievement_date: "12-12-2012",
   name: "Exámenes de radiología", results: "Ok")
+
+medical_history_c.medical_exams.create( achievement_date: "12-12-2012",
+  name: "Cultivo de garganta", results: "Ok")
+medical_history_c.medical_exams.create( achievement_date: "12-12-2012",
+  name: "Lumbar", results: "Ok")
+
+medical_history_d.medical_exams.create( achievement_date: "12-12-2012",
+  name: "Biopsia", results: "Ok")
+medical_history_d.medical_exams.create( achievement_date: "12-12-2012",
+  name: "Radiologico", results: "Ok")
 #
 #
 #
