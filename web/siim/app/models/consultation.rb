@@ -3,7 +3,7 @@ class Consultation < ActiveRecord::Base
   # Public Class Methods...
   # -------------------------------------------------------------------------
   def self.all_achievement_years
-    (select('DISTINCT achievement_date').collect {|a_result| a_result.achievement_date.year }).uniq
+    (select('DISTINCT achievement_date').collect {|a_result| a_result.achievement_date.year }).uniq.sort
   end
 
   # -------------------------------------------------------------------------
