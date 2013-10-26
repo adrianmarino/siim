@@ -441,7 +441,7 @@ es:
     show_medical_history: "Historial"
     no_results: "No se encuentraron mas turnos agendados para día de hoy."
   custom_search:
-    text: "Para realizar una búsquedas ingrese una o más pablabras y luego presione en la lupa..."
+    text: "Para realizar una búsquedas ingrese una o más palabras y luego presione en la lupa..."
     result:
       content: "Resultado"
       patient: "Paciente"
