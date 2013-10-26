@@ -47,15 +47,15 @@ class MedicalHistory < ActiveRecord::Base
 	# Public Class Methods...
 	# -------------------------------------------------------------------------
 	def self.find_by_dni(a_dni)
-		MedicalHistory.includes(:patient).where("patients.dni=?",a_dni).first
+		MedicalHistory.includes(:patient).where("patients.dni=?",a_dni)
 	end
 
 	def self.find_by_patient(a_patient)
 		MedicalHistory.includes(:patient).where("patients.id=?",a_patient.id)
 	end
 
-	def self.find_by_firname_and_lastname(a_first_name, a_last_name)
-		MedicalHistory.includes(:patient).where("patients.firstname LIKE concat('%', ?, '%') AND patients.lastname LIKE concat('%', ?, '%')", a_first_name, a_last_name)
+	def self.find_by_firname_and_lastname(a_firstname, a_lastname)
+		MedicalHistory.includes(:patient).where("patients.firstname LIKE concat('%', ?, '%') AND patients.lastname LIKE concat('%', ?, '%')", a_firstname, a_lastname)
 	end
 	#
 	# -------------------------------------------------------------------------
