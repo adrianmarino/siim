@@ -51,10 +51,12 @@ class MedicalHistory < ActiveRecord::Base
 	end
 
 	def self.find_by_patient(a_patient)
-		MedicalHistory.includes(:patient).where("patients.id=?",a_patient.id).first
+		MedicalHistory.includes(:patient).where("patients.id=?",a_patient.id)
 	end
-	#
-	#
+
+	def self.find_by_firname_and_lastname(a_first_name, a_last_name)
+		MedicalHistory.includes(:patient).where("patients.firstname LIKE concat('%', ?, '%') AND patients.lastname like concat('%', ?, '%')", a_first_name, a_last_name)
+	end
 	#
 	# -------------------------------------------------------------------------
 	# Attributes...

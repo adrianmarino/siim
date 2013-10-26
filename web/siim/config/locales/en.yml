@@ -427,7 +427,17 @@ en:
       header: "Results"
       content: "Not found results"
   medical_history:
-    configm_save: "Are you sure you want to save changes?"
+    confirm_save: "Are you sure you want to save changes?"
+    search:
+      title:
+        by_dni: "Search by DNI"
+        by_name: "Search by Name"
+      dni: "DNI"
+      firstName: "Firstname"
+      lastName: "Lastname"
+      search: "Search"
+      clean: "Reset"
+      no_results: "Not found results."
   statistics:
     show: "Show"
     disease:

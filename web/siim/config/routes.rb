@@ -32,6 +32,8 @@ Siim::Application.routes.draw do
     post :perform_search, on: :collection
     get :custom_search, on: :collection
     post :perform_custom_search, on: :collection
+    post :search_patient_by_dni, on: :collection
+    post :search_patient_by_name, on: :collection
   end
 
   get '/assets/javascripts/dinamic_medicals', to: 'javascripts#dinamic_medicals'
