@@ -206,7 +206,7 @@ $(document).ready(function() {
                     "sNext": I18n.t("data_table.paginate.next"),
                     "sPrevious": I18n.t("data_table.paginate.previous")
                 },
-                "sEmptyTable": I18n.t("data_table.emptyTable"),
+                "sEmptyTable": I18n.t("my_appointments.no_results"),
                 "sInfo": I18n.t("data_table.info"),
                 "sInfoEmpty": I18n.t("data_table.infoEmpty"),
                 "sInfoFiltered": I18n.t("data_table.infoFiltered"),
