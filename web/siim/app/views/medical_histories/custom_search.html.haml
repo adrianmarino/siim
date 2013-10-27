@@ -2,7 +2,7 @@
 	.custom-search-form.span12
 		= form_tag :perform_custom_search_medical_histories,  :id=>"custom-search-form", :class=>"form-search form-horizontal pull-right" do
 			.input-append
-				= text_field_tag :text, params[:text], :class => "search-query span12", :placeholder=> "#{t('custom_search.text')}"
+				= text_field_tag :text, params[:text], :class => "search-query span12", :placeholder=> "#{t('custom_search.text')}", :autofocus => true
 				%button.btn{"type"=>"submit"}
 					%i.icon-search
 
