@@ -54,9 +54,9 @@ class User < ActiveRecord::Base
   # Associations...
   # -------------------------------------------------------------------------
   has_many :medical
-  has_attached_file :photo, :styles => {:small => "45x45>", :medium => "200x200>"}, 
-    :default_url => "images/photo.png", :url  => "/assets/patients/:id/:style/:basename.:extension", 
-    :path => ":rails_root/public/assets/patients/:id/:style/:basename.:extension"
+  has_attached_file :photo, :styles => {:medium => "200x200>", :small => "45x41>"}, 
+  :default_url => "images/photo-:style.png", :url  => "/assets/patients/:id/:style/:basename.:extension", 
+  :path => ":rails_root/public/assets/patients/:id/:style/:basename.:extension"
 
   # -------------------------------------------------------------------------
   # Nested attributes...

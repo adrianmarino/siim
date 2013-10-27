@@ -1,0 +1,22 @@
+#!/bin/bash
+# -------------------------------------------------------------------------------
+# Variables...
+# -------------------------------------------------------------------------------
+SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+#
+# -------------------------------------------------------------------------------
+# functions...
+# -------------------------------------------------------------------------------
+function run {
+    SCRIPT_NAME=$1
+    PARAMS=$2
+
+    /bin/bash $SCRIPT_PATH/$SCRIPT_NAME $PARAMS
+}
+
+function run_in_background {
+    SCRIPT_NAME=$1
+    PARAMS=$2
+
+    nohup /bin/bash $SCRIPT_PATH/$SCRIPT_NAME $PARAMS &
+}
