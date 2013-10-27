@@ -24,7 +24,7 @@
 							%td{"style" => "vertical-align: middle;"}=raw(a_result)
 							-#%td=raw(a_result.raw)
 							%td.result_patient_col
-								.left.result_patient_photo= image_tag a_result.entity.patient.photo.url :small
+								.left.result_patient_photo= image_tag a_result.entity.patient.photo.url(:small), :class => :photo_img
 								.left.result_patient_info
 									%div= a_result.entity.patient
 									%div= a_result.entity.patient.dni
