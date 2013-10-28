@@ -1,3 +1,212 @@
-= show_photo @medical_history.patient.photo.url :medium
-= render :partial => 'crud/show', :locals => {:name => :id, :value => @medical_history.id }
-= render :partial => 'crud/show', :locals => {:name => :patient, :value => @medical_history.patient }
+-# encoding: utf-8
+.well.form-horizontal
+	.patient-form
+		.row-fluid
+			.span4
+				%dl.dl-horizontal
+					%dt=translate_attribute :patient, :firstname
+					%dd=@medical_history.patient.firstname
+					%dt=translate_attribute :patient, :lastname
+					%dd=@medical_history.patient.lastname
+					%dt=translate_attribute :patient, :birthdate
+					%dd=@medical_history.patient.birthdate
+					%dt=translate_attribute :patient, :sex
+					%dd=t "sex.#{@medical_history.patient.sex.downcase}"
+					%dt=translate_attribute :patient, :address
+					%dd=@medical_history.patient.address
+					%dt=translate_attribute :patient, :email
+					%dd=@medical_history.patient.email
+			.span5
+				%dl.dl-horizontal
+					%dt=translate_attribute :patient, :home_phone
+					%dd=@medical_history.patient.home_phone
+					%dt=translate_attribute :patient, :movile_phone
+					%dd=@medical_history.patient.movile_phone
+					%dt=translate_attribute :patient, :blood_type
+					%dd=t "blood_type.#{@medical_history.patient.blood_type.downcase}"
+					%dt=translate_attribute :patient, :height
+					%dd=@medical_history.patient.height
+					%dt=translate_attribute :patient, :weight
+					%dd=@medical_history.patient.weight
+			.span3
+				= show_photo @medical_history.patient.photo.url :medium
+		.row-fluid
+			%div.tabbable
+				%ul.nav.nav-tabs
+					%li.active
+						%a{:href => "#consultations-panel", 'data-toggle' => 'tab'}= section :consultations
+					%li
+						%a{:href => "#antecedent-panel", 'data-toggle' => 'tab'}= section :antecedents
+					%li
+						%a{:href => "#medical_exams-panel", 'data-toggle' => 'tab'}= section :medical_exams
+					%li
+						%a{:href => "#diseases-panel", 'data-toggle' => 'tab'}= section :diseases
+					%li
+						%a{:href => "#medications-panel", 'data-toggle' => 'tab'}= section :medications
+					%li
+						%a{:href => "#allergies-panel", 'data-toggle' => 'tab'}= section :allergies
+					%li
+						%a{:href => "#vaccines-panel", 'data-toggle' => 'tab'}= section :vaccines
+					%li
+						%a{:href => "#contacts-panel", 'data-toggle' => 'tab'}= contacts_section
+				%div.tab-content
+					%div#consultations-panel.tab-pane.active
+						%div#consultations
+							- for consultation in @medical_history.consultations
+								%div.nested-view-panel
+									.row-fluid
+										.span4
+											%dl.dl-horizontal
+												%dt.show-field-label=translate_attribute :consultation, :achievement_date
+												%dd.show-field-value=consultation.achievement_date
+										.span4
+											%dl.dl-horizontal
+												%dt.show-field-label=translate_attribute :consultation, :medical
+												%dd.show-field-value=consultation.medical
+									.row-fluid
+										.span11
+											%dl.dl-horizontal
+												%dt.show-field-label=translate_attribute :consultation, :symptomps
+												%dd.show-field-value=consultation.symptomps
+												%dt.show-field-label=translate_attribute :consultation, :diagnostic
+												%dd.show-field-value=consultation.diagnostic
+												%dt.show-field-label=translate_attribute :consultation, :treatment
+												%dd.show-field-value=consultation.treatment
+
+					%div#antecedent-panel.tab-pane
+						- for antecedent in @medical_history.antecedents
+							%div.nested-view-panel
+								%dl.dl-horizontal
+									.span11
+										%dt.show-field-label=translate_attribute :antecedent, :description
+										%dd.show-field-value=antecedent.description
+
+					%div#medical_exams-panel.tab-pane
+						- for medical_exam in @medical_history.medical_exams
+							%div.nested-view-panel
+								.row-fluid
+									.span4
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :medical_exam, :achievement_date
+											%dd.show-field-value=medical_exam.achievement_date
+									.span7
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :medical_exam, :name
+											%dd.show-field-value=medical_exam.name
+								.row-fluid
+									.span11
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :medical_exam, :results
+											%dd.show-field-value=medical_exam.results
+											%dt.show-field-label=translate_attribute :medical_exam, :observations
+											%dd.show-field-value=medical_exam.observations
+
+					%div#diseases-panel.tab-pane
+						- for disease in @medical_history.diseases
+							%div.nested-view-panel
+								.row-fluid
+									.span4
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :disease, :record_date
+											%dd.show-field-value=disease.record_date
+									.span7
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :disease, :name
+											%dd.show-field-value=disease.name
+								.row-fluid
+									.span11
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :disease, :observations
+											%dd.show-field-value=disease.observations
+
+					%div#medications-panel.tab-pane
+						- for medication in @medical_history.medications
+							%div.nested-view-panel
+								.row-fluid
+									.span4
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :medication, :begin_date
+											%dd.show-field-value=medication.begin_date
+									.span4
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :medication, :end_date
+											%dd.show-field-value=medication.end_date
+								.row-fluid
+									.span4
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :medication, :name
+											%dd.show-field-value=medication.name
+									.span4
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :medication, :dose
+											%dd.show-field-value=medication.dose
+								.row-fluid
+									.span4
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :medication, :amount
+											%dd.show-field-value=medication.amount
+									.span4
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :medication, :route
+											%dd.show-field-value=medication.route
+
+					%div#allergies-panel.tab-pane
+						- for allergy in @medical_history.allergies
+							%div.nested-view-panel
+								.row-fluid
+									.span4
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :allergy, :record_date
+											%dd.show-field-value=allergy.record_date
+									.span7
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :allergy, :cause
+											%dd.show-field-value=allergy.cause
+								.row-fluid
+									.span11
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :allergy, :observations
+											%dd.show-field-value=allergy.observations
+
+					%div#vaccines-panel.tab-pane
+						- for vaccine in @medical_history.vaccines
+							%div.nested-view-panel
+								.row-fluid
+									.span4
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :vaccine, :last_application
+											%dd.show-field-value=vaccine.last_application
+									.span6
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :vaccine, :name
+											%dd.show-field-value=vaccine.name
+
+					%div#contacts-panel.tab-pane
+						- for contact in @medical_history.patient.contacts
+							%div.nested-view-panel
+								.row-fluid
+									.span5
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :contact, :firstname
+											%dd.show-field-value=contact.firstname
+									.span5
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :contact, :lastname
+											%dd.show-field-value=contact.lastname
+								.row-fluid
+									.span5
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :contact, :email
+											%dd.show-field-value=contact.email
+									.span5
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :contact, :home_phone
+											%dd.show-field-value=contact.home_phone
+								.row-fluid
+									.span5
+										%dl.dl-horizontal
+											%dt.show-field-label=translate_attribute :contact, :movile_phone
+											%dd.show-field-value=contact.movile_phone
+
+	.form-actions
+		= back_button @back_url

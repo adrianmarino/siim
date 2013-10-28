@@ -8,7 +8,7 @@
 					%label{:for => :specialization}=translate_attribute :appointment, :medical_specialization
 					- options = options_for_select([ [t("form.select.all.fame"), @form.specialization]])
 					- options << options_from_collection_for_select(@form.specializations,:id, :to_s, @form.specialization)
-					= select_tag :specialization, options, :class => :appointment_search_select
+					= select_tag :specialization, options, :class => :appointment_search_select, :autofocus => true
 				.span3.appointment_search_column
 					%label{:for => :medical}=translate_attribute :appointment, :medical
 					= select_tag :medical, options_for_select([ [t("form.select.all.male")], "all"]), :class => :appointment_search_select

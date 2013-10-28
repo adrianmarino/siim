@@ -2,7 +2,7 @@
 	.custom-search-form.span12
 		= form_tag :perform_custom_search_medical_histories,  :id=>"custom-search-form", :class=>"form-search form-horizontal pull-right" do
 			.input-append
-				= text_field_tag :text, params[:text], :class => "search-query span12", :placeholder=> "#{t('custom_search.text')}"
+				= text_field_tag :text, params[:text], :class => "search-query span12", :placeholder=> "#{t('custom_search.text')}", :autofocus => true
 				%button.btn{"type"=>"submit"}
 					%i.icon-search
 
@@ -24,11 +24,11 @@
 							%td{"style" => "vertical-align: middle;"}=raw(a_result)
 							-#%td=raw(a_result.raw)
 							%td.result_patient_col
-								.left.result_patient_photo= image_tag a_result.entity.patient.photo.url :small
+								.left.result_patient_photo= image_tag a_result.entity.patient.photo.url(:small), :class => :photo_img
 								.left.result_patient_info
 									%div= a_result.entity.patient
 									%div= a_result.entity.patient.dni
-							%td{"style" => "vertical-align: middle"}=link_to raw("<i class=\"icon-search\"></i>"), edit_medical_history_path(:id => a_result.entity.id, :back_url => custom_search_medical_histories_path), :class => "btn"
+							%td{"style" => "vertical-align: middle"}=link_to raw("<i class=\"icon-search\"></i>"), medical_history_path(:id => a_result.entity.id, :back_url => custom_search_medical_histories_path), :class => "btn"
 
 		:javascript
 			$(document).ready(function() {

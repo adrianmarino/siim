@@ -213,7 +213,7 @@ es:
         amount: "Gramaje"
         route: "Vía de Administración"
       vaccine:
-        last_application: "Fecha de última aplicación"
+        last_application: "Última aplicación"
         name: "Nombre"
       contact:
         firstname: "Nombre"
