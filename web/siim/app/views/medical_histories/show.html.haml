@@ -2,32 +2,32 @@
 .well.form-horizontal
 	.patient-form
 		.row-fluid
-			.span4
-				%dl.dl-horizontal
-					%dt=translate_attribute :patient, :firstname
-					%dd=@medical_history.patient.firstname
-					%dt=translate_attribute :patient, :lastname
-					%dd=@medical_history.patient.lastname
-					%dt=translate_attribute :patient, :birthdate
-					%dd=@medical_history.patient.birthdate
-					%dt=translate_attribute :patient, :sex
-					%dd=t "sex.#{@medical_history.patient.sex.downcase}"
-					%dt=translate_attribute :patient, :address
-					%dd=@medical_history.patient.address
-					%dt=translate_attribute :patient, :email
-					%dd=@medical_history.patient.email
 			.span5
 				%dl.dl-horizontal
-					%dt=translate_attribute :patient, :home_phone
-					%dd=@medical_history.patient.home_phone
-					%dt=translate_attribute :patient, :movile_phone
-					%dd=@medical_history.patient.movile_phone
-					%dt=translate_attribute :patient, :blood_type
-					%dd=t "blood_type.#{@medical_history.patient.blood_type.downcase}"
-					%dt=translate_attribute :patient, :height
-					%dd=@medical_history.patient.height
-					%dt=translate_attribute :patient, :weight
-					%dd=@medical_history.patient.weight
+					%dt.show-field-label=translate_attribute :patient, :firstname
+					%dd.show-field-value=@medical_history.patient.firstname
+					%dt.show-field-label=translate_attribute :patient, :lastname
+					%dd.show-field-value=@medical_history.patient.lastname
+					%dt.show-field-label=translate_attribute :patient, :birthdate
+					%dd.show-field-value=@medical_history.patient.birthdate
+					%dt.show-field-label=translate_attribute :patient, :sex
+					%dd.show-field-value=t "sex.#{@medical_history.patient.sex.downcase}"
+					%dt.show-field-label=translate_attribute :patient, :address
+					%dd.show-field-value=@medical_history.patient.address
+					%dt.show-field-label=translate_attribute :patient, :email
+					%dd.show-field-value=@medical_history.patient.email
+			.span4
+				%dl.dl-horizontal
+					%dt.show-field-label=translate_attribute :patient, :home_phone
+					%dd.show-field-value=@medical_history.patient.home_phone
+					%dt.show-field-label=translate_attribute :patient, :movile_phone
+					%dd.show-field-value=@medical_history.patient.movile_phone
+					%dt.show-field-label=translate_attribute :patient, :blood_type
+					%dd.show-field-value=t "bloodtype.#{@medical_history.patient.blood_type.downcase}"
+					%dt.show-field-label=translate_attribute :patient, :height
+					%dd.show-field-value=@medical_history.patient.height
+					%dt.show-field-label=translate_attribute :patient, :weight
+					%dd.show-field-value=@medical_history.patient.weight
 			.span3
 				= show_photo @medical_history.patient.photo.url :medium
 		.row-fluid
