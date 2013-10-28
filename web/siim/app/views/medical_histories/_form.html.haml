@@ -62,3 +62,12 @@
     .form-actions
       = back_button @back_url
       = submit_with_confirm a_form, t('medical_history.confirm_save')
+
+:javascript
+  if(#{@readonly}) {
+    $('input[data-behaviour="datepicker"]').unbind();
+    $('input').attr('readonly', 'readonly');
+    $('select').attr('readonly', 'readonly');
+    $('textarea').attr('readonly', 'readonly');
+  }
+
