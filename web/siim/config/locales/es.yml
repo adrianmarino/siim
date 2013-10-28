@@ -372,8 +372,7 @@ es:
     search_engine: "Motor de Búsqueda"
     sub_menu:
       medical_histories:
-        create: "Nueva"
-        edit: "Editar"
+        admin: "Administrar"
         search: "Por DNI/Nombre"
         custom_search: "Avanzada"
       appointments:

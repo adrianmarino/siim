@@ -347,8 +347,7 @@ en:
     search_engine: "Search Engine"
     sub_menu:
       medical_histories:
-        create: "Create"
-        edit: "Edit"
+        admin: "Admin"
         search: "By DNI/Name"
         custom_search: "Custom"
       appointments:
