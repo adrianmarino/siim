@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131006230101) do
+ActiveRecord::Schema.define(:version => 20131031023117) do
 
   create_table "allergies", :force => true do |t|
     t.string   "cause"
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(:version => 20131006230101) do
     t.string   "state"
     t.integer  "patient_id"
     t.integer  "medical_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "assignments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -126,10 +133,10 @@ ActiveRecord::Schema.define(:version => 20131006230101) do
     t.string   "dose"
     t.string   "how_often"
     t.string   "route"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                                        :null => false
+    t.datetime "updated_at",                                        :null => false
     t.integer  "medical_history_id"
-    t.decimal  "amount"
+    t.decimal  "amount",             :precision => 10, :scale => 0
   end
 
   create_table "patients", :force => true do |t|
@@ -152,6 +159,12 @@ ActiveRecord::Schema.define(:version => 20131006230101) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "system_properties", :force => true do |t|

@@ -37,6 +37,6 @@ class Patient < ActiveRecord::Base
   validates :email, presence: true, email: true
 
   validates_attachment :photo,
-    :content_type => { :content_type => ["image/png","image/jpg","image/png","image/bmp"] },
+    :content_type => { :content_type => ["image/jpg","image/png","image/bmp"] },
     :size => { :in => 0..10.megabytes }
 end
