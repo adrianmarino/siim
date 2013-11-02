@@ -1,4 +1,5 @@
 - content_for :content do
+	%legend=t 'title.medical_history.search'
 	.custom-search-form.span12
 		= form_tag :perform_custom_search_medical_histories,  :id=>"custom-search-form", :class=>"form-search " do
 			.input-append
