@@ -267,6 +267,8 @@ es:
             name:
               blank: "Debe ingresar una especialidad"
               taken: "Ya existe la especialidad"
+          association:
+            exist: "No es posible borrar la especialidad. Actualmente existen médicos asociados a esta especialidad."
         patient:
           attributes:
             dni:

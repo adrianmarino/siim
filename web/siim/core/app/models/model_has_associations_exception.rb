@@ -1,0 +1,3 @@
+class ModelHasAssociationsException < Exception
+
+end
