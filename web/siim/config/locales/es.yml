@@ -33,7 +33,7 @@ es:
   photo:
     title: "Seleccionar Imagen"
   email:
-    invalid: "La direccion de Correo Electrónico invalida"
+    invalid: "La dirección de Correo Electrónico invalida"
   error: "error"
   errors: "errores"
   save_error: "No se pueden gardar los datos ya que existen %{errors}"
@@ -139,7 +139,7 @@ es:
         password: "Contraseña"
         medical: "Medico"
         sex: "Sexo"
-        address: "Direccion"
+        address: "Dirección"
         home_phone: "Teléfono Fijo"
         movile_phone: "Teléfono Movil"
         birthdate: "Fecha de Nacimiento"
