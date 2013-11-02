@@ -65,7 +65,7 @@ es:
         inactive_signed_up: "Se ha registrado correctamente. Sin embargo, no puedes iniciar sesion debido a que tu cuenta esta %{reason}."
     failure:
       user:
-        not_found_in_database: "El usuario no se encuentra registrado!"
+        not_found_in_database: "El DNI, Email o contraseña ingresados no son válidos"
 
   user_profile: "Perfil del Usuario"
   change_your_password: "Cambie su contraseña"
