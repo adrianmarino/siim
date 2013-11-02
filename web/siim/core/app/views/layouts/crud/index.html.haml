@@ -20,6 +20,6 @@
               - if not @hide_edit_action
                 = edit_button edit_path(entity)
               - if not @hide_remove_action
-                = remove_button(entity)
+                = remove_button(entity,@confirm_delete)
 
 = render :file => 'layouts/application'

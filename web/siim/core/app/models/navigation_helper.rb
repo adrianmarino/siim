@@ -15,8 +15,8 @@ module NavigationHelper
     crud_button a_path, :edit, 'icon-edit'
   end
 
-  def remove_button(a_path)
-    render :partial => 'crud/remove_button', :locals => {:path => a_path}
+  def remove_button(a_path, a_confirm_question = t(:confirm))
+    render :partial => 'crud/remove_button', :locals => {:path => a_path, :question => a_confirm_question}
   end
 
   def view_button(a_path)

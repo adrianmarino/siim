@@ -476,3 +476,7 @@ es:
       result:
         title: "Resultatos"
         percentage: "Porcentaje de la poblacion afectada por el sintoma"
+  medical_specialization:
+    confirm_delete: "¿Está seguro que desea eliminar la especialidad médica?"
+  users:
+    confirm_delete: "¿Está seguro que desea eliminar el usuario?"

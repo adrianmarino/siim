@@ -11,6 +11,8 @@ class UsersController < CrudController
   def index
     @users = User.all
     hide_view_action
+    setup_remove_confirm_message 'users.confirm_delete'
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }

@@ -453,3 +453,7 @@ en:
       result:
         title: "Results"
         percentage: "Percentage of population affected by the symptom"
+  medical_specialization:
+    confirm_delete: "Are you sure you want to delete the medical specialization?"
+  users:
+    confirm_delete: "Are you sure you want to delete the user?"
