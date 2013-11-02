@@ -387,7 +387,7 @@ es:
         diseases: "Enfermedades"
       administration:
         manager_users: "Administrar usuarios"
-        medical_specializations: "Especializaciones Medicas"
+        medical_specializations: "Especialidades Médicas"
         download_log: "Descargar log"
       search_engine:
         head: "Head"
