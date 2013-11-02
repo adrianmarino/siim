@@ -41,6 +41,10 @@ class CrudController < ApplicationController
 			@confirm_delete =t(a_key)
 		end
 
+		def setup_index_title(a_key)
+			@index_title = t a_key
+		end
+
 	# -------------------------------------------------------------------------
 	# Private Methods...
 	# -------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 - content_for :content do
   = show_messages
-  %legend= t "title.#{@entity_name}.list"
+  %legend=index_title
   - if not @hide_create_action
     .btn-toolbar
       = create_button create_path

@@ -457,4 +457,6 @@ en:
   medical_specialization:
     confirm_delete: "Are you sure you want to delete the medical specialization?"
   users:
+    index:
+      title: "User Administration"
     confirm_delete: "Are you sure you want to delete the user?"
