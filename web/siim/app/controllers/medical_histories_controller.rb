@@ -10,16 +10,21 @@ class MedicalHistoriesController < CrudController
 		render json: response.to_json
 	end
 
+
 	# Search by patient...
 	def search
 		render search_medical_histories_path
 	end
+
 	def search_patient_by_dni
-		@medical_histories = MedicalHistory.find_by_dni dni_param
+		@medical_histories = MedicalHistory.find_by_dni(dni_param) unless dni_param.length <=2
+		select_search_by_dni_tab
 		search
 	end
+
 	def search_patient_by_name
-		@medical_histories = MedicalHistory.find_by_firname_and_lastname firstname_param, lastname_param
+		@medical_histories = MedicalHistory.find_by_firname_and_lastname(firstname_param, lastname_param) unless firstname_param.length <=2 and lastname_param.length <=2
+		select_search_by_name_tab
 		search
 	end
 
@@ -27,6 +32,7 @@ class MedicalHistoriesController < CrudController
 	def custom_search
 		render custom_search_medical_histories_path
 	end
+
 	def perform_custom_search
 		@text = params[:text]
 		@results= MedicalHistorySearchEngine.search @text
@@ -66,6 +72,7 @@ class MedicalHistoriesController < CrudController
 		@medical_history = MedicalHistory.new
 		@medical_history.initialize_with_associations
 		@medicals = Medical.all.sort
+		@back_url = medical_histories_path
 
 		@allergies_count			= 0
 		@antecedents_count		= 0
@@ -74,8 +81,6 @@ class MedicalHistoriesController < CrudController
 		@medical_exams_count	= 0
 		@medications_count		= 0
 		@vaccines_count				= 0
-
-		@back_url = medical_histories_path
 
 		respond_to do |format|
 			format.html # new.html.erb
@@ -103,6 +108,7 @@ class MedicalHistoriesController < CrudController
 	def create
 		@medical_history = MedicalHistory.new(params[:medical_history])
 		@medicals = Medical.all.sort
+		@back_url = params[:back_url].nil? ? medical_histories_path : params[:back_url]
 
 		@allergies_count			= @medical_history.id.nil? ? 0 : @medical_history.allergies.size
 		@antecedents_count		= @medical_history.id.nil? ? 0 : @medical_history.antecedents.size
@@ -183,6 +189,14 @@ class MedicalHistoriesController < CrudController
 
 	def new_medical_history_response(a_medical_history)
 		MedicalHistoryResponse.new a_medical_history
+	end
+
+	def select_search_by_dni_tab
+		@selected_tab= 'dni-panel'
+	end
+
+	def select_search_by_name_tab
+		@selected_tab= 'name-panel'
 	end
 
 	# -------------------------------------------------------------------------

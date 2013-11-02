@@ -1,6 +1,6 @@
 - content_for :content do
-  %legend= t "title.#{@entity_name}.show"
-  %p#notice= notice
-  %table.table.table-hover.table-bordered
-    = yield
+	%legend= t "title.#{@entity_name}.show"
+	%p#notice= notice
+	%table.table.table-hover.table-bordered
+		= yield
 = render :file => 'layouts/application'

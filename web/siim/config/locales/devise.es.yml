@@ -9,10 +9,10 @@ es:
 
   devise:
     failure:
-      unauthenticated: 'Necesitas acceder a tu cuenta o registrarte antes de continuar.'
+      unauthenticated: 'Necesita acceder a su cuenta o solicitar registro de usuario a su Administrador antes de continuar'
       unconfirmed: 'Necesitas confirmar tu cuenta antes de continuar.'
       locked: 'Tu cuenta esta bloqueada.'
-      invalid: 'Contraseña o Email incorrecto.'
+      invalid: 'Debe ingresar su DNI o direccion de correo electronico registrado'
       invalid_token: 'Token de autenticación incorrecto.'
       timeout: 'Tu sesión ha expirado, por favor accede de nuevo para continuar.'
       inactive: 'Tu cuenta no ha sido activada.'

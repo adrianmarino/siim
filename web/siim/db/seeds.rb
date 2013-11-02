@@ -13,12 +13,58 @@ MedicalHistorySearchEngine.delete_indexes
 #
 #
 # -----------------------------------------------------------------------------
+# Roles....
+# -----------------------------------------------------------------------------
+medical_role = Role.create name: 'medical'
+appointment_manager_role = Role.create name: 'appointment_manager'
+search_engine_admin_role = Role.create name: 'search_engine_admin'
+medical_history_admin_role = Role.create name: 'medical_history_admin'
+user_admin_role = Role.create name: 'user_admin'
+#
+#
+#
+# -----------------------------------------------------------------------------
 # users....
 # -----------------------------------------------------------------------------
-user = User.create  dni: "29042902",first_name: "Adrian", last_name: "Marino", 
-                    email: "adrianmarino@gmail.com", password: "29042902"
-User.create   dni: "77777777",first_name: "Demo 1", last_name: "Demo 1",
-              email: "marquez.ezequiel19@gmail.com", password: "usrDemo1"
+admin = User.create(
+  dni: "29042902",first_name: "Adrian", last_name: "Marino",
+  email: "adrianmarino@gmail.com", password: "29042902")
+
+medical = User.create(
+  dni: "11111111",first_name: "Manuel", last_name: "Rodriguez",
+  email: "manuelrodriguez@gmail.com", password: "11111111")
+
+appointment_manager = User.create(
+  dni: "77777777",first_name: "Demo 1", last_name: "Demo 1",
+  email: "marquez.ezequiel19@gmail.com", password: "usrDemo1")
+
+search_engine_admin = User.create(
+  dni: "22222222",first_name: "Daniel", last_name: "Pereira",
+  email: "daniel.pereira@gmail.com", password: "22222222")
+
+medical_history_admin = User.create(
+    dni: "33333333",first_name: "Carlos", last_name: "Trenza",
+    email: "carlos.trenza@gmail.com", password: "33333333")
+
+user_admin = User.create(
+  dni: "44444444",first_name: "Juan Carlos", last_name: "Pena",
+  email: "juan.carlos.mesa@gmail.com", password: "44444444")
+#
+#
+#
+# -----------------------------------------------------------------------------
+# Assignments....
+# -----------------------------------------------------------------------------
+Assignment.create user: admin, role: medical_role
+Assignment.create user: admin, role: appointment_manager_role
+Assignment.create user: admin, role: search_engine_admin_role
+Assignment.create user: admin, role: medical_history_admin_role
+Assignment.create user: admin, role: user_admin_role
+Assignment.create user: medical, role: medical_role
+Assignment.create user: appointment_manager, role: appointment_manager_role
+Assignment.create user: search_engine_admin, role: search_engine_admin_role
+Assignment.create user: medical_history_admin, role: medical_history_admin_role
+Assignment.create user: user_admin, role: user_admin_role
 #
 #
 #
@@ -217,7 +263,7 @@ Medical.create(
   attention_periods: [period_monday_7, period_tuesday_7, period_wednesday_7, period_thursday_7, period_friday_7, period_saturday_7, period_saturday_7],
   attention_time_length_hour: 0,
   attention_time_length_minutes: 10,
-  user: user
+  user: admin
 )
 Medical.create(
   dni: "14042902",									cuil: "20-14042902-2",

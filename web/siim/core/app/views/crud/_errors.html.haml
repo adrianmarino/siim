@@ -1,10 +1,10 @@
 - if eval(variable_name(@entity_name)).errors.any?
-  #error_explanation.hero-unit
-    - error_count = eval(variable_name(@entity_name)).errors.count
-    - errors_text = error_count > 1 ? t('errors') : t('error')
-    - errors_text = "#{error_count} #{errors_text}"
-    - entity_name = t "activerecord.models.#{@entity_name}"
-    %h2= t :save_error, :errors => errors_text, :entity_name => entity_name
-    %ul
-      - eval(variable_name(@entity_name)).errors.messages.each do |a_message|
-        %li="#{a_message[1].first}."
+	#error_explanation.hero-unit
+		- error_count = eval(variable_name(@entity_name)).errors.count
+		- errors_text = error_count > 1 ? t('errors') : t('error')
+		- errors_text = "#{error_count} #{errors_text}"
+		- entity_name = t "activerecord.models.#{@entity_name}"
+		%h2= t :save_error, :errors => errors_text, :entity_name => entity_name
+		%ul
+			- eval(variable_name(@entity_name)).errors.messages.each do |a_message|
+				%li="#{a_message[1].first}."

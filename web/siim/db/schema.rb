@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131006230101) do
+ActiveRecord::Schema.define(:version => 20131102154000) do
 
   create_table "allergies", :force => true do |t|
     t.string   "cause"
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(:version => 20131006230101) do
     t.string   "state"
     t.integer  "patient_id"
     t.integer  "medical_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "assignments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -101,6 +108,8 @@ ActiveRecord::Schema.define(:version => 20131006230101) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "medical_specializations", ["name"], :name => "index_medical_specializations_on_name"
+
   create_table "medicals", :force => true do |t|
     t.string  "registration_number"
     t.integer "user_id"
@@ -126,10 +135,10 @@ ActiveRecord::Schema.define(:version => 20131006230101) do
     t.string   "dose"
     t.string   "how_often"
     t.string   "route"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                                        :null => false
+    t.datetime "updated_at",                                        :null => false
     t.integer  "medical_history_id"
-    t.decimal  "amount"
+    t.decimal  "amount",             :precision => 10, :scale => 0
   end
 
   create_table "patients", :force => true do |t|
@@ -152,6 +161,12 @@ ActiveRecord::Schema.define(:version => 20131006230101) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "system_properties", :force => true do |t|
@@ -199,6 +214,8 @@ ActiveRecord::Schema.define(:version => 20131006230101) do
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["dni"], :name => "index_users_on_dni", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["first_name"], :name => "index_users_on_first_name"
+  add_index "users", ["last_name"], :name => "index_users_on_last_name"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "vaccines", :force => true do |t|

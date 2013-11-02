@@ -33,7 +33,7 @@ es:
   photo:
     title: "Seleccionar Imagen"
   email:
-    invalid: "La direccion de Correo Electrónico invalida"
+    invalid: "La dirección de Correo Electrónico invalida"
   error: "error"
   errors: "errores"
   save_error: "No se pueden gardar los datos ya que existen %{errors}"
@@ -65,7 +65,7 @@ es:
         inactive_signed_up: "Se ha registrado correctamente. Sin embargo, no puedes iniciar sesion debido a que tu cuenta esta %{reason}."
     failure:
       user:
-        not_found_in_database: "El usuario no se encuentra registrado!"
+        not_found_in_database: "El DNI, Email o contraseña ingresados no son válidos"
 
   user_profile: "Perfil del Usuario"
   change_your_password: "Cambie su contraseña"
@@ -139,7 +139,7 @@ es:
         password: "Contraseña"
         medical: "Medico"
         sex: "Sexo"
-        address: "Direccion"
+        address: "Dirección"
         home_phone: "Teléfono Fijo"
         movile_phone: "Teléfono Movil"
         birthdate: "Fecha de Nacimiento"
@@ -266,10 +266,14 @@ es:
           attributes:
             name:
               blank: "Debe ingresar una especialidad"
+              taken: "Ya existe la especialidad"
+          association:
+            exist: "No es posible borrar la especialidad. Actualmente existen médicos asociados a esta especialidad."
         patient:
           attributes:
             dni:
               blank: "Debe ingresar un DNI"
+              too_short: "El DNI debe tener 7 números como mínimo"
             firstname:
               blank: "Debe ingresar un nombre"
             lastname:
@@ -363,7 +367,7 @@ es:
       create: "Crear %{model}"
       update: "Actualizar %{model}"
   menu:
-    statistics: "Estaditicas"
+    statistics: "Estadisticas"
     medicals: "Médicos"
     administration: "Administración"
     medical_histories: "Historias Médicas"
@@ -379,11 +383,11 @@ es:
         assignment: "Asignación de turnos"
         my_appointments: "Mis turnos"
       statistics:
-        simptoms: "Simtomas"
+        simptoms: "Sintomas"
         diseases: "Enfermedades"
       administration:
         manager_users: "Administrar usuarios"
-        medical_specializations: "Especializaciones Medicas"
+        medical_specializations: "Especialidades Médicas"
         download_log: "Descargar log"
       search_engine:
         head: "Head"
@@ -476,3 +480,9 @@ es:
       result:
         title: "Resultatos"
         percentage: "Porcentaje de la poblacion afectada por el sintoma"
+  medical_specialization:
+    confirm_delete: "¿Está seguro que desea eliminar la especialidad médica?"
+  users:
+    index:
+      title: "Administración de Usuarios"
+    confirm_delete: "¿Está seguro que desea eliminar el usuario?"

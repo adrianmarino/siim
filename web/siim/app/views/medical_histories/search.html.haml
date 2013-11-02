@@ -3,23 +3,26 @@
 		%legend=t 'title.medical_history.search'
 		.well
 			%div.tabbable
-				%ul.nav.nav-tabs
-					%li.active
+				%ul.nav.nav-tabs#tabs
+					%li
 						%a{:href => "#dni-panel", 'data-toggle' => 'tab'}= t 'medical_history.search.title.by_dni'
 					%li
 						%a{:href => "#name-panel", 'data-toggle' => 'tab'}= t 'medical_history.search.title.by_name'
 			%div.tab-content
-				%div#dni-panel.tab-pane.active
+				%div#dni-panel.tab-pane
 					= form_tag :search_patient_by_dni_medical_histories, class: 'form-horizontal', id: 'patient_by_dni' do
 						.row-fluid
 							.span4
 								.control-group
 									%label.control-label=t "medical_history.search.dni"
 									.controls
-										%input{:type => :text, :id => :dni, :name=> :dni, :autofocus => true}
+										- if @selected_tab.nil? or @selected_tab == 'dni-panel'
+											%input{:type => :text, :id => :dni, :name=> :dni, :autofocus => true}
+										- else
+											%input{:type => :text, :id => :dni, :name=> :dni}
 						.form-actions
-							= link_to t('medical_history.search.clean') , "#", :class => "btn", :onclick => '$("#patient_by_dni").reset();'
 							= submit_tag t('medical_history.search.search'), :class => "btn btn-primary"
+							= link_to t('medical_history.search.clean') , "#", :class => "btn", :onclick => '$("#patient_by_dni").reset();'
 				%div#name-panel.tab-pane
 					= form_tag :search_patient_by_name_medical_histories, class: 'form-horizontal', id: "patient_by_name"  do
 						.row-fluid
@@ -27,15 +30,18 @@
 								.control-group
 									%label.control-label=t 'medical_history.search.firstName'
 									.controls
-										%input{:type => :text, :id => :first_name, :name=> :first_name}
+										- if @selected_tab == 'name-panel'
+											%input{:type => :text, :id => :first_name, :name=> :first_name, :autofocus => true}
+										- else
+											%input{:type => :text, :id => :first_name, :name=> :first_name}
 							.span4
 								.control-group
 									%label.control-label=t 'medical_history.search.lastName'
 									.controls
 										%input{:type => :text, :id => :last_name, :name=> :last_name}
 						.form-actions
-							= link_to t('medical_history.search.clean') , "#", :class => "btn", :onclick => '$("#patient_by_name").reset();'
 							= submit_tag t('medical_history.search.search'), :class => "btn btn-primary"
+							= link_to t('medical_history.search.clean') , "#", :class => "btn", :onclick => '$("#patient_by_name").reset();'
 		- if not @medical_histories.nil?
 			.custom-search-results
 				%table#search_result.table.table-striped.table-bordered{:border => "0", :cellpadding => "0", :cellspacing => "0"}
@@ -43,7 +49,7 @@
 						%tr
 							%th=t "medical_history.search.dni"
 							%th=t "medical_history.search.firstName"
-							%th=t "medical_history.search.firstName"
+							%th=t "medical_history.search.lastname"
 							%th.options= t :options
 						%tbody
 							- for medical_history in @medical_histories
@@ -84,5 +90,12 @@
 		$('a[href$="#dni-panel"]').click( function() { $("#patient_by_name").reset(); });
 		$('a[href$="#name-panel"]').click(function() { $("#patient_by_dni").reset();  });
 		jQuery.fn.reset = function () { $(this).each (function() { this.reset(); }); }
+
+		var selected_tab = '#{@selected_tab}';
+		if(!selected_tab) {
+			selected_tab = 'dni-panel';
+		}
+		var query = '#tabs li a[href="#' + selected_tab + '"]';
+		$(query).tab('show');
 
 = render :file => 'layouts/application'

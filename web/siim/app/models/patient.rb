@@ -34,9 +34,10 @@ class Patient < ActiveRecord::Base
   validates :dni, :firstname, :lastname, :birthdate, :height, :weight, 
   :address, :home_phone, :movile_phone, presence: true
 
+  validates :dni, length: { minimum: 7 }
   validates :email, presence: true, email: true
 
   validates_attachment :photo,
-    :content_type => { :content_type => ["image/png","image/jpg","image/png","image/bmp"] },
+    :content_type => { :content_type => ["image/jpg","image/png","image/bmp"] },
     :size => { :in => 0..10.megabytes }
 end

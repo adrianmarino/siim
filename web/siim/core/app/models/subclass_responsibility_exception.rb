@@ -1,3 +1,2 @@
 class SubclassResponsibilityException < Exception
-
 end
