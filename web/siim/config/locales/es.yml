@@ -363,7 +363,7 @@ es:
       create: "Crear %{model}"
       update: "Actualizar %{model}"
   menu:
-    statistics: "Estaditicas"
+    statistics: "Estadisticas"
     medicals: "Médicos"
     administration: "Administración"
     medical_histories: "Historias Médicas"
@@ -379,7 +379,7 @@ es:
         assignment: "Asignación de turnos"
         my_appointments: "Mis turnos"
       statistics:
-        simptoms: "Simtomas"
+        simptoms: "Sintomas"
         diseases: "Enfermedades"
       administration:
         manager_users: "Administrar usuarios"
