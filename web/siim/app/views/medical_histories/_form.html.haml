@@ -22,7 +22,7 @@
 				.span3
 					= show_photo @medical_history.patient.photo.url :medium
 					= a_patient_form.file_field :photo, :title => t('photo.title'), :class => :photo_button
-					= hidden_field_tag :back_url, @back_urlw
+					= hidden_field_tag :back_url, @back_url
 
 		%div.tabbable
 			%ul.nav.nav-tabs

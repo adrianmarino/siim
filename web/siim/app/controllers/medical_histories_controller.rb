@@ -72,6 +72,7 @@ class MedicalHistoriesController < CrudController
 		@medical_history = MedicalHistory.new
 		@medical_history.initialize_with_associations
 		@medicals = Medical.all.sort
+		@back_url = medical_histories_path
 
 		@allergies_count			= 0
 		@antecedents_count		= 0
@@ -80,8 +81,6 @@ class MedicalHistoriesController < CrudController
 		@medical_exams_count	= 0
 		@medications_count		= 0
 		@vaccines_count				= 0
-
-		@back_url = medical_histories_path
 
 		respond_to do |format|
 			format.html # new.html.erb
@@ -109,6 +108,7 @@ class MedicalHistoriesController < CrudController
 	def create
 		@medical_history = MedicalHistory.new(params[:medical_history])
 		@medicals = Medical.all.sort
+		@back_url = params[:back_url].nil? ? medical_histories_path : params[:back_url]
 
 		@allergies_count			= @medical_history.id.nil? ? 0 : @medical_history.allergies.size
 		@antecedents_count		= @medical_history.id.nil? ? 0 : @medical_history.antecedents.size
