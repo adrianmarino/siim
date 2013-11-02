@@ -247,6 +247,7 @@ en:
           attributes:
             name:
               blank: "Must enter a specialization"
+              taken: "Already exist the specialization"
         patient:
           attributes:
             dni:

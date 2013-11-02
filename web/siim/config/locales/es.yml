@@ -266,6 +266,7 @@ es:
           attributes:
             name:
               blank: "Debe ingresar una especialidad"
+              taken: "Ya existe la especialidad"
         patient:
           attributes:
             dni:
