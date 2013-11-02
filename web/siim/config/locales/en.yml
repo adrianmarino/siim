@@ -252,6 +252,7 @@ en:
           attributes:
             dni:
               blank: "Must enter a DNI"
+              too_short: "DNI must have at least 7 spots"
             firstname:
               blank: "Must enter a firstname"
             lastname:

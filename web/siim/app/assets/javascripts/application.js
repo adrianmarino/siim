@@ -97,6 +97,17 @@ jQuery.fn.dataTableExt.oSort['date-euro-desc'] = function(a, b) {
 
 
 $(document).ready(function() {
+    $('input[number_field="true"]').keypress(function(e) {
+        var a = [];
+        var k = e.which;
+        
+        for (i = 48; i < 58; i++)
+            a.push(i);
+
+        if (!(a.indexOf(k)>=0))
+            e.preventDefault();
+    });
+
     $('input[type=file]').bootstrapFileInput();
     $('.file-inputs').bootstrapFileInput();
 

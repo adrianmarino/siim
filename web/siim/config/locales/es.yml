@@ -273,6 +273,7 @@ es:
           attributes:
             dni:
               blank: "Debe ingresar un DNI"
+              too_short: "El DNI debe tener 7 números como mínimo"
             firstname:
               blank: "Debe ingresar un nombre"
             lastname:

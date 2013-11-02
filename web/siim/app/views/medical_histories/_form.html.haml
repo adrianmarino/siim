@@ -1,64 +1,64 @@
 -# encoding: utf-8
 = nested_form_for @medical_history, :html => { :class => 'well form-horizontal', :multipart => true } do |a_form|
-  = nested_errors ['patient.photo']
-  -# %legend= section :patient
-  = a_form.fields_for :patient do |a_patient_form|
-    .patient-form
-      .row-fluid
-        .span4
-          = nested_text       a_patient_form, :dni, :patient
-          = nested_text       a_patient_form, :firstname, :patient
-          = nested_text       a_patient_form, :lastname, :patient
-          = nested_datepicker a_patient_form, :birthdate, :patient
-          = nested_select_box a_patient_form, :sex, sex_values, :patient
-          = nested_text       a_patient_form, :address, :patient
-        .span5
-          = nested_mail       a_patient_form, :email, :patient
-          = nested_text       a_patient_form, :home_phone, :patient
-          = nested_text       a_patient_form, :movile_phone, :patient
-          = nested_select_box a_patient_form, :blood_type, blood_types, :patient
-          = nested_number     a_patient_form, :height, :patient, :patient_height
-          = nested_number     a_patient_form, :weight, :patient, :patient_weight
-        .span3
-          = show_photo @medical_history.patient.photo.url :medium
-          = a_patient_form.file_field :photo, :title => t('photo.title'), :class => :photo_button
-          = hidden_field_tag :back_url, @back_url
+	= nested_errors ['patient.photo']
+	-# %legend= section :patient
+	= a_form.fields_for :patient do |a_patient_form|
+		.patient-form
+			.row-fluid
+				.span4
+					= nested_number					a_patient_form, :dni, :patient, 9
+					= nested_text						a_patient_form, :firstname, :patient
+					= nested_text						a_patient_form, :lastname, :patient
+					= nested_datepicker			a_patient_form, :birthdate, :patient
+					= nested_select_box			a_patient_form, :sex, sex_values, :patient
+					= nested_text						a_patient_form, :address, :patient
+				.span5
+					= nested_mail						a_patient_form, :email, :patient
+					= nested_text						a_patient_form, :home_phone, :patient
+					= nested_text						a_patient_form, :movile_phone, :patient
+					= nested_select_box			a_patient_form, :blood_type, blood_types, :patient
+					= nested_number_spinner	a_patient_form, :height, :patient, :patient_height
+					= nested_number_spinner	a_patient_form, :weight, :patient, :patient_weight
+				.span3
+					= show_photo @medical_history.patient.photo.url :medium
+					= a_patient_form.file_field :photo, :title => t('photo.title'), :class => :photo_button
+					= hidden_field_tag :back_url, @back_urlw
 
-    %div.tabbable
-      %ul.nav.nav-tabs
-        %li.active
-          %a{:href => "#consultations-panel", 'data-toggle' => 'tab'}= section :consultations
-        %li
-          %a{:href => "#antecedent-panel", 'data-toggle' => 'tab'}= section :antecedents
-        %li
-          %a{:href => "#medical_exams-panel", 'data-toggle' => 'tab'}= section :medical_exams
-        %li
-          %a{:href => "#diseases-panel", 'data-toggle' => 'tab'}= section :diseases
-        %li
-          %a{:href => "#medications-panel", 'data-toggle' => 'tab'}= section :medications
-        %li
-          %a{:href => "#allergies-panel", 'data-toggle' => 'tab'}= section :allergies
-        %li
-          %a{:href => "#vaccines-panel", 'data-toggle' => 'tab'}= section :vaccines
-        %li
-          %a{:href => "#contacts-panel", 'data-toggle' => 'tab'}= contacts_section
-      %div.tab-content
-        %div#consultations-panel.tab-pane.active
-          = render :partial => 'consultations_form', :locals => {:form => a_form}
-        %div#antecedent-panel.tab-pane
-          = render :partial => 'antecedents_form', :locals => {:form => a_form}
-        %div#medical_exams-panel.tab-pane
-          = render :partial => 'medical_exams_form', :locals => {:form => a_form}
-        %div#diseases-panel.tab-pane
-          = render :partial => 'diseases_form', :locals => {:form => a_form}
-        %div#medications-panel.tab-pane
-          = render :partial => 'medications_form', :locals => {:form => a_form}
-        %div#allergies-panel.tab-pane
-          = render :partial => 'allergies_form', :locals => {:form => a_form}
-        %div#vaccines-panel.tab-pane
-          = render :partial => 'vaccines_form', :locals => {:form => a_form}
-        %div#contacts-panel.tab-pane
-          = render :partial => 'contacts_form', :locals => {:form => a_patient_form}
-    .form-actions
-      = back_button @back_url
-      = submit_with_confirm a_form, t('medical_history.confirm_save')
+		%div.tabbable
+			%ul.nav.nav-tabs
+				%li.active
+					%a{:href => "#consultations-panel", 'data-toggle' => 'tab'}= section :consultations
+				%li
+					%a{:href => "#antecedent-panel", 'data-toggle' => 'tab'}= section :antecedents
+				%li
+					%a{:href => "#medical_exams-panel", 'data-toggle' => 'tab'}= section :medical_exams
+				%li
+					%a{:href => "#diseases-panel", 'data-toggle' => 'tab'}= section :diseases
+				%li
+					%a{:href => "#medications-panel", 'data-toggle' => 'tab'}= section :medications
+				%li
+					%a{:href => "#allergies-panel", 'data-toggle' => 'tab'}= section :allergies
+				%li
+					%a{:href => "#vaccines-panel", 'data-toggle' => 'tab'}= section :vaccines
+				%li
+					%a{:href => "#contacts-panel", 'data-toggle' => 'tab'}= contacts_section
+			%div.tab-content
+				%div#consultations-panel.tab-pane.active
+					= render :partial => 'consultations_form', :locals => {:form => a_form}
+				%div#antecedent-panel.tab-pane
+					= render :partial => 'antecedents_form', :locals => {:form => a_form}
+				%div#medical_exams-panel.tab-pane
+					= render :partial => 'medical_exams_form', :locals => {:form => a_form}
+				%div#diseases-panel.tab-pane
+					= render :partial => 'diseases_form', :locals => {:form => a_form}
+				%div#medications-panel.tab-pane
+					= render :partial => 'medications_form', :locals => {:form => a_form}
+				%div#allergies-panel.tab-pane
+					= render :partial => 'allergies_form', :locals => {:form => a_form}
+				%div#vaccines-panel.tab-pane
+					= render :partial => 'vaccines_form', :locals => {:form => a_form}
+				%div#contacts-panel.tab-pane
+					= render :partial => 'contacts_form', :locals => {:form => a_patient_form}
+		.form-actions
+			= back_button @back_url
+			= submit_with_confirm a_form, t('medical_history.confirm_save')

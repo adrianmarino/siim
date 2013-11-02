@@ -40,12 +40,20 @@ module Core
 			render args(:mail, a_form, a_field_name, an_entity_name, a_style_class)
 		end
 
-		def number(a_form, a_field_name, a_style_class = '')
+		def number(a_form, a_field_name, max_length = '', a_style_class = '')
+			nested_number a_form, a_field_name, @entity_name, max_length, a_style_class
+		end
+
+		def nested_number(a_form, a_field_name, an_entity_name = @entity_name, max_length = '', a_style_class = '')
+			render number_args(:number, a_form, a_field_name, an_entity_name, max_length, a_style_class)
+		end
+
+		def number_spinner(a_form, a_field_name, a_style_class = '')
 			nested_number a_form, a_field_name, @entity_name, a_style_class
 		end
 
-		def nested_number(a_form, a_field_name, an_entity_name = @entity_name, a_style_class = '')
-			render args(:number, a_form, a_field_name, an_entity_name, a_style_class)
+		def nested_number_spinner(a_form, a_field_name, an_entity_name = @entity_name, a_style_class = '')
+			render args(:number_spinner, a_form, a_field_name, an_entity_name, a_style_class)
 		end
 
 		def text(a_form, a_field_name, a_style_class = '')
@@ -99,6 +107,11 @@ module Core
 			def args(a_view, a_form, a_field_name, an_entity_name, a_style_class)
 				field_label = translate_attribute an_entity_name, a_field_name
 				{:partial => "crud/#{a_view}", :locals => {:form => a_form, :field_name => a_field_name, :field_label => field_label, :style_class => a_style_class} }
+			end
+
+			def number_args(a_view, a_form, a_field_name, an_entity_name, max_length, a_style_class)
+				field_label = translate_attribute an_entity_name, a_field_name
+				{:partial => "crud/#{a_view}", :locals => {:form => a_form, :field_name => a_field_name, :field_label => field_label, :max_length => max_length, :style_class => a_style_class} }
 			end
 
 			def select_args(a_view, a_form, a_field_name, values, an_entity_name, a_style_class)

@@ -34,6 +34,7 @@ class Patient < ActiveRecord::Base
   validates :dni, :firstname, :lastname, :birthdate, :height, :weight, 
   :address, :home_phone, :movile_phone, presence: true
 
+  validates :dni, length: { minimum: 7 }
   validates :email, presence: true, email: true
 
   validates_attachment :photo,

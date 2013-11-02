@@ -1,5 +1,5 @@
 .control-group
-  = form.label field_label, :class => 'control-label'
-  .controls
-    - options = eval(variable_name("#{field_name}s")).collect do |an_entity| [h(an_entity.to_s), an_entity.id] end
-    = form.select "#{field_name}_id", options, {}, {:class => 'selectpicker'}
+	= form.label field_label, :class => 'control-label'
+	.controls
+		- options = eval(variable_name("#{field_name}s")).collect do |an_entity| [h(an_entity.to_s), an_entity.id] end
+		= form.select "#{field_name}_id", options, {}, {:class => 'selectpicker'}
