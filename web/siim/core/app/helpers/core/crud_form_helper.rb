@@ -100,6 +100,14 @@ module Core
 			render args(:one, a_form, a_field_name, an_entity_name, a_style_class)
 		end
 
+		def select_many(a_form, a_field_name, a_size=7, a_style_class = '')
+			nested_select_many(a_form, a_field_name, a_size, @entity_name, a_style_class)
+		end
+
+		def nested_select_many(a_form, a_field_name, a_size = 7, an_entity_name = @entity_name, a_style_class = '')
+			render select_many_args(a_form, a_field_name, a_size, an_entity_name, a_style_class)
+		end
+
 		# -------------------------------------------------------------------------
 		# Private Methods...
 		# -------------------------------------------------------------------------
@@ -112,6 +120,11 @@ module Core
 			def number_args(a_view, a_form, a_field_name, an_entity_name, max_length, a_style_class)
 				field_label = translate_attribute an_entity_name, a_field_name
 				{:partial => "crud/#{a_view}", :locals => {:form => a_form, :field_name => a_field_name, :field_label => field_label, :max_length => max_length, :style_class => a_style_class} }
+			end
+
+			def select_many_args(a_form, a_field_name, a_size, an_entity_name, a_style_class)
+				field_label = translate_attribute an_entity_name, a_field_name
+				{:partial => "crud/many", :locals => {:form => a_form, :field_name => a_field_name, :field_label => field_label, :size => a_size, :style_class => a_style_class} }
 			end
 
 			def select_args(a_view, a_form, a_field_name, values, an_entity_name, a_style_class)

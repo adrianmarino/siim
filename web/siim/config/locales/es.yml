@@ -137,6 +137,7 @@ es:
         dni: "DNI"
         email: "Correo electrónico"
         password: "Contraseña"
+        current_password: "Contraseña Actual"
         medical: "Medico"
         sex: "Sexo"
         address: "Dirección"
@@ -240,8 +241,6 @@ es:
               blank: "es un campo requerido"
             cuil:
               blank: "es un campo requerido"
-            password:
-              too_short: "muy corta"
             confirmation_token:
               invalid: "invalido"
             dni:
@@ -396,6 +395,12 @@ es:
   sex:
     male: "Masculino"
     female: "Femenino"
+  role:
+    medical: "Médico"
+    appointment_manager: "Administrador de Turnos"
+    search_engine_admin: "Administrador de busquedas"
+    medical_history_admin: "Adminsitrador de historias medicas"
+    user_admin: "Administrador de usuarios"
   bloodtype:
     o_positive: "O +"
     o_negative: "O -"

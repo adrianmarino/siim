@@ -369,6 +369,12 @@ en:
   sex:
     male: "Male"
     female: "Female"
+  role:
+    medical: "Medical"
+    appointment_manager: "Appointment Manager"
+    search_engine_admin: "Search engine Admin"
+    medical_history_admin: "Medical Histories Admin"
+    user_admin: "User Admin"
   blood_type:
     o_positive: "O +"
     o_negative: "O -"

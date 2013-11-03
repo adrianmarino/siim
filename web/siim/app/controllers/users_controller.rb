@@ -40,7 +40,7 @@ class UsersController < CrudController
 		@user = User.new
 		@medical = @user.medical.new
 		@medical_specializations = medical_specializations
-
+		@roles = Role.all
 		@user.password = generate_activation_code(8)
 
 		respond_to do |format|
@@ -67,12 +67,12 @@ class UsersController < CrudController
 			@user.medical.first.home_phone = @user.home_phone
 			@user.medical.first.movile_phone = @user.movile_phone
 		end
-			
+
 		respond_to do |format|
 			if @user.save
-				@user.inscription_at_system_mailer
 				format.html { redirect_to users_path, notice: CrudTranslations.model_was_created(@user) }
 				format.json { render json: @user, status: :created, location: @user }
+				@user.inscription_at_system_mailer
 			else
 				format.html { render action: "new" }
 				format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -85,6 +85,7 @@ class UsersController < CrudController
 		@user = User.find(params[:id])
 		@medical = @user.medical 
 		@medical_specializations = medical_specializations
+		@roles = Role.all
 	end
 
 	# PUT /users/1
