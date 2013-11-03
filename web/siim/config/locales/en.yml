@@ -416,6 +416,7 @@ en:
         male: "All"
     multiselect:
       nothing: "Select one or more"
+      selected: "{0} of {1} selected"
     reserve_appointment:
       title: "Select a patient"
       back: "Back"
