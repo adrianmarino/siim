@@ -150,7 +150,7 @@ es:
         home_phone: "Teléfono Fijo"
         movile_phone: "Teléfono Móvil"
         birthdate: "Fecha de Nacimiento"
-        is_medical: "Es Medico?"
+        is_medical: "¿Es Medico?"
         medical_specialization: "Especialidad"
         registration_number: "Número de Matricula"
         current_password: "Contraseña Actual"
