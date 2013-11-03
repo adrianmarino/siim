@@ -2,4 +2,4 @@
 	= form.label field_label, :class => 'control-label'
 	.controls
 		- options = eval(variable_name("#{field_name}")).collect do |an_entity| [h(an_entity.to_s), an_entity.id] end
-		= form.select :role_ids, options, {}, {:class => 'selectpicker', :multiple => true}
+		= form.select :role_ids, options, {}, {:class => 'selectpicker', "data-none-selected-text"=> t('form.multiselect.nothing'), :multiple => true, }

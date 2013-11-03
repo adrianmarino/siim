@@ -5,7 +5,7 @@
 			.span5
 				= nested_text f, :dni
 				= nested_mail	f, :email
-				= nested_select_many f, :roles, @user.roles.size, @roles.size
+				= nested_select_many f, :roles, @roles.size
 				= nested_text f, :first_name
 				= nested_text f, :last_name
 				= nested_select_box f, :sex, sex_values

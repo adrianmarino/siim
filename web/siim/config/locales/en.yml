@@ -414,6 +414,8 @@ en:
       all:
         fame: "All"
         male: "All"
+    multiselect:
+      nothing: "Select one or more"
     reserve_appointment:
       title: "Select a patient"
       back: "Back"

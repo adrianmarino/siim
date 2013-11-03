@@ -437,6 +437,8 @@ es:
       all:
         fame: "Todas"
         male: "Todos"
+    multiselect:
+      nothing: "Seleccione uno o mas"
     reserve_appointment:
       title: "Seleccione un paciente"
       back: "Volver"
