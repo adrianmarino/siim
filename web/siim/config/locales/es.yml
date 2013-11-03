@@ -3,7 +3,7 @@
 es:
   app:
     name: "SIIM"
-    description: 'Servicio Integral de Informacion Médica'
+    description: 'Servicio Integral de Información Médica'
     author: '&copy; BAMBU Solutions 2013'
     version: 'Versión: %{number}'
   commercial_message:
@@ -33,36 +33,42 @@ es:
   photo:
     title: "Seleccionar Imagen"
   email:
-    invalid: "La dirección de Correo Electrónico invalida"
+    invalid: ": 'La dirección de correo electrónico es invalida'"
   error: "error"
-  errors: "errores"
-  save_error: "No se pueden gardar los datos ya que existen %{errors}"
+  errors: 
+    messages:
+      not_found: 'no encontrado'
+      already_confirmed: 'ya ha sido confirmada'
+      not_locked: 'no está bloqueada'
+      not_saved: 'Un error impide que la acción se pueda realizar'
+
+  save_error: "Un error impide que la acción se pueda realizar"
   login_as: "Logueado como"
   sign_out_question: "¿Realmente desea salir?"
   no_: "No"
   yes_: "Si"
-  confirm: "¿Estas seguro?"
+  confirm: "¿Esta seguro?"
   home: "Inicio"
-  sign_up: "Regístrate"
+  sign_up: "Regístrese"
   login: "DNI/Correo Electrónico"
   remember_me: "Recordar"
   password_confirmation: "Confirmación de la contraseña"
-  sign_in_with: "Conéctate con"
+  sign_in_with: "Conéctese con"
   sign_in: "Iniciar sesión"
-  resend_confirmation_instructions: 'Reen"Via de Administracionr mail de confirmación'
+  resend_confirmation_instructions: 'Reenvia mail de confirmación'
   forgot_your_password: "¿Olvidaste tu contraseña?"
-  didnt_receive_confirmation_instructions: "¿No recibio instrucciones de confirmación?"
+  didnt_receive_confirmation_instructions: "¿No recibió instrucciones de confirmación?"
   didnt_receive_unlock_instructions: "¿No recibio instrucciones de desbloqueo?"
-  sign_up_as_admin: "Regístrate como administrador"
+  sign_up_as_admin: "Regístrese como administrador"
   sign_in_as_admin: "Iniciar sesión como administrador"
-  sign_up_as_user: "Regístrate como usuario"
+  sign_up_as_user: "Regístrese como usuario"
   sign_in_as_user: "Iniciar sesión como usuario"
   token_authentication_example: "Ejemplo de autenticación Token"
   send_me_reset_password_instructions: "Envíar instrucciones"
   devise:
     registrations:
       user:
-        inactive_signed_up: "Se ha registrado correctamente. Sin embargo, no puedes iniciar sesion debido a que tu cuenta esta %{reason}."
+        inactive_signed_up: "Se ha registrado correctamente. Sin embargo, no puedes iniciar sesión debido a que tu cuenta esta %{reason}."
     failure:
       user:
         not_found_in_database: "El DNI, Email o contraseña ingresados no son válidos"
@@ -83,7 +89,7 @@ es:
   if_you_didnt_request_this_please_ignore_this_email: "Si usted no solicitó, por favor ignore este mensaje."
   your_password_wont_change_until_you_access_the_link: "Su contraseña no va a cambiar hasta que acceda al enlace anterior y cree uno nuevo."
   resend_confirmation_instructions: "Volver a enviar las instrucciones de confirmación"
-  inscription_at_integral_system_medical_information: "Inscripcion al Sistema Integral de Informacion Medica"
+  inscription_at_integral_system_medical_information: "Inscripción al Sistema Integral de Información Medica"
   current_password: "Contraseña actual"
   update: "Actualizar"
   edit: "Editar"
@@ -122,9 +128,9 @@ es:
       medication: "Medicación"
       vaccine: "Vacuna"  
       disease: "Enfermedad"
-      antecedent: "Antecete"
+      antecedent: "Antecedente"
       medical_exam: "Examen Médico"
-      consultation: "Consuta"
+      consultation: "Consulta"
       patient: "Paciente"
       contact: "Contacto"
       medical_history: "Historia Médica"
@@ -141,20 +147,24 @@ es:
         sex: "Sexo"
         address: "Dirección"
         home_phone: "Teléfono Fijo"
-        movile_phone: "Teléfono Movil"
+        movile_phone: "Teléfono Móvil"
         birthdate: "Fecha de Nacimiento"
         is_medical: "Es Medico?"
         medical_specialization: "Especialidad"
-        registration_number: "Numero de Matricula"
+        registration_number: "Número de Matricula"
+        current_password: "Contraseña Actual"
+        new_password: "Nueva Contraseña"
+        password_confirmation: "Confirmación de contraseña"
+        reset_password_token: ""
       medical:
         cuil: "CUIL"
         dni: "DNI"
         firstname: "Nombre"
         lastname: "Apellido"
         email: "Correo electrónico"
-        specialization: "Especiazación"
+        specialization: "Especialidad"
         home_phone: "Teléfono Fijo"
-        movile_phone: "Teléfono Movil"
+        movile_phone: "Teléfono Móvil"
         medical_specialization: "Especialidad"
         registration_number: "Numero de Matricula"
       medical_specialization:
@@ -166,7 +176,7 @@ es:
         antecedents: "Antecedentes"
         consultations: "Consultas"
         diseases: "Enfermedades"
-        medical_exams: "Examenes"
+        medical_exams: "Exámenes"
         medications: "Medicaciones"
         vaccines: "Vacunas"
       patient:
@@ -181,11 +191,11 @@ es:
         height: "Altura (Mts)"
         weight: "Peso (Kg)"
         home_phone: "Teléfono Fijo"
-        movile_phone: "Télefono Movil"
+        movile_phone: "Teléfono Móvil"
         sex: "Sexo"
         contacts: "Contactos"
       antecedent:
-        description: "Descripcion"
+        description: "Descripción"
       allergy:
         record_date: "Fecha de registro"
         cause: "Causa"
@@ -209,7 +219,7 @@ es:
         begin_date: "Fecha de comienzo"
         end_date: "Fecha de finalización"
         name: "Nombre"
-        dose: "Dósis"
+        dose: "Dosis"
         amount: "Gramaje"
         route: "Vía de Administración"
       vaccine:
@@ -220,9 +230,9 @@ es:
         lastname: "Apellido"
         email: "Correo Electrónico"
         home_phone: "Teléfono Fijo"
-        movile_phone: "Teléfono Movil"
+        movile_phone: "Teléfono Móvil"
       appointment:
-        medical_specialization: "Especialidad"
+        medical_specialization: "Especialidad Médica"
         medical: "Medico"
         state: "Estado"
         patient: "Paciente"
@@ -233,111 +243,124 @@ es:
         user:
           attributes:
             first_name:
-              blank: "El nombre es un campo requerido"
+              blank: ": 'Debe ingresar el nombre'"
+              too_long: ": 'El nombre debe contener máximo 30 caracteres'"
             last_name:
-              blank: "es un campo requerido"
-            dni:
-              blank: "es un campo requerido"
+              blank: ": 'Debe ingresar el apellido'"
+              too_long: ": 'El apellido debe contener máximo 30 caracteres'"
             cuil:
-              blank: "es un campo requerido"
+              blank: ": 'Debe ingresar el CUIL'"
             password:
-              too_short: "muy corta"
+              too_short: ": 'Su contraseña debe contener mínimo 8 caracteres'"
+            password_confirmation:
+              too_short: ": 'Su confirmación de contraseña debe contener mínimo 8 caracteres'"
             confirmation_token:
-              invalid: "invalido"
+              invalid: ": 'invalido'"
+            reset_password_token:
+              invalid: "Las contraseñas ingresadas no coinciden. Intente nuevamente"  
             dni:
-              taken: "Ya existe un usuario con este DNI"
+              taken: ": 'Ya existe un usuario con ese DNI'"
+              blank: ": 'Debe ingresar el DNI'"
+              too_short: ": 'El DNI debe contener mínimo 7 dígitos'"
+              too_long: ": 'El DNI debe contener máximo 10 dígitos'"
             email:
-              not_found: "No es un correo electrónico no esta registrado"
+              not_found: ": 'No es un correo electrónico registrado'"
+            home_phone:
+              not_a_number: ": 'El número de télefono ingresado no es númerico'"
+              too_long: ": 'El número de télefono debe contener máximo 20 dígitos'" 
+            movile_phone:
+              not_a_number: ": 'El número de télefono móvil ingresado no es númerico'"
+              too_long: ": 'El número de télefono móvil debe contener maximo 20 dígitos'"
         medical:
           attributes:
             firstname:
-              blank: "Debe ingresar un nombre"
+              blank: ": 'Debe ingresar el nombre'"
             lastname:
-              blank: "Debe ingresar un apellido"
+              blank: ": 'Debe ingresar el apellido'"
             cuil:
-              blank: "Debe ingresar un CUIL"
+              blank: ": 'Debe ingresar el CUIL'"
             specialization:
-              blank: "Debe ingresar una especialidad"
+              blank: ": 'Debe ingresar una especialidad médica'"
             home_phone:
-              blank: "Debe ingresar un teléfono fijo"
+              blank: ": 'Debe ingresar un teléfono fijo'"
             movile_phone:
-              blank: "Debe ingresar un teléfono movil"
+              blank: ": 'Debe ingresar un teléfono móvil'"
         medical_specialization:
           attributes:
             name:
-              blank: "Debe ingresar una especialidad"
-              taken: "Ya existe la especialidad"
+              blank: ": 'Debe ingresar una especialidad médica'"
+              taken: ": 'Ya existe la especialidad médica'"
           association:
-            exist: "No es posible borrar la especialidad. Actualmente existen médicos asociados a esta especialidad."
+            exist: "No es posible borrar la especialidad médica. Actualmente existen médicos asociados a esta especialidad médica."
         patient:
           attributes:
             dni:
-              blank: "Debe ingresar un DNI"
-              too_short: "El DNI debe tener 7 números como mínimo"
+              blank: ": 'Debe ingresar un DNI'"
+              too_short: ": 'El DNI debe contener mínimo 7 dígitos'"
             firstname:
-              blank: "Debe ingresar un nombre"
+              blank: ": 'Debe ingresar el nombre'"
             lastname:
-              blank: "Debe ingrsar un apellido"
+              blank: ": 'Debe ingresar el apellido'"
             birthdate:
-              blank: "Debe ingresar una fecha de nacimiento"
+              blank: ": 'Debe ingresar una fecha de nacimiento'"
             address:
-              blank: "Debe ingresar una dirección"
+              blank: ": 'Debe ingresar una dirección'"
             home_phone:
-              blank: "Debe ingresar un teléfono fijo"
+              blank: ": 'Debe ingresar un teléfono fijo'"
             movile_phone:
-              blank: "Debe ingresar un teléfono móvil"
+              blank: ": 'Debe ingresar un teléfono móvil'"
             email:
-              blank: "Debe ingresar un correo electrónico"
+              blank: ": 'Debe ingresar un correo electrónico'"
             photo:
-              in_between: "El tamaño de la foto supera el máximo permitido"
+              in_between: ": 'El tamaño de la foto supera el máximo permitido'"
             photo_file_size:
-              in_between: "El tamaño de la foto supera el máximo permitido"
+              in_between: ": 'El tamaño de la foto supera el máximo permitido'"
             photo_content_type:
-              invalid: "El formato de la foto no esta admitido"
+              invalid: ": 'El formato de la foto no esta admitido'"
         consultation:
           attributes:
             achievement_date:
-              blank: "Debe ingresar una fecha de registro"
+              blank: ": 'Debe ingresar una fecha de registro'"
             diagnostic:
-              blank: "Debe ingresar un diagnostico"
+              blank: ": 'Debe ingresar un diagnostico'"
         allergy:
           attributes:
             record_date: 
-              blank: "Debe ingresar una fecha de registro"
+              blank: ": 'Debe ingresar una fecha de registro'"
             cause:
-              blank: "Debe ingresar una causa"
+              blank: ": 'Debe ingresar una causa de la alergia'"
         antecedent:
           attributes:
             description:
-              blank: "Debe ingresar una descripción"
+              blank: ": 'Debe ingresar una descripción en antecedente'"
         disease:
           attributes:
             name:
-              blank: "Debe ingresar un nombre"
+              blank: ": 'Debe ingresar un nombre de la enfermedad'"
             record_date:
-              blank: "Debe ingresar una fecha de resgistro"
+              blank: ": 'Debe ingresar una fecha de registro'"
         medical_exam:
           attributes:
             achievement_date:
-              blank: "Debe ingresar una fecha de registro"
+              blank: ": 'Debe ingresar una fecha de registro'"
             name:
-              blank: "Debe ingresar un nombre"
+              blank: ": 'Debe ingresar un nombre del examen médico'"
             results:
-              blank: "Debe ingresar un resultado"
+              blank: ": 'Debe ingresar un resultado del examen médico'"
         medication:
           attributes:
             name:
-              blank: "Debe ingresar un nombre"
+              blank: ": 'Debe ingresar el nombre de la medicación'"
             dose:
-              blank: "Debe ingresar una dosis"
+              blank: ": 'Debe ingresar una dosis de la medicación"
             amount:
-              blank: "Debe ingresar el Gramaje de la dosis"
+              blank: ": 'Debe ingresar el gramaje de la dosis'"
         vaccine:
           attributes:
             name: 
-              blank: "Debe ingresar un nombre"
+              blank: ": 'Debe ingresar un nombre de la vacuna'"
             last_application:
-              blank: "Debe ingresar una fecah de última aplicación"
+              blank: ": 'Debe ingresar la fecha de la última aplicación'"
   title:
     medical:
       new: "Nuevo Médico"
@@ -367,7 +390,7 @@ es:
       create: "Crear %{model}"
       update: "Actualizar %{model}"
   menu:
-    statistics: "Estadisticas"
+    statistics: "Estadísticas"
     medicals: "Médicos"
     administration: "Administración"
     medical_histories: "Historias Médicas"
@@ -383,7 +406,7 @@ es:
         assignment: "Asignación de turnos"
         my_appointments: "Mis turnos"
       statistics:
-        simptoms: "Sintomas"
+        simptoms: "Síntomas"
         diseases: "Enfermedades"
       administration:
         manager_users: "Administrar usuarios"
@@ -442,9 +465,9 @@ es:
   my_appointments:
     title: "Mis Turnos"
     show_medical_history: "Historial"
-    no_results: "No se encuentraron mas turnos agendados para día de hoy."
+    no_results: "No se encontraron mas turnos agendados para el día de hoy."
   custom_search:
-    text: "Para realizar una búsquedas ingrese una o más pablabras y luego presione en la lupa..."
+    text: "Para realizar una búsquedas ingrese una o más palabras y luego presione en la lupa..."
     result:
       content: "Resultado"
       patient: "Paciente"
@@ -463,23 +486,23 @@ es:
       lastName: "Apellido"
       search: "Buscar"
       clean: "Limpiar"
-      no_results: "No se encontraron resultados para busqueda."
+      no_results: "No se encontraron resultados para la búsqueda."
   statistics:
     show: "Ver"
     disease:
-      title: "Estatisticas por enfermedad"
+      title: "Estadísticas por enfermedad"
       disease: "Enfermedad"
       year: "Año"
       result:
         title: "Resultatos"
-        percentage: 'Porcentaje de la poblacion afectada por la enfermedad'
+        percentage: 'Porcentaje de la población afectada por la enfermedad'
     simptomp:
-      title: "Estatisticas por sintoma"
-      simptomp: "Sintoma"
+      title: "Estadísticas por síntomas"
+      simptomp: "Síntoma"
       year: "Año"
       result:
         title: "Resultatos"
-        percentage: "Porcentaje de la poblacion afectada por el sintoma"
+        percentage: "Porcentaje de la poblacion afectada por el síntoma"
   medical_specialization:
     confirm_delete: "¿Está seguro que desea eliminar la especialidad médica?"
   users:

@@ -7,8 +7,20 @@
 		%h2= t :save_error, :errors => errors_text, :entity_name => entity_name
 		%ul
 			- old_tab_name = ''
+			- model_name = ['patient', 'allergies']
 			- eval(variable_name(@entity_name)).errors.messages.each do |a_message|
-				-tab_name = t("activerecord.attributes.#{@entity_name}.#{a_message[0].to_s.partition('.').first}")
+				- a_message_first = a_message[0].to_s.partition('.').first
+				- a_message_last = a_message[0].to_s.partition('.').last
+
+				-tab_name = t("activerecord.attributes.#{@entity_name}.#{a_message_first}")
+				
+				-if a_message_first == model_name[0]
+					- attribute_name = t "activerecord.attributes.#{a_message_first}.#{a_message_last}"
+				-if a_message_first  == model_name[1]
+					- attribute_name = t "activerecord.attributes.allergy.#{a_message_last}"	
+				-if a_message_first != model_name[0] and a_message_first != model_name[1]
+					- attribute_name = t "activerecord.attributes.#{a_message_first[0..-2]}.#{a_message_last}"
+
 				-unless defined? filtered
 					-filtered = [] 
 				-unless filtered.include? a_message[0]
@@ -17,8 +29,8 @@
 						.nested_entity_errors=tab_name
 						- message = a_message[1].first
 						-unless message.kind_of? Array
-							%li= "#{message}."
+							%li= "#{attribute_name} #{message}."
 					-else
 						- message = a_message[1].first
 						-unless message.kind_of? Array
-							%li= "#{message}."
+							%li= "#{attribute_name} #{message}."
