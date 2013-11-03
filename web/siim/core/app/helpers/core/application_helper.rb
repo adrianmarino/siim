@@ -11,13 +11,18 @@ module Core
 			eval(variable_name(@entity_name))
 		end
 
+		def translate_and_mark(a_class_name, an_attribute_name)
+			target = (to_class(to_class_name(a_class_name.to_s)) == Class) ? a_class_name : to_class(to_class_name(a_class_name.to_s))
+			if target.validators_on(an_attribute_name).map(&:class).include?(ActiveModel::Validations::PresenceValidator)
+				(to_class(to_class_name(a_class_name.to_s)).human_attribute_name an_attribute_name).concat(" *")
+			else
+				to_class(to_class_name(a_class_name.to_s)).human_attribute_name an_attribute_name
+			end
+		end
+
 		def translate_attribute(a_class_name, an_attribute_name)
-        	target = (to_class(to_class_name(a_class_name.to_s)) == Class) ? a_class_name : to_class(to_class_name(a_class_name.to_s))
-        	if target.validators_on(an_attribute_name).map(&:class).include?(ActiveModel::Validations::PresenceValidator)
-          		(to_class(to_class_name(a_class_name.to_s)).human_attribute_name an_attribute_name).concat(" *")  
-        	else
-          		to_class(to_class_name(a_class_name.to_s)).human_attribute_name an_attribute_name
-    	end
+			to_class(to_class_name(a_class_name.to_s)).human_attribute_name an_attribute_name
+		end
 
 		def show_entities(a_collection, a_property_name)
 			output = ""
