@@ -17,11 +17,6 @@ Siim::Application.routes.draw do
   }, 
   :controllers => { :sessions => "sessions" }
 
-  devise_for :users, :skip => [:registrations]
-    as :user do
-      get 'users/edit' => 'devise/registrations#edit', :as => '/register/edit'
-      put 'users/:id' => 'devise/registrations#update', :as => 'user_registration'
-  end
 
   resources :users
   resources :medicals

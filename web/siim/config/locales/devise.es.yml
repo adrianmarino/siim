@@ -5,66 +5,66 @@ es:
       not_found: 'no encontrado'
       already_confirmed: 'ya ha sido confirmada'
       not_locked: 'no está bloqueada'
-      not_saved: 'Un error impide que este usuario sea guardado:'
+      not_saved: 'Un error impide que la acción se pueda realizar'
 
   devise:
     failure:
       unauthenticated: 'Necesita acceder a su cuenta o solicitar registro de usuario a su Administrador antes de continuar'
-      unconfirmed: 'Necesitas confirmar tu cuenta antes de continuar.'
-      locked: 'Tu cuenta esta bloqueada.'
-      invalid: 'Debe ingresar su DNI o direccion de correo electronico registrado'
+      unconfirmed: 'Necesita confirmar su cuenta antes de continuar.'
+      locked: 'Su cuenta esta bloqueada.'
+      invalid: 'Debe ingresar su DNI o dirección de correo electrónico registrado'
       invalid_token: 'Token de autenticación incorrecto.'
-      timeout: 'Tu sesión ha expirado, por favor accede de nuevo para continuar.'
-      inactive: 'Tu cuenta no ha sido activada.'
+      timeout: 'Su sesión ha expirado, por favor accede de nuevo para continuar.'
+      inactive: 'Su cuenta no ha sido activada.'
     sessions:
-      signed_in: 'Has ingresado correctamente.'
-      signed_out: 'Has salido correctamente.'
+      signed_in: 'Ha ingresado correctamente.'
+      signed_out: 'Ha salido correctamente.'
     passwords:
-      send_instructions: 'Recibirás un email con instrucciones para cambiar tu contraseña en poco minutos.'
-      updated: 'Tu contraseña ha sido modificada. Ya has accedido a tu cuenta.'
+      send_instructions: 'Se ha enviado un email a su correo eléctronico con instrucciones para cambiar su contraseña.'
+      updated: 'Su contraseña ha sido modificada. Ya ha accedido a su cuenta.'
     confirmations:
-      send_instructions: 'Recibirás un email con instrucciones para confirmar tu cuenta en poco minutos.'
-      confirmed: 'Tu cuenta ha sido confirmada. Ya has accedido a tu cuenta.'
+      send_instructions: 'Recibirá un email con instrucciones para confirmar su cuenta en poco minutos.'
+      confirmed: 'Su cuenta ha sido confirmada. Ya ha accedido a su cuenta.'
     registrations:
-      signed_up: 'Te has registrado correctamente. Si está disponible, te habremos enviado un email de confirmación.'
-      updated: 'Has actualizado tu cuenta correctamente.'
-      destroyed: '!Adiós! Tu cuenta ha sido cancelada. Esperamos verte pronto.'
+      signed_up: 'Se has registrado correctamente. Si está disponible, te habremos enviado un email de confirmación.'
+      updated: 'Ha actualizado su cuenta correctamente.'
+      destroyed: '!Adiós! Su cuenta ha sido cancelada. Esperamos verte pronto.'
       reasons:
         inactive: 'inactivo'
         unconfirmed: 'sin confirmar'
         locked: 'bloqueado'
     unlocks:
-      send_instructions: 'Recibirás un email con instrucciones para desbloquear tu cuenta en pocos minutos.'
-      unlocked: 'Tu cuenta ha sido desbloqueada. Ya has accedido a tu cuenta.'
+      send_instructions: 'Recibirá un email con instrucciones para desbloquear su cuenta en pocos minutos.'
+      unlocked: 'Su cuenta ha sido desbloqueada. Ya ha accedido a su cuenta.'
     mailer:
       confirmation_instructions:
         subject: 'Instrucciones de confirmación'
       reset_password_instructions:
-        subject: 'Instrucciones para cambiar tu contraseña'
+        subject: 'Instrucciones para cambiar su contraseña'
       unlock_instructions:
-        subject: 'Instrucciones para desbloquear tu cuenta'
+        subject: 'Instrucciones para desbloquear su cuenta'
   activerecord:
     errors:
         models:
           admin:
               attributes:
                   current_password:
-                      blank: "Debe ingresar su contraseña actual."
+                      blank: ": 'Debe ingresar su contraseña actual para actualizar sus cambios'"
                   password:
-                      confirmation: "Debe confirmar la contraseña."
-                      blank: "Debe ingresar una contraseña."
+                      confirmation: ": 'La confirmación de contraseña no coincide con la nueva contraseña ingresada'"
+                      blank: ": 'Debe ingresar una contraseña'"
                   email:
-                      taken: "Ya existe un usuario con este mail."
-                      blank: "Debe ingresar un correo electrónico"
+                      taken: ": 'Ya existe un usuario con este mail'"
+                      blank: ": 'Debe ingresar un correo electrónico'"
           user:
               attributes:
                   current_password:
-                      blank: "Debe ingresar su contraseña actual."
+                      blank: ": 'Debe ingresar su contraseña actual para actualizar sus cambios'"
                   password:
-                      confirmation: "Debe confirmar la contraseña."
-                      blank: "Debe ingresar una contraseña."
+                      confirmation: ": 'La confirmación de contraseña no coincide con la nueva contraseña ingresada'"
+                      blank: ": 'Debe ingresar una contraseña'"
                   email:
-                      taken: "Ya existe un usuario con este mail."
-                      blank: "Debe ingresar un correo electrónico."
+                      taken: ": 'Ya existe un usuario con este mail'"
+                      blank: ": 'Debe ingresar un correo electrónico'"
   my_appointments:
     title: "Mis Turnos"

@@ -252,7 +252,6 @@ en:
           attributes:
             dni:
               blank: "Must enter a DNI"
-              too_short: "DNI must have at least 7 spots"
             firstname:
               blank: "Must enter a firstname"
             lastname:
@@ -467,6 +466,4 @@ en:
   medical_specialization:
     confirm_delete: "Are you sure you want to delete the medical specialization?"
   users:
-    index:
-      title: "User Administration"
     confirm_delete: "Are you sure you want to delete the user?"
