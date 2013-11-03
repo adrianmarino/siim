@@ -142,6 +142,7 @@ es:
         last_name: "Apellido"
         dni: "DNI"
         email: "Correo electrónico"
+        roles: "Roles"
         password: "Contraseña"
         medical: "Medico"
         sex: "Sexo"
@@ -271,6 +272,8 @@ es:
             movile_phone:
               not_a_number: ": 'El número de télefono móvil ingresado no es númerico'"
               too_long: ": 'El número de télefono móvil debe contener maximo 20 dígitos'"
+            roles:
+              blank: ": 'Debe Seleccionar un role como minimo'"
         medical:
           attributes:
             firstname:

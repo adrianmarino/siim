@@ -56,6 +56,7 @@ class User < ActiveRecord::Base
 	#validates :home_phone, :movile_phone, :numericality => true 
 	validates :first_name, :last_name, length: { maximum: 30 }, :presence => true 
 	validates :email, :presence => true, :email => true
+	validates_presence_of :roles
 
 	# -------------------------------------------------------------------------
 	# Associations...

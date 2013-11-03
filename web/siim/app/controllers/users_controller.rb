@@ -54,7 +54,8 @@ class UsersController < CrudController
 	def create
 		@user = User.new(params[:user])
 		@medical_specializations = medical_specializations
-		
+		@roles = Role.all
+
 		if !@user.is_medical
 			@user.medical.clear
 		end
@@ -92,7 +93,8 @@ class UsersController < CrudController
 	# PUT /users/1.json
 	def update
 		@user = User.find(params[:id])
-		@medical = @user.medical 
+		@medical = @user.medical
+		@roles = Role.all
 
 		if @user.is_medical
 			@medical.first.firstname = @user.first_name

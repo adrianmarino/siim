@@ -120,6 +120,7 @@ en:
         last_name: "Lastname"
         dni: "DNI"
         email: "Email"
+        roles: "Roles"
         password: "Password"
         medical: "Medical"
         sex: "Sex"
@@ -221,14 +222,15 @@ en:
               blank: "is required"
             dni:
               blank: "is required"
+              taken: "Already exist another user with this DNI"
             cuil:
               blank: "is required"
             password:
               too_short: "too short"
             confirmation_token:
               invalid: "invalid"
-            dni:
-              taken: "Already exist another user with this DNI"
+            roles:
+              blank: ": 'Must Select one role as minimal''"
         medical:
           attributes:
             firstname:
