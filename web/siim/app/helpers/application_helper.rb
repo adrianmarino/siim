@@ -1,10 +1,10 @@
 module ApplicationHelper
+	include Core::ApplicationHelper
 	include Core::NavigationHelper
 	include Core::CrudFormHelper
 	include Core::CrudPathHelper
-	include Core::ApplicationHelper
-	include Core::PhotoHelper
 	include Core::CrudTranslationHelper
+	include Core::PhotoHelper
 
 	def javascript(*files)
 		content_for(:head) { javascript_include_tag(*files) }
