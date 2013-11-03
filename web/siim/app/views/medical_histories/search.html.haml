@@ -58,7 +58,9 @@
 									%td=medical_history.patient.firstname
 									%td=medical_history.patient.lastname
 									%td.options{"style" => "vertical-align: middle;"}
-										=link_to raw("<i class=\"icon-search\">&nbsp;#{t 'actions.show'}</i>"), edit_medical_history_path(:id => medical_history.id, :back_url => search_medical_histories_path), :class => "btn"
+										.btn-group
+											=link_to raw("<i class=\"icon-search\">&nbsp;#{t 'actions.show'}</i>"), medical_history_path(:id => medical_history.id, :back_url => search_medical_histories_path), :class => "btn"
+											=link_to raw("<i class=\"icon-edit\">&nbsp;#{t 'actions.edit'}</i>"), edit_medical_history_path(:id => medical_history.id, :back_url => search_medical_histories_path), :class => "btn"
 			:javascript
 				$(document).ready(function() {
 							$('#search_result').dataTable({
