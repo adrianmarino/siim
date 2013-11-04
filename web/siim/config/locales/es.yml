@@ -99,8 +99,6 @@ es:
   password_clarification: "(Dejelo en blanco si no desea cambiarlo)"
   current_password_clarification: "(Su contraseña actual es necesaria para confirmar los cambios)"
   unhappy: "¿Descontento?"
-  user_settings: "Mis Ajustes"
-  sign_out: "Salir"
 
   date:
       formats:
@@ -142,7 +140,6 @@ es:
         last_name: "Apellido"
         dni: "DNI"
         email: "Correo electrónico"
-        roles: "Roles"
         password: "Contraseña"
         medical: "Medico"
         sex: "Sexo"
@@ -150,7 +147,7 @@ es:
         home_phone: "Teléfono Fijo"
         movile_phone: "Teléfono Móvil"
         birthdate: "Fecha de Nacimiento"
-        is_medical: "¿Es Medico?"
+        is_medical: "Es Medico?"
         medical_specialization: "Especialidad"
         registration_number: "Número de Matricula"
         current_password: "Contraseña Actual"
@@ -272,8 +269,6 @@ es:
             movile_phone:
               not_a_number: ": 'El número de télefono móvil ingresado no es númerico'"
               too_long: ": 'El número de télefono móvil debe contener maximo 20 dígitos'"
-            roles:
-              blank: ": 'Debe Seleccionar un role como minimo'"
         medical:
           attributes:
             firstname:
@@ -393,41 +388,39 @@ es:
       create: "Crear %{model}"
       update: "Actualizar %{model}"
   menu:
-    statistics: "Estadísticas"
-    medicals: "Médicos"
+    my_appointments: "Mis turnos"
+    medical_history: "Historias Médicas"
+    appointments: "Asignación de turnos"
+    research: "Investigación"
     administration: "Administración"
-    medical_histories: "Historias Médicas"
-    appointments: "Turnos"
-    medical_histories_search: "Búsqueda"
-    search_engine: "Motor de Búsqueda"
     sub_menu:
-      medical_histories:
-        admin: "Administrar"
-        search: "Por DNI/Nombre"
-        custom_search: "Avanzada"
-      appointments:
-        assignment: "Asignación de turnos"
-        my_appointments: "Mis turnos"
-      statistics:
-        simptoms: "Síntomas"
-        diseases: "Enfermedades"
+      medical_history:
+        search: "Búsqueda"
+        admin: "Administración"
+      research:
+        statistics: "Estadísticas"
+        sub_menu:
+          statistics:
+            simptoms: "Síntomas"
+            diseases: "Enfermedades"
+        custom_search: "Búsqueda Avanzada"
       administration:
-        manager_users: "Administrar usuarios"
+        manager_users: "Administración de Usuarios"
         medical_specializations: "Especialidades Médicas"
-        download_log: "Descargar log"
-      search_engine:
-        head: "Head"
-        inquisitor: "Inquisitor"
-        bigdesk: "BigDesk"
+        download_log: "Descargar Log"
+        search_engine: "Motor de Búsqueda"
+        sub_menu:
+          search_engine:
+            head: "Administración"
+            inquisitor: "Depuración de Consultas"
+            bigdesk: "Estadísticas"
+      session:
+        my_appointments: "Mis turnos"
+        user_settings: "Mis Ajustes"
+        sign_out: "Salir"
   sex:
     male: "Masculino"
     female: "Femenino"
-  role:
-    medical: "Médico"
-    appointment_manager: "Administrador de Turnos"
-    search_engine_admin: "Administrador de busquedas"
-    medical_history_admin: "Adminsitrador de historias medicas"
-    user_admin: "Administrador de usuarios"
   bloodtype:
     o_positive: "O +"
     o_negative: "O -"
@@ -464,9 +457,6 @@ es:
       all:
         fame: "Todas"
         male: "Todos"
-    multiselect:
-      nothing: "Seleccione uno o mas"
-      selected: "{0} de {1} seleccionados"
     reserve_appointment:
       title: "Seleccione un paciente"
       back: "Volver"
