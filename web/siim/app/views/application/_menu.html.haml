@@ -1,60 +1,60 @@
 .navbar.navbar-fixed-top
-  .navbar-inner
-    .container-fluid
-      %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
-        %span.icon-align-justify
-      - if not user_signed_in?
-        %a.brand{:href => '/'}= t 'app.description'
-      - if user_signed_in?
-        %a.brand{:href => '/', :title => t('app.description') }= t 'app.name'
-        .nav-collapse.collapse
-          %ul.nav{:role => "navigation"}
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
-                %i.icon-book=" #{t 'menu.medical_histories'}"
-                %b.caret
-              %ul.dropdown-menu
-                %li= link_to t('menu.sub_menu.medical_histories.admin'), medical_histories_path, "tabindex" => "-1"
-                %li.divider
-                %li.nav-header=" #{t 'menu.medical_histories_search'}"
-                %li= link_to t('menu.sub_menu.medical_histories.search'), search_medical_histories_path, "tabindex" => "-1"
-                %li= link_to t('menu.sub_menu.medical_histories.custom_search'), custom_search_medical_histories_path, "tabindex" => "-1"
+	.navbar-inner
+		.container-fluid
+			%a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+				%span.icon-align-justify
+			- if not user_signed_in?
+				%a.brand{:href => '/'}= t 'app.description'
+			- if user_signed_in?
+				%a.brand{:href => '/', :title => t('app.description') }= t 'app.name'
+				.nav-collapse.collapse
+					%ul.nav{:role => "navigation"}
+						%li= link_to raw("<i class=\"icon-calendar\">&nbsp;&nbsp;#{t('menu.my_appointments')}</i>"), appointments_my_appointments_path, "tabindex" => "-1"
+						%li= link_to raw("<i class=\"icon-calendar\">&nbsp;</i>#{t('menu.appointments')}"), appointments_setup_search_path, "tabindex" => "-1"
+						%li.dropdown
+							%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
+								%i.icon-book=" #{t 'menu.medical_history'}"
+								%b.caret
+							%ul.dropdown-menu
+								%li= link_to t('menu.sub_menu.medical_history.admin'), medical_histories_path, "tabindex" => "-1"
+								%li= link_to t('menu.sub_menu.medical_history.search'), search_medical_histories_path, "tabindex" => "-1"
+						
+						%li.dropdown
+							%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
+								%i.icon-signal=" #{t 'menu.research'}"
+								%b.caret
+							%ul.dropdown-menu
+								%li= link_to t('menu.sub_menu.research.custom_search'), custom_search_medical_histories_path, "tabindex" => "-1"
+								%li.divider
+								%li.nav-header=" #{t 'menu.sub_menu.research.statistics'}"
+								%li= link_to t('menu.sub_menu.research.sub_menu.statistics.simptoms'), statistics_setup_simptom_path, "tabindex" => "-1"
+								%li= link_to t('menu.sub_menu.research.sub_menu.statistics.diseases'), statistics_setup_disease_path, "tabindex" => "-1"
 
-            %li= link_to raw("<i class=\"icon-calendar\">&nbsp;</i>#{t('menu.sub_menu.appointments.assignment')}"), appointments_setup_search_path, "tabindex" => "-1"
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
-                %i.icon-signal=" #{t 'menu.statistics'}"
-                %b.caret
-              %ul.dropdown-menu
-                %li= link_to t('menu.sub_menu.statistics.simptoms'), statistics_setup_simptom_path, "tabindex" => "-1"
-                %li= link_to t('menu.sub_menu.statistics.diseases'), statistics_setup_disease_path, "tabindex" => "-1"
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
-                %i.icon-wrench=" #{t 'menu.administration'}"
-                %b.caret
-              %ul.dropdown-menu
-                -# %li= link_to t('menu.medicals'), medicals_path, "tabindex" => "-1"
-                %li= link_to t('menu.sub_menu.administration.medical_specializations'), "/medical_specializations", "tabindex" => "-1"
-                %li= link_to t('menu.sub_menu.administration.manager_users'), users_path, "tabindex" => "-1"
-                %li= link_to t('menu.sub_menu.administration.download_log'), log_show_path, "tabindex" => "-1"
-                %li.divider
-                %li.nav-header=" #{t 'menu.search_engine'}"
-                %li= link_to t('menu.sub_menu.search_engine.head'), "http://#{search_engine_username_and_password_url}searchengine.nonosoft.com.ar/_plugin/head", "tabindex" => "-1"
-                %li= link_to t('menu.sub_menu.search_engine.inquisitor'), "http://#{search_engine_username_and_password_url}searchengine.nonosoft.com.ar/_plugin/inquisitor", "tabindex" => "-1"
-                %li= link_to t('menu.sub_menu.search_engine.bigdesk'), "http://#{search_engine_username_and_password_url}searchengine.nonosoft.com.ar/_plugin/bigdesk", "tabindex" => "-1"
+						%li.dropdown
+							%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
+								%i.icon-wrench=" #{t 'menu.administration'}"
+								%b.caret
+							%ul.dropdown-menu
+								-# %li= link_to t('menu.medicals'), medicals_path, "tabindex" => "-1"
+								%li= link_to t('menu.sub_menu.administration.medical_specializations'), "/medical_specializations", "tabindex" => "-1"
+								%li= link_to t('menu.sub_menu.administration.manager_users'), users_path, "tabindex" => "-1"
+								%li= link_to t('menu.sub_menu.administration.download_log'), log_show_path, "tabindex" => "-1"
+								%li.divider
+								%li.nav-header=" #{t 'menu.sub_menu.administration.search_engine'}"
+								%li= link_to t('menu.sub_menu.administration.sub_menu.search_engine.head'), "http://#{search_engine_username_and_password_url}searchengine.nonosoft.com.ar/_plugin/head", "tabindex" => "-1"
+								%li= link_to t('menu.sub_menu.administration.sub_menu.search_engine.inquisitor'), "http://#{search_engine_username_and_password_url}searchengine.nonosoft.com.ar/_plugin/inquisitor", "tabindex" => "-1"
+								%li= link_to t('menu.sub_menu.administration.sub_menu.search_engine.bigdesk'), "http://#{search_engine_username_and_password_url}searchengine.nonosoft.com.ar/_plugin/bigdesk", "tabindex" => "-1"
 
-          %ul.nav.pull-right
-            %li#fat-menu.dropdown.open
-              %ul.nav.pull-right
-                %li.dropdown
-                  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button", "id"=>"session_menu"}
-                    = t :login_as
-                    %b= current_user
-                    %b.caret
-                  %ul.dropdown-menu{"aria-labelledby" => "dLabel", :role => "menu"}
-                    %li= link_to raw("<i class=\"icon-calendar\">&nbsp;&nbsp;#{t('menu.sub_menu.appointments.my_appointments')}</i>"), appointments_my_appointments_path, "tabindex" => "-1"
-                    %li= link_to raw("<i class=\"icon-info-sign icon-white\">&nbsp;&nbsp;#{t(:user_settings)}</i>"), edit_user_registration_path, "tabindex" => "-1"
-                    %li.divider
-                    %li= link_to raw("<i class=\"icon-off\">&nbsp;&nbsp;#{t(:sign_out)}</i>"),"#myModal", "tabindex" => "-1", "data-toggle" =>"modal", :id => "sing_out"
-
-
+					%ul.nav.pull-right
+						%li#fat-menu.dropdown.open
+							%ul.nav.pull-right
+								%li.dropdown
+									%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button", "id"=>"session_menu"}
+										= t :login_as
+										%b= current_user
+										%b.caret
+									%ul.dropdown-menu{"aria-labelledby" => "dLabel", :role => "menu"}
+										%li= link_to raw("<i class=\"icon-calendar\">&nbsp;&nbsp;#{t('menu.sub_menu.session.my_appointments')}</i>"), appointments_my_appointments_path, "tabindex" => "-1"
+										%li= link_to raw("<i class=\"icon-info-sign icon-white\">&nbsp;&nbsp;#{t('menu.sub_menu.session.user_settings')}</i>"), edit_user_registration_path, "tabindex" => "-1"
+										%li.divider
+										%li= link_to raw("<i class=\"icon-off\">&nbsp;&nbsp;#{t('menu.sub_menu.session.sign_out')}</i>"),"#myModal", "tabindex" => "-1", "data-toggle" =>"modal", :id => "sing_out"
