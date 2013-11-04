@@ -388,9 +388,9 @@ es:
       create: "Crear %{model}"
       update: "Actualizar %{model}"
   menu:
-    my_appointments: "Mis turnos"
+    my_appointments: "Mis Turnos"
     medical_history: "Historias Médicas"
-    appointments: "Asignación de turnos"
+    appointments: "Asignación de Turnos"
     research: "Investigación"
     administration: "Administración"
     sub_menu:
@@ -415,7 +415,7 @@ es:
             inquisitor: "Depuración de Consultas"
             bigdesk: "Estadísticas"
       session:
-        my_appointments: "Mis turnos"
+        my_appointments: "Mis Turnos"
         user_settings: "Mis Ajustes"
         sign_out: "Salir"
   sex:
