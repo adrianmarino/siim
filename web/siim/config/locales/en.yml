@@ -117,6 +117,7 @@ en:
         first_name: "Firstname"
         last_name: "Lastname"
         dni: "DNI"
+        roles: "Roles"
         email: "Email"
         password: "Password"
         medical: "Medical"
@@ -219,14 +220,13 @@ en:
               blank: "is required"
             dni:
               blank: "is required"
+              taken: "Already exist another user with this DNI"
             cuil:
               blank: "is required"
             password:
               too_short: "too short"
             confirmation_token:
               invalid: "invalid"
-            dni:
-              taken: "Already exist another user with this DNI"
         medical:
           attributes:
             firstname:
@@ -367,7 +367,12 @@ en:
         my_appointments: "Mis turnos"
         user_settings: "My Appointments"
         sign_out: "Sign Out"
-
+  role:
+    medical: "Medical"
+    appointment_manager: "Appointment Manager"
+    search_engine_admin: "Search engine Admin"
+    medical_history_admin: "Medical Histories Admin"
+    user_admin: "User Admin"
   sex:
     male: "Male"
     female: "Female"
@@ -410,6 +415,9 @@ en:
       all:
         fame: "All"
         male: "All"
+    multiselect:
+      nothing: "Select one or more"
+      selected: "{0} of {1} selected"
     reserve_appointment:
       title: "Select a patient"
       back: "Back"
