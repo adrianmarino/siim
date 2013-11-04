@@ -1,0 +1,32 @@
+Roles
+-------------------------------------------------------------------------------
+- Médico.
+- Gestor de Túrnos.
+- Admin de usuarios.
+- Admin de sistema.
+- Admin de motor de búsqueda.
+
+Funciones que puede realizar un role en cada Pantalla
+-------------------------------------------------------------------------------
+1. Historias Medicas
+1.1. Administración: Medico.
+1.2. Buscar por DNI/Nombre
+- Buscar: Gestor de Túrnos, Médico.
+- Resultados:
+		- Parte publica: Gestor de Túrnos, Médico.
+		- Parte private: Médico.
+
+2. Asignación de Turnos: Gestor de Túrnos.
+
+3. Investigación: Medico.
+3.1. Estadisticas por sintoma: Medico.
+3.2. Estadisticas por Enfermedad: Medico.
+3.3. Búsqueda Avanzada: Médico, Admin de motor de búsqueda.
+
+4. Admisnitración
+4.1. Especializades médicas: Admin de sistema.
+4.2. Administración de usuarios.
+5. Descargar de log: Admin de sistema.
+5. Motor de búsqueda: Admin de motor de búsqueda.
+6. Mis Turnos: Médico.
+7. Mis ajustes: Todos los usuarios.
