@@ -391,9 +391,9 @@ es:
       create: "Crear %{model}"
       update: "Actualizar %{model}"
   menu:
-    my_appointments: "Mis turnos"
+    my_appointments: "Mis Turnos"
     medical_history: "Historias Médicas"
-    appointments: "Asignación de turnos"
+    appointments: "Asignación de Turnos"
     research: "Investigación"
     administration: "Administración"
     sub_menu:
@@ -418,7 +418,7 @@ es:
             inquisitor: "Depuración de Consultas"
             bigdesk: "Estadísticas"
       session:
-        my_appointments: "Mis turnos"
+        my_appointments: "Mis Turnos"
         user_settings: "Mis Ajustes"
         sign_out: "Salir"
   role:
@@ -479,7 +479,7 @@ es:
   my_appointments:
     title: "Mis Turnos"
     show_medical_history: "Historial"
-    no_results: "No se encontraron mas turnos agendados para el día de hoy."
+    no_results: "No tiene mas turnos agendados para hoy."
   custom_search:
     text: "Para realizar una búsquedas ingrese una o más palabras y luego presione en la lupa..."
     result:
