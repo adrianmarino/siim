@@ -135,10 +135,10 @@ ActiveRecord::Schema.define(:version => 20131102154000) do
     t.string   "dose"
     t.string   "how_often"
     t.string   "route"
-    t.datetime "created_at",                                        :null => false
-    t.datetime "updated_at",                                        :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.integer  "medical_history_id"
-    t.decimal  "amount",             :precision => 10, :scale => 0
+    t.decimal  "amount"
   end
 
   create_table "patients", :force => true do |t|
