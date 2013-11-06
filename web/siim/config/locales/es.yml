@@ -238,6 +238,8 @@ es:
         time: "Tiempo"
         date: "Fecha"
     errors:
+      messages:
+        record_invalid: "Registro Invalido"
       models:
         user:
           attributes:
@@ -525,3 +527,4 @@ es:
     confirm_delete: "¿Está seguro que desea eliminar el usuario?"
   authorization:
     access_denied: "Usted no esta autorizado para acceder a esta opción."
+
