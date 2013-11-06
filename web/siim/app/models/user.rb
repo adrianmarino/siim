@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
 		:password_confirmation, :remember_me, :authentication_token,
 		:sex, :address, :home_phone, :movile_phone, :medical_attributes, :medical,
 		:birthdate, :is_medical, :photo, :photo_content_type, :photo_file_size,
-		:photo_file_name, :_destroy, :role_ids
+		:photo_file_name, :_destroy, :role_ids, :roles
 
 	attr_accessor :login
 	attr_accessor :photo, :_destroy
@@ -51,13 +51,18 @@ class User < ActiveRecord::Base
 	# -------------------------------------------------------------------------
 	# Validations...
 	# -------------------------------------------------------------------------
-	validates :first_name, :last_name, :dni,:email, :presence => true
-	validates :dni, :uniqueness => true
+	validates :dni, length: { minimum: 7, maximum: 10 }, :uniqueness => true, :presence => true
+	validates :home_phone, :movile_phone, length: { maximum: 20 } 
+	#validates :home_phone, :movile_phone, :numericality => true 
+	validates :first_name, :last_name, length: { maximum: 30 }, :presence => true 
+	validates :email, :presence => true, :email => true
+	validates_presence_of :roles
 
 	# -------------------------------------------------------------------------
 	# Associations...
 	# -------------------------------------------------------------------------
 	has_many :medical
+	has_many :assignments
 	has_many :roles, :through => :assignments
 	has_attached_file :photo, :styles => {:medium => "200x200>", :small => "45x41>"}, 
 	:default_url => "images/photo-:style.png", :url	=> "/assets/patients/:id/:style/:basename.:extension", 

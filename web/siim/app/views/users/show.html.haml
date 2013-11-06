@@ -1,22 +1,21 @@
 %div
-  %td
-    = show_photo @user.photo.url :medium
-  %td
-    %table
-      = render :partial => 'crud/show', :locals => {:name => :first_name, :value => @user.first_name }
-      = render :partial => 'crud/show', :locals => {:name => :last_name, :value => @user.last_name }
-      = render :partial => 'crud/show', :locals => {:name => :dni, :value => @user.dni }
-      = render :partial => 'crud/show', :locals => {:name => :birthdate, :value => @user.birthdate }
-      = render :partial => 'crud/show', :locals => {:name => :sex, :value => @user.sex }
+	%td
+		= show_photo @user.photo.url :medium
+	%td
+		%table
+			= render :partial => 'crud/show', :locals => {:name => :first_name, :value => @user.first_name }
+			= render :partial => 'crud/show', :locals => {:name => :last_name, :value => @user.last_name }
+			= render :partial => 'crud/show', :locals => {:name => :dni, :value => @user.dni }
+			= render :partial => 'crud/show', :locals => {:name => :birthdate, :value => @user.birthdate }
+			= render :partial => 'crud/show', :locals => {:name => :sex, :value => @user.sex }
 %div
-  %td
-    = render :partial => 'crud/show', :locals => {:name => :address, :value => @user.address }
-    = render :partial => 'crud/show', :locals => {:name => :home_phone, :value => @user.home_phone }
-    = render :partial => 'crud/show', :locals => {:name => :movile_phone, :value => @user.movile_phone }
-    = render :partial => 'crud/show', :locals => {:name => :mail, :value => @user.email }
+	%td
+		= render :partial => 'crud/show', :locals => {:name => :address, :value => @user.address }
+		= render :partial => 'crud/show', :locals => {:name => :home_phone, :value => @user.home_phone }
+		= render :partial => 'crud/show', :locals => {:name => :movile_phone, :value => @user.movile_phone }
+		= render :partial => 'crud/show', :locals => {:name => :mail, :value => @user.email }
 
-  -if @user.is_medical
-    = render :partial => 'crud/show', :locals => {:name => :cuil, :value => @medical.first.cuil }
-    = render :partial => 'crud/show', :locals => {:name => :registration_number, :value => @medical.first.registration_number}
-    = render :partial => 'crud/show', :locals => {:name => :medical_specialization, :value => @medical.first.medical_specialization}
-    
+	-if @user.is_medical
+		= render :partial => 'crud/show', :locals => {:name => :cuil, :value => @medical.first.cuil }
+		= render :partial => 'crud/show', :locals => {:name => :registration_number, :value => @medical.first.registration_number}
+		= render :partial => 'crud/show', :locals => {:name => :medical_specialization, :value => @medical.first.medical_specialization}

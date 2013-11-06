@@ -2,14 +2,15 @@ class StatisticController < ApplicationController
 	# -------------------------------------------------------------------------
 	# Public Methods...
 	# -------------------------------------------------------------------------
-
 	/Simptmops statictics/
 	def setup_simptom
+		authorize! :view, :statistic
 		@years = Consultation.all_achievement_years
 		render 'simptoms_statictics'
 	end
 
 	def perform_simptom
+		authorize! :view, :statistic
 		@simptom = params[:simptom]
 		@year = params[:year]
 
@@ -26,11 +27,13 @@ class StatisticController < ApplicationController
 
 	/disease statictics/
 	def setup_disease
+		authorize! :view, :statistic
 		@years = Disease.all_record_years
 		render 'diseases_statictics'
 	end
 
 	def perform_disease
+		authorize! :view, :statistic
 		disease = params[:disease]
 		@year = params[:year]
 

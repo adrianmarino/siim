@@ -1,4 +1,8 @@
 class MedicalSpecializationsController < CrudController
+	load_and_authorize_resource
+	# -------------------------------------------------------------------------
+	# Public Methods...
+	# -------------------------------------------------------------------------
 	# GET /medical_specializations
 	# GET /medical_specializations.json
 	def index

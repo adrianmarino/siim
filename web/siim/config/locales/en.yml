@@ -78,8 +78,6 @@ en:
   password_clarification: "(leave blank if you don't want to change it)"
   current_password_clarification: "(we need your current password to confirm your changes)"
   unhappy: "unhappy?"
-  user_settings: "My Settings"
-  sign_out: "Sing out"
 
   devise:
     failure:
@@ -119,6 +117,7 @@ en:
         first_name: "Firstname"
         last_name: "Lastname"
         dni: "DNI"
+        roles: "Roles"
         email: "Email"
         password: "Password"
         medical: "Medical"
@@ -221,14 +220,13 @@ en:
               blank: "is required"
             dni:
               blank: "is required"
+              taken: "Already exist another user with this DNI"
             cuil:
               blank: "is required"
             password:
               too_short: "too short"
             confirmation_token:
               invalid: "invalid"
-            dni:
-              taken: "Already exist another user with this DNI"
         medical:
           attributes:
             firstname:
@@ -252,7 +250,6 @@ en:
           attributes:
             dni:
               blank: "Must enter a DNI"
-              too_short: "DNI must have at least 7 spots"
             firstname:
               blank: "Must enter a firstname"
             lastname:
@@ -340,32 +337,42 @@ en:
     appointment:
       search: "Attention Time Search"
   menu:
-    statistics: "Statistics"
-    medicals: "Medicals"
+    my_appointments: "My Appointments"
+    medical_history: "Medical histories"
+    appointments: "Appointment Management"
+    research: "Research"
     administration: "Administration"
-    medical_histories: "Medical Histories"
-    appointments: "Appointments"
-    medical_histories_search: "Search"
-    search_engine: "Search Engine"
     sub_menu:
-      medical_histories:
-        admin: "Admin"
-        search: "By DNI/Name"
-        custom_search: "Custom"
-      appointments:
-        assignment: "Assignment"
-        my_appointments: "My Attention Times"
-      statistics:
-        simptoms: "simptoms"
-        diseases: "Diseases"
+      medical_history:
+        search: "Search"
+        admin: "Administration"
+      research:
+        statistics: "Statistics"
+        sub_menu:
+          statistics:
+            simptoms: "Simptomps"
+            diseases: "Diseases"
+        custom_search: "Custom Search"
       administration:
-        manager_users: "Manager Users"
+        manager_users: "User Administration"
         medical_specializations: "Medical Specializations"
-        download_log: "Download log"
-      search_engine:
-        head: "Head"
-        inquisitor: "Inquisitor"
-        bigdesk: "BigDesk"
+        download_log: "Download Log"
+        search_engine: "Search Engine"
+        sub_menu:
+          search_engine:
+            head: "Administration"
+            inquisitor: "Query Debug"
+            bigdesk: "Statistics"
+      session:
+        my_appointments: "Mis turnos"
+        user_settings: "My Appointments"
+        sign_out: "Sign Out"
+  role:
+    medical: "Medical"
+    appointment_manager: "Appointment Manager"
+    search_engine_admin: "Search engine Admin"
+    system_admin: "System Admin"
+    user_admin: "User Admin"
   sex:
     male: "Male"
     female: "Female"
@@ -408,6 +415,9 @@ en:
       all:
         fame: "All"
         male: "All"
+    multiselect:
+      nothing: "Select one or more"
+      selected: "{0} of {1} selected"
     reserve_appointment:
       title: "Select a patient"
       back: "Back"
@@ -458,6 +468,6 @@ en:
   medical_specialization:
     confirm_delete: "Are you sure you want to delete the medical specialization?"
   users:
-    index:
-      title: "User Administration"
     confirm_delete: "Are you sure you want to delete the user?"
+  authorization:
+    access_denied: "You are not authorized to access this option."

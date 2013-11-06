@@ -1,4 +1,5 @@
 class AppointmentController < ApplicationController
+	authorize_resource
 	# -------------------------------------------------------------------------
 	# Public Request Methods...
 	# -------------------------------------------------------------------------
@@ -18,18 +19,17 @@ class AppointmentController < ApplicationController
 		render appointments_search_path
 	end
 
-	def liberate
-		appointment = request_helper.appointment
-		appointment.liberate_and_save if not appointment.nil?
-		search
-	end
-
 	def reserve
 		helper = request_helper
 		appointment = helper.appointment
 		patient = helper.appointment_patient
-
 		appointment.reserve_and_save(patient) if not appointment.nil?
+		search
+	end
+
+	def liberate
+		appointment = request_helper.appointment
+		appointment.liberate_and_save if not appointment.nil?
 		search
 	end
 
@@ -43,11 +43,6 @@ class AppointmentController < ApplicationController
 		end
 	end
 
-  def show_medical_history
-    appointment = request_helper.appointment
-    redirect_to_medical_history_of appointment
-  end
-
 	def finalize
 		appointment = request_helper.appointment
 		appointment.finalize_and_save if not appointment.nil?
@@ -58,6 +53,11 @@ class AppointmentController < ApplicationController
 		redirect_to(root_path) unless current_user.is_medical?
 		@appointments = Appointment.today_of current_user.medical
 		render appointments_my_appointments_path
+	end
+
+	def edit_related_medical_history
+		appointment = request_helper.appointment
+		redirect_to_medical_history_of appointment
 	end
 
 	# -------------------------------------------------------------------------
@@ -78,6 +78,6 @@ class AppointmentController < ApplicationController
 	end
 
 	def medical_history_from(an_appointment)
-		MedicalHistory.find_by_patient an_appointment.patient
+		MedicalHistory.find_by_patient(an_appointment.patient).first
 	end
 end
