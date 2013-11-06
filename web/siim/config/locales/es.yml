@@ -423,10 +423,10 @@ es:
         sign_out: "Salir"
   role:
     medical: "Médico"
-    appointment_manager: "Administrador de Turnos"
-    search_engine_admin: "Administrador de busquedas"
-    medical_history_admin: "Adminsitrador de historias medicas"
-    user_admin: "Administrador de usuarios"
+    appointment_manager: "Gestor de Turnos"
+    search_engine_admin: "Administrador de Busquedas"
+    system_admin: "Adminsitrador de Sistema"
+    user_admin: "Administrador de Usuarios"
   sex:
     male: "Masculino"
     female: "Femenino"
@@ -523,3 +523,5 @@ es:
     index:
       title: "Administración de Usuarios"
     confirm_delete: "¿Está seguro que desea eliminar el usuario?"
+  authorization:
+    access_denied: "Usted no esta autorizado para acceder a esta opción."

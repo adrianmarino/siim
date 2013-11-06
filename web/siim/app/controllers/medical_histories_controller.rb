@@ -1,39 +1,54 @@
 class MedicalHistoriesController < CrudController
+	load_and_authorize_resource :except => [
+		:search_by_dni,
+		:search_by_patient,
+		:search_patient_by_dni,
+		:search_patient_by_name,
+		:custom_search,
+		:perform_custom_search
+	]
+
 	# -------------------------------------------------------------------------
 	# Public Methods...
 	# -------------------------------------------------------------------------
 	# Andriod search...
 	# GET /medical_histories/search_by_dni?query="a DNI"
 	def search_by_dni
+		authorize! :search_by_dni, :medical_history
+
 		medical_history = MedicalHistory.find_by_dni(query_param).first
 		response = new_medical_history_response medical_history
 		render json: response.to_json
 	end
 
-
 	# Search by patient...
-	def search
-		render search_medical_histories_path
+	def search_by_patient
+		authorize! :search_by_patient, :medical_history
+		render search_by_patient_medical_histories_path
 	end
 
 	def search_patient_by_dni
+		authorize! :search_by_patient, :medical_history
 		@medical_histories = MedicalHistory.find_by_dni(dni_param) unless dni_param.length <=2
 		select_search_by_dni_tab
-		search
+		search_by_patient
 	end
 
 	def search_patient_by_name
+		authorize! :search_by_patient, :medical_history
 		@medical_histories = MedicalHistory.find_by_firname_and_lastname(firstname_param, lastname_param) unless firstname_param.length <=2 and lastname_param.length <=2
 		select_search_by_name_tab
-		search
+		search_by_patient
 	end
 
 	# Custom Search...
 	def custom_search
+		authorize! :custom_search, :medical_history
 		render custom_search_medical_histories_path
 	end
 
 	def perform_custom_search
+		authorize! :custom_search, :medical_history
 		@text = params[:text]
 		@results= MedicalHistorySearchEngine.search @text
 		custom_search
@@ -64,6 +79,11 @@ class MedicalHistoriesController < CrudController
 			format.html # show.html.erb
 			format.json { render json: @medical_history }
 		end
+	end
+
+	def show_custom_search_result_detail
+		@medical_history = MedicalHistory.find(params[:id])
+		render show_custom_search_result_detail_medical_histories_path
 	end
 
 	# GET /medical_histories/new

@@ -26,12 +26,8 @@ class ApplicationConfiguration
 		@config['scheduler']['appointment_genetator_task_time']
 	end
 
-	def search_engine_username
-		@config['search_engine']['user']['username']
-	end
-
-	def search_engine_password
-		@config['search_engine']['user']['password']
+	def search_engine_plugin_url
+		@config['search_engine']['plugin_url']
 	end
 
 	def print_all
@@ -46,6 +42,7 @@ class ApplicationConfiguration
 		puts "\s-\sappointment_genetator_task_time: #{appointment_genetator_task_time}"
 		puts "\s-\ssearch_engine_username: #{search_engine_username}"
 		puts "\s-\ssearch_engine_password: #{search_engine_password}"
+		puts "\s-\search_engine_plugin_url: #{search_engine_plugin_url}"
 		puts "----------------------------------------------------------------------"
 	end
 

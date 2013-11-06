@@ -1,10 +1,10 @@
 Roles
 -------------------------------------------------------------------------------
-- Médico.
-- Gestor de Túrnos.
-- Admin de usuarios.
-- Admin de sistema.
-- Admin de motor de búsqueda.
+- Médico: medical
+- Gestor de Túrnos: appointment_manager
+- Admin de usuarios: 'user_admin'
+- Admin de sistema: 'system_admin'
+- Admin de motor de búsqueda: search_engine_admin
 
 Funciones que puede realizar un role en cada Pantalla
 -------------------------------------------------------------------------------
@@ -29,4 +29,4 @@ Funciones que puede realizar un role en cada Pantalla
 5. Descargar de log: Admin de sistema.
 5. Motor de búsqueda: Admin de motor de búsqueda.
 6. Mis Turnos: Médico.
-7. Mis ajustes: Todos los usuarios.
+7. Mis Ajustes: Todos los usuarios.

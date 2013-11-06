@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
 		:password_confirmation, :remember_me, :authentication_token,
 		:sex, :address, :home_phone, :movile_phone, :medical_attributes, :medical,
 		:birthdate, :is_medical, :photo, :photo_content_type, :photo_file_size,
-		:photo_file_name, :_destroy, :role_ids
+		:photo_file_name, :_destroy, :role_ids, :roles
 
 	attr_accessor :login
 	attr_accessor :photo, :_destroy

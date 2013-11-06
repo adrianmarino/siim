@@ -371,7 +371,7 @@ en:
     medical: "Medical"
     appointment_manager: "Appointment Manager"
     search_engine_admin: "Search engine Admin"
-    medical_history_admin: "Medical Histories Admin"
+    system_admin: "System Admin"
     user_admin: "User Admin"
   sex:
     male: "Male"
@@ -469,3 +469,5 @@ en:
     confirm_delete: "Are you sure you want to delete the medical specialization?"
   users:
     confirm_delete: "Are you sure you want to delete the user?"
+  authorization:
+    access_denied: "You are not authorized to access this option."
