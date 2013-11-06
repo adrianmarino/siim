@@ -211,6 +211,8 @@ en:
         time: "Time"
         date: "Date"
     errors:
+      messages:
+        record_invalid: "Record Invalid"
       models:
         user:
           attributes:
