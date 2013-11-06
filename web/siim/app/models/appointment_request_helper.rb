@@ -8,7 +8,7 @@ class AppointmentRequestHelper
 
 	def medical
 		medical_param.empty? ? nil : Medical.find(medical_param)
-  end
+	end
 
 	def patient
 		patient_param.empty? ? nil : Patient.find(patient_param)

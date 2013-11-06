@@ -139,6 +139,7 @@ es:
         first_name: "Nombre"
         last_name: "Apellido"
         dni: "DNI"
+        roles: "Roles"
         email: "Correo electrónico"
         password: "Contraseña"
         medical: "Medico"
@@ -147,7 +148,7 @@ es:
         home_phone: "Teléfono Fijo"
         movile_phone: "Teléfono Móvil"
         birthdate: "Fecha de Nacimiento"
-        is_medical: "Es Medico?"
+        is_medical: "¿Es Medico?"
         medical_specialization: "Especialidad"
         registration_number: "Número de Matricula"
         current_password: "Contraseña Actual"
@@ -269,6 +270,8 @@ es:
             movile_phone:
               not_a_number: ": 'El número de télefono móvil ingresado no es númerico'"
               too_long: ": 'El número de télefono móvil debe contener maximo 20 dígitos'"
+            roles:
+              blank: ": 'Debe Seleccionar un role como minimo'"
         medical:
           attributes:
             firstname:
@@ -418,6 +421,12 @@ es:
         my_appointments: "Mis Turnos"
         user_settings: "Mis Ajustes"
         sign_out: "Salir"
+  role:
+    medical: "Médico"
+    appointment_manager: "Gestor de Turnos"
+    search_engine_admin: "Administrador de Busquedas"
+    system_admin: "Adminsitrador de Sistema"
+    user_admin: "Administrador de Usuarios"
   sex:
     male: "Masculino"
     female: "Femenino"
@@ -457,6 +466,9 @@ es:
       all:
         fame: "Todas"
         male: "Todos"
+    multiselect:
+      nothing: "Seleccione uno o mas"
+      selected: "{0} de {1} seleccionados"
     reserve_appointment:
       title: "Seleccione un paciente"
       back: "Volver"
@@ -511,3 +523,5 @@ es:
     index:
       title: "Administración de Usuarios"
     confirm_delete: "¿Está seguro que desea eliminar el usuario?"
+  authorization:
+    access_denied: "Usted no esta autorizado para acceder a esta opción."

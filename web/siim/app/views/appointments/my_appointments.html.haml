@@ -18,5 +18,5 @@
 								= link_to raw("<i class=\"icon-plus-sign\">&nbsp;#{t('appointment.action.attend')}</i>"), appointments_attend_path(:appointment => appointment.id), :class => "btn btn-small"
 							- elsif appointment.current_state == :on_attention
 								.btn-group-vertical
-									= link_to raw("<i class=\"icon-edit\">&nbsp;#{t('my_appointments.show_medical_history')}</i>"), appointments_show_medical_history_path(:appointment => appointment.id), :class => "btn btn-small"
+									= link_to raw("<i class=\"icon-edit\">&nbsp;#{t('my_appointments.show_medical_history')}</i>"), appointments_edit_related_medical_history_path(:appointment => appointment.id), :class => "btn btn-small"
 									= link_to raw("<i class=\"icon-minus-sign\">&nbsp;#{t('appointment.action.finalize')}</i>"), appointments_finalize_path(:appointment => appointment.id), :class => "btn btn-small", data: { confirm: t(:confirm) }

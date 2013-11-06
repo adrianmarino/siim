@@ -1,4 +1,5 @@
 class UsersController < CrudController
+	load_and_authorize_resource
 	# -------------------------------------------------------------------------
 	# Public Methods...
 	# -------------------------------------------------------------------------
@@ -40,7 +41,7 @@ class UsersController < CrudController
 		@user = User.new
 		@medical = @user.medical.new
 		@medical_specializations = medical_specializations
-
+		@roles = Role.all
 		@user.password = generate_activation_code(8)
 
 		respond_to do |format|
@@ -54,7 +55,8 @@ class UsersController < CrudController
 	def create
 		@user = User.new(params[:user])
 		@medical_specializations = medical_specializations
-		
+		@roles = Role.all
+
 		if !@user.is_medical
 			@user.medical.clear
 		end
@@ -67,12 +69,12 @@ class UsersController < CrudController
 			@user.medical.first.home_phone = @user.home_phone
 			@user.medical.first.movile_phone = @user.movile_phone
 		end
-			
+
 		respond_to do |format|
 			if @user.save
-				@user.inscription_at_system_mailer
 				format.html { redirect_to users_path, notice: CrudTranslations.model_was_created(@user) }
 				format.json { render json: @user, status: :created, location: @user }
+				@user.inscription_at_system_mailer
 			else
 				format.html { render action: "new" }
 				format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -85,13 +87,15 @@ class UsersController < CrudController
 		@user = User.find(params[:id])
 		@medical = @user.medical 
 		@medical_specializations = medical_specializations
+		@roles = Role.all
 	end
 
 	# PUT /users/1
 	# PUT /users/1.json
 	def update
 		@user = User.find(params[:id])
-		@medical = @user.medical 
+		@medical = @user.medical
+		@roles = Role.all
 
 		if @user.is_medical
 			@medical.first.firstname = @user.first_name

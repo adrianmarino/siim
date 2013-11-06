@@ -1,5 +1,5 @@
 app:
-  version: '0.9.6'
+  version: '0.9.9'
 
 mailer:
   password: 'Elnonocapo'
@@ -12,9 +12,7 @@ log_path:
   production: './log/production.log'
 
 search_engine:
-  user:
-    username: 'siim'
-    password: 'pa12SS'
+  plugin_url: 'http://siim:pa12SS@searchengine.nonosoft.com.ar/_plugin'
   highlight:
     begin: "<strong class=\"highlight\">"
     end: "</strong>"

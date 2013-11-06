@@ -1,6 +1,6 @@
 - content_for :table_header do
-  %th= translate_attribute(@entity_name,:number)
-  %th= translate_attribute(@entity_name,:dni)
-  %th= translate_attribute(@entity_name,:patient)
-  :javascript
-    function tableColumnSortdDefinition() { return [null, null, null, null]; }
+	%th= translate_attribute(@entity_name,:number)
+	%th= translate_attribute(@entity_name,:dni)
+	%th= translate_attribute(@entity_name,:patient)
+	:javascript
+		function tableColumnSortdDefinition() { return [null, null, null, null]; }
