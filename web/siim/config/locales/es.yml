@@ -427,7 +427,7 @@ es:
     medical: "Médico"
     appointment_manager: "Gestor de Turnos"
     search_engine_admin: "Administrador de Busquedas"
-    system_admin: "Adminsitrador de Sistema"
+    system_admin: "Administrador de Sistema"
     user_admin: "Administrador de Usuarios"
   sex:
     male: "Masculino"
