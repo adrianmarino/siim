@@ -9,46 +9,58 @@
         %a.brand{:href => '/', :title => t('app.description') }= t 'app.name'
         .nav-collapse.collapse
           %ul.nav{:role => "navigation"}
-            - if  current_user.has_role? :medical
+
+            - if can? :my_appointments, Appointment
               %li= link_to raw("<i class=\"icon-calendar\">&nbsp;&nbsp;#{t('menu.my_appointments')}</i>"), appointments_my_appointments_path, "tabindex" => "-1"
-            - if  current_user.has_role? :appointment_manager
+
+            - if  can?  :setup_search, Appointment
               %li= link_to raw("<i class=\"icon-calendar\">&nbsp;</i>#{t('menu.appointments')}"), appointments_setup_search_path, "tabindex" => "-1"
-            - if current_user.has_role? :medical or current_user.has_role? :appointment_manager
+
+            - if can?(:search_by_patient, :medical_history) or can?(:crud, MedicalHistory)
               %li.dropdown
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
                   %i.icon-book=" #{t 'menu.medical_history'}"
                   %b.caret
                 %ul.dropdown-menu
-                  - if current_user.has_role? :medical
+
+                  - if can? :crud, MedicalHistory
                     %li= link_to t('menu.sub_menu.medical_history.admin'), medical_histories_path, "tabindex" => "-1"
-                  - if current_user.has_role? :medical or current_user.has_role? :appointment_manager
+
+                  - if can? :search_by_patient, :medical_history
                     %li= link_to t('menu.sub_menu.medical_history.search'), search_by_patient_medical_histories_path, "tabindex" => "-1"
-            - if current_user.has_role? :medical or current_user.has_role? :search_engine_admin
+
+            - if can?(:custom_search, :medical_history) or can?(:view, :statistic)
               %li.dropdown
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
                   %i.icon-signal=" #{t 'menu.research'}"
                   %b.caret
                 %ul.dropdown-menu
-                  - if current_user.has_role? :medical or current_user.has_role? :search_engine_admin
+
+                  - if can? :custom_search, :medical_history
                     %li= link_to t('menu.sub_menu.research.custom_search'), custom_search_medical_histories_path, "tabindex" => "-1"
-                  - if current_user.has_role? :medical
+
+                  - if can? :view, :statistic
                     %li.divider
                     %li.nav-header=" #{t 'menu.sub_menu.research.statistics'}"
                     %li= link_to t('menu.sub_menu.research.sub_menu.statistics.simptoms'), statistics_setup_simptom_path, "tabindex" => "-1"
                     %li= link_to t('menu.sub_menu.research.sub_menu.statistics.diseases'), statistics_setup_disease_path, "tabindex" => "-1"
-            - if current_user.has_role? :search_engine_admin or current_user.has_role? :user_admin or current_user.has_role? :system_admin
+
+            - if can?(:crud, User) or can?(:crud, MedicalSpecialization) or can?(:admin, :search_engine)
               %li.dropdown
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
                   %i.icon-wrench=" #{t 'menu.administration'}"
                   %b.caret
                 %ul.dropdown-menu
                   -# %li= link_to t('menu.medicals'), medicals_path, "tabindex" => "-1"
-                  - if current_user.has_role? :user_admin
+
+                  - if can? :crud, User
                     %li= link_to t('menu.sub_menu.administration.manager_users'), users_path, "tabindex" => "-1"
-                  - if current_user.has_role? :system_admin
+
+                  - if can? :crud, MedicalSpecialization
                     %li= link_to t('menu.sub_menu.administration.medical_specializations'), "/medical_specializations", "tabindex" => "-1"
                     %li= link_to t('menu.sub_menu.administration.download_log'), log_download_path, "tabindex" => "-1"
-                  - if current_user.has_role? :search_engine_admin
+
+                  - if can? :admin, :search_engine
                     %li.divider
                     %li.nav-header=" #{t 'menu.sub_menu.administration.search_engine'}"
                     %li= link_to t('menu.sub_menu.administration.sub_menu.search_engine.head'), search_engine_administrate_path, "tabindex" => "-1"
@@ -64,7 +76,7 @@
                     %b= current_user
                     %b.caret
                   %ul.dropdown-menu{"aria-labelledby" => "dLabel", :role => "menu"}
-                    - if current_user.has_role? :medical
+                    - if can? :my_appointments, Appointment
                       %li= link_to raw("<i class=\"icon-calendar\">&nbsp;&nbsp;#{t('menu.sub_menu.session.my_appointments')}</i>"), appointments_my_appointments_path, "tabindex" => "-1"
                     %li= link_to raw("<i class=\"icon-info-sign icon-white\">&nbsp;&nbsp;#{t('menu.sub_menu.session.user_settings')}</i>"), edit_user_registration_path, "tabindex" => "-1"
                     %li.divider
