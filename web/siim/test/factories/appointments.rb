@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :appointment do
+	factory :appointment do
 		association :patient, factory: :patient, strategy: :build
 
 
@@ -42,5 +42,5 @@ FactoryGirl.define do
 			state :reserved
 			association :medical, :pediatrician, factory: :medical, strategy: :build
 		end
-  end
+	end
 end

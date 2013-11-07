@@ -366,8 +366,8 @@ en:
             inquisitor: "Query Debug"
             bigdesk: "Statistics"
       session:
-        my_appointments: "Mis turnos"
-        user_settings: "My Appointments"
+        my_appointments: "My Appointments"
+        user_settings: "Settings"
         sign_out: "Sign Out"
   role:
     medical: "Medical"
