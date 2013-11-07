@@ -1,5 +1,5 @@
 class AddLastnameIndexToPatient < ActiveRecord::Migration
 	def change
-		add_index :patients, :last_name
+		add_index :patients, :lastname
 	end
 end
