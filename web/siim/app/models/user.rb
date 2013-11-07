@@ -51,17 +51,18 @@ class User < ActiveRecord::Base
 	# -------------------------------------------------------------------------
 	# Validations...
 	# -------------------------------------------------------------------------
-	validates :dni, length: { minimum: 7, maximum: 10 }, :uniqueness => true, :presence => true
-	#validates :home_phone, :movile_phone, length: { maximum: 20 } 
-	#validates :home_phone, :movile_phone, :numericality => true 
-	validates :first_name, :last_name, length: { maximum: 30 }, :presence => true 
+	validates :dni, length: { minimum: 7, maximum: 10 }, :uniqueness => true, :presence => true, :numericality => true 
+	validates :home_phone, :movile_phone, length: { maximum: 20 } 
+	validates :home_phone, :movile_phone, :numericality => true, allow_blank: true 
+	validates :first_name, :last_name, length: { maximum: 30 }, :presence => true
+	validates :address, length: { maximum: 100 }
 	validates :email, :presence => true, :email => true
 	validates_presence_of :roles
 
 	# -------------------------------------------------------------------------
 	# Associations...
 	# -------------------------------------------------------------------------
-	has_one :medical
+	has_many :medical
 	has_many :assignments
 	has_many :roles, :through => :assignments
 	has_attached_file :photo, :styles => {:medium => "200x200>", :small => "45x41>"}, 

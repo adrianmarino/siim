@@ -13,6 +13,7 @@
 				= nested_text f, :address
 				= nested_text f, :home_phone
 				= nested_text f,:movile_phone
+				= f.hidden_field :password
 			.span5
 				.control-group
 					.controls= show_photo @user.photo.url :medium
