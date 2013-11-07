@@ -12,7 +12,7 @@ module AcceptanceTest
 	def setup
 		hide_test_output
 		@driver = Selenium::WebDriver.for :firefox
-		@driver.manage.timeouts.implicit_wait = 60
+		@driver.manage.timeouts.implicit_wait = 120
 		@base_url = "http://localhost:3000"
 	end
 
