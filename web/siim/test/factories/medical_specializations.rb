@@ -1,10 +1,14 @@
 FactoryGirl.define do
 	factory :medical_specialization do
 		trait :clinic do
-			name "Clinic"
+			sequence :name do |n|
+				"Clinic#{n.to_s}"
+			end
 		end
 		trait :pediatrician do
-			name "Pediatrician"
+			sequence :name do |n|
+				"Pediatrician#{n.to_s}"
+			end
 		end
 	end
 end

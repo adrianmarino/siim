@@ -1,11 +1,15 @@
 FactoryGirl.define do
   factory :patient do
     sequence :dni do |n|
-      n.to_s
+     "2904290#{n}"
+    end
+    sequence :firstname do |n|
+      "Adrian#{n}"
+    end
+    sequence :lastname do |n|
+      "Marino#{n}"
     end
 
-    firstname "Adrian"
-    lastname "Marino"
     birthdate Date.new(1981,9,22)
     height "1.76"
     weight "70"
