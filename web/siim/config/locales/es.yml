@@ -33,7 +33,7 @@ es:
   photo:
     title: "Seleccionar Imagen"
   email:
-    invalid: ": 'La dirección de correo electrónico es invalida'"
+    invalid: ": 'La dirección de correo electrónico ingresado es invalido'"
   error: "error"
   errors: 
     messages:
@@ -238,8 +238,6 @@ es:
         time: "Tiempo"
         date: "Fecha"
     errors:
-      messages:
-        record_invalid: "Registro Invalido"
       models:
         user:
           attributes:
@@ -256,7 +254,7 @@ es:
             password_confirmation:
               too_short: ": 'Su confirmación de contraseña debe contener mínimo 8 caracteres'"
             confirmation_token:
-              invalid: ": 'invalido'"
+              invalid: ": 'La confirmación ingresada es invalida'"
             reset_password_token:
               invalid: "Las contraseñas ingresadas no coinciden. Intente nuevamente"  
             dni:
@@ -264,8 +262,10 @@ es:
               blank: ": 'Debe ingresar el DNI'"
               too_short: ": 'El DNI debe contener mínimo 7 dígitos'"
               too_long: ": 'El DNI debe contener máximo 10 dígitos'"
+              not_a_number: ": 'El DNI ingresado no es númerico'"
             email:
               not_found: ": 'No es un correo electrónico registrado'"
+              invalid:  ": 'El correo electrónico ingresado no es valido'"
             home_phone:
               not_a_number: ": 'El número de télefono ingresado no es númerico'"
               too_long: ": 'El número de télefono debe contener máximo 20 dígitos'" 
@@ -527,4 +527,3 @@ es:
     confirm_delete: "¿Está seguro que desea eliminar el usuario?"
   authorization:
     access_denied: "Usted no esta autorizado para acceder a esta opción."
-
