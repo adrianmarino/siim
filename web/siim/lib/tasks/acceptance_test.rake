@@ -3,8 +3,8 @@ task :setup_display, [ :display ] => :environment do |t, args|
 end
 
 task :reset_db do |t, args|
-	Rake::Task['db:reset'].invoke
 	Rake::Task['db:migrate'].invoke
+	Rake::Task['db:reset'].invoke
 end
 
 task :migrate_db do |t, args|
