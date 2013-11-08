@@ -1,4 +1,4 @@
 FactoryGirl.define do
-  factory :medical_history do
-  end
+	factory :medical_history do
+	end
 end
