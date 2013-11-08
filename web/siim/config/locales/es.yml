@@ -44,6 +44,7 @@ es:
 
   save_error: "Un error impide que la acción se pueda realizar"
   login_as: "Logueado como"
+  sign_out: "Salir"
   sign_out_question: "¿Realmente desea salir?"
   no_: "No"
   yes_: "Si"
