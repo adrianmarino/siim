@@ -39,8 +39,7 @@ class User < ActiveRecord::Base
 		:birthdate, :is_medical, :photo, :photo_content_type, :photo_file_size,
 		:photo_file_name, :_destroy, :role_ids, :roles
 
-	attr_accessor :login
-	attr_accessor :photo, :_destroy
+	attr_accessor :login, :photo, :_destroy, :home_phone, :movile_phone, :address
 
 	# -------------------------------------------------------------------------
 	# Authorization Attributes...
@@ -52,8 +51,8 @@ class User < ActiveRecord::Base
 	# Validations...
 	# -------------------------------------------------------------------------
 	validates :dni, length: { minimum: 7, maximum: 10 }, :uniqueness => true, :presence => true, :numericality => true 
-	validates :home_phone, :movile_phone, length: { maximum: 20 } 
-	validates :home_phone, :movile_phone, :numericality => true, allow_blank: true 
+	validates :home_phone, :movile_phone, length: { maximum: 20 }
+	validates :home_phone, :movile_phone, :numericality => true, allow_blank: true
 	validates :first_name, :last_name, length: { maximum: 30 }, :presence => true
 	validates :address, length: { maximum: 100 }
 	validates :email, :presence => true, :email => true
