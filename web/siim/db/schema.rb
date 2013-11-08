@@ -108,11 +108,7 @@ ActiveRecord::Schema.define(:version => 20131106224525) do
     t.datetime "updated_at", :null => false
   end
 
-  add_index "medical_specializations", ["name"], :name => "index_medical_specializations_on_name"
-
   create_table "medicals", :force => true do |t|
-    t.string  "registration_number"
-    t.integer "user_id"
     t.string  "cuil",                          :default => "", :null => false
     t.string  "dni",                           :default => "", :null => false
     t.string  "firstname",                     :default => "", :null => false
@@ -164,6 +160,8 @@ ActiveRecord::Schema.define(:version => 20131106224525) do
   end
 
   add_index "patients", ["dni"], :name => "index_patients_on_dni"
+  add_index "patients", ["firstname"], :name => "index_patients_on_firstname"
+  add_index "patients", ["lastname"], :name => "index_patients_on_lastname"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -181,16 +179,6 @@ ActiveRecord::Schema.define(:version => 20131106224525) do
   add_index "system_properties", ["name"], :name => "index_system_properties_on_name", :unique => true
 
   create_table "users", :force => true do |t|
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-    t.datetime "birthdate"
-    t.boolean  "is_medical"
-    t.string   "movile_phone"
-    t.string   "home_phone"
-    t.string   "address"
-    t.string   "sex"
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
@@ -216,8 +204,6 @@ ActiveRecord::Schema.define(:version => 20131106224525) do
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["dni"], :name => "index_users_on_dni", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["first_name"], :name => "index_users_on_first_name"
-  add_index "users", ["last_name"], :name => "index_users_on_last_name"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "vaccines", :force => true do |t|
