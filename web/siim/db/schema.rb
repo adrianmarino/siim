@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131106224525) do
+ActiveRecord::Schema.define(:version => 20131109211132) do
 
   create_table "allergies", :force => true do |t|
     t.string   "cause"
@@ -119,6 +119,8 @@ ActiveRecord::Schema.define(:version => 20131106224525) do
     t.integer "medical_specialization_id"
     t.integer "attention_time_length_hour"
     t.integer "attention_time_length_minutes"
+    t.integer "user_id"
+    t.string  "registration_number"
   end
 
   add_index "medicals", ["cuil"], :name => "index_medicals_on_cuil", :unique => true

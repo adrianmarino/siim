@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 		end
 	end
 
-	def is_medical?
+	def is_medical
 		not self.medical.nil?
 	end
 
@@ -39,7 +39,8 @@ class User < ActiveRecord::Base
 		:birthdate, :is_medical, :photo, :photo_content_type, :photo_file_size,
 		:photo_file_name, :_destroy, :role_ids, :roles
 
-	attr_accessor :login, :photo, :_destroy, :home_phone, :movile_phone, :address
+	attr_accessor :login, :photo, :_destroy, :home_phone, :movile_phone, :address,
+		:sex, :birthdate, :is_medical
 
 	# -------------------------------------------------------------------------
 	# Authorization Attributes...
