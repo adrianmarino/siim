@@ -159,22 +159,6 @@ class MedicalHistory < ActiveRecord::Base
 		} do
 			mapping do
 				indexes :patient do
-					indexes :firstname,
-									type: 'multi_field',
-									fields:{
-											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
-											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
-											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
-											"title"					=>{type:"string", analyzer: "full_name"}
-									}
-					indexes :lastname,
-									type: 'multi_field',
-									fields:{
-											"partial"				=>{ type:"string",search_analyzer:"full_name",index_analyzer:"partial_name"},
-											"partial_back"	=>{type: "string",index_analyzer:"partial_name_back",search_analyzer:"full_name"},
-											"partial_middle"=>{type:"string",index_analyzer:"partial_middle_name",search_analyzer:"full_name"},
-											"title"					=>{type:"string", analyzer: "full_name"}
-									}
 					indexes :birthdate,
 									type: 'multi_field',
 									fields:{

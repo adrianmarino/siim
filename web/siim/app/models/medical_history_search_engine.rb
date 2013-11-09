@@ -18,16 +18,6 @@ module MedicalHistorySearchEngine
 			query do
 				boolean do
 					# Patient
-					should {string "patient.firstname.title:#{search_string}"}
-					should {string "patient.firstname.partial_middle:#{search_string}"}
-					should {string "patient.firstname.partial_back:#{search_string}"}
-					should {string "patient.firstname.partial:#{search_string}"}
-
-					should {string "patient.lastname.title:#{search_string}"}
-					should {string "patient.lastname.partial_middle:#{search_string}"}
-					should {string "patient.lastname.partial_back:#{search_string}"}
-					should {string "patient.lastname.partial:#{search_string}"}
-
 					should {string "patient.birthdate.title:#{search_string}"}
 					should {string "patient.birthdate.partial_middle:#{search_string}"}
 					should {string "patient.birthdate.partial_back:#{search_string}"}
@@ -131,15 +121,7 @@ module MedicalHistorySearchEngine
 					should {string "medical_exams.observations.partial:#{search_string}"}
 				end
 			end
-			highlight "patient.firstname.title",
-								"patient.firstname.partial_middle",
-								"patient.firstname.partial_back",
-
-								"patient.lastname.title",
-								"patient.lastname.partial_middle",
-								"patient.lastname.partial_back",
-
-								"patient.birthdate.title",
+			highlight	"patient.birthdate.title",
 								"patient.birthdate.partial_middle",
 								"patient.birthdate.partial_back",
 
