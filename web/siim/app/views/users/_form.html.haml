@@ -1,0 +1,41 @@
+= nested_form_for @user, :html => { :class => 'well form-horizontal', :multipart => true } do |f|
+	= errors
+	%fieldset.user-form
+		.row-fliud
+			.span5
+				= text f, :dni
+				= mail	f, :email
+				= select_many f, :roles, @roles.size
+				= text f, :first_name
+				= text f, :last_name
+				= select_box f, :sex, sex_values
+				= datepicker f, :birthdate
+				= text f, :address
+				= text f, :home_phone
+				= text f,:movile_phone
+				= f.hidden_field :password
+			.span5
+				.control-group
+					.controls= show_photo @user.photo.url :medium
+				= photo_field f, :photo, :user
+				.hide#divMedical
+					= render :partial => 'medical_form', :locals => {:form => f};
+
+	.form-actions
+		= back_button list_path
+		= submit f
+:javascript
+	$(document).on('change', '#user_role_ids', function(){
+		var selected_role_ids = $("#user_role_ids").val();
+		var medical_role_id = '#{@medical_role.id}';
+
+		if($.inArray(medical_role_id, selected_role_ids) > -1)
+			$('#divMedical').show();
+		else
+			$('#divMedical').hide();
+	});
+	$(document).ready(function() {
+		if(#{@has_medical_role}) {
+			$('#divMedical').show();
+		}
+	});

@@ -248,11 +248,3 @@ $(document).on('nested:fieldAdded', function(event){
   });
 });
 
-$(document).on('click', '#user_is_medical', function() {
-    var isChecked = $('#user_is_medical').is(':checked');
-    if(isChecked) {
-        $('#divMedical').show();
-    } else {
-        $('#divMedical').hide();
-    }
-});

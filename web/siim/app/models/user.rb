@@ -19,6 +19,14 @@ class User < ActiveRecord::Base
 		end
 	end
 
+	def is_medical?
+		self.has_role? :medical
+	end
+
+	def setup_password
+		self.password = PasswordGenerator.password(8)
+	end
+
 	# -------------------------------------------------------------------------
 	# Private Methods
 	# -------------------------------------------------------------------------
@@ -32,7 +40,7 @@ class User < ActiveRecord::Base
 	attr_accessible :login, :first_name, :last_name, :dni, :email, :password,
 		:password_confirmation, :remember_me, :authentication_token,
 		:sex, :address, :home_phone, :movile_phone, :medical_attributes, :medical,
-		:birthdate, :is_medical, :photo, :photo_content_type, :photo_file_size,
+		:birthdate, :photo, :photo_content_type, :photo_file_size,
 		:photo_file_name, :_destroy, :role_ids, :roles
 
 	attr_accessor :login, :_destroy
@@ -46,7 +54,7 @@ class User < ActiveRecord::Base
 	# -------------------------------------------------------------------------
 	# Validations...
 	# -------------------------------------------------------------------------
-	validates :dni, length: { minimum: 7, maximum: 10 }, :uniqueness => true, :presence => true, :numericality => true 
+	validates :dni, length: { minimum: 7, maximum: 10 }, :uniqueness => true, :presence => true, :numericality => true
 	validates :home_phone, :movile_phone, length: { maximum: 20 }
 	validates :home_phone, :movile_phone, :numericality => true, allow_blank: true
 	validates :first_name, :last_name, length: { maximum: 30 }, :presence => true

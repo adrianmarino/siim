@@ -54,7 +54,7 @@ class AppointmentController < ApplicationController
 	end
 
 	def my_appointments
-		if current_user.is_medical
+		if current_user.is_medical?
 			@appointments = Appointment.today_of current_user.medical
 			render appointments_my_appointments_path
 		else

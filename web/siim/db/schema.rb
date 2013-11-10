@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131110000810) do
+ActiveRecord::Schema.define(:version => 20131110201540) do
 
   create_table "allergies", :force => true do |t|
     t.string   "cause"
@@ -206,7 +206,6 @@ ActiveRecord::Schema.define(:version => 20131110000810) do
     t.string   "movile_phone"
     t.string   "birthdate"
     t.string   "sex"
-    t.boolean  "is_medical"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"

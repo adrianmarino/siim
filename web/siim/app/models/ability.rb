@@ -46,7 +46,10 @@ class Ability
 	end
 
 	def setup_user_admin_privileges(an_user)
-		can :crud, User if an_user.has_role? :user_admin
+		if an_user.has_role? :user_admin
+			can :crud, User
+			can :send_password, User
+		end
 	end
 
 	def setup_system_admin_privileges(an_user)
