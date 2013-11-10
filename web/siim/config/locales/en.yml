@@ -456,6 +456,7 @@ en:
     disease:
       title: "Diseases Statistics"
       disease: "Disease"
+      empty_disease: "You must enter a disease."
       year: "Year"
       result:
         title: "Results"
@@ -463,10 +464,13 @@ en:
     simptomp:
       title: "Simptomps Statistics"
       simptomp: "Simptomp"
+      empty_simptomp: "You must enter a simptomp."
       year: "Year"
       result:
         title: "Results"
         percentage: "Percentage of population affected by the symptom"
+  appointment:
+    successfully_reserved: "Appointment successfully reserved."
   medical_specialization:
     confirm_delete: "Are you sure you want to delete the medical specialization?"
   users:

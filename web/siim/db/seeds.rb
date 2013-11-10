@@ -469,48 +469,56 @@ medical_history_a.consultations.create(
 	achievement_date: '22-08-2013',
 	diagnostic: 'Fractura expuesta de tobillo',
 	symptomps: 'Dificulta al caminar',
-	treatment: 'Enyesado. Reposo por 2 meses'
+	treatment: 'Enyesado. Reposo por 2 meses',
+	medical: medical_a
 )
 medical_history_a.consultations.create(
 	achievement_date: '23-08-2013',
 	diagnostic: 'Gripe Aviar H1N1',
 	symptomps: 'Fiebre alta de más de 38 grados, dificultad respiratoria, tos, malestar general.',
-	treatment: 'Tamiflú y Ralenza'
+	treatment: 'Tamiflú y Ralenza',
+	medical: medical_b
 )
 medical_history_b.consultations.create(
 	achievement_date: '22-08-2013',
 	diagnostic: 'Descompesación gastrica menor',
 	symptomps: 'Mareos y vómito',
-	treatment: 'Reliveran'
+	treatment: 'Reliveran',
+	medical: medical_a
 )
 medical_history_b.consultations.create(
 	achievement_date: '23-08-2013',
 	diagnostic: '',
 	symptomps: 'volito,	mareos',
-	treatment: 'Tratamiento 1'
+	treatment: 'Tratamiento 1',
+	medical: medical_b
 )
 medical_history_c.consultations.create(
 	achievement_date: '23-08-2013',
 	diagnostic: 'Embarazo',
-	symptomps: ' Aversión a ciertos alimentos, Cambios de humor, Hinchazón abdominal,Ganas de orinar frecuentemente, Cansancio, Sensibilidad e hinchazón en los senos, Náuseas, Retraso de la menstruación, Tu temperatura basal permanece elevada.'
+	symptomps: ' Aversión a ciertos alimentos, Cambios de humor, Hinchazón abdominal,Ganas de orinar frecuentemente, Cansancio, Sensibilidad e hinchazón en los senos, Náuseas, Retraso de la menstruación, Tu temperatura basal permanece elevada.',
+	medical: medical_b
 )
 medical_history_c.consultations.create(
 	achievement_date: '23-08-2013',
 	diagnostic: 'Gripe Aviar',
 	symptomps: 'Tos, mas de 38 grados de fiebre y dificultad respiratoria.',
-	treatment: 'Tamiflú o Ralenza'
+	treatment: 'Tamiflú o Ralenza',
+	medical: medical_a
 )
 medical_history_d.consultations.create(
 	achievement_date: '23-08-2013',
 	diagnostic: 'Descompesación gastrica menor',
 	symptomps: 'vómito y mareos.',
-	treatment: 'Reliveran'
+	treatment: 'Reliveran',
+	medical: medical_b
 )
 medical_history_d.consultations.create(
 	achievement_date: '23-08-2013',
 	diagnostic: 'Psoriasis',
 	symptomps: 'Manchas enrojecidas en la piel de mediano tammaño y escamosas. Con protuberancias alrededor de la zona afectada.',
-	treatment: 'Farmacos via oral y cremas.'
+	treatment: 'Farmacos via oral y cremas.',
+	medical: medical_a
 )
 # -----------------------------------------------------------------------------
 #

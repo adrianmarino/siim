@@ -509,6 +509,7 @@ es:
     disease:
       title: "Estadísticas por enfermedad"
       disease: "Enfermedad"
+      empty_disease: "Debe ingresar una enfermedad."
       year: "Año"
       result:
         title: "Resultatos"
@@ -516,10 +517,13 @@ es:
     simptomp:
       title: "Estadísticas por síntomas"
       simptomp: "Síntoma"
+      empty_simptomp: "Debe ingresar un sintoma."
       year: "Año"
       result:
         title: "Resultatos"
         percentage: "Porcentaje de la poblacion afectada por el síntoma"
+  search_appointment:
+    successfully_reserved: "El túrno se reservo exitosamente."
   medical_specialization:
     confirm_delete: "¿Está seguro que desea eliminar la especialidad médica?"
   users:

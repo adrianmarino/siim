@@ -23,7 +23,11 @@ class AppointmentController < ApplicationController
 		helper = request_helper
 		appointment = helper.appointment
 		patient = helper.appointment_patient
-		appointment.reserve_and_save(patient) if not appointment.nil?
+
+		if not appointment.nil?
+			appointment.reserve_and_save(patient)
+			flash[:notice] = t 'search_appointment.successfully_reserved'
+		end
 		search
 	end
 
@@ -50,9 +54,12 @@ class AppointmentController < ApplicationController
 	end
 
 	def my_appointments
-		redirect_to(root_path) unless current_user.is_medical?
-		@appointments = Appointment.today_of current_user.medical
-		render appointments_my_appointments_path
+		if current_user.is_medical?
+			@appointments = Appointment.today_of current_user.medical
+			render appointments_my_appointments_path
+		else
+			redirect_to(root_path)
+		end
 	end
 
 	def edit_related_medical_history

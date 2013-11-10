@@ -15,9 +15,13 @@ Siim::Application.routes.draw do
 
 	root :to => "home#index"
 
-	resources :users
+	resources :users do
+		get :send_password,											on: :collection
+	end
+
 	resources :medicals
 	resources :medical_specializations
+
 	resources :medical_histories do
 		get		:search_by_dni,											on: :collection
 		get		:search_by_patient,									on: :collection

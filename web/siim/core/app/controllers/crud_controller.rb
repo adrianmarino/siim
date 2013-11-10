@@ -26,8 +26,13 @@ class CrudController < ApplicationController
 		end
 
 		def layout_selector
-			CrudLayoutSelector.new(crud_layouts, logger).layout_of requested_action
+			new_layout_selector.layout_of requested_action
 		end
+
+		def new_layout_selector
+			CrudLayoutSelector.new(crud_layouts, logger)
+		end
+
 		def hide_remove_action
 			@hide_remove_action = true
 		end

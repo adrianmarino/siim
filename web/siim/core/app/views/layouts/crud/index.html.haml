@@ -15,6 +15,7 @@
 					= render :partial => "#{@plural_entity_name}/table_row", :locals => { eval(":#{@entity_name}") => entity }
 					%td.options
 						.btn-group
+							= yield :extra_options
 							- if not @hide_view_action
 								= view_button(entity)
 							- if not @hide_edit_action

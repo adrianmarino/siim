@@ -21,6 +21,7 @@ class StatisticController < ApplicationController
 			@years = Consultation.all_achievement_years
 			render 'simptoms_statictics'
 		else
+			flash[:alert] = t "statistics.simptomp.empty_simptomp"
 			setup_simptom
 		end
 	end
@@ -43,6 +44,7 @@ class StatisticController < ApplicationController
 			@years = Disease.all_record_years
 			render 'diseases_statictics'
 		else
+			flash[:alert] = t  t "statistics.disease.empty_disease"
 			setup_disease
 		end
 	end

@@ -20,7 +20,11 @@ class User < ActiveRecord::Base
 	end
 
 	def is_medical?
-		not self.medical.nil?
+		self.has_role? :medical
+	end
+
+	def setup_password
+		self.password = PasswordGenerator.password(8)
 	end
 
 	# -------------------------------------------------------------------------
@@ -36,10 +40,10 @@ class User < ActiveRecord::Base
 	attr_accessible :login, :first_name, :last_name, :dni, :email, :password,
 		:password_confirmation, :remember_me, :authentication_token,
 		:sex, :address, :home_phone, :movile_phone, :medical_attributes, :medical,
-		:birthdate, :is_medical, :photo, :photo_content_type, :photo_file_size,
+		:birthdate, :photo, :photo_content_type, :photo_file_size,
 		:photo_file_name, :_destroy, :role_ids, :roles
 
-	attr_accessor :login, :photo, :_destroy, :home_phone, :movile_phone, :address
+	attr_accessor :login, :_destroy
 
 	# -------------------------------------------------------------------------
 	# Authorization Attributes...
@@ -50,7 +54,7 @@ class User < ActiveRecord::Base
 	# -------------------------------------------------------------------------
 	# Validations...
 	# -------------------------------------------------------------------------
-	validates :dni, length: { minimum: 7, maximum: 10 }, :uniqueness => true, :presence => true, :numericality => true 
+	validates :dni, length: { minimum: 7, maximum: 10 }, :uniqueness => true, :presence => true, :numericality => true
 	validates :home_phone, :movile_phone, length: { maximum: 20 }
 	validates :home_phone, :movile_phone, :numericality => true, allow_blank: true
 	validates :first_name, :last_name, length: { maximum: 30 }, :presence => true
@@ -61,7 +65,7 @@ class User < ActiveRecord::Base
 	# -------------------------------------------------------------------------
 	# Associations...
 	# -------------------------------------------------------------------------
-	has_many :medical
+	has_one :medical, :dependent => :destroy
 	has_many :assignments
 	has_many :roles, :through => :assignments
 	has_attached_file :photo, :styles => {:medium => "200x200>", :small => "45x41>"}, 
