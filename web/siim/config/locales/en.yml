@@ -469,6 +469,8 @@ en:
       result:
         title: "Results"
         percentage: "Percentage of population affected by the symptom"
+  appointment:
+    successfully_reserved: "Appointment successfully reserved."
   medical_specialization:
     confirm_delete: "Are you sure you want to delete the medical specialization?"
   users:

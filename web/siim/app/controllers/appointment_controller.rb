@@ -23,7 +23,11 @@ class AppointmentController < ApplicationController
 		helper = request_helper
 		appointment = helper.appointment
 		patient = helper.appointment_patient
-		appointment.reserve_and_save(patient) if not appointment.nil?
+
+		if not appointment.nil?
+			appointment.reserve_and_save(patient)
+			flash[:notice] = t 'search_appointment.successfully_reserved'
+		end
 		search
 	end
 
