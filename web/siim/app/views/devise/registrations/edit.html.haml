@@ -20,7 +20,11 @@
               .controls= f.text_field :last_name
             .control-group
               = f.label translate_and_mark(:user, :birthdate), :class => 'control-label'
-              .controls= f.text_field :birthdate
+              .controls
+                .input-prepend.date#datepicker
+                  %spam.add-on
+                    %i.icon-calendar
+                  = f.text_field :birthdate, "data-behaviour"=>"datepicker", "language" => "es", :readonly => :readonly, :class => "input-date"
             .control-group
               = f.label translate_and_mark(:user, :sex), :class => 'control-label'
               .controls= f.text_field :sex
