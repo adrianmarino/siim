@@ -19,10 +19,6 @@ class User < ActiveRecord::Base
 		end
 	end
 
-	def is_medical
-		not self.medical.nil?
-	end
-
 	# -------------------------------------------------------------------------
 	# Private Methods
 	# -------------------------------------------------------------------------
@@ -39,8 +35,7 @@ class User < ActiveRecord::Base
 		:birthdate, :is_medical, :photo, :photo_content_type, :photo_file_size,
 		:photo_file_name, :_destroy, :role_ids, :roles
 
-	attr_accessor :login, :photo, :_destroy, :home_phone, :movile_phone, :address,
-		:sex, :birthdate, :is_medical
+	attr_accessor :login, :_destroy
 
 	# -------------------------------------------------------------------------
 	# Authorization Attributes...
@@ -62,7 +57,7 @@ class User < ActiveRecord::Base
 	# -------------------------------------------------------------------------
 	# Associations...
 	# -------------------------------------------------------------------------
-	has_many :medical
+	has_one :medical, :dependent => :destroy
 	has_many :assignments
 	has_many :roles, :through => :assignments
 	has_attached_file :photo, :styles => {:medium => "200x200>", :small => "45x41>"}, 

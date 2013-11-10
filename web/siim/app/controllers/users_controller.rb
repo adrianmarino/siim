@@ -39,7 +39,7 @@ class UsersController < CrudController
 	# GET /users/new.json
 	def new
 		@user = User.new
-		@medical = @user.medical.new
+		@user.medical= Medical.new
 		@medical_specializations = medical_specializations
 		@roles = Role.all
 		@user.password = generate_activation_code(8)
@@ -57,17 +57,15 @@ class UsersController < CrudController
 		@medical_specializations = medical_specializations
 		@roles = Role.all
 
-		if !@user.is_medical
-			@user.medical.clear
-		end
-
 		if @user.is_medical
-			@user.medical.first.firstname = @user.first_name
-			@user.medical.first.lastname = @user.last_name
-			@user.medical.first.dni = @user.dni
-			@user.medical.first.email = @user.email
-			@user.medical.first.home_phone = @user.home_phone
-			@user.medical.first.movile_phone = @user.movile_phone
+			@user.medical.firstname = @user.first_name
+			@user.medical.lastname = @user.last_name
+			@user.medical.dni = @user.dni
+			@user.medical.email = @user.email
+			@user.medical.home_phone = @user.home_phone
+			@user.medical.movile_phone = @user.movile_phone
+		else
+			@user.medical = nil
 		end
 
 		respond_to do |format|
@@ -85,7 +83,7 @@ class UsersController < CrudController
 	# GET /users/1/edit
 	def edit
 		@user = User.find(params[:id])
-		@medical = @user.medical 
+		@medical = @user.medical
 		@medical_specializations = medical_specializations
 		@roles = Role.all
 	end
@@ -98,12 +96,12 @@ class UsersController < CrudController
 		@roles = Role.all
 
 		if @user.is_medical
-			@medical.first.firstname = @user.first_name
-			@medical.first.lastname = @user.last_name
-			@medical.first.dni = @user.dni
-			@medical.first.email = @user.email
-			@medical.first.home_phone = @user.home_phone
-			@medical.first.movile_phone = @user.movile_phone
+			@medical.firstname = @user.first_name
+			@medical.lastname = @user.last_name
+			@medical.dni = @user.dni
+			@medical.email = @user.email
+			@medical.home_phone = @user.home_phone
+			@medical.movile_phone = @user.movile_phone
 		end
 
 		respond_to do |format|

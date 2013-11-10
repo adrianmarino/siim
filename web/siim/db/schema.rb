@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131109211132) do
+ActiveRecord::Schema.define(:version => 20131110000810) do
 
   create_table "allergies", :force => true do |t|
     t.string   "cause"
@@ -133,10 +133,10 @@ ActiveRecord::Schema.define(:version => 20131109211132) do
     t.string   "dose"
     t.string   "how_often"
     t.string   "route"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                                        :null => false
+    t.datetime "updated_at",                                        :null => false
     t.integer  "medical_history_id"
-    t.decimal  "amount"
+    t.decimal  "amount",             :precision => 10, :scale => 0
   end
 
   create_table "patients", :force => true do |t|
@@ -201,6 +201,16 @@ ActiveRecord::Schema.define(:version => 20131109211132) do
     t.string   "last_name",              :default => "", :null => false
     t.string   "dni",                    :default => "", :null => false
     t.string   "authentication_token"
+    t.string   "address"
+    t.string   "home_phone"
+    t.string   "movile_phone"
+    t.string   "birthdate"
+    t.string   "sex"
+    t.boolean  "is_medical"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
