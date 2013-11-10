@@ -69,7 +69,9 @@ class UsersController < CrudController
 				@user.medical = nil unless @has_medical_role
 				format.html { redirect_to users_path, notice: CrudTranslations.model_was_created(@user) }
 				format.json { render json: @user, status: :created, location: @user }
-				@user.inscription_at_system_mailer
+				Thread.new do
+					@user.inscription_at_system_mailer
+				end
 			else
 				format.html { render action: "new" }
 				format.json { render json: @user.errors, status: :unprocessable_entity }
