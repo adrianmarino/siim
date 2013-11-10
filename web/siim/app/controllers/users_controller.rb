@@ -70,7 +70,6 @@ class UsersController < CrudController
 				format.html { redirect_to users_path, notice: CrudTranslations.model_was_created(@user) }
 				format.json { render json: @user, status: :created, location: @user }
 				@user.inscription_at_system_mailer
-				binding.pry
 			else
 				format.html { render action: "new" }
 				format.json { render json: @user.errors, status: :unprocessable_entity }
