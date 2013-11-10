@@ -456,6 +456,7 @@ en:
     disease:
       title: "Diseases Statistics"
       disease: "Disease"
+      empty_disease: "You must enter a disease."
       year: "Year"
       result:
         title: "Results"
@@ -463,6 +464,7 @@ en:
     simptomp:
       title: "Simptomps Statistics"
       simptomp: "Simptomp"
+      empty_simptomp: "You must enter a simptomp."
       year: "Year"
       result:
         title: "Results"

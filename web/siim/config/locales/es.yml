@@ -509,6 +509,7 @@ es:
     disease:
       title: "Estadísticas por enfermedad"
       disease: "Enfermedad"
+      empty_disease: "Debe ingresar una enfermedad."
       year: "Año"
       result:
         title: "Resultatos"
@@ -516,6 +517,7 @@ es:
     simptomp:
       title: "Estadísticas por síntomas"
       simptomp: "Síntoma"
+      empty_simptomp: "Debe ingresar un sintoma."
       year: "Año"
       result:
         title: "Resultatos"
