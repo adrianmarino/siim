@@ -1,12 +1,12 @@
 - disease_number = 0
 %div
-  = form.fields_for :diseases do |f|
-    - disease_number+=1
-    %div.nested-form-panel
-      - if disease_number > @diseases_count
-        = f.link_to_remove t('form.nested.delete')
-      .row-fluid
-        .span4= nested_datepicker f, :record_date, :disease
-        .span4= nested_text f, :name, :disease
-      .row-fluid= nested_big_text f, :observations, :allergy, "disease-observations"
-  = form.link_to_add t('form.nested.add'), :diseases
+	= form.fields_for :diseases do |f|
+		- disease_number+=1
+		%div.nested-form-panel
+			- if disease_number > @diseases_count
+				= f.link_to_remove t('form.nested.delete')
+			.row-fluid
+				.span4= nested_datepicker f, :record_date, :disease
+				.span4= nested_text f, :name, :disease
+			.row-fluid= nested_big_text f, :observations, :allergy, "disease-observations"
+	= form.link_to_add t('form.nested.add'), :diseases

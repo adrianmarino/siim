@@ -1,15 +1,15 @@
 - consultation_number = 0
 %div#consultations
-  = form.fields_for :consultations do |f|
-    - consultation_number+=1
-    %div.nested-form-panel
-      -if consultation_number > @consultations_count
-        = f.link_to_remove t('form.nested.delete')
-      .row-fluid
-        .span4= nested_datepicker f, :achievement_date, :consultation
-        .span4= nested_select_one f, :medical, :consultation
-      .row-fluid
-        = nested_big_text f, :symptomps, :consultation, :symptomps
-        = nested_big_text f, :diagnostic, :consultation, :diagnostic
-        = nested_big_text f, :treatment, :consultation, :treatment
-  = form.link_to_add t('form.nested.add'), :consultations
+	= form.fields_for :consultations do |f|
+		- consultation_number+=1
+		%div.nested-form-panel
+			-if consultation_number > @consultations_count
+				= f.link_to_remove t('form.nested.delete')
+			.row-fluid
+				.span4= nested_datepicker f, :achievement_date, :consultation
+				.span4= nested_select_one f, :medical, :consultation
+			.row-fluid
+				= nested_big_text f, :symptomps, :consultation, :symptomps
+				= nested_big_text f, :diagnostic, :consultation, :diagnostic
+				= nested_big_text f, :treatment, :consultation, :treatment
+	= form.link_to_add t('form.nested.add'), :consultations
