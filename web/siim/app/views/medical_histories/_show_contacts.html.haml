@@ -1,0 +1,25 @@
+-for contact in @medical_history.patient.contacts
+	.nested-view-panel
+		.row-fluid
+			.span5
+				%dl.dl-horizontal
+					%dt.show-field-label=translate_attribute :contact, :firstname
+					%dd.show-field-value=contact.firstname
+			.span5
+				%dl.dl-horizontal
+					%dt.show-field-label=translate_attribute :contact, :lastname
+					%dd.show-field-value=contact.lastname
+		.row-fluid
+			.span5
+				%dl.dl-horizontal
+					%dt.show-field-label=translate_attribute :contact, :email
+					%dd.show-field-value=contact.email
+			.span5
+				%dl.dl-horizontal
+					%dt.show-field-label=translate_attribute :contact, :home_phone
+					%dd.show-field-value=contact.home_phone
+		.row-fluid
+			.span5
+				%dl.dl-horizontal
+					%dt.show-field-label=translate_attribute :contact, :movile_phone
+					%dd.show-field-value=contact.movile_phone

@@ -4,7 +4,7 @@
 	.well.form-horizontal
 		.patient-form
 			.row-fluid
-				%div.tabbable
+				.tabbable
 					%ul.nav.nav-tabs
 						%li.active
 							%a{:href => "#consultations-panel", 'data-toggle' => 'tab'}= section :consultations
@@ -20,7 +20,7 @@
 							%a{:href => "#allergies-panel", 'data-toggle' => 'tab'}= section :allergies
 						%li
 							%a{:href => "#vaccines-panel", 'data-toggle' => 'tab'}= section :vaccines
-					%div.tab-content
+					.tab-content
 						%div#consultations-panel.tab-pane.active
 							%div#consultations
 								- for consultation in @medical_history.consultations
