@@ -25,7 +25,7 @@ class Ability
 	#
 	def setup_medical_privileges(an_user)
 		if an_user.has_role? :medical
-			can :search_by_dni, MedicalHistory
+			can :search_by_dni, :medical_history
 			can_search_by_patient_medical_histories
 			can_custom_search_medical_histories
 			can_read_and_update_complete_medical_history
