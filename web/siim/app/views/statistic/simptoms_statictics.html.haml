@@ -24,7 +24,6 @@
 						%li
 							- end_string = @year == 'all' ? "." : " en el año #{@year}."
 							= "#{@amount_of_patients_on_year} pacientes con la sintomatologia \"#{@simptom}\"#{end_string}"
-						%li="Tipo de tratamiento utilizado para el sintoma \"#{@simptom}\": #{@treatments_used.join(',')}."
 
 	:javascript
 		// Load the Visualization API and the piechart package.
