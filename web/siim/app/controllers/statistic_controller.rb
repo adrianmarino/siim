@@ -44,7 +44,7 @@ class StatisticController < ApplicationController
 			@years = Disease.all_record_years
 			render 'diseases_statictics'
 		else
-			flash[:alert] = t  t "statistics.disease.empty_disease"
+			flash[:alert] = t "statistics.disease.empty_disease"
 			setup_disease
 		end
 	end
