@@ -27,8 +27,8 @@ class MedicalHistory < ActiveRecord::Base
 																:movile_phone]},
 				allergies:			{only:[:cause,:observations]},
 				antecedents:		{only:[:description]},
-				consultations:	{only:[:diagnostic,:symptomps,:treatment]},
-				diseases:				{only:[:name,:observations]},
+				consultations:	{only:[:achievement_date, :diagnostic,:symptomps,:treatment]},
+				diseases:				{only:[:record_date, :name,:observations]},
 				medications:		{only:[:name,:dose,:amount,:route]},
 				vaccines:				{only:[:last_application,:name]},
 				medical_exams:	{only:[:achievement_date,:name,:results,:observations]}
