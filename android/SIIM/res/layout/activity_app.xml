@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top" >
+
+    <TextView
+        android:id="@+id/text_bienvenida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/txt_bienvenida" 
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/text_muestrausuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/text_bienvenida"
+        android:layout_alignBottom="@+id/text_bienvenida"
+        android:layout_marginLeft="21dp"
+        android:layout_toRightOf="@+id/text_bienvenida"
+        android:text="-" 
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/text_Paciente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text_bienvenida"
+        android:layout_below="@+id/text_bienvenida"
+        android:layout_marginTop="20dp"
+        android:text="@string/txt_Paciente" 
+        android:textSize="15sp"/>
+
+    <Button
+        android:id="@+id/button_LeerDNI"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/text_Paciente"
+        android:layout_marginBottom="14dp"
+        android:onClick="LeerDNI"
+        android:text="@string/txt_LeerDNI" />
+
+    <TextView
+        android:id="@+id/text_Nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/text_Paciente"
+        android:layout_alignBottom="@+id/text_Paciente"
+        android:layout_marginLeft="26dp"
+        android:layout_toRightOf="@+id/text_Paciente"
+        android:text="-" 
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/text_Fecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/text_Historia"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/text_FechaNac"
+        android:text="-" 
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/text_FechaNac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text_Paciente"
+        android:layout_below="@+id/text_Paciente"
+        android:text="@string/txt_FechaNac" 
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/text_Historia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text_FechaNac"
+        android:layout_below="@+id/text_FechaNac"
+        android:text="@string/txt_Historia" 
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/text_IDNI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/edit_IDNI"
+        android:layout_alignBottom="@+id/edit_IDNI"
+        android:layout_alignLeft="@+id/button_LeerDNI"
+        android:text="@string/txt_IDNI"
+        android:visibility="invisible" 
+        android:textSize="15sp"/>
+
+    <EditText
+        android:id="@+id/edit_IDNI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_LeerDNI"
+        android:layout_alignRight="@+id/text_muestrausuario"
+        android:layout_toRightOf="@+id/button_LeerDNI"
+        android:ems="10"
+        android:inputType="number"
+        android:visibility="invisible" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/button_IDNI"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/edit_IDNI"
+        android:layout_alignBottom="@+id/edit_IDNI"
+        android:layout_toRightOf="@+id/edit_IDNI"
+        android:onClick="BuscarDNI"
+        android:text="@string/txt_Buscar"
+        android:visibility="invisible" />
+
+    <ToggleButton
+        android:id="@+id/toggle_IDNI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button_LeerDNI"
+        android:layout_alignBottom="@+id/button_LeerDNI"
+        android:layout_alignRight="@+id/button_IDNI"
+        android:onClick="IngresoManualDNI"
+        android:text="ToggleButton"
+        android:textOff="@string/txt_OFF"
+        android:textOn="@string/txt_ON"
+        android:visibility="visible" />
+
+    <Spinner
+        android:id="@+id/spinner_Historia"
+        style="@array/Valores_Historia_Clinica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text_IDNI"
+        android:layout_alignRight="@+id/button_IDNI"
+        android:layout_below="@+id/text_Historia" 
+       />
+
+    <ScrollView
+        android:id="@+id/scrollView_Historia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_IDNI"
+        android:layout_alignLeft="@+id/spinner_Historia"
+        android:layout_alignRight="@+id/spinner_Historia"
+        android:layout_below="@+id/spinner_Historia" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/listView_Historia"
+                android:layout_width="297dp"
+                android:layout_height="205dp" >
+
+            </ListView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

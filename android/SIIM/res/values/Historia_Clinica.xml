@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 
+
+<resources>
+    <string-array name="Valores_Historia_Clinica">
+        <item>Datos Personales</item>
+        <item>Alergias</item>
+        <item>Antecedentes</item>
+        <item>Consultas</item>
+        <item>Enfermedades</item>
+        <item>Medicacion</item>
+        <item>Vacunas</item>
+        <item>Examenes Medicos</item>
+    </string-array>
+</resources>

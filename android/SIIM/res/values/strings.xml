@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SIIM</string>
+    <string name="action_settings">Settings</string>
+    <string name="txt_usuario">USUARIO</string>
+    <string name="txt_password">CONTRASEÑA</string>
+    <string name="txt_inicial">Ingrese su usuario y contraseña para acceder a SIIM</string>
+    <string name="txt_conectar">CONECTAR</string>
+    <string name="txt_bienvenida">Bienvenido al sistema SIIM,</string>
+    <string name="txt_Menu">Menu SIIM</string>
+    <string name="txt_Paciente">Paciente</string>
+    <string name="txt_FechaNac">Fecha de Nacimiento</string>
+    <string name="txt_Historia">Historia Clinica</string>
+    <string name="txt_IDNI">Ingrese DNI</string>
+    <string name="txt_Buscar">Buscar</string>
+    <string name="txt_OK">OK</string>
+    <string name="txt_ON">Desactivar Ingreso Manual</string>
+    <string name="txt_OFF">Activar Ingreso Manual</string>
+    <string name="txt_LeerDNI">Leer DNI</string>
+    <string name="txt_Mensaje_Auth">Usuario o Contraseña Incorrecta</string>
+    
+</resources>
