@@ -41,7 +41,7 @@ class AppointmentForm
 	def initialize(params)
 		@specializations = MedicalSpecialization.all
 		@medicals = Medical.all
-		@patients = Patient.all
+		@patients = Patient.order("firstname, lastname ASC")
 		@states = Appointment.all_states
 
 		helper = request_helper params
