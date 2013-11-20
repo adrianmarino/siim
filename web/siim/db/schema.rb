@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131110201540) do
+ActiveRecord::Schema.define(:version => 20131120224449) do
 
   create_table "allergies", :force => true do |t|
     t.string   "cause"
@@ -22,12 +22,16 @@ ActiveRecord::Schema.define(:version => 20131110201540) do
     t.integer  "medical_history_id"
   end
 
+  add_index "allergies", ["medical_history_id"], :name => "index_allergies_on_medical_history_id"
+
   create_table "antecedents", :force => true do |t|
     t.string   "description"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.integer  "medical_history_id"
   end
+
+  add_index "antecedents", ["medical_history_id"], :name => "index_antecedents_on_medical_history_id"
 
   create_table "appointments", :force => true do |t|
     t.datetime "time"
@@ -37,6 +41,11 @@ ActiveRecord::Schema.define(:version => 20131110201540) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "appointments", ["medical_id"], :name => "index_appointments_on_medical_id"
+  add_index "appointments", ["patient_id"], :name => "index_appointments_on_patient_id"
+  add_index "appointments", ["state"], :name => "index_appointments_on_state"
+  add_index "appointments", ["time"], :name => "index_appointments_on_time"
 
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
@@ -67,6 +76,10 @@ ActiveRecord::Schema.define(:version => 20131110201540) do
     t.integer  "medical_history_id"
   end
 
+  add_index "consultations", ["achievement_date"], :name => "index_consultations_on_achievement_date"
+  add_index "consultations", ["medical_history_id"], :name => "index_consultations_on_medical_history_id"
+  add_index "consultations", ["symptomps"], :name => "index_consultations_on_symptomps"
+
   create_table "contacts", :force => true do |t|
     t.string   "firstname"
     t.string   "lastname"
@@ -78,6 +91,8 @@ ActiveRecord::Schema.define(:version => 20131110201540) do
     t.integer  "patient_id"
   end
 
+  add_index "contacts", ["patient_id"], :name => "index_contacts_on_patient_id"
+
   create_table "diseases", :force => true do |t|
     t.date     "record_date"
     t.string   "name"
@@ -86,6 +101,10 @@ ActiveRecord::Schema.define(:version => 20131110201540) do
     t.datetime "updated_at",         :null => false
     t.integer  "medical_history_id"
   end
+
+  add_index "diseases", ["medical_history_id"], :name => "index_diseases_on_medical_history_id"
+  add_index "diseases", ["name"], :name => "index_diseases_on_name"
+  add_index "diseases", ["record_date"], :name => "index_diseases_on_record_date"
 
   create_table "medical_exams", :force => true do |t|
     t.date     "achievement_date"
@@ -96,6 +115,8 @@ ActiveRecord::Schema.define(:version => 20131110201540) do
     t.datetime "updated_at",         :null => false
     t.integer  "medical_history_id"
   end
+
+  add_index "medical_exams", ["medical_history_id"], :name => "index_medical_exams_on_medical_history_id"
 
   create_table "medical_histories", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -125,6 +146,7 @@ ActiveRecord::Schema.define(:version => 20131110201540) do
 
   add_index "medicals", ["cuil"], :name => "index_medicals_on_cuil", :unique => true
   add_index "medicals", ["dni"], :name => "index_medicals_on_dni", :unique => true
+  add_index "medicals", ["medical_specialization_id"], :name => "index_medicals_on_medical_specialization_id"
 
   create_table "medications", :force => true do |t|
     t.date     "begin_date"
@@ -138,6 +160,8 @@ ActiveRecord::Schema.define(:version => 20131110201540) do
     t.integer  "medical_history_id"
     t.decimal  "amount",             :precision => 10, :scale => 0
   end
+
+  add_index "medications", ["medical_history_id"], :name => "index_medications_on_medical_history_id"
 
   create_table "patients", :force => true do |t|
     t.string   "dni"
@@ -164,6 +188,7 @@ ActiveRecord::Schema.define(:version => 20131110201540) do
   add_index "patients", ["dni"], :name => "index_patients_on_dni"
   add_index "patients", ["firstname"], :name => "index_patients_on_firstname"
   add_index "patients", ["lastname"], :name => "index_patients_on_lastname"
+  add_index "patients", ["medical_history_id"], :name => "index_patients_on_medical_history_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -224,5 +249,7 @@ ActiveRecord::Schema.define(:version => 20131110201540) do
     t.datetime "updated_at",         :null => false
     t.integer  "medical_history_id"
   end
+
+  add_index "vaccines", ["medical_history_id"], :name => "index_vaccines_on_medical_history_id"
 
 end
