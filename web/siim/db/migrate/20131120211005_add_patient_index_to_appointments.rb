@@ -1,4 +1,4 @@
-class AddIndexOnPatientToAppointments < ActiveRecord::Migration
+class AddPatientIndexToAppointments < ActiveRecord::Migration
 	def change
 		add_index :appointments, :patient_id
 	end

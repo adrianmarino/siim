@@ -1,4 +1,4 @@
-class AddIndexOnTimeToAppointments < ActiveRecord::Migration
+class AddTimeIndexToAppointments < ActiveRecord::Migration
 	def change
 		add_index :appointments, :time
 	end

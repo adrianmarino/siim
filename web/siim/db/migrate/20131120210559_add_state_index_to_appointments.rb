@@ -1,4 +1,4 @@
-class AddIndexOnStateToAppointments < ActiveRecord::Migration
+class AddStateIndexToAppointments < ActiveRecord::Migration
 	def change
 		add_index :appointments, :state
 	end
