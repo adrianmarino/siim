@@ -13,4 +13,8 @@ module ApplicationHelper
 	def stylesheet(*files)
 		content_for(:head) { stylesheet_link_tag(*files) }
 	end
+
+	def sex_values
+		Sex.values.sort.collect {|a_value| new_option(a_value) }
+	end
 end
