@@ -25,9 +25,11 @@
                   %spam.add-on
                     %i.icon-calendar
                   = f.text_field :birthdate, "data-behaviour"=>"datepicker", "language" => "es", :readonly => :readonly, :class => "input-date"
+
             .control-group
               = f.label translate_and_mark(:user, :sex), :class => 'control-label'
-              .controls= f.text_field :sex
+              .controls= f.select :sex, sex_values, {}, {:class => 'selectpicker'}
+
             .control-group
               = f.label translate_and_mark(:user, :address), :class => 'control-label'
               .controls= f.text_field :address

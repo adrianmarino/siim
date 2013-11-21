@@ -2,10 +2,6 @@ module MedicalsHelper
   # -------------------------------------------------------------------------
   # Public Methods...
   # -------------------------------------------------------------------------
-  def sex_values
-    Sex.values.sort.collect {|a_value| new_option(a_value) }
-  end
-
   def blood_types
     BloodType.values.sort.collect {|a_value| new_option(a_value) }
   end
