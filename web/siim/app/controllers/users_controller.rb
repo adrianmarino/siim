@@ -53,7 +53,7 @@ class UsersController < CrudController
 		@medical_specializations = medical_specializations
 		@roles = Role.all
 		@medical_role = Role.find_by_name :medical
-		@has_medical_role = @user.is_medical?
+		@has_medical_role = params[:user][:role_ids].include? @medical_role.id.to_s
 
 		if @has_medical_role
 			@user.medical.firstname = @user.first_name
@@ -62,11 +62,12 @@ class UsersController < CrudController
 			@user.medical.email = @user.email
 			@user.medical.home_phone = @user.home_phone
 			@user.medical.movile_phone = @user.movile_phone
+		else
+			@user.medical = nil
 		end
 
 		respond_to do |format|
 			if @user.save
-				@user.medical = nil unless @has_medical_role
 				format.html { redirect_to users_path, notice: CrudTranslations.model_was_created(@user) }
 				format.json { render json: @user, status: :created, location: @user }
 				Thread.new do
@@ -99,6 +100,7 @@ class UsersController < CrudController
 		@medical_role = Role.find_by_name :medical
 		@has_medical_role = params[:user][:role_ids].include? @medical_role.id.to_s
 
+
 		if @has_medical_role
 			@medical.firstname = @user.first_name
 			@medical.lastname = @user.last_name
@@ -106,6 +108,8 @@ class UsersController < CrudController
 			@medical.email = @user.email
 			@medical.home_phone = @user.home_phone
 			@medical.movile_phone = @user.movile_phone
+		elsif not @user.medical.nil?
+			Medical.find(@user.medical).delete
 		end
 
 		if params[:user][:password].blank? && params[:user][:password_confirmation].blank?
@@ -115,7 +119,6 @@ class UsersController < CrudController
 
 		respond_to do |format|
 			if @user.update_attributes(params[:user])
-				@user.medical = nil unless @has_medical_role
 				format.html { redirect_to users_path, notice: CrudTranslations.model_was_updated(@user) }
 				format.json { head :no_content }
 			else
