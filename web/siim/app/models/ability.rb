@@ -42,6 +42,7 @@ class Ability
 			can_read_and_update_only_public_data_of_medical_history
 			can_search_appointments
 			can_administrate_appointment
+			can :crud, MedicalHistory
 		end
 	end
 
