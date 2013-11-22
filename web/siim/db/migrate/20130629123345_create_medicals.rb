@@ -9,7 +9,7 @@ class CreateMedicals < ActiveRecord::Migration
 			t.string :home_phone, :null => false, :default => ""
 			t.string :movile_phone, :null => false, :default => ""
 		end
-		add_index :medicals, :cuil, :unique => true
-		add_index :medicals, :dni, :unique => true
+#		add_index :medicals, :cuil, :unique => true
+#		add_index :medicals, :dni, :unique => true
 	end
 end
