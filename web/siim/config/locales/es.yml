@@ -6,6 +6,7 @@ es:
     description: 'Servicio Integral de Información Médica'
     author: '&copy; BAMBU Solutions 2014'
     version: 'Versión: %{number}'
+    admin_mail_description: 'Admin'
   commercial_message:
     cite: 'BAMBU Solutions'
 
