@@ -3,7 +3,7 @@ Sistema Integral de Información Médica (SIIM)
 _______________________________________________________________________________
 
 SIIM es un aplicación para las gestión integral de consultorios y centro de 
-salud médicos. 
+salud. 
 Entre sus funcionalidades podemos encontrar:
 
 1. Historias Médicas
@@ -31,7 +31,6 @@ Entre sus funcionalidades podemos encontrar:
 Detalle de directorios
 _______________________________________________________________________________
 
-1. android: Cliente Movíl.
-2. web
-2.1. elasticsearch: Configuración y plugins usados.
-2.2. siim: Aplicación web.s
+- android: Cliente Movíl.
+- web/elasticsearch: Configuración y plugins utilizados para el Motor de Búsqueda.
+- web/siim: Aplicación web. Es el core de la aplicación.
