@@ -2,6 +2,10 @@ class ApplicationConfiguration
 	# -------------------------------------------------------------------------
 	# Public Methods...
 	# -------------------------------------------------------------------------
+	def admin_mail
+		@config['app']['admin_mail']
+	end
+
 	def log_path
 		@config['log_path'][Rails.env]
 	end

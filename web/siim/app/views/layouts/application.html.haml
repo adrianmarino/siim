@@ -17,7 +17,10 @@
       .push
     %footer
       - version = APP_CONFIG.version
-      %p.footer-description=raw t('app.author') + " / " + t('app.version', :number => version)
+      %p.footer-description
+        =raw t('app.author') + " / " + t('app.version', :number => version) + " / "
+        ="#{t('app.admin_mail_description')}:"
+        = mail_to APP_CONFIG.admin_mail
     #myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
       .modal-header
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
