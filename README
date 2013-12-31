@@ -2,7 +2,7 @@
 Sistema Integral de Información Médica (SIIM)
 _______________________________________________________________________________
 
-SIIM es un aplicación para las gestión integral de consultorios y centro de 
+SIIM es un aplicación para las gestión integral de consultorios y centros de 
 salud. 
 Entre sus funcionalidades podemos encontrar:
 
@@ -10,22 +10,25 @@ Entre sus funcionalidades podemos encontrar:
 1.1. Administración
 1.2. Buscar por DNI/Nombre
 1.3. Consulta a través de un cliente móvil.
-2. Gestión de Turnos.
-3. Investigación de datos.
-3.1. Estadísticas por síntoma.
-3.2. Estadísticas por Enfermedad.
-3.3. Búsqueda Avanzada (Texto libre tipo Google).
-4. Gestión los turnos del día.
+2. Turnos.
+2.1. Asignación.
+2.2. Búsqueda. 
+2.3. Atención de turnos del día.
+2.4. Generación automática de turnos según los horarios de 
+     atención de cada médico.
+3. Investigación del contenido de las Historias Médicas.
+3.1. Estadísticas
+3.1.1. Por síntoma.
+3.1.2. Por Enfermedad.
+3.3. Búsqueda Avanzada: Búsqueda por texto libre tipo Google.
 5. Ajustes del usuario.
-7. Visualización de información según el role del usuario. 
-6. Administración
+7. Visualización de información según los roles del usuario. 
+6. Administración de la aplicación.
 6.1. Especialidades médicas.
 6.2. Administración de usuarios.
-6.3. Descargar de log: Admin de sistema.
+6.3. Descargar de logs.
 6.4. Gestión de motor de búsqueda.
 6.7. Gestión de Roles.
-
-
 
 
 Detalle de directorios
