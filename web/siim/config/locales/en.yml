@@ -4,7 +4,7 @@ en:
   app:
     name: 'SIIM'
     description: 'Comprehensive Medical Information Service'
-    author: '&copy; BAMBU Solutions 2013'
+    author: '&copy; BAMBU Solutions 2014'
     version: 'Version %{number}'
   commercial_message:
     cite: 'BAMBU Solutions'
