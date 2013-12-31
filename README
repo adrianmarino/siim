@@ -37,3 +37,12 @@ _______________________________________________________________________________
 - android: Cliente Movíl.
 - web/elasticsearch: Configuración y plugins utilizados para el Motor de Búsqueda.
 - web/siim: Aplicación web. Es el core de la aplicación.
+
+
+
+Puesta en marcha
+_______________________________________________________________________________
+
+Para mas detalle ver web/siim/REAME
+
+
