@@ -1,5 +1,6 @@
 app:
   version: '0.9.28'
+  admin_mail: 'adrianmarino@gmail.com'
 
 mailer:
   password: 'Elnonocapo'
