@@ -64,5 +64,7 @@ module Siim
     config.assets.version = '1.0'
 
     config.encoding = "utf-8"
+
+    I18n.enforce_available_locales = true
   end
 end

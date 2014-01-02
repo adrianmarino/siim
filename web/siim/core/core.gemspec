@@ -15,8 +15,8 @@ Gem::Specification.new do |s|
 
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 3.2.11"
+  s.add_dependency "rails", "4.0.2"
   s.add_dependency  'sqlite3'
-  s.add_dependency	'mocha', '0.12.7'
+  s.add_dependency	'mocha', '0.14.0'
 
 end

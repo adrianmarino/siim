@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
 # Environment...
-gem 'rails', '3.2.11'
+
+ruby '2.0.0'
+gem 'rails', '4.0.2'
 gem 'mysql2'
 
 # View...
@@ -16,8 +18,9 @@ gem "twitter-bootstrap-rails"
 gem "paperclip"
 
 # Security...
-gem 'devise', '2.2.4'
-gem 'devise-i18n', '0.8.5'
+gem 'protected_attributes'
+gem 'devise', '3.0.4'
+gem 'devise-i18n'
 gem 'cancan'
 
 # Gems used only for assets and not required
@@ -25,9 +28,9 @@ gem 'cancan'
 #group :assets do
 gem "therubyracer"
 gem "less-rails"
-gem 'sass-rails',	 '~> 3.2.3'
-gem 'coffee-rails', '~> 3.2.1'
-gem 'uglifier', '>= 1.0.3'
+gem 'sass-rails',	 '4.0.1'
+gem 'coffee-rails', '4.0.1'
+gem 'uglifier', '2.4.0'
 #end
 
 gem 'tlsmail'
@@ -35,20 +38,17 @@ gem 'thin'
 gem 'hpricot'
 gem 'ruby_parser'
 
+# Dev and Test...
 group :development, :test do
 	gem 'pry-debugger'
 	gem 'pry-rails'
 	gem 'pry-plus'
 	gem 'pry-debundle'
 	gem 'awesome_print'
-end
-
-# Dev and Test...
-group :development, :test do
-	gem "mocha", "0.12.7", require: false
+	gem "mocha", "0.14.0", require: false
 	gem 'factory_girl_rails'
 	gem 'headless'
-	gem 'selenium-webdriver', '2.32.1'
+	gem 'selenium-webdriver', '2.39.0'
 	gem 'sqlite3'
 end
 
