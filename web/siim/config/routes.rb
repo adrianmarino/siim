@@ -33,7 +33,7 @@ Siim::Application.routes.draw do
 		post	:search_patient_by_name,						on: :collection
 	end
 
-	get		'/assets/javascripts/dinamic_medicals',				to: 'javascripts#dinamic_medicals'
+	get		'/javascripts/dinamic_medicals',				to: 'javascripts#dinamic_medicals'
 
 	get		'/appointments/setup_search',									to: 'appointment#setup_search'
 	post	'/appointments/liberate',											to: 'appointment#liberate'
