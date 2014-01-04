@@ -16,6 +16,6 @@ module Assertions
 	end
 
 	def assert_has_only_one(a_collection)
-		assert a_collection.one?, "Collection has not only one element!. #{a_collection.all}"
+		assert a_collection.one?, "Collection has not only one element!. #{a_collection.to_a}"
 	end
 end
