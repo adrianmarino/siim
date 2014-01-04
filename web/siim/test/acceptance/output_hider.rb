@@ -4,25 +4,32 @@ require 'headless'
 # test. Usefull to use in regresion tests on jenkins continum integration
 # server.
 # -------------------------------------------------------------------------
-module AcceptanceTestPresetation
+module OutputHider
 	# -------------------------------------------------------------------------
-	# Public Methods...
+	# Ptotected Methods...
 	# -------------------------------------------------------------------------
-	def hide_test_output
-		if hide_output?
+	protected
+	def start_hide_output
+		if not hide_output?
 			puts 'Hide test output...'
 			@headless = Headless.new
 			@headless.start
 		end
 	end
 
-	def stop_hide
-		if hide_output?
-			@headless.destroy
-		end
+	def stop_hide_output
+		@headless.destroy if hide_output?
 	end
 
+	# -------------------------------------------------------------------------
+	# Private Methods...
+	# -------------------------------------------------------------------------
+	private
 	def hide_output?
-		not ENV['SHOW_TESTS'] == 'true'
+		show_output_env_var.nil? or show_output_env_var == "false"
+	end
+
+	def show_output_env_var
+		ENV['SHOW_OUTPUT']
 	end
 end
