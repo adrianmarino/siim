@@ -148,3 +148,16 @@ _______________________________________________________________________________
 2. Configurar entorno
 		$ export PATH=$HOME/local/imagemagick/bin:$PATH
 		$ export LD_LIBRARY_PATH=$HOME/local/imagemagick/lib:$LD_LIBRARY_PATH
+
+
+Probar la aplicacion sobre el server passenger
+_______________________________________________________________________________
+
+La idea es provar la apliacion en un entorno similar a producción(Apache+Passenger)
+Para esto necesitamos instalar la gema passenger
+
+$ gem install passenger
+
+y luego levantar la applicacion en modo standalone:
+
+$ passenger start
