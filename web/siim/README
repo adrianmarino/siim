@@ -142,8 +142,8 @@ ImageMagic
 _______________________________________________________________________________
 
 1. Instalar
-		$ yaourt -Ss imagemagic (Arch Linux)
-		$ emerge -av imagemagic (Gentoo Linux)
+		$ yaourt -S imagemagick (Arch Linux)
+		$ emerge -av imagemagick (Gentoo Linux)
 
 2. Configurar entorno
 		$ export PATH=$HOME/local/imagemagick/bin:$PATH
