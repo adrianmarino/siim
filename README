@@ -34,4 +34,13 @@ _______________________________________________________________________________
 1. android: Cliente Movíl.
 2. web
 2.1. elasticsearch: Configuración y plugins usados.
-2.2. siim: Aplicación web.s
+2.2. siim: Aplicación web.
+
+
+Requisitos de instalación
+_______________________________________________________________________________
+
+- rvm
+- ruby 1.9.3
+- ImageMagick
+

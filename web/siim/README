@@ -120,6 +120,8 @@ Un ejemplo de uso:
 }
 
 
+
+
 Base de datos
 _______________________________________________________________________________
 
@@ -133,3 +135,16 @@ CREATE DATABASE siim CHARACTER SET utf8;
 CREATE USER 'siim'@'localhost' IDENTIFIED BY 'un_password';
 GRANT ALL PRIVILEGES ON siim.* TO 'siim'@'localhost';
 
+
+
+
+ImageMagic
+_______________________________________________________________________________
+
+1. Instalar
+		$ yaourt -Ss imagemagic (Arch Linux)
+		$ emerge -av imagemagic (Gentoo Linux)
+
+2. Configurar entorno
+		$ export PATH=$HOME/local/imagemagick/bin:$PATH
+		$ export LD_LIBRARY_PATH=$HOME/local/imagemagick/lib:$LD_LIBRARY_PATH

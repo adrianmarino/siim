@@ -38,4 +38,6 @@ Siim::Application.configure do
 	end
 
 	config.eager_load = false
+
+	config.serve_static_assets = true
 end

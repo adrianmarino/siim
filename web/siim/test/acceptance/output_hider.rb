@@ -10,7 +10,7 @@ module OutputHider
 	# -------------------------------------------------------------------------
 	protected
 	def start_hide_output
-		if not hide_output?
+		if show_output?
 			puts 'Hide test output...'
 			@headless = Headless.new
 			@headless.start
@@ -18,18 +18,14 @@ module OutputHider
 	end
 
 	def stop_hide_output
-		@headless.destroy if hide_output?
+		@headless.destroy if show_output?
 	end
 
 	# -------------------------------------------------------------------------
 	# Private Methods...
 	# -------------------------------------------------------------------------
 	private
-	def hide_output?
-		show_output_env_var.nil? or show_output_env_var == "false"
-	end
-
-	def show_output_env_var
-		ENV['SHOW_OUTPUT']
+	def show_output?
+		ENV['SHOW_OUTPUT'] == "true"
 	end
 end
