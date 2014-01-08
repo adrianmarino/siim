@@ -40,8 +40,8 @@ class User < ActiveRecord::Base
 	attr_accessible :login, :first_name, :last_name, :dni, :email, :password,
 		:password_confirmation, :remember_me, :authentication_token,
 		:sex, :address, :home_phone, :movile_phone, :medical_attributes, :medical,
-		:birthdate, :photo, :photo_content_type, :photo_file_size,
-		:photo_file_name, :_destroy, :role_ids, :roles
+		:photo, :photo_content_type, :photo_file_size, :photo_file_name,
+		:_destroy, :birthdate, :role_ids, :roles
 
 	attr_accessor :login, :_destroy
 
@@ -50,6 +50,23 @@ class User < ActiveRecord::Base
 	# -------------------------------------------------------------------------
 	devise :database_authenticatable, :recoverable, :rememberable, :trackable,
 	 :validatable, :token_authenticatable, :registerable
+
+	# -------------------------------------------------------------------------
+	# Associations...
+	# -------------------------------------------------------------------------
+	has_one :medical, :dependent => :destroy
+	has_many :assignments
+	has_many :roles, :through => :assignments
+	has_attached_file :photo,
+	:styles => {:medium => "200x200>", :small => "45x41>"},
+	:default_url	=> "/assets/images/photo-:style.png",
+	:url					=> "/assets/users/:id/:style/:basename.:extension",
+	:path					=> ":rails_root/public/assets/users/:id/:style/:basename.:extension"
+
+	# -------------------------------------------------------------------------
+	# Nested attributes...
+	# -------------------------------------------------------------------------
+	accepts_nested_attributes_for :medical, :allow_destroy => true
 
 	# -------------------------------------------------------------------------
 	# Validations...
@@ -61,20 +78,7 @@ class User < ActiveRecord::Base
 	validates :address, length: { maximum: 100 }
 	validates :email, :presence => true, :email => true
 	validates_presence_of :roles
-
-	# -------------------------------------------------------------------------
-	# Associations...
-	# -------------------------------------------------------------------------
-	has_one :medical, :dependent => :destroy
-	has_many :assignments
-	has_many :roles, :through => :assignments
-	has_attached_file :photo, :styles => {:medium => "200x200>", :small => "45x41>"}, 
-	:default_url => "images/photo-:style.png", :url	=> "/assets/patients/:id/:style/:basename.:extension", 
-	:path => ":rails_root/public/assets/patients/:id/:style/:basename.:extension"
-
-	# -------------------------------------------------------------------------
-	# Nested attributes...
-	# -------------------------------------------------------------------------
-	accepts_nested_attributes_for :medical, :allow_destroy => true
-
+	validates_attachment :photo,
+		:content_type => { :content_type => ["image/jpg","image/png","image/bmp"] },
+		:size => { :in => 0..10.megabytes }
 end

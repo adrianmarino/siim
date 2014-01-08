@@ -66,5 +66,8 @@ module Siim
     config.encoding = "utf-8"
 
     I18n.enforce_available_locales = true
+
+    config.secret_token = '762a2f23950e306261908d4e5519ffe71ce626b119e9fc03a012ba86f46d82ef32d72f283633bacc2f59cf94ce5968552fe97d157e7f00560c1217d4592dda09'
+    config.secret_key_base = 'xx762a2f23950e306261908d4e5519ffe71ce626b119e9fc03a012ba86f46d82ef32d72f283633bacc2f59cf94ce5968552fe97d157e7f00560c1217d4592dda09'
   end
 end
