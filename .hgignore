@@ -1,10 +1,12 @@
 syntax:glob
 models/qr.png
 web/siim/db/*.sqlite3*
+web/siim/.rvmrc
 
 syntax: regexp
 web/siim/tmp
 web/siim/.sass-cache
 web/siim/log
 web/siim/public/assets/patients
+web/siim/public/assets/users
 web/siim/.idea
