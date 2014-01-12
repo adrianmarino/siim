@@ -18,5 +18,6 @@ Rake::TestTask.new :acceptance_test => [:reset_db, :stop_test_server, :start_tes
 end
 
 Rake::Task["acceptance_test"].enhance do
+	ENV['RAILS_ENV'] |= 'test'
 	Rake::Task["stop_test_server"].invoke
 end
