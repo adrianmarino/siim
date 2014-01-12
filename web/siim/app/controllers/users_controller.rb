@@ -100,7 +100,6 @@ class UsersController < CrudController
 		@medical_role = Role.find_by_name :medical
 		@has_medical_role = params[:user][:role_ids].include? @medical_role.id.to_s
 
-
 		if @has_medical_role
 			@medical.firstname = @user.first_name
 			@medical.lastname = @user.last_name

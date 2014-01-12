@@ -35,6 +35,10 @@ class String
   # -------------------------------------------------------------------------
   # Public Methods...
   # -------------------------------------------------------------------------
+  def is_number?
+    true if Float(self) rescue false
+  end
+
   def capitalize_first_character
     tmp = self
     tmp[0] = tmp.capitalize[0]

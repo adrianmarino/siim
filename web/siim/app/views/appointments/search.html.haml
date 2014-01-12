@@ -1,6 +1,6 @@
 - content_for :content do
 	= show_messages
-	- javascript "javascripts/dinamic_medicals"
+	- javascript "/javascripts/dinamic_medicals"
 	.form-top
 		= form_tag :appointments_search, :class=> 'well form-horizontal' do
 			%legend=t 'title.appointment.search'

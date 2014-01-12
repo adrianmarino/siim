@@ -45,9 +45,9 @@ class MedicalHistoryResponseTest < ActiveSupport::TestCase
 	end
 
 	def assert_has_medical_history(a_response, a_medical_history)
-		assert_equal a_medical_history.patient.dni, a_response[:patient]['dni']
-		assert_equal a_medical_history.patient.firstname,  a_response[:patient]['firstname']
-		assert_equal a_medical_history.patient.lastname, a_response[:patient]['lastname']
+		assert_equal a_medical_history.patient.dni, a_response["patient"]["dni"]
+		assert_equal a_medical_history.patient.firstname,  a_response["patient"]["firstname"]
+		assert_equal a_medical_history.patient.lastname, a_response["patient"]["lastname"]
 	end
 
 	def new_medical_history_with(a_dni, a_firstname, a_lastname)
