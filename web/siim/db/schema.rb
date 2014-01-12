@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20131120224449) do
     t.integer  "medical_history_id"
   end
 
-  add_index "allergies", ["medical_history_id"], name: "index_allergies_on_medical_history_id"
+  add_index "allergies", ["medical_history_id"], name: "index_allergies_on_medical_history_id", using: :btree
 
   create_table "antecedents", force: true do |t|
     t.string   "description"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20131120224449) do
     t.integer  "medical_history_id"
   end
 
-  add_index "antecedents", ["medical_history_id"], name: "index_antecedents_on_medical_history_id"
+  add_index "antecedents", ["medical_history_id"], name: "index_antecedents_on_medical_history_id", using: :btree
 
   create_table "appointments", force: true do |t|
     t.datetime "time"
@@ -42,10 +42,10 @@ ActiveRecord::Schema.define(version: 20131120224449) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "appointments", ["medical_id"], name: "index_appointments_on_medical_id"
-  add_index "appointments", ["patient_id"], name: "index_appointments_on_patient_id"
-  add_index "appointments", ["state"], name: "index_appointments_on_state"
-  add_index "appointments", ["time"], name: "index_appointments_on_time"
+  add_index "appointments", ["medical_id"], name: "index_appointments_on_medical_id", using: :btree
+  add_index "appointments", ["patient_id"], name: "index_appointments_on_patient_id", using: :btree
+  add_index "appointments", ["state"], name: "index_appointments_on_state", using: :btree
+  add_index "appointments", ["time"], name: "index_appointments_on_time", using: :btree
 
   create_table "assignments", force: true do |t|
     t.integer  "user_id"
@@ -76,9 +76,9 @@ ActiveRecord::Schema.define(version: 20131120224449) do
     t.integer  "medical_history_id"
   end
 
-  add_index "consultations", ["achievement_date"], name: "index_consultations_on_achievement_date"
-  add_index "consultations", ["medical_history_id"], name: "index_consultations_on_medical_history_id"
-  add_index "consultations", ["symptomps"], name: "index_consultations_on_symptomps"
+  add_index "consultations", ["achievement_date"], name: "index_consultations_on_achievement_date", using: :btree
+  add_index "consultations", ["medical_history_id"], name: "index_consultations_on_medical_history_id", using: :btree
+  add_index "consultations", ["symptomps"], name: "index_consultations_on_symptomps", using: :btree
 
   create_table "contacts", force: true do |t|
     t.string   "firstname"
@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 20131120224449) do
     t.integer  "patient_id"
   end
 
-  add_index "contacts", ["patient_id"], name: "index_contacts_on_patient_id"
+  add_index "contacts", ["patient_id"], name: "index_contacts_on_patient_id", using: :btree
 
   create_table "diseases", force: true do |t|
     t.date     "record_date"
@@ -102,9 +102,9 @@ ActiveRecord::Schema.define(version: 20131120224449) do
     t.integer  "medical_history_id"
   end
 
-  add_index "diseases", ["medical_history_id"], name: "index_diseases_on_medical_history_id"
-  add_index "diseases", ["name"], name: "index_diseases_on_name"
-  add_index "diseases", ["record_date"], name: "index_diseases_on_record_date"
+  add_index "diseases", ["medical_history_id"], name: "index_diseases_on_medical_history_id", using: :btree
+  add_index "diseases", ["name"], name: "index_diseases_on_name", using: :btree
+  add_index "diseases", ["record_date"], name: "index_diseases_on_record_date", using: :btree
 
   create_table "medical_exams", force: true do |t|
     t.date     "achievement_date"
@@ -116,7 +116,7 @@ ActiveRecord::Schema.define(version: 20131120224449) do
     t.integer  "medical_history_id"
   end
 
-  add_index "medical_exams", ["medical_history_id"], name: "index_medical_exams_on_medical_history_id"
+  add_index "medical_exams", ["medical_history_id"], name: "index_medical_exams_on_medical_history_id", using: :btree
 
   create_table "medical_histories", force: true do |t|
     t.datetime "created_at", null: false
@@ -144,9 +144,9 @@ ActiveRecord::Schema.define(version: 20131120224449) do
     t.string  "registration_number"
   end
 
-  add_index "medicals", ["cuil"], name: "index_medicals_on_cuil", unique: true
-  add_index "medicals", ["dni"], name: "index_medicals_on_dni", unique: true
-  add_index "medicals", ["medical_specialization_id"], name: "index_medicals_on_medical_specialization_id"
+  add_index "medicals", ["cuil"], name: "index_medicals_on_cuil", unique: true, using: :btree
+  add_index "medicals", ["dni"], name: "index_medicals_on_dni", unique: true, using: :btree
+  add_index "medicals", ["medical_specialization_id"], name: "index_medicals_on_medical_specialization_id", using: :btree
 
   create_table "medications", force: true do |t|
     t.date     "begin_date"
@@ -161,7 +161,7 @@ ActiveRecord::Schema.define(version: 20131120224449) do
     t.decimal  "amount",             precision: 10, scale: 0
   end
 
-  add_index "medications", ["medical_history_id"], name: "index_medications_on_medical_history_id"
+  add_index "medications", ["medical_history_id"], name: "index_medications_on_medical_history_id", using: :btree
 
   create_table "patients", force: true do |t|
     t.string   "dni"
@@ -185,10 +185,10 @@ ActiveRecord::Schema.define(version: 20131120224449) do
     t.datetime "photo_updated_at"
   end
 
-  add_index "patients", ["dni"], name: "index_patients_on_dni"
-  add_index "patients", ["firstname"], name: "index_patients_on_firstname"
-  add_index "patients", ["lastname"], name: "index_patients_on_lastname"
-  add_index "patients", ["medical_history_id"], name: "index_patients_on_medical_history_id"
+  add_index "patients", ["dni"], name: "index_patients_on_dni", using: :btree
+  add_index "patients", ["firstname"], name: "index_patients_on_firstname", using: :btree
+  add_index "patients", ["lastname"], name: "index_patients_on_lastname", using: :btree
+  add_index "patients", ["medical_history_id"], name: "index_patients_on_medical_history_id", using: :btree
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -203,7 +203,7 @@ ActiveRecord::Schema.define(version: 20131120224449) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "system_properties", ["name"], name: "index_system_properties_on_name", unique: true
+  add_index "system_properties", ["name"], name: "index_system_properties_on_name", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -237,10 +237,10 @@ ActiveRecord::Schema.define(version: 20131120224449) do
     t.datetime "photo_updated_at"
   end
 
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-  add_index "users", ["dni"], name: "index_users_on_dni", unique: true
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["dni"], name: "index_users_on_dni", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "vaccines", force: true do |t|
     t.string   "name"
@@ -250,6 +250,6 @@ ActiveRecord::Schema.define(version: 20131120224449) do
     t.integer  "medical_history_id"
   end
 
-  add_index "vaccines", ["medical_history_id"], name: "index_vaccines_on_medical_history_id"
+  add_index "vaccines", ["medical_history_id"], name: "index_vaccines_on_medical_history_id", using: :btree
 
 end
