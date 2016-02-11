@@ -32,3 +32,7 @@ SIIM es un aplicación para las gestión integral de consultorios y centros de s
 
 
 ### [Puesta en marcha](https://github.com/adrianmarino/siim/tree/master/web/siim)
+
+## License
+
+SIIM is released under the [MIT License](http://www.opensource.org/licenses/MIT).
